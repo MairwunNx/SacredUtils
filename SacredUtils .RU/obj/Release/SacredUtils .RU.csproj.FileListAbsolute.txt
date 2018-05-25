@@ -1,0 +1,33 @@
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils .RU\bin\Release\SacredUtils.exe.config
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils .RU\bin\Release\SacredUtils.exe
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils .RU\bin\Release\SacredUtils.pdb
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils .RU\obj\Release\MainWindow.baml
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils .RU\obj\Release\App.baml
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils .RU\obj\Release\MainWindow.g.cs
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils .RU\obj\Release\App.g.cs
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils .RU\obj\Release\SacredUtils_Content.g.cs
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils .RU\obj\Release\SacredUtils_MarkupCompile.cache
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils .RU\obj\Release\SacredUtils.g.resources
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils .RU\obj\Release\SacredUtils.Properties.Resources.resources
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils .RU\obj\Release\SacredUtils .RU.csproj.GenerateResource.cache
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils .RU\obj\Release\SacredUtils .RU.csproj.CoreCompileInputs.cache
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils .RU\obj\Release\SacredUtils.exe
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils .RU\obj\Release\SacredUtils.pdb
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils\SacredUtils .RU\bin\Release\SacredUtils.exe.config
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils\SacredUtils .RU\bin\Release\SacredUtils.exe
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils\SacredUtils .RU\bin\Release\SacredUtils.pdb
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils\SacredUtils .RU\obj\Release\SacredUtils .RU.csprojAssemblyReference.cache
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils\SacredUtils .RU\obj\Release\MainWindow.baml
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils\SacredUtils .RU\obj\Release\App.baml
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils\SacredUtils .RU\obj\Release\MainWindow.g.cs
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils\SacredUtils .RU\obj\Release\App.g.cs
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils\SacredUtils .RU\obj\Release\SacredUtils_Content.g.cs
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils\SacredUtils .RU\obj\Release\SacredUtils_MarkupCompile.cache
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils\SacredUtils .RU\obj\Release\SacredUtils.g.resources
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils\SacredUtils .RU\obj\Release\SacredUtils.Properties.Resources.resources
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils\SacredUtils .RU\obj\Release\SacredUtils .RU.csproj.GenerateResource.cache
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils\SacredUtils .RU\obj\Release\SacredUtils .RU.csproj.CoreCompileInputs.cache
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils\SacredUtils .RU\obj\Release\SacredUtils.exe
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils\SacredUtils .RU\obj\Release\SacredUtils.pdb
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils\SacredUtils .RU\obj\Release\Resources\Windows\ColorWindow.g.cs
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils\SacredUtils .RU\obj\Release\Resources\Windows\ColorWindow.baml
