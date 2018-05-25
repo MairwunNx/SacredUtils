@@ -1,0 +1,33 @@
+#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@
+#                                                                  #
+#            SacredUtils :: Official Configuration file            #
+#                                                                  #
+#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@
+
+#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@
+#                                                                  #
+#                             Settings                             #
+#                                                                  #
+#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@
+#                                                                  #
+#                                                                  #
+#                                                                  #
+# - Configuration file version = 1.0.0.3                           #
+#                                                                  #
+# - Automatically get and install updates = true                   #
+#                                                                  #
+# - Show advanced errors-exceptions in log = false                 #
+#                                                                  #
+# - Minimize the program before launching Sacred = true            #
+#                                                                  #
+# - Change the input language before running Sacred = true         #
+#                                                                  #
+# - Close the program after launching Sacred = false               #
+#                                                                  #
+# - Restore Settings.cfg if it is corrupted = true                 #
+#                                                                  #
+# - User interface color SacredUtils = default                     #
+#                                                                  #
+#                                                                  #
+#                                                                  #
+#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@
