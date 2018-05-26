@@ -1494,7 +1494,7 @@ namespace SacredUtils
 
         private void FontLibraryCmbBox_DropDownClosed(object sender, EventArgs e)
         {
-            FontsTestLbl.FontFamily = new System.Windows.Media.FontFamily(FontLibraryCmbBox.Text);
+//            FontsTestLbl.FontFamily = new System.Windows.Media.FontFamily(FontLibraryCmbBox.Text);
 
             SetSettingsValueForFont("FONT : 1, ", "\"" + FontLibraryCmbBox.Text + "\"" + ", 10");
             SetSettingsValueForFont("FONT : 2, ", "\"" + FontLibraryCmbBox.Text + "\"" + ", 10");
@@ -1503,11 +1503,6 @@ namespace SacredUtils
             SetSettingsValueForFont("FONT : 5, ", "\"" + FontLibraryCmbBox.Text + "\"" + ", 12");
             SetSettingsValueForFont("FONT : 6, ", "\"" + FontLibraryCmbBox.Text + "\"" + ", 12");
             SetSettingsValueForFont("FONT : 7, ", "\"" + FontLibraryCmbBox.Text + "\"" + ", 8");
-        }
-
-        private void FontChangeTextInTemplate_KeyUp(object sender, KeyEventArgs e)
-        {
-            FontsTestLbl.Content = FontChangeTextInTemplate.Text;
         }
 
         private void PickupSettingsCmbBox_DropDownClosed(object sender, EventArgs e)

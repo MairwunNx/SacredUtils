@@ -53,7 +53,7 @@
             <Label x:Name="SelectSettingsLbl" Content="Выбор настроек." Foreground="#DD404040" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" FontSize="14" Margin="119,118,740,582" Height="27"/>
             <Label x:Name="SettingsLbl" Content="Настройки." Foreground="#DD404040" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" FontSize="14" Margin="304,118,594,582" Height="27"/>
 
-            <Label x:Name="NotSelectedLbl" Content="Выберите, что бы вы хотели настроить." Height="Auto" Width="Auto" Foreground="#DD7E7E7E" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Margin="435,354,268,343" FontSize="14"/>
+            <Label x:Name="NotSelectedLbl" Content="Выберите, что бы вы хотели настроить." Height="Auto" Width="Auto" Foreground="#DD7E7E7E" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Margin="435,354,268,343" FontSize="14" Visibility="Hidden"/>
 
             <ListBox x:Name="SettingsListBox" HorizontalAlignment="Left" Height="494" HorizontalContentAlignment="Left" VerticalAlignment="Top" Width="162" Margin="107,154,0,0" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalContentAlignment="Stretch" Padding="0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="#DD363636" SelectionChanged="SettingsListBox_SelectionChanged">
                 <ListBoxItem Content="  Настройки графики 1."/>
@@ -293,7 +293,7 @@
                 <Label Content="Название шрифта." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=ColorLabel}" Margin="15,242,0,0" Height="25"/>
                 <Label Content="Текст примера." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=ColorLabel}" Margin="15,287,0,0" Height="25"/>
                 <Label Content="Используется автоподбор размера, с некоторыми шрифтами возможны проблемы." VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="#DDFF0000" Margin="36,197,39,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="25"/>
-                <Label x:Name="FontsTestLbl" Content="Это был лишь вопрос времени." VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=ColorLabel}" Margin="36,317,40,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="5" Height="54" FontSize="14"/>
+                <Label x:Name="FontsTestLbl" Content="{Binding Text, ElementName=FontChangeTextInTemplate}" VerticalAlignment="Top" FontFamily="{Binding Text, ElementName=FontLibraryCmbBox}" Foreground="{Binding Foreground, ElementName=ColorLabel}" Margin="10,317,10,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="5" Height="54" FontSize="14"/>
 
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,182,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,227,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
@@ -303,7 +303,7 @@
 
                 <ComboBox x:Name="FontLibraryCmbBox" VerticalAlignment="Top" Margin="370,241,20,0" IsSynchronizedWithCurrentItem="False" UseLayoutRounding="False" Background="{Binding Background, ElementName=ColorCombobox}" Height="27" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" SelectedIndex="0" IsReadOnly="True" DropDownClosed="FontLibraryCmbBox_DropDownClosed" Foreground="{Binding Foreground, ElementName=ColorCombobox}"/>
 
-                <TextBox x:Name="FontChangeTextInTemplate" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="48" Height="27" TextWrapping="Wrap" Text="Это был лишь вопрос времени." VerticalAlignment="Top" Margin="370,286,20,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" KeyUp="FontChangeTextInTemplate_KeyUp"/>
+                <TextBox x:Name="FontChangeTextInTemplate" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="48" Height="27" Text="Это был лишь вопрос времени." VerticalAlignment="Top" Margin="370,286,20,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans"/>
             </Grid>
 
             <Grid x:Name="OtherSettingsGrid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">
