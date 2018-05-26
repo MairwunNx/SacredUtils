@@ -1,7 +1,7 @@
 # SacredUtils
 A simple and beautiful configurator for Sacred Underworld, with using the MaterialDesign.
 
-![Alt text](Web/images/snip_20180525173246.png "SacredUtils")
+![Alt text](images/snip_20180525173246.png "SacredUtils")
 
 # Summary
 
@@ -20,30 +20,30 @@ A simple and beautiful configurator for Sacred Underworld, with using the Materi
  
 # Screenshots
  
-![Alt text](Web/images/snip_20180525173256.png "SacredUtils graphics settings")
+![Alt text](images/snip_20180525173256.png "SacredUtils graphics settings")
 
-![Alt text](Web/images/snip_20180525173302.png "SacredUtils graphics settings")
+![Alt text](images/snip_20180525173302.png "SacredUtils graphics settings")
 
-![Alt text](Web/images/snip_20180525173312.png "SacredUtils sound settings")
+![Alt text](images/snip_20180525173312.png "SacredUtils sound settings")
 
-![Alt text](Web/images/snip_20180525173319.png "SacredUtils network settings")
+![Alt text](images/snip_20180525173319.png "SacredUtils network settings")
 
-![Alt text](Web/images/snip_20180525173326.png "SacredUtils network settings")
+![Alt text](images/snip_20180525173326.png "SacredUtils network settings")
 
-![Alt text](Web/images/snip_20180525173332.png "SacredUtils chat settings")
+![Alt text](images/snip_20180525173332.png "SacredUtils chat settings")
 
-![Alt text](Web/images/snip_20180525173339.png "SacredUtils game settings")
+![Alt text](images/snip_20180525173339.png "SacredUtils game settings")
 
-![Alt text](Web/images/snip_20180525173345.png "SacredUtils game settings")
+![Alt text](images/snip_20180525173345.png "SacredUtils game settings")
 
-![Alt text](Web/images/snip_20180525173353.png "SacredUtils fonts settings")
+![Alt text](images/snip_20180525173353.png "SacredUtils fonts settings")
 
-![Alt text](Web/images/snip_20180525173359.png "SacredUtils other settings")
+![Alt text](images/snip_20180525173359.png "SacredUtils other settings")
 
-![Alt text](Web/images/snip_20180525173406.png "SacredUtils modding screen")
+![Alt text](images/snip_20180525173406.png "SacredUtils modding screen")
 
-![Alt text](Web/images/snip_20180525173414.png "SacredUtils application settings")
+![Alt text](images/snip_20180525173414.png "SacredUtils application settings")
 
-![Alt text](Web/images/snip_20180525173423.png "SacredUtils about screen")
+![Alt text](images/snip_20180525173423.png "SacredUtils about screen")
 
-![Alt text](Web/images/snip_20180525173440.png "SacredUtils colorpicker screen")
+![Alt text](images/snip_20180525173440.png "SacredUtils colorpicker screen")

@@ -1,0 +1,110 @@
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils\SacredUtils\bin\Release\SacredUtils.exe.config
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils\SacredUtils\bin\Release\SacredUtils.exe
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils\SacredUtils\bin\Release\SacredUtils.pdb
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils\SacredUtils\obj\Release\MainWindow.g.cs
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils\SacredUtils\obj\Release\App.g.cs
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils\SacredUtils\obj\Release\SacredUtils_Content.g.cs
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils\SacredUtils\obj\Release\SacredUtils_MarkupCompile.cache
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils\SacredUtils\obj\Release\MainWindow.baml
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils\SacredUtils\obj\Release\SacredUtils.g.resources
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils\SacredUtils\obj\Release\SacredUtils.Properties.Resources.resources
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils\SacredUtils\obj\Release\SacredUtils.csproj.GenerateResource.cache
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils\SacredUtils\obj\Release\SacredUtils.csproj.CoreCompileInputs.cache
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils\SacredUtils\obj\Release\SacredUtils.exe
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils\SacredUtils\obj\Release\SacredUtils.pdb
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils\SacredUtils\obj\Release\App.baml
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .fonts\SacredUtils\bin\Release\SacredUtils.exe.config
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .fonts\SacredUtils\bin\Release\SacredUtils.exe
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .fonts\SacredUtils\bin\Release\SacredUtils.pdb
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .fonts\SacredUtils\bin\Release\log4net.dll
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .fonts\SacredUtils\bin\Release\MaterialDesignColors.dll
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .fonts\SacredUtils\bin\Release\MaterialDesignThemes.Wpf.dll
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .fonts\SacredUtils\obj\Release\SacredUtils.csprojResolveAssemblyReference.cache
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .fonts\SacredUtils\obj\Release\MainWindow.baml
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .fonts\SacredUtils\obj\Release\App.baml
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .fonts\SacredUtils\obj\Release\MainWindow.g.cs
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .fonts\SacredUtils\obj\Release\App.g.cs
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .fonts\SacredUtils\obj\Release\SacredUtils_Content.g.cs
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .fonts\SacredUtils\obj\Release\SacredUtils_MarkupCompile.cache
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .fonts\SacredUtils\obj\Release\SacredUtils.g.resources
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .fonts\SacredUtils\obj\Release\SacredUtils.Properties.Resources.resources
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .fonts\SacredUtils\obj\Release\SacredUtils.csproj.GenerateResource.cache
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .fonts\SacredUtils\obj\Release\SacredUtils.csproj.CoreCompileInputs.cache
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .fonts\SacredUtils\obj\Release\SacredUtils.csproj.CopyComplete
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .fonts\SacredUtils\obj\Release\SacredUtils.exe
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .fonts\SacredUtils\obj\Release\SacredUtils.pdb
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils — копия\SacredUtils\bin\Release\SacredUtils.exe.config
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils — копия\SacredUtils\bin\Release\SacredUtils.exe
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils — копия\SacredUtils\bin\Release\SacredUtils.pdb
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils — копия\SacredUtils\bin\Release\log4net.dll
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils — копия\SacredUtils\bin\Release\MaterialDesignColors.dll
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils — копия\SacredUtils\bin\Release\MaterialDesignThemes.Wpf.dll
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils — копия\SacredUtils\obj\Release\SacredUtils.csprojResolveAssemblyReference.cache
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils — копия\SacredUtils\obj\Release\MainWindow.baml
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils — копия\SacredUtils\obj\Release\App.baml
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils — копия\SacredUtils\obj\Release\MainWindow.g.cs
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils — копия\SacredUtils\obj\Release\App.g.cs
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils — копия\SacredUtils\obj\Release\SacredUtils_Content.g.cs
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils — копия\SacredUtils\obj\Release\SacredUtils_MarkupCompile.cache
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils — копия\SacredUtils\obj\Release\SacredUtils.g.resources
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils — копия\SacredUtils\obj\Release\SacredUtils.Properties.Resources.resources
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils — копия\SacredUtils\obj\Release\SacredUtils.csproj.GenerateResource.cache
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils — копия\SacredUtils\obj\Release\SacredUtils.csproj.CoreCompileInputs.cache
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils — копия\SacredUtils\obj\Release\SacredUtils.csproj.CopyComplete
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils — копия\SacredUtils\obj\Release\SacredUtils.exe
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils — копия\SacredUtils\obj\Release\SacredUtils.pdb
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils\SacredUtils\obj\Release\SacredUtils.csprojAssemblyReference.cache
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .UpdateDesign\SacredUtils\bin\Release\SacredUtils.exe.config
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .UpdateDesign\SacredUtils\bin\Release\SacredUtils.exe
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .UpdateDesign\SacredUtils\bin\Release\SacredUtils.pdb
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .UpdateDesign\SacredUtils\bin\Release\log4net.dll
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .UpdateDesign\SacredUtils\bin\Release\MaterialDesignColors.dll
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .UpdateDesign\SacredUtils\bin\Release\MaterialDesignThemes.Wpf.dll
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .UpdateDesign\SacredUtils\obj\Release\SacredUtils.csprojAssemblyReference.cache
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .UpdateDesign\SacredUtils\obj\Release\MainWindow.baml
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .UpdateDesign\SacredUtils\obj\Release\App.baml
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .UpdateDesign\SacredUtils\obj\Release\MainWindow.g.cs
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .UpdateDesign\SacredUtils\obj\Release\App.g.cs
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .UpdateDesign\SacredUtils\obj\Release\SacredUtils_Content.g.cs
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .UpdateDesign\SacredUtils\obj\Release\SacredUtils_MarkupCompile.cache
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .UpdateDesign\SacredUtils\obj\Release\SacredUtils.g.resources
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .UpdateDesign\SacredUtils\obj\Release\SacredUtils.Properties.Resources.resources
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .UpdateDesign\SacredUtils\obj\Release\SacredUtils.csproj.GenerateResource.cache
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .UpdateDesign\SacredUtils\obj\Release\SacredUtils.csproj.CoreCompileInputs.cache
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .UpdateDesign\SacredUtils\obj\Release\SacredUtils.csproj.CopyComplete
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .UpdateDesign\SacredUtils\obj\Release\SacredUtils.exe
+C:\Users\Nynxx\Desktop\MairwunNx Projects\SacredUtils .UpdateDesign\SacredUtils\obj\Release\SacredUtils.pdb
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils\bin\Release\SacredUtils.exe.config
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils\bin\Release\SacredUtils.exe
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils\bin\Release\SacredUtils.pdb
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils\obj\Release\MainWindow.baml
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils\obj\Release\App.baml
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils\obj\Release\MainWindow.g.cs
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils\obj\Release\App.g.cs
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils\obj\Release\SacredUtils_Content.g.cs
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils\obj\Release\SacredUtils_MarkupCompile.cache
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils\obj\Release\SacredUtils.g.resources
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils\obj\Release\SacredUtils.Properties.Resources.resources
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils\obj\Release\SacredUtils.csproj.GenerateResource.cache
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils\obj\Release\SacredUtils.csproj.CoreCompileInputs.cache
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils\obj\Release\SacredUtils.exe
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils\obj\Release\SacredUtils.pdb
+C:\Users\Nynxx\Desktop\Projects\SacredUtils\SacredUtils .RU\SacredUtils\obj\Release\SacredUtils.csprojAssemblyReference.cache
+C:\Users\Nynxx\Documents\GitHub\SacredUtils\SacredUtils\bin\Release\SacredUtils.exe.config
+C:\Users\Nynxx\Documents\GitHub\SacredUtils\SacredUtils\bin\Release\SacredUtils.exe
+C:\Users\Nynxx\Documents\GitHub\SacredUtils\SacredUtils\bin\Release\SacredUtils.pdb
+C:\Users\Nynxx\Documents\GitHub\SacredUtils\SacredUtils\obj\Release\SacredUtils.csprojAssemblyReference.cache
+C:\Users\Nynxx\Documents\GitHub\SacredUtils\SacredUtils\obj\Release\MainWindow.baml
+C:\Users\Nynxx\Documents\GitHub\SacredUtils\SacredUtils\obj\Release\Resources\Windows\ColorWindow.baml
+C:\Users\Nynxx\Documents\GitHub\SacredUtils\SacredUtils\obj\Release\App.baml
+C:\Users\Nynxx\Documents\GitHub\SacredUtils\SacredUtils\obj\Release\MainWindow.g.cs
+C:\Users\Nynxx\Documents\GitHub\SacredUtils\SacredUtils\obj\Release\Resources\Windows\ColorWindow.g.cs
+C:\Users\Nynxx\Documents\GitHub\SacredUtils\SacredUtils\obj\Release\App.g.cs
+C:\Users\Nynxx\Documents\GitHub\SacredUtils\SacredUtils\obj\Release\SacredUtils_Content.g.cs
+C:\Users\Nynxx\Documents\GitHub\SacredUtils\SacredUtils\obj\Release\SacredUtils_MarkupCompile.cache
+C:\Users\Nynxx\Documents\GitHub\SacredUtils\SacredUtils\obj\Release\SacredUtils.g.resources
+C:\Users\Nynxx\Documents\GitHub\SacredUtils\SacredUtils\obj\Release\SacredUtils.Properties.Resources.resources
+C:\Users\Nynxx\Documents\GitHub\SacredUtils\SacredUtils\obj\Release\SacredUtils.csproj.GenerateResource.cache
+C:\Users\Nynxx\Documents\GitHub\SacredUtils\SacredUtils\obj\Release\SacredUtils.csproj.CoreCompileInputs.cache
+C:\Users\Nynxx\Documents\GitHub\SacredUtils\SacredUtils\obj\Release\SacredUtils.exe
+C:\Users\Nynxx\Documents\GitHub\SacredUtils\SacredUtils\obj\Release\SacredUtils.pdb
