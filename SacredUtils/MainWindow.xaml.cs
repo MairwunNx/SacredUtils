@@ -1,6 +1,7 @@
 ﻿using System;
 using log4net;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Diagnostics;
@@ -10,7 +11,6 @@ using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Controls;
-using MaterialDesignThemes.Wpf;
 using SacredUtils.Resources.Core;
 using System.Collections.Generic;
 using SacredUtils.Resources.Logger;
@@ -193,235 +193,157 @@ namespace SacredUtils
         {
             if (SettingsListBox.SelectedIndex == 0)
             {
+                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
+                {
+                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
+                }
+
                 NotSelectedLbl.Visibility = Visibility.Hidden;
+
                 GraphicsSettings01Grid.Visibility = Visibility.Visible;
-                GraphicsSettings02Grid.Visibility = Visibility.Hidden;
-                SoundSettingsGrid.Visibility = Visibility.Hidden;
-                NetworkSettings01Grid.Visibility = Visibility.Hidden;
-                NetworkSettings02Grid.Visibility = Visibility.Hidden;
-                ChatSettingsGrid.Visibility = Visibility.Hidden;
-                GameSettings01Grid.Visibility = Visibility.Hidden;
-                GameSettings02Grid.Visibility = Visibility.Hidden;
-                FontsSettingsGrid.Visibility = Visibility.Hidden;
-                OtherSettingsGrid.Visibility = Visibility.Hidden;
-                ModdingSettingsGrid.Visibility = Visibility.Hidden;
-                AppSettingsGrid.Visibility = Visibility.Hidden;
-                AboutGrid.Visibility = Visibility.Hidden;
             }
 
             if (SettingsListBox.SelectedIndex == 1)
             {
+                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
+                {
+                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
+                }
+
                 NotSelectedLbl.Visibility = Visibility.Hidden;
-                GraphicsSettings01Grid.Visibility = Visibility.Hidden;
+
                 GraphicsSettings02Grid.Visibility = Visibility.Visible;
-                SoundSettingsGrid.Visibility = Visibility.Hidden;
-                NetworkSettings01Grid.Visibility = Visibility.Hidden;
-                NetworkSettings02Grid.Visibility = Visibility.Hidden;
-                ChatSettingsGrid.Visibility = Visibility.Hidden;
-                GameSettings01Grid.Visibility = Visibility.Hidden;
-                GameSettings02Grid.Visibility = Visibility.Hidden;
-                FontsSettingsGrid.Visibility = Visibility.Hidden;
-                OtherSettingsGrid.Visibility = Visibility.Hidden;
-                ModdingSettingsGrid.Visibility = Visibility.Hidden;
-                AppSettingsGrid.Visibility = Visibility.Hidden;
-                AboutGrid.Visibility = Visibility.Hidden;
             }
 
             if (SettingsListBox.SelectedIndex == 2)
             {
+                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
+                {
+                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
+                }
+
                 NotSelectedLbl.Visibility = Visibility.Hidden;
-                GraphicsSettings01Grid.Visibility = Visibility.Hidden;
-                GraphicsSettings02Grid.Visibility = Visibility.Hidden;
+
                 SoundSettingsGrid.Visibility = Visibility.Visible;
-                NetworkSettings01Grid.Visibility = Visibility.Hidden;
-                NetworkSettings02Grid.Visibility = Visibility.Hidden;
-                ChatSettingsGrid.Visibility = Visibility.Hidden;
-                GameSettings01Grid.Visibility = Visibility.Hidden;
-                GameSettings02Grid.Visibility = Visibility.Hidden;
-                FontsSettingsGrid.Visibility = Visibility.Hidden;
-                OtherSettingsGrid.Visibility = Visibility.Hidden;
-                ModdingSettingsGrid.Visibility = Visibility.Hidden;
-                AppSettingsGrid.Visibility = Visibility.Hidden;
-                AboutGrid.Visibility = Visibility.Hidden;
             }
 
             if (SettingsListBox.SelectedIndex == 3)
             {
+                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
+                {
+                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
+                }
+
                 NotSelectedLbl.Visibility = Visibility.Hidden;
-                GraphicsSettings01Grid.Visibility = Visibility.Hidden;
-                GraphicsSettings02Grid.Visibility = Visibility.Hidden;
-                SoundSettingsGrid.Visibility = Visibility.Hidden;
+
                 NetworkSettings01Grid.Visibility = Visibility.Visible;
-                NetworkSettings02Grid.Visibility = Visibility.Hidden;
-                ChatSettingsGrid.Visibility = Visibility.Hidden;
-                GameSettings01Grid.Visibility = Visibility.Hidden;
-                GameSettings02Grid.Visibility = Visibility.Hidden;
-                FontsSettingsGrid.Visibility = Visibility.Hidden;
-                OtherSettingsGrid.Visibility = Visibility.Hidden;
-                ModdingSettingsGrid.Visibility = Visibility.Hidden;
-                AppSettingsGrid.Visibility = Visibility.Hidden;
-                AboutGrid.Visibility = Visibility.Hidden;
             }
 
             if (SettingsListBox.SelectedIndex == 4)
             {
+                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
+                {
+                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
+                }
+
                 NotSelectedLbl.Visibility = Visibility.Hidden;
-                GraphicsSettings01Grid.Visibility = Visibility.Hidden;
-                GraphicsSettings02Grid.Visibility = Visibility.Hidden;
-                SoundSettingsGrid.Visibility = Visibility.Hidden;
-                NetworkSettings01Grid.Visibility = Visibility.Hidden;
+
                 NetworkSettings02Grid.Visibility = Visibility.Visible;
-                ChatSettingsGrid.Visibility = Visibility.Hidden;
-                GameSettings01Grid.Visibility = Visibility.Hidden;
-                GameSettings02Grid.Visibility = Visibility.Hidden;
-                FontsSettingsGrid.Visibility = Visibility.Hidden;
-                OtherSettingsGrid.Visibility = Visibility.Hidden;
-                ModdingSettingsGrid.Visibility = Visibility.Hidden;
-                AppSettingsGrid.Visibility = Visibility.Hidden;
-                AboutGrid.Visibility = Visibility.Hidden;
             }
 
             if (SettingsListBox.SelectedIndex == 5)
             {
+                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
+                {
+                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
+                }
+
                 NotSelectedLbl.Visibility = Visibility.Hidden;
-                GraphicsSettings01Grid.Visibility = Visibility.Hidden;
-                GraphicsSettings02Grid.Visibility = Visibility.Hidden;
-                SoundSettingsGrid.Visibility = Visibility.Hidden;
-                NetworkSettings01Grid.Visibility = Visibility.Hidden;
-                NetworkSettings02Grid.Visibility = Visibility.Hidden;
+
                 ChatSettingsGrid.Visibility = Visibility.Visible;
-                GameSettings01Grid.Visibility = Visibility.Hidden;
-                GameSettings02Grid.Visibility = Visibility.Hidden;
-                FontsSettingsGrid.Visibility = Visibility.Hidden;
-                OtherSettingsGrid.Visibility = Visibility.Hidden;
-                ModdingSettingsGrid.Visibility = Visibility.Hidden;
-                AppSettingsGrid.Visibility = Visibility.Hidden;
-                AboutGrid.Visibility = Visibility.Hidden;
             }
 
             if (SettingsListBox.SelectedIndex == 6)
             {
+                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
+                {
+                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
+                }
+
                 NotSelectedLbl.Visibility = Visibility.Hidden;
-                GraphicsSettings01Grid.Visibility = Visibility.Hidden;
-                GraphicsSettings02Grid.Visibility = Visibility.Hidden;
-                SoundSettingsGrid.Visibility = Visibility.Hidden;
-                NetworkSettings01Grid.Visibility = Visibility.Hidden;
-                NetworkSettings02Grid.Visibility = Visibility.Hidden;
-                ChatSettingsGrid.Visibility = Visibility.Hidden;
+
                 GameSettings01Grid.Visibility = Visibility.Visible;
-                GameSettings02Grid.Visibility = Visibility.Hidden;
-                FontsSettingsGrid.Visibility = Visibility.Hidden;
-                OtherSettingsGrid.Visibility = Visibility.Hidden;
-                ModdingSettingsGrid.Visibility = Visibility.Hidden;
-                AppSettingsGrid.Visibility = Visibility.Hidden;
-                AboutGrid.Visibility = Visibility.Hidden;
             }
 
             if (SettingsListBox.SelectedIndex == 7)
             {
+                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
+                {
+                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
+                }
+
                 NotSelectedLbl.Visibility = Visibility.Hidden;
-                GraphicsSettings01Grid.Visibility = Visibility.Hidden;
-                GraphicsSettings02Grid.Visibility = Visibility.Hidden;
-                SoundSettingsGrid.Visibility = Visibility.Hidden;
-                NetworkSettings01Grid.Visibility = Visibility.Hidden;
-                NetworkSettings02Grid.Visibility = Visibility.Hidden;
-                ChatSettingsGrid.Visibility = Visibility.Hidden;
-                GameSettings01Grid.Visibility = Visibility.Hidden;
+
                 GameSettings02Grid.Visibility = Visibility.Visible;
-                FontsSettingsGrid.Visibility = Visibility.Hidden;
-                OtherSettingsGrid.Visibility = Visibility.Hidden;
-                ModdingSettingsGrid.Visibility = Visibility.Hidden;
-                AppSettingsGrid.Visibility = Visibility.Hidden;
-                AboutGrid.Visibility = Visibility.Hidden;
             }
 
             if (SettingsListBox.SelectedIndex == 8)
             {
+                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
+                {
+                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
+                }
+
                 NotSelectedLbl.Visibility = Visibility.Hidden;
-                GraphicsSettings01Grid.Visibility = Visibility.Hidden;
-                GraphicsSettings02Grid.Visibility = Visibility.Hidden;
-                SoundSettingsGrid.Visibility = Visibility.Hidden;
-                NetworkSettings01Grid.Visibility = Visibility.Hidden;
-                NetworkSettings02Grid.Visibility = Visibility.Hidden;
-                ChatSettingsGrid.Visibility = Visibility.Hidden;
-                GameSettings01Grid.Visibility = Visibility.Hidden;
-                GameSettings02Grid.Visibility = Visibility.Hidden;
+
                 FontsSettingsGrid.Visibility = Visibility.Visible;
-                OtherSettingsGrid.Visibility = Visibility.Hidden;
-                ModdingSettingsGrid.Visibility = Visibility.Hidden;
-                AppSettingsGrid.Visibility = Visibility.Hidden;
-                AboutGrid.Visibility = Visibility.Hidden;
             }
 
             if (SettingsListBox.SelectedIndex == 9)
             {
+                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
+                {
+                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
+                }
+
                 NotSelectedLbl.Visibility = Visibility.Hidden;
-                GraphicsSettings01Grid.Visibility = Visibility.Hidden;
-                GraphicsSettings02Grid.Visibility = Visibility.Hidden;
-                SoundSettingsGrid.Visibility = Visibility.Hidden;
-                NetworkSettings01Grid.Visibility = Visibility.Hidden;
-                NetworkSettings02Grid.Visibility = Visibility.Hidden;
-                ChatSettingsGrid.Visibility = Visibility.Hidden;
-                GameSettings01Grid.Visibility = Visibility.Hidden;
-                GameSettings02Grid.Visibility = Visibility.Hidden;
-                FontsSettingsGrid.Visibility = Visibility.Hidden;
+
                 OtherSettingsGrid.Visibility = Visibility.Visible;
-                ModdingSettingsGrid.Visibility = Visibility.Hidden;
-                AppSettingsGrid.Visibility = Visibility.Hidden;
-                AboutGrid.Visibility = Visibility.Hidden;
             }
 
             if (SettingsListBox.SelectedIndex == 10)
             {
+                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
+                {
+                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
+                }
+
                 NotSelectedLbl.Visibility = Visibility.Hidden;
-                GraphicsSettings01Grid.Visibility = Visibility.Hidden;
-                GraphicsSettings02Grid.Visibility = Visibility.Hidden;
-                SoundSettingsGrid.Visibility = Visibility.Hidden;
-                NetworkSettings01Grid.Visibility = Visibility.Hidden;
-                NetworkSettings02Grid.Visibility = Visibility.Hidden;
-                ChatSettingsGrid.Visibility = Visibility.Hidden;
-                GameSettings01Grid.Visibility = Visibility.Hidden;
-                GameSettings02Grid.Visibility = Visibility.Hidden;
-                FontsSettingsGrid.Visibility = Visibility.Hidden;
-                OtherSettingsGrid.Visibility = Visibility.Hidden;
+
                 ModdingSettingsGrid.Visibility = Visibility.Visible;
-                AppSettingsGrid.Visibility = Visibility.Hidden;
-                AboutGrid.Visibility = Visibility.Hidden;
             }
 
             if (SettingsListBox.SelectedIndex == 11)
             {
+                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
+                {
+                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
+                }
+
                 NotSelectedLbl.Visibility = Visibility.Hidden;
-                GraphicsSettings01Grid.Visibility = Visibility.Hidden;
-                GraphicsSettings02Grid.Visibility = Visibility.Hidden;
-                SoundSettingsGrid.Visibility = Visibility.Hidden;
-                NetworkSettings01Grid.Visibility = Visibility.Hidden;
-                NetworkSettings02Grid.Visibility = Visibility.Hidden;
-                ChatSettingsGrid.Visibility = Visibility.Hidden;
-                GameSettings01Grid.Visibility = Visibility.Hidden;
-                GameSettings02Grid.Visibility = Visibility.Hidden;
-                FontsSettingsGrid.Visibility = Visibility.Hidden;
-                OtherSettingsGrid.Visibility = Visibility.Hidden;
-                ModdingSettingsGrid.Visibility = Visibility.Hidden;
+
                 AppSettingsGrid.Visibility = Visibility.Visible;
-                AboutGrid.Visibility = Visibility.Hidden;
             }
 
             if (SettingsListBox.SelectedIndex == 12)
             {
+                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
+                {
+                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
+                }
+
                 NotSelectedLbl.Visibility = Visibility.Hidden;
-                GraphicsSettings01Grid.Visibility = Visibility.Hidden;
-                GraphicsSettings02Grid.Visibility = Visibility.Hidden;
-                SoundSettingsGrid.Visibility = Visibility.Hidden;
-                NetworkSettings01Grid.Visibility = Visibility.Hidden;
-                NetworkSettings02Grid.Visibility = Visibility.Hidden;
-                ChatSettingsGrid.Visibility = Visibility.Hidden;
-                GameSettings01Grid.Visibility = Visibility.Hidden;
-                GameSettings02Grid.Visibility = Visibility.Hidden;
-                FontsSettingsGrid.Visibility = Visibility.Hidden;
-                OtherSettingsGrid.Visibility = Visibility.Hidden;
-                ModdingSettingsGrid.Visibility = Visibility.Hidden;
-                AppSettingsGrid.Visibility = Visibility.Hidden;
+
                 AboutGrid.Visibility = Visibility.Visible;
             }
 
@@ -502,7 +424,7 @@ namespace SacredUtils
 
             try
             {
-                for (int i = 0; i < text.Length; i++)
+                for (var i = 0; i < text.Length; i++)
                 {
                     if (text[i].Contains("FONT : 1, "))
                     {
@@ -527,7 +449,7 @@ namespace SacredUtils
 
             Log.Info("Загружаем цветовые схемы для SacredUtils.");
 
-            for (int i = 0; i < text1.Length; i++)
+            for (var i = 0; i < text1.Length; i++)
             {
                 if (text1[i].Contains("User interface color SacredUtils = default") || text1[i].Contains("User interface color SacredUtils = indigo"))
                 {
