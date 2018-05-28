@@ -531,698 +531,157 @@ namespace SacredUtils
             {
                 if (text1[i].Contains("User interface color SacredUtils = default") || text1[i].Contains("User interface color SacredUtils = indigo"))
                 {
-                    BrushConverter bc = new BrushConverter();
+                    var colorWindow = new ColorWindow(); colorWindow.Close();
 
-                    AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-
-                    CloseIcon.Foreground = (Brush)bc.ConvertFrom("#7986cb");
-                    MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#7986cb");
-                    StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#303f9f");
-                    StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#3f51b5");
-                    StackPanelLight.Background = (Brush)bc.ConvertFrom("#c5cae9");
-
-                    SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                    ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                    ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                    ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                    ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    var palette = new PaletteHelper();
-
-                    palette.ReplacePrimaryColor("Indigo");
+                    colorWindow.ChangeColor("#7986cb", "#303f9f", "#3f51b5", "#c5cae9", "Indigo", "#FFFFFFFF");
                 }
 
                 if (text1[i].Contains("User interface color SacredUtils = red"))
                 {
-                    BrushConverter bc = new BrushConverter();
+                    var colorWindow = new ColorWindow(); colorWindow.Close();
 
-                    AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-
-                    CloseIcon.Foreground = (Brush)bc.ConvertFrom("#e57373");
-                    MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#e57373");
-                    StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#d32f2f");
-                    StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#f44336");
-                    StackPanelLight.Background = (Brush)bc.ConvertFrom("#ffcdd2");
-
-                    SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                    ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                    ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                    ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                    ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    var palette = new PaletteHelper(); palette.ReplacePrimaryColor("Red");
+                    colorWindow.ChangeColor("#e57373", "#d32f2f", "#f44336", "#ffcdd2", "Red", "#FFFFFFFF");
                 }
 
                 if (text1[i].Contains("User interface color SacredUtils = pink"))
                 {
-                    BrushConverter bc = new BrushConverter();
+                    var colorWindow = new ColorWindow(); colorWindow.Close();
 
-                    AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-
-                    CloseIcon.Foreground = (Brush)bc.ConvertFrom("#f06292");
-                    MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#f06292");
-                    StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#c2185b");
-                    StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#e91e63");
-                    StackPanelLight.Background = (Brush)bc.ConvertFrom("#f8bbd0");
-
-                    SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                    ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                    ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                    ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                    ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    var palette = new PaletteHelper(); palette.ReplacePrimaryColor("Pink");
+                    colorWindow.ChangeColor("#f06292", "#c2185b", "#e91e63", "#f8bbd0", "Pink", "#FFFFFFFF");
                 }
 
                 if (text1[i].Contains("User interface color SacredUtils = purple"))
                 {
-                    BrushConverter bc = new BrushConverter();
+                    var colorWindow = new ColorWindow(); colorWindow.Close();
 
-                    AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-
-                    CloseIcon.Foreground = (Brush)bc.ConvertFrom("#ba68c8");
-                    MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#ba68c8");
-                    StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#7b1fa2");
-                    StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#9c27b0");
-                    StackPanelLight.Background = (Brush)bc.ConvertFrom("#e1bee7");
-
-                    SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                    ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                    ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                    ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                    ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    var palette = new PaletteHelper();
-
-                    palette.ReplacePrimaryColor("Purple");
+                    colorWindow.ChangeColor("#ba68c8", "#7b1fa2", "#9c27b0", "#e1bee7", "Purple", "#FFFFFFFF");
                 }
 
                 if (text1[i].Contains("User interface color SacredUtils = deeppurple"))
                 {
-                    BrushConverter bc = new BrushConverter();
+                    var colorWindow = new ColorWindow(); colorWindow.Close();
 
-                    AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-
-                    CloseIcon.Foreground = (Brush)bc.ConvertFrom("#9575cd");
-                    MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#9575cd");
-                    StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#512da8");
-                    StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#673ab7");
-                    StackPanelLight.Background = (Brush)bc.ConvertFrom("#d1c4e9");
-
-                    SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                    ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                    ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                    ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                    ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    var palette = new PaletteHelper();
-
-                    palette.ReplacePrimaryColor("DeepPurple");
+                    colorWindow.ChangeColor("#9575cd", "#512da8", "#673ab7", "#d1c4e9", "DeepPurple", "#FFFFFFFF");
                 }
 
                 if (text1[i].Contains("User interface color SacredUtils = blue"))
                 {
-                    BrushConverter bc = new BrushConverter();
+                    var colorWindow = new ColorWindow(); colorWindow.Close();
 
-                    AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-
-                    SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                    ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                    ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                    ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                    CloseIcon.Foreground = (Brush)bc.ConvertFrom("#64b5f6");
-                    MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#64b5f6");
-                    StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#1976d2");
-                    StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#2196f3");
-                    StackPanelLight.Background = (Brush)bc.ConvertFrom("#bbdefb");
-
-                    ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    var palette = new PaletteHelper();
-
-                    palette.ReplacePrimaryColor("Blue");
+                    colorWindow.ChangeColor("#64b5f6", "#1976d2", "#2196f3", "#bbdefb", "Blue", "#FFFFFFFF");
                 }
 
                 if (text1[i].Contains("User interface color SacredUtils = lightblue"))
                 {
-                    BrushConverter bc = new BrushConverter();
+                    var colorWindow = new ColorWindow(); colorWindow.Close();
 
-                    AppCaption.Foreground = (Brush)bc.ConvertFrom("#000000");
-                    ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-                    GithubIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-
-                    CloseIcon.Foreground = (Brush)bc.ConvertFrom("#4fc3f7");
-                    MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#4fc3f7");
-                    StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#0288d1");
-                    StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#03a9f4");
-                    StackPanelLight.Background = (Brush)bc.ConvertFrom("#b3e5fc");
-
-                    SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                    ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                    ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                    ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                    ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    var palette = new PaletteHelper();
-
-                    palette.ReplacePrimaryColor("LightBlue");
+                    colorWindow.ChangeColor("#4fc3f7", "#0288d1", "#03a9f4", "#b3e5fc", "LightBlue", "#000000");
                 }
 
                 if (text1[i].Contains("User interface color SacredUtils = cyan"))
                 {
-                    BrushConverter bc = new BrushConverter();
+                    var colorWindow = new ColorWindow(); colorWindow.Close();
 
-                    AppCaption.Foreground = (Brush)bc.ConvertFrom("#000000");
-                    ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-                    GithubIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-
-                    CloseIcon.Foreground = (Brush)bc.ConvertFrom("#4dd0e1");
-                    MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#4dd0e1");
-                    StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#0097a7");
-                    StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#00bcd4");
-                    StackPanelLight.Background = (Brush)bc.ConvertFrom("#b2ebf2");
-
-                    SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                    ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                    ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                    ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                    ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    var palette = new PaletteHelper();
-
-                    palette.ReplacePrimaryColor("Cyan");
+                    colorWindow.ChangeColor("#4dd0e1", "#0097a7", "#00bcd4", "#b2ebf2", "Cyan", "#000000");
                 }
 
                 if (text1[i].Contains("User interface color SacredUtils = teal"))
                 {
-                    BrushConverter bc = new BrushConverter();
+                    var colorWindow = new ColorWindow(); colorWindow.Close();
 
-                    AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-
-                    CloseIcon.Foreground = (Brush)bc.ConvertFrom("#4db6ac");
-                    MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#4db6ac");
-                    StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#00796b");
-                    StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#009688");
-                    StackPanelLight.Background = (Brush)bc.ConvertFrom("#b2dfdb");
-
-                    SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                    ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                    ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                    ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                    ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    var palette = new PaletteHelper();
-
-                    palette.ReplacePrimaryColor("Teal");
+                    colorWindow.ChangeColor("#4db6ac", "#00796b", "#009688", "#b2dfdb", "Teal", "#ffffff");
                 }
 
                 if (text1[i].Contains("User interface color SacredUtils = green"))
                 {
-                    BrushConverter bc = new BrushConverter();
+                    var colorWindow = new ColorWindow(); colorWindow.Close();
 
-                    AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    
-                    CloseIcon.Foreground = (Brush)bc.ConvertFrom("#81c784");
-                    MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#81c784");
-                    StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#388e3c");
-                    StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#4caf50");
-                    StackPanelLight.Background = (Brush)bc.ConvertFrom("#c8e6c9");
-
-                    SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                    ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                    ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                    ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                    ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    var palette = new PaletteHelper();
-
-                    palette.ReplacePrimaryColor("Green");
+                    colorWindow.ChangeColor("#81c784", "#388e3c", "#4caf50", "#c8e6c9", "Green", "#ffffff");
                 }
 
                 if (text1[i].Contains("User interface color SacredUtils = lightgreen"))
                 {
-                    BrushConverter bc = new BrushConverter();
+                    var colorWindow = new ColorWindow(); colorWindow.Close();
 
-                    AppCaption.Foreground = (Brush)bc.ConvertFrom("#000000");
-                    ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-                    GithubIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-
-                    CloseIcon.Foreground = (Brush)bc.ConvertFrom("#aed581");
-                    MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#aed581");
-                    StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#689f38");
-                    StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#8bc34a");
-                    StackPanelLight.Background = (Brush)bc.ConvertFrom("#dcedc8");
-
-                    SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                    ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                    ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                    ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                    ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    var palette = new PaletteHelper();
-
-                    palette.ReplacePrimaryColor("LightGreen");
+                    colorWindow.ChangeColor("#aed581", "#689f38", "#8bc34a", "#dcedc8", "LightGreen", "#000000");
                 }
 
                 if (text1[i].Contains("User interface color SacredUtils = lime"))
                 {
-                    BrushConverter bc = new BrushConverter();
+                    var colorWindow = new ColorWindow(); colorWindow.Close();
 
-                    AppCaption.Foreground = (Brush)bc.ConvertFrom("#000000");
-                    ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-                    GithubIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-
-                    CloseIcon.Foreground = (Brush)bc.ConvertFrom("#dce775");
-                    MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#dce775");
-                    StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#afb42b");
-                    StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#cddc39");
-                    StackPanelLight.Background = (Brush)bc.ConvertFrom("#f0f4c3");
-
-                    SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                    ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                    ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                    ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                    ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    var palette = new PaletteHelper();
-
-                    palette.ReplacePrimaryColor("Lime");
+                    colorWindow.ChangeColor("#dce775", "#afb42b", "#cddc39", "#f0f4c3", "Lime", "#000000");
                 }
 
                 if (text1[i].Contains("User interface color SacredUtils = yellow"))
                 {
-                    BrushConverter bc = new BrushConverter();
+                    var colorWindow = new ColorWindow(); colorWindow.Close();
 
-                    AppCaption.Foreground = (Brush)bc.ConvertFrom("#000000");
-                    ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-                    GithubIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-
-                    CloseIcon.Foreground = (Brush)bc.ConvertFrom("#fff176");
-                    MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#fff176");
-                    StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#fbc02d");
-                    StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#ffeb3b");
-                    StackPanelLight.Background = (Brush)bc.ConvertFrom("#fff9c4");
-
-                    SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                    ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                    ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                    ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                    ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    var palette = new PaletteHelper();
-
-                    palette.ReplacePrimaryColor("Yellow");
+                    colorWindow.ChangeColor("#fff176", "#fbc02d", "#ffeb3b", "#fff9c4", "Yellow", "#000000");
                 }
 
                 if (text1[i].Contains("User interface color SacredUtils = amber"))
                 {
-                    BrushConverter bc = new BrushConverter();
+                    var colorWindow = new ColorWindow(); colorWindow.Close();
 
-                    AppCaption.Foreground = (Brush)bc.ConvertFrom("#000000");
-                    ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-                    GithubIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-
-                    CloseIcon.Foreground = (Brush)bc.ConvertFrom("#ffd54f");
-                    MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#ffd54f");
-                    StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#ffa000");
-                    StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#ffc107");
-                    StackPanelLight.Background = (Brush)bc.ConvertFrom("#ffecb3");
-
-                    SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                    ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                    ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                    ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                    ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    var palette = new PaletteHelper();
-
-                    palette.ReplacePrimaryColor("Amber");
+                    colorWindow.ChangeColor("#ffd54f", "#ffa000", "#ffc107", "#ffecb3", "Amber", "#000000");
                 }
 
                 if (text1[i].Contains("User interface color SacredUtils = orange"))
                 {
-                    BrushConverter bc = new BrushConverter();
+                    var colorWindow = new ColorWindow(); colorWindow.Close();
 
-                    AppCaption.Foreground = (Brush)bc.ConvertFrom("#000000");
-                    ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-                    GithubIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-
-                    CloseIcon.Foreground = (Brush)bc.ConvertFrom("#ffb74d");
-                    MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#ffb74d");
-                    StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#f57c00");
-                    StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#ff9800");
-                    StackPanelLight.Background = (Brush)bc.ConvertFrom("#ffe0b2");
-
-                    SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                    ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                    ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                    ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                    ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    var palette = new PaletteHelper();
-
-                    palette.ReplacePrimaryColor("Orange");
+                    colorWindow.ChangeColor("#ffb74d", "#f57c00", "#ff9800", "#ffe0b2", "Orange", "#000000");
                 }
 
                 if (text1[i].Contains("User interface color SacredUtils = deeporange"))
                 {
-                    BrushConverter bc = new BrushConverter();
+                    var colorWindow = new ColorWindow(); colorWindow.Close();
 
-                    AppCaption.Foreground = (Brush)bc.ConvertFrom("#000000");
-                    ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-                    GithubIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-
-                    CloseIcon.Foreground = (Brush)bc.ConvertFrom("#ff8a65");
-                    MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#ff8a65");
-                    StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#e64a19");
-                    StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#ff5722");
-                    StackPanelLight.Background = (Brush)bc.ConvertFrom("#ffccbc");
-
-                    SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                    ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                    ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                    ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                    ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    var palette = new PaletteHelper();
-
-                    palette.ReplacePrimaryColor("DeepOrange");
+                    colorWindow.ChangeColor("#ff8a65", "#e64a19", "#ff5722", "#ffccbc", "DeepOrange", "#000000");
                 }
 
                 if (text1[i].Contains("User interface color SacredUtils = brown"))
                 {
-                    BrushConverter bc = new BrushConverter();
+                    var colorWindow = new ColorWindow(); colorWindow.Close();
 
-                    AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-
-                    CloseIcon.Foreground = (Brush)bc.ConvertFrom("#a1887f");
-                    MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#a1887f");
-                    StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#5d4037");
-                    StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#795548");
-                    StackPanelLight.Background = (Brush)bc.ConvertFrom("#d7ccc8");
-
-                    SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                    ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                    ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                    ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                    ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    var palette = new PaletteHelper();
-
-                    palette.ReplacePrimaryColor("Brown");
+                    colorWindow.ChangeColor("#a1887f", "#5d4037", "#795548", "#d7ccc8", "Brown", "#ffffff");
                 }
 
                 if (text1[i].Contains("User interface color SacredUtils = grey"))
                 {
-                    BrushConverter bc = new BrushConverter();
+                    var colorWindow = new ColorWindow(); colorWindow.Close();
 
-                    AppCaption.Foreground = (Brush)bc.ConvertFrom("#000000");
-                    ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-                    GithubIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-
-                    CloseIcon.Foreground = (Brush)bc.ConvertFrom("#e0e0e0");
-                    MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#e0e0e0");
-                    StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#616161");
-                    StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#9e9e9e");
-                    StackPanelLight.Background = (Brush)bc.ConvertFrom("#f5f5f5");
-
-                    SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                    ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                    ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                    ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                    ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    var palette = new PaletteHelper();
-
-                    palette.ReplacePrimaryColor("Grey");
+                    colorWindow.ChangeColor("#e0e0e0", "#616161", "#9e9e9e", "#f5f5f5", "Grey", "#000000");
                 }
 
                 if (text1[i].Contains("User interface color SacredUtils = bluegrey"))
                 {
-                    BrushConverter bc = new BrushConverter();
+                    var colorWindow = new ColorWindow(); colorWindow.Close();
 
-                    AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-
-                    CloseIcon.Foreground = (Brush)bc.ConvertFrom("#90a4ae");
-                    MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#90a4ae");
-                    StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#455a64");
-                    StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#607d8b");
-                    StackPanelLight.Background = (Brush)bc.ConvertFrom("#cfd8dc");
-
-                    SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                    NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                    ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                    SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                    ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                    ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                    ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                    UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                    var palette = new PaletteHelper();
-
-                    palette.ReplacePrimaryColor("BlueGrey");
+                    colorWindow.ChangeColor("#90a4ae", "#455a64", "#607d8b", "#cfd8dc", "BlueGrey", "#ffffff");
                 }
 
                 if (text1[i].Contains("User interface color SacredUtils = black"))
                 {
+                    var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                    colorWindow.ChangeColor("#484848", "#000000", "#212121", "#484848", "DeepOrange", "#ffffff");
+
                     BrushConverter bc = new BrushConverter();
 
-                    AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                    GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
+                    CardBackgroundColor.Background = (Brush)bc.ConvertFrom("#2c2c2c");
 
-                    CloseIcon.Foreground = (Brush)bc.ConvertFrom("#484848");
-                    MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#484848");
-                    StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#000000");
-                    StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#212121");
-                    StackPanelLight.Background = (Brush)bc.ConvertFrom("#484848");
-
-                    SettingsCard.Background = (Brush)bc.ConvertFrom("#2c2c2c");
-                    SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#2c2c2c");
                     NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DDCBCBCB");
-                    ColorLabel.Foreground = (Brush)bc.ConvertFrom("#eeeeee");
-                    SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#e0e0e0");
-                    SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#e0e0e0");
-                    SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#e0e0e0");
+
+                    SettingsNameColor.Foreground = (Brush)bc.ConvertFrom("#eeeeee");
+
+                    CardCaptionsColor.Foreground = (Brush)bc.ConvertFrom("#e0e0e0");
 
                     ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#eeeeee");
                     ColorCombobox.Background = (Brush)bc.ConvertFrom("#2c2c2c");
 
                     ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#eeeeee");
-
-                    ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#eeeeee");
-                    UpdateCard.Background = (Brush)bc.ConvertFrom("#2c2c2c");
-
-                    var palette = new PaletteHelper();
-
-                    palette.ReplacePrimaryColor("DeepOrange");
                 }
             }
 

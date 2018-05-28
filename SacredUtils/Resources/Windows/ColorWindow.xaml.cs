@@ -1,4 +1,5 @@
-﻿using log4net;
+﻿using System;
+using log4net;
 using System.IO;
 using System.Text;
 using System.Windows;
@@ -14,24 +15,30 @@ namespace SacredUtils.Resources.Windows
 
         private static readonly ILog Log = LogManager.GetLogger("LOGGER");
 
-        private void Window_KeyDown(object sender, KeyEventArgs e) { if (e.Key == Key.Escape) { Close(); } }
-
-        private void Window_MouseUp(object sender, MouseButtonEventArgs e) { Close(); }
-
-        private void Card_MouseUp(object sender, MouseButtonEventArgs e) // Проверяем нажатие.
+        private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            var mairwunxn = sender as Card; if (ColorCrd != null) { e.Handled = true;}
+            if (e.Key == Key.Escape) { Close(); } 
         }
 
-        private void LoadColorFromConfig() // Тут мы загружаем все цвета из конфига.
+        private void Window_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            Close(); 
+        }
+
+        private void Card_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            var unused = sender as Card; if (ColorCrd != null) { e.Handled = true;}
+        }
+
+        private void LoadColorFromConfig()
         {
             Log.Info("Загружаем активные цветовые схемы для SacredUtils.");
 
             var text = File.ReadAllLines("Settings.su", Encoding.ASCII);
 
-            BrushConverter bc = new BrushConverter();
+            var bc = new BrushConverter();
 
-            for (int i = 0; i < text.Length; i++)
+            for (var i = 0; i < text.Length; i++)
             {
                 if (text[i].Contains("User interface color SacredUtils = default") || text[i].Contains("User interface color SacredUtils = indigo"))
                 {
@@ -197,53 +204,71 @@ namespace SacredUtils.Resources.Windows
             Log.Info("Загрузка активных цветовых схем для SacredUtils завершена без ошибок.");
         }
 
-        private void ChangeColorRedToggleBtn_Checked(object sender, RoutedEventArgs e)
+        public void ChangeColor(string a, string b, string c, string d, string e, string f)
         {
-            if (ChangeColorRedToggleBtn.IsChecked == true)
+            try
             {
                 foreach (Window window in Application.Current.Windows)
                 {
                     if (window.GetType() == typeof(MainWindow))
                     {
-                        BrushConverter bc = new BrushConverter();
+                        var bc = new BrushConverter();
 
-                        ((MainWindow)window).AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
+                        ((MainWindow)window).ToolSpaceElementColor.Foreground = (Brush)bc.ConvertFrom(a);
 
-                        ((MainWindow)window).CloseIcon.Foreground = (Brush)bc.ConvertFrom("#e57373");
-                        ((MainWindow)window).MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#e57373");
-                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#d32f2f");
-                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#f44336");
-                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom("#ffcdd2");
+                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom(b);
+                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom(c);
+                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom(d);
 
-                        ((MainWindow)window).SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
+                        ((MainWindow)window).FlexibleSpaceElementColor.Foreground = (Brush)bc.ConvertFrom(f);
+
+                        ((MainWindow)window).CardBackgroundColor.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
+
                         ((MainWindow)window).NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                        ((MainWindow)window).ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
+
+                        ((MainWindow)window).CardCaptionsColor.Foreground = (Brush)bc.ConvertFrom("#DD404040");
+
+                        ((MainWindow)window).SettingsNameColor.Foreground = (Brush)bc.ConvertFrom("#DD323232");
 
                         ((MainWindow)window).ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
                         ((MainWindow)window).ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
 
                         ((MainWindow)window).ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
 
-                        ((MainWindow)window).ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        var palette = new PaletteHelper();
-
-                        palette.ReplacePrimaryColor("Red");
+                        var palette = new PaletteHelper(); palette.ReplacePrimaryColor(e);
                     }
                 }
 
-                var fileAllText = File.ReadAllLines("Settings.su");
-                fileAllText[28] = "# - User interface color SacredUtils = red                         #";
-                File.WriteAllLines("Settings.su", fileAllText); Close();
+                Log.Info("Цветовая схема для SacredUtils была изменена на " + e + ".");
+            }
+            catch (Exception exception)
+            {
+                Log.Error("При изменении цветовой схемы на " + e + " произошла ошибка.");
 
-                Log.Info("Цветовая схема для SacredUtils была изменена на Red.");
+                Log.Error(exception.ToString());
+            }
+        }
+
+        private void ChangeColorRedToggleBtn_Checked(object sender, RoutedEventArgs e)
+        {
+            if (ChangeColorRedToggleBtn.IsChecked == true)
+            {
+                ChangeColor("#e57373", "#d32f2f", "#f44336", "#ffcdd2", "Red", "#FFFFFFFF");
+
+                try
+                { 
+                    var fileAllText00 = File.ReadAllLines("Settings.su");
+                    fileAllText00[28] = "# - User interface color SacredUtils = red                         #";
+                    File.WriteAllLines("Settings.su", fileAllText00); Close();
+
+                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
+                }
+                catch (Exception exception)
+                {
+                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
+
+                    Log.Error(exception.ToString());
+                }
             }
         }
 
@@ -251,49 +276,22 @@ namespace SacredUtils.Resources.Windows
         {
             if (ChangeColorPinkToggleBtn.IsChecked == true)
             {
-                foreach (Window window in Application.Current.Windows)
+                ChangeColor("#f06292", "#c2185b", "#e91e63", "#f8bbd0", "Pink", "#FFFFFFFF");
+
+                try
                 {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        BrushConverter bc = new BrushConverter();
+                    var fileAllText01 = File.ReadAllLines("Settings.su");
+                    fileAllText01[28] = "# - User interface color SacredUtils = pink                        #";
+                    File.WriteAllLines("Settings.su", fileAllText01); Close();
 
-                        ((MainWindow)window).AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-
-                        ((MainWindow)window).CloseIcon.Foreground = (Brush)bc.ConvertFrom("#f06292");
-                        ((MainWindow)window).MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#f06292");
-                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#c2185b");
-                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#e91e63");
-                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom("#f8bbd0");
-
-                        ((MainWindow)window).SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                        ((MainWindow)window).ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                        ((MainWindow)window).ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                        ((MainWindow)window).ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        ((MainWindow)window).ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                        ((MainWindow)window).ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        var palette = new PaletteHelper();
-
-                        palette.ReplacePrimaryColor("Pink");
-                    }
+                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
+                catch (Exception exception)
+                {
+                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
 
-                var fileAllText = File.ReadAllLines("Settings.su");
-                fileAllText[28] = "# - User interface color SacredUtils = pink                        #";
-                File.WriteAllLines("Settings.su", fileAllText); Close();
-
-                Log.Info("Цветовая схема для SacredUtils была изменена на Pink.");
+                    Log.Error(exception.ToString());
+                }
             }
 
         }
@@ -302,99 +300,45 @@ namespace SacredUtils.Resources.Windows
         {
             if (ChangeColorPurpleToggleBtn.IsChecked == true)
             {
-                foreach (Window window in Application.Current.Windows)
+                ChangeColor("#ba68c8", "#7b1fa2", "#9c27b0", "#e1bee7", "Purple", "#FFFFFFFF");
+
+                try
                 {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        BrushConverter bc = new BrushConverter();
+                    var fileAllText02 = File.ReadAllLines("Settings.su");
+                    fileAllText02[28] = "# - User interface color SacredUtils = purple                      #";
+                    File.WriteAllLines("Settings.su", fileAllText02); Close();
 
-                        ((MainWindow)window).AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-
-                        ((MainWindow)window).CloseIcon.Foreground = (Brush)bc.ConvertFrom("#ba68c8");
-                        ((MainWindow)window).MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#ba68c8");
-                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#7b1fa2");
-                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#9c27b0");
-                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom("#e1bee7");
-
-                        ((MainWindow)window).SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                        ((MainWindow)window).ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                        ((MainWindow)window).ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                        ((MainWindow)window).ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        ((MainWindow)window).ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                        ((MainWindow)window).ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        var palette = new PaletteHelper();
-
-                        palette.ReplacePrimaryColor("Purple");
-                    }
+                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
+                catch (Exception exception)
+                {
+                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
 
-                var fileAllText = File.ReadAllLines("Settings.su");
-                fileAllText[28] = "# - User interface color SacredUtils = purple                      #";
-                File.WriteAllLines("Settings.su", fileAllText); Close();
-
-                Log.Info("Цветовая схема для SacredUtils была изменена на Purple.");
+                    Log.Error(exception.ToString());
+                }
             }
         }
 
         private void ChengeColorDeppPurpleToggleBtn_Checked(object sender, RoutedEventArgs e)
         {
             if (ChangeColorDeppPurpleToggleBtn.IsChecked == true)
-            { 
-                foreach (Window window in Application.Current.Windows)
+            {
+                ChangeColor("#9575cd", "#512da8", "#673ab7", "#d1c4e9", "DeepPurple", "#FFFFFFFF");
+
+                try
                 {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        BrushConverter bc = new BrushConverter();
+                    var fileAllText03 = File.ReadAllLines("Settings.su");
+                    fileAllText03[28] = "# - User interface color SacredUtils = deeppurple                  #";
+                    File.WriteAllLines("Settings.su", fileAllText03); Close();
 
-                        ((MainWindow)window).AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-
-                        ((MainWindow)window).CloseIcon.Foreground = (Brush)bc.ConvertFrom("#9575cd");
-                        ((MainWindow)window).MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#9575cd");
-                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#512da8");
-                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#673ab7");
-                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom("#d1c4e9");
-
-                        ((MainWindow)window).SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                        ((MainWindow)window).ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                        ((MainWindow)window).ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                        ((MainWindow)window).ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        ((MainWindow)window).ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                        ((MainWindow)window).ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        var palette = new PaletteHelper();
-
-                        palette.ReplacePrimaryColor("DeepPurple");
-                    }
+                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
+                catch (Exception exception)
+                {
+                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
 
-                var fileAllText = File.ReadAllLines("Settings.su");
-                fileAllText[28] = "# - User interface color SacredUtils = deeppurple                  #";
-                File.WriteAllLines("Settings.su", fileAllText); Close();
-
-                Log.Info("Цветовая схема для SacredUtils была изменена на DeepPurple.");
+                    Log.Error(exception.ToString());
+                }
             }
         }
 
@@ -402,49 +346,22 @@ namespace SacredUtils.Resources.Windows
         {
             if (ChangeColorIndigoToggleBtn.IsChecked == true)
             {
-                foreach (Window window in Application.Current.Windows)
+                ChangeColor("#7986cb", "#303f9f", "#3f51b5", "#c5cae9", "Indigo", "#FFFFFFFF");
+
+                try
                 {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        BrushConverter bc = new BrushConverter();
+                    var fileAllText04 = File.ReadAllLines("Settings.su");
+                    fileAllText04[28] = "# - User interface color SacredUtils = indigo                      #";
+                    File.WriteAllLines("Settings.su", fileAllText04); Close();
 
-                        ((MainWindow)window).AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-
-                        ((MainWindow)window).CloseIcon.Foreground = (Brush)bc.ConvertFrom("#7986cb");
-                        ((MainWindow)window).MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#7986cb");
-                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#303f9f");
-                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#3f51b5");
-                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom("#c5cae9");
-
-                        ((MainWindow)window).SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                        ((MainWindow)window).ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                        ((MainWindow)window).ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                        ((MainWindow)window).ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        ((MainWindow)window).ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                        ((MainWindow)window).ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        var palette = new PaletteHelper();
-
-                        palette.ReplacePrimaryColor("Indigo");
-                    }
+                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
+                catch (Exception exception)
+                {
+                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
 
-                var fileAllText = File.ReadAllLines("Settings.su");
-                fileAllText[28] = "# - User interface color SacredUtils = indigo                      #";
-                File.WriteAllLines("Settings.su", fileAllText); Close();
-
-                Log.Info("Цветовая схема для SacredUtils была изменена на Indigo.");
+                    Log.Error(exception.ToString());
+                }
             }
         }
 
@@ -452,49 +369,22 @@ namespace SacredUtils.Resources.Windows
         {
             if (ChangeColorBlueToggleBtn.IsChecked == true)
             {
-                foreach (Window window in Application.Current.Windows)
+                ChangeColor("#64b5f6", "#1976d2", "#2196f3", "#bbdefb", "Blue", "#FFFFFFFF");
+
+                try
                 {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        BrushConverter bc = new BrushConverter();
+                    var fileAllText05 = File.ReadAllLines("Settings.su");
+                    fileAllText05[28] = "# - User interface color SacredUtils = blue                        #";
+                    File.WriteAllLines("Settings.su", fileAllText05); Close();
 
-                        ((MainWindow)window).AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-
-                        ((MainWindow)window).CloseIcon.Foreground = (Brush)bc.ConvertFrom("#64b5f6");
-                        ((MainWindow)window).MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#64b5f6");
-                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#1976d2");
-                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#2196f3");
-                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom("#bbdefb");
-
-                        ((MainWindow)window).SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                        ((MainWindow)window).ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                        ((MainWindow)window).ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                        ((MainWindow)window).ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        ((MainWindow)window).ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                        ((MainWindow)window).ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        var palette = new PaletteHelper();
-
-                        palette.ReplacePrimaryColor("Blue");
-                    }
+                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
+                catch (Exception exception)
+                {
+                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
 
-                var fileAllText = File.ReadAllLines("Settings.su");
-                fileAllText[28] = "# - User interface color SacredUtils = blue                        #";
-                File.WriteAllLines("Settings.su", fileAllText); Close();
-
-                Log.Info("Цветовая схема для SacredUtils была изменена на Blue.");
+                    Log.Error(exception.ToString());
+                }
             }
         }
 
@@ -502,49 +392,22 @@ namespace SacredUtils.Resources.Windows
         {
             if (ChangeColorLightBlueToggleBtn.IsChecked == true)
             {
-                foreach (Window window in Application.Current.Windows)
+                ChangeColor("#4fc3f7", "#0288d1", "#03a9f4", "#b3e5fc", "LightBlue", "#000000");
+
+                try
                 {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        BrushConverter bc = new BrushConverter();
+                    var fileAllText06 = File.ReadAllLines("Settings.su");
+                    fileAllText06[28] = "# - User interface color SacredUtils = lightblue                   #";
+                    File.WriteAllLines("Settings.su", fileAllText06); Close();
 
-                        ((MainWindow)window).AppCaption.Foreground = (Brush)bc.ConvertFrom("#000000");
-                        ((MainWindow)window).ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-                        ((MainWindow)window).GithubIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-
-                        ((MainWindow)window).CloseIcon.Foreground = (Brush)bc.ConvertFrom("#4fc3f7");
-                        ((MainWindow)window).MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#4fc3f7");
-                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#0288d1");
-                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#03a9f4");
-                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom("#b3e5fc");
-
-                        ((MainWindow)window).SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                        ((MainWindow)window).ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                        ((MainWindow)window).ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                        ((MainWindow)window).ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        ((MainWindow)window).ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                        ((MainWindow)window).ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        var palette = new PaletteHelper();
-
-                        palette.ReplacePrimaryColor("LightBlue");
-                    }
+                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
+                catch (Exception exception)
+                {
+                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
 
-                var fileAllText = File.ReadAllLines("Settings.su");
-                fileAllText[28] = "# - User interface color SacredUtils = lightblue                   #";
-                File.WriteAllLines("Settings.su", fileAllText); Close();
-
-                Log.Info("Цветовая схема для SacredUtils была изменена на LightBlue.");
+                    Log.Error(exception.ToString());
+                }
             }
         }
 
@@ -552,49 +415,22 @@ namespace SacredUtils.Resources.Windows
         {
             if (ChangeColorCyanToggleBtn.IsChecked == true)
             {
-                foreach (Window window in Application.Current.Windows)
+                ChangeColor("#4dd0e1", "#0097a7", "#00bcd4", "#b2ebf2", "Cyan", "#000000");
+
+                try
                 {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        BrushConverter bc = new BrushConverter();
+                    var fileAllText07 = File.ReadAllLines("Settings.su");
+                    fileAllText07[28] = "# - User interface color SacredUtils = cyan                        #";
+                    File.WriteAllLines("Settings.su", fileAllText07); Close();
 
-                        ((MainWindow)window).AppCaption.Foreground = (Brush)bc.ConvertFrom("#000000");
-                        ((MainWindow)window).ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-                        ((MainWindow)window).GithubIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-
-                        ((MainWindow)window).CloseIcon.Foreground = (Brush)bc.ConvertFrom("#4dd0e1");
-                        ((MainWindow)window).MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#4dd0e1");
-                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#0097a7");
-                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#00bcd4");
-                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom("#b2ebf2");
-
-                        ((MainWindow)window).SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                        ((MainWindow)window).ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                        ((MainWindow)window).ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                        ((MainWindow)window).ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        ((MainWindow)window).ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                        ((MainWindow)window).ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        var palette = new PaletteHelper();
-
-                        palette.ReplacePrimaryColor("Cyan");
-                    }
+                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
+                catch (Exception exception)
+                {
+                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
 
-                var fileAllText = File.ReadAllLines("Settings.su");
-                fileAllText[28] = "# - User interface color SacredUtils = cyan                        #";
-                File.WriteAllLines("Settings.su", fileAllText); Close();
-
-                Log.Info("Цветовая схема для SacredUtils была изменена на Cyan.");
+                    Log.Error(exception.ToString());
+                }
             }
         }
 
@@ -602,49 +438,22 @@ namespace SacredUtils.Resources.Windows
         {
             if (ChangeColorTealToggleBtn.IsChecked == true)
             {
-                foreach (Window window in Application.Current.Windows)
+                ChangeColor("#4db6ac", "#00796b", "#009688", "#b2dfdb", "Teal", "#ffffff");
+
+                try
                 {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        BrushConverter bc = new BrushConverter();
+                    var fileAllText08 = File.ReadAllLines("Settings.su");
+                    fileAllText08[28] = "# - User interface color SacredUtils = teal                        #";
+                    File.WriteAllLines("Settings.su", fileAllText08); Close();
 
-                        ((MainWindow)window).AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-
-                        ((MainWindow)window).CloseIcon.Foreground = (Brush)bc.ConvertFrom("#4db6ac");
-                        ((MainWindow)window).MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#4db6ac");
-                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#00796b");
-                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#009688");
-                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom("#b2dfdb");
-
-                        ((MainWindow)window).SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                        ((MainWindow)window).ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                        ((MainWindow)window).ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                        ((MainWindow)window).ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        ((MainWindow)window).ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                        ((MainWindow)window).ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        var palette = new PaletteHelper();
-
-                        palette.ReplacePrimaryColor("Teal");
-                    }
+                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
+                catch (Exception exception)
+                {
+                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
 
-                var fileAllText = File.ReadAllLines("Settings.su");
-                fileAllText[28] = "# - User interface color SacredUtils = teal                        #";
-                File.WriteAllLines("Settings.su", fileAllText); Close();
-
-                Log.Info("Цветовая схема для SacredUtils была изменена на Teal.");
+                    Log.Error(exception.ToString());
+                }
             }
         }
 
@@ -652,49 +461,22 @@ namespace SacredUtils.Resources.Windows
         {
             if (ChangeColorGreenToggleBtn.IsChecked == true)
             {
-                foreach (Window window in Application.Current.Windows)
+                ChangeColor("#81c784", "#388e3c", "#4caf50", "#c8e6c9", "Green", "#ffffff");
+
+                try
                 {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        BrushConverter bc = new BrushConverter();
+                    var fileAllText09 = File.ReadAllLines("Settings.su");
+                    fileAllText09[28] = "# - User interface color SacredUtils = green                       #";
+                    File.WriteAllLines("Settings.su", fileAllText09); Close();
 
-                        ((MainWindow)window).AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-
-                        ((MainWindow)window).CloseIcon.Foreground = (Brush)bc.ConvertFrom("#81c784");
-                        ((MainWindow)window).MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#81c784");
-                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#388e3c");
-                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#4caf50");
-                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom("#c8e6c9");
-
-                        ((MainWindow)window).SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                        ((MainWindow)window).ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                        ((MainWindow)window).ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                        ((MainWindow)window).ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        ((MainWindow)window).ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                        ((MainWindow)window).ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        var palette = new PaletteHelper();
-
-                        palette.ReplacePrimaryColor("Green");
-                    }
+                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
+                catch (Exception exception)
+                {
+                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
 
-                var fileAllText = File.ReadAllLines("Settings.su");
-                fileAllText[28] = "# - User interface color SacredUtils = green                       #";
-                File.WriteAllLines("Settings.su", fileAllText); Close();
-
-                Log.Info("Цветовая схема для SacredUtils была изменена на Green.");
+                    Log.Error(exception.ToString());
+                }
             }
         }
 
@@ -702,49 +484,22 @@ namespace SacredUtils.Resources.Windows
         {
             if (ChangeColorLightGreenToggleBtn.IsChecked == true)
             {
-                foreach (Window window in Application.Current.Windows)
+                ChangeColor("#aed581", "#689f38", "#8bc34a", "#dcedc8", "LightGreen", "#000000");
+
+                try
                 {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        BrushConverter bc = new BrushConverter();
+                    var fileAllText10 = File.ReadAllLines("Settings.su");
+                    fileAllText10[28] = "# - User interface color SacredUtils = lightgreen                  #";
+                    File.WriteAllLines("Settings.su", fileAllText10); Close();
 
-                        ((MainWindow)window).AppCaption.Foreground = (Brush)bc.ConvertFrom("#000000");
-                        ((MainWindow)window).ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-                        ((MainWindow)window).GithubIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-
-                        ((MainWindow)window).CloseIcon.Foreground = (Brush)bc.ConvertFrom("#aed581");
-                        ((MainWindow)window).MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#aed581");
-                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#689f38");
-                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#8bc34a");
-                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom("#dcedc8");
-
-                        ((MainWindow)window).SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                        ((MainWindow)window).ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                        ((MainWindow)window).ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                        ((MainWindow)window).ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        ((MainWindow)window).ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                        ((MainWindow)window).ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        var palette = new PaletteHelper();
-
-                        palette.ReplacePrimaryColor("LightGreen");
-                    }
+                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
+                catch (Exception exception)
+                {
+                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
 
-                var fileAllText = File.ReadAllLines("Settings.su");
-                fileAllText[28] = "# - User interface color SacredUtils = lightgreen                  #";
-                File.WriteAllLines("Settings.su", fileAllText); Close();
-
-                Log.Info("Цветовая схема для SacredUtils была изменена на LightGreen.");
+                    Log.Error(exception.ToString());
+                }
             }
         }
 
@@ -752,49 +507,22 @@ namespace SacredUtils.Resources.Windows
         {
             if (ChangeColorLimeToggleBtn.IsChecked == true)
             {
-                foreach (Window window in Application.Current.Windows)
+                ChangeColor("#dce775", "#afb42b", "#cddc39", "#f0f4c3", "Lime", "#000000");
+
+                try
                 {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        BrushConverter bc = new BrushConverter();
+                    var fileAllText11 = File.ReadAllLines("Settings.su");
+                    fileAllText11[28] = "# - User interface color SacredUtils = lime                        #";
+                    File.WriteAllLines("Settings.su", fileAllText11); Close();
 
-                        ((MainWindow)window).AppCaption.Foreground = (Brush)bc.ConvertFrom("#000000");
-                        ((MainWindow)window).ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-                        ((MainWindow)window).GithubIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-
-                        ((MainWindow)window).CloseIcon.Foreground = (Brush)bc.ConvertFrom("#dce775");
-                        ((MainWindow)window).MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#dce775");
-                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#afb42b");
-                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#cddc39");
-                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom("#f0f4c3");
-
-                        ((MainWindow)window).SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                        ((MainWindow)window).ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                        ((MainWindow)window).ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                        ((MainWindow)window).ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        ((MainWindow)window).ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                        ((MainWindow)window).ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        var palette = new PaletteHelper();
-
-                        palette.ReplacePrimaryColor("Lime");
-                    }
+                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
+                catch (Exception exception)
+                {
+                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
 
-                var fileAllText = File.ReadAllLines("Settings.su");
-                fileAllText[28] = "# - User interface color SacredUtils = lime                        #";
-                File.WriteAllLines("Settings.su", fileAllText); Close();
-
-                Log.Info("Цветовая схема для SacredUtils была изменена на Lime.");
+                    Log.Error(exception.ToString());
+                }
             }
         }
 
@@ -802,49 +530,22 @@ namespace SacredUtils.Resources.Windows
         {
             if (ChangeColorYellowToggleBtn.IsChecked == true)
             {
-                foreach (Window window in Application.Current.Windows)
+                ChangeColor("#fff176", "#fbc02d", "#ffeb3b", "#fff9c4", "Yellow", "#000000");
+
+                try
                 {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        BrushConverter bc = new BrushConverter();
+                    var fileAllText12 = File.ReadAllLines("Settings.su");
+                    fileAllText12[28] = "# - User interface color SacredUtils = yellow                      #";
+                    File.WriteAllLines("Settings.su", fileAllText12); Close();
 
-                        ((MainWindow)window).AppCaption.Foreground = (Brush)bc.ConvertFrom("#000000");
-                        ((MainWindow)window).ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-                        ((MainWindow)window).GithubIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-
-                        ((MainWindow)window).CloseIcon.Foreground = (Brush)bc.ConvertFrom("#fff176");
-                        ((MainWindow)window).MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#fff176");
-                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#fbc02d");
-                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#ffeb3b");
-                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom("#fff9c4");
-
-                        ((MainWindow)window).SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                        ((MainWindow)window).ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                        ((MainWindow)window).ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                        ((MainWindow)window).ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        ((MainWindow)window).ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                        ((MainWindow)window).ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        var palette = new PaletteHelper();
-
-                        palette.ReplacePrimaryColor("Yellow");
-                    }
+                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
+                catch (Exception exception)
+                {
+                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
 
-                var fileAllText = File.ReadAllLines("Settings.su");
-                fileAllText[28] = "# - User interface color SacredUtils = yellow                      #";
-                File.WriteAllLines("Settings.su", fileAllText); Close();
-
-                Log.Info("Цветовая схема для SacredUtils была изменена на Yellow.");
+                    Log.Error(exception.ToString());
+                }
             }
         }
 
@@ -852,49 +553,22 @@ namespace SacredUtils.Resources.Windows
         {
             if (ChangeColorAmberToggleBtn.IsChecked == true)
             {
-                foreach (Window window in Application.Current.Windows)
+                ChangeColor("#ffd54f", "#ffa000", "#ffc107", "#ffecb3", "Amber", "#000000");
+
+                try
                 {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        BrushConverter bc = new BrushConverter();
+                    var fileAllText13 = File.ReadAllLines("Settings.su");
+                    fileAllText13[28] = "# - User interface color SacredUtils = amber                       #";
+                    File.WriteAllLines("Settings.su", fileAllText13); Close();
 
-                        ((MainWindow)window).AppCaption.Foreground = (Brush)bc.ConvertFrom("#000000");
-                        ((MainWindow)window).ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-                        ((MainWindow)window).GithubIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-
-                        ((MainWindow)window).CloseIcon.Foreground = (Brush)bc.ConvertFrom("#ffd54f");
-                        ((MainWindow)window).MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#ffd54f");
-                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#ffa000");
-                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#ffc107");
-                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom("#ffecb3");
-
-                        ((MainWindow)window).SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                        ((MainWindow)window).ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                        ((MainWindow)window).ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                        ((MainWindow)window).ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        ((MainWindow)window).ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                        ((MainWindow)window).ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        var palette = new PaletteHelper();
-
-                        palette.ReplacePrimaryColor("Amber");
-                    }
+                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
+                catch (Exception exception)
+                {
+                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
 
-                var fileAllText = File.ReadAllLines("Settings.su");
-                fileAllText[28] = "# - User interface color SacredUtils = amber                       #";
-                File.WriteAllLines("Settings.su", fileAllText); Close();
-
-                Log.Info("Цветовая схема для SacredUtils была изменена на Amber.");
+                    Log.Error(exception.ToString());
+                }
             }
         }
 
@@ -902,49 +576,22 @@ namespace SacredUtils.Resources.Windows
         {
             if (ChangeColorOrangeToggleBtn.IsChecked == true)
             {
-                foreach (Window window in Application.Current.Windows)
+                ChangeColor("#ffb74d", "#f57c00", "#ff9800", "#ffe0b2", "Orange", "#000000");
+
+                try
                 {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        BrushConverter bc = new BrushConverter();
+                    var fileAllText14 = File.ReadAllLines("Settings.su");
+                    fileAllText14[28] = "# - User interface color SacredUtils = orange                      #";
+                    File.WriteAllLines("Settings.su", fileAllText14); Close();
 
-                        ((MainWindow)window).AppCaption.Foreground = (Brush)bc.ConvertFrom("#000000");
-                        ((MainWindow)window).ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-                        ((MainWindow)window).GithubIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-
-                        ((MainWindow)window).CloseIcon.Foreground = (Brush)bc.ConvertFrom("#ffb74d");
-                        ((MainWindow)window).MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#ffb74d");
-                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#f57c00");
-                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#ff9800");
-                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom("#ffe0b2");
-
-                        ((MainWindow)window).SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                        ((MainWindow)window).ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                        ((MainWindow)window).ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                        ((MainWindow)window).ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        ((MainWindow)window).ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                        ((MainWindow)window).ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        var palette = new PaletteHelper();
-
-                        palette.ReplacePrimaryColor("Orange");
-                    }
+                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
+                catch (Exception exception)
+                {
+                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
 
-                var fileAllText = File.ReadAllLines("Settings.su");
-                fileAllText[28] = "# - User interface color SacredUtils = orange                      #";
-                File.WriteAllLines("Settings.su", fileAllText); Close();
-
-                Log.Info("Цветовая схема для SacredUtils была изменена на Orange.");
+                    Log.Error(exception.ToString());
+                }
             }
         }
 
@@ -952,49 +599,22 @@ namespace SacredUtils.Resources.Windows
         {
             if (ChangeColorDeepOrangeToggleBtn.IsChecked == true)
             {
-                foreach (Window window in Application.Current.Windows)
+                ChangeColor("#ff8a65", "#e64a19", "#ff5722", "#ffccbc", "DeepOrange", "#000000");
+
+                try
                 {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        BrushConverter bc = new BrushConverter();
+                    var fileAllText15 = File.ReadAllLines("Settings.su");
+                    fileAllText15[28] = "# - User interface color SacredUtils = deeporange                  #";
+                    File.WriteAllLines("Settings.su", fileAllText15); Close();
 
-                        ((MainWindow)window).AppCaption.Foreground = (Brush)bc.ConvertFrom("#000000");
-                        ((MainWindow)window).ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-                        ((MainWindow)window).GithubIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-
-                        ((MainWindow)window).CloseIcon.Foreground = (Brush)bc.ConvertFrom("#ff8a65");
-                        ((MainWindow)window).MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#ff8a65");
-                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#e64a19");
-                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#ff5722");
-                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom("#ffccbc");
-
-                        ((MainWindow)window).SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                        ((MainWindow)window).ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                        ((MainWindow)window).ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                        ((MainWindow)window).ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        ((MainWindow)window).ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                        ((MainWindow)window).ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        var palette = new PaletteHelper();
-
-                        palette.ReplacePrimaryColor("DeepOrange");
-                    }
+                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
+                catch (Exception exception)
+                {
+                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
 
-                var fileAllText = File.ReadAllLines("Settings.su");
-                fileAllText[28] = "# - User interface color SacredUtils = deeporange                  #";
-                File.WriteAllLines("Settings.su", fileAllText); Close();
-
-                Log.Info("Цветовая схема для SacredUtils была изменена на DeepOrange.");
+                    Log.Error(exception.ToString());
+                }
             }
         }
 
@@ -1002,49 +622,22 @@ namespace SacredUtils.Resources.Windows
         {
             if (ChangeColorBrownToggleBtn.IsChecked == true)
             {
-                foreach (Window window in Application.Current.Windows)
+                ChangeColor("#a1887f", "#5d4037", "#795548", "#d7ccc8", "Brown", "#ffffff");
+
+                try
                 {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        BrushConverter bc = new BrushConverter();
+                    var fileAllText16 = File.ReadAllLines("Settings.su");
+                    fileAllText16[28] = "# - User interface color SacredUtils = brown                       #";
+                    File.WriteAllLines("Settings.su", fileAllText16); Close();
 
-                        ((MainWindow)window).AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-
-                        ((MainWindow)window).CloseIcon.Foreground = (Brush)bc.ConvertFrom("#a1887f");
-                        ((MainWindow)window).MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#a1887f");
-                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#5d4037");
-                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#795548");
-                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom("#d7ccc8");
-
-                        ((MainWindow)window).SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                        ((MainWindow)window).ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                        ((MainWindow)window).ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                        ((MainWindow)window).ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        ((MainWindow)window).ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                        ((MainWindow)window).ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        var palette = new PaletteHelper();
-
-                        palette.ReplacePrimaryColor("Brown");
-                    }
+                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
+                catch (Exception exception)
+                {
+                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
 
-                var fileAllText = File.ReadAllLines("Settings.su");
-                fileAllText[28] = "# - User interface color SacredUtils = brown                       #";
-                File.WriteAllLines("Settings.su", fileAllText); Close();
-
-                Log.Info("Цветовая схема для SacredUtils была изменена на Brown.");
+                    Log.Error(exception.ToString());
+                }
             }
         }
 
@@ -1052,49 +645,22 @@ namespace SacredUtils.Resources.Windows
         {
             if (ChangeColorGrayToggleBtn.IsChecked == true)
             {
-                foreach (Window window in Application.Current.Windows)
+                ChangeColor("#e0e0e0", "#616161", "#9e9e9e", "#f5f5f5", "Grey", "#000000");
+
+                try
                 {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        BrushConverter bc = new BrushConverter();
+                    var fileAllText17 = File.ReadAllLines("Settings.su");
+                    fileAllText17[28] = "# - User interface color SacredUtils = grey                        #";
+                    File.WriteAllLines("Settings.su", fileAllText17); Close();
 
-                        ((MainWindow)window).AppCaption.Foreground = (Brush)bc.ConvertFrom("#000000");
-                        ((MainWindow)window).ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-                        ((MainWindow)window).GithubIcon.Foreground = (Brush)bc.ConvertFrom("#000000");
-
-                        ((MainWindow)window).CloseIcon.Foreground = (Brush)bc.ConvertFrom("#e0e0e0");
-                        ((MainWindow)window).MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#e0e0e0");
-                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#616161");
-                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#9e9e9e");
-                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom("#f5f5f5");
-
-                        ((MainWindow)window).SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                        ((MainWindow)window).ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                        ((MainWindow)window).ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                        ((MainWindow)window).ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        ((MainWindow)window).ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                        ((MainWindow)window).ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        var palette = new PaletteHelper();
-
-                        palette.ReplacePrimaryColor("Grey");
-                    }
+                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
+                catch (Exception exception)
+                {
+                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
 
-                var fileAllText = File.ReadAllLines("Settings.su");
-                fileAllText[28] = "# - User interface color SacredUtils = grey                        #";
-                File.WriteAllLines("Settings.su", fileAllText); Close();
-
-                Log.Info("Цветовая схема для SacredUtils была изменена на Grey.");
+                    Log.Error(exception.ToString());
+                }
             }
         }
 
@@ -1102,49 +668,22 @@ namespace SacredUtils.Resources.Windows
         {
             if (ChangeColorBlueGreyToggleBtn.IsChecked == true)
             {
-                foreach (Window window in Application.Current.Windows)
+                ChangeColor("#90a4ae", "#455a64", "#607d8b", "#cfd8dc", "BlueGrey", "#ffffff");
+
+                try
                 {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        BrushConverter bc = new BrushConverter();
+                    var fileAllText18 = File.ReadAllLines("Settings.su");
+                    fileAllText18[28] = "# - User interface color SacredUtils = bluegrey                    #";
+                    File.WriteAllLines("Settings.su", fileAllText18); Close();
 
-                        ((MainWindow)window).AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-
-                        ((MainWindow)window).CloseIcon.Foreground = (Brush)bc.ConvertFrom("#90a4ae");
-                        ((MainWindow)window).MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#90a4ae");
-                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#455a64");
-                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#607d8b");
-                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom("#cfd8dc");
-
-                        ((MainWindow)window).SettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-                        ((MainWindow)window).NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DD7E7E7E");
-                        ((MainWindow)window).ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-                        ((MainWindow)window).SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#DD404040");
-
-                        ((MainWindow)window).ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-                        ((MainWindow)window).ColorCombobox.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        ((MainWindow)window).ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#FF000000");
-
-                        ((MainWindow)window).ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#DD323232");
-                        ((MainWindow)window).UpdateCard.Background = (Brush)bc.ConvertFrom("#FFFFFFFF");
-
-                        var palette = new PaletteHelper();
-
-                        palette.ReplacePrimaryColor("BlueGrey");
-                    }
+                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
+                catch (Exception exception)
+                {
+                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
 
-                var fileAllText = File.ReadAllLines("Settings.su");
-                fileAllText[28] = "# - User interface color SacredUtils = bluegrey                    #";
-                File.WriteAllLines("Settings.su", fileAllText); Close();
-
-                Log.Info("Цветовая схема для SacredUtils была изменена на BlueGrey.");
+                    Log.Error(exception.ToString());
+                }
             }
         }
 
@@ -1152,49 +691,43 @@ namespace SacredUtils.Resources.Windows
         {
             if (ChangeColorBlackToggleBtn.IsChecked == true)
             {
+                ChangeColor("#484848", "#000000", "#212121", "#484848", "DeepOrange", "#ffffff");
+
                 foreach (Window window in Application.Current.Windows)
                 {
                     if (window.GetType() == typeof(MainWindow))
                     {
                         BrushConverter bc = new BrushConverter();
 
-                        ((MainWindow)window).AppCaption.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).ChangeColorIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
-                        ((MainWindow)window).GithubIcon.Foreground = (Brush)bc.ConvertFrom("#ffffff");
+                        ((MainWindow)window).CardBackgroundColor.Background = (Brush)bc.ConvertFrom("#2c2c2c");
 
-                        ((MainWindow)window).CloseIcon.Foreground = (Brush)bc.ConvertFrom("#484848");
-                        ((MainWindow)window).MinimizeIcon.Foreground = (Brush)bc.ConvertFrom("#484848");
-                        ((MainWindow)window).StackPanelPrimary.Background = (Brush)bc.ConvertFrom("#000000");
-                        ((MainWindow)window).StackPanelMiddle.Background = (Brush)bc.ConvertFrom("#212121");
-                        ((MainWindow)window).StackPanelLight.Background = (Brush)bc.ConvertFrom("#484848");
-
-                        ((MainWindow)window).SettingsCard.Background = (Brush)bc.ConvertFrom("#2c2c2c");
-                        ((MainWindow)window).SelectSettingsCard.Background = (Brush)bc.ConvertFrom("#2c2c2c");
                         ((MainWindow)window).NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DDCBCBCB");
-                        ((MainWindow)window).ColorLabel.Foreground = (Brush)bc.ConvertFrom("#eeeeee");
-                        ((MainWindow)window).SettingsLbl.Foreground = (Brush)bc.ConvertFrom("#e0e0e0");
-                        ((MainWindow)window).SettingsListBox.Foreground = (Brush)bc.ConvertFrom("#e0e0e0");
-                        ((MainWindow)window).SelectSettingsLbl.Foreground = (Brush)bc.ConvertFrom("#e0e0e0");
+
+                        ((MainWindow)window).SettingsNameColor.Foreground = (Brush)bc.ConvertFrom("#eeeeee");
+
+                        ((MainWindow)window).CardCaptionsColor.Foreground = (Brush)bc.ConvertFrom("#e0e0e0");
 
                         ((MainWindow)window).ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#eeeeee");
                         ((MainWindow)window).ColorCombobox.Background = (Brush)bc.ConvertFrom("#2c2c2c");
 
                         ((MainWindow)window).ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#eeeeee");
-
-                        ((MainWindow)window).ColorUpdateLbl.Foreground = (Brush)bc.ConvertFrom("#eeeeee");
-                        ((MainWindow)window).UpdateCard.Background = (Brush)bc.ConvertFrom("#2c2c2c");
-
-                        var palette = new PaletteHelper();
-
-                        palette.ReplacePrimaryColor("DeepOrange");
                     }
                 }
 
-                var fileAllText = File.ReadAllLines("Settings.su");
-                fileAllText[28] = "# - User interface color SacredUtils = black                       #";
-                File.WriteAllLines("Settings.su", fileAllText); Close();
+                try
+                {
+                    var fileAllText18 = File.ReadAllLines("Settings.su");
+                    fileAllText18[28] = "# - User interface color SacredUtils = black                       #";
+                    File.WriteAllLines("Settings.su", fileAllText18); Close();
 
-                Log.Info("Цветовая схема для SacredUtils была изменена на Black.");
+                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
+                }
+                catch (Exception exception)
+                {
+                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
+
+                    Log.Error(exception.ToString());
+                }
             }
         }
     }
