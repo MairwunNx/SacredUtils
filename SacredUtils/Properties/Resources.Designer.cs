@@ -83,9 +83,39 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        internal static byte[] installinfo {
+            get {
+                object obj = ResourceManager.GetObject("installinfo", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] launchstat {
+            get {
+                object obj = ResourceManager.GetObject("launchstat", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         internal static byte[] license {
             get {
                 object obj = ResourceManager.GetObject("license", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] SacredBalanceDragonFix {
+            get {
+                object obj = ResourceManager.GetObject("SacredBalanceDragonFix", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -106,6 +136,16 @@ namespace SacredUtils.Properties {
         internal static byte[] SacredBalanceVeteran {
             get {
                 object obj = ResourceManager.GetObject("SacredBalanceVeteran", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] SacredCreatureDragonFix {
+            get {
+                object obj = ResourceManager.GetObject("SacredCreatureDragonFix", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -176,6 +216,16 @@ namespace SacredUtils.Properties {
         internal static byte[] SacredUtilsUpdater {
             get {
                 object obj = ResourceManager.GetObject("SacredUtilsUpdater", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] selectstat {
+            get {
+                object obj = ResourceManager.GetObject("selectstat", resourceCulture);
                 return ((byte[])(obj));
             }
         }

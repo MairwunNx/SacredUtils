@@ -66,6 +66,9 @@
   <PropertyGroup>
     <ApplicationIcon>Resources\Images\icons8_Wet.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SacredUtils.App</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Costura, Version=2.0.1.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.2.0.1\lib\net452\Costura.dll</HintPath>
@@ -164,9 +167,14 @@
     </None>
     <EmbeddedResource Include="Resources\Configs\AppSettings.su" />
     <EmbeddedResource Include="Resources\Configs\GameSettings.su" />
+    <None Include="Resources\Configs\installinfo.dat" />
+    <None Include="Resources\Configs\launchstat.dat" />
     <None Include="Resources\Configs\SacredUtils.exe.config" />
+    <None Include="Resources\Configs\selectstat.dat" />
+    <None Include="Resources\Modding\SacredBalanceDragonFix.bin" />
     <None Include="Resources\Modding\SacredBalanceVanilla.bin" />
     <None Include="Resources\Modding\SacredBalanceVeteran.bin" />
+    <None Include="Resources\Modding\SacredCreatureDragonFix.pak" />
     <None Include="Resources\Modding\SacredCreatureVanilla.pak" />
     <None Include="Resources\Modding\SacredCreatureVeteran.pak" />
     <Resource Include="Resources\Fonts\GoogleSans-Bold.ttf" />

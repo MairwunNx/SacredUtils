@@ -42,19 +42,27 @@ namespace SacredUtils
             var checkLogConfiguration = new CheckLogConfiguration();
             checkLogConfiguration.GetAvailableLogConfig();
 
+            Log.Info("Вызов метода проверки конфигурации лога завершен.");
+
             Log.Info("Вызываем метод проверки конфигурации SacredUtils из другого класса.");
 
             var checkAppConfiguration = new CheckAppConfiguration();
             checkAppConfiguration.GetAvailableAppConfig();
+
+            Log.Info("Вызов метода проверки конфигурации SacredUtils завершен.");
 
             Log.Info("Вызываем метод удаления временных файлов из другого класса.");
             
             var checkAppTempFiles = new CheckAppTempFiles();
             checkAppTempFiles.CheckAvailableTempFiles();
 
+            Log.Info("Вызов метода удаления временных файлов завершен.");
+
             Log.Info("Вызываем метод инициализации компонентов SacredUtils из другого класса.");
 
             InitializeComponent();
+
+            Log.Info("Вызов метода инициализации компонентов SacredUtils завершен.");
 
             Log.Info("Вызываем метод проверки обновления из другого класса.");
 
@@ -64,15 +72,89 @@ namespace SacredUtils
             checkAppUpdates.GetAvailableAppUpdatesAsync();
             #pragma warning restore CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
 
+            Log.Info("Вызов метода проверки обновления завершен.");
+
             Log.Info("Вызываем метод проверки настроек SacredUtils из другого класса.");
             
             GetAppSettings getAppSettings = new GetAppSettings();
             getAppSettings.LoadAppSettings();
 
+            Log.Info("Вызов метода проверки настроек SacredUtils завершен.");
+
             Log.Info("Вызываем метод проверки настроек SacredUnderworld из другого класса.");
             
             GetGameSettings getGameSettings = new GetGameSettings();
             getGameSettings.LoadGameSettings();
+
+            Log.Info("Вызов метода проверки настроек SacredUnderworld завершен.");
+
+            Log.Info("Поиск файла для загрузки данных о статусе модификаций.");
+
+            if (File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+            {
+                Log.Info("Файл для загрузки данных о статусе модификаций был найден.");
+
+                var text = File.ReadAllText(@".SacredUtilsData" + "/" + "installinfo.dat", Encoding.ASCII);
+
+                Log.Info("Загрузка данных о статусе установок модификаций.");
+
+                if (text.Contains("Veteranmod by ufo installed = true"))
+                {
+                    VeteranModInstallBtn.Content = "УДАЛИТЬ";
+                }
+                else if (text.Contains("Veteranmod by ufo installed = false"))
+                {
+                    VeteranModInstallBtn.Content = "УСТАНОВИТЬ";
+                }
+
+                if (text.Contains("Veteranmod dragonfix installed = true"))
+                {
+                    VeteranModDragonFixBtn.Content = "УДАЛИТЬ";
+                }
+                else if (text.Contains("Veteranmod dragonfix installed = false"))
+                {
+                    VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
+                }
+
+                if (text.Contains("Sacred 2.29.14 patch installed = true"))
+                {
+                    SacredNewInstallBtn.Content = "УДАЛИТЬ";
+                }
+                else if (text.Contains("Sacred 2.29.14 patch installed = false"))
+                {
+                    SacredNewInstallBtn.Content = "УСТАНОВИТЬ";
+                }
+
+                if (text.Contains("Server multicore fix installed = true"))
+                {
+                    ServerMulticoreFixBtn.Content = "УДАЛИТЬ";
+                }
+                else if (text.Contains("Server multicore fix installed = false"))
+                {
+                    ServerMulticoreFixBtn.Content = "УСТАНОВИТЬ";
+                }
+
+                Log.Info("Загрузка данных о статусе установок модификаций завершена без ошибок.");
+            }
+            else if (!File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+            {
+                Log.Warn("Файл для загрузки данных о статусе модификаций не был найден.");
+
+                Log.Info("Создаем директорию для файла installinfo.dat.");
+
+                Directory.CreateDirectory(".SacredUtilsData");
+
+                Log.Info("Создание директории для файла installinfo.dat завершено без ошибок.");
+
+                Log.Info("Создание файла installinfo.dat из ресурсов программы.");
+
+                File.WriteAllBytes(@".SacredUtilsData" + "/" + "installinfo.dat", Properties.Resources.installinfo);
+
+                Log.Info("Создание файла installinfo.dat из ресурсов программы завершено без ошибок.");
+
+                VeteranModInstallBtn.Content = "УСТАНОВИТЬ"; VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
+                SacredNewInstallBtn.Content = "УСТАНОВИТЬ"; ServerMulticoreFixBtn.Content = "УСТАНОВИТЬ";
+            }
         }
         
         public void SetSettingsValue(string s, string v)
@@ -102,7 +184,17 @@ namespace SacredUtils
 
             for (int i = 0; i < text.Length; i++)
             {
-                if (text[i].Contains(s + " : ")) { text[i] = s + " : " + v; File.WriteAllLines(GameSettings, text); }
+                if (text[i].Contains(s + " : "))
+                {
+                    try
+                    {
+                        text[i] = s + " : " + v; File.WriteAllLines(GameSettings, text);
+                    }
+                    catch (Exception exception)
+                    {
+                        Log.Error("При изменении значения " + s + " на " + v + " произошла ошибка."); Log.Error(exception.ToString());
+                    }
+                }
             }
         }
 
@@ -133,7 +225,17 @@ namespace SacredUtils
 
             for (int i = 0; i < text.Length; i++)
             {
-                if (text[i].Contains(s)) { text[i] = s + v; File.WriteAllLines(GameSettings, text); }
+                if (text[i].Contains(s))
+                {
+                    try
+                    {
+                        text[i] = s + v; File.WriteAllLines(GameSettings, text);
+                    }
+                    catch (Exception exception)
+                    {
+                        Log.Error("При изменении значения " + s + " на " + v + " произошла ошибка."); Log.Error(exception.ToString());
+                    }
+                }
             }
         }
 
@@ -164,8 +266,17 @@ namespace SacredUtils
 
             for (int i = 0; i < text.Length; i++)
             {
-                
-                if (text[i].Contains(s + " : ")) { text[i] = s + " : " + v; File.WriteAllLines(GameSettings, text); }
+                if (text[i].Contains(s + " : "))
+                {
+                    try
+                    {
+                        text[i] = s + " : " + v; File.WriteAllLines(GameSettings, text);
+                    }
+                    catch (Exception exception)
+                    {
+                        Log.Error("При изменении значения " + s + " на " + v + " произошла ошибка."); Log.Error(exception.ToString());
+                    }
+                }
             }
         }
 
@@ -875,8 +986,6 @@ namespace SacredUtils
 
         private void FontLibraryCmbBox_DropDownClosed(object sender, EventArgs e)
         {
-//            FontsTestLbl.FontFamily = new System.Windows.Media.FontFamily(FontLibraryCmbBox.Text);
-
             SetSettingsValueForFont("FONT : 1, ", "\"" + FontLibraryCmbBox.Text + "\"" + ", 10");
             SetSettingsValueForFont("FONT : 2, ", "\"" + FontLibraryCmbBox.Text + "\"" + ", 10");
             SetSettingsValueForFont("FONT : 3, ", "\"" + FontLibraryCmbBox.Text + "\"" + ", 12");
@@ -907,61 +1016,210 @@ namespace SacredUtils
 
         private void VeteranModInstallBtn_Click(object sender, RoutedEventArgs e)
         {
-            Log.Info("Подготовка к установке Veteran Mod сложности.");
+            if (VeteranModInstallBtn.Content.ToString() == "УСТАНОВИТЬ")
+            {
+                Log.Info("Подготовка к установке Veteran Mod by ufo сложности.");
 
-            Log.Info("Создаем директории для Veteran Mod если их нет.");
-            
-            Directory.CreateDirectory("bin"); Directory.CreateDirectory("PAK");
+                Log.Info("Создаем директории для Veteran Mod by ufo если их нет.");
 
-            Log.Info("Директории для Veteran Mod были созданы без ошибок.");
+                Directory.CreateDirectory("bin"); Directory.CreateDirectory("PAK");
 
-            Log.Info("Устанавливаем Balance.bin в директорию bin.");
-            
-            File.WriteAllBytes(@"bin" + "/" + "balance.bin", Properties.Resources.SacredBalanceVeteran);
+                Log.Info("Директории для Veteran Mod by ufo были созданы без ошибок.");
 
-            Log.Info("Установка Balance.bin в директорию bin выполнена без ошибок.");
+                Log.Info("Устанавливаем Balance.bin в директорию bin.");
 
-            Log.Info("Устанавливаем Creature.pak в директорию PAK.");
-            
-            File.WriteAllBytes(@"PAK" + "/" + "creature.pak", Properties.Resources.SacredCreatureVeteran);
+                File.WriteAllBytes(@"bin" + "/" + "balance.bin", Properties.Resources.SacredBalanceVeteran);
 
-            Log.Info("Установка Creature.pak в директорию PAK выполнена без ошибок.");
+                Log.Info("Установка Balance.bin в директорию bin выполнена без ошибок.");
 
-            Log.Info("Установка Veteran Mod завершилась без ошибок.");
+                Log.Info("Устанавливаем Creature.pak в директорию PAK.");
+
+                File.WriteAllBytes(@"PAK" + "/" + "creature.pak", Properties.Resources.SacredCreatureVeteran);
+
+                Log.Info("Установка Creature.pak в директорию PAK выполнена без ошибок.");
+
+                Log.Info("Установка Veteran Mod by ufo завершилась без ошибок.");
+
+                Directory.CreateDirectory(".SacredUtilsData");
+
+                if (File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+                {
+                    var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "installinfo.dat");
+
+                    fileAllText[3] = "; Veteranmod by ufo installed = true";
+                    fileAllText[4] = "; Veteranmod dragonfix installed = false";
+
+                    File.WriteAllLines(@".SacredUtilsData" + "/" + "installinfo.dat", fileAllText);
+                }
+
+                VeteranModInstallBtn.Content = "УДАЛИТЬ"; VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
+            }
+            else if (VeteranModInstallBtn.Content.ToString() == "УДАЛИТЬ")
+            {
+                Log.Info("Подготовка к удалению Veteran Mod сложности.");
+
+                Log.Info("Создаем директории для стандартной сложности если их нет.");
+
+                Directory.CreateDirectory("bin"); Directory.CreateDirectory("PAK");
+
+                Log.Info("Директории для стандартной сложности были созданы без ошибок.");
+
+                Log.Info("Устанавливаем Balance.bin в директорию bin.");
+
+                File.WriteAllBytes(@"bin" + "/" + "balance.bin", Properties.Resources.SacredBalanceVanilla);
+
+                Log.Info("Установка Balance.bin в директорию bin выполнена без ошибок.");
+
+                Log.Info("Устанавливаем Creature.pak в директорию PAK.");
+
+                File.WriteAllBytes(@"PAK" + "/" + "creature.pak", Properties.Resources.SacredCreatureVanilla);
+
+                Log.Info("Установка Creature.pak в директорию PAK выполнена без ошибок.");
+
+                Log.Info("Установка стандартной сложности завершилась без ошибок.");
+
+                Directory.CreateDirectory(".SacredUtilsData");
+
+                if (File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+                {
+                    var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "installinfo.dat");
+
+                    fileAllText[3] = "; Veteranmod by ufo installed = false";
+                    fileAllText[4] = "; Veteranmod dragonfix installed = false";
+
+                    File.WriteAllLines(@".SacredUtilsData" + "/" + "installinfo.dat", fileAllText);
+                }
+
+                VeteranModInstallBtn.Content = "УСТАНОВИТЬ"; VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
+            }
         }
 
         private void VeteranModUnistallBtn_Click(object sender, RoutedEventArgs e)
         {
-            Log.Info("Подготовка к удалению Veteran Mod сложности.");
+            if (VeteranModDragonFixBtn.Content.ToString() == "УСТАНОВИТЬ")
+            {
+                Log.Info("Подготовка к установке Veteran Mod by MairwunNx (DragonFix) сложности.");
 
-            Log.Info("Создаем директории для стандартной сложности если их нет.");
-            
-            Directory.CreateDirectory("bin"); Directory.CreateDirectory("PAK");
+                Log.Info("Создаем директории для Veteran Mod by MairwunNx (DragonFix) если их нет.");
 
-            Log.Info("Директории для стандартной сложности были созданы без ошибок.");
+                Directory.CreateDirectory("bin"); Directory.CreateDirectory("PAK");
 
-            Log.Info("Устанавливаем Balance.bin в директорию bin.");
-            
-            File.WriteAllBytes(@"bin" + "/" + "balance.bin", Properties.Resources.SacredBalanceVanilla);
+                Log.Info("Директории для Veteran Mod by MairwunNx (DragonFix) были созданы без ошибок.");
 
-            Log.Info("Установка Balance.bin в директорию bin выполнена без ошибок.");
+                Log.Info("Устанавливаем Balance.bin в директорию bin.");
 
-            Log.Info("Устанавливаем Creature.pak в директорию PAK.");
-            
-            File.WriteAllBytes(@"PAK" + "/" + "creature.pak", Properties.Resources.SacredCreatureVanilla);
+                File.WriteAllBytes(@"bin" + "/" + "balance.bin", Properties.Resources.SacredBalanceDragonFix);
 
-            Log.Info("Установка Creature.pak в директорию PAK выполнена без ошибок.");
+                Log.Info("Установка Balance.bin в директорию bin выполнена без ошибок.");
 
-            Log.Info("Установка стандартной сложности завершилась без ошибок.");
+                Log.Info("Устанавливаем Creature.pak в директорию PAK.");
+
+                File.WriteAllBytes(@"PAK" + "/" + "creature.pak", Properties.Resources.SacredCreatureDragonFix);
+
+                Log.Info("Установка Creature.pak в директорию PAK выполнена без ошибок.");
+
+                Log.Info("Установка Veteran Mod by MairwunNx (DragonFix) завершилась без ошибок.");
+
+                Directory.CreateDirectory(".SacredUtilsData");
+
+                if (File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+                {
+                    var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "installinfo.dat");
+
+                    fileAllText[3] = "; Veteranmod by ufo installed = false";
+                    fileAllText[4] = "; Veteranmod dragonfix installed = true";
+
+                    File.WriteAllLines(@".SacredUtilsData" + "/" + "installinfo.dat", fileAllText);
+                }
+
+                VeteranModInstallBtn.Content = "УСТАНОВИТЬ"; VeteranModDragonFixBtn.Content = "УДАЛИТЬ";
+            }
+            else if (VeteranModDragonFixBtn.Content.ToString() == "УДАЛИТЬ")
+            {
+                Log.Info("Подготовка к удалению Veteran Mod сложности.");
+
+                Log.Info("Создаем директории для стандартной сложности если их нет.");
+
+                Directory.CreateDirectory("bin"); Directory.CreateDirectory("PAK");
+
+                Log.Info("Директории для стандартной сложности были созданы без ошибок.");
+
+                Log.Info("Устанавливаем Balance.bin в директорию bin.");
+
+                File.WriteAllBytes(@"bin" + "/" + "balance.bin", Properties.Resources.SacredBalanceVanilla);
+
+                Log.Info("Установка Balance.bin в директорию bin выполнена без ошибок.");
+
+                Log.Info("Устанавливаем Creature.pak в директорию PAK.");
+
+                File.WriteAllBytes(@"PAK" + "/" + "creature.pak", Properties.Resources.SacredCreatureVanilla);
+
+                Log.Info("Установка Creature.pak в директорию PAK выполнена без ошибок.");
+
+                Log.Info("Установка стандартной сложности завершилась без ошибок.");
+
+                Directory.CreateDirectory(".SacredUtilsData");
+
+                if (File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+                {
+                    var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "installinfo.dat");
+
+                    fileAllText[3] = "; Veteranmod by ufo installed = false";
+                    fileAllText[4] = "; Veteranmod dragonfix installed = false";
+
+                    File.WriteAllLines(@".SacredUtilsData" + "/" + "installinfo.dat", fileAllText);
+                }
+
+                VeteranModInstallBtn.Content = "УСТАНОВИТЬ"; VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
+            }
         }
 
         private void SacredNewInstallBtn_Click(object sender, RoutedEventArgs e)
         {
-            Log.Info("Подготовка к обновлению Sacred до 2.29.14 версии.");
-            
-            File.WriteAllBytes("Sacred.exe", Properties.Resources.SacredPatched22914);
+            if (SacredNewInstallBtn.Content.ToString() == "УСТАНОВИТЬ")
+            {
+                Log.Info("Подготовка к обновлению Sacred до 2.29.14 версии.");
 
-            Log.Info("Обновление Sacred до 2.29.14 версии прошла успешно.");
+                File.WriteAllBytes("Sacred.exe", Properties.Resources.SacredPatched22914);
+
+                Log.Info("Обновление Sacred до 2.29.14 версии прошла успешно.");
+
+                Directory.CreateDirectory(".SacredUtilsData");
+
+                if (File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+                {
+                    var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "installinfo.dat");
+
+                    fileAllText[5] = "; Sacred 2.29.14 patch installed = true";
+                    fileAllText[6] = "; Sacred 2.28.01 patch installed = false";
+
+                    File.WriteAllLines(@".SacredUtilsData" + "/" + "installinfo.dat", fileAllText);
+                }
+
+                SacredNewInstallBtn.Content = "УДАЛИТЬ";
+            }
+            else if (SacredNewInstallBtn.Content.ToString() == "УДАЛИТЬ")
+            {
+                Log.Info("Подготовка к обновлению Sacred до 2.28.01 версии.");
+
+                File.WriteAllBytes("Sacred.exe", Properties.Resources.SacredPatched228);
+
+                Log.Info("Обновление Sacred до 2.28.01 версии прошла успешно.");
+
+                Directory.CreateDirectory(".SacredUtilsData");
+
+                if (File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+                {
+                    var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "installinfo.dat");
+
+                    fileAllText[5] = "; Sacred 2.29.14 patch installed = false";
+                    fileAllText[6] = "; Sacred 2.28.01 patch installed = true";
+
+                    File.WriteAllLines(@".SacredUtilsData" + "/" + "installinfo.dat", fileAllText);
+                }
+
+                SacredNewInstallBtn.Content = "УСТАНОВИТЬ";
+            }
         }
 
         private void SacredNewUnistallBtn_Click(object sender, RoutedEventArgs e)
@@ -1176,8 +1434,8 @@ namespace SacredUtils
         private void FeedBackBtn_Click(object sender, RoutedEventArgs e) { Process.Start("https://vk.cc/85SSFN"); }
 
         private void CreatorBtn_Click(object sender, RoutedEventArgs e) { Process.Start("https://vk.cc/85SSXC"); }
-
-        private void GroupBtn_Click(object sender, RoutedEventArgs e) { Process.Start("https://vk.cc/85ST4b"); }
+        
+        private void DonateBtn_Click(object sender, RoutedEventArgs e) { Process.Start("https://qiwi.me/mairwunnx"); }
 
         private void GitHub_Click(object sender, RoutedEventArgs e) { Process.Start("https://github.com/MairwunNx/SacredUtils/"); }
     }
