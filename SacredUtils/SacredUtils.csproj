@@ -170,7 +170,6 @@
     <None Include="Resources\Configs\installinfo.dat" />
     <None Include="Resources\Configs\launchstat.dat" />
     <None Include="Resources\Configs\SacredUtils.exe.config" />
-    <None Include="Resources\Configs\selectstat.dat" />
     <None Include="Resources\Modding\SacredBalanceDragonFix.bin" />
     <None Include="Resources\Modding\SacredBalanceVanilla.bin" />
     <None Include="Resources\Modding\SacredBalanceVeteran.bin" />
@@ -218,6 +217,8 @@
     <Content Include="Resources\Modding\SacredPatched228.exe" />
     <Content Include="Resources\Modding\SacredPatched22914.exe" />
     <Content Include="Resources\Modding\SacredRes2Csv.exe" />
+    <Content Include="Resources\Modding\ServerPatched228.exe" />
+    <Content Include="Resources\Modding\ServerPatched229.exe" />
     <Content Include="Resources\Updater\SacredUtilsUpdater.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -223,9 +223,19 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] selectstat {
+        internal static byte[] ServerPatched228 {
             get {
-                object obj = ResourceManager.GetObject("selectstat", resourceCulture);
+                object obj = ResourceManager.GetObject("ServerPatched228", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] ServerPatched229 {
+            get {
+                object obj = ResourceManager.GetObject("ServerPatched229", resourceCulture);
                 return ((byte[])(obj));
             }
         }

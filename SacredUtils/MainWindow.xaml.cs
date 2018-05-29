@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Controls;
 using SacredUtils.Resources.Core;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using SacredUtils.Resources.Logger;
 using SacredUtils.Resources.Windows;
 using FontFamily = System.Drawing.FontFamily;
@@ -154,6 +155,25 @@ namespace SacredUtils
 
                 VeteranModInstallBtn.Content = "УСТАНОВИТЬ"; VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
                 SacredNewInstallBtn.Content = "УСТАНОВИТЬ"; ServerMulticoreFixBtn.Content = "УСТАНОВИТЬ";
+            }
+
+            if (File.Exists(@".SacredUtilsData" + "/" + "launchstat.dat"))
+            {
+                var text = File.ReadAllText(@".SacredUtilsData" + "/" + "launchstat.dat");
+
+                var numberOfStartups = Regex.Match(text, @"\d+").Value;
+
+                var newNumberOfStartups = Convert.ToInt32(numberOfStartups) + 1;
+
+                var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "launchstat.dat");
+                fileAllText[3] = "; The program is launched " + newNumberOfStartups + " time(s)";
+                File.WriteAllLines(@".SacredUtilsData" + "/" + "launchstat.dat", fileAllText);
+            }
+            else if (!File.Exists(@".SacredUtilsData" + "/" + "launchstat.dat"))
+            {
+                Directory.CreateDirectory(".SacredUtilsData");
+
+                File.WriteAllBytes(@".SacredUtilsData" + "/" + "launchstat.dat", Properties.Resources.launchstat);
             }
         }
         
@@ -1191,7 +1211,6 @@ namespace SacredUtils
                     var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "installinfo.dat");
 
                     fileAllText[5] = "; Sacred 2.29.14 patch installed = true";
-                    fileAllText[6] = "; Sacred 2.28.01 patch installed = false";
 
                     File.WriteAllLines(@".SacredUtilsData" + "/" + "installinfo.dat", fileAllText);
                 }
@@ -1213,7 +1232,6 @@ namespace SacredUtils
                     var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "installinfo.dat");
 
                     fileAllText[5] = "; Sacred 2.29.14 patch installed = false";
-                    fileAllText[6] = "; Sacred 2.28.01 patch installed = true";
 
                     File.WriteAllLines(@".SacredUtilsData" + "/" + "installinfo.dat", fileAllText);
                 }
@@ -1224,11 +1242,48 @@ namespace SacredUtils
 
         private void SacredNewUnistallBtn_Click(object sender, RoutedEventArgs e)
         {
-            Log.Info("Подготовка к обновлению Sacred до 2.28.01 версии.");
+            if (ServerMulticoreFixBtn.Content.ToString() == "УСТАНОВИТЬ")
+            {
+                Log.Info("Подготовка к обновлению Sacred GameServer.");
 
-            File.WriteAllBytes("Sacred.exe", Properties.Resources.SacredPatched228);
+                File.WriteAllBytes("gameserver.exe", Properties.Resources.ServerPatched229);
 
-            Log.Info("Обновление Sacred до 2.28.01 версии прошла успешно.");
+                Log.Info("Обновление Sacred GameServer прошло успешно.");
+
+                Directory.CreateDirectory(".SacredUtilsData");
+
+                if (File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+                {
+                    var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "installinfo.dat");
+
+                    fileAllText[6] = "; Server multicore fix installed = true";
+
+                    File.WriteAllLines(@".SacredUtilsData" + "/" + "installinfo.dat", fileAllText);
+                }
+
+                ServerMulticoreFixBtn.Content = "УДАЛИТЬ";
+            }
+            else if (ServerMulticoreFixBtn.Content.ToString() == "УДАЛИТЬ")
+            {
+                Log.Info("Подготовка к обновлению Sacred GameServer.");
+
+                File.WriteAllBytes("gameserver.exe", Properties.Resources.ServerPatched228);
+
+                Log.Info("Обновление Sacred GameServer прошло успешно.");
+
+                Directory.CreateDirectory(".SacredUtilsData");
+
+                if (File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+                {
+                    var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "installinfo.dat");
+
+                    fileAllText[6] = "; Server multicore fix installed = false";
+
+                    File.WriteAllLines(@".SacredUtilsData" + "/" + "installinfo.dat", fileAllText);
+                }
+
+                ServerMulticoreFixBtn.Content = "УСТАНОВИТЬ";
+            }
         }
 
         private void CompileGlobalResBtn_Click(object sender, RoutedEventArgs e)

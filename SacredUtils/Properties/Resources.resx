@@ -160,13 +160,16 @@
   <data name="launchstat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Configs\launchstat.dat;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="selectstat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Configs\selectstat.dat;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="SacredBalanceDragonFix" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Modding\SacredBalanceDragonFix.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="SacredCreatureDragonFix" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Modding\SacredCreatureDragonFix.pak;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ServerPatched228" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Modding\ServerPatched228.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ServerPatched229" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Modding\ServerPatched229.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
