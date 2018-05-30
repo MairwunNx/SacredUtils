@@ -29,43 +29,47 @@ namespace SacredUtils
         private const string AppSettings = "Settings.su";
 
         private const string GameSettings = "Settings.cfg";
-
+        
         private readonly string _appname = Path.GetFileName(Application.ExecutablePath);
 
         private static readonly ILog Log = LogManager.GetLogger("LOGGER");
 
-        public MainWindow() // Главный метод программы, вызовы других методов.
+        public MainWindow()
         {
+            Log.Info("[MethodCall] Вызываем метод инициализации логгера.");
+
             Logger.InitLogger();
 
-            Log.Info("Вызываем метод проверки конфигурации лога из другого класса.");
+            Log.Info("[MethodCall] Вызов метода инициализации логгера завершен.");
+
+            Log.Info("[MethodCall] Вызываем метод проверки конфигурации лога из другого класса.");
 
             var checkLogConfiguration = new CheckLogConfiguration();
             checkLogConfiguration.GetAvailableLogConfig();
 
-            Log.Info("Вызов метода проверки конфигурации лога завершен.");
+            Log.Info("[MethodCall] Вызов метода проверки конфигурации лога завершен.");
 
-            Log.Info("Вызываем метод проверки конфигурации SacredUtils из другого класса.");
+            Log.Info("[MethodCall] Вызываем метод проверки конфигурации SacredUtils из другого класса.");
 
             var checkAppConfiguration = new CheckAppConfiguration();
             checkAppConfiguration.GetAvailableAppConfig();
 
-            Log.Info("Вызов метода проверки конфигурации SacredUtils завершен.");
+            Log.Info("[MethodCall] Вызов метода проверки конфигурации SacredUtils завершен.");
 
-            Log.Info("Вызываем метод удаления временных файлов из другого класса.");
+            Log.Info("[MethodCall] Вызываем метод удаления временных файлов из другого класса.");
             
             var checkAppTempFiles = new CheckAppTempFiles();
             checkAppTempFiles.CheckAvailableTempFiles();
 
-            Log.Info("Вызов метода удаления временных файлов завершен.");
+            Log.Info("[MethodCall] Вызов метода удаления временных файлов завершен.");
 
-            Log.Info("Вызываем метод инициализации компонентов SacredUtils из другого класса.");
+            Log.Info("[MethodCall] Вызываем метод инициализации компонентов SacredUtils из другого класса.");
 
             InitializeComponent();
 
-            Log.Info("Вызов метода инициализации компонентов SacredUtils завершен.");
+            Log.Info("[MethodCall] Вызов метода инициализации компонентов SacredUtils завершен.");
 
-            Log.Info("Вызываем метод проверки обновления из другого класса.");
+            Log.Info("[MethodCall] Вызываем метод проверки обновления из другого класса.");
 
             CheckAppUpdates checkAppUpdates = new CheckAppUpdates();
 
@@ -73,21 +77,21 @@ namespace SacredUtils
             checkAppUpdates.GetAvailableAppUpdatesAsync();
             #pragma warning restore CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
 
-            Log.Info("Вызов метода проверки обновления завершен.");
+            Log.Info("[MethodCall] Вызов метода проверки обновления завершен.");
 
-            Log.Info("Вызываем метод проверки настроек SacredUtils из другого класса.");
+            Log.Info("[MethodCall] Вызываем метод проверки настроек SacredUtils из другого класса.");
             
             GetAppSettings getAppSettings = new GetAppSettings();
             getAppSettings.LoadAppSettings();
 
-            Log.Info("Вызов метода проверки настроек SacredUtils завершен.");
+            Log.Info("[MethodCall] Вызов метода проверки настроек SacredUtils завершен.");
 
-            Log.Info("Вызываем метод проверки настроек SacredUnderworld из другого класса.");
+            Log.Info("[MethodCall] Вызываем метод проверки настроек SacredUnderworld из другого класса.");
             
             GetGameSettings getGameSettings = new GetGameSettings();
             getGameSettings.LoadGameSettings();
 
-            Log.Info("Вызов метода проверки настроек SacredUnderworld завершен.");
+            Log.Info("[MethodCall] Вызов метода проверки настроек SacredUnderworld завершен.");
 
             Log.Info("Поиск файла для загрузки данных о статусе модификаций.");
 
@@ -102,37 +106,53 @@ namespace SacredUtils
                 if (text.Contains("Veteranmod by ufo installed = true"))
                 {
                     VeteranModInstallBtn.Content = "УДАЛИТЬ";
+
+                    Log.Info("Статус функции \"Veteranmod by ufo installed\" был загружен.");
                 }
                 else if (text.Contains("Veteranmod by ufo installed = false"))
                 {
                     VeteranModInstallBtn.Content = "УСТАНОВИТЬ";
+
+                    Log.Info("Статус функции \"Veteranmod by ufo installed\" был загружен.");
                 }
 
                 if (text.Contains("Veteranmod dragonfix installed = true"))
                 {
                     VeteranModDragonFixBtn.Content = "УДАЛИТЬ";
+
+                    Log.Info("Статус функции \"Veteranmod dragonfix installed\" был загружен.");
                 }
                 else if (text.Contains("Veteranmod dragonfix installed = false"))
                 {
                     VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
+
+                    Log.Info("Статус функции \"Veteranmod dragonfix installed\" был загружен.");
                 }
 
                 if (text.Contains("Sacred 2.29.14 patch installed = true"))
                 {
                     SacredNewInstallBtn.Content = "УДАЛИТЬ";
+
+                    Log.Info("Статус функции \"Sacred 2.29.14 patch installed\" был загружен.");
                 }
                 else if (text.Contains("Sacred 2.29.14 patch installed = false"))
                 {
                     SacredNewInstallBtn.Content = "УСТАНОВИТЬ";
+
+                    Log.Info("Статус функции \"Sacred 2.29.14 patch installed\" был загружен.");
                 }
 
                 if (text.Contains("Server multicore fix installed = true"))
                 {
                     ServerMulticoreFixBtn.Content = "УДАЛИТЬ";
+
+                    Log.Info("Статус функции \"Server multicore fix installed\" был загружен.");
                 }
                 else if (text.Contains("Server multicore fix installed = false"))
                 {
                     ServerMulticoreFixBtn.Content = "УСТАНОВИТЬ";
+
+                    Log.Info("Статус функции \"Server multicore fix installed\" был загружен.");
                 }
 
                 Log.Info("Загрузка данных о статусе установок модификаций завершена без ошибок.");
@@ -149,9 +169,16 @@ namespace SacredUtils
 
                 Log.Info("Создание файла installinfo.dat из ресурсов программы.");
 
-                File.WriteAllBytes(@".SacredUtilsData" + "/" + "installinfo.dat", Properties.Resources.installinfo);
+                try
+                {
+                    File.WriteAllBytes(@".SacredUtilsData" + "/" + "installinfo.dat", Properties.Resources.installinfo);
 
-                Log.Info("Создание файла installinfo.dat из ресурсов программы завершено без ошибок.");
+                    Log.Info("Создание файла installinfo.dat из ресурсов программы завершено без ошибок.");
+                }
+                catch (Exception exception)
+                {
+                    Log.Error("Создание файла installinfo.dat закончилось с ошибкой."); Log.Error(exception.ToString());
+                }
 
                 VeteranModInstallBtn.Content = "УСТАНОВИТЬ"; VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
                 SacredNewInstallBtn.Content = "УСТАНОВИТЬ"; ServerMulticoreFixBtn.Content = "УСТАНОВИТЬ";
@@ -159,15 +186,23 @@ namespace SacredUtils
 
             if (File.Exists(@".SacredUtilsData" + "/" + "launchstat.dat"))
             {
-                var text = File.ReadAllText(@".SacredUtilsData" + "/" + "launchstat.dat");
+                try
+                {
+                    var text = File.ReadAllText(@".SacredUtilsData" + "/" + "launchstat.dat");
 
-                var numberOfStartups = Regex.Match(text, @"\d+").Value;
+                    var numberOfStartups = Regex.Match(text, @"\d+").Value;
 
-                var newNumberOfStartups = Convert.ToInt32(numberOfStartups) + 1;
+                    var newNumberOfStartups = Convert.ToInt32(numberOfStartups) + 1;
 
-                var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "launchstat.dat");
-                fileAllText[3] = "; The program is launched " + newNumberOfStartups + " time(s)";
-                File.WriteAllLines(@".SacredUtilsData" + "/" + "launchstat.dat", fileAllText);
+                    var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "launchstat.dat");
+                    fileAllText[3] = "; The program is launched " + newNumberOfStartups + " time(s)";
+                    File.WriteAllLines(@".SacredUtilsData" + "/" + "launchstat.dat", fileAllText);
+                }
+                catch (Exception exception)
+                {
+                    Log.Error("Операция по счету запуска SacredUtils завершилась с ошибкой."); Log.Error(exception.ToString());
+                }
+
             }
             else if (!File.Exists(@".SacredUtilsData" + "/" + "launchstat.dat"))
             {

@@ -10,8 +10,6 @@ namespace SacredUtils.Resources.Core
 
         public void GetAvailableAppConfig() // Проверяем наличие конфигураций.
         {
-            Logger.Logger.InitLogger();
-
             Log.Info("Проверяем наличие файла конфигурации SacredUnderworld.");
 
             if (!File.Exists("Settings.cfg"))  

@@ -12,7 +12,7 @@ namespace SacredUtils.Resources.Core
     public class CheckAppUpdates
     {
         private const string AppSettings = "Settings.su";
-        private const string AppVersion = "1.2R Rv4 B4 (290518)";
+        private const string AppVersion = "1.2R Rv4 B4 (300518)";
 
         private readonly WebClient _wc = new WebClient();
 
@@ -23,8 +23,6 @@ namespace SacredUtils.Resources.Core
         
         public async System.Threading.Tasks.Task GetAvailableAppUpdatesAsync()
         {
-            Logger.Logger.InitLogger();
-
             var fileText = File.ReadAllText(AppSettings);
 
             Log.Info("Получаем статус активности функции \"Автообновление\"");
@@ -45,8 +43,7 @@ namespace SacredUtils.Resources.Core
 
                             Log.Info("Получаем номер последней релизной версии SacredUtils.");
 
-                            const string appLatestVersionWeb =
-                                "https://drive.google.com/uc?export=download&id=13N9ZfalxDfTAIdYxFuGBr8QPMW9OODc_";
+                            const string appLatestVersionWeb = "https://drive.google.com/uc?export=download&id=13N9ZfalxDfTAIdYxFuGBr8QPMW9OODc_";
 
                             Log.Info("Номер последней версии был получен без ошибок.");
 
@@ -68,8 +65,7 @@ namespace SacredUtils.Resources.Core
 
                                         ((MainWindow) window).UpdateGrid.Visibility = Visibility.Visible;
 
-                                        ((MainWindow) window).NewVersionLbl.Content =
-                                            $"Вы обновитесь до версии {appLatestVersion}.";
+                                        ((MainWindow) window).NewVersionLbl.Content = $"Вы обновитесь до версии {appLatestVersion}.";
                                     }
                                 }
 
@@ -134,7 +130,6 @@ namespace SacredUtils.Resources.Core
                 Log.Info("Завершение фоновых процессов и задачь. Выход из приложения."); Environment.Exit(0);
             }
             
-
             const string appLatest = @"https://drive.google.com/uc?export=download&id=1sDiiIYW0_JXMqh6IAHMOyf3IKPySCr4Q";
 
             Log.Info("Приступаем к скачиванию новой версии SacredUtils.");
@@ -142,6 +137,7 @@ namespace SacredUtils.Resources.Core
             try
             {
                 await _wc.DownloadFileTaskAsync(new Uri(appLatest), "_newVersionSacredUtilsTemp.exe");
+
                 Log.Info("Скачивание новой версии SacredUtils завершено без ошибок.");
             }
             catch (Exception exception)
@@ -156,6 +152,7 @@ namespace SacredUtils.Resources.Core
             try
             {
                 Process.Start(@"Temp\SacredUtilsUpdater.exe", "_newVersionSacredUtilsTemp.exe " + _appname);
+
                 Log.Info("Запуск помощника обновления завершился без ошибок.");
             }
             catch (Exception exception)

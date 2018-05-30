@@ -12,8 +12,6 @@ namespace SacredUtils.Resources.Core
 
         public void LoadGameSettings() // Загружаем игровые настройки.
         {
-            Logger.Logger.InitLogger();
-
             Log.Info("Загрузка всех активных настроек SacredUnderworld");
 
             try

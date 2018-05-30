@@ -12,8 +12,6 @@ namespace SacredUtils.Resources.Core
 
         public void LoadAppSettings() // Загружаем настройки программы и игры.
         {
-            Logger.Logger.InitLogger();
-
             Log.Info("Загрузка всех активных настроек SacredUtils.");
 
             var text = File.ReadAllLines("Settings.su", Encoding.ASCII);
@@ -248,7 +246,6 @@ namespace SacredUtils.Resources.Core
             {
                 Log.Info("Проверка версии конфигурационного файла SacredUtils завершилось с ошибкой."); Log.Fatal(exception.ToString());
             }
-
         }
     }
 }

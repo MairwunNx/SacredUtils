@@ -14,8 +14,6 @@ namespace SacredUtils.Resources.Core
 
         public void GetAvailableLogConfig() // Проверяем наличие конфигурации лога.
         {
-            Logger.Logger.InitLogger();
-
             Log.Info("Проверяем наличие файла конфигурации лога.");
 
             if (!File.Exists(_appname + ".config"))

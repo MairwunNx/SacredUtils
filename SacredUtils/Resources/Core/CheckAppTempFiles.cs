@@ -10,8 +10,6 @@ namespace SacredUtils.Resources.Core
         
         public void CheckAvailableTempFiles() // Проверяем наличие временных файлов.
         {
-            Logger.Logger.InitLogger();
-
             Log.Info("Проверяем / Получаем временные файлы в текущей директории.");
 
             if (Directory.Exists("Temp"))
