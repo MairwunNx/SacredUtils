@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region UsingDirectives.
+
+using System;
 using log4net;
 using System.IO;
 using System.Linq;
@@ -22,419 +24,31 @@ using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
 
+#endregion
+
 namespace SacredUtils
 {
     public partial class MainWindow
     {
+        #region SacredUtilsFieldsAndStrings.
+
         private const string AppSettings = "Settings.su";
 
         private const string GameSettings = "Settings.cfg";
-        
+
         private readonly string _appname = Path.GetFileName(Application.ExecutablePath);
 
         private static readonly ILog Log = LogManager.GetLogger("LOGGER");
 
-        public MainWindow()
-        {
-            Log.Info("[MethodCall] Вызываем метод инициализации логгера.");
+        #endregion
 
-            Logger.InitLogger();
-
-            Log.Info("[MethodCall] Вызов метода инициализации логгера завершен.");
-
-            Log.Info("[MethodCall] Вызываем метод проверки конфигурации лога из другого класса.");
-
-            var checkLogConfiguration = new CheckLogConfiguration();
-            checkLogConfiguration.GetAvailableLogConfig();
-
-            Log.Info("[MethodCall] Вызов метода проверки конфигурации лога завершен.");
-
-            Log.Info("[MethodCall] Вызываем метод проверки конфигурации SacredUtils из другого класса.");
-
-            var checkAppConfiguration = new CheckAppConfiguration();
-            checkAppConfiguration.GetAvailableAppConfig();
-
-            Log.Info("[MethodCall] Вызов метода проверки конфигурации SacredUtils завершен.");
-
-            Log.Info("[MethodCall] Вызываем метод удаления временных файлов из другого класса.");
-            
-            var checkAppTempFiles = new CheckAppTempFiles();
-            checkAppTempFiles.CheckAvailableTempFiles();
-
-            Log.Info("[MethodCall] Вызов метода удаления временных файлов завершен.");
-
-            Log.Info("[MethodCall] Вызываем метод инициализации компонентов SacredUtils из другого класса.");
-
-            InitializeComponent();
-
-            Log.Info("[MethodCall] Вызов метода инициализации компонентов SacredUtils завершен.");
-
-            Log.Info("[MethodCall] Вызываем метод проверки обновления из другого класса.");
-
-            CheckAppUpdates checkAppUpdates = new CheckAppUpdates();
-
-            #pragma warning disable CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
-            checkAppUpdates.GetAvailableAppUpdatesAsync();
-            #pragma warning restore CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
-
-            Log.Info("[MethodCall] Вызов метода проверки обновления завершен.");
-
-            Log.Info("[MethodCall] Вызываем метод проверки настроек SacredUtils из другого класса.");
-            
-            GetAppSettings getAppSettings = new GetAppSettings();
-            getAppSettings.LoadAppSettings();
-
-            Log.Info("[MethodCall] Вызов метода проверки настроек SacredUtils завершен.");
-
-            Log.Info("[MethodCall] Вызываем метод проверки настроек SacredUnderworld из другого класса.");
-            
-            GetGameSettings getGameSettings = new GetGameSettings();
-            getGameSettings.LoadGameSettings();
-
-            Log.Info("[MethodCall] Вызов метода проверки настроек SacredUnderworld завершен.");
-
-            Log.Info("Поиск файла для загрузки данных о статусе модификаций.");
-
-            if (File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
-            {
-                Log.Info("Файл для загрузки данных о статусе модификаций был найден.");
-
-                var text = File.ReadAllText(@".SacredUtilsData" + "/" + "installinfo.dat", Encoding.ASCII);
-
-                Log.Info("Загрузка данных о статусе установок модификаций.");
-
-                if (text.Contains("Veteranmod by ufo installed = true"))
-                {
-                    VeteranModInstallBtn.Content = "УДАЛИТЬ";
-
-                    Log.Info("Статус функции \"Veteranmod by ufo installed\" был загружен.");
-                }
-                else if (text.Contains("Veteranmod by ufo installed = false"))
-                {
-                    VeteranModInstallBtn.Content = "УСТАНОВИТЬ";
-
-                    Log.Info("Статус функции \"Veteranmod by ufo installed\" был загружен.");
-                }
-
-                if (text.Contains("Veteranmod dragonfix installed = true"))
-                {
-                    VeteranModDragonFixBtn.Content = "УДАЛИТЬ";
-
-                    Log.Info("Статус функции \"Veteranmod dragonfix installed\" был загружен.");
-                }
-                else if (text.Contains("Veteranmod dragonfix installed = false"))
-                {
-                    VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
-
-                    Log.Info("Статус функции \"Veteranmod dragonfix installed\" был загружен.");
-                }
-
-                if (text.Contains("Sacred 2.29.14 patch installed = true"))
-                {
-                    SacredNewInstallBtn.Content = "УДАЛИТЬ";
-
-                    Log.Info("Статус функции \"Sacred 2.29.14 patch installed\" был загружен.");
-                }
-                else if (text.Contains("Sacred 2.29.14 patch installed = false"))
-                {
-                    SacredNewInstallBtn.Content = "УСТАНОВИТЬ";
-
-                    Log.Info("Статус функции \"Sacred 2.29.14 patch installed\" был загружен.");
-                }
-
-                if (text.Contains("Server multicore fix installed = true"))
-                {
-                    ServerMulticoreFixBtn.Content = "УДАЛИТЬ";
-
-                    Log.Info("Статус функции \"Server multicore fix installed\" был загружен.");
-                }
-                else if (text.Contains("Server multicore fix installed = false"))
-                {
-                    ServerMulticoreFixBtn.Content = "УСТАНОВИТЬ";
-
-                    Log.Info("Статус функции \"Server multicore fix installed\" был загружен.");
-                }
-
-                Log.Info("Загрузка данных о статусе установок модификаций завершена без ошибок.");
-            }
-            else if (!File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
-            {
-                Log.Warn("Файл для загрузки данных о статусе модификаций не был найден.");
-
-                Log.Info("Создаем директорию для файла installinfo.dat.");
-
-                Directory.CreateDirectory(".SacredUtilsData");
-
-                Log.Info("Создание директории для файла installinfo.dat завершено без ошибок.");
-
-                Log.Info("Создание файла installinfo.dat из ресурсов программы.");
-
-                try
-                {
-                    File.WriteAllBytes(@".SacredUtilsData" + "/" + "installinfo.dat", Properties.Resources.installinfo);
-
-                    Log.Info("Создание файла installinfo.dat из ресурсов программы завершено без ошибок.");
-                }
-                catch (Exception exception)
-                {
-                    Log.Error("Создание файла installinfo.dat закончилось с ошибкой."); Log.Error(exception.ToString());
-                }
-
-                VeteranModInstallBtn.Content = "УСТАНОВИТЬ"; VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
-                SacredNewInstallBtn.Content = "УСТАНОВИТЬ"; ServerMulticoreFixBtn.Content = "УСТАНОВИТЬ";
-            }
-
-            if (File.Exists(@".SacredUtilsData" + "/" + "launchstat.dat"))
-            {
-                try
-                {
-                    var text = File.ReadAllText(@".SacredUtilsData" + "/" + "launchstat.dat");
-
-                    var numberOfStartups = Regex.Match(text, @"\d+").Value;
-
-                    var newNumberOfStartups = Convert.ToInt32(numberOfStartups) + 1;
-
-                    var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "launchstat.dat");
-                    fileAllText[3] = "; The program is launched " + newNumberOfStartups + " time(s)";
-                    File.WriteAllLines(@".SacredUtilsData" + "/" + "launchstat.dat", fileAllText);
-
-                    Log.Info("Данные о запуске SacredUtils были сохранены в launchstat.dat.");
-                }
-                catch (Exception exception)
-                {
-                    Log.Error("Операция по счету запуска SacredUtils завершилась с ошибкой."); Log.Error(exception.ToString());
-                }
-
-            }
-            else if (!File.Exists(@".SacredUtilsData" + "/" + "launchstat.dat"))
-            {
-                Directory.CreateDirectory(".SacredUtilsData");
-
-                File.WriteAllBytes(@".SacredUtilsData" + "/" + "launchstat.dat", Properties.Resources.launchstat);
-            }
-        }
-
-        private void Window_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D1)
-            {
-                SettingsListBox.SelectedIndex = 0;
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D2)
-            {
-                SettingsListBox.SelectedIndex = 1;
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D3)
-            {
-                SettingsListBox.SelectedIndex = 2;
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D4)
-            {
-                SettingsListBox.SelectedIndex = 3;
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D5)
-            {
-                SettingsListBox.SelectedIndex = 4;
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D6)
-            {
-                SettingsListBox.SelectedIndex = 5;
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D7)
-            {
-                SettingsListBox.SelectedIndex = 6;
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D8)
-            {
-                SettingsListBox.SelectedIndex = 7;
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D9)
-            {
-                SettingsListBox.SelectedIndex = 8;
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D0)
-            {
-                SettingsListBox.SelectedIndex = 9;
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.Q)
-            {
-                SettingsListBox.SelectedIndex = 15;
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.W)
-            {
-                var colorPicker = new ColorWindow(); colorPicker.Show();
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.E)
-            {
-                Process.Start("https://vk.cc/85SSFN");
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.R)
-            {
-                Process.Start("https://vk.cc/85SSXC");
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.T)
-            {
-                Process.Start("https://vk.cc/85ST4b");
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.Y)
-            {
-                Process.Start("https://qiwi.me/mairwunnx");
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.U)
-            {
-                Process.Start("https://github.com/MairwunNx/SacredUtils/");
-            }
-        }
-
-        public void SetSettingsValue(string s, string v)
-        {
-            if (!File.Exists(GameSettings))
-            {
-                Log.Fatal("Файл конфигурации игры внезапно пропал!!! Он будет восстановлен.");
-
-                Log.Info("Создаем файл конфигурации игры из ресурсов программы.");
-
-                try
-                {
-                    File.WriteAllBytes("Settings.cfg", Properties.Resources.GameSettings);
-
-                    Log.Info("Файл конфигурации игры был создан без ошибок.");
-                }
-                catch (Exception exception)
-                {
-                    Log.Fatal("Создание файла конфигурации закончилось с ошибкой."); Log.Fatal(exception.ToString());
-
-                    Log.Info("Завершение фоновых процессов и задачь. Выход из приложения."); Environment.Exit(0);
-                }
-            }
-
-            
-            var text = File.ReadAllLines(GameSettings, Encoding.ASCII);
-
-            for (int i = 0; i < text.Length; i++)
-            {
-                if (text[i].Contains(s + " : "))
-                {
-                    try
-                    {
-                        text[i] = s + " : " + v; File.WriteAllLines(GameSettings, text);
-                    }
-                    catch (Exception exception)
-                    {
-                        Log.Error("При изменении значения " + s + " на " + v + " произошла ошибка."); Log.Error(exception.ToString());
-                    }
-                }
-            }
-        }
-
-        public void SetSettingsValueForFont(string s, string v)
-        {
-            if (!File.Exists(GameSettings))
-            {
-                Log.Fatal("Файл конфигурации игры внезапно пропал!!! Он будет восстановлен.");
-
-                Log.Info("Создаем файл конфигурации игры из ресурсов программы.");
-
-                try
-                {
-                    File.WriteAllBytes("Settings.cfg", Properties.Resources.GameSettings);
-
-                    Log.Info("Файл конфигурации игры был создан без ошибок.");
-                }
-                catch (Exception exception)
-                {
-                    Log.Fatal("Создание файла конфигурации закончилось с ошибкой."); Log.Fatal(exception.ToString());
-
-                    Log.Info("Завершение фоновых процессов и задачь. Выход из приложения."); Environment.Exit(0);
-                }
-            }
-
-            
-            var text = File.ReadAllLines(GameSettings, Encoding.ASCII);
-
-            for (int i = 0; i < text.Length; i++)
-            {
-                if (text[i].Contains(s))
-                {
-                    try
-                    {
-                        text[i] = s + v; File.WriteAllLines(GameSettings, text);
-                    }
-                    catch (Exception exception)
-                    {
-                        Log.Error("При изменении значения " + s + " на " + v + " произошла ошибка."); Log.Error(exception.ToString());
-                    }
-                }
-            }
-        }
-
-        public void SetSettingsValueWithDouble(string s, double v)
-        {
-            if (!File.Exists(GameSettings))
-            {
-                Log.Fatal("Файл конфигурации игры внезапно пропал!!! Он будет восстановлен.");
-
-                Log.Info("Создаем файл конфигурации игры из ресурсов программы.");
-
-                try
-                {
-                    File.WriteAllBytes("Settings.cfg", Properties.Resources.GameSettings);
-
-                    Log.Info("Файл конфигурации игры был создан без ошибок.");
-                }
-                catch (Exception exception)
-                {
-                    Log.Fatal("Создание файла конфигурации закончилось с ошибкой."); Log.Fatal(exception.ToString());
-
-                    Log.Info("Завершение фоновых процессов и задачь. Выход из приложения."); Environment.Exit(0);
-                }
-            }
-
-            
-            var text = File.ReadAllLines(GameSettings, Encoding.ASCII);
-
-            for (int i = 0; i < text.Length; i++)
-            {
-                if (text[i].Contains(s + " : "))
-                {
-                    try
-                    {
-                        text[i] = s + " : " + v; File.WriteAllLines(GameSettings, text);
-                    }
-                    catch (Exception exception)
-                    {
-                        Log.Error("При изменении значения " + s + " на " + v + " произошла ошибка."); Log.Error(exception.ToString());
-                    }
-                }
-            }
-        }
-
-        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.ChangedButton == MouseButton.Left) { DragMove(); }
-        }
+        #region SacredUtilsWindowButtonHandlers.
 
         private void CloseBtn_Click(object sender, RoutedEventArgs e)
         {
             Log.Info("Завершение фоновых процессов и задачь. Выход из приложения."); Environment.Exit(0);
         }
-        
+
         private void MinimizeBtn_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
@@ -611,7 +225,7 @@ namespace SacredUtils
                     {
                         if (File.Exists("Sacred.exe"))
                         {
-                            
+
                             Log.Info("Запускаем Sacred.exe с параметрами : Изменить язык ввода, выйди из приложения.");
                             Process.Start("Sacred.exe"); InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
 
@@ -656,294 +270,221 @@ namespace SacredUtils
             }
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        #endregion
+
+        #region SacredUnderworldSetValueMethods.
+
+        public void SetSettingsValue(string s, string v)
         {
-            Log.Info("Создаем файл лицензии Apache 2.0 для SacredUtils.");
-            
-            File.WriteAllBytes("license.txt", Properties.Resources.license);
+            if (!File.Exists(GameSettings))
+            {
+                Log.Fatal("Файл конфигурации игры внезапно пропал!!! Он будет восстановлен.");
 
-            Log.Info("Файл лицензии Apache 2.0 для SacredUtils был создан без ошибок.");
+                Log.Info("Создаем файл конфигурации игры из ресурсов программы.");
 
-            Log.Info("Загружаем коллекцию шрифтов для SacredUtils.");
-            
-            List<string> fonts = new List<string>();
-            InstalledFontCollection installedFonts = new InstalledFontCollection();
-            foreach (FontFamily font in installedFonts.Families) { fonts.Add(font.Name); }
+                try
+                {
+                    File.WriteAllBytes("Settings.cfg", Properties.Resources.GameSettings);
 
-            FontLibraryCmbBox.ItemsSource = fonts;
+                    Log.Info("Файл конфигурации игры был создан без ошибок.");
+                }
+                catch (Exception exception)
+                {
+                    Log.Fatal("Создание файла конфигурации закончилось с ошибкой."); Log.Fatal(exception.ToString());
 
-            Log.Info("Коллекция шрифтов загружена без ошибок.");
+                    Log.Info("Завершение фоновых процессов и задачь. Выход из приложения."); Environment.Exit(0);
+                }
+            }
+
 
             var text = File.ReadAllLines(GameSettings, Encoding.ASCII);
 
-            Log.Info("Подготавливаем коллекцию шрифтов для FontsCombobox.");
-
-            try
+            for (int i = 0; i < text.Length; i++)
             {
-                for (var i = 0; i < text.Length; i++)
+                if (text[i].Contains(s + " : "))
                 {
-                    if (text[i].Contains("FONT : 1, "))
+                    try
                     {
-                        var tempdata0 = text[i].Substring(text[i].IndexOf("\"", StringComparison.Ordinal) + 1);
-
-                        if (tempdata0 == text[i].Substring(text[i].IndexOf("\"", StringComparison.Ordinal) + 1))
-                        {
-                            var tempdata1 = tempdata0.Remove(tempdata0.LastIndexOf("\"", StringComparison.Ordinal));
-                            FontLibraryCmbBox.SelectedItem = tempdata1;
-
-                            Log.Info("Загрузка шрифтов в FontsCombobox выполнена без ошибок.");
-                        }
+                        text[i] = s + " : " + v; File.WriteAllLines(GameSettings, text);
+                    }
+                    catch (Exception exception)
+                    {
+                        Log.Error("При изменении значения " + s + " на " + v + " произошла ошибка."); Log.Error(exception.ToString());
                     }
                 }
             }
-            catch (Exception exception)
+        }
+
+        public void SetSettingsValueForFont(string s, string v)
+        {
+            if (!File.Exists(GameSettings))
             {
-                Log.Error("Загрузка шрифтов в FontsCombobox завершена с ошибкой."); Log.Error(exception.ToString());
-            }
+                Log.Fatal("Файл конфигурации игры внезапно пропал!!! Он будет восстановлен.");
 
-            var text1 = File.ReadAllLines("Settings.su", Encoding.ASCII);
+                Log.Info("Создаем файл конфигурации игры из ресурсов программы.");
 
-            Log.Info("Загружаем цветовые схемы для SacredUtils.");
-
-            for (var i = 0; i < text1.Length; i++)
-            {
-                if (text1[i].Contains("User interface color SacredUtils = default") || text1[i].Contains("User interface color SacredUtils = indigo"))
+                try
                 {
-                    var colorWindow = new ColorWindow(); colorWindow.Close();
+                    File.WriteAllBytes("Settings.cfg", Properties.Resources.GameSettings);
 
-                    colorWindow.ChangeColor("#7986cb", "#303f9f", "#3f51b5", "#c5cae9", "Indigo", "#FFFFFFFF");
+                    Log.Info("Файл конфигурации игры был создан без ошибок.");
                 }
-
-                if (text1[i].Contains("User interface color SacredUtils = red"))
+                catch (Exception exception)
                 {
-                    var colorWindow = new ColorWindow(); colorWindow.Close();
+                    Log.Fatal("Создание файла конфигурации закончилось с ошибкой."); Log.Fatal(exception.ToString());
 
-                    colorWindow.ChangeColor("#e57373", "#d32f2f", "#f44336", "#ffcdd2", "Red", "#FFFFFFFF");
-                }
-
-                if (text1[i].Contains("User interface color SacredUtils = pink"))
-                {
-                    var colorWindow = new ColorWindow(); colorWindow.Close();
-
-                    colorWindow.ChangeColor("#f06292", "#c2185b", "#e91e63", "#f8bbd0", "Pink", "#FFFFFFFF");
-                }
-
-                if (text1[i].Contains("User interface color SacredUtils = purple"))
-                {
-                    var colorWindow = new ColorWindow(); colorWindow.Close();
-
-                    colorWindow.ChangeColor("#ba68c8", "#7b1fa2", "#9c27b0", "#e1bee7", "Purple", "#FFFFFFFF");
-                }
-
-                if (text1[i].Contains("User interface color SacredUtils = deeppurple"))
-                {
-                    var colorWindow = new ColorWindow(); colorWindow.Close();
-
-                    colorWindow.ChangeColor("#9575cd", "#512da8", "#673ab7", "#d1c4e9", "DeepPurple", "#FFFFFFFF");
-                }
-
-                if (text1[i].Contains("User interface color SacredUtils = blue"))
-                {
-                    var colorWindow = new ColorWindow(); colorWindow.Close();
-
-                    colorWindow.ChangeColor("#64b5f6", "#1976d2", "#2196f3", "#bbdefb", "Blue", "#FFFFFFFF");
-                }
-
-                if (text1[i].Contains("User interface color SacredUtils = lightblue"))
-                {
-                    var colorWindow = new ColorWindow(); colorWindow.Close();
-
-                    colorWindow.ChangeColor("#4fc3f7", "#0288d1", "#03a9f4", "#b3e5fc", "LightBlue", "#000000");
-                }
-
-                if (text1[i].Contains("User interface color SacredUtils = cyan"))
-                {
-                    var colorWindow = new ColorWindow(); colorWindow.Close();
-
-                    colorWindow.ChangeColor("#4dd0e1", "#0097a7", "#00bcd4", "#b2ebf2", "Cyan", "#000000");
-                }
-
-                if (text1[i].Contains("User interface color SacredUtils = teal"))
-                {
-                    var colorWindow = new ColorWindow(); colorWindow.Close();
-
-                    colorWindow.ChangeColor("#4db6ac", "#00796b", "#009688", "#b2dfdb", "Teal", "#ffffff");
-                }
-
-                if (text1[i].Contains("User interface color SacredUtils = green"))
-                {
-                    var colorWindow = new ColorWindow(); colorWindow.Close();
-
-                    colorWindow.ChangeColor("#81c784", "#388e3c", "#4caf50", "#c8e6c9", "Green", "#ffffff");
-                }
-
-                if (text1[i].Contains("User interface color SacredUtils = lightgreen"))
-                {
-                    var colorWindow = new ColorWindow(); colorWindow.Close();
-
-                    colorWindow.ChangeColor("#aed581", "#689f38", "#8bc34a", "#dcedc8", "LightGreen", "#000000");
-                }
-
-                if (text1[i].Contains("User interface color SacredUtils = lime"))
-                {
-                    var colorWindow = new ColorWindow(); colorWindow.Close();
-
-                    colorWindow.ChangeColor("#dce775", "#afb42b", "#cddc39", "#f0f4c3", "Lime", "#000000");
-                }
-
-                if (text1[i].Contains("User interface color SacredUtils = yellow"))
-                {
-                    var colorWindow = new ColorWindow(); colorWindow.Close();
-
-                    colorWindow.ChangeColor("#fff176", "#fbc02d", "#ffeb3b", "#fff9c4", "Yellow", "#000000");
-                }
-
-                if (text1[i].Contains("User interface color SacredUtils = amber"))
-                {
-                    var colorWindow = new ColorWindow(); colorWindow.Close();
-
-                    colorWindow.ChangeColor("#ffd54f", "#ffa000", "#ffc107", "#ffecb3", "Amber", "#000000");
-                }
-
-                if (text1[i].Contains("User interface color SacredUtils = orange"))
-                {
-                    var colorWindow = new ColorWindow(); colorWindow.Close();
-
-                    colorWindow.ChangeColor("#ffb74d", "#f57c00", "#ff9800", "#ffe0b2", "Orange", "#000000");
-                }
-
-                if (text1[i].Contains("User interface color SacredUtils = deeporange"))
-                {
-                    var colorWindow = new ColorWindow(); colorWindow.Close();
-
-                    colorWindow.ChangeColor("#ff8a65", "#e64a19", "#ff5722", "#ffccbc", "DeepOrange", "#000000");
-                }
-
-                if (text1[i].Contains("User interface color SacredUtils = brown"))
-                {
-                    var colorWindow = new ColorWindow(); colorWindow.Close();
-
-                    colorWindow.ChangeColor("#a1887f", "#5d4037", "#795548", "#d7ccc8", "Brown", "#ffffff");
-                }
-
-                if (text1[i].Contains("User interface color SacredUtils = grey"))
-                {
-                    var colorWindow = new ColorWindow(); colorWindow.Close();
-
-                    colorWindow.ChangeColor("#e0e0e0", "#616161", "#9e9e9e", "#f5f5f5", "Grey", "#000000");
-                }
-
-                if (text1[i].Contains("User interface color SacredUtils = bluegrey"))
-                {
-                    var colorWindow = new ColorWindow(); colorWindow.Close();
-
-                    colorWindow.ChangeColor("#90a4ae", "#455a64", "#607d8b", "#cfd8dc", "BlueGrey", "#ffffff");
-                }
-
-                if (text1[i].Contains("User interface color SacredUtils = black"))
-                {
-                    var colorWindow = new ColorWindow(); colorWindow.Close();
-
-                    colorWindow.ChangeColor("#484848", "#000000", "#212121", "#484848", "DeepOrange", "#ffffff");
-
-                    BrushConverter bc = new BrushConverter();
-
-                    CardBackgroundColor.Background = (Brush)bc.ConvertFrom("#2c2c2c");
-
-                    NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DDCBCBCB");
-
-                    SettingsNameColor.Foreground = (Brush)bc.ConvertFrom("#eeeeee");
-
-                    CardCaptionsColor.Foreground = (Brush)bc.ConvertFrom("#e0e0e0");
-
-                    ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#eeeeee");
-                    ColorCombobox.Background = (Brush)bc.ConvertFrom("#2c2c2c");
-
-                    ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#eeeeee");
+                    Log.Info("Завершение фоновых процессов и задачь. Выход из приложения."); Environment.Exit(0);
                 }
             }
 
-            Log.Info("Цветовые схемы для SacredUtils были загружены без ошибок.");
-        }
-        
-        private void ImageSmoothingToggleBtn_Click(object sender, RoutedEventArgs e)
-        {
-            SetSettingsValue("FSAA_FILTER", ImageSmoothingToggleBtn.IsChecked == true ? "1" : "0");
-        }
 
-        private void MemoryLimitToggleBtn_Click(object sender, RoutedEventArgs e)
-        {
-            SetSettingsValue("GFX_LIMIT128", MemoryLimitToggleBtn.IsChecked == true ? "1" : "0");
-        }
+            var text = File.ReadAllLines(GameSettings, Encoding.ASCII);
 
-        private void CompatibilityModeToggleBtn_Click(object sender, RoutedEventArgs e)
-        {
-            SetSettingsValue("COMPAT_VIDEO", CompatibilityModeToggleBtn.IsChecked == true ? "1" : "0");
-        }
-
-        private void ColorDepthToggleBtn_Click(object sender, RoutedEventArgs e)
-        {
-            SetSettingsValue("GFX32", ColorDepthToggleBtn.IsChecked == true ? "1" : "0");
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (text[i].Contains(s))
+                {
+                    try
+                    {
+                        text[i] = s + v; File.WriteAllLines(GameSettings, text);
+                    }
+                    catch (Exception exception)
+                    {
+                        Log.Error("При изменении значения " + s + " на " + v + " произошла ошибка."); Log.Error(exception.ToString());
+                    }
+                }
+            }
         }
 
-        private void VerticalSyncToggleBtn_Click(object sender, RoutedEventArgs e)
+        public void SetSettingsValueWithDouble(string s, double v)
         {
-            SetSettingsValue("WAITRETRACE", VerticalSyncToggleBtn.IsChecked == true ? "1" : "0");
+            if (!File.Exists(GameSettings))
+            {
+                Log.Fatal("Файл конфигурации игры внезапно пропал!!! Он будет восстановлен.");
+
+                Log.Info("Создаем файл конфигурации игры из ресурсов программы.");
+
+                try
+                {
+                    File.WriteAllBytes("Settings.cfg", Properties.Resources.GameSettings);
+
+                    Log.Info("Файл конфигурации игры был создан без ошибок.");
+                }
+                catch (Exception exception)
+                {
+                    Log.Fatal("Создание файла конфигурации закончилось с ошибкой."); Log.Fatal(exception.ToString());
+
+                    Log.Info("Завершение фоновых процессов и задачь. Выход из приложения."); Environment.Exit(0);
+                }
+            }
+
+
+            var text = File.ReadAllLines(GameSettings, Encoding.ASCII);
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (text[i].Contains(s + " : "))
+                {
+                    try
+                    {
+                        text[i] = s + " : " + v; File.WriteAllLines(GameSettings, text);
+                    }
+                    catch (Exception exception)
+                    {
+                        Log.Error("При изменении значения " + s + " на " + v + " произошла ошибка."); Log.Error(exception.ToString());
+                    }
+                }
+            }
         }
 
-        private void OpaqueShadowsToggleBtn_Click(object sender, RoutedEventArgs e)
+        #endregion
+
+        #region SacredUnderworldTxBoxEventHandlers.
+
+        private void GfxStartupTxBox_KeyUp(object sender, KeyEventArgs e)
         {
-            SetSettingsValue("FORCE_BLACK_SHADOW", OpaqueShadowsToggleBtn.IsChecked == true ? "1" : "0");
+            SetSettingsValue("GFXSTARTUP", GfxStartupTxBox.Text);
         }
 
-        private void FullScreenModeToggleBtn_Click(object sender, RoutedEventArgs e)
+        private void GfxLoadingTxBox_KeyUp(object sender, KeyEventArgs e)
         {
-            SetSettingsValue("FULLSCREEN", FullScreenModeToggleBtn.IsChecked == true ? "1" : "0");
+            SetSettingsValue("GFXLOADING", GfxLoadingTxBox.Text);
         }
 
-        private void ShowMoviesToggleBtn_Click(object sender, RoutedEventArgs e)
+        private void NetworkIpAddressTxBox_KeyUp(object sender, KeyEventArgs e)
         {
-            SetSettingsValue("SHOWMOVIE", ShowMoviesToggleBtn.IsChecked == true ? "1" : "0");
-
-            SetSettingsValue("SHOWEXTRO", ShowMoviesToggleBtn.IsChecked == true ? "1" : "0");
+            SetSettingsValue("NETWORK_IP_ADDRESS", NetworkIpAddressTxBox.Text);
         }
 
-        private void GraphicsQualityCmbBox_DropDownClosed(object sender, EventArgs e)
+        private void NetworkPortListenTxBox_KeyUp(object sender, KeyEventArgs e)
         {
-            if (GraphicsQualityCmbBox.SelectedIndex == 0) { SetSettingsValue("DETAILLEVEL", "0"); }
-
-            if (GraphicsQualityCmbBox.SelectedIndex == 1) { SetSettingsValue("DETAILLEVEL", "1"); }
-
-            if (GraphicsQualityCmbBox.SelectedIndex == 2) { SetSettingsValue("DETAILLEVEL", "2"); }
+            SetSettingsValue("NETWORK_PORT_LISTEN", NetworkPortListenTxBox.Text);
         }
 
-        private void MapTransparentSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<Double> e)
+        private void NetworkSessionTxBox_KeyUp(object sender, KeyEventArgs e)
         {
-            SetSettingsValueWithDouble("MINIMAP_ALPHA", MapTransparentSlider.Value);
+            SetSettingsValue("NETWORK_SESSION", NetworkSessionTxBox.Text);
         }
 
-        private void NightDarknessSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void NetworkPlayerTxBox_KeyUp(object sender, KeyEventArgs e)
         {
-            SetSettingsValueWithDouble("NIGHT_DARKNESS", NightDarknessSlider.Value);
+            SetSettingsValue("NETWORK_PLAYER", NetworkPlayerTxBox.Text);
         }
 
-        private void PictureStartTxBox_KeyUp(object sender, KeyEventArgs e)
+        private void NetworkPasswordTxBox_KeyUp(object sender, KeyEventArgs e)
         {
-            SetSettingsValue("GFXSTARTUP", PictureStartTxBox.Text);
+            SetSettingsValue("NETWORK_PASSWORD", NetworkPasswordTxBox.Text);
         }
 
-        private void PictureSaveLoadTxBox_KeyUp(object sender, KeyEventArgs e)
+        private void NetworkLobbyTxBox_KeyUp(object sender, KeyEventArgs e)
         {
-            SetSettingsValue("GFXLOADING", PictureSaveLoadTxBox.Text);
+            SetSettingsValue("NETWORK_LOBBY", NetworkLobbyTxBox.Text);
         }
 
-        private void InterfaceLanguageCmbBox_DropDownClosed(object sender, EventArgs e)
+        #endregion
+
+        #region SacredUnderworldToggleButtonEventHandlers.
+
+        private void FsaaFilterToggleBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (InterfaceLanguageCmbBox.SelectedIndex == 0) { SetSettingsValue("LANGUAGE", "RU"); }
+            SetSettingsValue("FSAA_FILTER", FsaaFilterToggleBtn.IsChecked == true ? "1" : "0");
+        }
 
-            if (InterfaceLanguageCmbBox.SelectedIndex == 1) { SetSettingsValue("LANGUAGE", "EN"); }
+        private void GfxLimit128ToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            SetSettingsValue("GFX_LIMIT128", GfxLimit128ToggleButton.IsChecked == true ? "1" : "0");
+        }
 
-            if (InterfaceLanguageCmbBox.SelectedIndex == 2) { SetSettingsValue("LANGUAGE", "DE"); }
+        private void CompatVideoToggleBtn_Click(object sender, RoutedEventArgs e)
+        {
+            SetSettingsValue("COMPAT_VIDEO", CompatVideoToggleBtn.IsChecked == true ? "1" : "0");
+        }
+
+        private void Gfx32ToggleBtn_Click(object sender, RoutedEventArgs e)
+        {
+            SetSettingsValue("GFX32", Gfx32ToggleBtn.IsChecked == true ? "1" : "0");
+        }
+
+        private void WaitretraceToggleBtn_Click(object sender, RoutedEventArgs e)
+        {
+            SetSettingsValue("WAITRETRACE", WaitretraceToggleBtn.IsChecked == true ? "1" : "0");
+        }
+
+        private void ForceBlackShadowToggleBtn_Click(object sender, RoutedEventArgs e)
+        {
+            SetSettingsValue("FORCE_BLACK_SHADOW", ForceBlackShadowToggleBtn.IsChecked == true ? "1" : "0");
+        }
+
+        private void FullscreenToggleBtn_Click(object sender, RoutedEventArgs e)
+        {
+            SetSettingsValue("FULLSCREEN", FullscreenToggleBtn.IsChecked == true ? "1" : "0");
+        }
+
+        private void ShowMovieToggleBtn_Click(object sender, RoutedEventArgs e)
+        {
+            SetSettingsValue("SHOWMOVIE", ShowMovieToggleBtn.IsChecked == true ? "1" : "0");
+
+            SetSettingsValue("SHOWEXTRO", ShowMovieToggleBtn.IsChecked == true ? "1" : "0");
         }
 
         private void SoundToggleBtn_Click(object sender, RoutedEventArgs e)
@@ -951,43 +492,19 @@ namespace SacredUtils
             SetSettingsValue("SOUND", SoundToggleBtn.IsChecked == true ? "1" : "0");
         }
 
-        private void SoundQualityCmbBox_DropDownClosed(object sender, EventArgs e)
+        private void NetlogToggleBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (SoundQualityCmbBox.SelectedIndex == 0) { SetSettingsValue("SOUNDQUALITY", "0"); }
-
-            if (SoundQualityCmbBox.SelectedIndex == 1) { SetSettingsValue("SOUNDQUALITY", "1"); }
-
-            if (SoundQualityCmbBox.SelectedIndex == 2) { SetSettingsValue("SOUNDQUALITY", "2"); }
+            SetSettingsValue("NETLOG", NetlogToggleBtn.IsChecked == true ? "1" : "0");
         }
 
-        private void VolumeMusicSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void NetworkCdkeyToggleBtn_Click(object sender, RoutedEventArgs e)
         {
-            SetSettingsValueWithDouble("MUSICVOLUME", VolumeMusicSlider.Value);
+            SetSettingsValue("NETWORK_CDKEY_HIDE", NetworkCdkeyToggleBtn.IsChecked == true ? "1" : "0");
         }
 
-        private void VolumeSfxSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void ShowHeroInfoToggleBtn_Click(object sender, RoutedEventArgs e)
         {
-            SetSettingsValueWithDouble("SFXVOLUME", VolumeSfxSlider.Value);
-        }
-
-        private void VolumeVoiceSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            SetSettingsValueWithDouble("VOICEVOLUME", VolumeVoiceSlider.Value);
-        }
-
-        private void NetLoggingToggleBtn_Click(object sender, RoutedEventArgs e)
-        {
-            SetSettingsValue("NETLOG", NetLoggingToggleBtn.IsChecked == true ? "1" : "0");
-        }
-
-        private void HideCdKeyToggleBtn_Click(object sender, RoutedEventArgs e)
-        {
-            SetSettingsValue("NETWORK_CDKEY_HIDE", HideCdKeyToggleBtn.IsChecked == true ? "1" : "0");
-        }
-
-        private void PlayerInfoToggleBtn_Click(object sender, RoutedEventArgs e)
-        {
-            SetSettingsValue("SHOW_HEROINFO", PlayerInfoToggleBtn.IsChecked == true ? "1" : "0");
+            SetSettingsValue("SHOW_HEROINFO", ShowHeroInfoToggleBtn.IsChecked == true ? "1" : "0");
         }
 
         private void LadderExportToggleBtn_Click(object sender, RoutedEventArgs e)
@@ -1000,78 +517,24 @@ namespace SacredUtils
             SetSettingsValue("ACCEPT_LICENSE", LicenseToggleBtn.IsChecked == true ? "1" : "0");
         }
 
-        private void ConnectTypeCmbBox_DropDownClosed(object sender, EventArgs e)
+        private void UniqueColorToggleBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (ConnectTypeCmbBox.SelectedIndex == 0) { SetSettingsValue("NETWORK_SPEEDSETTINGS", "2"); }
-
-            if (ConnectTypeCmbBox.SelectedIndex == 1) { SetSettingsValue("NETWORK_SPEEDSETTINGS", "1"); }
-
-            if (ConnectTypeCmbBox.SelectedIndex == 2) { SetSettingsValue("NETWORK_SPEEDSETTINGS", "0"); }
+            SetSettingsValue("UNIQUE_COLOR", UniqueColorToggleBtn.IsChecked == true ? "1" : "0");
         }
 
-        private void ServerIpTxBox_KeyUp(object sender, KeyEventArgs e)
+        private void ShowPotionsToggleBtn_Click(object sender, RoutedEventArgs e)
         {
-            SetSettingsValue("NETWORK_IP_ADDRESS", ServerIpTxBox.Text);
+            SetSettingsValue("SHOWPOTIONS", ShowPotionsToggleBtn.IsChecked == true ? "1" : "0");
         }
 
-        private void ServerPortTxBox_KeyUp(object sender, KeyEventArgs e)
+        private void ShowEnemyInfoToggleBtn_Click(object sender, RoutedEventArgs e)
         {
-            SetSettingsValue("NETWORK_PORT_LISTEN", ServerPortTxBox.Text);
+            SetSettingsValue("SHOW_ENEMYINFO", ShowEnemyInfoToggleBtn.IsChecked == true ? "1" : "0");
         }
 
-        private void ServerNameTxBox_KeyUp(object sender, KeyEventArgs e)
+        private void PickupAnimToggleBtn_Click(object sender, RoutedEventArgs e)
         {
-            SetSettingsValue("NETWORK_SESSION", ServerNameTxBox.Text);
-        }
-
-        private void ServerNickNameTxBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            SetSettingsValue("NETWORK_PLAYER", ServerNickNameTxBox.Text);
-        }
-
-        private void ServerPasswordTxBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            SetSettingsValue("NETWORK_PASSWORD", ServerPasswordTxBox.Text);
-        }
-
-        private void ServerLobbyTxBox_KeyUp(object sender, KeyEventArgs e)
-        {
-            SetSettingsValue("NETWORK_LOBBY", ServerLobbyTxBox.Text);
-        }
-
-        private void RainbowChatToggleBtn_Click(object sender, RoutedEventArgs e)
-        {
-            SetSettingsValue("UNIQUE_COLOR", RainbowChatToggleBtn.IsChecked == true ? "1" : "0");
-        }
-
-        private void ChatLinesSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            SetSettingsValueWithDouble("CHAT_LINES", ChatLinesSlider.Value);
-        }
-
-        private void ChatTextDelaySlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            SetSettingsValueWithDouble("CHAT_DELAY", ChatTextDelaySlider.Value);
-        }
-
-        private void ChatTransparentSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            SetSettingsValueWithDouble("CHAT_ALPHA", ChatTransparentSlider.Value);
-        }
-
-        private void DopingBarToggleBtn_Click(object sender, RoutedEventArgs e)
-        {
-            SetSettingsValue("SHOWPOTIONS", DopingBarToggleBtn.IsChecked == true ? "1" : "0");
-        }
-
-        private void EnemyInfoToggleBtn_Click(object sender, RoutedEventArgs e)
-        {
-            SetSettingsValue("SHOW_ENEMYINFO", EnemyInfoToggleBtn.IsChecked == true ? "1" : "0");
-        }
-
-        private void AnimationToggleBtn_Click(object sender, RoutedEventArgs e)
-        {
-            SetSettingsValue("PICKUPANIM", AnimationToggleBtn.IsChecked == true ? "1" : "0");
+            SetSettingsValue("PICKUPANIM", PickupAnimToggleBtn.IsChecked == true ? "1" : "0");
         }
 
         private void AutosaveToggleBtn_Click(object sender, RoutedEventArgs e)
@@ -1079,9 +542,9 @@ namespace SacredUtils
             SetSettingsValue("AUTOSAVE", AutosaveToggleBtn.IsChecked == true ? "1" : "0");
         }
 
-        private void EarthquakeEffectToggleBtn_Click(object sender, RoutedEventArgs e)
+        private void ScreenQuakeToggleBtn_Click(object sender, RoutedEventArgs e)
         {
-            SetSettingsValue("SCREEN_QUAKE", EarthquakeEffectToggleBtn.IsChecked == true ? "1" : "0");
+            SetSettingsValue("SCREEN_QUAKE", ScreenQuakeToggleBtn.IsChecked == true ? "1" : "0");
         }
 
         private void DefaultSkillsToggleBtn_Click(object sender, RoutedEventArgs e)
@@ -1094,9 +557,9 @@ namespace SacredUtils
             SetSettingsValue("EXPLOREMAP", WarFogToggleBtn.IsChecked == true ? "1" : "0");
         }
 
-        private void FontSmoothToggleBtn_Click(object sender, RoutedEventArgs e)
+        private void FontaaToggleBtn_Click(object sender, RoutedEventArgs e)
         {
-            SetSettingsValue("FONTAA", FontSmoothToggleBtn.IsChecked == true ? "1" : "0");
+            SetSettingsValue("FONTAA", FontaaToggleBtn.IsChecked == true ? "1" : "0");
         }
 
         private void FontFilteringToggleBtn_Click(object sender, RoutedEventArgs e)
@@ -1109,9 +572,9 @@ namespace SacredUtils
             SetSettingsValue("LOGGING", LogToggleBtn.IsChecked == true ? "1" : "0");
         }
 
-        private void DamageIconsToggleBtn_Click(object sender, RoutedEventArgs e)
+        private void TaskbarIconsToggleBtn_Click(object sender, RoutedEventArgs e)
         {
-            SetSettingsValue("TASKBAR_ICONS", DamageIconsToggleBtn.IsChecked == true ? "1" : "0");
+            SetSettingsValue("TASKBAR_ICONS", TaskbarIconsToggleBtn.IsChecked == true ? "1" : "0");
         }
 
         private void TrackEnemyToggleBtn_Click(object sender, RoutedEventArgs e)
@@ -1129,6 +592,37 @@ namespace SacredUtils
             SetSettingsValue("COMBINE_SLOTS", CombineSlotsToggleBtn.IsChecked == true ? "1" : "0");
         }
 
+        #endregion
+
+        #region SacredUnderworldComboboxEventHandlers.
+
+        private void DetailLevelCmbBox_DropDownClosed(object sender, EventArgs e)
+        {
+            if (DetailLevelCmbBox.SelectedIndex == 0) { SetSettingsValue("DETAILLEVEL", "0"); }
+
+            if (DetailLevelCmbBox.SelectedIndex == 1) { SetSettingsValue("DETAILLEVEL", "1"); }
+
+            if (DetailLevelCmbBox.SelectedIndex == 2) { SetSettingsValue("DETAILLEVEL", "2"); }
+        }
+
+        private void InterfaceLanguageCmbBox_DropDownClosed(object sender, EventArgs e)
+        {
+            if (InterfaceLanguageCmbBox.SelectedIndex == 0) { SetSettingsValue("LANGUAGE", "RU"); }
+
+            if (InterfaceLanguageCmbBox.SelectedIndex == 1) { SetSettingsValue("LANGUAGE", "EN"); }
+
+            if (InterfaceLanguageCmbBox.SelectedIndex == 2) { SetSettingsValue("LANGUAGE", "DE"); }
+        }
+
+        private void PickupSettingsCmbBox_DropDownClosed(object sender, EventArgs e)
+        {
+            if (PickupSettingsCmbBox.SelectedIndex == 0) { SetSettingsValue("PICKUPAUTO", "0"); }
+
+            if (PickupSettingsCmbBox.SelectedIndex == 1) { SetSettingsValue("PICKUPAUTO", "1"); }
+
+            if (PickupSettingsCmbBox.SelectedIndex == 2) { SetSettingsValue("PICKUPAUTO", "2"); }
+        }
+
         private void FontLibraryCmbBox_DropDownClosed(object sender, EventArgs e)
         {
             SetSettingsValueForFont("FONT : 1, ", "\"" + FontLibraryCmbBox.Text + "\"" + ", 10");
@@ -1140,13 +634,66 @@ namespace SacredUtils
             SetSettingsValueForFont("FONT : 7, ", "\"" + FontLibraryCmbBox.Text + "\"" + ", 8");
         }
 
-        private void PickupSettingsCmbBox_DropDownClosed(object sender, EventArgs e)
+        private void NetworkSpeedSettingsCmbBox_DropDownClosed(object sender, EventArgs e)
         {
-            if (PickupSettingsCmbBox.SelectedIndex == 0) { SetSettingsValue("PICKUPAUTO", "0"); }
+            if (NetworkSpeedSettingsCmbBox.SelectedIndex == 0) { SetSettingsValue("NETWORK_SPEEDSETTINGS", "2"); }
 
-            if (PickupSettingsCmbBox.SelectedIndex == 1) { SetSettingsValue("PICKUPAUTO", "1"); }
+            if (NetworkSpeedSettingsCmbBox.SelectedIndex == 1) { SetSettingsValue("NETWORK_SPEEDSETTINGS", "1"); }
 
-            if (PickupSettingsCmbBox.SelectedIndex == 2) { SetSettingsValue("PICKUPAUTO", "2"); }
+            if (NetworkSpeedSettingsCmbBox.SelectedIndex == 2) { SetSettingsValue("NETWORK_SPEEDSETTINGS", "0"); }
+        }
+
+        private void SoundQualityCmbBox_DropDownClosed(object sender, EventArgs e)
+        {
+            if (SoundQualityCmbBox.SelectedIndex == 0) { SetSettingsValue("SOUNDQUALITY", "0"); }
+
+            if (SoundQualityCmbBox.SelectedIndex == 1) { SetSettingsValue("SOUNDQUALITY", "1"); }
+
+            if (SoundQualityCmbBox.SelectedIndex == 2) { SetSettingsValue("SOUNDQUALITY", "2"); }
+        }
+
+        #endregion
+
+        #region SacredUnderworldSliderEventHandlers.
+
+        private void MinimapAlphaSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<Double> e)
+        {
+            SetSettingsValueWithDouble("MINIMAP_ALPHA", MinimapAlphaSlider.Value);
+        }
+
+        private void NightDarknessSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            SetSettingsValueWithDouble("NIGHT_DARKNESS", NightDarknessSlider.Value);
+        }
+
+        private void VolumeMusicSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            SetSettingsValueWithDouble("MUSICVOLUME", VolumeMusicSlider.Value);
+        }
+
+        private void VolumeSfxSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            SetSettingsValueWithDouble("SFXVOLUME", VolumeSfxSlider.Value);
+        }
+
+        private void VolumeVoiceSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            SetSettingsValueWithDouble("VOICEVOLUME", VolumeVoiceSlider.Value);
+        }
+
+        private void ChatLinesSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            SetSettingsValueWithDouble("CHAT_LINES", ChatLinesSlider.Value);
+        }
+
+        private void ChatDelaySlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            SetSettingsValueWithDouble("CHAT_DELAY", ChatDelaySlider.Value);
+        }
+
+        private void ChatAlphaSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            SetSettingsValueWithDouble("CHAT_ALPHA", ChatAlphaSlider.Value);
         }
 
         private void AutosaveDelaySlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -1159,11 +706,521 @@ namespace SacredUtils
             SetSettingsValueWithDouble("WARNING_LEVEL", WarningPercentSlider.Value);
         }
 
-        #region SacredUtilsModdingButtonsEventHandlers.
+        #endregion
 
-        private void VeteranModInstallBtn_Click(object sender, RoutedEventArgs e)
+        #region SacredUtilsWindowMethodsAndHandlers.
+
+        public MainWindow()
         {
-            if (VeteranModInstallBtn.Content.ToString() == "УСТАНОВИТЬ")
+            Log.Info("[MethodCall] Вызываем метод инициализации логгера.");
+
+            Logger.InitLogger();
+
+            Log.Info("[MethodCall] Вызов метода инициализации логгера завершен.");
+
+            Log.Info("[MethodCall] Вызываем метод проверки конфигурации лога из другого класса.");
+
+            var checkLogConfiguration = new CheckLogConfiguration();
+            checkLogConfiguration.GetAvailableLogConfig();
+
+            Log.Info("[MethodCall] Вызов метода проверки конфигурации лога завершен.");
+
+            Log.Info("[MethodCall] Вызываем метод проверки конфигурации SacredUtils из другого класса.");
+
+            var checkAppConfiguration = new CheckAppConfiguration();
+            checkAppConfiguration.GetAvailableAppConfig();
+
+            Log.Info("[MethodCall] Вызов метода проверки конфигурации SacredUtils завершен.");
+
+            Log.Info("[MethodCall] Вызываем метод удаления временных файлов из другого класса.");
+
+            var checkAppTempFiles = new CheckAppTempFiles();
+            checkAppTempFiles.CheckAvailableTempFiles();
+
+            Log.Info("[MethodCall] Вызов метода удаления временных файлов завершен.");
+
+            Log.Info("[MethodCall] Вызываем метод инициализации компонентов SacredUtils из другого класса.");
+
+            InitializeComponent();
+
+            Log.Info("[MethodCall] Вызов метода инициализации компонентов SacredUtils завершен.");
+
+            Log.Info("[MethodCall] Вызываем метод проверки обновления из другого класса.");
+
+            CheckAppUpdates checkAppUpdates = new CheckAppUpdates();
+
+#pragma warning disable CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
+            checkAppUpdates.GetAvailableAppUpdatesAsync();
+#pragma warning restore CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
+
+            Log.Info("[MethodCall] Вызов метода проверки обновления завершен.");
+
+            Log.Info("[MethodCall] Вызываем метод проверки настроек SacredUtils из другого класса.");
+
+            GetAppSettings getAppSettings = new GetAppSettings();
+            getAppSettings.LoadAppSettings();
+
+            Log.Info("[MethodCall] Вызов метода проверки настроек SacredUtils завершен.");
+
+            Log.Info("[MethodCall] Вызываем метод проверки настроек SacredUnderworld из другого класса.");
+
+            GetGameSettings getGameSettings = new GetGameSettings();
+            getGameSettings.LoadGameSettings();
+
+            Log.Info("[MethodCall] Вызов метода проверки настроек SacredUnderworld завершен.");
+
+            Log.Info("Поиск файла для загрузки данных о статусе модификаций.");
+
+            if (File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+            {
+                Log.Info("Файл для загрузки данных о статусе модификаций был найден.");
+
+                var text = File.ReadAllText(@".SacredUtilsData" + "/" + "installinfo.dat", Encoding.ASCII);
+
+                Log.Info("Загрузка данных о статусе установок модификаций.");
+
+                if (text.Contains("Veteranmod by ufo installed = true"))
+                {
+                    VeteranModUfoBtn.Content = "УДАЛИТЬ";
+
+                    Log.Info("Статус функции \"Veteranmod by ufo installed\" был загружен.");
+                }
+                else if (text.Contains("Veteranmod by ufo installed = false"))
+                {
+                    VeteranModUfoBtn.Content = "УСТАНОВИТЬ";
+
+                    Log.Info("Статус функции \"Veteranmod by ufo installed\" был загружен.");
+                }
+
+                if (text.Contains("Veteranmod dragonfix installed = true"))
+                {
+                    VeteranModDragonFixBtn.Content = "УДАЛИТЬ";
+
+                    Log.Info("Статус функции \"Veteranmod dragonfix installed\" был загружен.");
+                }
+                else if (text.Contains("Veteranmod dragonfix installed = false"))
+                {
+                    VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
+
+                    Log.Info("Статус функции \"Veteranmod dragonfix installed\" был загружен.");
+                }
+
+                if (text.Contains("Sacred 2.29.14 patch installed = true"))
+                {
+                    SacredNewUpdateBtn.Content = "УДАЛИТЬ";
+
+                    Log.Info("Статус функции \"Sacred 2.29.14 patch installed\" был загружен.");
+                }
+                else if (text.Contains("Sacred 2.29.14 patch installed = false"))
+                {
+                    SacredNewUpdateBtn.Content = "УСТАНОВИТЬ";
+
+                    Log.Info("Статус функции \"Sacred 2.29.14 patch installed\" был загружен.");
+                }
+
+                if (text.Contains("Server multicore fix installed = true"))
+                {
+                    ServerMulticoreFixBtn.Content = "УДАЛИТЬ";
+
+                    Log.Info("Статус функции \"Server multicore fix installed\" был загружен.");
+                }
+                else if (text.Contains("Server multicore fix installed = false"))
+                {
+                    ServerMulticoreFixBtn.Content = "УСТАНОВИТЬ";
+
+                    Log.Info("Статус функции \"Server multicore fix installed\" был загружен.");
+                }
+
+                Log.Info("Загрузка данных о статусе установок модификаций завершена без ошибок.");
+            }
+            else if (!File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+            {
+                Log.Warn("Файл для загрузки данных о статусе модификаций не был найден.");
+
+                Log.Info("Создаем директорию для файла installinfo.dat.");
+
+                Directory.CreateDirectory(".SacredUtilsData");
+
+                Log.Info("Создание директории для файла installinfo.dat завершено без ошибок.");
+
+                Log.Info("Создание файла installinfo.dat из ресурсов программы.");
+
+                try
+                {
+                    File.WriteAllBytes(@".SacredUtilsData" + "/" + "installinfo.dat", Properties.Resources.installinfo);
+
+                    Log.Info("Создание файла installinfo.dat из ресурсов программы завершено без ошибок.");
+                }
+                catch (Exception exception)
+                {
+                    Log.Error("Создание файла installinfo.dat закончилось с ошибкой."); Log.Error(exception.ToString());
+                }
+
+                VeteranModUfoBtn.Content = "УСТАНОВИТЬ"; VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
+                SacredNewUpdateBtn.Content = "УСТАНОВИТЬ"; ServerMulticoreFixBtn.Content = "УСТАНОВИТЬ";
+            }
+
+            if (File.Exists(@".SacredUtilsData" + "/" + "launchstat.dat"))
+            {
+                try
+                {
+                    var text = File.ReadAllText(@".SacredUtilsData" + "/" + "launchstat.dat");
+
+                    var numberOfStartups = Regex.Match(text, @"\d+").Value;
+
+                    var newNumberOfStartups = Convert.ToInt32(numberOfStartups) + 1;
+
+                    var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "launchstat.dat");
+                    fileAllText[3] = "; The program is launched " + newNumberOfStartups + " time(s)";
+                    File.WriteAllLines(@".SacredUtilsData" + "/" + "launchstat.dat", fileAllText);
+
+                    Log.Info("Данные о запуске SacredUtils были сохранены в launchstat.dat.");
+                }
+                catch (Exception exception)
+                {
+                    Log.Error("Операция по счету запуска SacredUtils завершилась с ошибкой."); Log.Error(exception.ToString());
+                }
+
+            }
+            else if (!File.Exists(@".SacredUtilsData" + "/" + "launchstat.dat"))
+            {
+                Directory.CreateDirectory(".SacredUtilsData");
+
+                File.WriteAllBytes(@".SacredUtilsData" + "/" + "launchstat.dat", Properties.Resources.launchstat);
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Log.Info("Создаем файл лицензии Apache 2.0 для SacredUtils.");
+
+            try
+            {
+                File.WriteAllBytes("license.txt", Properties.Resources.license);
+
+                Log.Info("Файл лицензии Apache 2.0 для SacredUtils был создан без ошибок.");
+            }
+            catch (Exception exception)
+            {
+                Log.Error("При создании файла лицензии Apache 2.0 для SacredUtils произошла ошибка.");
+
+                Log.Error(exception.ToString());
+            }
+
+            Log.Info("Загружаем коллекцию шрифтов для SacredUtils.");
+
+            try
+            {
+                List<string> fonts = new List<string>();
+                InstalledFontCollection installedFonts = new InstalledFontCollection();
+                foreach (FontFamily font in installedFonts.Families) { fonts.Add(font.Name); }
+
+                FontLibraryCmbBox.ItemsSource = fonts;
+
+                Log.Info("Коллекция шрифтов загружена без ошибок.");
+            }
+            catch (Exception exception)
+            {
+                Log.Error("При загрузке коллекции шрифтов произошла ошибка.");
+
+                Log.Error(exception.ToString());
+            }
+
+            var text = File.ReadAllLines(GameSettings, Encoding.ASCII);
+
+            Log.Info("Подготавливаем коллекцию шрифтов для FontsCombobox.");
+
+            for (var i = 0; i < text.Length; i++)
+            {
+                if (text[i].Contains("FONT : 1, "))
+                {
+                    var tempdata0 = text[i].Substring(text[i].IndexOf("\"", StringComparison.Ordinal) + 1);
+
+                    if (tempdata0 == text[i].Substring(text[i].IndexOf("\"", StringComparison.Ordinal) + 1))
+                    {
+                        var tempdata1 = tempdata0.Remove(tempdata0.LastIndexOf("\"", StringComparison.Ordinal));
+
+                        FontLibraryCmbBox.SelectedItem = tempdata1;
+
+                        Log.Info("Загрузка шрифтов в FontsCombobox выполнена без ошибок.");
+                    }
+                }
+            }
+
+            var text1 = File.ReadAllLines("Settings.su", Encoding.ASCII);
+
+            Log.Info("Загружаем цветовые схемы для SacredUtils.");
+
+            for (var i = 0; i < text1.Length; i++)
+            {
+                try
+                {
+                    if (text1[i].Contains("User interface color SacredUtils = default") || text1[i].Contains("User interface color SacredUtils = indigo"))
+                    {
+                        var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                        colorWindow.ChangeColor("#7986cb", "#303f9f", "#3f51b5", "#c5cae9", "Indigo", "#FFFFFFFF");
+                    }
+
+                    if (text1[i].Contains("User interface color SacredUtils = red"))
+                    {
+                        var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                        colorWindow.ChangeColor("#e57373", "#d32f2f", "#f44336", "#ffcdd2", "Red", "#FFFFFFFF");
+                    }
+
+                    if (text1[i].Contains("User interface color SacredUtils = pink"))
+                    {
+                        var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                        colorWindow.ChangeColor("#f06292", "#c2185b", "#e91e63", "#f8bbd0", "Pink", "#FFFFFFFF");
+                    }
+
+                    if (text1[i].Contains("User interface color SacredUtils = purple"))
+                    {
+                        var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                        colorWindow.ChangeColor("#ba68c8", "#7b1fa2", "#9c27b0", "#e1bee7", "Purple", "#FFFFFFFF");
+                    }
+
+                    if (text1[i].Contains("User interface color SacredUtils = deeppurple"))
+                    {
+                        var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                        colorWindow.ChangeColor("#9575cd", "#512da8", "#673ab7", "#d1c4e9", "DeepPurple", "#FFFFFFFF");
+                    }
+
+                    if (text1[i].Contains("User interface color SacredUtils = blue"))
+                    {
+                        var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                        colorWindow.ChangeColor("#64b5f6", "#1976d2", "#2196f3", "#bbdefb", "Blue", "#FFFFFFFF");
+                    }
+
+                    if (text1[i].Contains("User interface color SacredUtils = lightblue"))
+                    {
+                        var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                        colorWindow.ChangeColor("#4fc3f7", "#0288d1", "#03a9f4", "#b3e5fc", "LightBlue", "#000000");
+                    }
+
+                    if (text1[i].Contains("User interface color SacredUtils = cyan"))
+                    {
+                        var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                        colorWindow.ChangeColor("#4dd0e1", "#0097a7", "#00bcd4", "#b2ebf2", "Cyan", "#000000");
+                    }
+
+                    if (text1[i].Contains("User interface color SacredUtils = teal"))
+                    {
+                        var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                        colorWindow.ChangeColor("#4db6ac", "#00796b", "#009688", "#b2dfdb", "Teal", "#ffffff");
+                    }
+
+                    if (text1[i].Contains("User interface color SacredUtils = green"))
+                    {
+                        var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                        colorWindow.ChangeColor("#81c784", "#388e3c", "#4caf50", "#c8e6c9", "Green", "#ffffff");
+                    }
+
+                    if (text1[i].Contains("User interface color SacredUtils = lightgreen"))
+                    {
+                        var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                        colorWindow.ChangeColor("#aed581", "#689f38", "#8bc34a", "#dcedc8", "LightGreen", "#000000");
+                    }
+
+                    if (text1[i].Contains("User interface color SacredUtils = lime"))
+                    {
+                        var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                        colorWindow.ChangeColor("#dce775", "#afb42b", "#cddc39", "#f0f4c3", "Lime", "#000000");
+                    }
+
+                    if (text1[i].Contains("User interface color SacredUtils = yellow"))
+                    {
+                        var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                        colorWindow.ChangeColor("#fff176", "#fbc02d", "#ffeb3b", "#fff9c4", "Yellow", "#000000");
+                    }
+
+                    if (text1[i].Contains("User interface color SacredUtils = amber"))
+                    {
+                        var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                        colorWindow.ChangeColor("#ffd54f", "#ffa000", "#ffc107", "#ffecb3", "Amber", "#000000");
+                    }
+
+                    if (text1[i].Contains("User interface color SacredUtils = orange"))
+                    {
+                        var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                        colorWindow.ChangeColor("#ffb74d", "#f57c00", "#ff9800", "#ffe0b2", "Orange", "#000000");
+                    }
+
+                    if (text1[i].Contains("User interface color SacredUtils = deeporange"))
+                    {
+                        var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                        colorWindow.ChangeColor("#ff8a65", "#e64a19", "#ff5722", "#ffccbc", "DeepOrange", "#000000");
+                    }
+
+                    if (text1[i].Contains("User interface color SacredUtils = brown"))
+                    {
+                        var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                        colorWindow.ChangeColor("#a1887f", "#5d4037", "#795548", "#d7ccc8", "Brown", "#ffffff");
+                    }
+
+                    if (text1[i].Contains("User interface color SacredUtils = grey"))
+                    {
+                        var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                        colorWindow.ChangeColor("#e0e0e0", "#616161", "#9e9e9e", "#f5f5f5", "Grey", "#000000");
+                    }
+
+                    if (text1[i].Contains("User interface color SacredUtils = bluegrey"))
+                    {
+                        var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                        colorWindow.ChangeColor("#90a4ae", "#455a64", "#607d8b", "#cfd8dc", "BlueGrey", "#ffffff");
+                    }
+
+                    if (text1[i].Contains("User interface color SacredUtils = black"))
+                    {
+                        var colorWindow = new ColorWindow(); colorWindow.Close();
+
+                        colorWindow.ChangeColor("#484848", "#000000", "#212121", "#484848", "DeepOrange", "#ffffff");
+
+                        BrushConverter bc = new BrushConverter();
+
+                        CardBackgroundColor.Background = (Brush)bc.ConvertFrom("#2c2c2c");
+
+                        NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DDCBCBCB");
+
+                        SettingsNameColor.Foreground = (Brush)bc.ConvertFrom("#eeeeee");
+
+                        CardCaptionsColor.Foreground = (Brush)bc.ConvertFrom("#e0e0e0");
+
+                        ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#eeeeee");
+                        ColorCombobox.Background = (Brush)bc.ConvertFrom("#2c2c2c");
+
+                        ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#eeeeee");
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Log.Error("При загрузке цветовых схем произошла ошибка.");
+
+                    Log.Error(exception.ToString());
+                }
+            }
+
+            Log.Info("Цветовые схемы для SacredUtils были загружены без ошибок.");
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D1)
+            {
+                SettingsListBox.SelectedIndex = 0;
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D2)
+            {
+                SettingsListBox.SelectedIndex = 1;
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D3)
+            {
+                SettingsListBox.SelectedIndex = 2;
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D4)
+            {
+                SettingsListBox.SelectedIndex = 3;
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D5)
+            {
+                SettingsListBox.SelectedIndex = 4;
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D6)
+            {
+                SettingsListBox.SelectedIndex = 5;
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D7)
+            {
+                SettingsListBox.SelectedIndex = 6;
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D8)
+            {
+                SettingsListBox.SelectedIndex = 7;
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D9)
+            {
+                SettingsListBox.SelectedIndex = 8;
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D0)
+            {
+                SettingsListBox.SelectedIndex = 9;
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.Q)
+            {
+                SettingsListBox.SelectedIndex = 15;
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.W)
+            {
+                var colorPicker = new ColorWindow(); colorPicker.Show();
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.E)
+            {
+                Process.Start("https://vk.cc/85SSFN");
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.R)
+            {
+                Process.Start("https://vk.cc/85SSXC");
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.T)
+            {
+                Process.Start("https://vk.cc/85ST4b");
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.Y)
+            {
+                Process.Start("https://qiwi.me/mairwunnx");
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.U)
+            {
+                Process.Start("https://github.com/MairwunNx/SacredUtils/");
+            }
+        }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left) { DragMove(); }
+        }
+
+        #endregion
+
+        #region SacredUtilsModdingButtonEventHandlers.
+
+        private void VeteranModUfoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (VeteranModUfoBtn.Content.ToString() == "УСТАНОВИТЬ")
             {
                 Log.Info("Подготовка к установке Veteran Mod by ufo сложности.");
 
@@ -1229,10 +1286,10 @@ namespace SacredUtils
                         Log.Error(exception.ToString());
                     }
 
-                    VeteranModInstallBtn.Content = "УДАЛИТЬ"; VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
+                    VeteranModUfoBtn.Content = "УДАЛИТЬ"; VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
                 }
             }
-            else if (VeteranModInstallBtn.Content.ToString() == "УДАЛИТЬ")
+            else if (VeteranModUfoBtn.Content.ToString() == "УДАЛИТЬ")
             {
                 Log.Info("Подготовка к удалению Veteran Mod сложности.");
 
@@ -1298,11 +1355,11 @@ namespace SacredUtils
                         Log.Error(exception.ToString());
                     }
 
-                    VeteranModInstallBtn.Content = "УСТАНОВИТЬ"; VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
+                    VeteranModUfoBtn.Content = "УСТАНОВИТЬ"; VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
                 }
             }
         }
-
+        
         private void VeteranModDragonFixBtn_Click(object sender, RoutedEventArgs e)
         {
             if (VeteranModDragonFixBtn.Content.ToString() == "УСТАНОВИТЬ")
@@ -1371,7 +1428,7 @@ namespace SacredUtils
                         Log.Error(exception.ToString());
                     }
 
-                    VeteranModInstallBtn.Content = "УСТАНОВИТЬ"; VeteranModDragonFixBtn.Content = "УДАЛИТЬ";
+                    VeteranModUfoBtn.Content = "УСТАНОВИТЬ"; VeteranModDragonFixBtn.Content = "УДАЛИТЬ";
                 }
             }
             else if (VeteranModDragonFixBtn.Content.ToString() == "УДАЛИТЬ")
@@ -1440,14 +1497,14 @@ namespace SacredUtils
                         Log.Error(exception.ToString());
                     }
 
-                    VeteranModInstallBtn.Content = "УСТАНОВИТЬ"; VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
+                    VeteranModUfoBtn.Content = "УСТАНОВИТЬ"; VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
                 }
             }
         }
 
-        private void SacredNewInstallBtn_Click(object sender, RoutedEventArgs e)
+        private void SacredNewUpdateBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (SacredNewInstallBtn.Content.ToString() == "УСТАНОВИТЬ")
+            if (SacredNewUpdateBtn.Content.ToString() == "УСТАНОВИТЬ")
             {
                 Log.Info("Подготовка к установке Sacred 2.29.14 версии.");
 
@@ -1487,10 +1544,10 @@ namespace SacredUtils
                         Log.Error(exception.ToString());
                     }
 
-                    SacredNewInstallBtn.Content = "УДАЛИТЬ";
+                    SacredNewUpdateBtn.Content = "УДАЛИТЬ";
                 }
             }
-            else if (SacredNewInstallBtn.Content.ToString() == "УДАЛИТЬ")
+            else if (SacredNewUpdateBtn.Content.ToString() == "УДАЛИТЬ")
             {
                 Log.Info("Подготовка к удалению Sacred 2.29.14 версии.");
 
@@ -1530,7 +1587,7 @@ namespace SacredUtils
                         Log.Error(exception.ToString());
                     }
 
-                    SacredNewInstallBtn.Content = "УСТАНОВИТЬ";
+                    SacredNewUpdateBtn.Content = "УСТАНОВИТЬ";
                 }
             }
         }

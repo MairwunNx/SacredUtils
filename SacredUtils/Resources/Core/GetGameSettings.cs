@@ -26,7 +26,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).GraphicsQualityCmbBox.SelectedIndex = 0;
+                                ((MainWindow)window).DetailLevelCmbBox.SelectedIndex = 0;
 
                                 Log.Info("Настройка SacredUnderworld \"DETAILLEVEL\" загружена.");
                             }
@@ -39,7 +39,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).GraphicsQualityCmbBox.SelectedIndex = 1;
+                                ((MainWindow)window).DetailLevelCmbBox.SelectedIndex = 1;
 
                                 Log.Info("Настройка SacredUnderworld \"DETAILLEVEL\" загружена.");
                             }
@@ -52,7 +52,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).GraphicsQualityCmbBox.SelectedIndex = 2;
+                                ((MainWindow)window).DetailLevelCmbBox.SelectedIndex = 2;
 
                                 Log.Info("Настройка SacredUnderworld \"DETAILLEVEL\" загружена.");
                             }
@@ -104,7 +104,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ConnectTypeCmbBox.SelectedIndex = 2;
+                                ((MainWindow)window).NetworkSpeedSettingsCmbBox.SelectedIndex = 2;
 
                                 Log.Info("Настройка SacredUnderworld \"NETWORK_SPEEDSETTINGS\" загружена.");
                             }
@@ -117,7 +117,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ConnectTypeCmbBox.SelectedIndex = 1;
+                                ((MainWindow)window).NetworkSpeedSettingsCmbBox.SelectedIndex = 1;
 
                                 Log.Info("Настройка SacredUnderworld \"NETWORK_SPEEDSETTINGS\" загружена.");
                             }
@@ -130,7 +130,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ConnectTypeCmbBox.SelectedIndex = 0;
+                                ((MainWindow)window).NetworkSpeedSettingsCmbBox.SelectedIndex = 0;
 
                                 Log.Info("Настройка SacredUnderworld \"NETWORK_SPEEDSETTINGS\" загружена.");
                             }
@@ -182,7 +182,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).AnimationToggleBtn.IsChecked = true;
+                                ((MainWindow)window).PickupAnimToggleBtn.IsChecked = true;
 
                                 Log.Info("Настройка SacredUnderworld \"PICKUPANIM\" загружена.");
                             }
@@ -247,7 +247,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ShowMoviesToggleBtn.IsChecked = true;
+                                ((MainWindow)window).ShowMovieToggleBtn.IsChecked = true;
 
                                 Log.Info("Настройка SacredUnderworld \"SHOWMOVIE\" загружена.");
                             }
@@ -286,7 +286,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).CompatibilityModeToggleBtn.IsChecked = true;
+                                ((MainWindow)window).CompatVideoToggleBtn.IsChecked = true;
 
                                 Log.Info("Настройка SacredUnderworld \"COMPAT_VIDEO\" загружена.");
                             }
@@ -299,7 +299,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).DopingBarToggleBtn.IsChecked = true;
+                                ((MainWindow)window).ShowPotionsToggleBtn.IsChecked = true;
 
                                 Log.Info("Настройка SacredUnderworld \"SHOWPOTIONS\" загружена.");
                             }
@@ -312,7 +312,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).EnemyInfoToggleBtn.IsChecked = true;
+                                ((MainWindow)window).ShowEnemyInfoToggleBtn.IsChecked = true;
 
                                 Log.Info("Настройка SacredUnderworld \"SHOW_ENEMYINFO\" загружена.");
                             }
@@ -325,7 +325,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).RainbowChatToggleBtn.IsChecked = true;
+                                ((MainWindow)window).UniqueColorToggleBtn.IsChecked = true;
 
                                 Log.Info("Настройка SacredUnderworld \"UNIQUE_COLOR\" загружена.");
                             }
@@ -338,7 +338,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).NetLoggingToggleBtn.IsChecked = true;
+                                ((MainWindow)window).NetlogToggleBtn.IsChecked = true;
 
                                 Log.Info("Настройка SacredUnderworld \"NETLOG\" загружена.");
                             }
@@ -364,7 +364,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).HideCdKeyToggleBtn.IsChecked = true;
+                                ((MainWindow)window).NetworkCdkeyToggleBtn.IsChecked = true;
 
                                 Log.Info("Настройка SacredUnderworld \"NETWORK_CDKEY_HIDE\" загружена.");
                             }
@@ -390,7 +390,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).PlayerInfoToggleBtn.IsChecked = true;
+                                ((MainWindow)window).ShowHeroInfoToggleBtn.IsChecked = true;
 
                                 Log.Info("Настройка SacredUnderworld \"SHOW_HEROINFO\" загружена.");
                             }
@@ -403,7 +403,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).FontSmoothToggleBtn.IsChecked = true;
+                                ((MainWindow)window).FontaaToggleBtn.IsChecked = true;
 
                                 Log.Info("Настройка SacredUnderworld \"FONTAA\" загружена.");
                             }
@@ -416,7 +416,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).OpaqueShadowsToggleBtn.IsChecked = true;
+                                ((MainWindow)window).ForceBlackShadowToggleBtn.IsChecked = true;
 
                                 Log.Info("Настройка SacredUnderworld \"FORCE_BLACK_SHADOW\" загружена.");
                             }
@@ -429,7 +429,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).MemoryLimitToggleBtn.IsChecked = true;
+                                ((MainWindow)window).GfxLimit128ToggleButton.IsChecked = true;
 
                                 Log.Info("Настройка SacredUnderworld \"GFX_LIMIT128\" загружена.");
                             }
@@ -442,7 +442,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ImageSmoothingToggleBtn.IsChecked = true;
+                                ((MainWindow)window).FsaaFilterToggleBtn.IsChecked = true;
 
                                 Log.Info("Настройка SacredUnderworld \"FSAA_FILTER\" загружена.");
                             }
@@ -455,7 +455,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).FullScreenModeToggleBtn.IsChecked = true;
+                                ((MainWindow)window).FullscreenToggleBtn.IsChecked = true;
 
                                 Log.Info("Настройка SacredUnderworld \"FULLSCREEN\" загружена.");
                             }
@@ -494,7 +494,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).DamageIconsToggleBtn.IsChecked = true;
+                                ((MainWindow)window).TaskbarIconsToggleBtn.IsChecked = true;
 
                                 Log.Info("Настройка SacredUnderworld \"TASKBAR_ICONS\" загружена.");
                             }
@@ -520,7 +520,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).VerticalSyncToggleBtn.IsChecked = true;
+                                ((MainWindow)window).WaitretraceToggleBtn.IsChecked = true;
 
                                 Log.Info("Настройка SacredUnderworld \"WAITRETRACE\" загружена.");
                             }
@@ -559,7 +559,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ColorDepthToggleBtn.IsChecked = true;
+                                ((MainWindow)window).Gfx32ToggleBtn.IsChecked = true;
 
                                 Log.Info("Настройка SacredUnderworld \"GFX32\" загружена.");
                             }
@@ -572,7 +572,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).EarthquakeEffectToggleBtn.IsChecked = true;
+                                ((MainWindow)window).ScreenQuakeToggleBtn.IsChecked = true;
 
                                 Log.Info("Настройка SacredUnderworld \"SCREEN_QUAKE\" загружена.");
                             }
@@ -598,7 +598,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ServerIpTxBox.Text = text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2);
+                                ((MainWindow)window).NetworkIpAddressTxBox.Text = text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2);
 
                                 Log.Info("Настройка SacredUnderworld \"NETWORK_IP_ADDRESS\" загружена.");
                             }
@@ -611,7 +611,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ServerPortTxBox.Text = text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2);
+                                ((MainWindow)window).NetworkPortListenTxBox.Text = text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2);
 
                                 Log.Info("Настройка SacredUnderworld \"NETWORK_PORT_LISTEN\" загружена.");
                             }
@@ -624,7 +624,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ServerNameTxBox.Text = text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2);
+                                ((MainWindow)window).NetworkSessionTxBox.Text = text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2);
 
                                 Log.Info("Настройка SacredUnderworld \"NETWORK_SESSION\" загружена.");
                             }
@@ -637,7 +637,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ServerNickNameTxBox.Text = text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2);
+                                ((MainWindow)window).NetworkPlayerTxBox.Text = text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2);
 
                                 Log.Info("Настройка SacredUnderworld \"NETWORK_PLAYER\" загружена.");
                             }
@@ -650,7 +650,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ServerPasswordTxBox.Text = text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2);
+                                ((MainWindow)window).NetworkPasswordTxBox.Text = text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2);
 
                                 Log.Info("Настройка SacredUnderworld \"NETWORK_PASSWORD\" загружена.");
                             }
@@ -663,7 +663,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).PictureStartTxBox.Text = text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2);
+                                ((MainWindow)window).GfxStartupTxBox.Text = text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2);
 
                                 Log.Info("Настройка SacredUnderworld \"GFXLOADING\" загружена.");
                             }
@@ -676,7 +676,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).PictureSaveLoadTxBox.Text = text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2);
+                                ((MainWindow)window).GfxLoadingTxBox.Text = text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2);
 
                                 Log.Info("Настройка SacredUnderworld \"GFXSTARTUP\" загружена.");
                             }
@@ -689,7 +689,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ServerLobbyTxBox.Text = text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2);
+                                ((MainWindow)window).NetworkLobbyTxBox.Text = text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2);
 
                                 Log.Info("Настройка SacredUnderworld \"NETWORK_LOBBY\" загружена.");
                             }
@@ -728,7 +728,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ChatTextDelaySlider.Value = int.Parse(text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2));
+                                ((MainWindow)window).ChatDelaySlider.Value = int.Parse(text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2));
 
                                 Log.Info("Настройка SacredUnderworld \"CHAT_DELAY\" загружена.");
                             }
@@ -741,7 +741,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ChatTransparentSlider.Value = int.Parse(text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2));
+                                ((MainWindow)window).ChatAlphaSlider.Value = int.Parse(text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2));
 
                                 Log.Info("Настройка SacredUnderworld \"CHAT_ALPHA\" загружена.");
                             }
@@ -754,7 +754,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).MapTransparentSlider.Value = int.Parse(text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2));
+                                ((MainWindow)window).MinimapAlphaSlider.Value = int.Parse(text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2));
 
                                 Log.Info("Настройка SacredUnderworld \"MINIMAP_ALPHA\" загружена.");
                             }
@@ -841,7 +841,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).GraphicsQualityCmbBox.IsEnabled = false;
+                                ((MainWindow)window).DetailLevelCmbBox.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"DETAILLEVEL\" не была загружена.");
                             }
@@ -867,7 +867,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ConnectTypeCmbBox.IsEnabled = false;
+                                ((MainWindow)window).NetworkSpeedSettingsCmbBox.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"NETWORK_SPEEDSETTINGS\" не была загружена.");
                             }
@@ -893,7 +893,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).AnimationToggleBtn.IsEnabled = false;
+                                ((MainWindow)window).PickupAnimToggleBtn.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"PICKUPANIM\" не была загружена.");
                             }
@@ -932,7 +932,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ShowMoviesToggleBtn.IsEnabled = false;
+                                ((MainWindow)window).ShowMovieToggleBtn.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"SHOWMOVIE\" не была загружена.");
                             }
@@ -971,7 +971,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).CompatibilityModeToggleBtn.IsEnabled = false;
+                                ((MainWindow)window).CompatVideoToggleBtn.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"COMPAT_VIDEO\" не была загружена.");
                             }
@@ -984,7 +984,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).DopingBarToggleBtn.IsEnabled = false;
+                                ((MainWindow)window).ShowPotionsToggleBtn.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"SHOWPOTIONS\" не была загружена.");
                             }
@@ -997,7 +997,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).EnemyInfoToggleBtn.IsEnabled = false;
+                                ((MainWindow)window).ShowEnemyInfoToggleBtn.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"SHOW_ENEMYINFO\" не была загружена.");
                             }
@@ -1010,7 +1010,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).RainbowChatToggleBtn.IsEnabled = false;
+                                ((MainWindow)window).UniqueColorToggleBtn.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"UNIQUE_COLOR\" не была загружена.");
                             }
@@ -1023,7 +1023,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).NetLoggingToggleBtn.IsEnabled = false;
+                                ((MainWindow)window).NetlogToggleBtn.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"NETLOG\" не была загружена.");
                             }
@@ -1049,7 +1049,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).HideCdKeyToggleBtn.IsEnabled = false;
+                                ((MainWindow)window).NetworkCdkeyToggleBtn.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"NETWORK_CDKEY_HIDE\" не была загружена.");
                             }
@@ -1075,7 +1075,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).PlayerInfoToggleBtn.IsEnabled = false;
+                                ((MainWindow)window).ShowHeroInfoToggleBtn.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"SHOW_HEROINFO\" не была загружена.");
                             }
@@ -1088,7 +1088,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).FontSmoothToggleBtn.IsEnabled = false;
+                                ((MainWindow)window).FontaaToggleBtn.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"FONTAA\" не была загружена.");
                             }
@@ -1101,7 +1101,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).OpaqueShadowsToggleBtn.IsEnabled = false;
+                                ((MainWindow)window).ForceBlackShadowToggleBtn.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"FORCE_BLACK_SHADOW\" не была загружена.");
                             }
@@ -1114,7 +1114,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).MemoryLimitToggleBtn.IsEnabled = false;
+                                ((MainWindow)window).GfxLimit128ToggleButton.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"GFX_LIMIT128\" не была загружена.");
                             }
@@ -1127,7 +1127,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ImageSmoothingToggleBtn.IsEnabled = false;
+                                ((MainWindow)window).FsaaFilterToggleBtn.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"FSAA_FILTER\" не была загружена.");
                             }
@@ -1140,7 +1140,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).FullScreenModeToggleBtn.IsEnabled = false;
+                                ((MainWindow)window).FullscreenToggleBtn.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"FULLSCREEN\" не была загружена.");
                             }
@@ -1179,7 +1179,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).DamageIconsToggleBtn.IsEnabled = false;
+                                ((MainWindow)window).TaskbarIconsToggleBtn.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"TASKBAR_ICONS\" не была загружена.");
                             }
@@ -1205,7 +1205,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).VerticalSyncToggleBtn.IsEnabled = false;
+                                ((MainWindow)window).WaitretraceToggleBtn.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"WAITRETRACE\" не была загружена.");
                             }
@@ -1244,7 +1244,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ColorDepthToggleBtn.IsEnabled = false;
+                                ((MainWindow)window).Gfx32ToggleBtn.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"GFX32\" не была загружена.");
                             }
@@ -1257,7 +1257,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).EarthquakeEffectToggleBtn.IsEnabled = false;
+                                ((MainWindow)window).ScreenQuakeToggleBtn.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"SCREEN_QUAKE\" не была загружена.");
                             }
@@ -1283,7 +1283,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ServerIpTxBox.IsEnabled = false;
+                                ((MainWindow)window).NetworkIpAddressTxBox.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"NETWORK_IP_ADDRESS\" не была загружена.");
                             }
@@ -1296,7 +1296,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ServerPortTxBox.IsEnabled = false;
+                                ((MainWindow)window).NetworkPortListenTxBox.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"NETWORK_PORT_LISTEN\" не была загружена.");
                             }
@@ -1309,7 +1309,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ServerNameTxBox.IsEnabled = false;
+                                ((MainWindow)window).NetworkSessionTxBox.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"NETWORK_SESSION\" не была загружена.");
                             }
@@ -1322,7 +1322,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ServerNickNameTxBox.IsEnabled = false;
+                                ((MainWindow)window).NetworkPlayerTxBox.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"NETWORK_PLAYER\" не была загружена.");
                             }
@@ -1335,7 +1335,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ServerPasswordTxBox.IsEnabled = false;
+                                ((MainWindow)window).NetworkPasswordTxBox.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"NETWORK_PASSWORD\" не была загружена.");
                             }
@@ -1348,7 +1348,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).PictureStartTxBox.IsEnabled = false;
+                                ((MainWindow)window).GfxStartupTxBox.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"GFXLOADING\" не была загружена.");
                             }
@@ -1361,7 +1361,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).PictureSaveLoadTxBox.IsEnabled = false;
+                                ((MainWindow)window).GfxLoadingTxBox.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"GFXSTARTUP\" не была загружена.");
                             }
@@ -1374,7 +1374,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ServerLobbyTxBox.IsEnabled = false;
+                                ((MainWindow)window).NetworkLobbyTxBox.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"NETWORK_LOBBY\" не была загружена.");
                             }
@@ -1413,7 +1413,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ChatTextDelaySlider.IsEnabled = false;
+                                ((MainWindow)window).ChatDelaySlider.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"CHAT_DELAY\" не была загружена.");
                             }
@@ -1426,7 +1426,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).ChatTransparentSlider.IsEnabled = false;
+                                ((MainWindow)window).ChatAlphaSlider.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"CHAT_ALPHA\" не была загружена.");
                             }
@@ -1439,7 +1439,7 @@ namespace SacredUtils.Resources.Core
                         {
                             if (window.GetType() == typeof(MainWindow))
                             {
-                                ((MainWindow)window).MapTransparentSlider.IsEnabled = false;
+                                ((MainWindow)window).MinimapAlphaSlider.IsEnabled = false;
 
                                 Log.Warn("Настройка SacredUnderworld \"MINIMAP_ALPHA\" не была загружена.");
                             }

@@ -61,7 +61,7 @@
             <Label Content="Выбор настроек." Foreground="{Binding Foreground, ElementName=CardCaptionsColor}" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" FontSize="14" Margin="119,118,740,582" Height="27"/>
             <Label Content="Настройки." Foreground="{Binding Foreground, ElementName=CardCaptionsColor}" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" FontSize="14" Margin="304,118,594,582" Height="27"/>
 
-            <Label x:Name="NotSelectedLbl" Content="Выберите, что бы вы хотели настроить." Height="Auto" Width="Auto" Foreground="#DD7E7E7E" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Margin="435,354,268,343" FontSize="14"/>
+            <Label x:Name="NotSelectedLbl" Content="&lt; Выберите, что бы вы хотели настроить. /&gt;" Height="Auto" Width="Auto" Foreground="#DD7E7E7E" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Margin="287,104,107,79" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
             <ListBox x:Name="SettingsListBox" HorizontalAlignment="Left" Height="494" HorizontalContentAlignment="Left" VerticalAlignment="Top" Width="162" Margin="107,154,0,0" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalContentAlignment="Stretch" Padding="0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=CardCaptionsColor}" SelectionChanged="SettingsListBox_SelectionChanged">
                 <ListBoxItem Content="  Настройки графики 1."/>
@@ -102,14 +102,14 @@
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,407,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,452,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
 
-                <ToggleButton x:Name="ImageSmoothingToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,152,15,367" Height="25" Click="ImageSmoothingToggleBtn_Click" Width="52"/>
-                <ToggleButton x:Name="MemoryLimitToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,107,15,412" Height="25" Click="MemoryLimitToggleBtn_Click"/>
-                <ToggleButton x:Name="CompatibilityModeToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,197,15,322" Height="25" Click="CompatibilityModeToggleBtn_Click" Width="52"/>
-                <ToggleButton x:Name="ColorDepthToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,242,15,277" Height="25" Click="ColorDepthToggleBtn_Click" Width="52"/>
-                <ToggleButton x:Name="VerticalSyncToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,287,15,232" Height="25" Click="VerticalSyncToggleBtn_Click" Width="52"/>
-                <ToggleButton x:Name="OpaqueShadowsToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,332,15,187" Height="25" Click="OpaqueShadowsToggleBtn_Click" Width="52"/>
-                <ToggleButton x:Name="FullScreenModeToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,377,15,142" Height="25" Click="FullScreenModeToggleBtn_Click" Width="52"/>
-                <ToggleButton x:Name="ShowMoviesToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,422,15,97" Height="25" Width="52" Click="ShowMoviesToggleBtn_Click"/>
+                <ToggleButton x:Name="FsaaFilterToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,152,15,367" Height="25" Click="FsaaFilterToggleBtn_Click" Width="52"/>
+                <ToggleButton x:Name="GfxLimit128ToggleButton" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,107,15,412" Height="25" Click="GfxLimit128ToggleButton_Click"/>
+                <ToggleButton x:Name="CompatVideoToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,197,15,322" Height="25" Click="CompatVideoToggleBtn_Click" Width="52"/>
+                <ToggleButton x:Name="Gfx32ToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,242,15,277" Height="25" Click="Gfx32ToggleBtn_Click" Width="52"/>
+                <ToggleButton x:Name="WaitretraceToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,287,15,232" Height="25" Click="WaitretraceToggleBtn_Click" Width="52"/>
+                <ToggleButton x:Name="ForceBlackShadowToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,332,15,187" Height="25" Click="ForceBlackShadowToggleBtn_Click" Width="52"/>
+                <ToggleButton x:Name="FullscreenToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,377,15,142" Height="25" Click="FullscreenToggleBtn_Click" Width="52"/>
+                <ToggleButton x:Name="ShowMovieToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,422,15,97" Height="25" Width="52" Click="ShowMovieToggleBtn_Click"/>
             </Grid>
 
             <Grid x:Name="GraphicsSettings02Grid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">
@@ -128,7 +128,7 @@
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,362,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,407,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
 
-                <ComboBox x:Name="GraphicsQualityCmbBox" VerticalAlignment="Top" Margin="369,150,21,0" IsSynchronizedWithCurrentItem="False" UseLayoutRounding="False" Background="{Binding Background, ElementName=ColorCombobox}" IsReadOnly="True" Height="27" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" SelectedIndex="2" Width="203" DropDownClosed="GraphicsQualityCmbBox_DropDownClosed" Foreground="{Binding Foreground, ElementName=ColorCombobox}">
+                <ComboBox x:Name="DetailLevelCmbBox" VerticalAlignment="Top" Margin="369,150,21,0" IsSynchronizedWithCurrentItem="False" UseLayoutRounding="False" Background="{Binding Background, ElementName=ColorCombobox}" IsReadOnly="True" Height="27" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" SelectedIndex="2" Width="203" DropDownClosed="DetailLevelCmbBox_DropDownClosed" Foreground="{Binding Foreground, ElementName=ColorCombobox}">
                     <ComboBoxItem Content="Низкое"/>
                     <ComboBoxItem Content="Среднее"/>
                     <ComboBoxItem Content="Высокое"/>
@@ -139,11 +139,11 @@
                     <ComboBoxItem Content="Немецкий"/>
                 </ComboBox>
 
-                <Slider x:Name="MapTransparentSlider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="217" Margin="363,165,0,0" Style="{StaticResource MaterialDesignDiscreteSlider}" Maximum="255" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" ValueChanged="MapTransparentSlider_ValueChanged"/>
+                <Slider x:Name="MinimapAlphaSlider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="217" Margin="363,165,0,0" Style="{StaticResource MaterialDesignDiscreteSlider}" Maximum="255" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" ValueChanged="MinimapAlphaSlider_ValueChanged"/>
                 <Slider x:Name="NightDarknessSlider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="217" Margin="363,209,0,0" Style="{StaticResource MaterialDesignDiscreteSlider}" Maximum="100" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" ValueChanged="NightDarknessSlider_ValueChanged"/>
 
-                <TextBox x:Name="PictureStartTxBox" MaxLength="260" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Margin="369,286,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" KeyUp="PictureStartTxBox_KeyUp" Foreground="{Binding Foreground, ElementName=ColorTxBox}"/>
-                <TextBox x:Name="PictureSaveLoadTxBox" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="260" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Margin="369,331,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" KeyUp="PictureSaveLoadTxBox_KeyUp"/>
+                <TextBox x:Name="GfxStartupTxBox" MaxLength="260" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Margin="369,286,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" KeyUp="GfxStartupTxBox_KeyUp" Foreground="{Binding Foreground, ElementName=ColorTxBox}"/>
+                <TextBox x:Name="GfxLoadingTxBox" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="260" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Margin="369,331,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" KeyUp="GfxLoadingTxBox_KeyUp"/>
             </Grid>
 
             <Grid x:Name="SoundSettingsGrid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">
@@ -187,9 +187,9 @@
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,375,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,150,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
 
-                <ToggleButton x:Name="NetLoggingToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,165,15,354" Width="52" Height="25" Click="NetLoggingToggleBtn_Click"/>
-                <ToggleButton x:Name="HideCdKeyToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,210,15,309" Width="52" Height="25" Click="HideCdKeyToggleBtn_Click"/>
-                <ToggleButton x:Name="PlayerInfoToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,255,15,264" Width="52" Height="25" Click="PlayerInfoToggleBtn_Click"/>
+                <ToggleButton x:Name="NetlogToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,165,15,354" Width="52" Height="25" Click="NetlogToggleBtn_Click"/>
+                <ToggleButton x:Name="NetworkCdkeyToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,210,15,309" Width="52" Height="25" Click="NetworkCdkeyToggleBtn_Click"/>
+                <ToggleButton x:Name="ShowHeroInfoToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,255,15,264" Width="52" Height="25" Click="ShowHeroInfoToggleBtn_Click"/>
                 <ToggleButton x:Name="LadderExportToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,300,15,219" Width="52" Height="25" Click="LadderExportToggleBtn_Click"/>
                 <ToggleButton x:Name="LicenseToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,345,15,174" Width="52" Height="25" Click="LicenseToggleBtn_Click"/>
             </Grid>
@@ -210,18 +210,18 @@
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,362,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,407,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
 
-                <ComboBox x:Name="ConnectTypeCmbBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="202" Margin="370,151,0,0" IsSynchronizedWithCurrentItem="False" UseLayoutRounding="False" Background="{Binding Background, ElementName=ColorCombobox}" IsReadOnly="True" Height="27" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" SelectedIndex="2" DropDownClosed="ConnectTypeCmbBox_DropDownClosed" Foreground="{Binding Foreground, ElementName=ColorCombobox}">
+                <ComboBox x:Name="NetworkSpeedSettingsCmbBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="202" Margin="370,151,0,0" IsSynchronizedWithCurrentItem="False" UseLayoutRounding="False" Background="{Binding Background, ElementName=ColorCombobox}" IsReadOnly="True" Height="27" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" SelectedIndex="2" DropDownClosed="NetworkSpeedSettingsCmbBox_DropDownClosed" Foreground="{Binding Foreground, ElementName=ColorCombobox}">
                     <ComboBoxItem Content="DSL \ Cable \ LAN"/>
                     <ComboBoxItem Content="Modem \ ISDN"/>
                     <ComboBoxItem Content="ProtocolFix"/>
                 </ComboBox>
 
-                <TextBox x:Name="ServerNameTxBox" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="16" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" Margin="370,241,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" KeyUp="ServerNameTxBox_KeyUp"/>
-                <TextBox x:Name="ServerPasswordTxBox" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="32" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" Margin="370,331,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" KeyUp="ServerPasswordTxBox_KeyUp"/>
-                <TextBox x:Name="ServerPortTxBox" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="5" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Margin="502,196,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" KeyUp="ServerPortTxBox_KeyUp"/>
-                <TextBox x:Name="ServerIpTxBox" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="15" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" Margin="370,196,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" KeyUp="ServerIpTxBox_KeyUp"/>
-                <TextBox x:Name="ServerNickNameTxBox" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="16" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" Margin="370,286,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" KeyUp="ServerNickNameTxBox_KeyUp"/>
-                <TextBox x:Name="ServerLobbyTxBox" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="64" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Margin="370,376,20,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" KeyUp="ServerLobbyTxBox_KeyUp"/>
+                <TextBox x:Name="NetworkSessionTxBox" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="16" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" Margin="370,241,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" KeyUp="NetworkSessionTxBox_KeyUp"/>
+                <TextBox x:Name="NetworkPasswordTxBox" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="32" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" Margin="370,331,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" KeyUp="NetworkPasswordTxBox_KeyUp"/>
+                <TextBox x:Name="NetworkPortListenTxBox" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="5" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Margin="502,196,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" KeyUp="NetworkPortListenTxBox_KeyUp"/>
+                <TextBox x:Name="NetworkIpAddressTxBox" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="15" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" Margin="370,196,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" KeyUp="NetworkIpAddressTxBox_KeyUp"/>
+                <TextBox x:Name="NetworkPlayerTxBox" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="16" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" Margin="370,286,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" KeyUp="NetworkPlayerTxBox_KeyUp"/>
+                <TextBox x:Name="NetworkLobbyTxBox" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="64" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Margin="370,376,20,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" KeyUp="NetworkLobbyTxBox_KeyUp"/>
             </Grid>
 
             <Grid x:Name="ChatSettingsGrid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">
@@ -237,10 +237,10 @@
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,362,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
 
                 <Slider x:Name="ChatLinesSlider" VerticalAlignment="Top" Margin="356,209,19,0" Style="{StaticResource MaterialDesignDiscreteSlider}" Maximum="32" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" ValueChanged="ChatLinesSlider_ValueChanged"/>
-                <Slider x:Name="ChatTextDelaySlider" VerticalAlignment="Top" Margin="356,252,19,0" Style="{StaticResource MaterialDesignDiscreteSlider}" Maximum="120" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" ValueChanged="ChatTextDelaySlider_ValueChanged"/>
-                <Slider x:Name="ChatTransparentSlider" VerticalAlignment="Top" Margin="356,300,19,0" Style="{StaticResource MaterialDesignDiscreteSlider}" Maximum="255" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" ValueChanged="ChatTransparentSlider_ValueChanged"/>
+                <Slider x:Name="ChatDelaySlider" VerticalAlignment="Top" Margin="356,252,19,0" Style="{StaticResource MaterialDesignDiscreteSlider}" Maximum="120" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" ValueChanged="ChatDelaySlider_ValueChanged"/>
+                <Slider x:Name="ChatAlphaSlider" VerticalAlignment="Top" Margin="356,300,19,0" Style="{StaticResource MaterialDesignDiscreteSlider}" Maximum="255" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" ValueChanged="ChatAlphaSlider_ValueChanged"/>
 
-                <ToggleButton x:Name="RainbowChatToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,197,15,322" Width="52" Height="25" Click="RainbowChatToggleBtn_Click"/>
+                <ToggleButton x:Name="UniqueColorToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,197,15,322" Width="52" Height="25" Click="UniqueColorToggleBtn_Click"/>
             </Grid>
 
             <Grid x:Name="GameSettings01Grid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">
@@ -261,11 +261,11 @@
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,390,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,435,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
 
-                <ToggleButton x:Name="EnemyInfoToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,180,15,339" Height="25" Width="52" Click="EnemyInfoToggleBtn_Click"/>
-                <ToggleButton x:Name="DopingBarToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,135,15,384" Height="25" Width="52" Click="DopingBarToggleBtn_Click"/>
-                <ToggleButton x:Name="AnimationToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,225,15,294" Height="25" Width="52" Click="AnimationToggleBtn_Click"/>
+                <ToggleButton x:Name="ShowEnemyInfoToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,180,15,339" Height="25" Width="52" Click="ShowEnemyInfoToggleBtn_Click"/>
+                <ToggleButton x:Name="ShowPotionsToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,135,15,384" Height="25" Width="52" Click="ShowPotionsToggleBtn_Click"/>
+                <ToggleButton x:Name="PickupAnimToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,225,15,294" Height="25" Width="52" Click="PickupAnimToggleBtn_Click"/>
                 <ToggleButton x:Name="AutosaveToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,270,15,249" Height="25" Width="52" Click="AutosaveToggleBtn_Click"/>
-                <ToggleButton x:Name="EarthquakeEffectToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,315,15,204" Height="25" Width="52" Click="EarthquakeEffectToggleBtn_Click"/>
+                <ToggleButton x:Name="ScreenQuakeToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,315,15,204" Height="25" Width="52" Click="ScreenQuakeToggleBtn_Click"/>
                 <ToggleButton x:Name="DefaultSkillsToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,360,15,159" Height="25" Width="52" Click="DefaultSkillsToggleBtn_Click"/>
                 <ToggleButton x:Name="WarFogToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,405,15,114" Height="25" Width="52" Click="WarFogToggleBtn_Click"/>
             </Grid>
@@ -289,9 +289,9 @@
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,120,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
 
                 <ToggleButton x:Name="FontFilteringToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,180,15,339" Height="25" Width="52" Click="FontFilteringToggleBtn_Click"/>
-                <ToggleButton x:Name="FontSmoothToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,135,15,384" Height="25" Width="52" Click="FontSmoothToggleBtn_Click"/>
+                <ToggleButton x:Name="FontaaToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,135,15,384" Height="25" Width="52" Click="FontaaToggleBtn_Click"/>
                 <ToggleButton x:Name="LogToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,225,15,294" Height="25" Width="52" Click="LogToggleBtn_Click"/>
-                <ToggleButton x:Name="DamageIconsToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,270,15,249" Height="25" Width="52" Click="DamageIconsToggleBtn_Click"/>
+                <ToggleButton x:Name="TaskbarIconsToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,270,15,249" Height="25" Width="52" Click="TaskbarIconsToggleBtn_Click"/>
                 <ToggleButton x:Name="TrackEnemyToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,315,15,204" Height="25" Width="52" Click="TrackEnemyToggleBtn_Click"/>
                 <ToggleButton x:Name="ViolenceToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,360,15,159" Height="25" Width="52" Click="ViolenceToggleBtn_Click"/>
                 <ToggleButton x:Name="CombineSlotsToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,405,15,114" Height="25" Width="52" Click="CombineSlotsToggleBtn_Click"/>
@@ -350,9 +350,9 @@
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,362,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,407,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
 
-                <Button x:Name="VeteranModInstallBtn" Content="УСТАНОВИТЬ" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Style="{StaticResource MaterialDesignToolButton}" materialDesign:RippleAssist.RippleSizeMultiplier="0.5" materialDesign:RippleAssist.IsCentered="True" Margin="434,152,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Height="25" Click="VeteranModInstallBtn_Click"/>
+                <Button x:Name="VeteranModUfoBtn" Content="УСТАНОВИТЬ" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Style="{StaticResource MaterialDesignToolButton}" materialDesign:RippleAssist.RippleSizeMultiplier="0.5" materialDesign:RippleAssist.IsCentered="True" Margin="434,152,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Height="25" Click="VeteranModUfoBtn_Click"/>
                 <Button x:Name="VeteranModDragonFixBtn" Content="УСТАНОВИТЬ" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Style="{StaticResource MaterialDesignToolButton}" materialDesign:RippleAssist.RippleSizeMultiplier="0.5" materialDesign:RippleAssist.IsCentered="True" Margin="434,197,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Height="25" Click="VeteranModDragonFixBtn_Click"/>
-                <Button x:Name="SacredNewInstallBtn" Content="УСТАНОВИТЬ" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Style="{StaticResource MaterialDesignToolButton}" materialDesign:RippleAssist.RippleSizeMultiplier="0.5" materialDesign:RippleAssist.IsCentered="True" Margin="434,242,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Height="25" Click="SacredNewInstallBtn_Click"/>
+                <Button x:Name="SacredNewUpdateBtn" Content="УСТАНОВИТЬ" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Style="{StaticResource MaterialDesignToolButton}" materialDesign:RippleAssist.RippleSizeMultiplier="0.5" materialDesign:RippleAssist.IsCentered="True" Margin="434,242,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Height="25" Click="SacredNewUpdateBtn_Click"/>
                 <Button x:Name="CompileGlobalResBtn" Content="ЗАПУСТИТЬ" VerticalAlignment="Top" Style="{StaticResource MaterialDesignToolButton}" materialDesign:RippleAssist.RippleSizeMultiplier="0.5" materialDesign:RippleAssist.IsCentered="True" Margin="434,377,20,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Height="25" Click="CompileGlobalResBtn_Click"/>
                 <Button x:Name="ServerMulticoreFixBtn" Content="УСТАНОВИТЬ" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Style="{StaticResource MaterialDesignToolButton}" materialDesign:RippleAssist.RippleSizeMultiplier="0.5" materialDesign:RippleAssist.IsCentered="True" Margin="434,287,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Height="25" Click="ServerMulticoreFixBtn_Click"/>
                 <Button x:Name="DecompileGlobalResBtn" Content="ЗАПУСТИТЬ" HorizontalAlignment="Left" VerticalAlignment="Top" Width="138" Style="{StaticResource MaterialDesignToolButton}" materialDesign:RippleAssist.RippleSizeMultiplier="0.5" materialDesign:RippleAssist.IsCentered="True" Margin="434,332,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Height="25" Click="DecompileGlobalResBtn_Click"/>
@@ -412,4 +412,3 @@
         </Grid>
     </Grid>
 </Window>
-
