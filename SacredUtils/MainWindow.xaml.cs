@@ -197,6 +197,8 @@ namespace SacredUtils
                     var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "launchstat.dat");
                     fileAllText[3] = "; The program is launched " + newNumberOfStartups + " time(s)";
                     File.WriteAllLines(@".SacredUtilsData" + "/" + "launchstat.dat", fileAllText);
+
+                    Log.Info("Данные о запуске SacredUtils были сохранены в launchstat.dat.");
                 }
                 catch (Exception exception)
                 {
