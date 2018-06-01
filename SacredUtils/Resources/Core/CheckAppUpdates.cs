@@ -12,7 +12,7 @@ namespace SacredUtils.Resources.Core
     public class CheckAppUpdates
     {
         private const string AppSettings = "Settings.su";
-        private const string AppVersion = "1.2R Rv4 B4 (310518)";
+        private const string AppVersion = "1.2R Rv4 B4 (010618)";
 
         private readonly WebClient _wc = new WebClient();
 
