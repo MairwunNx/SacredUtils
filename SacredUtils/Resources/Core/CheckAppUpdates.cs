@@ -5,14 +5,15 @@ using System.Net;
 using System.Windows;
 using System.Diagnostics;
 using System.Net.NetworkInformation;
+using static SacredUtils.Resources.Core.AppConstStrings;
 using Application = System.Windows.Forms.Application;
 
 namespace SacredUtils.Resources.Core
 {
     public class CheckAppUpdates
     {
-        private const string AppSettings = "Settings.su";
-        private const string AppVersion = "1.2R Rv4 B4 (010618)";
+        public const string AppSettings = "Settings.su";
+        private const string AppVersion = "1.2R Rv4 B5 (030618)";
 
         private readonly WebClient _wc = new WebClient();
 

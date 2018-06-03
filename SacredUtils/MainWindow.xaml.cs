@@ -749,9 +749,9 @@ namespace SacredUtils
 
             CheckAppUpdates checkAppUpdates = new CheckAppUpdates();
 
-#pragma warning disable CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
+            #pragma warning disable CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
             checkAppUpdates.GetAvailableAppUpdatesAsync();
-#pragma warning restore CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
+            #pragma warning restore CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
 
             Log.Info("[MethodCall] Вызов метода проверки обновления завершен.");
 
