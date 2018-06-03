@@ -1,6 +1,7 @@
 ﻿using System;
 using log4net;
 using System.IO;
+using static SacredUtils.Resources.Core.AppConstStrings;
 
 namespace SacredUtils.Resources.Core
 {
@@ -12,13 +13,13 @@ namespace SacredUtils.Resources.Core
         {
             Log.Info("Проверяем / Получаем временные файлы в текущей директории.");
 
-            if (Directory.Exists("Temp"))
+            if (Directory.Exists(AppTempFolder))
             {
                 Log.Info("Временные файлы были обнаружены в директории. Мы их удалим.");
 
                 try
                 {
-                    const string tempDir = "Temp"; Directory.Delete(tempDir, true);
+                    const string tempDir = AppTempFolder; Directory.Delete(tempDir, true);
 
                     Log.Info("Временные файлы были удалены из директории без ошибок.");
                 }
@@ -27,7 +28,7 @@ namespace SacredUtils.Resources.Core
                     Log.Error("При удалении временных файлов произошла ошибка."); Log.Error(exception.ToString());
                 }
             }
-            else if (!Directory.Exists("Temp"))
+            else if (!Directory.Exists(AppTempFolder))
             {
                 Log.Info("Временные файлы SacredUtils не найдены, продолжаем работу.");
             }

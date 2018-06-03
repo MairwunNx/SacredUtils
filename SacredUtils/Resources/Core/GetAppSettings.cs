@@ -3,6 +3,7 @@ using log4net;
 using System.IO;
 using System.Text;
 using System.Windows;
+using static SacredUtils.Resources.Core.AppConstStrings;
 
 namespace SacredUtils.Resources.Core
 {
@@ -14,7 +15,7 @@ namespace SacredUtils.Resources.Core
         {
             Log.Info("Загрузка всех активных настроек SacredUtils.");
 
-            var text = File.ReadAllLines("Settings.su", Encoding.ASCII);
+            var text = File.ReadAllLines(AppSettings, Encoding.ASCII);
             
             bool a = false; bool b = false; bool c = false; bool d = false; bool e = false; bool f = false;
 
@@ -103,7 +104,7 @@ namespace SacredUtils.Resources.Core
 
             Log.Info("Проверка версии конфигурационного файла SacredUtils.");
 
-            var text1 = File.ReadAllLines("Settings.su", Encoding.ASCII);
+            var text1 = File.ReadAllLines(AppSettings, Encoding.ASCII);
 
             try
             {
@@ -119,7 +120,7 @@ namespace SacredUtils.Resources.Core
 
                     try
                     {
-                        File.WriteAllBytes("Settings.su", Properties.Resources.AppSettings);
+                        File.WriteAllBytes(AppSettings, Properties.Resources.AppSettings);
 
                         Log.Info("Файл конфигурации SacredUtils был создан без ошибок.");
                     }
@@ -134,102 +135,102 @@ namespace SacredUtils.Resources.Core
                     {
                         if (a)
                         {
-                            var fileAllText = File.ReadAllLines("Settings.su");
+                            var fileAllText = File.ReadAllLines(AppSettings);
                             fileAllText[16] = "# - Automatically get and install updates = true                   #";
-                            File.WriteAllLines("Settings.su", fileAllText);
+                            File.WriteAllLines(AppSettings, fileAllText);
 
                             Log.Info("Настройка \"Automatically get and install update\" восстановлена.");
                         }
                         else
                         {
-                            var fileAllText = File.ReadAllLines("Settings.su");
+                            var fileAllText = File.ReadAllLines(AppSettings);
                             fileAllText[16] = "# - Automatically get and install updates = false                  #";
-                            File.WriteAllLines("Settings.su", fileAllText);
+                            File.WriteAllLines(AppSettings, fileAllText);
 
                             Log.Info("Настройка \"Automatically get and install update\" восстановлена.");
                         }
 
                         if (b)
                         {
-                            var fileAllText = File.ReadAllLines("Settings.su");
+                            var fileAllText = File.ReadAllLines(AppSettings);
                             fileAllText[18] = "# - Show advanced errors-exceptions in log = true                  #";
-                            File.WriteAllLines("Settings.su", fileAllText);
+                            File.WriteAllLines(AppSettings, fileAllText);
 
                             Log.Info("Настройка \"Show advanced errors-exceptions in log\" восстановлена.");
                         }
                         else
                         {
-                            var fileAllText = File.ReadAllLines("Settings.su");
+                            var fileAllText = File.ReadAllLines(AppSettings);
                             fileAllText[18] = "# - Show advanced errors-exceptions in log = false                 #";
-                            File.WriteAllLines("Settings.su", fileAllText);
+                            File.WriteAllLines(AppSettings, fileAllText);
 
                             Log.Info("Настройка \"Show advanced errors-exceptions in log\" восстановлена.");
                         }
 
                         if (c)
                         {
-                            var fileAllText = File.ReadAllLines("Settings.su");
+                            var fileAllText = File.ReadAllLines(AppSettings);
                             fileAllText[20] = "# - Minimize the program before launching Sacred = true            #";
-                            File.WriteAllLines("Settings.su", fileAllText);
+                            File.WriteAllLines(AppSettings, fileAllText);
 
                             Log.Info("Настройка \"Minimize the program before launching Sacred\" восстановлена.");
                         }
                         else
                         {
-                            var fileAllText = File.ReadAllLines("Settings.su");
+                            var fileAllText = File.ReadAllLines(AppSettings);
                             fileAllText[20] = "# - Minimize the program before launching Sacred = false           #";
-                            File.WriteAllLines("Settings.su", fileAllText);
+                            File.WriteAllLines(AppSettings, fileAllText);
 
                             Log.Info("Настройка \"Minimize the program before launching Sacred\" восстановлена.");
                         }
 
                         if (d)
                         {
-                            var fileAllText = File.ReadAllLines("Settings.su");
+                            var fileAllText = File.ReadAllLines(AppSettings);
                             fileAllText[22] = "# - Change the input language before running Sacred = true         #";
-                            File.WriteAllLines("Settings.su", fileAllText);
+                            File.WriteAllLines(AppSettings, fileAllText);
 
                             Log.Info("Настройка \"Change the input language before running Sacred\" восстановлена.");
                         }
                         else
                         {
-                            var fileAllText = File.ReadAllLines("Settings.su");
+                            var fileAllText = File.ReadAllLines(AppSettings);
                             fileAllText[22] = "# - Change the input language before running Sacred = false        #";
-                            File.WriteAllLines("Settings.su", fileAllText);
+                            File.WriteAllLines(AppSettings, fileAllText);
 
                             Log.Info("Настройка \"Change the input language before running Sacred\" восстановлена.");
                         }
 
                         if (e)
                         {
-                            var fileAllText = File.ReadAllLines("Settings.su");
+                            var fileAllText = File.ReadAllLines(AppSettings);
                             fileAllText[24] = "# - Close the program after launching Sacred = true                #";
-                            File.WriteAllLines("Settings.su", fileAllText);
+                            File.WriteAllLines(AppSettings, fileAllText);
 
                             Log.Info("Настройка \"Close the program after launching Sacred\" восстановлена.");
                         }
                         else
                         {
-                            var fileAllText = File.ReadAllLines("Settings.su");
+                            var fileAllText = File.ReadAllLines(AppSettings);
                             fileAllText[24] = "# - Close the program after launching Sacred = false               #";
-                            File.WriteAllLines("Settings.su", fileAllText);
+                            File.WriteAllLines(AppSettings, fileAllText);
 
                             Log.Info("Настройка \"Close the program after launching Sacred\" восстановлена.");
                         }
 
                         if (f)
                         {
-                            var fileAllText = File.ReadAllLines("Settings.su");
+                            var fileAllText = File.ReadAllLines(AppSettings);
                             fileAllText[26] = "# - Restore Settings.cfg if it is corrupted = true                 #";
-                            File.WriteAllLines("Settings.su", fileAllText);
+                            File.WriteAllLines(AppSettings, fileAllText);
 
                             Log.Info("Настройка \"Restore Settings.cfg if it is corrupted\" восстановлена.");
                         }
                         else
                         {
-                            var fileAllText = File.ReadAllLines("Settings.su");
+                            var fileAllText = File.ReadAllLines(AppSettings);
                             fileAllText[26] = "# - Restore Settings.cfg if it is corrupted = false                #";
-                            File.WriteAllLines("Settings.su", fileAllText);
+                            File.WriteAllLines(AppSettings, fileAllText);
 
                             Log.Info("Настройка \"Restore Settings.cfg if it is corrupted\" восстановлена.");
                         }

@@ -21,6 +21,7 @@ using SacredUtils.Resources.Windows;
 using FontFamily = System.Drawing.FontFamily;
 using Application = System.Windows.Forms.Application;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
+using static SacredUtils.Resources.Core.AppConstStrings;
 
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
 
@@ -31,10 +32,6 @@ namespace SacredUtils
     public partial class MainWindow
     {
         #region SacredUtilsFieldsAndStrings.
-
-        private const string AppSettings = "Settings.su";
-
-        private const string GameSettings = "Settings.cfg";
 
         private readonly string _appname = Path.GetFileName(Application.ExecutablePath);
 
@@ -223,11 +220,11 @@ namespace SacredUtils
                 {
                     if (ChangeImputLangToggleBtn.IsChecked == true)
                     {
-                        if (File.Exists("Sacred.exe"))
+                        if (File.Exists(SacredExe))
                         {
 
                             Log.Info("Запускаем Sacred.exe с параметрами : Изменить язык ввода, выйди из приложения.");
-                            Process.Start("Sacred.exe"); InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
+                            Process.Start(SacredExe); InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
 
                             Environment.Exit(0);
                         }
@@ -236,18 +233,18 @@ namespace SacredUtils
                     {
                         Log.Info("Запускаем Sacred.exe с параметрами : Выйди из приложения.");
 
-                        if (File.Exists("Sacred.exe")) { Process.Start("Sacred.exe"); Environment.Exit(0); }
+                        if (File.Exists(SacredExe)) { Process.Start(SacredExe); Environment.Exit(0); }
                     }
                 }
                 else if (MinimizeProgramToggleBtn.IsChecked == true)
                 {
                     if (ChangeImputLangToggleBtn.IsChecked == true)
                     {
-                        if (File.Exists("Sacred.exe"))
+                        if (File.Exists(SacredExe))
                         {
                             Log.Info("Запускаем Sacred.exe с параметрами : Изменить язык ввода, свернуть приложение.");
 
-                            Process.Start("Sacred.exe"); InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
+                            Process.Start(SacredExe); InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
 
                             WindowState = WindowState.Minimized;
                         }
@@ -256,10 +253,10 @@ namespace SacredUtils
                     {
                         Log.Info("Запускаем Sacred.exe с параметрами : Свернуть приложение.");
 
-                        if (File.Exists("Sacred.exe")) { Process.Start("Sacred.exe"); WindowState = WindowState.Minimized; }
+                        if (File.Exists(SacredExe)) { Process.Start(SacredExe); WindowState = WindowState.Minimized; }
                     }
                 }
-                else { if (File.Exists("Sacred.exe")) { Process.Start("Sacred.exe"); } }
+                else { if (File.Exists(SacredExe)) { Process.Start(SacredExe); } }
             }
 
             if (SettingsListBox.SelectedIndex == 15)
@@ -276,7 +273,7 @@ namespace SacredUtils
 
         public void SetSettingsValue(string s, string v)
         {
-            if (!File.Exists(GameSettings))
+            if (!File.Exists(SacredSettings))
             {
                 Log.Fatal("Файл конфигурации игры внезапно пропал!!! Он будет восстановлен.");
 
@@ -284,7 +281,7 @@ namespace SacredUtils
 
                 try
                 {
-                    File.WriteAllBytes("Settings.cfg", Properties.Resources.GameSettings);
+                    File.WriteAllBytes(SacredSettings, Properties.Resources.GameSettings);
 
                     Log.Info("Файл конфигурации игры был создан без ошибок.");
                 }
@@ -297,7 +294,7 @@ namespace SacredUtils
             }
 
 
-            var text = File.ReadAllLines(GameSettings, Encoding.ASCII);
+            var text = File.ReadAllLines(SacredSettings, Encoding.ASCII);
 
             for (int i = 0; i < text.Length; i++)
             {
@@ -305,7 +302,7 @@ namespace SacredUtils
                 {
                     try
                     {
-                        text[i] = s + " : " + v; File.WriteAllLines(GameSettings, text);
+                        text[i] = s + " : " + v; File.WriteAllLines(SacredSettings, text);
                     }
                     catch (Exception exception)
                     {
@@ -317,7 +314,7 @@ namespace SacredUtils
 
         public void SetSettingsValueForFont(string s, string v)
         {
-            if (!File.Exists(GameSettings))
+            if (!File.Exists(SacredSettings))
             {
                 Log.Fatal("Файл конфигурации игры внезапно пропал!!! Он будет восстановлен.");
 
@@ -325,7 +322,7 @@ namespace SacredUtils
 
                 try
                 {
-                    File.WriteAllBytes("Settings.cfg", Properties.Resources.GameSettings);
+                    File.WriteAllBytes(SacredSettings, Properties.Resources.GameSettings);
 
                     Log.Info("Файл конфигурации игры был создан без ошибок.");
                 }
@@ -338,7 +335,7 @@ namespace SacredUtils
             }
 
 
-            var text = File.ReadAllLines(GameSettings, Encoding.ASCII);
+            var text = File.ReadAllLines(SacredSettings, Encoding.ASCII);
 
             for (int i = 0; i < text.Length; i++)
             {
@@ -346,7 +343,7 @@ namespace SacredUtils
                 {
                     try
                     {
-                        text[i] = s + v; File.WriteAllLines(GameSettings, text);
+                        text[i] = s + v; File.WriteAllLines(SacredSettings, text);
                     }
                     catch (Exception exception)
                     {
@@ -358,7 +355,7 @@ namespace SacredUtils
 
         public void SetSettingsValueWithDouble(string s, double v)
         {
-            if (!File.Exists(GameSettings))
+            if (!File.Exists(SacredSettings))
             {
                 Log.Fatal("Файл конфигурации игры внезапно пропал!!! Он будет восстановлен.");
 
@@ -366,7 +363,7 @@ namespace SacredUtils
 
                 try
                 {
-                    File.WriteAllBytes("Settings.cfg", Properties.Resources.GameSettings);
+                    File.WriteAllBytes(SacredSettings, Properties.Resources.GameSettings);
 
                     Log.Info("Файл конфигурации игры был создан без ошибок.");
                 }
@@ -379,7 +376,7 @@ namespace SacredUtils
             }
 
 
-            var text = File.ReadAllLines(GameSettings, Encoding.ASCII);
+            var text = File.ReadAllLines(SacredSettings, Encoding.ASCII);
 
             for (int i = 0; i < text.Length; i++)
             {
@@ -387,7 +384,7 @@ namespace SacredUtils
                 {
                     try
                     {
-                        text[i] = s + " : " + v; File.WriteAllLines(GameSettings, text);
+                        text[i] = s + " : " + v; File.WriteAllLines(SacredSettings, text);
                     }
                     catch (Exception exception)
                     {
@@ -771,11 +768,11 @@ namespace SacredUtils
 
             Log.Info("Поиск файла для загрузки данных о статусе модификаций.");
 
-            if (File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+            if (File.Exists(AppDataFolder + "/" + AppInstallInfo))
             {
                 Log.Info("Файл для загрузки данных о статусе модификаций был найден.");
 
-                var text = File.ReadAllText(@".SacredUtilsData" + "/" + "installinfo.dat", Encoding.ASCII);
+                var text = File.ReadAllText(AppDataFolder + "/" + AppInstallInfo, Encoding.ASCII);
 
                 Log.Info("Загрузка данных о статусе установок модификаций.");
 
@@ -833,13 +830,13 @@ namespace SacredUtils
 
                 Log.Info("Загрузка данных о статусе установок модификаций завершена без ошибок.");
             }
-            else if (!File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+            else if (!File.Exists(AppDataFolder + "/" + AppInstallInfo))
             {
                 Log.Warn("Файл для загрузки данных о статусе модификаций не был найден.");
 
                 Log.Info("Создаем директорию для файла installinfo.dat.");
 
-                Directory.CreateDirectory(".SacredUtilsData");
+                Directory.CreateDirectory(AppDataFolder);
 
                 Log.Info("Создание директории для файла installinfo.dat завершено без ошибок.");
 
@@ -847,7 +844,7 @@ namespace SacredUtils
 
                 try
                 {
-                    File.WriteAllBytes(@".SacredUtilsData" + "/" + "installinfo.dat", Properties.Resources.installinfo);
+                    File.WriteAllBytes(AppDataFolder + "/" + AppInstallInfo, Properties.Resources.installinfo);
 
                     Log.Info("Создание файла installinfo.dat из ресурсов программы завершено без ошибок.");
                 }
@@ -860,19 +857,19 @@ namespace SacredUtils
                 SacredNewUpdateBtn.Content = "УСТАНОВИТЬ"; ServerMulticoreFixBtn.Content = "УСТАНОВИТЬ";
             }
 
-            if (File.Exists(@".SacredUtilsData" + "/" + "launchstat.dat"))
+            if (File.Exists(AppDataFolder + "/" + AppStatistic))
             {
                 try
                 {
-                    var text = File.ReadAllText(@".SacredUtilsData" + "/" + "launchstat.dat");
+                    var text = File.ReadAllText(AppDataFolder + "/" + AppStatistic);
 
                     var numberOfStartups = Regex.Match(text, @"\d+").Value;
 
                     var newNumberOfStartups = Convert.ToInt32(numberOfStartups) + 1;
 
-                    var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "launchstat.dat");
+                    var fileAllText = File.ReadAllLines(AppDataFolder + "/" + AppStatistic);
                     fileAllText[3] = "; The program is launched " + newNumberOfStartups + " time(s)";
-                    File.WriteAllLines(@".SacredUtilsData" + "/" + "launchstat.dat", fileAllText);
+                    File.WriteAllLines(AppDataFolder + "/" + AppStatistic, fileAllText);
 
                     Log.Info("Данные о запуске SacredUtils были сохранены в launchstat.dat.");
                 }
@@ -882,11 +879,11 @@ namespace SacredUtils
                 }
 
             }
-            else if (!File.Exists(@".SacredUtilsData" + "/" + "launchstat.dat"))
+            else if (!File.Exists(AppDataFolder + "/" + AppStatistic))
             {
                 Directory.CreateDirectory(".SacredUtilsData");
 
-                File.WriteAllBytes(@".SacredUtilsData" + "/" + "launchstat.dat", Properties.Resources.launchstat);
+                File.WriteAllBytes(AppDataFolder + "/" + AppStatistic, Properties.Resources.launchstat);
             }
         }
 
@@ -926,7 +923,7 @@ namespace SacredUtils
                 Log.Error(exception.ToString());
             }
 
-            var text = File.ReadAllLines(GameSettings, Encoding.ASCII);
+            var text = File.ReadAllLines(SacredSettings, Encoding.ASCII);
 
             Log.Info("Подготавливаем коллекцию шрифтов для FontsCombobox.");
 
@@ -955,140 +952,140 @@ namespace SacredUtils
             {
                 try
                 {
-                    if (text1[i].Contains("User interface color SacredUtils = default") || text1[i].Contains("User interface color SacredUtils = indigo"))
+                    if (text1[i].Contains(AppColorValue + " = default") || text1[i].Contains("User interface color SacredUtils = indigo"))
                     {
                         var colorWindow = new ColorWindow(); colorWindow.Close();
 
                         colorWindow.ChangeColor("#7986cb", "#303f9f", "#3f51b5", "#c5cae9", "Indigo", "#FFFFFFFF");
                     }
 
-                    if (text1[i].Contains("User interface color SacredUtils = red"))
+                    if (text1[i].Contains(AppColorValue + " = red"))
                     {
                         var colorWindow = new ColorWindow(); colorWindow.Close();
 
                         colorWindow.ChangeColor("#e57373", "#d32f2f", "#f44336", "#ffcdd2", "Red", "#FFFFFFFF");
                     }
 
-                    if (text1[i].Contains("User interface color SacredUtils = pink"))
+                    if (text1[i].Contains(AppColorValue + " = pink"))
                     {
                         var colorWindow = new ColorWindow(); colorWindow.Close();
 
                         colorWindow.ChangeColor("#f06292", "#c2185b", "#e91e63", "#f8bbd0", "Pink", "#FFFFFFFF");
                     }
 
-                    if (text1[i].Contains("User interface color SacredUtils = purple"))
+                    if (text1[i].Contains(AppColorValue + " = purple"))
                     {
                         var colorWindow = new ColorWindow(); colorWindow.Close();
 
                         colorWindow.ChangeColor("#ba68c8", "#7b1fa2", "#9c27b0", "#e1bee7", "Purple", "#FFFFFFFF");
                     }
 
-                    if (text1[i].Contains("User interface color SacredUtils = deeppurple"))
+                    if (text1[i].Contains(AppColorValue + " = deeppurple"))
                     {
                         var colorWindow = new ColorWindow(); colorWindow.Close();
 
                         colorWindow.ChangeColor("#9575cd", "#512da8", "#673ab7", "#d1c4e9", "DeepPurple", "#FFFFFFFF");
                     }
 
-                    if (text1[i].Contains("User interface color SacredUtils = blue"))
+                    if (text1[i].Contains(AppColorValue + " = blue"))
                     {
                         var colorWindow = new ColorWindow(); colorWindow.Close();
 
                         colorWindow.ChangeColor("#64b5f6", "#1976d2", "#2196f3", "#bbdefb", "Blue", "#FFFFFFFF");
                     }
 
-                    if (text1[i].Contains("User interface color SacredUtils = lightblue"))
+                    if (text1[i].Contains(AppColorValue + " = lightblue"))
                     {
                         var colorWindow = new ColorWindow(); colorWindow.Close();
 
                         colorWindow.ChangeColor("#4fc3f7", "#0288d1", "#03a9f4", "#b3e5fc", "LightBlue", "#000000");
                     }
 
-                    if (text1[i].Contains("User interface color SacredUtils = cyan"))
+                    if (text1[i].Contains(AppColorValue + " = cyan"))
                     {
                         var colorWindow = new ColorWindow(); colorWindow.Close();
 
                         colorWindow.ChangeColor("#4dd0e1", "#0097a7", "#00bcd4", "#b2ebf2", "Cyan", "#000000");
                     }
 
-                    if (text1[i].Contains("User interface color SacredUtils = teal"))
+                    if (text1[i].Contains(AppColorValue + " = teal"))
                     {
                         var colorWindow = new ColorWindow(); colorWindow.Close();
 
                         colorWindow.ChangeColor("#4db6ac", "#00796b", "#009688", "#b2dfdb", "Teal", "#ffffff");
                     }
 
-                    if (text1[i].Contains("User interface color SacredUtils = green"))
+                    if (text1[i].Contains(AppColorValue + " = green"))
                     {
                         var colorWindow = new ColorWindow(); colorWindow.Close();
 
                         colorWindow.ChangeColor("#81c784", "#388e3c", "#4caf50", "#c8e6c9", "Green", "#ffffff");
                     }
 
-                    if (text1[i].Contains("User interface color SacredUtils = lightgreen"))
+                    if (text1[i].Contains(AppColorValue + " = lightgreen"))
                     {
                         var colorWindow = new ColorWindow(); colorWindow.Close();
 
                         colorWindow.ChangeColor("#aed581", "#689f38", "#8bc34a", "#dcedc8", "LightGreen", "#000000");
                     }
 
-                    if (text1[i].Contains("User interface color SacredUtils = lime"))
+                    if (text1[i].Contains(AppColorValue + " = lime"))
                     {
                         var colorWindow = new ColorWindow(); colorWindow.Close();
 
                         colorWindow.ChangeColor("#dce775", "#afb42b", "#cddc39", "#f0f4c3", "Lime", "#000000");
                     }
 
-                    if (text1[i].Contains("User interface color SacredUtils = yellow"))
+                    if (text1[i].Contains(AppColorValue + " = yellow"))
                     {
                         var colorWindow = new ColorWindow(); colorWindow.Close();
 
                         colorWindow.ChangeColor("#fff176", "#fbc02d", "#ffeb3b", "#fff9c4", "Yellow", "#000000");
                     }
 
-                    if (text1[i].Contains("User interface color SacredUtils = amber"))
+                    if (text1[i].Contains(AppColorValue + " = amber"))
                     {
                         var colorWindow = new ColorWindow(); colorWindow.Close();
 
                         colorWindow.ChangeColor("#ffd54f", "#ffa000", "#ffc107", "#ffecb3", "Amber", "#000000");
                     }
 
-                    if (text1[i].Contains("User interface color SacredUtils = orange"))
+                    if (text1[i].Contains(AppColorValue + " = orange"))
                     {
                         var colorWindow = new ColorWindow(); colorWindow.Close();
 
                         colorWindow.ChangeColor("#ffb74d", "#f57c00", "#ff9800", "#ffe0b2", "Orange", "#000000");
                     }
 
-                    if (text1[i].Contains("User interface color SacredUtils = deeporange"))
+                    if (text1[i].Contains(AppColorValue + " = deeporange"))
                     {
                         var colorWindow = new ColorWindow(); colorWindow.Close();
 
                         colorWindow.ChangeColor("#ff8a65", "#e64a19", "#ff5722", "#ffccbc", "DeepOrange", "#000000");
                     }
 
-                    if (text1[i].Contains("User interface color SacredUtils = brown"))
+                    if (text1[i].Contains(AppColorValue + " = brown"))
                     {
                         var colorWindow = new ColorWindow(); colorWindow.Close();
 
                         colorWindow.ChangeColor("#a1887f", "#5d4037", "#795548", "#d7ccc8", "Brown", "#ffffff");
                     }
 
-                    if (text1[i].Contains("User interface color SacredUtils = grey"))
+                    if (text1[i].Contains(AppColorValue + " = grey"))
                     {
                         var colorWindow = new ColorWindow(); colorWindow.Close();
 
                         colorWindow.ChangeColor("#e0e0e0", "#616161", "#9e9e9e", "#f5f5f5", "Grey", "#000000");
                     }
 
-                    if (text1[i].Contains("User interface color SacredUtils = bluegrey"))
+                    if (text1[i].Contains(AppColorValue + " = bluegrey"))
                     {
                         var colorWindow = new ColorWindow(); colorWindow.Close();
 
                         colorWindow.ChangeColor("#90a4ae", "#455a64", "#607d8b", "#cfd8dc", "BlueGrey", "#ffffff");
                     }
 
-                    if (text1[i].Contains("User interface color SacredUtils = black"))
+                    if (text1[i].Contains(AppColorValue + " = black"))
                     {
                         var colorWindow = new ColorWindow(); colorWindow.Close();
 
@@ -1262,20 +1259,20 @@ namespace SacredUtils
 
                 Log.Info("Установка Veteran Mod by ufo завершилась без ошибок.");
 
-                Directory.CreateDirectory(".SacredUtilsData");
+                Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+                if (File.Exists(AppDataFolder + "/" + AppInstallInfo))
                 {
                     try
                     {
                         Log.Info("Сохраняем данные о статусе установки модификаций.");
 
-                        var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "installinfo.dat");
+                        var fileAllText = File.ReadAllLines(AppDataFolder + "/" + AppInstallInfo);
 
                         fileAllText[3] = "; Veteranmod by ufo installed = true";
                         fileAllText[4] = "; Veteranmod dragonfix installed = false";
 
-                        File.WriteAllLines(@".SacredUtilsData" + "/" + "installinfo.dat", fileAllText);
+                        File.WriteAllLines(AppDataFolder + "/" + AppInstallInfo, fileAllText);
 
                         Log.Info("Данные о статусе установки модификаций сохранены без ошибок.");
                     }
@@ -1331,20 +1328,20 @@ namespace SacredUtils
 
                 Log.Info("Установка стандартной сложности завершилась без ошибок.");
 
-                Directory.CreateDirectory(".SacredUtilsData");
+                Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+                if (File.Exists(AppDataFolder + "/" + AppInstallInfo))
                 {
                     try
                     {
                         Log.Info("Сохраняем данные о статусе установки модификаций.");
 
-                        var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "installinfo.dat");
+                        var fileAllText = File.ReadAllLines(AppDataFolder + "/" + AppInstallInfo);
 
                         fileAllText[3] = "; Veteranmod by ufo installed = false";
                         fileAllText[4] = "; Veteranmod dragonfix installed = false";
 
-                        File.WriteAllLines(@".SacredUtilsData" + "/" + "installinfo.dat", fileAllText);
+                        File.WriteAllLines(AppDataFolder + "/" + AppInstallInfo, fileAllText);
 
                         Log.Info("Данные о статусе установки модификаций сохранены без ошибок.");
                     }
@@ -1404,20 +1401,20 @@ namespace SacredUtils
 
                 Log.Info("Установка Veteran Mod by MairwunNx (DragonFix) завершилась без ошибок.");
 
-                Directory.CreateDirectory(".SacredUtilsData");
+                Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+                if (File.Exists(AppDataFolder + "/" + AppInstallInfo))
                 {
                     try
                     {
                         Log.Info("Сохраняем данные о статусе установки модификаций.");
 
-                        var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "installinfo.dat");
+                        var fileAllText = File.ReadAllLines(AppDataFolder + "/" + AppInstallInfo);
 
                         fileAllText[3] = "; Veteranmod by ufo installed = false";
                         fileAllText[4] = "; Veteranmod dragonfix installed = true";
 
-                        File.WriteAllLines(@".SacredUtilsData" + "/" + "installinfo.dat", fileAllText);
+                        File.WriteAllLines(AppDataFolder + "/" + AppInstallInfo, fileAllText);
 
                         Log.Info("Данные о статусе установки модификаций сохранены без ошибок.");
                     }
@@ -1473,20 +1470,20 @@ namespace SacredUtils
 
                 Log.Info("Установка стандартной сложности завершилась без ошибок.");
 
-                Directory.CreateDirectory(".SacredUtilsData");
+                Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+                if (File.Exists(AppDataFolder + "/" + AppInstallInfo))
                 {
                     try
                     {
                         Log.Info("Сохраняем данные о статусе установки модификаций.");
 
-                        var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "installinfo.dat");
+                        var fileAllText = File.ReadAllLines(AppDataFolder + "/" + AppInstallInfo);
 
                         fileAllText[3] = "; Veteranmod by ufo installed = false";
                         fileAllText[4] = "; Veteranmod dragonfix installed = false";
 
-                        File.WriteAllLines(@".SacredUtilsData" + "/" + "installinfo.dat", fileAllText);
+                        File.WriteAllLines(AppDataFolder + "/" + AppInstallInfo, fileAllText);
 
                         Log.Info("Данные о статусе установки модификаций сохранены без ошибок.");
                     }
@@ -1510,7 +1507,7 @@ namespace SacredUtils
 
                 try
                 {
-                    File.WriteAllBytes("Sacred.exe", Properties.Resources.SacredPatched22914);
+                    File.WriteAllBytes(SacredExe, Properties.Resources.SacredPatched22914);
 
                     Log.Info("Установка Sacred до 2.29.14 версии прошла успешно.");
                 }
@@ -1521,19 +1518,19 @@ namespace SacredUtils
                     Log.Error(exception.ToString());
                 }
 
-                Directory.CreateDirectory(".SacredUtilsData");
+                Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+                if (File.Exists(AppDataFolder + "/" + AppInstallInfo))
                 {
                     try
                     {
                         Log.Info("Сохраняем данные о статусе установки модификаций.");
 
-                        var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "installinfo.dat");
+                        var fileAllText = File.ReadAllLines(AppDataFolder + "/" + AppInstallInfo);
 
                         fileAllText[5] = "; Sacred 2.29.14 patch installed = true";
 
-                        File.WriteAllLines(@".SacredUtilsData" + "/" + "installinfo.dat", fileAllText);
+                        File.WriteAllLines(AppDataFolder + "/" + AppInstallInfo, fileAllText);
 
                         Log.Info("Данные о статусе установки модификаций сохранены без ошибок.");
                     }
@@ -1553,7 +1550,7 @@ namespace SacredUtils
 
                 try
                 {
-                    File.WriteAllBytes("Sacred.exe", Properties.Resources.SacredPatched228);
+                    File.WriteAllBytes(SacredExe, Properties.Resources.SacredPatched228);
 
                     Log.Info("Удаление Sacred 2.29.14 версии прошла успешно.");
                 }
@@ -1564,19 +1561,19 @@ namespace SacredUtils
                     Log.Error(exception.ToString());
                 }
 
-                Directory.CreateDirectory(".SacredUtilsData");
+                Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+                if (File.Exists(AppDataFolder + "/" + AppInstallInfo))
                 {
                     try
                     {
                         Log.Info("Сохраняем данные о статусе установки модификаций.");
 
-                        var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "installinfo.dat");
+                        var fileAllText = File.ReadAllLines(AppDataFolder + "/" + AppInstallInfo);
 
                         fileAllText[5] = "; Sacred 2.29.14 patch installed = false";
 
-                        File.WriteAllLines(@".SacredUtilsData" + "/" + "installinfo.dat", fileAllText);
+                        File.WriteAllLines(AppDataFolder + "/" + AppInstallInfo, fileAllText);
 
                         Log.Info("Данные о статусе установки модификаций сохранены без ошибок.");
                     }
@@ -1611,19 +1608,19 @@ namespace SacredUtils
                     Log.Error(exception.ToString());
                 }
 
-                Directory.CreateDirectory(".SacredUtilsData");
+                Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+                if (File.Exists(AppDataFolder + "/" + AppInstallInfo))
                 {
                     try
                     {
                         Log.Info("Сохраняем данные о статусе установки модификаций.");
 
-                        var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "installinfo.dat");
+                        var fileAllText = File.ReadAllLines(AppDataFolder + "/" + AppInstallInfo);
 
                         fileAllText[6] = "; Server multicore fix installed = true";
 
-                        File.WriteAllLines(@".SacredUtilsData" + "/" + "installinfo.dat", fileAllText);
+                        File.WriteAllLines(AppDataFolder + "/" + AppInstallInfo, fileAllText);
 
                         Log.Info("Данные о статусе установки модификаций сохранены без ошибок.");
                     }
@@ -1654,19 +1651,19 @@ namespace SacredUtils
                     Log.Error(exception.ToString());
                 }
 
-                Directory.CreateDirectory(".SacredUtilsData");
+                Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists(@".SacredUtilsData" + "/" + "installinfo.dat"))
+                if (File.Exists(AppDataFolder + "/" + AppInstallInfo))
                 {
                     try
                     {
                         Log.Info("Сохраняем данные о статусе установки модификаций.");
 
-                        var fileAllText = File.ReadAllLines(@".SacredUtilsData" + "/" + "installinfo.dat");
+                        var fileAllText = File.ReadAllLines(AppDataFolder + "/" + AppInstallInfo);
 
                         fileAllText[6] = "; Server multicore fix installed = false";
 
-                        File.WriteAllLines(@".SacredUtilsData" + "/" + "installinfo.dat", fileAllText);
+                        File.WriteAllLines(AppDataFolder + "/" + AppInstallInfo, fileAllText);
 
                         Log.Info("Данные о статусе установки модификаций сохранены без ошибок.");
                     }

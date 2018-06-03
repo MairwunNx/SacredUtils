@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using MaterialDesignThemes.Wpf;
+using static SacredUtils.Resources.Core.AppConstStrings;
 
 namespace SacredUtils.Resources.Windows
 {
@@ -34,13 +35,13 @@ namespace SacredUtils.Resources.Windows
         {
             Log.Info("Загружаем активные цветовые схемы для SacredUtils.");
 
-            var text = File.ReadAllLines("Settings.su", Encoding.ASCII);
+            var text = File.ReadAllLines(AppSettings, Encoding.ASCII);
 
             var bc = new BrushConverter();
 
             for (var i = 0; i < text.Length; i++)
             {
-                if (text[i].Contains("User interface color SacredUtils = default") || text[i].Contains("User interface color SacredUtils = indigo"))
+                if (text[i].Contains(AppColorValue + " = default") || text[i].Contains(AppColorValue + " = indigo"))
                 {
                     ChangeColorIndigoToggleBtn.IsChecked = true;
 
@@ -48,7 +49,7 @@ namespace SacredUtils.Resources.Windows
                     ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD404040");
                 }
 
-                if (text[i].Contains("User interface color SacredUtils = red"))
+                if (text[i].Contains(AppColorValue + " = red"))
                 {
                     ChangeColorRedToggleBtn.IsChecked = true;
 
@@ -56,7 +57,7 @@ namespace SacredUtils.Resources.Windows
                     ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD404040");
                 }
 
-                if (text[i].Contains("User interface color SacredUtils = pink"))
+                if (text[i].Contains(AppColorValue + " = pink"))
                 {
                     ChangeColorPinkToggleBtn.IsChecked = true;
 
@@ -64,7 +65,7 @@ namespace SacredUtils.Resources.Windows
                     ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD404040");
                 }
 
-                if (text[i].Contains("User interface color SacredUtils = purple"))
+                if (text[i].Contains(AppColorValue + " = purple"))
                 {
                     ChangeColorPurpleToggleBtn.IsChecked = true;
 
@@ -72,7 +73,7 @@ namespace SacredUtils.Resources.Windows
                     ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD404040");
                 }
 
-                if (text[i].Contains("User interface color SacredUtils = deeppurple"))
+                if (text[i].Contains(AppColorValue + " = deeppurple"))
                 {
                     ChangeColorDeppPurpleToggleBtn.IsChecked = true;
 
@@ -80,7 +81,7 @@ namespace SacredUtils.Resources.Windows
                     ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD404040");
                 }
 
-                if (text[i].Contains("User interface color SacredUtils = blue"))
+                if (text[i].Contains(AppColorValue + " = blue"))
                 {
                     ChangeColorBlueToggleBtn.IsChecked = true;
 
@@ -88,7 +89,7 @@ namespace SacredUtils.Resources.Windows
                     ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD404040");
                 }
 
-                if (text[i].Contains("User interface color SacredUtils = lightblue"))
+                if (text[i].Contains(AppColorValue + " = lightblue"))
                 {
                     ChangeColorLightBlueToggleBtn.IsChecked = true;
 
@@ -96,7 +97,7 @@ namespace SacredUtils.Resources.Windows
                     ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD404040");
                 }
 
-                if (text[i].Contains("User interface color SacredUtils = cyan"))
+                if (text[i].Contains(AppColorValue + " = cyan"))
                 {
                     ChangeColorCyanToggleBtn.IsChecked = true;
 
@@ -104,7 +105,7 @@ namespace SacredUtils.Resources.Windows
                     ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD404040");
                 }
 
-                if (text[i].Contains("User interface color SacredUtils = teal"))
+                if (text[i].Contains(AppColorValue + " = teal"))
                 {
                     ChangeColorTealToggleBtn.IsChecked = true;
 
@@ -112,7 +113,7 @@ namespace SacredUtils.Resources.Windows
                     ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD404040");
                 }
 
-                if (text[i].Contains("User interface color SacredUtils = green"))
+                if (text[i].Contains(AppColorValue + " = green"))
                 {
                     ChangeColorGreenToggleBtn.IsChecked = true;
 
@@ -120,7 +121,7 @@ namespace SacredUtils.Resources.Windows
                     ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD404040");
                 }
 
-                if (text[i].Contains("User interface color SacredUtils = lightgreen"))
+                if (text[i].Contains(AppColorValue + " = lightgreen"))
                 {
                     ChangeColorLightGreenToggleBtn.IsChecked = true;
 
@@ -128,7 +129,7 @@ namespace SacredUtils.Resources.Windows
                     ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD404040");
                 }
 
-                if (text[i].Contains("User interface color SacredUtils = lime"))
+                if (text[i].Contains(AppColorValue + " = lime"))
                 {
                     ChangeColorLimeToggleBtn.IsChecked = true;
 
@@ -136,7 +137,7 @@ namespace SacredUtils.Resources.Windows
                     ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD404040");
                 }
 
-                if (text[i].Contains("User interface color SacredUtils = yellow"))
+                if (text[i].Contains(AppColorValue + " = yellow"))
                 {
                     ChangeColorYellowToggleBtn.IsChecked = true;
 
@@ -144,7 +145,7 @@ namespace SacredUtils.Resources.Windows
                     ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD404040");
                 }
 
-                if (text[i].Contains("User interface color SacredUtils = amber"))
+                if (text[i].Contains(AppColorValue + " = amber"))
                 {
                     ChangeColorAmberToggleBtn.IsChecked = true;
 
@@ -152,7 +153,7 @@ namespace SacredUtils.Resources.Windows
                     ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD404040");
                 }
 
-                if (text[i].Contains("User interface color SacredUtils = orange"))
+                if (text[i].Contains(AppColorValue + " = orange"))
                 {
                     ChangeColorOrangeToggleBtn.IsChecked = true;
 
@@ -160,7 +161,7 @@ namespace SacredUtils.Resources.Windows
                     ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD404040");
                 }
 
-                if (text[i].Contains("User interface color SacredUtils = deeporange"))
+                if (text[i].Contains(AppColorValue + " = deeporange"))
                 {
                     ChangeColorDeepOrangeToggleBtn.IsChecked = true;
 
@@ -168,7 +169,7 @@ namespace SacredUtils.Resources.Windows
                     ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD404040");
                 }
 
-                if (text[i].Contains("User interface color SacredUtils = brown"))
+                if (text[i].Contains(AppColorValue + " = brown"))
                 {
                     ChangeColorBrownToggleBtn.IsChecked = true;
 
@@ -176,7 +177,7 @@ namespace SacredUtils.Resources.Windows
                     ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD404040");
                 }
 
-                if (text[i].Contains("User interface color SacredUtils = bluegrey"))
+                if (text[i].Contains(AppColorValue + " = bluegrey"))
                 {
                     ChangeColorBlueGreyToggleBtn.IsChecked = true;
 
@@ -184,7 +185,7 @@ namespace SacredUtils.Resources.Windows
                     ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD404040");
                 }
 
-                if (text[i].Contains("User interface color SacredUtils = grey"))
+                if (text[i].Contains(AppColorValue + " = grey"))
                 {
                     ChangeColorGrayToggleBtn.IsChecked = true;
 
@@ -192,7 +193,7 @@ namespace SacredUtils.Resources.Windows
                     ColorLabel.Foreground = (Brush)bc.ConvertFrom("#DD404040");
                 }
 
-                if (text[i].Contains("User interface color SacredUtils = black"))
+                if (text[i].Contains(AppColorValue + " = black"))
                 {
                     ChangeColorBlackToggleBtn.IsChecked = true;
 
@@ -257,9 +258,9 @@ namespace SacredUtils.Resources.Windows
 
                 try
                 { 
-                    var fileAllText00 = File.ReadAllLines("Settings.su");
+                    var fileAllText00 = File.ReadAllLines(AppSettings);
                     fileAllText00[28] = "# - User interface color SacredUtils = red                         #";
-                    File.WriteAllLines("Settings.su", fileAllText00); Close();
+                    File.WriteAllLines(AppSettings, fileAllText00); Close();
 
                     Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
@@ -280,9 +281,9 @@ namespace SacredUtils.Resources.Windows
 
                 try
                 {
-                    var fileAllText01 = File.ReadAllLines("Settings.su");
+                    var fileAllText01 = File.ReadAllLines(AppSettings);
                     fileAllText01[28] = "# - User interface color SacredUtils = pink                        #";
-                    File.WriteAllLines("Settings.su", fileAllText01); Close();
+                    File.WriteAllLines(AppSettings, fileAllText01); Close();
 
                     Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
@@ -304,9 +305,9 @@ namespace SacredUtils.Resources.Windows
 
                 try
                 {
-                    var fileAllText02 = File.ReadAllLines("Settings.su");
+                    var fileAllText02 = File.ReadAllLines(AppSettings);
                     fileAllText02[28] = "# - User interface color SacredUtils = purple                      #";
-                    File.WriteAllLines("Settings.su", fileAllText02); Close();
+                    File.WriteAllLines(AppSettings, fileAllText02); Close();
 
                     Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
@@ -327,9 +328,9 @@ namespace SacredUtils.Resources.Windows
 
                 try
                 {
-                    var fileAllText03 = File.ReadAllLines("Settings.su");
+                    var fileAllText03 = File.ReadAllLines(AppSettings);
                     fileAllText03[28] = "# - User interface color SacredUtils = deeppurple                  #";
-                    File.WriteAllLines("Settings.su", fileAllText03); Close();
+                    File.WriteAllLines(AppSettings, fileAllText03); Close();
 
                     Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
@@ -350,9 +351,9 @@ namespace SacredUtils.Resources.Windows
 
                 try
                 {
-                    var fileAllText04 = File.ReadAllLines("Settings.su");
+                    var fileAllText04 = File.ReadAllLines(AppSettings);
                     fileAllText04[28] = "# - User interface color SacredUtils = indigo                      #";
-                    File.WriteAllLines("Settings.su", fileAllText04); Close();
+                    File.WriteAllLines(AppSettings, fileAllText04); Close();
 
                     Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
@@ -373,9 +374,9 @@ namespace SacredUtils.Resources.Windows
 
                 try
                 {
-                    var fileAllText05 = File.ReadAllLines("Settings.su");
+                    var fileAllText05 = File.ReadAllLines(AppSettings);
                     fileAllText05[28] = "# - User interface color SacredUtils = blue                        #";
-                    File.WriteAllLines("Settings.su", fileAllText05); Close();
+                    File.WriteAllLines(AppSettings, fileAllText05); Close();
 
                     Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
@@ -396,9 +397,9 @@ namespace SacredUtils.Resources.Windows
 
                 try
                 {
-                    var fileAllText06 = File.ReadAllLines("Settings.su");
+                    var fileAllText06 = File.ReadAllLines(AppSettings);
                     fileAllText06[28] = "# - User interface color SacredUtils = lightblue                   #";
-                    File.WriteAllLines("Settings.su", fileAllText06); Close();
+                    File.WriteAllLines(AppSettings, fileAllText06); Close();
 
                     Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
@@ -419,9 +420,9 @@ namespace SacredUtils.Resources.Windows
 
                 try
                 {
-                    var fileAllText07 = File.ReadAllLines("Settings.su");
+                    var fileAllText07 = File.ReadAllLines(AppSettings);
                     fileAllText07[28] = "# - User interface color SacredUtils = cyan                        #";
-                    File.WriteAllLines("Settings.su", fileAllText07); Close();
+                    File.WriteAllLines(AppSettings, fileAllText07); Close();
 
                     Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
@@ -442,9 +443,9 @@ namespace SacredUtils.Resources.Windows
 
                 try
                 {
-                    var fileAllText08 = File.ReadAllLines("Settings.su");
+                    var fileAllText08 = File.ReadAllLines(AppSettings);
                     fileAllText08[28] = "# - User interface color SacredUtils = teal                        #";
-                    File.WriteAllLines("Settings.su", fileAllText08); Close();
+                    File.WriteAllLines(AppSettings, fileAllText08); Close();
 
                     Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
@@ -465,9 +466,9 @@ namespace SacredUtils.Resources.Windows
 
                 try
                 {
-                    var fileAllText09 = File.ReadAllLines("Settings.su");
+                    var fileAllText09 = File.ReadAllLines(AppSettings);
                     fileAllText09[28] = "# - User interface color SacredUtils = green                       #";
-                    File.WriteAllLines("Settings.su", fileAllText09); Close();
+                    File.WriteAllLines(AppSettings, fileAllText09); Close();
 
                     Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
@@ -488,9 +489,9 @@ namespace SacredUtils.Resources.Windows
 
                 try
                 {
-                    var fileAllText10 = File.ReadAllLines("Settings.su");
+                    var fileAllText10 = File.ReadAllLines(AppSettings);
                     fileAllText10[28] = "# - User interface color SacredUtils = lightgreen                  #";
-                    File.WriteAllLines("Settings.su", fileAllText10); Close();
+                    File.WriteAllLines(AppSettings, fileAllText10); Close();
 
                     Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
@@ -511,9 +512,9 @@ namespace SacredUtils.Resources.Windows
 
                 try
                 {
-                    var fileAllText11 = File.ReadAllLines("Settings.su");
+                    var fileAllText11 = File.ReadAllLines(AppSettings);
                     fileAllText11[28] = "# - User interface color SacredUtils = lime                        #";
-                    File.WriteAllLines("Settings.su", fileAllText11); Close();
+                    File.WriteAllLines(AppSettings, fileAllText11); Close();
 
                     Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
@@ -534,9 +535,9 @@ namespace SacredUtils.Resources.Windows
 
                 try
                 {
-                    var fileAllText12 = File.ReadAllLines("Settings.su");
+                    var fileAllText12 = File.ReadAllLines(AppSettings);
                     fileAllText12[28] = "# - User interface color SacredUtils = yellow                      #";
-                    File.WriteAllLines("Settings.su", fileAllText12); Close();
+                    File.WriteAllLines(AppSettings, fileAllText12); Close();
 
                     Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
@@ -557,9 +558,9 @@ namespace SacredUtils.Resources.Windows
 
                 try
                 {
-                    var fileAllText13 = File.ReadAllLines("Settings.su");
+                    var fileAllText13 = File.ReadAllLines(AppSettings);
                     fileAllText13[28] = "# - User interface color SacredUtils = amber                       #";
-                    File.WriteAllLines("Settings.su", fileAllText13); Close();
+                    File.WriteAllLines(AppSettings, fileAllText13); Close();
 
                     Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
@@ -580,9 +581,9 @@ namespace SacredUtils.Resources.Windows
 
                 try
                 {
-                    var fileAllText14 = File.ReadAllLines("Settings.su");
+                    var fileAllText14 = File.ReadAllLines(AppSettings);
                     fileAllText14[28] = "# - User interface color SacredUtils = orange                      #";
-                    File.WriteAllLines("Settings.su", fileAllText14); Close();
+                    File.WriteAllLines(AppSettings, fileAllText14); Close();
 
                     Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
@@ -603,9 +604,9 @@ namespace SacredUtils.Resources.Windows
 
                 try
                 {
-                    var fileAllText15 = File.ReadAllLines("Settings.su");
+                    var fileAllText15 = File.ReadAllLines(AppSettings);
                     fileAllText15[28] = "# - User interface color SacredUtils = deeporange                  #";
-                    File.WriteAllLines("Settings.su", fileAllText15); Close();
+                    File.WriteAllLines(AppSettings, fileAllText15); Close();
 
                     Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
@@ -626,9 +627,9 @@ namespace SacredUtils.Resources.Windows
 
                 try
                 {
-                    var fileAllText16 = File.ReadAllLines("Settings.su");
+                    var fileAllText16 = File.ReadAllLines(AppSettings);
                     fileAllText16[28] = "# - User interface color SacredUtils = brown                       #";
-                    File.WriteAllLines("Settings.su", fileAllText16); Close();
+                    File.WriteAllLines(AppSettings, fileAllText16); Close();
 
                     Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
@@ -649,9 +650,9 @@ namespace SacredUtils.Resources.Windows
 
                 try
                 {
-                    var fileAllText17 = File.ReadAllLines("Settings.su");
+                    var fileAllText17 = File.ReadAllLines(AppSettings);
                     fileAllText17[28] = "# - User interface color SacredUtils = grey                        #";
-                    File.WriteAllLines("Settings.su", fileAllText17); Close();
+                    File.WriteAllLines(AppSettings, fileAllText17); Close();
 
                     Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
@@ -672,9 +673,9 @@ namespace SacredUtils.Resources.Windows
 
                 try
                 {
-                    var fileAllText18 = File.ReadAllLines("Settings.su");
+                    var fileAllText18 = File.ReadAllLines(AppSettings);
                     fileAllText18[28] = "# - User interface color SacredUtils = bluegrey                    #";
-                    File.WriteAllLines("Settings.su", fileAllText18); Close();
+                    File.WriteAllLines(AppSettings, fileAllText18); Close();
 
                     Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
@@ -716,9 +717,9 @@ namespace SacredUtils.Resources.Windows
 
                 try
                 {
-                    var fileAllText18 = File.ReadAllLines("Settings.su");
+                    var fileAllText18 = File.ReadAllLines(AppSettings);
                     fileAllText18[28] = "# - User interface color SacredUtils = black                       #";
-                    File.WriteAllLines("Settings.su", fileAllText18); Close();
+                    File.WriteAllLines(AppSettings, fileAllText18); Close();
 
                     Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }

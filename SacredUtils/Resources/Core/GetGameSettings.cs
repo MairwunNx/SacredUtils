@@ -3,6 +3,7 @@ using log4net;
 using System.IO;
 using System.Text;
 using System.Windows;
+using static SacredUtils.Resources.Core.AppConstStrings;
 
 namespace SacredUtils.Resources.Core
 {
@@ -16,7 +17,7 @@ namespace SacredUtils.Resources.Core
 
             try
             {
-                var text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                var text = File.ReadAllLines(SacredSettings, Encoding.ASCII);
 
                 for (int i = 0; i < text.Length; i++)
                 {
@@ -831,7 +832,7 @@ namespace SacredUtils.Resources.Core
 
                 Log.Info("Получаем не загруженные функции всех настроек SacredUnderworld.");
 
-                using (StreamReader sr = new StreamReader("Settings.cfg"))
+                using (StreamReader sr = new StreamReader(SacredSettings))
                 {
                     string contents = sr.ReadToEnd();
 

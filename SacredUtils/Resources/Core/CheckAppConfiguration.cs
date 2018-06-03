@@ -1,6 +1,7 @@
 ﻿using System;
 using log4net;
 using System.IO;
+using static SacredUtils.Resources.Core.AppConstStrings;
 
 namespace SacredUtils.Resources.Core
 {
@@ -12,7 +13,7 @@ namespace SacredUtils.Resources.Core
         {
             Log.Info("Проверяем наличие файла конфигурации SacredUnderworld.");
 
-            if (!File.Exists("Settings.cfg"))  
+            if (!File.Exists(SacredSettings))  
             {
                 Log.Warn("Файл конфигурации SacredUnderworld не был найден в директории.");
 
@@ -20,7 +21,7 @@ namespace SacredUtils.Resources.Core
 
                 try
                 {
-                    File.WriteAllBytes("Settings.cfg", Properties.Resources.GameSettings);
+                    File.WriteAllBytes(SacredSettings, Properties.Resources.GameSettings);
 
                     Log.Info("Файл конфигурации SacredUnderworld был создан без ошибок.");
                 }
@@ -31,16 +32,16 @@ namespace SacredUtils.Resources.Core
                     Log.Info("Завершение фоновых процессов и задачь. Выход из приложения."); Environment.Exit(0);
                 }
             }
-            else if(File.Exists("Settings.cfg"))
+            else if(File.Exists(SacredSettings))
             {
                 Log.Info("Файл конфигурации SacredUnderworld был найден, продолжаем работу.");
             }
 
-            if (File.Exists("Settings.cfg") && File.Exists("Settings.su"))
+            if (File.Exists(SacredSettings) && File.Exists(AppSettings))
             {
-                var fileText = File.ReadAllText("Settings.su");
+                var fileText = File.ReadAllText(AppSettings);
                 
-                var fileTextSacred = File.ReadAllText("Settings.cfg");
+                var fileTextSacred = File.ReadAllText(SacredSettings);
                 
                 Log.Info("Получаем статус активности функции \"Автовостановление настроек\"");
 
@@ -69,7 +70,7 @@ namespace SacredUtils.Resources.Core
 
                             try
                             {
-                                File.WriteAllBytes("Settings.cfg", Properties.Resources.GameSettings);
+                                File.WriteAllBytes(SacredSettings, Properties.Resources.GameSettings);
 
                                 Log.Info("Файл конфигурации SacredUnderworld был восстановлен без ошибок.");
                             }
@@ -93,12 +94,12 @@ namespace SacredUtils.Resources.Core
                     Log.Error("Получение статуса активности функции \"Автовостановление настроек\" завершилось с ошибкой."); Log.Error(exception.ToString());
                 }
             }
-            else if (!File.Exists("Settings.cfg") || !File.Exists("Settings.su"))
+            else if (!File.Exists(SacredSettings) || !File.Exists(AppSettings))
             {
                 Log.Error("Получение статуса активности функции \"Автовостановление настроек\" завершилось с ошибкой.");
             }
 
-            if (!File.Exists("Settings.su"))
+            if (!File.Exists(AppSettings))
             {
                 Log.Warn("Файл конфигурации SacredUtils не был найден в директории.");
 
@@ -106,7 +107,7 @@ namespace SacredUtils.Resources.Core
 
                 try
                 {
-                    File.WriteAllBytes("Settings.su", Properties.Resources.AppSettings);
+                    File.WriteAllBytes(AppSettings, Properties.Resources.AppSettings);
 
                     Log.Info("Файл конфигурации SacredUtils был создан без ошибок.");
                 }
@@ -117,7 +118,7 @@ namespace SacredUtils.Resources.Core
                     Log.Info("Завершение фоновых процессов и задачь. Выход из приложения."); Environment.Exit(0);
                 }
             }
-            else if (File.Exists("Settings.su"))
+            else if (File.Exists(AppSettings))
             {
                 Log.Info("Файл конфигурации SacredUtils был найден, продолжаем работу.");
             }

@@ -16,6 +16,8 @@
 
         public const string SacredSettings = "Settings.cfg";
 
+        public const string SacredExe = "Sacred.exe";
+
         public const string AppReleaseVersion = "1.2R Rv4 B5 (030618)";
         
         public const string AppAlphaVersion = "1.2A Rv4 B5 (030618)";

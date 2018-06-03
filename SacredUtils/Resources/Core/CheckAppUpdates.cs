@@ -5,16 +5,13 @@ using System.Net;
 using System.Windows;
 using System.Diagnostics;
 using System.Net.NetworkInformation;
-using static SacredUtils.Resources.Core.AppConstStrings;
 using Application = System.Windows.Forms.Application;
+using static SacredUtils.Resources.Core.AppConstStrings;
 
 namespace SacredUtils.Resources.Core
 {
     public class CheckAppUpdates
     {
-        public const string AppSettings = "Settings.su";
-        private const string AppVersion = "1.2R Rv4 B5 (030618)";
-
         private readonly WebClient _wc = new WebClient();
 
         private readonly bool _connect = NetworkInterface.GetIsNetworkAvailable();
@@ -52,7 +49,7 @@ namespace SacredUtils.Resources.Core
 
                             Log.Info("Проверяем последняя ли версия SacredUtils используется.");
 
-                            if (!appLatestVersion.Contains(AppVersion))
+                            if (!appLatestVersion.Contains(AppReleaseVersion))
                             {
                                 Log.Info("Ууупсс ... Вы используете старую версию, продолжаем работу.");
 
@@ -105,7 +102,7 @@ namespace SacredUtils.Resources.Core
 
             try
             {
-                Directory.CreateDirectory("Temp");
+                Directory.CreateDirectory(AppTempFolder);
 
                 Log.Info("Создание временной директории для помощника завершено без ошибок.");
             }
@@ -120,7 +117,7 @@ namespace SacredUtils.Resources.Core
 
             try
             {
-                File.WriteAllBytes(@"Temp" + "/" + "SacredUtilsUpdater.exe", Properties.Resources.SacredUtilsUpdater);
+                File.WriteAllBytes(AppTempFolder + "/" + AppUpdaterExe, Properties.Resources.SacredUtilsUpdater);
 
                 Log.Info("Помощник обновления был создан из ресурсов программы.");
             }
@@ -152,7 +149,7 @@ namespace SacredUtils.Resources.Core
 
             try
             {
-                Process.Start(@"Temp\SacredUtilsUpdater.exe", "_newVersionSacredUtilsTemp.exe " + _appname);
+                Process.Start(AppTempFolder + "\\" + AppUpdaterExe, "_newVersionSacredUtilsTemp.exe " + _appname);
 
                 Log.Info("Запуск помощника обновления завершился без ошибок.");
             }
