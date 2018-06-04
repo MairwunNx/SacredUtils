@@ -12,11 +12,11 @@
 #                                                                  #
 #                                                                  #
 #                                                                  #
-# - Configuration file version = 1.0.0.3                           #
+# - Configuration file version = 1.0.0.4                           #
 #                                                                  #
 # - Automatically get and install updates = true                   #
 #                                                                  #
-# - Show advanced errors-exceptions in log = false                 #
+# - Automatically get and install alpha updates = false            #
 #                                                                  #
 # - Minimize the program before launching Sacred = true            #
 #                                                                  #

@@ -34,7 +34,7 @@ namespace SacredUtils.Resources.Core
                     Log.Info("Настройка \"Automatically get and install update\" загружена.");
                 }
 
-                if (text[i].Contains("Show advanced errors-exceptions in log = true"))
+                if (text[i].Contains("Automatically get and install alpha updates = true"))
                 {
                     foreach (Window window in Application.Current.Windows)
                     {
@@ -44,7 +44,7 @@ namespace SacredUtils.Resources.Core
                         }
                     }
 
-                    Log.Info("Настройка \"Show advanced errors-exceptions in log\" загружена.");
+                    Log.Info("Настройка \"Automatically get and install alpha updates\" загружена.");
                 }
 
                 if (text[i].Contains("Minimize the program before launching Sacred = true"))
@@ -108,7 +108,7 @@ namespace SacredUtils.Resources.Core
 
             try
             {
-                if (text1[14].Contains("Configuration file version = 1.0.0.3"))
+                if (text1[14].Contains("Configuration file version = 1.0.0.4"))
                 {
                     Log.Info("Версия конфигурационного файла совместима с SacredUtils.");
                 }
@@ -153,18 +153,18 @@ namespace SacredUtils.Resources.Core
                         if (b)
                         {
                             var fileAllText = File.ReadAllLines(AppSettings);
-                            fileAllText[18] = "# - Show advanced errors-exceptions in log = true                  #";
+                            fileAllText[18] = "# - Automatically get and install alpha updates = true             #";
                             File.WriteAllLines(AppSettings, fileAllText);
 
-                            Log.Info("Настройка \"Show advanced errors-exceptions in log\" восстановлена.");
+                            Log.Info("Настройка \"Automatically get and install alpha updates\" восстановлена.");
                         }
                         else
                         {
                             var fileAllText = File.ReadAllLines(AppSettings);
-                            fileAllText[18] = "# - Show advanced errors-exceptions in log = false                 #";
+                            fileAllText[18] = "# - Automatically get and install alpha updates = false            #";
                             File.WriteAllLines(AppSettings, fileAllText);
 
-                            Log.Info("Настройка \"Show advanced errors-exceptions in log\" восстановлена.");
+                            Log.Info("Настройка \"Automatically get and install alpha updates\" восстановлена.");
                         }
 
                         if (c)

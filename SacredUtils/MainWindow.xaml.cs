@@ -293,7 +293,6 @@ namespace SacredUtils
                 }
             }
 
-
             var text = File.ReadAllLines(SacredSettings, Encoding.ASCII);
 
             for (int i = 0; i < text.Length; i++)
@@ -334,7 +333,6 @@ namespace SacredUtils
                 }
             }
 
-
             var text = File.ReadAllLines(SacredSettings, Encoding.ASCII);
 
             for (int i = 0; i < text.Length; i++)
@@ -374,7 +372,6 @@ namespace SacredUtils
                     Log.Info("Завершение фоновых процессов и задачь. Выход из приложения."); Environment.Exit(0);
                 }
             }
-
 
             var text = File.ReadAllLines(SacredSettings, Encoding.ASCII);
 
@@ -1764,14 +1761,14 @@ namespace SacredUtils
                 try
                 {
                     var fileAllText = File.ReadAllLines(AppSettings);
-                    fileAllText[18] = "# - Show advanced errors-exceptions in log = true                  #";
+                    fileAllText[18] = "# - Automatically get and install alpha updates = true             #";
                     File.WriteAllLines(AppSettings, fileAllText);
 
-                    Log.Info("Статус функции \"Show advanced errors-exceptions in log\" изменен на true.");
+                    Log.Info("Статус функции \"Automatically get and install alpha updates\" изменен на true.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("Не удалось изменить статус функции \"Show advanced errors-exceptions in log\" на true.");
+                    Log.Error("Не удалось изменить статус функции \"Automatically get and install alpha updates\" на true.");
 
                     Log.Error(exception.ToString());
                 }
@@ -1781,14 +1778,14 @@ namespace SacredUtils
                 try
                 {
                     var fileAllText = File.ReadAllLines(AppSettings);
-                    fileAllText[18] = "# - Show advanced errors-exceptions in log = false                 #";
+                    fileAllText[18] = "# - Automatically get and install alpha updates = false            #";
                     File.WriteAllLines(AppSettings, fileAllText);
 
-                    Log.Info("Статус функции \"Show advanced errors-exceptions in log\" изменен на false.");
+                    Log.Info("Статус функции \"Automatically get and install alpha updates\" изменен на false.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("Не удалось изменить статус функции \"Show advanced errors-exceptions in log\" на false.");
+                    Log.Error("Не удалось изменить статус функции \"Automatically get and install alpha updates\" на false.");
 
                     Log.Error(exception.ToString());
                 }

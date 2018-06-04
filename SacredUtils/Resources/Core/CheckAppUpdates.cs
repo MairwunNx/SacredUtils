@@ -13,7 +13,6 @@ namespace SacredUtils.Resources.Core
     public class CheckAppUpdates
     {
         private readonly WebClient _wc = new WebClient();
-
         private readonly bool _connect = NetworkInterface.GetIsNetworkAvailable();
         private readonly string _appname = Path.GetFileName(Application.ExecutablePath);
 
@@ -72,6 +71,16 @@ namespace SacredUtils.Resources.Core
                             else
                             {
                                 Log.Info("Прогнозы от MairwunNx показали нам, что вы используете последнюю версию.");
+
+                                Log.Info("[MethodCall] Вызываем метод проверки альфа обновления из другого класса.");
+
+                                CheckAppAlphaUpdates checkAppAlphaUpdates = new CheckAppAlphaUpdates();
+
+                                #pragma warning disable CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
+                                checkAppAlphaUpdates.GetAvailableAppUpdatesAsync();
+                                #pragma warning restore CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
+
+                                Log.Info("[MethodCall] Вызов метода проверки альфа обновления завершен.");
                             }
                         }
                         else
@@ -83,7 +92,6 @@ namespace SacredUtils.Resources.Core
                     {
                         Log.Error("Получение последней версии завершилось с ошибкой."); Log.Error(exception.ToString());
                     }
-                    
                 }
                 else
                 {
