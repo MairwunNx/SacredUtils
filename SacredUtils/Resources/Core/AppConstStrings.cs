@@ -22,7 +22,7 @@
 
 //      public const string AppReleaseVersion = "1.2R Rv4 B5 (060618)";
 
-        public const string AppAlphaVersion = "1.2A Rv4 B5 (040618)";
+        public const string AppAlphaVersion = "1.2A Rv4 B5 (050618)";
 
         public const string AppColorValue = "User interface color SacredUtils";
     }
