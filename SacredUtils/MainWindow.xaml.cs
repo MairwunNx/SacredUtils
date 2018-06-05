@@ -16,6 +16,7 @@ using System.Windows.Controls;
 using SacredUtils.Resources.Core;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Windows.Forms.VisualStyles;
 using SacredUtils.Resources.Logger;
 using SacredUtils.Resources.Windows;
 using FontFamily = System.Drawing.FontFamily;
@@ -827,7 +828,7 @@ namespace SacredUtils
                 InstalledFontCollection installedFonts = new InstalledFontCollection();
                 foreach (FontFamily font in installedFonts.Families) { fonts.Add(font.Name); }
 
-                FontLibraryCmbBox.ItemsSource = fonts;
+                FontLibraryCmbBox.ItemsSource = fonts; fonts.Remove("");
 
                 Log.Info("Коллекция шрифтов загружена без ошибок.");
             }

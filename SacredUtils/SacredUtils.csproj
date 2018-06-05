@@ -117,6 +117,7 @@
     </Compile>
     <Compile Include="Resources\Core\AppConstStrings.cs" />
     <Compile Include="Resources\Core\CheckAppAlphaUpdates.cs" />
+    <Compile Include="Resources\Core\CheckAppLicenseFile.cs" />
     <Compile Include="Resources\Core\CheckAppPdbFile.cs" />
     <Compile Include="Resources\Core\CheckLogConfiguration.cs" />
     <Compile Include="Resources\Core\CheckAppConfiguration.cs" />

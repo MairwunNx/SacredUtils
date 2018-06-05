@@ -309,7 +309,7 @@
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,317,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,362,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
 
-                <ComboBox x:Name="FontLibraryCmbBox" VerticalAlignment="Top" Margin="370,241,20,0" IsSynchronizedWithCurrentItem="False" UseLayoutRounding="False" Background="{Binding Background, ElementName=ColorCombobox}" Height="27" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" SelectedIndex="0" IsReadOnly="True" DropDownClosed="FontLibraryCmbBox_DropDownClosed" Foreground="{Binding Foreground, ElementName=ColorCombobox}"/>
+                <ComboBox x:Name="FontLibraryCmbBox" VerticalAlignment="Top" Margin="370,241,20,0" IsSynchronizedWithCurrentItem="False" UseLayoutRounding="False" Background="{Binding Background, ElementName=ColorCombobox}" Height="27" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" DropDownClosed="FontLibraryCmbBox_DropDownClosed" Foreground="{Binding Foreground, ElementName=ColorCombobox}"/>
 
                 <TextBox x:Name="FontChangeTextInTemplate" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="48" Height="27" Text="Это был лишь вопрос времени." VerticalAlignment="Top" Margin="370,286,20,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans"/>
             </Grid>
