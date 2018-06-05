@@ -16,10 +16,8 @@ using System.Windows.Controls;
 using SacredUtils.Resources.Core;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System.Windows.Forms.VisualStyles;
 using SacredUtils.Resources.Logger;
 using SacredUtils.Resources.Windows;
-using FontFamily = System.Drawing.FontFamily;
 using Application = System.Windows.Forms.Application;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 using static SacredUtils.Resources.Core.AppConstStrings;
@@ -824,9 +822,8 @@ namespace SacredUtils
 
             try
             {
-                List<string> fonts = new List<string>();
                 InstalledFontCollection installedFonts = new InstalledFontCollection();
-                foreach (FontFamily font in installedFonts.Families) { fonts.Add(font.Name); }
+                List<string> fonts = installedFonts.Families.Select(font => font.Name).ToList();
 
                 FontLibraryCmbBox.ItemsSource = fonts; fonts.Remove("");
 
@@ -1673,6 +1670,24 @@ namespace SacredUtils
 
         #region SacredUtilsSettingsButtonEventHandlers.
 
+        public void ChangeConfiguration(int index, string text, string func, string state)
+        {
+            try
+            {
+                var fileAllText = File.ReadAllLines(AppSettings);
+                fileAllText[index] = text;
+                File.WriteAllLines(AppSettings, fileAllText);
+
+                Log.Info("Статус функции " + "\"" + func + "\"" + " изменен на " + state + ".");
+            }
+            catch (Exception exception)
+            {
+                Log.Error("Не удалось изменить статус функции " + "\"" + func + "\"" + " на " + state + ".");
+
+                Log.Error(exception.ToString());
+            }
+        }
+
         private void AdvancedErrorLogToggleBtn_Click(object sender, RoutedEventArgs e)
         {
             if (AdvancedErrorLogToggleBtn.IsChecked == true) 
@@ -1753,37 +1768,17 @@ namespace SacredUtils
         {
             if (MinimizeProgramToggleBtn.IsChecked == true)
             {
-                try
-                {
-                    var fileAllText = File.ReadAllLines(AppSettings);
-                    fileAllText[20] = "# - Minimize the program before launching Sacred = true            #";
-                    File.WriteAllLines(AppSettings, fileAllText);
-
-                    Log.Info("Статус функции \"Minimize the program before launching Sacred\" изменен на true.");
-                }
-                catch (Exception exception)
-                {
-                    Log.Error("Не удалось изменить статус функции \"Minimize the program before launching Sacred\" на true.");
-
-                    Log.Error(exception.ToString());
-                }
+                ChangeConfiguration(20,
+                    "# - Minimize the program before launching Sacred = true            #",
+                    "Minimize the program before launching Sacred",
+                    "true");
             }
             else if (MinimizeProgramToggleBtn.IsChecked == false)
             {
-                try
-                {
-                    var fileAllText = File.ReadAllLines(AppSettings);
-                    fileAllText[20] = "# - Minimize the program before launching Sacred = false           #";
-                    File.WriteAllLines(AppSettings, fileAllText);
-
-                    Log.Info("Статус функции \"Minimize the program before launching Sacred\" изменен на false.");
-                }
-                catch (Exception exception)
-                {
-                    Log.Error("Не удалось изменить статус функции \"Minimize the program before launching Sacred\" на false.");
-
-                    Log.Error(exception.ToString());
-                }
+                ChangeConfiguration(20,
+                    "# - Minimize the program before launching Sacred = false           #",
+                    "Minimize the program before launching Sacred",
+                    "false");
             }
         }
 
@@ -1791,37 +1786,17 @@ namespace SacredUtils
         {
             if (ChangeImputLangToggleBtn.IsChecked == true)
             {
-                try
-                {
-                    var fileAllText = File.ReadAllLines(AppSettings);
-                    fileAllText[22] = "# - Change the input language before running Sacred = true         #";
-                    File.WriteAllLines(AppSettings, fileAllText);
-
-                    Log.Info("Статус функции \"Change the input language before running Sacred\" изменен на true.");
-                }
-                catch (Exception exception)
-                {
-                    Log.Error("Не удалось изменить статус функции \"Change the input language before running Sacred\" на true.");
-
-                    Log.Error(exception.ToString());
-                }
+                ChangeConfiguration(22,
+                    "# - Change the input language before running Sacred = true         #",
+                    "Change the input language before running Sacred",
+                    "true");
             }
             else if (ChangeImputLangToggleBtn.IsChecked == false)
             {
-                try
-                {
-                    var fileAllText = File.ReadAllLines(AppSettings);
-                    fileAllText[22] = "# - Change the input language before running Sacred = false        #";
-                    File.WriteAllLines(AppSettings, fileAllText);
-
-                    Log.Info("Статус функции \"Change the input language before running Sacred\" изменен на false.");
-                }
-                catch (Exception exception)
-                {
-                    Log.Error("Не удалось изменить статус функции \"Change the input language before running Sacred\" на false.");
-
-                    Log.Error(exception.ToString());
-                }
+                ChangeConfiguration(22,
+                    "# - Change the input language before running Sacred = false        #",
+                    "Change the input language before running Sacred",
+                    "false");
             }
         }
 
@@ -1829,37 +1804,17 @@ namespace SacredUtils
         {
             if (CloseProgramToggleBtn.IsChecked == true)
             {
-                try
-                {
-                    var fileAllText = File.ReadAllLines(AppSettings);
-                    fileAllText[24] = "# - Close the program after launching Sacred = true                #";
-                    File.WriteAllLines(AppSettings, fileAllText);
-
-                    Log.Info("Статус функции \"Close the program after launching Sacred\" изменен на true.");
-                }
-                catch (Exception exception)
-                {
-                    Log.Error("Не удалось изменить статус функции \"Close the program after launching Sacred\" на true.");
-
-                    Log.Error(exception.ToString());
-                }
+                ChangeConfiguration(24,
+                    "# - Close the program after launching Sacred = true                #",
+                    "Close the program after launching Sacred",
+                    "true");
             }
             else if (CloseProgramToggleBtn.IsChecked == false)
             {
-                try
-                {
-                    var fileAllText = File.ReadAllLines(AppSettings);
-                    fileAllText[24] = "# - Close the program after launching Sacred = false               #";
-                    File.WriteAllLines(AppSettings, fileAllText);
-
-                    Log.Info("Статус функции \"Close the program after launching Sacred\" изменен на false.");
-                }
-                catch (Exception exception)
-                {
-                    Log.Error("Не удалось изменить статус функции \"Close the program after launching Sacred\" на false.");
-
-                    Log.Error(exception.ToString());
-                }
+                ChangeConfiguration(24,
+                    "# - Close the program after launching Sacred = false               #",
+                    "Close the program after launching Sacred",
+                    "false");
             }
         }
 
@@ -1867,38 +1822,17 @@ namespace SacredUtils
         {
             if (RestoreSettingsToggleBtn.IsChecked == true)
             {
-                try
-                {
-                    var fileAllText = File.ReadAllLines(AppSettings);
-                    fileAllText[26] = "# - Restore Settings.cfg if it is corrupted = true                 #";
-                    File.WriteAllLines(AppSettings, fileAllText);
-
-                    Log.Info("Статус функции \"Restore Settings.cfg if it is corrupted\" изменен на true.");
-                }
-                catch (Exception exception)
-                {
-                    Log.Error("Не удалось изменить статус функции \"Restore Settings.cfg if it is corrupted\" на true.");
-
-                    Log.Error(exception.ToString());
-                }
-
+                ChangeConfiguration(26,
+                    "# - Restore Settings.cfg if it is corrupted = true                 #",
+                    "Restore Settings.cfg if it is corrupted",
+                    "true");
             }
             else if (RestoreSettingsToggleBtn.IsChecked == false)
             {
-                try
-                {
-                    var fileAllText = File.ReadAllLines(AppSettings);
-                    fileAllText[26] = "# - Restore Settings.cfg if it is corrupted = false                #";
-                    File.WriteAllLines(AppSettings, fileAllText);
-
-                    Log.Info("Статус функции \"Restore Settings.cfg if it is corrupted\" изменен на false.");
-                }
-                catch (Exception exception)
-                {
-                    Log.Error("Не удалось изменить статус функции \"Restore Settings.cfg if it is corrupted\" на false.");
-
-                    Log.Error(exception.ToString());
-                }
+                ChangeConfiguration(26,
+                    "# - Restore Settings.cfg if it is corrupted = false                #",
+                    "Restore Settings.cfg if it is corrupted",
+                    "false");
             }
         }
 
@@ -1906,25 +1840,13 @@ namespace SacredUtils
 
         #region SacredUtilsAboutButtonEventHandlers.
 
-        private void FeedBackBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("https://vk.cc/85SSFN"); 
-        }
+        private void FeedBackBtn_Click(object sender, RoutedEventArgs e) => Process.Start("https://vk.cc/85SSFN");
 
-        private void CreatorBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("https://vk.cc/85SSXC"); 
-        }
+        private void CreatorBtn_Click(object sender, RoutedEventArgs e) => Process.Start("https://vk.cc/85SSXC");
 
-        private void DonateBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("https://qiwi.me/mairwunnx"); 
-        }
+        private void DonateBtn_Click(object sender, RoutedEventArgs e) => Process.Start("https://qiwi.me/mairwunnx");
 
-        private void GitHubBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("https://github.com/MairwunNx/SacredUtils/"); 
-        }
+        private void GitHubBtn_Click(object sender, RoutedEventArgs e) => Process.Start("https://github.com/MairwunNx/SacredUtils/");
 
         #endregion
     }
