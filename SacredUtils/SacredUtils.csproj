@@ -117,6 +117,7 @@
     </Compile>
     <Compile Include="Resources\Core\AppConstStrings.cs" />
     <Compile Include="Resources\Core\CheckAppAlphaUpdates.cs" />
+    <Compile Include="Resources\Core\CheckAppPdbFile.cs" />
     <Compile Include="Resources\Core\CheckLogConfiguration.cs" />
     <Compile Include="Resources\Core\CheckAppConfiguration.cs" />
     <Compile Include="Resources\Core\CheckAppUpdates.cs" />
@@ -212,6 +213,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Configs\license.txt" />
+    <Content Include="Resources\Configs\SacredUtils.pdb" />
     <Content Include="Resources\Libraries\log4net.dll" />
     <Content Include="Resources\Libraries\MaterialDesignColors.dll" />
     <Content Include="Resources\Libraries\MaterialDesignThemes.Wpf.dll" />

@@ -48,7 +48,7 @@ namespace SacredUtils
 
         private void MinimizeBtn_Click(object sender, RoutedEventArgs e)
         {
-            WindowState = WindowState.Minimized;
+            Log.Info("Приостановка фоновых процессов и задачь. Сворачивание приложения."); WindowState = WindowState.Minimized;
         }
 
         private void ChangeColor_Click(object sender, RoutedEventArgs e)
@@ -56,162 +56,83 @@ namespace SacredUtils
             var colorPicker = new ColorWindow(); colorPicker.Show();
         }
 
+        public void ChangeSettingsCategory(UIElement element)
+        {
+            foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
+            {
+                if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
+            }
+
+            NotSelectedLbl.Visibility = Visibility.Hidden;
+
+            element.Visibility = Visibility.Visible;
+        }
+
         private void SettingsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (SettingsListBox.SelectedIndex == 0)
             {
-                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
-                {
-                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
-                }
-
-                NotSelectedLbl.Visibility = Visibility.Hidden;
-
-                GraphicsSettings01Grid.Visibility = Visibility.Visible;
+                ChangeSettingsCategory(GraphicsSettings01Grid);
             }
 
             if (SettingsListBox.SelectedIndex == 1)
             {
-                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
-                {
-                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
-                }
-
-                NotSelectedLbl.Visibility = Visibility.Hidden;
-
-                GraphicsSettings02Grid.Visibility = Visibility.Visible;
+                ChangeSettingsCategory(GraphicsSettings02Grid);
             }
 
             if (SettingsListBox.SelectedIndex == 2)
             {
-                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
-                {
-                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
-                }
-
-                NotSelectedLbl.Visibility = Visibility.Hidden;
-
-                SoundSettingsGrid.Visibility = Visibility.Visible;
+                ChangeSettingsCategory(SoundSettingsGrid);
             }
 
             if (SettingsListBox.SelectedIndex == 3)
             {
-                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
-                {
-                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
-                }
-
-                NotSelectedLbl.Visibility = Visibility.Hidden;
-
-                NetworkSettings01Grid.Visibility = Visibility.Visible;
+                ChangeSettingsCategory(NetworkSettings01Grid);
             }
 
             if (SettingsListBox.SelectedIndex == 4)
             {
-                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
-                {
-                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
-                }
-
-                NotSelectedLbl.Visibility = Visibility.Hidden;
-
-                NetworkSettings02Grid.Visibility = Visibility.Visible;
+                ChangeSettingsCategory(NetworkSettings02Grid);
             }
 
             if (SettingsListBox.SelectedIndex == 5)
             {
-                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
-                {
-                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
-                }
-
-                NotSelectedLbl.Visibility = Visibility.Hidden;
-
-                ChatSettingsGrid.Visibility = Visibility.Visible;
+                ChangeSettingsCategory(ChatSettingsGrid);
             }
 
             if (SettingsListBox.SelectedIndex == 6)
             {
-                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
-                {
-                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
-                }
-
-                NotSelectedLbl.Visibility = Visibility.Hidden;
-
-                GameSettings01Grid.Visibility = Visibility.Visible;
+                ChangeSettingsCategory(GameSettings01Grid);
             }
 
             if (SettingsListBox.SelectedIndex == 7)
             {
-                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
-                {
-                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
-                }
-
-                NotSelectedLbl.Visibility = Visibility.Hidden;
-
-                GameSettings02Grid.Visibility = Visibility.Visible;
+                ChangeSettingsCategory(GameSettings02Grid);
             }
 
             if (SettingsListBox.SelectedIndex == 8)
             {
-                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
-                {
-                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
-                }
-
-                NotSelectedLbl.Visibility = Visibility.Hidden;
-
-                FontsSettingsGrid.Visibility = Visibility.Visible;
+                ChangeSettingsCategory(FontsSettingsGrid);
             }
 
             if (SettingsListBox.SelectedIndex == 9)
             {
-                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
-                {
-                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
-                }
-
-                NotSelectedLbl.Visibility = Visibility.Hidden;
-
-                OtherSettingsGrid.Visibility = Visibility.Visible;
+                ChangeSettingsCategory(OtherSettingsGrid);
             }
 
             if (SettingsListBox.SelectedIndex == 10)
             {
-                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
-                {
-                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
-                }
-
-                NotSelectedLbl.Visibility = Visibility.Hidden;
-
-                ModdingSettingsGrid.Visibility = Visibility.Visible;
+                ChangeSettingsCategory(ModdingSettingsGrid);
             }
 
             if (SettingsListBox.SelectedIndex == 11)
             {
-                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
-                {
-                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
-                }
-
-                NotSelectedLbl.Visibility = Visibility.Hidden;
-
-                AppSettingsGrid.Visibility = Visibility.Visible;
+                ChangeSettingsCategory(AppSettingsGrid);
             }
 
             if (SettingsListBox.SelectedIndex == 12)
             {
-                foreach (Grid c in SettingsGrid.Children.OfType<Grid>())
-                {
-                    if (c.IsVisible) { c.Visibility = Visibility.Hidden; }
-                }
-
-                NotSelectedLbl.Visibility = Visibility.Hidden;
-
-                AboutGrid.Visibility = Visibility.Visible;
+                ChangeSettingsCategory(AboutGrid);
             }
 
             if (SettingsListBox.SelectedIndex == 14)
@@ -222,11 +143,10 @@ namespace SacredUtils
                     {
                         if (File.Exists(SacredExe))
                         {
-
                             Log.Info("Запускаем Sacred.exe с параметрами : Изменить язык ввода, выйди из приложения.");
-                            Process.Start(SacredExe); InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
+                            InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
 
-                            Environment.Exit(0);
+                            Process.Start(SacredExe); Environment.Exit(0);
                         }
                     }
                     else if (ChangeImputLangToggleBtn.IsChecked == false)
@@ -243,10 +163,9 @@ namespace SacredUtils
                         if (File.Exists(SacredExe))
                         {
                             Log.Info("Запускаем Sacred.exe с параметрами : Изменить язык ввода, свернуть приложение.");
+                            InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
 
-                            Process.Start(SacredExe); InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
-
-                            WindowState = WindowState.Minimized;
+                            Process.Start(SacredExe); WindowState = WindowState.Minimized;
                         }
                     }
                     else if (ChangeImputLangToggleBtn.IsChecked == false)
@@ -712,6 +631,20 @@ namespace SacredUtils
 
             Log.Info("[MethodCall] Вызов метода инициализации логгера завершен.");
 
+            Log.Info("[MethodCall] Вызываем метод проверки файла отладки из другого класса.");
+
+            var checkAppPdbFile = new CheckAppPdbFile();
+            checkAppPdbFile.GetAvailablePdbFile();
+
+            Log.Info("[MethodCall] Вызов метода проверки файла отладки завершен.");
+
+            Log.Info("[MethodCall] Вызываем метод проверки файла лицензии из другого класса.");
+
+            var checkAppLicenseFile = new CheckAppLicenseFile();
+            checkAppLicenseFile.GetAvailableLicenseFile();
+
+            Log.Info("[MethodCall] Вызов метода проверки файла лицензии завершен.");
+
             Log.Info("[MethodCall] Вызываем метод проверки конфигурации лога из другого класса.");
 
             var checkLogConfiguration = new CheckLogConfiguration();
@@ -886,21 +819,6 @@ namespace SacredUtils
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Log.Info("Создаем файл лицензии Apache 2.0 для SacredUtils.");
-
-            try
-            {
-                File.WriteAllBytes("license.txt", Properties.Resources.license);
-
-                Log.Info("Файл лицензии Apache 2.0 для SacredUtils был создан без ошибок.");
-            }
-            catch (Exception exception)
-            {
-                Log.Error("При создании файла лицензии Apache 2.0 для SacredUtils произошла ошибка.");
-
-                Log.Error(exception.ToString());
-            }
-
             Log.Info("Загружаем коллекцию шрифтов для SacredUtils.");
 
             try
