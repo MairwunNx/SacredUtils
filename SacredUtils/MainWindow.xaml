@@ -143,7 +143,7 @@
                 <Slider x:Name="NightDarknessSlider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="217" Margin="363,209,0,0" Style="{StaticResource MaterialDesignDiscreteSlider}" Maximum="100" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" ValueChanged="NightDarknessSlider_ValueChanged"/>
 
                 <TextBox x:Name="GfxStartupTxBox" MaxLength="260" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Margin="369,286,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" KeyUp="GfxStartupTxBox_KeyUp" Foreground="{Binding Foreground, ElementName=ColorTxBox}"/>
-                <TextBox x:Name="GfxLoadingTxBox" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="260" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Margin="369,331,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" KeyUp="GfxLoadingTxBox_KeyUp"/>
+                <TextBox x:Name="GfxLoadingTxBox" MaxLength="260" Foreground="{Binding Foreground, ElementName=ColorTxBox}" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Margin="369,331,0,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" KeyUp="GfxLoadingTxBox_KeyUp"/>
             </Grid>
 
             <Grid x:Name="SoundSettingsGrid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">

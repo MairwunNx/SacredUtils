@@ -1688,79 +1688,39 @@ namespace SacredUtils
             }
         }
 
-        private void AdvancedErrorLogToggleBtn_Click(object sender, RoutedEventArgs e)
-        {
-            if (AdvancedErrorLogToggleBtn.IsChecked == true) 
-            {
-                try
-                {
-                    var fileAllText = File.ReadAllLines(AppSettings);
-                    fileAllText[18] = "# - Automatically get and install alpha updates = true             #";
-                    File.WriteAllLines(AppSettings, fileAllText);
-
-                    Log.Info("Статус функции \"Automatically get and install alpha updates\" изменен на true.");
-                }
-                catch (Exception exception)
-                {
-                    Log.Error("Не удалось изменить статус функции \"Automatically get and install alpha updates\" на true.");
-
-                    Log.Error(exception.ToString());
-                }
-            }
-            else if (AdvancedErrorLogToggleBtn.IsChecked == false)
-            {
-                try
-                {
-                    var fileAllText = File.ReadAllLines(AppSettings);
-                    fileAllText[18] = "# - Automatically get and install alpha updates = false            #";
-                    File.WriteAllLines(AppSettings, fileAllText);
-
-                    Log.Info("Статус функции \"Automatically get and install alpha updates\" изменен на false.");
-                }
-                catch (Exception exception)
-                {
-                    Log.Error("Не удалось изменить статус функции \"Automatically get and install alpha updates\" на false.");
-
-                    Log.Error(exception.ToString());
-                }
-            }
-        }
-
         private void AutomaticalyInstallUpdates_Click(object sender, RoutedEventArgs e)
         {
             if (AutomaticalyInstallUpdates.IsChecked == true)
             {
-                try
-                {
-                    var fileAllText = File.ReadAllLines(AppSettings);
-                    fileAllText[16] = "# - Automatically get and install updates = true                   #";
-                    File.WriteAllLines(AppSettings, fileAllText);
-
-                    Log.Info("Статус функции \"Automatically get and install updates\" изменен на true.");
-                }
-                catch (Exception exception)
-                {
-                    Log.Error("Не удалось изменить статус функции \"Automatically get and install updates\" на true.");
-
-                    Log.Error(exception.ToString());
-                }
+                ChangeConfiguration(16,
+                    "# - Automatically get and install updates = true                   #",
+                    "Automatically get and install updates",
+                    "true");
             }
             else if (AutomaticalyInstallUpdates.IsChecked == false)
             {
-                try
-                {
-                    var fileAllText = File.ReadAllLines(AppSettings);
-                    fileAllText[16] = "# - Automatically get and install updates = false                  #";
-                    File.WriteAllLines(AppSettings, fileAllText);
+                ChangeConfiguration(16,
+                    "# - Automatically get and install updates = false                  #",
+                    "Automatically get and install updates",
+                    "false");
+            }
+        }
 
-                    Log.Info("Статус функции \"Automatically get and install updates\" изменен на false.");
-                }
-                catch (Exception exception)
-                {
-                    Log.Error("Не удалось изменить статус функции \"Automatically get and install updates\" на false.");
-
-                    Log.Error(exception.ToString());
-                }
+        private void AdvancedErrorLogToggleBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (AdvancedErrorLogToggleBtn.IsChecked == true)
+            {
+                ChangeConfiguration(18,
+                    "# - Automatically get and install alpha updates = true             #",
+                    "Automatically get and install alpha updates",
+                    "true");
+            }
+            else if (AdvancedErrorLogToggleBtn.IsChecked == false)
+            {
+                ChangeConfiguration(18,
+                    "# - Automatically get and install alpha updates = false            #",
+                    "Automatically get and install alpha updates",
+                    "false");
             }
         }
 
