@@ -15,9 +15,9 @@ using System.Windows.Media;
 using System.Windows.Controls;
 using SacredUtils.Resources.Core;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using SacredUtils.Resources.Logger;
 using SacredUtils.Resources.Windows;
+using System.Text.RegularExpressions;
 using Application = System.Windows.Forms.Application;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 using static SacredUtils.Resources.Core.AppConstStrings;
@@ -673,7 +673,7 @@ namespace SacredUtils
 
             Log.Info("[MethodCall] Вызываем метод проверки обновления из другого класса.");
 
-            CheckAppUpdates checkAppUpdates = new CheckAppUpdates();
+            var checkAppUpdates = new CheckAppUpdates();
 
             #pragma warning disable CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
             checkAppUpdates.GetAvailableAppUpdatesAsync();
@@ -683,14 +683,14 @@ namespace SacredUtils
 
             Log.Info("[MethodCall] Вызываем метод проверки настроек SacredUtils из другого класса.");
 
-            GetAppSettings getAppSettings = new GetAppSettings();
+            var getAppSettings = new GetAppSettings();
             getAppSettings.LoadAppSettings();
 
             Log.Info("[MethodCall] Вызов метода проверки настроек SacredUtils завершен.");
 
             Log.Info("[MethodCall] Вызываем метод проверки настроек SacredUnderworld из другого класса.");
 
-            GetGameSettings getGameSettings = new GetGameSettings();
+            var getGameSettings = new GetGameSettings();
             getGameSettings.LoadGameSettings();
 
             Log.Info("[MethodCall] Вызов метода проверки настроек SacredUnderworld завершен.");
