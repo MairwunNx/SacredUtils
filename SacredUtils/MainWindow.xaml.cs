@@ -1594,6 +1594,8 @@ namespace SacredUtils
 
         private void CompileGlobalResBtn_Click(object sender, RoutedEventArgs e)
         {
+            CompileGlobalResBtn.Content = "В ПРОЦЕССЕ";
+
             Log.Info("Проверяем наличие файла global.res и global.csv, для его компиляции.");
 
             if (File.Exists("global.res") && File.Exists("global.csv"))
@@ -1615,6 +1617,8 @@ namespace SacredUtils
                     Process.Start("Sacredres2Csv.exe", "-res -oglobal.res global.csv");
 
                     Log.Info("Процесс компиляции global.csv в global.res завершен без ошибок.");
+
+                    CompileGlobalResBtn.Content = "ЗАВЕРШЕНО";
                 }
                 catch (Exception exception)
                 {
@@ -1625,12 +1629,16 @@ namespace SacredUtils
             }
             else
             {
+                CompileGlobalResBtn.Content = "ОШИБКА";
+
                 Log.Error("Файл Global.res (Русский) или global.csv не найден. Переустановите игру. Операция отменяется.");
             }
         }
 
         private void DecompileGlobalResBtn_Click(object sender, RoutedEventArgs e)
         {
+            DecompileGlobalResBtn.Content = "В ПРОЦЕССЕ";
+
             Log.Info("Проверяем наличие файла global.res, для его декомпиляции.");
 
             if (File.Exists("global.res"))
@@ -1652,6 +1660,8 @@ namespace SacredUtils
                     Process.Start("Sacredres2Csv.exe", "-csv -oglobal.csv global.res");
 
                     Log.Info("Процесс декомпиляции global.res в global.csv завершен без ошибок.");
+
+                    DecompileGlobalResBtn.Content = "ЗАВЕРШЕНО";
                 }
                 catch (Exception exception)
                 {
@@ -1662,6 +1672,8 @@ namespace SacredUtils
             }
             else
             {
+                DecompileGlobalResBtn.Content = "ОШИБКА";
+
                 Log.Error("Файл Global.res (Русский) не найден. Переустановите игру. Операция отменяется.");
             }
         }
