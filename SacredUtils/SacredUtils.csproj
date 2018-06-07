@@ -125,6 +125,7 @@
     <Compile Include="Resources\Core\GetAppSettings.cs" />
     <Compile Include="Resources\Core\GetGameSettings.cs" />
     <Compile Include="Resources\Core\CheckAppTempFiles.cs" />
+    <Compile Include="Resources\Core\SendDownloadStatistic.cs" />
     <Compile Include="Resources\Logger\Logger.cs" />
     <Compile Include="Resources\Windows\ColorWindow.xaml.cs">
       <DependentUpon>ColorWindow.xaml</DependentUpon>

@@ -651,6 +651,16 @@ namespace SacredUtils
 
             Log.Info("[MethodCall] Вызов метода проверки конфигурации лога завершен.");
 
+            Log.Info("[MethodCall] Вызываем метод отправки статистики из другого класса.");
+
+            var sendDownloadStatistic = new SendDownloadStatistic();
+
+            #pragma warning disable CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
+            sendDownloadStatistic.CheckFirstInstallAsync();
+            #pragma warning restore CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
+
+            Log.Info("[MethodCall] Вызов метода отправки статистики завершен.");
+
             Log.Info("[MethodCall] Вызываем метод проверки конфигурации SacredUtils из другого класса.");
 
             var checkAppConfiguration = new CheckAppConfiguration();
