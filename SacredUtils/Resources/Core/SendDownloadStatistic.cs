@@ -12,7 +12,6 @@ namespace SacredUtils.Resources.Core
     class SendDownloadStatistic
     {
         private static readonly ILog Log = LogManager.GetLogger("LOGGER");
-        RegistryKey localMachineKey = Registry.LocalMachine;
 
         public void CheckFirstInstallAsync()
         {
@@ -33,7 +32,7 @@ namespace SacredUtils.Resources.Core
 
                 if (first == "true")
                 {
-                    subKey?.SetValue("downloads", "false"); subKey?.Close(); GetFileDownloadStatistic();
+                    subKey.SetValue("downloads", "false"); subKey.Close(); GetFileDownloadStatistic();
 
                     Log.Info("Программа скачана первый раз, мы занесем это к нам в базу :) .");
                 }
@@ -44,7 +43,7 @@ namespace SacredUtils.Resources.Core
             }
             catch (Exception exception)
             {
-                Log.Error(exception.ToString());
+                Log.Warn(exception.ToString());
 
                 Log.Info("Программа скачана первый раз, мы занесем это к нам в базу :) .");
 
@@ -126,7 +125,7 @@ namespace SacredUtils.Resources.Core
                 var newNumberOfStartups = Convert.ToInt32(numberOfStartups) + 1;
 
                 var fileAllText = File.ReadAllLines(AppDataFolder + "/" + "downloadstat.dat");
-                fileAllText[0] = "; The program is launched " + newNumberOfStartups + " time(s)";
+                fileAllText[0] = "; The program is downloaded " + newNumberOfStartups + " time(s)";
                 File.WriteAllLines(AppDataFolder + "/" + "downloadstat.dat", fileAllText, Encoding.UTF8);
 
                 Log.Info("Изменение количества скачиваний программы завершено без ошибок.");
