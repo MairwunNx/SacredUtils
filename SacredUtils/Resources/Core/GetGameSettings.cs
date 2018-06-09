@@ -73,7 +73,7 @@ namespace SacredUtils.Resources.Core
                         }
                     }
 
-                    if (text[i].Contains("LANGUAGE : EN"))
+                    if (text[i].Contains("LANGUAGE : US"))
                     {
                         foreach (Window window in Application.Current.Windows)
                         {
@@ -93,6 +93,32 @@ namespace SacredUtils.Resources.Core
                             if (window.GetType() == typeof(MainWindow))
                             {
                                 ((MainWindow)window).InterfaceLanguageCmbBox.SelectedIndex = 2;
+
+                                Log.Info("Настройка SacredUnderworld \"LANGUAGE\" загружена.");
+                            }
+                        }
+                    }
+
+                    if (text[i].Contains("LANGUAGE : SP"))
+                    {
+                        foreach (Window window in Application.Current.Windows)
+                        {
+                            if (window.GetType() == typeof(MainWindow))
+                            {
+                                ((MainWindow)window).InterfaceLanguageCmbBox.SelectedIndex = 3;
+
+                                Log.Info("Настройка SacredUnderworld \"LANGUAGE\" загружена.");
+                            }
+                        }
+                    }
+
+                    if (text[i].Contains("LANGUAGE : FR"))
+                    {
+                        foreach (Window window in Application.Current.Windows)
+                        {
+                            if (window.GetType() == typeof(MainWindow))
+                            {
+                                ((MainWindow)window).InterfaceLanguageCmbBox.SelectedIndex = 4;
 
                                 Log.Info("Настройка SacredUnderworld \"LANGUAGE\" загружена.");
                             }

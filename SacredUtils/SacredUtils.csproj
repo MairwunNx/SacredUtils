@@ -216,6 +216,11 @@
   <ItemGroup>
     <Resource Include="Resources\Configs\license.txt" />
     <Content Include="Resources\Configs\SacredUtils.pdb" />
+    <Content Include="Resources\Languages\globalde.res" />
+    <Content Include="Resources\Languages\globalfr.res" />
+    <Content Include="Resources\Languages\globalru.res" />
+    <Content Include="Resources\Languages\globalsp.res" />
+    <Content Include="Resources\Languages\globalus.res" />
     <Content Include="Resources\Libraries\log4net.dll" />
     <Content Include="Resources\Libraries\MaterialDesignColors.dll" />
     <Content Include="Resources\Libraries\MaterialDesignThemes.Wpf.dll" />

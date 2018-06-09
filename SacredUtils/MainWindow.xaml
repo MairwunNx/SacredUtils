@@ -88,8 +88,8 @@
                 <Label Content="Режим видео совместимости." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,197,0,0" Height="25"/>
                 <Label Content="Глубина цвета 32 bit." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,242,0,0" Height="25"/>
                 <Label Content="Вертикальная синхронизация." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,287,0,0" Height="25"/>
-                <Label Content="Полноэкранный режим" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,377,0,0" Height="25"/>
-                <Label Content="Непрозрачные тени" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,332,0,0" Height="25"/>
+                <Label Content="Полноэкранный режим." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,377,0,0" Height="25"/>
+                <Label Content="Принудительно черные тени." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,332,0,0" Height="25"/>
                 <Label Content="Показывать игровые видео." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,422,0,0" Height="25"/>
 
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,92,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
@@ -137,6 +137,8 @@
                     <ComboBoxItem Content="Русский"/>
                     <ComboBoxItem Content="Английский"/>
                     <ComboBoxItem Content="Немецкий"/>
+                    <ComboBoxItem Content="Испанский"/>
+                    <ComboBoxItem Content="Французский"/>
                 </ComboBox>
 
                 <Slider x:Name="MinimapAlphaSlider" HorizontalAlignment="Left" VerticalAlignment="Top" Width="217" Margin="363,165,0,0" Style="{StaticResource MaterialDesignDiscreteSlider}" Maximum="255" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" ValueChanged="MinimapAlphaSlider_ValueChanged"/>

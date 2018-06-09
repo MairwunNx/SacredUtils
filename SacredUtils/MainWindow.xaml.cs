@@ -519,11 +519,75 @@ namespace SacredUtils
 
         private void InterfaceLanguageCmbBox_DropDownClosed(object sender, EventArgs e)
         {
-            if (InterfaceLanguageCmbBox.SelectedIndex == 0) { SetSettingsValue("LANGUAGE", "RU"); }
+            if (InterfaceLanguageCmbBox.SelectedIndex == 0)
+            {
+                if (File.Exists("scripts" + "/" + "ru" + "/" + "global.res"))
+                {
+                    SetSettingsValue("LANGUAGE", "RU");
+                }
+                else if (!File.Exists("scripts" + "/" + "ru" + "/" + "global.res"))
+                {
+                    Directory.CreateDirectory("scripts" + "/" + "ru");
 
-            if (InterfaceLanguageCmbBox.SelectedIndex == 1) { SetSettingsValue("LANGUAGE", "EN"); }
+                    File.WriteAllBytes(@"scripts" + "/" + "ru" + "/" + "global.res", Properties.Resources.globalru);
+                }
+            }
 
-            if (InterfaceLanguageCmbBox.SelectedIndex == 2) { SetSettingsValue("LANGUAGE", "DE"); }
+            if (InterfaceLanguageCmbBox.SelectedIndex == 1)
+            {
+                if (File.Exists("scripts" + "/" + "us" + "/" + "global.res"))
+                {
+                    SetSettingsValue("LANGUAGE", "us");
+                }
+                else if (!File.Exists("scripts" + "/" + "us" + "/" + "global.res"))
+                {
+                    Directory.CreateDirectory("scripts" + "/" + "us");
+
+                    File.WriteAllBytes(@"scripts" + "/" + "us" + "/" + "global.res", Properties.Resources.globalus);
+                }
+            }
+
+            if (InterfaceLanguageCmbBox.SelectedIndex == 2)
+            {
+                if (File.Exists("scripts" + "/" + "de" + "/" + "global.res"))
+                {
+                    SetSettingsValue("LANGUAGE", "DE");
+                }
+                else if (!File.Exists("scripts" + "/" + "de" + "/" + "global.res"))
+                {
+                    Directory.CreateDirectory("scripts" + "/" + "de");
+
+                    File.WriteAllBytes(@"scripts" + "/" + "de" + "/" + "global.res", Properties.Resources.globalde);
+                }
+            }
+
+            if (InterfaceLanguageCmbBox.SelectedIndex == 3)
+            {
+                if (File.Exists("scripts" + "/" + "sp" + "/" + "global.res"))
+                {
+                    SetSettingsValue("LANGUAGE", "SP");
+                }
+                else if (!File.Exists("scripts" + "/" + "sp" + "/" + "global.res"))
+                {
+                    Directory.CreateDirectory("scripts" + "/" + "sp");
+
+                    File.WriteAllBytes(@"scripts" + "/" + "sp" + "/" + "global.res", Properties.Resources.globalsp);
+                }
+            }
+
+            if (InterfaceLanguageCmbBox.SelectedIndex == 4)
+            {
+                if (File.Exists("scripts" + "/" + "fr" + "/" + "global.res"))
+                {
+                    SetSettingsValue("LANGUAGE", "FR");
+                }
+                else if (!File.Exists("scripts" + "/" + "fr" + "/" + "global.res"))
+                {
+                    Directory.CreateDirectory("scripts" + "/" + "fr");
+
+                    File.WriteAllBytes(@"scripts" + "/" + "fr" + "/" + "global.res", Properties.Resources.globalfr);
+                }
+            }
         }
 
         private void PickupSettingsCmbBox_DropDownClosed(object sender, EventArgs e)
