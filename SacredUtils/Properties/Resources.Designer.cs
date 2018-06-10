@@ -83,56 +83,6 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] globalde {
-            get {
-                object obj = ResourceManager.GetObject("globalde", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        internal static byte[] globalfr {
-            get {
-                object obj = ResourceManager.GetObject("globalfr", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        internal static byte[] globalru {
-            get {
-                object obj = ResourceManager.GetObject("globalru", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        internal static byte[] globalsp {
-            get {
-                object obj = ResourceManager.GetObject("globalsp", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        internal static byte[] globalus {
-            get {
-                object obj = ResourceManager.GetObject("globalus", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
         internal static byte[] installinfo {
             get {
                 object obj = ResourceManager.GetObject("installinfo", resourceCulture);

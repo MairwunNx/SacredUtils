@@ -1,14 +1,13 @@
 ﻿using System.IO;
 using System.Text;
-using System.Windows;
 using System.Windows.Media;
 using static SacredUtils.Resources.Core.AppConstStrings;
 
 namespace SacredUtils.Resources.Windows
 {
-    public partial class SoundWindow : Window
+    public partial class ComponentsWindow
     {
-        public SoundWindow() { InitializeComponent(); LoadColorTheme(); }
+        public ComponentsWindow() { InitializeComponent(); LoadColorTheme(); }
 
         public void LoadColorTheme()
         {

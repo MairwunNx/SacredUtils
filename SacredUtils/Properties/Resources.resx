@@ -175,19 +175,4 @@
   <data name="SacredUtils" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Configs\SacredUtils.pdb;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="globalde" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Languages\globalde.res;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="globalfr" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Languages\globalfr.res;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="globalru" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Languages\globalru.res;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="globalsp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Languages\globalsp.res;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="globalus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Languages\globalus.res;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
 </root>

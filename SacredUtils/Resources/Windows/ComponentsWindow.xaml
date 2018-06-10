@@ -1,4 +1,4 @@
-﻿<Window x:Class="SacredUtils.Resources.Windows.SoundWindow"
+﻿<Window x:Class="SacredUtils.Resources.Windows.ComponentsWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -23,7 +23,7 @@
             <Label x:Name="SpeedDownloadingLbl" Content="Скорость установки, зависит от вашего инетнета. Рекомендуемая скорость 10Mb\s." Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="9" Margin="15,87,0,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="387"/>
             <ProgressBar x:FieldModifier="public" x:Name="DownloadProgress" Height="4" Margin="0,177,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="412" Value="-1" SmallChange="0"/>
             <Label x:Name="WarningLbl" Content="Во время установки, не выключайте\сворачивайте программу, лучше попейте чай." Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="9" Margin="15,184,0,0" Height="21" VerticalAlignment="Top" HorizontalAlignment="Left" Width="382" HorizontalContentAlignment="Center"/>
-            <Label x:Name="DownloadPercent01" Content="Загрузка архивов озвучки 0\0 ..." Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="10" Margin="15,0,176,36" Height="23" VerticalAlignment="Bottom"/>
+            <Label x:Name="DownloadPercent01" Content="Загрузка архивов озвучки..." Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="10" Margin="15,0,176,36" Height="23" VerticalAlignment="Bottom"/>
             <Label x:Name="lbl1" Content="После установки окно закроется само и вы сможете играть." Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="9" Margin="15,104,0,0" Height="21" VerticalAlignment="Top" HorizontalAlignment="Left" Width="387"/>
             <Label x:Name="DownloadPercent" Content="0%" Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="10" Margin="241,0,15,36" Height="23" VerticalAlignment="Bottom" HorizontalContentAlignment="Right"/>
         </Grid>

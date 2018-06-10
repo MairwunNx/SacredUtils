@@ -18,7 +18,6 @@ using System.Collections.Generic;
 using SacredUtils.Resources.Logger;
 using SacredUtils.Resources.Windows;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Application = System.Windows.Forms.Application;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 using static SacredUtils.Resources.Core.AppConstStrings;
@@ -518,19 +517,31 @@ namespace SacredUtils
             if (DetailLevelCmbBox.SelectedIndex == 2) { SetSettingsValue("DETAILLEVEL", "2"); }
         }
 
-        private void InterfaceLanguageCmbBox_DropDownClosed(object sender, EventArgs e)
+        private async void InterfaceLanguageCmbBox_DropDownClosed(object sender, EventArgs e)
         {
             if (InterfaceLanguageCmbBox.SelectedIndex == 0)
             {
                 if (File.Exists("scripts" + "/" + "ru" + "/" + "global.res"))
                 {
+                    File.Delete("scripts" + "/" + "ru" + "/" + "global.res");
+
+                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+
+                    var downloadComponents = new DownloadComponents();
+                    await downloadComponents.GetSoundComponent("rugui");
+
                     SetSettingsValue("LANGUAGE", "RU");
                 }
                 else if (!File.Exists("scripts" + "/" + "ru" + "/" + "global.res"))
                 {
                     Directory.CreateDirectory("scripts" + "/" + "ru");
 
-                    File.WriteAllBytes(@"scripts" + "/" + "ru" + "/" + "global.res", Properties.Resources.globalru);
+                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+
+                    var downloadComponents = new DownloadComponents();
+                    await downloadComponents.GetSoundComponent("rugui");
+
+                    SetSettingsValue("LANGUAGE", "RU");
                 }
             }
 
@@ -538,13 +549,25 @@ namespace SacredUtils
             {
                 if (File.Exists("scripts" + "/" + "us" + "/" + "global.res"))
                 {
-                    SetSettingsValue("LANGUAGE", "us");
+                    File.Delete("scripts" + "/" + "us" + "/" + "global.res");
+
+                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+
+                    var downloadComponents = new DownloadComponents();
+                    await downloadComponents.GetSoundComponent("usgui");
+
+                    SetSettingsValue("LANGUAGE", "US");
                 }
                 else if (!File.Exists("scripts" + "/" + "us" + "/" + "global.res"))
                 {
                     Directory.CreateDirectory("scripts" + "/" + "us");
 
-                    File.WriteAllBytes(@"scripts" + "/" + "us" + "/" + "global.res", Properties.Resources.globalus);
+                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+
+                    var downloadComponents = new DownloadComponents();
+                    await downloadComponents.GetSoundComponent("usgui");
+
+                    SetSettingsValue("LANGUAGE", "US");
                 }
             }
 
@@ -552,13 +575,25 @@ namespace SacredUtils
             {
                 if (File.Exists("scripts" + "/" + "de" + "/" + "global.res"))
                 {
+                    File.Delete("scripts" + "/" + "de" + "/" + "global.res");
+
+                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+
+                    var downloadComponents = new DownloadComponents();
+                    await downloadComponents.GetSoundComponent("degui");
+
                     SetSettingsValue("LANGUAGE", "DE");
                 }
                 else if (!File.Exists("scripts" + "/" + "de" + "/" + "global.res"))
                 {
                     Directory.CreateDirectory("scripts" + "/" + "de");
 
-                    File.WriteAllBytes(@"scripts" + "/" + "de" + "/" + "global.res", Properties.Resources.globalde);
+                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+
+                    var downloadComponents = new DownloadComponents();
+                    await downloadComponents.GetSoundComponent("degui");
+
+                    SetSettingsValue("LANGUAGE", "DE");
                 }
             }
 
@@ -566,13 +601,25 @@ namespace SacredUtils
             {
                 if (File.Exists("scripts" + "/" + "sp" + "/" + "global.res"))
                 {
+                    File.Delete("scripts" + "/" + "sp" + "/" + "global.res");
+
+                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+
+                    var downloadComponents = new DownloadComponents();
+                    await downloadComponents.GetSoundComponent("spgui");
+
                     SetSettingsValue("LANGUAGE", "SP");
                 }
                 else if (!File.Exists("scripts" + "/" + "sp" + "/" + "global.res"))
                 {
                     Directory.CreateDirectory("scripts" + "/" + "sp");
 
-                    File.WriteAllBytes(@"scripts" + "/" + "sp" + "/" + "global.res", Properties.Resources.globalsp);
+                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+
+                    var downloadComponents = new DownloadComponents();
+                    await downloadComponents.GetSoundComponent("spgui");
+
+                    SetSettingsValue("LANGUAGE", "SP");
                 }
             }
 
@@ -580,13 +627,25 @@ namespace SacredUtils
             {
                 if (File.Exists("scripts" + "/" + "fr" + "/" + "global.res"))
                 {
+                    File.Delete("scripts" + "/" + "fr" + "/" + "global.res");
+
+                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+
+                    var downloadComponents = new DownloadComponents();
+                    await downloadComponents.GetSoundComponent("frgui");
+
                     SetSettingsValue("LANGUAGE", "FR");
                 }
                 else if (!File.Exists("scripts" + "/" + "fr" + "/" + "global.res"))
                 {
                     Directory.CreateDirectory("scripts" + "/" + "fr");
 
-                    File.WriteAllBytes(@"scripts" + "/" + "fr" + "/" + "global.res", Properties.Resources.globalfr);
+                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+
+                    var downloadComponents = new DownloadComponents();
+                    await downloadComponents.GetSoundComponent("frgui");
+
+                    SetSettingsValue("LANGUAGE", "FR");
                 }
             }
         }
@@ -633,7 +692,7 @@ namespace SacredUtils
         {
             if (SoundLanguageCmbBox.SelectedIndex == 0)
             {
-                var soundWindow = new SoundWindow(); soundWindow.Show();
+                var soundWindow = new ComponentsWindow(); soundWindow.Show();
 
                 var downloadComponents = new DownloadComponents();
                 await downloadComponents.GetSoundComponent("ru");       
@@ -641,7 +700,7 @@ namespace SacredUtils
 
             if (SoundLanguageCmbBox.SelectedIndex == 1)
             {
-                var soundWindow = new SoundWindow(); soundWindow.Show();
+                var soundWindow = new ComponentsWindow(); soundWindow.Show();
 
                 var downloadComponents = new DownloadComponents();
                 await downloadComponents.GetSoundComponent("us");
@@ -649,7 +708,7 @@ namespace SacredUtils
 
             if (SoundLanguageCmbBox.SelectedIndex == 2)
             {
-                var soundWindow = new SoundWindow(); soundWindow.Show();
+                var soundWindow = new ComponentsWindow(); soundWindow.Show();
 
                 var downloadComponents = new DownloadComponents();
                 await downloadComponents.GetSoundComponent("de");
@@ -657,7 +716,7 @@ namespace SacredUtils
 
             if (SoundLanguageCmbBox.SelectedIndex == 3)
             {
-                var soundWindow = new SoundWindow(); soundWindow.Show();
+                var soundWindow = new ComponentsWindow(); soundWindow.Show();
 
                 var downloadComponents = new DownloadComponents();
                 await downloadComponents.GetSoundComponent("sp");
@@ -1931,7 +1990,5 @@ namespace SacredUtils
         private void GitHubBtn_Click(object sender, RoutedEventArgs e) => Process.Start("https://github.com/MairwunNx/SacredUtils/");
 
         #endregion
-
-
     }
 }

@@ -7,9 +7,6 @@ using System.Windows;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Odbc;
 using SacredUtils.Resources.Windows;
 using System.Net.NetworkInformation;
 
@@ -23,42 +20,50 @@ namespace SacredUtils.Resources.Core
 
         public async Task DownloadManyFiles(Dictionary<Uri, string> files, string neededDirectory, string file, string extractFolder, string oldFile, string newFile, string component)
         {
-            try
+            if (_connect)
             {
-                Directory.CreateDirectory(neededDirectory); Directory.CreateDirectory(extractFolder);
-
-                if (File.Exists(extractFolder + "/" + newFile)) { File.Delete(extractFolder + "/" + newFile); }
-
-                SoundWindow soundWindow = new SoundWindow(); CloseSoundWindow();
-
-                soundWindow.DownloadPercent01.Content = "Загрузка архивов " + component + " ...";
-
-                soundWindow.ComponentInstallName.Content = "Выполняется установка компонента" + " | " + component + " |";
-
-                WebClient wc = new WebClient();
-
-                wc.DownloadProgressChanged += (s, e) =>
+                try
                 {
-                    soundWindow.DownloadProgress.Value = Convert.ToDouble(e.ProgressPercentage);
-                    soundWindow.DownloadPercent.Content = e.ProgressPercentage + "%";
-                };
+                    Directory.CreateDirectory(neededDirectory); Directory.CreateDirectory(extractFolder);
 
-                foreach (KeyValuePair<Uri, string> pair in files) { await wc.DownloadFileTaskAsync(pair.Key, pair.Value); }
+                    if (File.Exists(extractFolder + "/" + newFile)) { File.Delete(extractFolder + "/" + newFile); }
 
-                wc.Dispose();
+                    ComponentsWindow componentsWindow = new ComponentsWindow(); CloseSoundWindow();
 
-                soundWindow.DownloadProgress.IsIndeterminate = true;
+                    componentsWindow.DownloadPercent01.Content = "Загрузка архивов " + component + " ...";
 
-                soundWindow.DownloadPercent01.Content = "Распаковка и установка " + component + " ...";
+                    componentsWindow.ComponentInstallName.Content = "Выполняется установка компонента" + " | " + component + " |";
 
-                soundWindow.DownloadPercent.Content = "NaN%";
+                    WebClient wc = new WebClient();
 
-                await UnpackDownloadedFile(file, extractFolder, oldFile, newFile);
+                    wc.DownloadProgressChanged += (s, e) =>
+                    {
+                        componentsWindow.DownloadProgress.Value = Convert.ToDouble(e.ProgressPercentage);
+                        componentsWindow.DownloadPercent.Content = e.ProgressPercentage + "%";
+                    };
+
+                    foreach (KeyValuePair<Uri, string> pair in files) { await wc.DownloadFileTaskAsync(pair.Key, pair.Value); }
+
+                    wc.Dispose();
+
+                    componentsWindow.DownloadProgress.IsIndeterminate = true;
+
+                    componentsWindow.DownloadPercent01.Content = "Распаковка и установка " + component + " ...";
+
+                    componentsWindow.DownloadPercent.Content = "NaN%";
+
+                    await UnpackDownloadedFile(file, extractFolder, oldFile, newFile);
+                }
+                catch (Exception exception)
+                {
+                    Log.Info(exception.ToString()); Environment.Exit(0);
+                }
             }
-            catch (Exception exception)
+            else
             {
-                Log.Info(exception.ToString()); Environment.Exit(0);
+                Log.Info("Соединение с интернетом отсутвует!");
             }
+           
         }
 
         public void CloseSoundWindow()
@@ -66,7 +71,7 @@ namespace SacredUtils.Resources.Core
             Assembly currentAssembly = Assembly.GetExecutingAssembly();
             foreach (Window w in Application.Current.Windows)
             {
-                if (w.GetType().Assembly == currentAssembly && w is SoundWindow)
+                if (w.GetType().Assembly == currentAssembly && w is ComponentsWindow)
                 {
                     w.Close(); break;
                 }
@@ -137,6 +142,46 @@ namespace SacredUtils.Resources.Core
                 dict.Add(new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/MHPKgQql3Xg8Ek"), "Temp" + "/" + "soundru.zip");
 
                 await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "soundru.zip", "PAK", "soundru.pak", "sound.pak", "Озвучка .RU");
+            }
+
+            if (lang == "rugui")
+            {
+                Dictionary<Uri, string> dict = new Dictionary<Uri, string>();
+                dict.Add(new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/sKUKqp3W3XgcFP"), "Temp" + "/" + "globalru.zip");
+
+                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "globalru.zip", "scripts" + "/" + "ru", "globalru.res", "global.res", "Язык GUI .RU");
+            }
+
+            if (lang == "usgui")
+            {
+                Dictionary<Uri, string> dict = new Dictionary<Uri, string>();
+                dict.Add(new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/1sni8lWA3XgcFo"), "Temp" + "/" + "globalus.zip");
+
+                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "globalus.zip", "scripts" + "/" + "us", "globalus.res", "global.res", "Язык GUI .US");
+            }
+
+            if (lang == "degui")
+            {
+                Dictionary<Uri, string> dict = new Dictionary<Uri, string>();
+                dict.Add(new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/ekWsMxz13XgcEr"), "Temp" + "/" + "globalde.zip");
+
+                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "globalde.zip", "scripts" + "/" + "de", "globalde.res", "global.res", "Язык GUI .DE");
+            }
+
+            if (lang == "spgui")
+            {
+                Dictionary<Uri, string> dict = new Dictionary<Uri, string>();
+                dict.Add(new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/5n-Vslep3XgcFb"), "Temp" + "/" + "globalsp.zip");
+
+                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "globalsp.zip", "scripts" + "/" + "sp", "globalsp.res", "global.res", "Язык GUI .SP");
+            }
+
+            if (lang == "frgui")
+            {
+                Dictionary<Uri, string> dict = new Dictionary<Uri, string>();
+                dict.Add(new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/2XGSFLVL3XgcF5"), "Temp" + "/" + "globalfr.zip");
+
+                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "globalfr.zip", "scripts" + "/" + "fr", "globalfr.res", "global.res", "Язык GUI .FR");
             }
         }
     }
