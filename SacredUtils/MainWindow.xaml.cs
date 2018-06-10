@@ -19,6 +19,7 @@ using SacredUtils.Resources.Logger;
 using SacredUtils.Resources.Windows;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using log4net.Core;
 using Application = System.Windows.Forms.Application;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 using static SacredUtils.Resources.Core.AppConstStrings;
@@ -862,6 +863,15 @@ namespace SacredUtils
             getGameSettings.LoadGameSettings();
 
             Log.Info("[MethodCall] Вызов метода проверки настроек SacredUnderworld завершен.");
+
+            if (LogSacredUtilsToggleBtn.IsChecked == false)
+            {
+                File.WriteAllText("Logs" + "/" + "SacredUtils.log", "");
+
+                Log.Warn("[LOGSTOP] Лог был остановлен пользователем. (◍ • ﹏ •)");
+
+                log4net.LogManager.Shutdown();
+            }
 
             Log.Info("Поиск файла для загрузки данных о статусе модификаций.");
 
@@ -1996,6 +2006,24 @@ namespace SacredUtils
             }
         }
 
+        private void LogSacredUtilsToggleBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (LogSacredUtilsToggleBtn.IsChecked == true)
+            {
+                ChangeConfiguration(30,
+                    "# - Enable logging of all actions of the program = true            #",
+                    "Enable logging of all actions of the program",
+                    "true");
+            }
+            else if (LogSacredUtilsToggleBtn.IsChecked == false)
+            {
+                ChangeConfiguration(30,
+                    "# - Enable logging of all actions of the program = false           #",
+                    "Enable logging of all actions of the program",
+                    "false");
+            }
+        }
+
         #endregion
 
         #region SacredUtilsAboutButtonEventHandlers.
@@ -2009,5 +2037,7 @@ namespace SacredUtils
         private void GitHubBtn_Click(object sender, RoutedEventArgs e) => Process.Start("https://github.com/MairwunNx/SacredUtils/");
 
         #endregion
+
+
     }
 }

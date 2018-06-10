@@ -12,7 +12,7 @@
 #                                                                  #
 #                                                                  #
 #                                                                  #
-# - Configuration file version = 1.0.0.4                           #
+# - Configuration file version = 1.0.0.5                           #
 #                                                                  #
 # - Automatically get and install updates = true                   #
 #                                                                  #
@@ -27,6 +27,8 @@
 # - Restore Settings.cfg if it is corrupted = true                 #
 #                                                                  #
 # - User interface color SacredUtils = default                     #
+#                                                                  #
+# - Enable logging of all actions of the program = true            #
 #                                                                  #
 #                                                                  #
 #                                                                  #

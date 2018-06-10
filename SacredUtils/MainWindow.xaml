@@ -370,27 +370,30 @@
             </Grid>
 
             <Grid x:Name="AppSettingsGrid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">
-                <Label Content="Устанавливать обновления автоматически." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,152,0,0" Height="25"/>
-                <Label Content="Устанавливать альфа обновления автоматически." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,197,0,0" Height="25"/>
-                <Label Content="Сворачивать программу до запуска Sacred." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,242,0,0" Height="25"/>
-                <Label Content="Изменить язык ввода до запуска Sacred." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,287,0,0" Height="25"/>
-                <Label Content="Закрыть программу до запуска Sacred." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,332,0,0" Height="25"/>
-                <Label Content="Восстанавливать Settings.cfg если он поврежден." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,377,0,0" Height="25"/>
+                <Label Content="Устанавливать обновления автоматически." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,135,0,0" Height="25"/>
+                <Label Content="Устанавливать альфа обновления автоматически." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,180,0,0" Height="25"/>
+                <Label Content="Сворачивать программу до запуска Sacred." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,225,0,0" Height="25"/>
+                <Label Content="Изменить язык ввода до запуска Sacred." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,270,0,0" Height="25"/>
+                <Label Content="Закрыть программу до запуска Sacred." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,315,0,0" Height="25"/>
+                <Label Content="Восстанавливать Settings.cfg если он поврежден." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,360,0,0" Height="25"/>
+                <Label Content="Логировать действия программы." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,405,0,0" Height="25"/>
 
-                <Separator HorizontalAlignment="Left" Height="10" Margin="0,137,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
-                <Separator HorizontalAlignment="Left" Height="10" Margin="0,182,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
-                <Separator HorizontalAlignment="Left" Height="10" Margin="0,227,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
-                <Separator HorizontalAlignment="Left" Height="10" Margin="0,272,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
-                <Separator HorizontalAlignment="Left" Height="10" Margin="0,317,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
-                <Separator HorizontalAlignment="Left" Height="10" Margin="0,362,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
-                <Separator HorizontalAlignment="Left" Height="10" Margin="0,407,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
+                <Separator HorizontalAlignment="Left" Height="10" Margin="0,120,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
+                <Separator HorizontalAlignment="Left" Height="10" Margin="0,165,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
+                <Separator HorizontalAlignment="Left" Height="10" Margin="0,210,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
+                <Separator HorizontalAlignment="Left" Height="10" Margin="0,255,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
+                <Separator HorizontalAlignment="Left" Height="10" Margin="0,300,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
+                <Separator HorizontalAlignment="Left" Height="10" Margin="0,345,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
+                <Separator HorizontalAlignment="Left" Height="10" Margin="0,390,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
+                <Separator HorizontalAlignment="Left" Height="10" Margin="0,435,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
 
-                <ToggleButton x:FieldModifier="public" x:Name="AdvancedErrorLogToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,197,15,322" Height="25" Width="52" Click="AdvancedErrorLogToggleBtn_Click"/>
-                <ToggleButton x:FieldModifier="public" x:Name="AutomaticalyInstallUpdates" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,152,15,367" Height="25" Width="52" Click="AutomaticalyInstallUpdates_Click"/>
-                <ToggleButton x:FieldModifier="public" x:Name="MinimizeProgramToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,242,15,277" Height="25" Width="52" Click="MinimizeProgramToggleBtn_Click"/>
-                <ToggleButton x:FieldModifier="public" x:Name="ChangeImputLangToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,287,15,232" Height="25" Width="52" Click="ChangeImputLangToggleBtn_Click"/>
-                <ToggleButton x:FieldModifier="public" x:Name="CloseProgramToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,332,15,187" Height="25" Width="52" Click="CloseProgramToggleBtn_Click"/>
-                <ToggleButton x:FieldModifier="public" x:Name="RestoreSettingsToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,377,15,142" Height="25" Width="52" Click="RestoreSettingsToggleBtn_Click"/>
+                <ToggleButton x:FieldModifier="public" x:Name="AdvancedErrorLogToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,180,15,339" Height="25" Width="52" Click="AdvancedErrorLogToggleBtn_Click"/>
+                <ToggleButton x:FieldModifier="public" x:Name="AutomaticalyInstallUpdates" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,135,15,384" Height="25" Width="52" Click="AutomaticalyInstallUpdates_Click"/>
+                <ToggleButton x:FieldModifier="public" x:Name="MinimizeProgramToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,225,15,294" Height="25" Width="52" Click="MinimizeProgramToggleBtn_Click"/>
+                <ToggleButton x:FieldModifier="public" x:Name="ChangeImputLangToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,270,15,249" Height="25" Width="52" Click="ChangeImputLangToggleBtn_Click"/>
+                <ToggleButton x:FieldModifier="public" x:Name="CloseProgramToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,315,15,204" Height="25" Width="52" Click="CloseProgramToggleBtn_Click"/>
+                <ToggleButton x:FieldModifier="public" x:Name="RestoreSettingsToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,360,15,159" Height="25" Width="52" Click="RestoreSettingsToggleBtn_Click"/>
+                <ToggleButton x:FieldModifier="public" x:Name="LogSacredUtilsToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,405,15,114" Height="25" Width="52" Click="LogSacredUtilsToggleBtn_Click"/>
             </Grid>
 
             <Grid x:Name="AboutGrid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">

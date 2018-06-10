@@ -17,7 +17,8 @@ namespace SacredUtils.Resources.Core
 
             var text = File.ReadAllLines(AppSettings, Encoding.ASCII);
             
-            bool a = false; bool b = false; bool c = false; bool d = false; bool e = false; bool f = false;
+            bool a = false; bool b = false; bool c = false;
+            bool d = false; bool e = false; bool f = false; bool g = false;
 
             for (int i = 0; i < text.Length; i++)
             {
@@ -98,6 +99,19 @@ namespace SacredUtils.Resources.Core
 
                     Log.Info("Настройка \"Restore Settings.cfg if it is corrupted\" загружена.");
                 }
+
+                if (text[i].Contains("Enable logging of all actions of the program = true"))
+                {
+                    foreach (Window window in Application.Current.Windows)
+                    {
+                        if (window.GetType() == typeof(MainWindow))
+                        {
+                            ((MainWindow)window).LogSacredUtilsToggleBtn.IsChecked = true; g = true;
+                        }
+                    }
+
+                    Log.Info("Настройка \"Enable logging of all actions of the program\" загружена.");
+                }
             }
 
             Log.Info("Все активные настройки SacredUtils были загружены без ошибок.");
@@ -108,7 +122,7 @@ namespace SacredUtils.Resources.Core
 
             try
             {
-                if (text1[14].Contains("Configuration file version = 1.0.0.4"))
+                if (text1[14].Contains("Configuration file version = 1.0.0.5"))
                 {
                     Log.Info("Версия конфигурационного файла совместима с SacredUtils.");
                 }
@@ -233,6 +247,23 @@ namespace SacredUtils.Resources.Core
                             File.WriteAllLines(AppSettings, fileAllText);
 
                             Log.Info("Настройка \"Restore Settings.cfg if it is corrupted\" восстановлена.");
+                        }
+
+                        if (g)
+                        {
+                            var fileAllText = File.ReadAllLines(AppSettings);
+                            fileAllText[30] = "# - Enable logging of all actions of the program = true            #";
+                            File.WriteAllLines(AppSettings, fileAllText);
+
+                            Log.Info("Настройка \"Enable logging of all actions of the program\" восстановлена.");
+                        }
+                        else
+                        {
+                            var fileAllText = File.ReadAllLines(AppSettings);
+                            fileAllText[30] = "# - Enable logging of all actions of the program = false           #";
+                            File.WriteAllLines(AppSettings, fileAllText);
+
+                            Log.Info("Настройка \"Enable logging of all actions of the program\" восстановлена.");
                         }
 
                         Log.Info("Восстановление настроек с несовместимого файла завершилось без ошибок.");
