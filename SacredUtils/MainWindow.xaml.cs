@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using SacredUtils.Resources.Logger;
 using SacredUtils.Resources.Windows;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using Application = System.Windows.Forms.Application;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 using static SacredUtils.Resources.Core.AppConstStrings;
@@ -626,6 +627,41 @@ namespace SacredUtils
             if (SoundQualityCmbBox.SelectedIndex == 1) { SetSettingsValue("SOUNDQUALITY", "1"); }
 
             if (SoundQualityCmbBox.SelectedIndex == 2) { SetSettingsValue("SOUNDQUALITY", "2"); }
+        }
+
+        private async void SoundLanguageCmbBox_DropDownClosed(object sender, EventArgs e)
+        {
+            if (SoundLanguageCmbBox.SelectedIndex == 0)
+            {
+                var soundWindow = new SoundWindow(); soundWindow.Show();
+
+                var downloadComponents = new DownloadComponents();
+                await downloadComponents.GetSoundComponent("ru");       
+            }
+
+            if (SoundLanguageCmbBox.SelectedIndex == 1)
+            {
+                var soundWindow = new SoundWindow(); soundWindow.Show();
+
+                var downloadComponents = new DownloadComponents();
+                await downloadComponents.GetSoundComponent("us");
+            }
+
+            if (SoundLanguageCmbBox.SelectedIndex == 2)
+            {
+                var soundWindow = new SoundWindow(); soundWindow.Show();
+
+                var downloadComponents = new DownloadComponents();
+                await downloadComponents.GetSoundComponent("de");
+            }
+
+            if (SoundLanguageCmbBox.SelectedIndex == 3)
+            {
+                var soundWindow = new SoundWindow(); soundWindow.Show();
+
+                var downloadComponents = new DownloadComponents();
+                await downloadComponents.GetSoundComponent("sp");
+            }
         }
 
         #endregion
@@ -1895,5 +1931,7 @@ namespace SacredUtils
         private void GitHubBtn_Click(object sender, RoutedEventArgs e) => Process.Start("https://github.com/MairwunNx/SacredUtils/");
 
         #endregion
+
+
     }
 }

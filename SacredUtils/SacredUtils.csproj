@@ -73,6 +73,9 @@
     <Reference Include="Costura, Version=2.0.1.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.2.0.1\lib\net452\Costura.dll</HintPath>
     </Reference>
+    <Reference Include="DotNetZip, Version=1.11.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.11.0\lib\net20\DotNetZip.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Resources\Libraries\log4net.dll</HintPath>
@@ -122,6 +125,7 @@
     <Compile Include="Resources\Core\CheckLogConfiguration.cs" />
     <Compile Include="Resources\Core\CheckAppConfiguration.cs" />
     <Compile Include="Resources\Core\CheckAppUpdates.cs" />
+    <Compile Include="Resources\Core\DownloadComponents.cs" />
     <Compile Include="Resources\Core\GetAppSettings.cs" />
     <Compile Include="Resources\Core\GetGameSettings.cs" />
     <Compile Include="Resources\Core\CheckAppTempFiles.cs" />
@@ -129,6 +133,9 @@
     <Compile Include="Resources\Logger\Logger.cs" />
     <Compile Include="Resources\Windows\ColorWindow.xaml.cs">
       <DependentUpon>ColorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Windows\SoundWindow.xaml.cs">
+      <DependentUpon>SoundWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -142,6 +149,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Resources\Windows\SoundWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Resource Include="Resources\Images\Wet.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -67,6 +67,7 @@ namespace SacredUtils.Resources.Core
                             if (window.GetType() == typeof(MainWindow))
                             {
                                 ((MainWindow)window).InterfaceLanguageCmbBox.SelectedIndex = 0;
+                                ((MainWindow)window).SoundLanguageCmbBox.SelectedIndex = 0;
 
                                 Log.Info("Настройка SacredUnderworld \"LANGUAGE\" загружена.");
                             }
@@ -80,6 +81,7 @@ namespace SacredUtils.Resources.Core
                             if (window.GetType() == typeof(MainWindow))
                             {
                                 ((MainWindow)window).InterfaceLanguageCmbBox.SelectedIndex = 1;
+                                ((MainWindow)window).SoundLanguageCmbBox.SelectedIndex = 1;
 
                                 Log.Info("Настройка SacredUnderworld \"LANGUAGE\" загружена.");
                             }
@@ -93,6 +95,7 @@ namespace SacredUtils.Resources.Core
                             if (window.GetType() == typeof(MainWindow))
                             {
                                 ((MainWindow)window).InterfaceLanguageCmbBox.SelectedIndex = 2;
+                                ((MainWindow)window).SoundLanguageCmbBox.SelectedIndex = 2;
 
                                 Log.Info("Настройка SacredUnderworld \"LANGUAGE\" загружена.");
                             }
@@ -106,6 +109,7 @@ namespace SacredUtils.Resources.Core
                             if (window.GetType() == typeof(MainWindow))
                             {
                                 ((MainWindow)window).InterfaceLanguageCmbBox.SelectedIndex = 3;
+                                ((MainWindow)window).SoundLanguageCmbBox.SelectedIndex = 3;
 
                                 Log.Info("Настройка SacredUnderworld \"LANGUAGE\" загружена.");
                             }
