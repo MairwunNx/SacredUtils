@@ -1581,7 +1581,7 @@ namespace SacredUtils
             }
         }
 
-        private void SacredNewUpdateBtn_Click(object sender, RoutedEventArgs e)
+        private async void SacredNewUpdateBtn_Click(object sender, RoutedEventArgs e)
         {
             if (SacredNewUpdateBtn.Content.ToString() == "УСТАНОВИТЬ")
             {
@@ -1589,7 +1589,12 @@ namespace SacredUtils
 
                 try
                 {
-                    File.WriteAllBytes(SacredExe, Properties.Resources.SacredPatched22914);
+                    File.Delete("Sacred.exe");
+
+                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+
+                    var downloadComponents = new DownloadComponents();
+                    await downloadComponents.GetSoundComponent("sacred229");
 
                     Log.Info("Установка Sacred до 2.29.14 версии прошла успешно.");
                 }
@@ -1632,7 +1637,12 @@ namespace SacredUtils
 
                 try
                 {
-                    File.WriteAllBytes(SacredExe, Properties.Resources.SacredPatched228);
+                    File.Delete("Sacred.exe");
+
+                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+
+                    var downloadComponents = new DownloadComponents();
+                    await downloadComponents.GetSoundComponent("sacred228");
 
                     Log.Info("Удаление Sacred 2.29.14 версии прошла успешно.");
                 }
@@ -1671,7 +1681,7 @@ namespace SacredUtils
             }
         }
 
-        private void ServerMulticoreFixBtn_Click(object sender, RoutedEventArgs e)
+        private async void ServerMulticoreFixBtn_Click(object sender, RoutedEventArgs e)
         {
             if (ServerMulticoreFixBtn.Content.ToString() == "УСТАНОВИТЬ")
             {
@@ -1679,7 +1689,12 @@ namespace SacredUtils
 
                 try
                 {
-                    File.WriteAllBytes("gameserver.exe", Properties.Resources.ServerPatched229);
+                    File.Delete("Gameserver.exe");
+
+                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+
+                    var downloadComponents = new DownloadComponents();
+                    await downloadComponents.GetSoundComponent("server229");
 
                     Log.Info("Установка Sacred GameServer MulticoreFix прошла успешно.");
                 }
@@ -1722,7 +1737,12 @@ namespace SacredUtils
 
                 try
                 {
-                    File.WriteAllBytes("gameserver.exe", Properties.Resources.ServerPatched228);
+                    File.Delete("Gameserver.exe");
+
+                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+
+                    var downloadComponents = new DownloadComponents();
+                    await downloadComponents.GetSoundComponent("server228");
 
                     Log.Info("Удаление Sacred GameServer MulticoreFix прошло успешно.");
                 }

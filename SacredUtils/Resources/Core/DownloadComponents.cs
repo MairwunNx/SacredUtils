@@ -183,6 +183,46 @@ namespace SacredUtils.Resources.Core
 
                 await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "globalfr.zip", "scripts" + "/" + "fr", "globalfr.res", "global.res", "Язык GUI .FR");
             }
+
+            if (lang == "sacred229")
+            {
+                String currentDirectory = Environment.CurrentDirectory; 
+
+                Dictionary<Uri, string> dict = new Dictionary<Uri, string>();
+                dict.Add(new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/P-gzohuQ3XgkfQ"), "Temp" + "/" + "SacredPatched22914.zip");
+
+                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "SacredPatched22914.zip", currentDirectory, "SacredPatched22914.exe", "Sacred.exe", "Sacred 2.29.14");
+            }
+
+            if (lang == "sacred228")
+            {
+                String currentDirectory = Environment.CurrentDirectory;
+
+                Dictionary<Uri, string> dict = new Dictionary<Uri, string>();
+                dict.Add(new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/QRe3uOT73XgkeR"), "Temp" + "/" + "SacredPatched228.zip");
+
+                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "SacredPatched228.zip", currentDirectory, "SacredPatched228.exe", "Sacred.exe", "Sacred 2.28.01");
+            }
+
+            if (lang == "server229")
+            {
+                String currentDirectory = Environment.CurrentDirectory;
+
+                Dictionary<Uri, string> dict = new Dictionary<Uri, string>();
+                dict.Add(new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/VH3BGz3D3XgkeM"), "Temp" + "/" + "ServerPatched229.zip");
+
+                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "ServerPatched229.zip", currentDirectory, "ServerPatched229.exe", "Gameserver.exe", "Gamesever MulticoreFix.");
+            }
+
+            if (lang == "server228")
+            {
+                String currentDirectory = Environment.CurrentDirectory;
+
+                Dictionary<Uri, string> dict = new Dictionary<Uri, string>();
+                dict.Add(new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/Mkw_Odf63XgkeF"), "Temp" + "/" + "ServerPatched228.zip");
+
+                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "ServerPatched228.zip", currentDirectory, "ServerPatched228.exe", "Gameserver.exe", "Gamesever Vanilla.");
+            }
         }
     }
 }
