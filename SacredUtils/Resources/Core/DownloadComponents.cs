@@ -33,7 +33,7 @@ namespace SacredUtils.Resources.Core
 
                 soundWindow.DownloadPercent01.Content = "Загрузка архивов " + component + " ...";
 
-                soundWindow.InstallFile.Content = "Выполняется установка компонента" + " | " + component + " |";
+                soundWindow.ComponentInstallName.Content = "Выполняется установка компонента" + " | " + component + " |";
 
                 WebClient wc = new WebClient();
 
