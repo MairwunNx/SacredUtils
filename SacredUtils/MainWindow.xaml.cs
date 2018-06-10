@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using SacredUtils.Resources.Logger;
 using SacredUtils.Resources.Windows;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using Application = System.Windows.Forms.Application;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 using static SacredUtils.Resources.Core.AppConstStrings;
@@ -814,9 +815,7 @@ namespace SacredUtils
 
             var sendDownloadStatistic = new SendDownloadStatistic();
 
-            #pragma warning disable CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
-            sendDownloadStatistic.CheckFirstInstallAsync();
-            #pragma warning restore CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
+            Task.Run(() => sendDownloadStatistic.CheckFirstInstallAsync());
 
             Log.Info("[MethodCall] Вызов метода отправки статистики завершен.");
 
