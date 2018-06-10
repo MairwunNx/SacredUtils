@@ -173,26 +173,6 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] SacredPatched228 {
-            get {
-                object obj = ResourceManager.GetObject("SacredPatched228", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        internal static byte[] SacredPatched22914 {
-            get {
-                object obj = ResourceManager.GetObject("SacredPatched22914", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
         internal static byte[] SacredRes2Csv {
             get {
                 object obj = ResourceManager.GetObject("SacredRes2Csv", resourceCulture);
@@ -226,26 +206,6 @@ namespace SacredUtils.Properties {
         internal static byte[] SacredUtilsUpdater {
             get {
                 object obj = ResourceManager.GetObject("SacredUtilsUpdater", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        internal static byte[] ServerPatched228 {
-            get {
-                object obj = ResourceManager.GetObject("ServerPatched228", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        internal static byte[] ServerPatched229 {
-            get {
-                object obj = ResourceManager.GetObject("ServerPatched229", resourceCulture);
                 return ((byte[])(obj));
             }
         }

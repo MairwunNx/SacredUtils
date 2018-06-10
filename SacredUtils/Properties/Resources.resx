@@ -139,12 +139,6 @@
   <data name="SacredCreatureVeteran" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Modding\SacredCreatureVeteran.pak;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="SacredPatched228" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Modding\SacredPatched228.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="SacredPatched22914" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Modding\SacredPatched22914.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="SacredRes2Csv" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Modding\SacredRes2Csv.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -165,12 +159,6 @@
   </data>
   <data name="SacredCreatureDragonFix" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Modding\SacredCreatureDragonFix.pak;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ServerPatched228" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Modding\ServerPatched228.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ServerPatched229" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Modding\ServerPatched229.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="SacredUtils" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Configs\SacredUtils.pdb;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
