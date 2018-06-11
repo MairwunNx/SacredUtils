@@ -20,15 +20,15 @@
 #                                                                  #
 # - Minimize the program before launching Sacred = true            #
 #                                                                  #
-# - Change the input language before running Sacred = true         #
+# - Change the input language before running Sacred = false        #
 #                                                                  #
 # - Close the program after launching Sacred = false               #
 #                                                                  #
-# - Restore Settings.cfg if it is corrupted = true                 #
+# - Restore Settings.cfg if it is corrupted = false                #
 #                                                                  #
 # - User interface color SacredUtils = default                     #
 #                                                                  #
-# - Enable logging of all actions of the program = false           #
+# - Enable logging of all actions of the program = true            #
 #                                                                  #
 #                                                                  #
 #                                                                  #
