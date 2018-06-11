@@ -27,7 +27,7 @@ namespace SacredUtils.Resources.Core
 
         public const string AppReleaseVersion = "1.2R Rv4 B6 (070618)";
 
-        public const string AppAlphaVersion = "1.2A Rv4 B7.1 (100618)";
+        public const string AppAlphaVersion = "1.2A Rv4 B7 (120618)";
 
         public const string AppColorValue = "User interface color SacredUtils";
 
