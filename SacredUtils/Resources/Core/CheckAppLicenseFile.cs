@@ -11,6 +11,7 @@ namespace SacredUtils.Resources.Core
             try
             {
                 File.WriteAllBytes("license.txt", Properties.Resources.license);
+                File.WriteAllBytes("notise.txt", Properties.Resources.notise);
             }
             catch (Exception exception)
             {

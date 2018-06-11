@@ -233,6 +233,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Configs\license.txt" />
+    <Resource Include="Resources\Configs\notise.txt" />
     <Content Include="Resources\Configs\SacredUtils.pdb" />
     <Content Include="Resources\Libraries\log4net.dll" />
     <Content Include="Resources\Libraries\MaterialDesignColors.dll" />

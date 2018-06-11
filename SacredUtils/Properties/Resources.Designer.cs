@@ -113,6 +113,16 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        internal static byte[] notise {
+            get {
+                object obj = ResourceManager.GetObject("notise", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         internal static byte[] SacredBalanceDragonFix {
             get {
                 object obj = ResourceManager.GetObject("SacredBalanceDragonFix", resourceCulture);
