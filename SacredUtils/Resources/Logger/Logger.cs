@@ -10,16 +10,10 @@ namespace SacredUtils.Resources.Logger
         {
             try
             {
-                Log.Info("Starting reading logger configuration.");
-
                 XmlConfigurator.Configure();
-
-                Log.Info("Reading logger configuration done.");
             }
             catch (Exception exception)
             {
-                Log.Error("Reading logger configuration done with error.");
-
                 Log.Error(exception.ToString());
             }
         }

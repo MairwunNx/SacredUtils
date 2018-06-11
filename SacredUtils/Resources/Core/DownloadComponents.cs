@@ -54,14 +54,9 @@ namespace SacredUtils.Resources.Core
                 }
                 catch (Exception exception)
                 {
-                    Log.Info(exception.ToString()); Environment.Exit(0);
+                    Log.Fatal(exception.ToString()); Environment.Exit(0);
                 }
             }
-            else
-            {
-                Log.Info("Соединение с интернетом отсутвует!");
-            }
-           
         }
 
         public void CloseSoundWindow()
@@ -93,7 +88,7 @@ namespace SacredUtils.Resources.Core
 
                         catch (Exception exception)
                         {
-                            Log.Info(exception.ToString()); 
+                            Log.Fatal(exception.ToString()); 
                         }
                     }
                 }
@@ -102,9 +97,7 @@ namespace SacredUtils.Resources.Core
             }
             catch (Exception exception)
             {
-                Log.Fatal("При скачивание произошла ошибка."); Log.Fatal(exception.ToString());
-
-                Log.Info("Завершение фоновых процессов и задачь. Выход из приложения."); Environment.Exit(0);
+                 Log.Fatal(exception.ToString()); Environment.Exit(0);
             }
         }
 

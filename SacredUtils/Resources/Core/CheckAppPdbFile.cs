@@ -8,30 +8,16 @@ namespace SacredUtils.Resources.Core
     {
         public void GetAvailablePdbFile()
         {
-            Log.Info("Checking availability " + Appnameextension + ".pdb debug file.");
-
-            if (!File.Exists(Appnameextension + ".pdb"))
+            if (!File.Exists(AppNameExtension + ".pdb"))
             {
                 try
                 {
-                    Log.Warn("Debug file " + Appnameextension + ".pdb " + "was not found.");
-
-                    Log.Info("Starting creating debug file " + Appnameextension + ".pdb.");
-
-                    File.WriteAllBytes(Appnameextension + ".pdb", Properties.Resources.SacredUtils);
-
-                    Log.Info("Debug file " + Appnameextension + ".pdb " + "was created by program.");
+                    File.WriteAllBytes(AppNameExtension + ".pdb", Properties.Resources.SacredUtils);
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("An error occurred while creating the debug file " + Appnameextension + ".pdb.");
-
                     Log.Error(exception.ToString());
                 }
-            }
-            else
-            {
-                Log.Info("Debug file " + Appnameextension + ".pdb " + "was found.");
             }
         }
     }

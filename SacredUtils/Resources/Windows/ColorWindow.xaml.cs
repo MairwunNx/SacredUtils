@@ -30,8 +30,6 @@ namespace SacredUtils.Resources.Windows
 
         private void LoadColorFromConfig()
         {
-            Log.Info("Загружаем активные цветовые схемы для SacredUtils.");
-
             var text = File.ReadAllLines(AppSettings, Encoding.ASCII);
 
             var bc = new BrushConverter();
@@ -198,8 +196,6 @@ namespace SacredUtils.Resources.Windows
                     ColorLabel.Foreground = (Brush)bc.ConvertFrom("#eeeeee");
                 }
             }
-
-            Log.Info("Загрузка активных цветовых схем для SacredUtils завершена без ошибок.");
         }
 
         public void ChangeColor(string a, string b, string c, string d, string e, string f)
@@ -236,13 +232,9 @@ namespace SacredUtils.Resources.Windows
                         var palette = new PaletteHelper(); palette.ReplacePrimaryColor(e);
                     }
                 }
-
-                Log.Info("Цветовая схема для SacredUtils была изменена на " + e + ".");
             }
             catch (Exception exception)
             {
-                Log.Error("При изменении цветовой схемы на " + e + " произошла ошибка.");
-
                 Log.Error(exception.ToString());
             }
         }
@@ -258,13 +250,9 @@ namespace SacredUtils.Resources.Windows
                     var fileAllText00 = File.ReadAllLines(AppSettings);
                     fileAllText00[28] = "# - User interface color SacredUtils = red                         #";
                     File.WriteAllLines(AppSettings, fileAllText00); Close();
-
-                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
-
                     Log.Error(exception.ToString());
                 }
             }
@@ -281,13 +269,9 @@ namespace SacredUtils.Resources.Windows
                     var fileAllText01 = File.ReadAllLines(AppSettings);
                     fileAllText01[28] = "# - User interface color SacredUtils = pink                        #";
                     File.WriteAllLines(AppSettings, fileAllText01); Close();
-
-                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
-
                     Log.Error(exception.ToString());
                 }
             }
@@ -305,13 +289,9 @@ namespace SacredUtils.Resources.Windows
                     var fileAllText02 = File.ReadAllLines(AppSettings);
                     fileAllText02[28] = "# - User interface color SacredUtils = purple                      #";
                     File.WriteAllLines(AppSettings, fileAllText02); Close();
-
-                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
-
                     Log.Error(exception.ToString());
                 }
             }
@@ -328,13 +308,9 @@ namespace SacredUtils.Resources.Windows
                     var fileAllText03 = File.ReadAllLines(AppSettings);
                     fileAllText03[28] = "# - User interface color SacredUtils = deeppurple                  #";
                     File.WriteAllLines(AppSettings, fileAllText03); Close();
-
-                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
-
                     Log.Error(exception.ToString());
                 }
             }
@@ -351,13 +327,9 @@ namespace SacredUtils.Resources.Windows
                     var fileAllText04 = File.ReadAllLines(AppSettings);
                     fileAllText04[28] = "# - User interface color SacredUtils = indigo                      #";
                     File.WriteAllLines(AppSettings, fileAllText04); Close();
-
-                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
-
                     Log.Error(exception.ToString());
                 }
             }
@@ -374,13 +346,9 @@ namespace SacredUtils.Resources.Windows
                     var fileAllText05 = File.ReadAllLines(AppSettings);
                     fileAllText05[28] = "# - User interface color SacredUtils = blue                        #";
                     File.WriteAllLines(AppSettings, fileAllText05); Close();
-
-                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
-
                     Log.Error(exception.ToString());
                 }
             }
@@ -397,13 +365,9 @@ namespace SacredUtils.Resources.Windows
                     var fileAllText06 = File.ReadAllLines(AppSettings);
                     fileAllText06[28] = "# - User interface color SacredUtils = lightblue                   #";
                     File.WriteAllLines(AppSettings, fileAllText06); Close();
-
-                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
-
                     Log.Error(exception.ToString());
                 }
             }
@@ -420,13 +384,9 @@ namespace SacredUtils.Resources.Windows
                     var fileAllText07 = File.ReadAllLines(AppSettings);
                     fileAllText07[28] = "# - User interface color SacredUtils = cyan                        #";
                     File.WriteAllLines(AppSettings, fileAllText07); Close();
-
-                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
-
                     Log.Error(exception.ToString());
                 }
             }
@@ -443,13 +403,9 @@ namespace SacredUtils.Resources.Windows
                     var fileAllText08 = File.ReadAllLines(AppSettings);
                     fileAllText08[28] = "# - User interface color SacredUtils = teal                        #";
                     File.WriteAllLines(AppSettings, fileAllText08); Close();
-
-                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
-
                     Log.Error(exception.ToString());
                 }
             }
@@ -466,13 +422,9 @@ namespace SacredUtils.Resources.Windows
                     var fileAllText09 = File.ReadAllLines(AppSettings);
                     fileAllText09[28] = "# - User interface color SacredUtils = green                       #";
                     File.WriteAllLines(AppSettings, fileAllText09); Close();
-
-                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
-
                     Log.Error(exception.ToString());
                 }
             }
@@ -489,13 +441,9 @@ namespace SacredUtils.Resources.Windows
                     var fileAllText10 = File.ReadAllLines(AppSettings);
                     fileAllText10[28] = "# - User interface color SacredUtils = lightgreen                  #";
                     File.WriteAllLines(AppSettings, fileAllText10); Close();
-
-                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
-
                     Log.Error(exception.ToString());
                 }
             }
@@ -512,13 +460,9 @@ namespace SacredUtils.Resources.Windows
                     var fileAllText11 = File.ReadAllLines(AppSettings);
                     fileAllText11[28] = "# - User interface color SacredUtils = lime                        #";
                     File.WriteAllLines(AppSettings, fileAllText11); Close();
-
-                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
-
                     Log.Error(exception.ToString());
                 }
             }
@@ -535,13 +479,9 @@ namespace SacredUtils.Resources.Windows
                     var fileAllText12 = File.ReadAllLines(AppSettings);
                     fileAllText12[28] = "# - User interface color SacredUtils = yellow                      #";
                     File.WriteAllLines(AppSettings, fileAllText12); Close();
-
-                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
-
                     Log.Error(exception.ToString());
                 }
             }
@@ -558,13 +498,9 @@ namespace SacredUtils.Resources.Windows
                     var fileAllText13 = File.ReadAllLines(AppSettings);
                     fileAllText13[28] = "# - User interface color SacredUtils = amber                       #";
                     File.WriteAllLines(AppSettings, fileAllText13); Close();
-
-                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
-
                     Log.Error(exception.ToString());
                 }
             }
@@ -581,13 +517,9 @@ namespace SacredUtils.Resources.Windows
                     var fileAllText14 = File.ReadAllLines(AppSettings);
                     fileAllText14[28] = "# - User interface color SacredUtils = orange                      #";
                     File.WriteAllLines(AppSettings, fileAllText14); Close();
-
-                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
-
                     Log.Error(exception.ToString());
                 }
             }
@@ -604,13 +536,9 @@ namespace SacredUtils.Resources.Windows
                     var fileAllText15 = File.ReadAllLines(AppSettings);
                     fileAllText15[28] = "# - User interface color SacredUtils = deeporange                  #";
                     File.WriteAllLines(AppSettings, fileAllText15); Close();
-
-                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
-
                     Log.Error(exception.ToString());
                 }
             }
@@ -627,13 +555,9 @@ namespace SacredUtils.Resources.Windows
                     var fileAllText16 = File.ReadAllLines(AppSettings);
                     fileAllText16[28] = "# - User interface color SacredUtils = brown                       #";
                     File.WriteAllLines(AppSettings, fileAllText16); Close();
-
-                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
-
                     Log.Error(exception.ToString());
                 }
             }
@@ -650,13 +574,9 @@ namespace SacredUtils.Resources.Windows
                     var fileAllText17 = File.ReadAllLines(AppSettings);
                     fileAllText17[28] = "# - User interface color SacredUtils = grey                        #";
                     File.WriteAllLines(AppSettings, fileAllText17); Close();
-
-                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
-
                     Log.Error(exception.ToString());
                 }
             }
@@ -673,13 +593,9 @@ namespace SacredUtils.Resources.Windows
                     var fileAllText18 = File.ReadAllLines(AppSettings);
                     fileAllText18[28] = "# - User interface color SacredUtils = bluegrey                    #";
                     File.WriteAllLines(AppSettings, fileAllText18); Close();
-
-                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
-
                     Log.Error(exception.ToString());
                 }
             }
@@ -717,13 +633,9 @@ namespace SacredUtils.Resources.Windows
                     var fileAllText18 = File.ReadAllLines(AppSettings);
                     fileAllText18[28] = "# - User interface color SacredUtils = black                       #";
                     File.WriteAllLines(AppSettings, fileAllText18); Close();
-
-                    Log.Info("Сохранение данных о текущей теме прошло без ошибок.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При сохранении данных о текущей теме произошла ошибка.");
-
                     Log.Error(exception.ToString());
                 }
             }

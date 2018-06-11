@@ -1,7 +1,7 @@
-﻿using System.IO;
+﻿using log4net;
+using System.IO;
 using System.Net;
 using System.Windows.Forms;
-using log4net;
 
 namespace SacredUtils.Resources.Core
 {
@@ -34,10 +34,10 @@ namespace SacredUtils.Resources.Core
         #endregion
 
         #region StaticReadonlyStrings
-
+        
         public static readonly ILog Log = LogManager.GetLogger("LOGGER");
         public static readonly string Appname = Path.GetFileName(Application.ExecutablePath);
-        public static readonly string Appnameextension = Path.GetFileNameWithoutExtension(Appname);
+        public static readonly string AppNameExtension = Path.GetFileNameWithoutExtension(Appname);
         public static readonly WebClient Wc = new WebClient();
 
         #endregion
