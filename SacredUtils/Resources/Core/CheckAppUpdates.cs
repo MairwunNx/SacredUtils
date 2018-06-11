@@ -20,9 +20,11 @@ namespace SacredUtils.Resources.Core
         
         public async System.Threading.Tasks.Task GetAvailableAppUpdatesAsync()
         {
+            Log.Info("[Startup] *** Начало выполнения кода из CheckAppUpdates.cs файла. ***");
+
             var fileText = File.ReadAllText(AppSettings);
 
-            Log.Info("Получаем статус активности функции \"Автообновление\"");
+            Log.Info("[Updates] Получаем статус активности функции \"Автообновление\"");
 
             try
             {

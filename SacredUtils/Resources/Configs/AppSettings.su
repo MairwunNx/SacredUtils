@@ -28,7 +28,7 @@
 #                                                                  #
 # - User interface color SacredUtils = default                     #
 #                                                                  #
-# - Enable logging of all actions of the program = true            #
+# - Enable logging of all actions of the program = false           #
 #                                                                  #
 #                                                                  #
 #                                                                  #

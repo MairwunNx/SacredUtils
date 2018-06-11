@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using System.Reflection;
 using System.Diagnostics;
 using System.Drawing.Text;
 using System.Globalization;
@@ -15,16 +16,11 @@ using System.Windows.Media;
 using System.Windows.Controls;
 using SacredUtils.Resources.Core;
 using System.Collections.Generic;
-using SacredUtils.Resources.Logger;
 using SacredUtils.Resources.Windows;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using log4net.Core;
 using Application = System.Windows.Forms.Application;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 using static SacredUtils.Resources.Core.AppConstStrings;
-
-[assembly: log4net.Config.XmlConfigurator(Watch = true)]
 
 #endregion
 
@@ -785,68 +781,21 @@ namespace SacredUtils
 
         public MainWindow()
         {
-            Log.Info("[MethodCall] Вызываем метод инициализации логгера.");
+            Log.Info("[Startup] *** Начало выполнения кода из MainWindow.xaml.cs файла. ***");
 
-            Logger.InitLogger();
-
-            Log.Info("[MethodCall] Вызов метода инициализации логгера завершен.");
-
-            Log.Info("[MethodCall] Вызываем метод проверки файла отладки из другого класса.");
-
-            var checkAppPdbFile = new CheckAppPdbFile();
-            checkAppPdbFile.GetAvailablePdbFile();
-
-            Log.Info("[MethodCall] Вызов метода проверки файла отладки завершен.");
-
-            Log.Info("[MethodCall] Вызываем метод проверки файла лицензии из другого класса.");
-
-            var checkAppLicenseFile = new CheckAppLicenseFile();
-            checkAppLicenseFile.GetAvailableLicenseFile();
-
-            Log.Info("[MethodCall] Вызов метода проверки файла лицензии завершен.");
-
-            Log.Info("[MethodCall] Вызываем метод проверки конфигурации лога из другого класса.");
-
-            var checkLogConfiguration = new CheckLogConfiguration();
-            checkLogConfiguration.GetAvailableLogConfig();
-
-            Log.Info("[MethodCall] Вызов метода проверки конфигурации лога завершен.");
-
-            Log.Info("[MethodCall] Вызываем метод отправки статистики из другого класса.");
-
-            var sendDownloadStatistic = new SendDownloadStatistic();
-
-            Task.Run(() => sendDownloadStatistic.CheckFirstInstallAsync());
-
-            Log.Info("[MethodCall] Вызов метода отправки статистики завершен.");
-
-            Log.Info("[MethodCall] Вызываем метод проверки конфигурации SacredUtils из другого класса.");
-
-            var checkAppConfiguration = new CheckAppConfiguration();
-            checkAppConfiguration.GetAvailableAppConfig();
-
-            Log.Info("[MethodCall] Вызов метода проверки конфигурации SacredUtils завершен.");
-
-            Log.Info("[MethodCall] Вызываем метод удаления временных файлов из другого класса.");
-
-            var checkAppTempFiles = new CheckAppTempFiles();
-            checkAppTempFiles.CheckAvailableTempFiles();
-
-            Log.Info("[MethodCall] Вызов метода удаления временных файлов завершен.");
-
-            Log.Info("[MethodCall] Вызываем метод инициализации компонентов SacredUtils из другого класса.");
+            Log.Info("[MethodCall] Вызываем метод инициализации компонентов из другого класса.");
 
             InitializeComponent();
 
-            Log.Info("[MethodCall] Вызов метода инициализации компонентов SacredUtils завершен.");
+            Log.Info("[MethodCall] Вызов метода инициализации компонентов завершен.");
 
             Log.Info("[MethodCall] Вызываем метод проверки обновления из другого класса.");
 
             var checkAppUpdates = new CheckAppUpdates();
 
-            #pragma warning disable CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
+            #pragma warning disable 4014
             checkAppUpdates.GetAvailableAppUpdatesAsync();
-            #pragma warning restore CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
+            #pragma warning restore 4014
 
             Log.Info("[MethodCall] Вызов метода проверки обновления завершен.");
 
@@ -864,13 +813,22 @@ namespace SacredUtils
 
             Log.Info("[MethodCall] Вызов метода проверки настроек SacredUnderworld завершен.");
 
+            Assembly currentAssembly = Assembly.GetExecutingAssembly();
+            foreach (Window w in System.Windows.Application.Current.Windows)
+            {
+                if (w.GetType().Assembly == currentAssembly && w is LoadingWindow)
+                {
+                    w.Close(); break;
+                }
+            }
+
             if (LogSacredUtilsToggleBtn.IsChecked == false)
             {
                 File.WriteAllText("Logs" + "/" + "SacredUtils.log", "");
 
                 Log.Warn("[LOGSTOP] Лог был остановлен пользователем. (◍ • ﹏ •)");
 
-                log4net.LogManager.Shutdown();
+                LogManager.Shutdown();
             }
 
             Log.Info("Поиск файла для загрузки данных о статусе модификаций.");
@@ -2037,7 +1995,5 @@ namespace SacredUtils
         private void GitHubBtn_Click(object sender, RoutedEventArgs e) => Process.Start("https://github.com/MairwunNx/SacredUtils/");
 
         #endregion
-
-
     }
 }
