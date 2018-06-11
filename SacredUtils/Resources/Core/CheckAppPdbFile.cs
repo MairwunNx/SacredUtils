@@ -1,40 +1,37 @@
 ﻿using System;
-using log4net;
 using System.IO;
-using System.Windows.Forms;
+using static SacredUtils.Resources.Core.AppConstStrings;
 
 namespace SacredUtils.Resources.Core
 {
-    class CheckAppPdbFile
+    internal class CheckAppPdbFile
     {
-        private static readonly ILog Log = LogManager.GetLogger("LOGGER");
-        private static readonly string Appname = Path.GetFileName(Application.ExecutablePath);
-        private static readonly string Appnameextension = Path.GetFileNameWithoutExtension(Appname);
-        
         public void GetAvailablePdbFile()
         {
-            Log.Info("Проверяем / Получаем наличие pdb файла в директории.");
+            Log.Info("Checking availability " + Appnameextension + ".pdb debug file.");
 
             if (!File.Exists(Appnameextension + ".pdb"))
             {
                 try
                 {
-                    Log.Warn("Файл отладки " + Appnameextension + ".pdb " + "не был найден.");
+                    Log.Warn("Debug file " + Appnameextension + ".pdb " + "was not found.");
+
+                    Log.Info("Starting creating debug file " + Appnameextension + ".pdb.");
 
                     File.WriteAllBytes(Appnameextension + ".pdb", Properties.Resources.SacredUtils);
 
-                    Log.Info("Файл отладки " + Appnameextension + ".pdb " + "был создан из ресурсов программы.");
+                    Log.Info("Debug file " + Appnameextension + ".pdb " + "was created by program.");
                 }
                 catch (Exception exception)
                 {
-                    Log.Error("При создании файла отладки " + Appnameextension + ".pdb " + "Произошла ошибка.");
+                    Log.Error("An error occurred while creating the debug file " + Appnameextension + ".pdb.");
 
                     Log.Error(exception.ToString());
                 }
             }
             else
             {
-                Log.Info("Файл отладки " + Appnameextension + ".pdb " + "был обнаружен.");
+                Log.Info("Debug file " + Appnameextension + ".pdb " + "was found.");
             }
         }
     }

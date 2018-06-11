@@ -1,9 +1,16 @@
-﻿namespace SacredUtils.Resources.Core
+﻿using System.IO;
+using System.Net;
+using System.Windows.Forms;
+using log4net;
+
+namespace SacredUtils.Resources.Core
 {
     public class AppConstStrings
     {
-        public const string AppSettings = "Settings.su";
+        #region ConstsStrings
 
+        public const string AppSettings = "Settings.su";
+        
         public const string AppStatistic = "launchstat.dat";
 
         public const string AppInstallInfo = "installinfo.dat";
@@ -23,5 +30,16 @@
         public const string AppAlphaVersion = "1.2A Rv4 B7.1 (100618)";
 
         public const string AppColorValue = "User interface color SacredUtils";
+
+        #endregion
+
+        #region StaticReadonlyStrings
+
+        public static readonly ILog Log = LogManager.GetLogger("LOGGER");
+        public static readonly string Appname = Path.GetFileName(Application.ExecutablePath);
+        public static readonly string Appnameextension = Path.GetFileNameWithoutExtension(Appname);
+        public static readonly WebClient Wc = new WebClient();
+
+        #endregion
     }
 }

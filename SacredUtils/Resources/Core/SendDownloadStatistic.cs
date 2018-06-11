@@ -1,5 +1,4 @@
 ﻿using System;
-using log4net;
 using System.IO;
 using System.Net;
 using System.Text;
@@ -10,54 +9,85 @@ using static SacredUtils.Resources.Core.AppConstStrings;
 
 namespace SacredUtils.Resources.Core
 {
-    class SendDownloadStatistic
+    internal class SendDownloadStatistic
     {
-        private static readonly ILog Log = LogManager.GetLogger("LOGGER");
-
         public async Task CheckFirstInstallAsync()
         {
             try
             {
-                Log.Info("[FTPSTAT] Открываем реестр HKEY_CURRENT_USER, SacredUtils .Statistic, downloads.");
+                Log.Info("Starting reading regedit HKEY_CURRENT_USER, SacredUtils .Statistic.");
 
                 var currentUser = Registry.CurrentUser;
                 var subKey = currentUser.OpenSubKey("SacredUtils .Statistic");
 
-                Log.Info("[FTPSTAT] Получаем значение ключа downloads в SacredUtils .Statistic.");
+                Log.Info("Get key value downloads in SacredUtils .Statistic.");
 
                 var first = subKey?.GetValue("downloads").ToString(); subKey?.Close();
 
-                Log.Info("[FTPSTAT] Значение ключа downloads в SacredUtils .Statistic завершено без ошибок.");
+                Log.Info("Getting key value downloads in SacredUtils .Statistic done.");
 
-                Log.Info("[FTPSTAT] Проверяем параметр 'Скачана ли программа первый раз.'.");
+                Log.Info("Reading regedit HKEY_CURRENT_USER, SacredUtils .Statistic done.");
+
+                Log.Info("Checking key value 'Downloaded' in SacredUtils .Statistic.");
 
                 if (first == "true")
                 {
-                    subKey.SetValue("downloads", "false");
+                    Log.Info("Value of key 'Downloaded' in SacredUtils .Statistic = true.");
 
-                    subKey.Close();
+                    try
+                    {
+                        Log.Info("Changing key value on false in SacredUtils .Statistic.");
+
+                        subKey.SetValue("downloads", "false");
+
+                        Log.Info("Changing key value on false in SacredUtils .Statistic done.");
+
+                        Log.Info("Closing and save value key in  SacredUtils .Statistic.");
+
+                        subKey.Close();
+
+                        Log.Info("Closing and save value key in  SacredUtils .Statistic done.");
+                    }
+                    catch (Exception exception)
+                    {
+                        Log.Error("An error occurred while working with regedit, contact MairwunNx.");
+
+                        Log.Error(exception.ToString());
+                    }
+
+                    Log.Info("SacredUtils was installed for the first time. We will put this in the database.");
 
                     await GetFileDownloadStatisticAsync();
-
-                    Log.Info("[FTPSTAT] Программа скачана первый раз, мы занесем это к нам в базу :) .");
                 }
                 else if (first == "false")
                 {
-                    Log.Info("[FTPSTAT] Программа скачана не первый раз, мы не занесем это к нам в базу :) .");
+                    Log.Info("The program has already been downloaded. The entry into the database is canceled.");
                 }
             }
             catch (Exception exception)
             {
                 Log.Warn(exception.ToString());
 
-                Log.Info("[FTPSTAT] Программа скачана первый раз, мы занесем это к нам в базу :) .");
+                Log.Info("SacredUtils was installed for the first time. We will put this in the database.");
 
                 var currentUser = Registry.CurrentUser;
                 var subKey = currentUser.CreateSubKey("SacredUtils .Statistic");
 
-                Log.Info("[FTPSTAT] Создаем ключ downloads в SacredUtils .Statistic с параметром false.");
+                Log.Info("Creating key in downloads in SacredUtils .Statistic with parametr false.");
 
-                subKey?.SetValue("downloads", "false"); subKey?.Close(); await GetFileDownloadStatisticAsync();
+                subKey?.SetValue("downloads", "false");
+
+                Log.Info("Creating key in downloads with parametr false done.");
+
+                Log.Info("Closing and save value key in SacredUtils .Statistic.");
+
+                subKey?.Close();
+
+                Log.Info("Closing and save value key in SacredUtils .Statistic done.");
+
+                Log.Info("SacredUtils was installed for the first time. We will put this in the database.");
+
+                await GetFileDownloadStatisticAsync();
             }
         }
 
@@ -65,45 +95,47 @@ namespace SacredUtils.Resources.Core
         {
             try
             {
-                Log.Info("[FTPSTAT] Создаем фтп-веб запрос на хостинг с данными о скачиваниях.");
+                Log.Info("Starting creating ftp request on ftp://mairwunnxsta...");
 
                 FtpWebRequest request = await Task.Run(() => (FtpWebRequest)WebRequest.Create("ftp://mairwunnxstatistic@files.000webhost.com/SacredUtils%20Statistic/downloads.txt"));
 
                 await Task.Run(() => request.Method = WebRequestMethods.Ftp.DownloadFile);
 
-                Log.Info("[FTPSTAT] Проходим авторизацию на фтп-веб хостинге с mairwunnxstatistic и **********************.");
+                Log.Info("Creating ftp request on ftp://mairwunnxstatistic... done.");
+
+                Log.Info("We verify authorization on ftp-web hosting with MairwunNx data.");
 
                 request.Credentials = await Task.Run(() => new NetworkCredential("mairwunnxstatistic", "11317151PleaseNotChange"));
 
-                Log.Info("[FTPSTAT] Авторизация на фтп-веб хостинг пройдена успешно.");
+                Log.Info("Verify authorization on ftp-web hosting with MairwunNx data done.");
 
                 FtpWebResponse response = await Task.Run(() => (FtpWebResponse)request.GetResponse());
 
                 Stream responseStream = await Task.Run(() => response.GetResponseStream());
                 StreamReader reader = new StreamReader(responseStream ?? throw new InvalidOperationException());
 
-                Log.Info("[FTPSTAT] Создаем директорию .SacredUtils Data если ее нет.");
+                Log.Info("Creating directory .SacredUtils Data if he not exists.");
 
                 Directory.CreateDirectory(AppDataFolder);
 
-                Log.Info("[FTPSTAT] Директория .SacredUtils Data была создана без ошибок.");
-
-                Log.Info("[FTPSTAT] Создаем файл downloadstat.dat в директории .SacredUtils Data.");
+                Log.Info("Creating directory .SacredUtils Data done.");
 
                 using (Stream fileStream = File.Create(AppDataFolder + "/" + "downloadstat.dat"))
                 {
+                    Log.Info("Creating file downloadstat.dat in directory .SacredUtils Data.");
+
                     responseStream.CopyTo(fileStream);
 
-                    Log.Info("[FTPSTAT] Файл downloadstat.dat был создан с полученным содержимым без ошибок.");
+                    Log.Info("File downloadstat.dat was created/downloaded by ftp.");
                 }
 
-                Log.Info("[FTPSTAT] Завершаем процессы и закрываем веб-запросы и запускаем счетчик установок.");
+                Log.Info("Closing processes and closing web requests.");
 
                 reader.Close(); response.Close(); await SetValueFileStatisticAsync();
             }
             catch (Exception exception)
             {
-                Log.Error("[FTPSTAT] Во время работы с FTP сервером произошла ошибка, программа работу продолжит.");
+                Log.Error("An error occurred while working with ftp client, contact MairwunNx.");
 
                 Log.Error(exception.ToString());
             }
@@ -113,19 +145,17 @@ namespace SacredUtils.Resources.Core
         {
             try
             {
-                Log.Info("[FTPSTAT] Открываем файл downloadstat.dat в директории .SacredUtils Data для чтения.");
+                Log.Info("Starting reading statistic in downloadstat.dat file.");
 
                 var text = File.ReadAllText(AppDataFolder + "/" + "downloadstat.dat");
 
-                Log.Info("[FTPSTAT] Файл downloadstat.dat был открыт для чтения без ошибок.");
+                Log.Info("Reading statistic in downloadstat.dat file done.");
 
-                Log.Info("[FTPSTAT] Ищем число по регулярному выражению \\d+ в файле downloadstat.dat.");
+                Log.Info("Looking for a number on a regular expression \\d+ in file downloadstat.dat.");
 
                 var numberOfStartups = Regex.Match(text, @"\d+").Value;
 
-                Log.Info("[FTPSTAT] Поиск числа по регулярному выражению \\d+ завершен без ошибок.");
-
-                Log.Info("[FTPSTAT] Добавляем +1 к найденному числу по регулярке в файле.");
+                Log.Info("Looking for a number on a regular expression \\d+ in file downloadstat.dat done.");
 
                 var newNumberOfStartups = Convert.ToInt32(numberOfStartups) + 1;
 
@@ -133,17 +163,17 @@ namespace SacredUtils.Resources.Core
                 fileAllText[0] = "; The program is downloaded " + newNumberOfStartups + " time(s)";
                 File.WriteAllLines(AppDataFolder + "/" + "downloadstat.dat", fileAllText, Encoding.UTF8);
 
-                Log.Info("[FTPSTAT] Изменение количества скачиваний программы завершено без ошибок.");
+                Log.Info("Change in the number of downloads of the program done.");
 
-                Log.Info("[FTPSTAT] Данные о запуске SacredUtils были сохранены в downloadstat.dat.");
+                Log.Info("Data of downloads SacredUtils was saved in downloadstat.dat.");
 
-                Log.Info("[FTPSTAT] Подготавливаемся к созданию фтп-веб запросу на хостинг с загрузкой файлов.");
+                Log.Info("We are preparing to create a FTP-web request for hosting.");
 
                 await SendFileDownloadStatisticAsync();
             }
             catch (Exception exception)
             {
-                Log.Error("[FTPSTAT] Операция по счету скачиваний SacredUtils завершилась с ошибкой.");
+                Log.Error("The task to calculate the SacredUtils downloads failed.");
 
                 Log.Error(exception.ToString());
             }
@@ -153,33 +183,33 @@ namespace SacredUtils.Resources.Core
         {
             try
             {
-                Log.Info("[FTPSTAT] Создаем фтп-веб запрос на хостинг с загрузкой файлов.");
+                Log.Info("Starting creating ftp request on ftp://mairwunnxsta...");
 
                 FtpWebRequest request = await Task.Run(() => (FtpWebRequest)WebRequest.Create("ftp://mairwunnxstatistic@files.000webhost.com/SacredUtils%20Statistic/downloads.txt"));
 
                 await Task.Run(() => request.Method = WebRequestMethods.Ftp.UploadFile);
 
-                Log.Info("[FTPSTAT] Проходим авторизацию на фтп-веб хостинге с mairwunnxstatistic и **********************.");
+                Log.Info("Creating ftp request on ftp://mairwunnxstatistic... done.");
+
+                Log.Info("We verify authorization on ftp-web hosting with MairwunNx data.");
 
                 await Task.Run(() => request.Credentials = new NetworkCredential("mairwunnxstatistic", "11317151PleaseNotChange"));
 
-                Log.Info("[FTPSTAT] Авторизация на фтп-веб хостинг пройдена успешно.");
-
-                Log.Info("[FTPSTAT] Подготавливаем файл к загрузке на FTP сервер.");
+                Log.Info("Verify authorization on ftp-web hosting with MairwunNx data done.");
 
                 StreamReader sourceStream = await Task.Run(() => new StreamReader(AppDataFolder + "/" + "downloadstat.dat"));
                 byte[] fileContents = await Task.Run(() => Encoding.UTF8.GetBytes(sourceStream.ReadToEnd()));
                 sourceStream.Close(); request.ContentLength = fileContents.Length;
 
-                Log.Info("[FTPSTAT] Отправляем файл на FTP downloadstat.dat сервер.");
+                Log.Info("Starting uploading downloadstat.dat file on FTP server.");
 
                 Stream requestStream = await Task.Run(() => request.GetRequestStream());
                 await Task.Run(() => requestStream.Write(fileContents, 0, fileContents.Length));
                 requestStream.Close();
 
-                Log.Info("[FTPSTAT] Отправка данных файла downloadstat.dat завершена без ошибок.");
+                Log.Info("Uploading downloadstat.dat file on FTP server done.");
 
-                Log.Info("[FTPSTAT] Завершаем процессы и закрываем веб-запросы. Операция завершена.");
+                Log.Info("Closing processes and closing web requests.");
 
                 FtpWebResponse response = await Task.Run(() => (FtpWebResponse)request.GetResponse());
 
@@ -187,7 +217,7 @@ namespace SacredUtils.Resources.Core
             }
             catch (Exception exception)
             {
-                Log.Error("[FTPSTAT] Во время работы с FTP сервером произошла ошибка, программа работу продолжит.");
+                Log.Error("An error occurred while working with ftp client, contact MairwunNx.");
 
                 Log.Error(exception.ToString());
             }

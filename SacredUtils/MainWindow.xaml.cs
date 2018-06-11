@@ -18,7 +18,6 @@ using SacredUtils.Resources.Core;
 using System.Collections.Generic;
 using SacredUtils.Resources.Windows;
 using System.Text.RegularExpressions;
-using Application = System.Windows.Forms.Application;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 using static SacredUtils.Resources.Core.AppConstStrings;
 
@@ -28,14 +27,6 @@ namespace SacredUtils
 {
     public partial class MainWindow
     {
-        #region SacredUtilsFieldsAndStrings.
-
-        private readonly string _appname = Path.GetFileName(Application.ExecutablePath);
-
-        private static readonly ILog Log = LogManager.GetLogger("LOGGER");
-
-        #endregion
-
         #region SacredUtilsWindowButtonHandlers.
 
         private void CloseBtn_Click(object sender, RoutedEventArgs e)
@@ -179,7 +170,7 @@ namespace SacredUtils
             {
                 Log.Info("Завершение фоновых процессов и задачь. Перезагрузка приложения.");
 
-                Process.Start(_appname); Environment.Exit(0);
+                Process.Start(Appname); Environment.Exit(0);
             }
         }
 

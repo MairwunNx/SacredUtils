@@ -1,54 +1,32 @@
-﻿using log4net;
-using System.Windows;
+﻿using System.Windows;
 using System.Threading.Tasks;
 using SacredUtils.Resources.Core;
 using SacredUtils.Resources.Logger;
 using SacredUtils.Resources.Windows;
+using static SacredUtils.Resources.Core.AppConstStrings;
 
 namespace SacredUtils
 {
     public partial class App
     {
-        private static readonly ILog Log = LogManager.GetLogger("LOGGER");
-
         protected override void OnStartup(StartupEventArgs e)
         {
-            Log.Info("[Startup] *** Начало выполнения кода из App.xaml.cs файла. ***");
+            base.OnStartup(e); Log.Info("Starting SacredUtils version 1.2.3.7.");
 
-            base.OnStartup(e); var loadingWindow = new LoadingWindow();
-            loadingWindow.Show();
+            var loadingWindow = new LoadingWindow(); loadingWindow.Show();
 
-            Log.Info("[MethodCall] Вызываем метод инициализации логгера.");
-
-            Logger.InitLogger();
-
-            Log.Info("[MethodCall] Вызов метода инициализации логгера завершен.");
-
-            Log.Info("[MethodCall] Вызываем метод проверки файла отладки из другого класса.");
+            Task.Run(() => Logger.InitLogger());
 
             var checkAppPdbFile = new CheckAppPdbFile();
             Task.Run(() => checkAppPdbFile.GetAvailablePdbFile());
 
-            Log.Info("[MethodCall] Вызов метода проверки файла отладки завершен.");
-
-            Log.Info("[MethodCall] Вызываем метод проверки файла лицензии из другого класса.");
-
             var checkAppLicenseFile = new CheckAppLicenseFile();
             Task.Run(() => checkAppLicenseFile.GetAvailableLicenseFile());
 
-            Log.Info("[MethodCall] Вызов метода проверки файла лицензии завершен.");
-
-            Log.Info("[MethodCall] Вызываем метод проверки конфигурации лога из другого класса.");
-
             var checkLogConfiguration = new CheckLogConfiguration();
-            checkLogConfiguration.GetAvailableLogConfig();
-
-            Log.Info("[MethodCall] Вызов метода проверки конфигурации лога завершен.");
-
-            Log.Info("[MethodCall] Вызываем метод отправки статистики из другого класса.");
+            Task.Run(() => checkLogConfiguration.GetAvailableLogConfig());
 
             var sendDownloadStatistic = new SendDownloadStatistic();
-
             Task.Run(() => sendDownloadStatistic.CheckFirstInstallAsync());
 
             Log.Info("[MethodCall] Вызов метода отправки статистики завершен.");

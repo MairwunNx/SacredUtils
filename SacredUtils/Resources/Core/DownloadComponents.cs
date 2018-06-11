@@ -1,5 +1,4 @@
 ﻿using System;
-using log4net;
 using Ionic.Zip;
 using System.IO;
 using System.Net;
@@ -9,14 +8,13 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using SacredUtils.Resources.Windows;
 using System.Net.NetworkInformation;
+using static SacredUtils.Resources.Core.AppConstStrings;
 
 namespace SacredUtils.Resources.Core
 {
     public class DownloadComponents
     {
         private readonly bool _connect = NetworkInterface.GetIsNetworkAvailable();
-
-        private static readonly ILog Log = LogManager.GetLogger("LOGGER");
 
         public async Task DownloadManyFiles(Dictionary<Uri, string> files, string neededDirectory, string file, string extractFolder, string oldFile, string newFile, string component)
         {

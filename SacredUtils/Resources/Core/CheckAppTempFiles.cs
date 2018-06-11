@@ -1,5 +1,4 @@
 ﻿using System;
-using log4net;
 using System.IO;
 using static SacredUtils.Resources.Core.AppConstStrings;
 
@@ -7,8 +6,6 @@ namespace SacredUtils.Resources.Core
 {
     public class CheckAppTempFiles
     {
-        private static readonly ILog Log = LogManager.GetLogger("LOGGER");
-        
         public void CheckAvailableTempFiles() // Проверяем наличие временных файлов.
         {
             Log.Info("Проверяем / Получаем временные файлы в текущей директории.");

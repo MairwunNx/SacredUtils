@@ -1,5 +1,4 @@
 ﻿using System;
-using log4net;
 using System.IO;
 using static SacredUtils.Resources.Core.AppConstStrings;
 
@@ -7,8 +6,6 @@ namespace SacredUtils.Resources.Core
 {
     public class CheckAppConfiguration
     {
-        private static readonly ILog Log = LogManager.GetLogger("LOGGER");
-
         public void GetAvailableAppConfig() // Проверяем наличие конфигураций.
         {
             Log.Info("Проверяем наличие файла конфигурации SacredUnderworld.");

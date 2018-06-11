@@ -1,22 +1,15 @@
 ﻿using System;
-using log4net;
 using System.IO;
-using System.Net;
 using System.Windows;
 using System.Diagnostics;
 using System.Net.NetworkInformation;
-using Application = System.Windows.Forms.Application;
 using static SacredUtils.Resources.Core.AppConstStrings;
 
 namespace SacredUtils.Resources.Core
 {
     public class CheckAppAlphaUpdates
     {
-        private readonly WebClient _wc = new WebClient();
         private readonly bool _connect = NetworkInterface.GetIsNetworkAvailable();
-        private readonly string _appname = Path.GetFileName(Application.ExecutablePath);
-
-        private static readonly ILog Log = LogManager.GetLogger("LOGGER");
 
         public async System.Threading.Tasks.Task GetAvailableAppUpdatesAsync()
         {
@@ -44,7 +37,7 @@ namespace SacredUtils.Resources.Core
 
                             Log.Info("Номер последней версии был получен без ошибок.");
 
-                            var appLatestVersion = _wc.DownloadString(appLatestVersionWeb);
+                            var appLatestVersion = Wc.DownloadString(appLatestVersionWeb);
 
                             Log.Info("Проверяем последняя ли альфа версия SacredUtils используется.");
 
@@ -54,7 +47,7 @@ namespace SacredUtils.Resources.Core
 
                                 Log.Info("Вызываем метод запуска-скачивания обновления SacredUtils.");
 
-                                foreach (Window window in System.Windows.Application.Current.Windows)
+                                foreach (Window window in Application.Current.Windows)
                                 {
                                     if (window.GetType() == typeof(MainWindow))
                                     {
@@ -132,7 +125,7 @@ namespace SacredUtils.Resources.Core
 
             try
             {
-                await _wc.DownloadFileTaskAsync(new Uri(appLatest), "_newVersionSacredUtilsTemp.exe");
+                await Wc.DownloadFileTaskAsync(new Uri(appLatest), "_newVersionSacredUtilsTemp.exe");
 
                 Log.Info("Скачивание новой версии SacredUtils завершено без ошибок.");
             }
@@ -147,7 +140,7 @@ namespace SacredUtils.Resources.Core
 
             try
             {
-                Process.Start(AppTempFolder + "\\" + AppUpdaterExe, "_newVersionSacredUtilsTemp.exe " + _appname);
+                Process.Start(AppTempFolder + "\\" + AppUpdaterExe, "_newVersionSacredUtilsTemp.exe " + Appname);
 
                 Log.Info("Запуск помощника обновления завершился без ошибок.");
             }

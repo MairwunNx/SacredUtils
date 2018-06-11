@@ -1,5 +1,4 @@
 ﻿using System;
-using log4net;
 using System.IO;
 using System.Text;
 using System.Windows;
@@ -9,8 +8,6 @@ namespace SacredUtils.Resources.Core
 {
     public class GetGameSettings
     {
-        private static readonly ILog Log = LogManager.GetLogger("LOGGER");
-
         public void LoadGameSettings() // Загружаем игровые настройки.
         {
             Log.Info("Загрузка всех активных настроек SacredUnderworld");
