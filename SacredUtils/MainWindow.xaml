@@ -325,7 +325,7 @@
 
                 <ComboBox x:Name="FontLibraryCmbBox" VerticalAlignment="Top" Margin="370,241,20,0" IsSynchronizedWithCurrentItem="False" UseLayoutRounding="False" Background="{Binding Background, ElementName=ColorCombobox}" Height="27" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" DropDownClosed="FontLibraryCmbBox_DropDownClosed" Foreground="{Binding Foreground, ElementName=ColorCombobox}"/>
 
-                <TextBox x:Name="FontChangeTextInTemplate" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="48" Height="27" Text="{Binding BindingString0102}" VerticalAlignment="Top" Margin="370,286,20,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans"/>
+                <TextBox x:Name="FontChangeTextInTemplate" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="48" Height="27" Text="Perhaps you can change the fonts." VerticalAlignment="Top" Margin="370,286,20,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans"/>
             </Grid>
 
             <Grid x:Name="OtherSettingsGrid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">

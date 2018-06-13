@@ -93,7 +93,6 @@
         public string BindingString0099 => String0099; 
         public string BindingString0100 => String0100; 
         public string BindingString0101 => String0101; 
-        public string BindingString0102 => String0102; 
         public string BindingString0103 => String0103; 
         public string BindingString0104 => String0104; 
         public string BindingString0105 => String0105; 
@@ -230,7 +229,6 @@
         public const string String0099 = "Название шрифта.";
         public const string String0100 = "Текст примера.";
         public const string String0101 = "Используется автоподбор размера, с некоторыми шрифтами возможны проблемы.";
-        public const string String0102 = "Это был лишь вопрос времени.";
         public const string String0103 = "Настройки автоподбора.";
         public const string String0104 = "Задержка автосохранения.";
         public const string String0105 = "Процент появления вспышки.";
