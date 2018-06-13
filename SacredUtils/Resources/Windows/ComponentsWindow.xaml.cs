@@ -1,13 +1,14 @@
 ﻿using System.IO;
 using System.Text;
 using System.Windows.Media;
+using SacredUtils.Resources.Core;
 using static SacredUtils.Resources.Core.AppConstStrings;
 
 namespace SacredUtils.Resources.Windows
 {
     public partial class ComponentsWindow
     {
-        public ComponentsWindow() { InitializeComponent(); LoadColorTheme(); }
+        public ComponentsWindow() { InitializeComponent(); LoadColorTheme(); DataContext = new AppStrings(); }
 
         public void LoadColorTheme()
         {

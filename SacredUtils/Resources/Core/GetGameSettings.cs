@@ -8,7 +8,7 @@ namespace SacredUtils.Resources.Core
 {
     public class GetGameSettings
     {
-        public void LoadGameSettings() // Загружаем игровые настройки.
+        public void LoadGameSettings()
         {
             try
             {

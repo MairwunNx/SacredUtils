@@ -10,9 +10,10 @@ namespace SacredUtils
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            base.OnStartup(e); 
+            base.OnStartup(e);
 
             var loadingWindow = new LoadingWindow(); loadingWindow.Show();
+            loadingWindow.InitializeComponent();
 
             Task.Run(() => Logger.InitLogger());
 

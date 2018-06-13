@@ -8,7 +8,7 @@ namespace SacredUtils.Resources.Core
 {
     public class GetAppSettings
     {
-        public void LoadAppSettings() // Загружаем настройки программы и игры.
+        public void LoadAppSettings()
         {
             var text = File.ReadAllLines(AppSettings, Encoding.ASCII);
             
@@ -95,11 +95,11 @@ namespace SacredUtils.Resources.Core
                 }
             }
 
-            var text1 = File.ReadAllLines(AppSettings, Encoding.ASCII);
-
             try
             {
-                if (!text1[14].Contains("Configuration file version = 1.0.0.5"))
+                var strings = File.ReadAllLines(AppSettings, Encoding.ASCII);
+
+                if (!strings[14].Contains("Configuration file version = 1.0.0.5"))
                 {
                     try
                     {
@@ -110,108 +110,101 @@ namespace SacredUtils.Resources.Core
                          Log.Error(exception.ToString());
                     }
 
-                    try
+                    if (a)
                     {
-                        if (a)
-                        {
-                            var fileAllText = File.ReadAllLines(AppSettings);
-                            fileAllText[16] = "# - Automatically get and install updates = true                   #";
-                            File.WriteAllLines(AppSettings, fileAllText);
-                        }
-                        else
-                        {
-                            var fileAllText = File.ReadAllLines(AppSettings);
-                            fileAllText[16] = "# - Automatically get and install updates = false                  #";
-                            File.WriteAllLines(AppSettings, fileAllText);
-                        }
-
-                        if (b)
-                        {
-                            var fileAllText = File.ReadAllLines(AppSettings);
-                            fileAllText[18] = "# - Automatically get and install alpha updates = true             #";
-                            File.WriteAllLines(AppSettings, fileAllText);
-                        }
-                        else
-                        {
-                            var fileAllText = File.ReadAllLines(AppSettings);
-                            fileAllText[18] = "# - Automatically get and install alpha updates = false            #";
-                            File.WriteAllLines(AppSettings, fileAllText);
-                        }
-
-                        if (c)
-                        {
-                            var fileAllText = File.ReadAllLines(AppSettings);
-                            fileAllText[20] = "# - Minimize the program before launching Sacred = true            #";
-                            File.WriteAllLines(AppSettings, fileAllText);
-                        }
-                        else
-                        {
-                            var fileAllText = File.ReadAllLines(AppSettings);
-                            fileAllText[20] = "# - Minimize the program before launching Sacred = false           #";
-                            File.WriteAllLines(AppSettings, fileAllText);
-                        }
-
-                        if (d)
-                        {
-                            var fileAllText = File.ReadAllLines(AppSettings);
-                            fileAllText[22] = "# - Change the input language before running Sacred = true         #";
-                            File.WriteAllLines(AppSettings, fileAllText);
-                        }
-                        else
-                        {
-                            var fileAllText = File.ReadAllLines(AppSettings);
-                            fileAllText[22] = "# - Change the input language before running Sacred = false        #";
-                            File.WriteAllLines(AppSettings, fileAllText);
-                        }
-
-                        if (e)
-                        {
-                            var fileAllText = File.ReadAllLines(AppSettings);
-                            fileAllText[24] = "# - Close the program after launching Sacred = true                #";
-                            File.WriteAllLines(AppSettings, fileAllText);
-                        }
-                        else
-                        {
-                            var fileAllText = File.ReadAllLines(AppSettings);
-                            fileAllText[24] = "# - Close the program after launching Sacred = false               #";
-                            File.WriteAllLines(AppSettings, fileAllText);
-                        }
-
-                        if (f)
-                        {
-                            var fileAllText = File.ReadAllLines(AppSettings);
-                            fileAllText[26] = "# - Restore Settings.cfg if it is corrupted = true                 #";
-                            File.WriteAllLines(AppSettings, fileAllText);
-                        }
-                        else
-                        {
-                            var fileAllText = File.ReadAllLines(AppSettings);
-                            fileAllText[26] = "# - Restore Settings.cfg if it is corrupted = false                #";
-                            File.WriteAllLines(AppSettings, fileAllText);
-                        }
-
-                        if (g)
-                        {
-                            var fileAllText = File.ReadAllLines(AppSettings);
-                            fileAllText[30] = "# - Enable logging of all actions of the program = true            #";
-                            File.WriteAllLines(AppSettings, fileAllText);
-                        }
-                        else
-                        {
-                            var fileAllText = File.ReadAllLines(AppSettings);
-                            fileAllText[30] = "# - Enable logging of all actions of the program = false           #";
-                            File.WriteAllLines(AppSettings, fileAllText);
-                        }
+                        ChangeApplicationSettings(16,
+                            "# - Automatically get and install updates = true                   #");
                     }
-                    catch (Exception exception)
+                    else
                     {
-                         Log.Error(exception.ToString());
+                        ChangeApplicationSettings(16,
+                            "# - Automatically get and install updates = false                  #");
+                    }
+
+                    if (b)
+                    {
+                        ChangeApplicationSettings(18,
+                            "# - Automatically get and install alpha updates = true             #");
+                    }
+                    else
+                    {
+                        ChangeApplicationSettings(18,
+                            "# - Automatically get and install alpha updates = false            #");
+                    }
+
+                    if (c)
+                    {
+                        ChangeApplicationSettings(20,
+                            "# - Minimize the program before launching Sacred = true            #");
+                    }
+                    else
+                    {
+                        ChangeApplicationSettings(20,
+                            "# - Minimize the program before launching Sacred = false           #");
+                    }
+
+                    if (d)
+                    {
+                        ChangeApplicationSettings(22,
+                            "# - Change the input language before running Sacred = true         #");
+                    }
+                    else
+                    {
+                        ChangeApplicationSettings(22,
+                            "# - Change the input language before running Sacred = false        #");
+                    }
+
+                    if (e)
+                    {
+                        ChangeApplicationSettings(24,
+                            "# - Close the program after launching Sacred = true                #");
+                    }
+                    else
+                    {
+                        ChangeApplicationSettings(24,
+                            "# - Close the program after launching Sacred = false               #");
+                    }
+
+                    if (f)
+                    {
+                        ChangeApplicationSettings(26,
+                            "# - Restore Settings.cfg if it is corrupted = true                 #");
+                    }
+                    else
+                    {
+                        ChangeApplicationSettings(26,
+                            "# - Restore Settings.cfg if it is corrupted = false                #");
+                    }
+
+                    if (g)
+                    {
+                        ChangeApplicationSettings(30,
+                            "# - Enable logging of all actions of the program = true            #");
+                    }
+                    else
+                    {
+                        ChangeApplicationSettings(30,
+                            "# - Enable logging of all actions of the program = false           #");
                     }
                 }
             }
             catch (Exception exception)
             {
-                 Log.Fatal(exception.ToString());
+                 Log.Fatal(exception.ToString()); Environment.Exit(0);
+            }
+        }
+
+        public void ChangeApplicationSettings(int index, string parametr)
+        {
+            try
+            {
+                var readAllLines = File.ReadAllLines(AppSettings);
+                readAllLines[index] = parametr;
+                File.WriteAllLines(AppSettings, readAllLines);
+            }
+            catch (Exception exception)
+            {
+                Log.Error(exception.ToString());
             }
         }
     }

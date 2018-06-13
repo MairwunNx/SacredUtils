@@ -3,7 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" mc:Ignorable="d" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:core="clr-namespace:SacredUtils.Resources.Core" mc:Ignorable="d" 
+        d:DataContext="{d:DesignInstance core:AppStrings}"
         Title="SacredUtils" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" Visibility="Visible" Background="#66000000" ScrollViewer.VerticalScrollBarVisibility="Disabled" Icon="/SacredUtils;component/Resources/Images/icons8_Wet.ico" WindowState="Maximized" Topmost="True" ShowInTaskbar="False" KeyDown="Window_KeyDown" MouseUp="Window_MouseUp">
     <materialDesign:Card x:Name="ColorCrd" VerticalAlignment="Center" Background="White" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" Width="343" Height="304" MouseUp="Card_MouseUp">
         <materialDesign:Card.RenderTransform>
@@ -16,9 +18,9 @@
         </materialDesign:Card.RenderTransform>
 
         <Grid x:Name="ColorGrid">
-            <Label x:Name="ColorLabel" Content="Выберите цвет:" Foreground="#DD404040" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" FontSize="14" Height="27" Margin="15,13,0,0" HorizontalAlignment="Left" Width="125" VerticalAlignment="Top"/>
+            <Label x:Name="ColorLabel" Content="{Binding BindingString0012}" Foreground="#DD404040" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium" FontSize="14" Height="27" Margin="15,13,0,0" HorizontalAlignment="Left" Width="125" VerticalAlignment="Top"/>
 
-            <ToggleButton x:Name="ChangeColorRedToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="33,57,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorRedToggleBtn_Checked">
+                <ToggleButton x:Name="ChangeColorRedToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="33,57,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorRedToggleBtn_Checked">
                 <materialDesign:PackIcon Kind="Circle" Foreground="#f44336" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </ToggleButton>
             <ToggleButton x:Name="ChangeColorPinkToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="88,57,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorPinkToggleBtn_Checked">

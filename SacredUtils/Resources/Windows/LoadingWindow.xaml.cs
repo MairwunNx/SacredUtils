@@ -1,4 +1,12 @@
-﻿namespace SacredUtils.Resources.Windows
+﻿using SacredUtils.Resources.Core;
+
+namespace SacredUtils.Resources.Windows
 {
-    public partial class LoadingWindow { public LoadingWindow() { InitializeComponent(); } }
+    public partial class LoadingWindow
+    {
+        public LoadingWindow()
+        {
+            InitializeComponent(); DataContext = new AppStrings();
+        }
+    }
 }

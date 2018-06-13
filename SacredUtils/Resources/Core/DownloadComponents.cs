@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using SacredUtils.Resources.Windows;
 using System.Net.NetworkInformation;
+using static SacredUtils.Resources.Core.AppStrings;
 using static SacredUtils.Resources.Core.AppConstStrings;
 
 namespace SacredUtils.Resources.Core
@@ -28,9 +29,9 @@ namespace SacredUtils.Resources.Core
 
                     ComponentsWindow componentsWindow = new ComponentsWindow(); CloseSoundWindow();
 
-                    componentsWindow.DownloadPercent01.Content = "Загрузка архивов " + component + " ...";
+                    componentsWindow.DownloadPercent01.Content = $"{String0004} " + component + " ...";
 
-                    componentsWindow.ComponentInstallName.Content = "Выполняется установка компонента" + " | " + component + " |";
+                    componentsWindow.ComponentInstallName.Content = $"{String0005}" + " | " + component + " |";
 
                     WebClient wc = new WebClient();
 
@@ -46,7 +47,7 @@ namespace SacredUtils.Resources.Core
 
                     componentsWindow.DownloadProgress.IsIndeterminate = true;
 
-                    componentsWindow.DownloadPercent01.Content = "Распаковка и установка " + component + " ...";
+                    componentsWindow.DownloadPercent01.Content = $"{String0006} " + component + " ...";
 
                     componentsWindow.DownloadPercent.Content = "NaN%";
 
@@ -108,7 +109,7 @@ namespace SacredUtils.Resources.Core
                 Dictionary<Uri, string> dict = new Dictionary<Uri, string>();
                 dict.Add(new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/cZRhldb-3Xg9fw"), "Temp" + "/" + "soundus.zip");
 
-                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "soundus.zip", "PAK", "soundus.pak", "sound.pak", "Озвучка .US");
+                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "soundus.zip", "PAK", "soundus.pak", "sound.pak", $"{String0002} .US");
             }
 
             if (lang == "de")
@@ -116,7 +117,7 @@ namespace SacredUtils.Resources.Core
                 Dictionary<Uri, string> dict = new Dictionary<Uri, string>();
                 dict.Add(new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/pneWkQ1b3Xg6mG"), "Temp" + "/" + "soundde.zip");
 
-                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "soundde.zip", "PAK", "soundde.pak", "sound.pak", "Озвучка .DE");
+                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "soundde.zip", "PAK", "soundde.pak", "sound.pak", $"{String0002} .DE");
             }
 
             if (lang == "sp")
@@ -124,7 +125,7 @@ namespace SacredUtils.Resources.Core
                 Dictionary<Uri, string> dict = new Dictionary<Uri, string>();
                 dict.Add(new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/maW7dmcv3Xg8cY"), "Temp" + "/" + "soundsp.zip");
 
-                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "soundsp.zip", "PAK", "soundsp.pak", "sound.pak", "Озвучка .SP");
+                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "soundsp.zip", "PAK", "soundsp.pak", "sound.pak", $"{String0002} .SP");
             }
 
             if (lang == "ru")
@@ -132,7 +133,7 @@ namespace SacredUtils.Resources.Core
                 Dictionary<Uri, string> dict = new Dictionary<Uri, string>();
                 dict.Add(new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/MHPKgQql3Xg8Ek"), "Temp" + "/" + "soundru.zip");
 
-                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "soundru.zip", "PAK", "soundru.pak", "sound.pak", "Озвучка .RU");
+                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "soundru.zip", "PAK", "soundru.pak", "sound.pak", $"{String0002} .RU");
             }
 
             if (lang == "rugui")
@@ -140,7 +141,7 @@ namespace SacredUtils.Resources.Core
                 Dictionary<Uri, string> dict = new Dictionary<Uri, string>();
                 dict.Add(new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/sKUKqp3W3XgcFP"), "Temp" + "/" + "globalru.zip");
 
-                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "globalru.zip", "scripts" + "/" + "ru", "globalru.res", "global.res", "Язык GUI .RU");
+                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "globalru.zip", "scripts" + "/" + "ru", "globalru.res", "global.res", $"{String0003} .RU");
             }
 
             if (lang == "usgui")
@@ -148,7 +149,7 @@ namespace SacredUtils.Resources.Core
                 Dictionary<Uri, string> dict = new Dictionary<Uri, string>();
                 dict.Add(new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/1sni8lWA3XgcFo"), "Temp" + "/" + "globalus.zip");
 
-                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "globalus.zip", "scripts" + "/" + "us", "globalus.res", "global.res", "Язык GUI .US");
+                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "globalus.zip", "scripts" + "/" + "us", "globalus.res", "global.res", $"{String0003} .US");
             }
 
             if (lang == "degui")
@@ -156,7 +157,7 @@ namespace SacredUtils.Resources.Core
                 Dictionary<Uri, string> dict = new Dictionary<Uri, string>();
                 dict.Add(new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/ekWsMxz13XgcEr"), "Temp" + "/" + "globalde.zip");
 
-                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "globalde.zip", "scripts" + "/" + "de", "globalde.res", "global.res", "Язык GUI .DE");
+                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "globalde.zip", "scripts" + "/" + "de", "globalde.res", "global.res", $"{String0003} .DE");
             }
 
             if (lang == "spgui")
@@ -164,7 +165,7 @@ namespace SacredUtils.Resources.Core
                 Dictionary<Uri, string> dict = new Dictionary<Uri, string>();
                 dict.Add(new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/5n-Vslep3XgcFb"), "Temp" + "/" + "globalsp.zip");
 
-                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "globalsp.zip", "scripts" + "/" + "sp", "globalsp.res", "global.res", "Язык GUI .SP");
+                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "globalsp.zip", "scripts" + "/" + "sp", "globalsp.res", "global.res", $"{String0003} .SP");
             }
 
             if (lang == "frgui")
@@ -172,7 +173,7 @@ namespace SacredUtils.Resources.Core
                 Dictionary<Uri, string> dict = new Dictionary<Uri, string>();
                 dict.Add(new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/2XGSFLVL3XgcF5"), "Temp" + "/" + "globalfr.zip");
 
-                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "globalfr.zip", "scripts" + "/" + "fr", "globalfr.res", "global.res", "Язык GUI .FR");
+                await DownloadManyFiles(dict, "Temp", "Temp" + "/" + "globalfr.zip", "scripts" + "/" + "fr", "globalfr.res", "global.res", $"{String0003} .FR");
             }
 
             if (lang == "sacred229")

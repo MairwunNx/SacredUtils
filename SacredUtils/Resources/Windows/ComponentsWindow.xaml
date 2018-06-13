@@ -3,7 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:core="clr-namespace:SacredUtils.Resources.Core" mc:Ignorable="d" 
+        d:DataContext="{d:DesignInstance core:AppStrings}"
         Title="SacredUtils" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" Visibility="Visible" Background="#66000000" ScrollViewer.VerticalScrollBarVisibility="Disabled" Icon="/SacredUtils;component/Resources/Images/icons8_Wet.ico" WindowState="Maximized" Topmost="True" ShowInTaskbar="False">
     <materialDesign:Card x:Name="ComponentInstallCard" VerticalAlignment="Center" Background="White" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" Width="412" Height="210">
         <materialDesign:Card.RenderTransform>
@@ -18,13 +20,13 @@
         <Grid x:Name="ColorGrid">
             <Label x:Name="LabelColor" Foreground="#DD404040" Visibility="Hidden" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans Medium"/>
 
-            <Label Content="Установка компонентов." Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="14" Height="27" Margin="15,13,0,0" HorizontalAlignment="Left" Width="186" VerticalAlignment="Top"/>
+            <Label Content="{Binding BindingString0013}" Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="14" Height="27" Margin="15,13,0,0" HorizontalAlignment="Left" Width="186" VerticalAlignment="Top"/>
             <Label x:Name="ComponentInstallName" Content="Выполняется установка компонента  | загрузка ... |" Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="12" Margin="15,0,10,116" Height="26" VerticalAlignment="Bottom"/>
-            <Label x:Name="SpeedDownloadingLbl" Content="Скорость установки, зависит от вашего инетнета. Рекомендуемая скорость 10Mb\s." Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="9" Margin="15,87,0,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="387"/>
+            <Label x:Name="SpeedDownloadingLbl" Content="{Binding BindingString0014}" Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="9" Margin="15,87,0,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="387"/>
             <ProgressBar x:FieldModifier="public" x:Name="DownloadProgress" Height="4" Margin="0,177,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="412" Value="-1" SmallChange="0"/>
-            <Label x:Name="WarningLbl" Content="Во время установки, не выключайте\сворачивайте программу, лучше попейте чай." Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="9" Margin="15,184,0,0" Height="21" VerticalAlignment="Top" HorizontalAlignment="Left" Width="382" HorizontalContentAlignment="Center"/>
+            <Label x:Name="WarningLbl" Content="{Binding BindingString0016}" Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="9" Margin="15,184,0,0" Height="21" VerticalAlignment="Top" HorizontalAlignment="Left" Width="382" HorizontalContentAlignment="Center"/>
             <Label x:Name="DownloadPercent01" Content="Загрузка архивов озвучки..." Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="10" Margin="15,0,176,36" Height="23" VerticalAlignment="Bottom"/>
-            <Label x:Name="lbl1" Content="После установки окно закроется само и вы сможете играть." Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="9" Margin="15,104,0,0" Height="21" VerticalAlignment="Top" HorizontalAlignment="Left" Width="387"/>
+            <Label Content="{Binding BindingString0015}" Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="9" Margin="15,104,0,0" Height="21" VerticalAlignment="Top" HorizontalAlignment="Left" Width="387"/>
             <Label x:Name="DownloadPercent" Content="0%" Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="10" Margin="241,0,15,36" Height="23" VerticalAlignment="Bottom" HorizontalContentAlignment="Right"/>
         </Grid>
     </materialDesign:Card>

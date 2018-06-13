@@ -119,6 +119,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\Core\AppConstStrings.cs" />
+    <Compile Include="Resources\Core\AppStrings.cs" />
     <Compile Include="Resources\Core\CheckAppAlphaUpdates.cs" />
     <Compile Include="Resources\Core\CheckAppLicenseFile.cs" />
     <Compile Include="Resources\Core\CheckAppPdbFile.cs" />

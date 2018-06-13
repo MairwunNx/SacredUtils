@@ -3,6 +3,7 @@ using System.IO;
 using System.Windows;
 using System.Diagnostics;
 using System.Net.NetworkInformation;
+using static SacredUtils.Resources.Core.AppStrings;
 using static SacredUtils.Resources.Core.AppConstStrings;
 
 namespace SacredUtils.Resources.Core
@@ -37,7 +38,7 @@ namespace SacredUtils.Resources.Core
 
                                         ((MainWindow) window).UpdateGrid.Visibility = Visibility.Visible;
 
-                                        ((MainWindow) window).NewVersionLbl.Content = $"Вы обновитесь до версии {appLatestVersion}.";
+                                        ((MainWindow) window).NewVersionLbl.Content = $"{String0001} {appLatestVersion}.";
                                     }
                                 }
 
@@ -47,9 +48,9 @@ namespace SacredUtils.Resources.Core
                             {
                                 CheckAppAlphaUpdates checkAppAlphaUpdates = new CheckAppAlphaUpdates();
 
-                                #pragma warning disable CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
+                                #pragma warning disable CS4014 
                                 checkAppAlphaUpdates.GetAvailableAppUpdatesAsync();
-                                #pragma warning restore CS4014 // Так как этот вызов не ожидается, выполнение существующего метода продолжается до завершения вызова.
+                                #pragma warning restore CS4014
                             }
                         }
                     }

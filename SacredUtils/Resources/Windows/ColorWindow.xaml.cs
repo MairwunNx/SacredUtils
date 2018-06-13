@@ -5,13 +5,14 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using MaterialDesignThemes.Wpf;
+using SacredUtils.Resources.Core;
 using static SacredUtils.Resources.Core.AppConstStrings;
 
 namespace SacredUtils.Resources.Windows
 {
     public partial class ColorWindow
     {
-        public ColorWindow() { InitializeComponent(); LoadColorFromConfig(); }
+        public ColorWindow() { InitializeComponent(); LoadColorFromConfig(); DataContext = new AppStrings(); }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {

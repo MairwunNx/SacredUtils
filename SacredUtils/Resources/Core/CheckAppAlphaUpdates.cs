@@ -3,6 +3,7 @@ using System.IO;
 using System.Windows;
 using System.Diagnostics;
 using System.Net.NetworkInformation;
+using static SacredUtils.Resources.Core.AppStrings;
 using static SacredUtils.Resources.Core.AppConstStrings;
 
 namespace SacredUtils.Resources.Core
@@ -37,7 +38,7 @@ namespace SacredUtils.Resources.Core
 
                                         ((MainWindow)window).UpdateGrid.Visibility = Visibility.Visible;
 
-                                        ((MainWindow)window).NewVersionLbl.Content = $"Вы обновитесь до версии {appLatestVersion}.";
+                                        ((MainWindow)window).NewVersionLbl.Content = $"{String0001} {appLatestVersion}.";
                                     }
                                 }
 
@@ -70,7 +71,7 @@ namespace SacredUtils.Resources.Core
 
             try
             {
-                File.WriteAllBytes(AppTempFolder + "/" + AppUpdaterExe, Properties.Resources.SacredUtilsUpdater);
+                File.WriteAllBytes(AppTempFolder + "\\" + AppUpdaterExe, Properties.Resources.SacredUtilsUpdater);
             }
             catch (Exception exception)
             {

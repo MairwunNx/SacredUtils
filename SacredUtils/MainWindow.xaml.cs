@@ -18,6 +18,7 @@ using SacredUtils.Resources.Core;
 using System.Collections.Generic;
 using SacredUtils.Resources.Windows;
 using System.Text.RegularExpressions;
+using static SacredUtils.Resources.Core.AppStrings;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 using static SacredUtils.Resources.Core.AppConstStrings;
 
@@ -740,7 +741,7 @@ namespace SacredUtils
 
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent(); DataContext = new AppStrings();
 
             var checkAppUpdates = new CheckAppUpdates();
 
@@ -776,38 +777,38 @@ namespace SacredUtils
 
                 if (text.Contains("Veteranmod by ufo installed = true"))
                 {
-                    VeteranModUfoBtn.Content = "УДАЛИТЬ";
+                    VeteranModUfoBtn.Content = $"{String0007}";
                 }
                 else if (text.Contains("Veteranmod by ufo installed = false"))
                 {
-                    VeteranModUfoBtn.Content = "УСТАНОВИТЬ";
+                    VeteranModUfoBtn.Content = $"{String0008}";
                 }
 
                 if (text.Contains("Veteranmod dragonfix installed = true"))
                 {
-                    VeteranModDragonFixBtn.Content = "УДАЛИТЬ";
+                    VeteranModDragonFixBtn.Content = $"{String0007}";
                 }
                 else if (text.Contains("Veteranmod dragonfix installed = false"))
                 {
-                    VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
+                    VeteranModDragonFixBtn.Content = $"{String0008}";
                 }
 
                 if (text.Contains("Sacred 2.29.14 patch installed = true"))
                 {
-                    SacredNewUpdateBtn.Content = "УДАЛИТЬ";
+                    SacredNewUpdateBtn.Content = $"{String0007}";
                 }
                 else if (text.Contains("Sacred 2.29.14 patch installed = false"))
                 {
-                    SacredNewUpdateBtn.Content = "УСТАНОВИТЬ";
+                    SacredNewUpdateBtn.Content = $"{String0008}";
                 }
 
                 if (text.Contains("Server multicore fix installed = true"))
                 {
-                    ServerMulticoreFixBtn.Content = "УДАЛИТЬ";
+                    ServerMulticoreFixBtn.Content = $"{String0007}";
                 }
                 else if (text.Contains("Server multicore fix installed = false"))
                 {
-                    ServerMulticoreFixBtn.Content = "УСТАНОВИТЬ";
+                    ServerMulticoreFixBtn.Content = $"{String0008}";
                 }
             }
             else if (!File.Exists(AppDataFolder + "/" + AppInstallInfo))
@@ -823,8 +824,8 @@ namespace SacredUtils
                      Log.Error(exception.ToString());
                 }
 
-                VeteranModUfoBtn.Content = "УСТАНОВИТЬ"; VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
-                SacredNewUpdateBtn.Content = "УСТАНОВИТЬ"; ServerMulticoreFixBtn.Content = "УСТАНОВИТЬ";
+                VeteranModUfoBtn.Content = $"{String0008}"; VeteranModDragonFixBtn.Content = $"{String0008}";
+                SacredNewUpdateBtn.Content = $"{String0008}"; ServerMulticoreFixBtn.Content = $"{String0008}";
             }
 
             if (File.Exists(AppDataFolder + "/" + AppStatistic))
@@ -1153,7 +1154,7 @@ namespace SacredUtils
 
         private void VeteranModUfoBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (VeteranModUfoBtn.Content.ToString() == "УСТАНОВИТЬ")
+            if (VeteranModUfoBtn.Content.ToString() == $"{String0008}")
             {
                 Directory.CreateDirectory("bin"); Directory.CreateDirectory("PAK");
 
@@ -1193,10 +1194,10 @@ namespace SacredUtils
                         Log.Error(exception.ToString());
                     }
 
-                    VeteranModUfoBtn.Content = "УДАЛИТЬ"; VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
+                    VeteranModUfoBtn.Content = $"{String0007}"; VeteranModDragonFixBtn.Content = $"{String0008}";
                 }
             }
-            else if (VeteranModUfoBtn.Content.ToString() == "УДАЛИТЬ")
+            else if (VeteranModUfoBtn.Content.ToString() == $"{String0007}")
             {
                 Directory.CreateDirectory("bin"); Directory.CreateDirectory("PAK");
 
@@ -1236,14 +1237,14 @@ namespace SacredUtils
                         Log.Error(exception.ToString());
                     }
 
-                    VeteranModUfoBtn.Content = "УСТАНОВИТЬ"; VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
+                    VeteranModUfoBtn.Content = $"{String0008}"; VeteranModDragonFixBtn.Content = $"{String0008}";
                 }
             }
         }
         
         private void VeteranModDragonFixBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (VeteranModDragonFixBtn.Content.ToString() == "УСТАНОВИТЬ")
+            if (VeteranModDragonFixBtn.Content.ToString() == $"{String0008}")
             {
                 Directory.CreateDirectory("bin"); Directory.CreateDirectory("PAK");
 
@@ -1283,10 +1284,10 @@ namespace SacredUtils
                         Log.Error(exception.ToString());
                     }
 
-                    VeteranModUfoBtn.Content = "УСТАНОВИТЬ"; VeteranModDragonFixBtn.Content = "УДАЛИТЬ";
+                    VeteranModUfoBtn.Content = $"{String0008}"; VeteranModDragonFixBtn.Content = $"{String0007}";
                 }
             }
-            else if (VeteranModDragonFixBtn.Content.ToString() == "УДАЛИТЬ")
+            else if (VeteranModDragonFixBtn.Content.ToString() == $"{String0007}")
             {
                 Directory.CreateDirectory("bin"); Directory.CreateDirectory("PAK");
 
@@ -1326,14 +1327,14 @@ namespace SacredUtils
                         Log.Error(exception.ToString());
                     }
 
-                    VeteranModUfoBtn.Content = "УСТАНОВИТЬ"; VeteranModDragonFixBtn.Content = "УСТАНОВИТЬ";
+                    VeteranModUfoBtn.Content = $"{String0008}"; VeteranModDragonFixBtn.Content = $"{String0008}";
                 }
             }
         }
 
         private async void SacredNewUpdateBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (SacredNewUpdateBtn.Content.ToString() == "УСТАНОВИТЬ")
+            if (SacredNewUpdateBtn.Content.ToString() == $"{String0008}")
             {
                 try
                 {
@@ -1366,10 +1367,10 @@ namespace SacredUtils
                         Log.Error(exception.ToString());
                     }
 
-                    SacredNewUpdateBtn.Content = "УДАЛИТЬ";
+                    SacredNewUpdateBtn.Content = $"{String0007}";
                 }
             }
-            else if (SacredNewUpdateBtn.Content.ToString() == "УДАЛИТЬ")
+            else if (SacredNewUpdateBtn.Content.ToString() == $"{String0007}")
             {
                 try
                 {
@@ -1402,14 +1403,14 @@ namespace SacredUtils
                         Log.Error(exception.ToString());
                     }
 
-                    SacredNewUpdateBtn.Content = "УСТАНОВИТЬ";
+                    SacredNewUpdateBtn.Content = $"{String0008}";
                 }
             }
         }
 
         private async void ServerMulticoreFixBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (ServerMulticoreFixBtn.Content.ToString() == "УСТАНОВИТЬ")
+            if (ServerMulticoreFixBtn.Content.ToString() == $"{String0008}")
             {
                 try
                 {
@@ -1442,10 +1443,10 @@ namespace SacredUtils
                         Log.Error(exception.ToString());
                     }
 
-                    ServerMulticoreFixBtn.Content = "УДАЛИТЬ";
+                    ServerMulticoreFixBtn.Content = $"{String0007}";
                 }
             }
-            else if (ServerMulticoreFixBtn.Content.ToString() == "УДАЛИТЬ")
+            else if (ServerMulticoreFixBtn.Content.ToString() == $"{String0007}")
             {
                 try
                 {
@@ -1478,14 +1479,14 @@ namespace SacredUtils
                         Log.Error(exception.ToString());
                     }
 
-                    ServerMulticoreFixBtn.Content = "УСТАНОВИТЬ";
+                    ServerMulticoreFixBtn.Content = $"{String0008}";
                 }
             }
         }
 
         private void CompileGlobalResBtn_Click(object sender, RoutedEventArgs e)
         {
-            CompileGlobalResBtn.Content = "В ПРОЦЕССЕ";
+            CompileGlobalResBtn.Content = String0009;
 
             if (File.Exists("global.res") && File.Exists("global.csv"))
             {
@@ -1495,7 +1496,7 @@ namespace SacredUtils
 
                     Process.Start("Sacredres2Csv.exe", "-res -oglobal.res global.csv");
 
-                    CompileGlobalResBtn.Content = "ЗАВЕРШЕНО";
+                    CompileGlobalResBtn.Content = String0010;
                 }
                 catch (Exception exception)
                 {
@@ -1504,15 +1505,13 @@ namespace SacredUtils
             }
             else
             {
-                CompileGlobalResBtn.Content = "ОШИБКА";
-
-                Log.Error("Файл Global.res (Русский) или global.csv не найден. Переустановите игру. Операция отменяется.");
+                CompileGlobalResBtn.Content = String0011;
             }
         }
 
         private void DecompileGlobalResBtn_Click(object sender, RoutedEventArgs e)
         {
-            DecompileGlobalResBtn.Content = "В ПРОЦЕССЕ";
+            DecompileGlobalResBtn.Content = String0009;
 
             if (File.Exists("global.res"))
             {
@@ -1522,7 +1521,7 @@ namespace SacredUtils
 
                     Process.Start("Sacredres2Csv.exe", "-csv -oglobal.csv global.res");
 
-                    DecompileGlobalResBtn.Content = "ЗАВЕРШЕНО";
+                    DecompileGlobalResBtn.Content = String0010;
                 }
                 catch (Exception exception)
                 {
@@ -1531,9 +1530,7 @@ namespace SacredUtils
             }
             else
             {
-                DecompileGlobalResBtn.Content = "ОШИБКА";
-
-                Log.Error("Файл Global.res (Русский) не найден. Переустановите игру. Операция отменяется.");
+                DecompileGlobalResBtn.Content = String0011;
             }
         }
 
