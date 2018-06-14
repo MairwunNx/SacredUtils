@@ -3,12 +3,12 @@ using System.IO;
 using System.Net;
 using System.Windows.Forms;
 
-namespace SacredUtils.Resources.bin 
+namespace SacredUtils.Resources.bin
 {
     public class AncillaryConstsStrings
     {
         public const string AppSettings = "Settings.su";
-        
+
         public const string AppStatistic = "launchstat.dat";
 
         public const string AppInstallInfo = "installinfo.dat";
@@ -25,7 +25,7 @@ namespace SacredUtils.Resources.bin
 
         public const string AppReleaseVersion = "1.2R Rv4 B6 (070618)";
 
-        public const string AppAlphaVersion = "1.2A Rv4 B7 (140618)";
+        public const string AppAlphaVersion = "﻿1.2A Rv4 B7 (140618)";
 
         public const string AppColorValue = "User interface color SacredUtils";
 
