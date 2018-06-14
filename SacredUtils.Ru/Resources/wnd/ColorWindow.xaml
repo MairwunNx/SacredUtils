@@ -1,0 +1,86 @@
+﻿<Window x:Class="SacredUtils.Resources.wnd.ColorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:bin="clr-namespace:SacredUtils.Resources.bin" mc:Ignorable="d" 
+        d:DataContext="{d:DesignInstance bin:BindingLanguageStrings}"
+        Title="SacredUtils" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" Visibility="Visible" Background="#66000000" ScrollViewer.VerticalScrollBarVisibility="Disabled" Icon="/SacredUtils;component/Resources/img/icons8_Gas.ico" WindowState="Maximized" Topmost="True" ShowInTaskbar="False" KeyDown="Window_KeyDown" MouseUp="Window_MouseUp">
+    <materialDesign:Card x:Name="ColorCrd" VerticalAlignment="Center" Background="White" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" Width="343" Height="304" MouseUp="Card_MouseUp">
+        <materialDesign:Card.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                <SkewTransform/>
+                <RotateTransform/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </materialDesign:Card.RenderTransform>
+
+        <Grid x:Name="ColorGrid">
+            <Label x:Name="ColorLabel" Content="{Binding BindingString0012}" Foreground="#DD404040" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" FontSize="14" Height="27" Margin="15,13,0,0" HorizontalAlignment="Left" Width="125" VerticalAlignment="Top"/>
+
+                <ToggleButton x:Name="ChangeColorRedToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="33,57,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorRedToggleBtn_Checked">
+                <materialDesign:PackIcon Kind="Circle" Foreground="#f44336" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ChangeColorPinkToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="88,57,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorPinkToggleBtn_Checked">
+                <materialDesign:PackIcon Kind="Circle" Foreground="#e91e63" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ChangeColorPurpleToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="143,57,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorPurpleToggleBtn_Checked">
+                <materialDesign:PackIcon Kind="Circle" Foreground="#9c27b0" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ChangeColorDeppPurpleToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="198,57,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChengeColorDeppPurpleToggleBtn_Checked">
+                <materialDesign:PackIcon Kind="Circle" Foreground="#673ab7" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ChangeColorIndigoToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="253,57,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorIndigoToggleBtn_Checked">
+                <materialDesign:PackIcon Kind="Circle" Foreground="#3f51b5" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ChangeColorLimeToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="88,167,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorLimeToggleBtn_Checked">
+                <materialDesign:PackIcon Kind="Circle" Foreground="#cddc39" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ChangeColorYellowToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="143,167,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorYellowToggleBtn_Checked">
+                <materialDesign:PackIcon Kind="Circle" Foreground="#ffeb3b" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ChangeColorBlueToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="33,112,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorBlueToggleBtn_Checked">
+                <materialDesign:PackIcon Kind="Circle" Foreground="#2196f3" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ChangeColorLightBlueToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="88,112,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorLightBlueToggleBtn_Checked">
+                <materialDesign:PackIcon Kind="Circle" Foreground="#03a9f4" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ChangeColorCyanToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="143,112,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorCyanToggleBtn_Checked">
+                <materialDesign:PackIcon Kind="Circle" Foreground="#00bcd4" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ChangeColorTealToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="198,112,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorTealToggleBtn_Checked">
+                <materialDesign:PackIcon Kind="Circle" Foreground="#009688" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ChangeColorGreenToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="253,112,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorGreenToggleBtn_Checked">
+                <materialDesign:PackIcon Kind="Circle" Foreground="#4caf50" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ChangeColorAmberToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="198,167,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorAmberToggleBtn_Checked">
+                <materialDesign:PackIcon Kind="Circle" Foreground="#ffc107" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ChangeColorOrangeToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="253,167,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorOrangeToggleBtn_Checked">
+                <materialDesign:PackIcon Kind="Circle" Foreground="#ff9800" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ChangeColorLightGreenToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="33,167,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorLightGreenToggleBtn_Checked">
+                <materialDesign:PackIcon Kind="Circle" Foreground="#8bc34a" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ChangeColorDeepOrangeToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="33,222,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorDeepOrangeToggleBtn_Checked">
+                <materialDesign:PackIcon Kind="Circle" Foreground="#ff5722" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ChangeColorBrownToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="88,222,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorBrownToggleBtn_Checked">
+                <materialDesign:PackIcon Kind="Circle" Foreground="#795548" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ChangeColorGrayToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="143,222,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorGrayToggleBtn_Checked">
+                <materialDesign:PackIcon Kind="Circle" Foreground="#9e9e9e" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ChangeColorBlueGreyToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="198,222,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorBlueGreyToggleBtn_Checked">
+                <materialDesign:PackIcon Kind="Circle" Foreground="#607d8b" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ChangeColorBlackToggleBtn" Style="{StaticResource MaterialDesignFlatToggleButton}" Margin="253,222,0,0" Width="51" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ChangeColorBlackToggleBtn_Checked">
+                <materialDesign:PackIcon Kind="Circle" Foreground="#212121" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </ToggleButton>
+        </Grid>
+    </materialDesign:Card>
+
+</Window>
