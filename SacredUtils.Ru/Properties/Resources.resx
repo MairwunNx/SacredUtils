@@ -142,9 +142,6 @@
   <data name="SacredRes2Csv" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\opt\SacredRes2Csv.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="SacredUtilsUpdater" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\opt\SacredUtilsUpdater.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="SacredUtils_exe" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\etc\SacredUtils.exe.config;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -165,5 +162,8 @@
   </data>
   <data name="notise" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\etc\notise.txt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SacredUtilsUpdater" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\opt\SacredUtilsUpdater.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

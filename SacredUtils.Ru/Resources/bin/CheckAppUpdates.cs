@@ -3,6 +3,7 @@ using System.IO;
 using System.Windows;
 using System.Diagnostics;
 using System.Net.NetworkInformation;
+using System.Threading.Tasks;
 using static SacredUtils.Resources.bin.AncillaryConstsStrings;
 using static SacredUtils.Resources.bin.LanguageConstsStrings;
 
@@ -12,7 +13,7 @@ namespace SacredUtils.Resources.bin
     {
         private readonly bool _connect = NetworkInterface.GetIsNetworkAvailable();
         
-        public async System.Threading.Tasks.Task GetAvailableAppUpdatesAsync()
+        public async Task GetAvailableAppUpdatesAsync()
         {
             var fileText = File.ReadAllText(AppSettings);
 
@@ -66,11 +67,11 @@ namespace SacredUtils.Resources.bin
             }
         }
 
-        public async System.Threading.Tasks.Task GetSacredUtilsUpdateAsync()
+        public async Task GetSacredUtilsUpdateAsync()
         {
             try
             {
-                Directory.CreateDirectory(AppTempFolder);
+                 Directory.CreateDirectory(AppTempFolder);
             }
             catch (Exception exception)
             {
@@ -79,7 +80,7 @@ namespace SacredUtils.Resources.bin
 
             try
             {
-                File.WriteAllBytes(AppTempFolder + "/" + AppUpdaterExe, Properties.Resources.SacredUtilsUpdater);
+                await Task.Run(() => File.WriteAllBytes(AppTempFolder + "/" + AppUpdaterExe, Properties.Resources.SacredUtilsUpdater));
             }
             catch (Exception exception)
             {
@@ -99,7 +100,7 @@ namespace SacredUtils.Resources.bin
 
             try
             {
-                Process.Start(AppTempFolder + "\\" + AppUpdaterExe, "_newVersionSacredUtilsTemp.exe " + Appname);
+                 Process.Start(AppTempFolder + "\\" + AppUpdaterExe, "_newVersionSacredUtilsTemp.exe " + Appname);
             }
             catch (Exception exception)
             {
@@ -108,7 +109,7 @@ namespace SacredUtils.Resources.bin
 
             try
             {
-                Process.GetCurrentProcess().Kill();
+                 Process.GetCurrentProcess().Kill();
             }
             catch (Exception exception)
             {

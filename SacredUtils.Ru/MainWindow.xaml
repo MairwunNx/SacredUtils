@@ -7,9 +7,6 @@
         xmlns:bin="clr-namespace:SacredUtils.Resources.bin" mc:Ignorable="d" 
         d:DataContext="{d:DesignInstance bin:BindingLanguageStrings}"
         Title="SacredUtils" Height="752" Width="986" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}" Icon="Resources/img/icons8_Gas.ico" Loaded="Window_Loaded" KeyDown="Window_KeyDown">
-    <Window.DataContext>
-        <bin:BindingLanguageStrings/>
-    </Window.DataContext>
     <Grid MouseDown="Grid_MouseDown">
         <Grid.RowDefinitions>
             <RowDefinition Height="24"/>
