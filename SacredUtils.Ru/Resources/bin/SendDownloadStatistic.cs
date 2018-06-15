@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Win32;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Windows.Media.Effects;
 using static SacredUtils.Resources.bin.AncillaryConstsStrings;
 
 namespace SacredUtils.Resources.bin
@@ -15,34 +16,33 @@ namespace SacredUtils.Resources.bin
         {
             try
             {
-                var currentUser = Registry.CurrentUser;
-                var subKey = currentUser.OpenSubKey("SacredUtils .Statistic");
-                var first = subKey?.GetValue("downloads").ToString(); subKey?.Close();
+                var reg = Registry.CurrentUser.OpenSubKey("Software\\SacredUtils\\Ru\\", true);
 
-                if (first == "true")
+                if (reg == null)
                 {
-                    try
-                    {
-                        subKey.SetValue("downloads", "false"); subKey.Close();
-                    }
-                    catch (Exception exception)
-                    {
-                        Log.Error(exception.ToString());
-                    }
+                    var key = Registry.CurrentUser.CreateSubKey("Software\\SacredUtils\\Ru", true);
+
+                    key.SetValue("Downloaded", "false"); key.Close();
 
                     await GetFileDownloadStatisticAsync();
+                }
+
+                if (reg != null)
+                {
+                    var key = Registry.CurrentUser.CreateSubKey("Software\\SacredUtils\\Ru", true);
+                    var keyValue = key.GetValue("Downloaded").ToString(); key.Close();
+
+                    if (keyValue == "true")
+                    {
+                        key.SetValue("Downloaded", "false"); key.Close();
+
+                        await GetFileDownloadStatisticAsync();
+                    }
                 }
             }
             catch (Exception exception)
             {
-                Log.Warn(exception.ToString());
-
-                var currentUser = Registry.CurrentUser;
-                var subKey = currentUser.CreateSubKey("SacredUtils .Statistic");
-
-                subKey?.SetValue("downloads", "false"); subKey?.Close();
-
-                await GetFileDownloadStatisticAsync();
+                Log.Error(exception.ToString());
             }
         }
 
