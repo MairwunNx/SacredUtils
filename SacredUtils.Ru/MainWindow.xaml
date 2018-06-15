@@ -7,7 +7,7 @@
         xmlns:bin="clr-namespace:SacredUtils.Resources.bin" mc:Ignorable="d" 
         d:DataContext="{d:DesignInstance bin:BindingLanguageStrings}"
         Title="SacredUtils" Height="752" Width="986" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}" Icon="Resources/img/icons8_Gas.ico" Loaded="Window_Loaded" KeyDown="Window_KeyDown">
-    <Grid MouseDown="Grid_MouseDown">
+    <Grid MouseDown="Grid_MouseDown" MinWidth="986" MinHeight="752" Width="986" Height="752">
         <Grid.RowDefinitions>
             <RowDefinition Height="24"/>
             <RowDefinition Height="364"/>

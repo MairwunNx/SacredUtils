@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using SacredUtils.Resources.wnd;
 using System.Net.NetworkInformation;
+using System.Threading;
 using static SacredUtils.Resources.bin.AncillaryConstsStrings;
 using static SacredUtils.Resources.bin.LanguageConstsStrings;
 
@@ -17,17 +18,21 @@ namespace SacredUtils.Resources.bin
     {
         private readonly bool _connect = NetworkInterface.GetIsNetworkAvailable();
 
+        private int _attemps;
+        
         public async Task DownloadManyFiles(Dictionary<Uri, string> files, string neededDirectory, string file, string extractFolder, string oldFile, string newFile, string component)
         {
+            retry:
+
             if (_connect)
             {
+                ComponentsWindow componentsWindow = new ComponentsWindow(); CloseSoundWindow();
+
                 try
                 {
                     Directory.CreateDirectory(neededDirectory); Directory.CreateDirectory(extractFolder);
 
                     if (File.Exists(extractFolder + "/" + newFile)) { File.Delete(extractFolder + "/" + newFile); }
-
-                    ComponentsWindow componentsWindow = new ComponentsWindow(); CloseSoundWindow();
 
                     componentsWindow.DownloadPercent01.Content = $"{String0004} " + component + " ...";
 
@@ -55,7 +60,30 @@ namespace SacredUtils.Resources.bin
                 }
                 catch (Exception exception)
                 {
-                    Log.Fatal(exception.ToString()); Environment.Exit(0);
+                    Log.Error(exception.ToString());
+                    
+                    _attemps++;
+
+                    if (_attemps == 4)
+                    {
+                        Log.Fatal(exception.ToString());
+
+                        componentsWindow.Label001.Visibility = Visibility.Visible;
+                        componentsWindow.Label002.Visibility = Visibility.Hidden;
+                        componentsWindow.Label000.Visibility = Visibility.Hidden;
+                        componentsWindow.DownloadProgress.Visibility = Visibility.Hidden;
+                        componentsWindow.ComponentInstallName.Visibility = Visibility.Hidden;
+                        componentsWindow.DownloadPercent01.Visibility = Visibility.Hidden;
+                        componentsWindow.DownloadPercent.Visibility = Visibility.Hidden;
+                        componentsWindow.SpeedDownloadingLbl.Visibility = Visibility.Hidden;
+                        componentsWindow.WarningLbl.Visibility = Visibility.Hidden;
+
+                        Thread.Sleep(10000);
+
+                        CloseSoundWindow();
+                    }
+
+                    goto retry;
                 }
             }
         }

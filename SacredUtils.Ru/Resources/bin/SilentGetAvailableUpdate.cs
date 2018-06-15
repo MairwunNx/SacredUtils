@@ -1,13 +1,6 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
-using System.Windows;
-using System.Net.NetworkInformation;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Threading;
 using static SacredUtils.Resources.bin.AncillaryConstsStrings;
-using static SacredUtils.Resources.bin.LanguageConstsStrings;
 
 namespace SacredUtils.Resources.bin
 {

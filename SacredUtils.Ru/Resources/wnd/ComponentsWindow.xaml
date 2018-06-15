@@ -20,14 +20,15 @@
         <Grid x:Name="ColorGrid">
             <Label x:Name="LabelColor" Foreground="#DD404040" Visibility="Hidden" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium"/>
 
-            <Label Content="{Binding BindingString0013}" Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="14" Height="27" Margin="15,13,0,0" HorizontalAlignment="Left" Width="186" VerticalAlignment="Top"/>
+            <Label x:Name="Label002" Content="{Binding BindingString0013}" Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="14" Height="27" Margin="15,13,0,0" HorizontalAlignment="Left" Width="186" VerticalAlignment="Top"/>
             <Label x:Name="ComponentInstallName" Content="Выполняется установка компонента  | загрузка ... |" Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="12" Margin="15,0,10,116" Height="26" VerticalAlignment="Bottom"/>
             <Label x:Name="SpeedDownloadingLbl" Content="{Binding BindingString0014}" Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="9" Margin="15,87,0,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="387"/>
             <ProgressBar x:FieldModifier="public" x:Name="DownloadProgress" Height="4" Margin="0,177,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="412" Value="-1" SmallChange="0"/>
             <Label x:Name="WarningLbl" Content="{Binding BindingString0016}" Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="9" Margin="15,184,0,0" Height="21" VerticalAlignment="Top" HorizontalAlignment="Left" Width="382" HorizontalContentAlignment="Center"/>
             <Label x:Name="DownloadPercent01" Content="Загрузка архивов озвучки..." Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="10" Margin="15,0,176,36" Height="23" VerticalAlignment="Bottom"/>
-            <Label Content="{Binding BindingString0015}" Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="9" Margin="15,104,0,0" Height="21" VerticalAlignment="Top" HorizontalAlignment="Left" Width="387"/>
+            <Label x:Name="Label000" Content="{Binding BindingString0015}" Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="9" Margin="15,104,0,0" Height="21" VerticalAlignment="Top" HorizontalAlignment="Left" Width="387"/>
             <Label x:Name="DownloadPercent" Content="0%" Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="10" Margin="241,0,15,36" Height="23" VerticalAlignment="Bottom" HorizontalContentAlignment="Right"/>
+            <Label x:Name="Label001" Content="{Binding BindingString0135}" Foreground="{Binding Foreground, ElementName=LabelColor}" FontFamily="{Binding FontFamily, ElementName=LabelColor}" FontSize="14" Height="27" Margin="10,93,0,0" HorizontalAlignment="Left" Width="392" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Visibility="Hidden"/>
         </Grid>
     </materialDesign:Card>
 </Window>
