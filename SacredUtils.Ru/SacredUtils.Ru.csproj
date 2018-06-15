@@ -133,6 +133,7 @@
     <Compile Include="Resources\bin\CheckAppTempFiles.cs" />
     <Compile Include="Resources\bin\SendDownloadStatistic.cs" />
     <Compile Include="Resources\bin\Logger.cs" />
+    <Compile Include="Resources\bin\SilentGetAvailableUpdate.cs" />
     <Compile Include="Resources\wnd\ColorWindow.xaml.cs">
       <DependentUpon>ColorWindow.xaml</DependentUpon>
     </Compile>

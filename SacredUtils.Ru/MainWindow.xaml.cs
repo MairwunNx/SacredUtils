@@ -16,8 +16,10 @@ using System.Windows.Media;
 using System.Windows.Controls;
 using SacredUtils.Resources.bin;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
 using SacredUtils.Resources.wnd;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using static SacredUtils.Resources.bin.AncillaryConstsStrings;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 using static SacredUtils.Resources.bin.LanguageConstsStrings;
@@ -746,7 +748,7 @@ namespace SacredUtils
             var checkAppUpdates = new CheckAppUpdates();
 
             #pragma warning disable 4014
-            checkAppUpdates.GetAvailableAppUpdatesAsync();
+            checkAppUpdates.GetAvailableAppUpdatesAsync("none");
             #pragma warning restore 4014
 
             var getAppSettings = new GetAppSettings();
@@ -856,8 +858,10 @@ namespace SacredUtils
             }
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
+
+
             try
             {
                 InstalledFontCollection installedFonts = new InstalledFontCollection();
@@ -1051,6 +1055,23 @@ namespace SacredUtils
                 catch (Exception exception)
                 {
                     Log.Error(exception.ToString());
+                }
+            }
+
+            if (AutomaticalyInstallUpdates.IsChecked == false)
+            {
+                SilentUpdateLbl.Visibility = Visibility.Visible;
+
+                var silentGetAvailableUpdate = new SilentGetAvailableUpdate();
+                await Task.Run(() => silentGetAvailableUpdate.GetAvailableUpdate());
+
+                if (SilentAvailableUpdate)
+                {
+                    SilentUpdateLbl.Content = $"{String0134} {SilentUpdateNewVer}.";
+                }
+                else if (!SilentAvailableUpdate)
+                {
+                    SilentUpdateLbl.Visibility = Visibility.Hidden;
                 }
             }
         }
@@ -1691,5 +1712,23 @@ namespace SacredUtils
         private void GitHubBtn_Click(object sender, RoutedEventArgs e) => Process.Start("https://github.com/MairwunNx/SacredUtils/");
 
         #endregion
+
+        private async void SilentUpdateLbl_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ChangeConfiguration(16,
+                "# - Automatically get and install updates = true                   #",
+                "Automatically get and install updates",
+                "true");
+
+            SilentUpdateLbl.Visibility = Visibility.Hidden;
+
+            var checkAppUpdates = new CheckAppUpdates();
+            await checkAppUpdates.GetAvailableAppUpdatesAsync("silent");
+
+            ChangeConfiguration(16,
+                "# - Automatically get and install updates = false                  #",
+                "Automatically get and install updates",
+                "false");
+        }
     }
 }

@@ -125,5 +125,6 @@ namespace SacredUtils.Resources.bin
         public string BindingString0131 => String0131;
         public string BindingString0132 => String0132;
         public string BindingString0133 => String0133;
+        public string BindingString0134 => String0134;
     }
 }

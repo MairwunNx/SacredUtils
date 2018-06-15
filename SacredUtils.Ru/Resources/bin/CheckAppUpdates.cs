@@ -12,8 +12,8 @@ namespace SacredUtils.Resources.bin
     public class CheckAppUpdates
     {
         private readonly bool _connect = NetworkInterface.GetIsNetworkAvailable();
-        
-        public async Task GetAvailableAppUpdatesAsync()
+
+        public async Task GetAvailableAppUpdatesAsync(string type)
         {
             var fileText = File.ReadAllText(AppSettings);
 
@@ -43,7 +43,7 @@ namespace SacredUtils.Resources.bin
                                     }
                                 }
 
-                                await GetSacredUtilsUpdateAsync();
+                                await GetSacredUtilsUpdateAsync(type);
                             }
                             else
                             {
@@ -66,8 +66,8 @@ namespace SacredUtils.Resources.bin
                  Log.Error(exception.ToString());
             }
         }
-
-        public async Task GetSacredUtilsUpdateAsync()
+        
+        public async Task GetSacredUtilsUpdateAsync(string type)
         {
             try
             {
@@ -100,7 +100,16 @@ namespace SacredUtils.Resources.bin
 
             try
             {
-                 Process.Start(AppTempFolder + "\\" + AppUpdaterExe, "_newVersionSacredUtilsTemp.exe " + Appname);
+                if (type == "silent")
+                {
+                    var mainWindow = new MainWindow();
+                    mainWindow.ChangeConfiguration(16,
+                        "# - Automatically get and install updates = false                  #",
+                        "Automatically get and install updates",
+                        "false");
+                }
+
+                Process.Start(AppTempFolder + "\\" + AppUpdaterExe, "_newVersionSacredUtilsTemp.exe " + Appname);
             }
             catch (Exception exception)
             {

@@ -137,5 +137,6 @@
         public const string String0131 = "Установка обновления.";
         public const string String0132 = "Мы думаем это не займет много времени.";
         public const string String0133 = "Вы обновитесь до версии : Error FxE01.";
+        public const string String0134 = "Доступно обновление :";
     }
 }

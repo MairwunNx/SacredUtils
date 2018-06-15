@@ -28,6 +28,10 @@ namespace SacredUtils.Resources.bin
         public const string AppAlphaVersion = "1.2A Rv4 B7 (150618)";
 
         public const string AppColorValue = "User interface color SacredUtils";
+        
+        public static bool SilentAvailableUpdate = false;
+
+        public static string SilentUpdateNewVer = "";
 
         public static readonly ILog Log = LogManager.GetLogger("LOGGER");
         public static readonly string Appname = Path.GetFileName(Application.ExecutablePath);
