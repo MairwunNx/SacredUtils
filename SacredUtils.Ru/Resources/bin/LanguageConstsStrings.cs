@@ -24,7 +24,7 @@
         public const string String0017 = "Загрузка программы.";
         public const string String0018 = "Загрузка компонентов и фоновая проверка файлов.";
         public const string String0019 = "Честно, займет максимум секунды 2 - 4.";
-        public const string String0020 = "SacredUtils (Alpha 4).";
+        public const string String0020 = "SacredUtils (Alpha 5).";
         public const string String0021 = "Выбор настроек.";
         public const string String0022 = "Настройки.";
         public const string String0023 = "< Выберите, что бы вы хотели настроить. />";
@@ -125,7 +125,7 @@
         public const string String0119 = "Закрыть программу до запуска Sacred.";
         public const string String0120 = "Восстанавливать Settings.cfg если он поврежден.";
         public const string String0121 = "Логировать ошибки программы.";
-        public const string String0122 = "Сборка #7, Версия 1.2A Rv4 B7 (140618)";
+        public const string String0122 = "Сборка #7, Версия 1.2A Rv4 B7 (150618)";
         public const string String0123 = "Liquid2Win. Apache 2.0. 2018.";
         public const string String0124 = "Copyright 2018 MairwunNx Лицензировано согласно Лицензии Apache, Версия 2.0 (Лицензия);";
         public const string String0125 = "вы можете использовать этот файл только в соответствии с Лицензией.";

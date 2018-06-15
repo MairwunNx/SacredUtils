@@ -5,7 +5,6 @@ using System.Text;
 using Microsoft.Win32;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
-using System.Windows.Media.Effects;
 using static SacredUtils.Resources.bin.AncillaryConstsStrings;
 
 namespace SacredUtils.Resources.bin
