@@ -4,12 +4,14 @@ using static SacredUtils.Resources.bin.AncillaryConstsStrings;
 
 namespace SacredUtils.Resources.bin
 {
-    internal class CheckAppLicenseFile
+    public class CreateImportantFiles
     {
-        public void GetAvailableLicenseFile()
+        public void CreateFiles()
         {
             try
             {
+                File.WriteAllBytes($"{AppNameWithoutExtension}.pdb", Properties.Resources.SacredUtils);
+                File.WriteAllBytes($"{Appname}.config", Properties.Resources.SacredUtils_exe);
                 File.WriteAllBytes("license.txt", Properties.Resources.license);
                 File.WriteAllBytes("notise.txt", Properties.Resources.notise);
             }

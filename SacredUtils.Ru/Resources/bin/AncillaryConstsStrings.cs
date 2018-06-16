@@ -35,7 +35,7 @@ namespace SacredUtils.Resources.bin
 
         public static readonly ILog Log = LogManager.GetLogger("LOGGER");
         public static readonly string Appname = Path.GetFileName(Application.ExecutablePath);
-        public static readonly string AppNameExtension = Path.GetFileNameWithoutExtension(Appname);
+        public static readonly string AppNameWithoutExtension = Path.GetFileNameWithoutExtension(Appname);
         public static readonly WebClient Wc = new WebClient();
     }
 }

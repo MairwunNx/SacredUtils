@@ -122,10 +122,8 @@
     <Compile Include="Resources\bin\LanguageConstsStrings.cs" />
     <Compile Include="Resources\bin\BindingLanguageStrings.cs" />
     <Compile Include="Resources\bin\CheckAppAlphaUpdates.cs" />
-    <Compile Include="Resources\bin\CheckAppLicenseFile.cs" />
-    <Compile Include="Resources\bin\CheckAppDebugDbFile.cs" />
-    <Compile Include="Resources\bin\CheckLogConfiguration.cs" />
-    <Compile Include="Resources\bin\CheckAppConfiguration.cs" />
+    <Compile Include="Resources\bin\CreateImportantFiles.cs" />
+    <Compile Include="Resources\bin\CheckAvailableConfigs.cs" />
     <Compile Include="Resources\bin\CheckAppUpdates.cs" />
     <Compile Include="Resources\bin\DownloadComponents.cs" />
     <Compile Include="Resources\bin\GetAppSettings.cs" />

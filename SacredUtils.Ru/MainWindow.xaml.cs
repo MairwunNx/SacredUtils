@@ -13,13 +13,12 @@ using System.Globalization;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Threading.Tasks;
 using System.Windows.Controls;
 using SacredUtils.Resources.bin;
 using System.Collections.Generic;
-using System.Runtime.Remoting.Messaging;
 using SacredUtils.Resources.wnd;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using static SacredUtils.Resources.bin.AncillaryConstsStrings;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 using static SacredUtils.Resources.bin.LanguageConstsStrings;
@@ -30,22 +29,58 @@ namespace SacredUtils
 {
     public partial class MainWindow
     {
-        #region SacredUtilsWindowButtonHandlers.
+        #region NotifyBarControls.
 
         private void CloseBtn_Click(object sender, RoutedEventArgs e)
         {
-             Environment.Exit(0);
+            Environment.Exit(0);
         }
 
         private void MinimizeBtn_Click(object sender, RoutedEventArgs e)
         {
-             WindowState = WindowState.Minimized;
+            WindowState = WindowState.Minimized;
         }
+
+        private async void SilentUpdateLbl_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ChangeConfiguration(16,
+                "# - Automatically get and install updates = true                   #",
+                "Automatically get and install updates",
+                "true");
+
+            SilentUpdateLbl.Visibility = Visibility.Hidden;
+
+            var checkAppUpdates = new CheckAppUpdates();
+            await checkAppUpdates.GetAvailableAppUpdatesAsync("silent");
+
+            ChangeConfiguration(16,
+                "# - Automatically get and install updates = false                  #",
+                "Automatically get and install updates",
+                "false");
+        }
+
+        #endregion
+
+        #region ToolBarControls.
 
         private void ChangeColor_Click(object sender, RoutedEventArgs e)
         {
             var colorPicker = new ColorWindow(); colorPicker.Show();
         }
+
+        private void GitHubBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://github.com/MairwunNx/SacredUtils/");
+        }
+
+        private void Forum_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://t-do.ru/sacredinternational");
+        }
+
+        #endregion
+
+        #region FlexibleSpaceControls.
 
         public void ChangeSettingsCategory(UIElement element)
         {
@@ -169,9 +204,14 @@ namespace SacredUtils
             }
         }
 
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left) { DragMove(); }
+        }
+
         #endregion
 
-        #region SacredUnderworldSetValueMethods.
+        #region SetValueMethods.
 
         public void SetSettingsValue(string s, string v)
         {
@@ -191,11 +231,11 @@ namespace SacredUtils
 
             for (int i = 0; i < text.Length; i++)
             {
-                if (text[i].Contains(s + " : "))
+                if (text[i].Contains($"{s} : "))
                 {
                     try
                     {
-                        text[i] = s + " : " + v; File.WriteAllLines(SacredSettings, text);
+                        text[i] = $"{s} : {v}"; File.WriteAllLines(SacredSettings, text);
                     }
                     catch (Exception exception)
                     {
@@ -255,11 +295,11 @@ namespace SacredUtils
 
             for (int i = 0; i < text.Length; i++)
             {
-                if (text[i].Contains(s + " : "))
+                if (text[i].Contains($"{s} : "))
                 {
                     try
                     {
-                        text[i] = s + " : " + v; File.WriteAllLines(SacredSettings, text);
+                        text[i] = $"{s} : {v}"; File.WriteAllLines(SacredSettings, text);
                     }
                     catch (Exception exception)
                     {
@@ -271,7 +311,7 @@ namespace SacredUtils
 
         #endregion
 
-        #region SacredUnderworldTxBoxEventHandlers.
+        #region TextBoxEventHandlers.
 
         private void GfxStartupTxBox_KeyUp(object sender, KeyEventArgs e)
         {
@@ -315,7 +355,7 @@ namespace SacredUtils
 
         #endregion
 
-        #region SacredUnderworldToggleButtonEventHandlers.
+        #region ToggleButtonEventHandlers.
 
         private void FsaaFilterToggleBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -466,7 +506,7 @@ namespace SacredUtils
 
         #endregion
 
-        #region SacredUnderworldComboboxEventHandlers.
+        #region ComboboxEventHandlers.
 
         private void DetailLevelCmbBox_DropDownClosed(object sender, EventArgs e)
         {
@@ -481,9 +521,9 @@ namespace SacredUtils
         {
             if (InterfaceLanguageCmbBox.SelectedIndex == 0)
             {
-                if (File.Exists("scripts" + "/" + "ru" + "/" + "global.res"))
+                if (File.Exists("scripts\\ru\\global.res"))
                 {
-                    File.Delete("scripts" + "/" + "ru" + "/" + "global.res");
+                    File.Delete("scripts\\ru\\global.res");
 
                     var soundWindow = new ComponentsWindow(); soundWindow.Show();
 
@@ -492,9 +532,9 @@ namespace SacredUtils
 
                     SetSettingsValue("LANGUAGE", "RU");
                 }
-                else if (!File.Exists("scripts" + "/" + "ru" + "/" + "global.res"))
+                else if (!File.Exists("scripts\\ru\\global.res"))
                 {
-                    Directory.CreateDirectory("scripts" + "/" + "ru");
+                    Directory.CreateDirectory("scripts\\ru");
 
                     var soundWindow = new ComponentsWindow(); soundWindow.Show();
 
@@ -507,9 +547,9 @@ namespace SacredUtils
 
             if (InterfaceLanguageCmbBox.SelectedIndex == 1)
             {
-                if (File.Exists("scripts" + "/" + "us" + "/" + "global.res"))
+                if (File.Exists("scripts\\us\\global.res"))
                 {
-                    File.Delete("scripts" + "/" + "us" + "/" + "global.res");
+                    File.Delete("scripts\\us\\global.res");
 
                     var soundWindow = new ComponentsWindow(); soundWindow.Show();
 
@@ -518,9 +558,9 @@ namespace SacredUtils
 
                     SetSettingsValue("LANGUAGE", "US");
                 }
-                else if (!File.Exists("scripts" + "/" + "us" + "/" + "global.res"))
+                else if (!File.Exists("scripts\\us\\global.res"))
                 {
-                    Directory.CreateDirectory("scripts" + "/" + "us");
+                    Directory.CreateDirectory("scripts\\us");
 
                     var soundWindow = new ComponentsWindow(); soundWindow.Show();
 
@@ -533,9 +573,9 @@ namespace SacredUtils
 
             if (InterfaceLanguageCmbBox.SelectedIndex == 2)
             {
-                if (File.Exists("scripts" + "/" + "de" + "/" + "global.res"))
+                if (File.Exists("scripts\\de\\global.res"))
                 {
-                    File.Delete("scripts" + "/" + "de" + "/" + "global.res");
+                    File.Delete("scripts\\de\\global.res");
 
                     var soundWindow = new ComponentsWindow(); soundWindow.Show();
 
@@ -544,9 +584,9 @@ namespace SacredUtils
 
                     SetSettingsValue("LANGUAGE", "DE");
                 }
-                else if (!File.Exists("scripts" + "/" + "de" + "/" + "global.res"))
+                else if (!File.Exists("scripts\\de\\global.res"))
                 {
-                    Directory.CreateDirectory("scripts" + "/" + "de");
+                    Directory.CreateDirectory("scripts\\de");
 
                     var soundWindow = new ComponentsWindow(); soundWindow.Show();
 
@@ -559,9 +599,9 @@ namespace SacredUtils
 
             if (InterfaceLanguageCmbBox.SelectedIndex == 3)
             {
-                if (File.Exists("scripts" + "/" + "sp" + "/" + "global.res"))
+                if (File.Exists("scripts\\sp\\global.res"))
                 {
-                    File.Delete("scripts" + "/" + "sp" + "/" + "global.res");
+                    File.Delete("scripts\\sp\\global.res");
 
                     var soundWindow = new ComponentsWindow(); soundWindow.Show();
 
@@ -570,9 +610,9 @@ namespace SacredUtils
 
                     SetSettingsValue("LANGUAGE", "SP");
                 }
-                else if (!File.Exists("scripts" + "/" + "sp" + "/" + "global.res"))
+                else if (!File.Exists("scripts\\sp\\global.res"))
                 {
-                    Directory.CreateDirectory("scripts" + "/" + "sp");
+                    Directory.CreateDirectory("scripts\\sp");
 
                     var soundWindow = new ComponentsWindow(); soundWindow.Show();
 
@@ -585,9 +625,9 @@ namespace SacredUtils
 
             if (InterfaceLanguageCmbBox.SelectedIndex == 4)
             {
-                if (File.Exists("scripts" + "/" + "fr" + "/" + "global.res"))
+                if (File.Exists("scripts\\fr\\global.res"))
                 {
-                    File.Delete("scripts" + "/" + "fr" + "/" + "global.res");
+                    File.Delete("scripts\\fr\\global.res");
 
                     var soundWindow = new ComponentsWindow(); soundWindow.Show();
 
@@ -596,9 +636,9 @@ namespace SacredUtils
 
                     SetSettingsValue("LANGUAGE", "FR");
                 }
-                else if (!File.Exists("scripts" + "/" + "fr" + "/" + "global.res"))
+                else if (!File.Exists("scripts\\fr\\global.res"))
                 {
-                    Directory.CreateDirectory("scripts" + "/" + "fr");
+                    Directory.CreateDirectory("scripts\\fr");
 
                     var soundWindow = new ComponentsWindow(); soundWindow.Show();
 
@@ -685,7 +725,7 @@ namespace SacredUtils
 
         #endregion
 
-        #region SacredUnderworldSliderEventHandlers.
+        #region SliderEventHandlers.
 
         private void MinimapAlphaSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<Double> e)
         {
@@ -739,7 +779,7 @@ namespace SacredUtils
 
         #endregion
 
-        #region SacredUtilsWindowMethodsAndHandlers.
+        #region WindowMethodsAndHandlers.
 
         public MainWindow()
         {
@@ -860,8 +900,6 @@ namespace SacredUtils
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
-
             try
             {
                 InstalledFontCollection installedFonts = new InstalledFontCollection();
@@ -1164,14 +1202,9 @@ namespace SacredUtils
             }
         }
 
-        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.ChangedButton == MouseButton.Left) { DragMove(); }
-        }
-
         #endregion
 
-        #region SacredUtilsModdingButtonEventHandlers.
+        #region ModdingButtonEventHandlers.
 
         private void VeteranModUfoBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -1181,7 +1214,7 @@ namespace SacredUtils
 
                 try
                 {
-                    File.WriteAllBytes(@"bin" + "/" + "balance.bin", Properties.Resources.SacredBalanceVeteran);
+                    File.WriteAllBytes("bin\\balance.bin", Properties.Resources.SacredBalanceVeteran);
                 }
                 catch (Exception exception)
                 {
@@ -1190,7 +1223,7 @@ namespace SacredUtils
 
                 try
                 {
-                    File.WriteAllBytes(@"PAK" + "/" + "creature.pak", Properties.Resources.SacredCreatureVeteran);
+                    File.WriteAllBytes("PAK\\creature.pak", Properties.Resources.SacredCreatureVeteran);
                 }
                 catch (Exception exception)
                 {
@@ -1203,12 +1236,12 @@ namespace SacredUtils
                 {
                     try
                     {
-                        var fileAllText = File.ReadAllLines(AppDataFolder + "/" + AppInstallInfo);
+                        var fileAllText = File.ReadAllLines($"{AppDataFolder}\\{AppInstallInfo}");
 
                         fileAllText[3] = "; Veteranmod by ufo installed = true";
                         fileAllText[4] = "; Veteranmod dragonfix installed = false";
 
-                        File.WriteAllLines(AppDataFolder + "/" + AppInstallInfo, fileAllText);
+                        File.WriteAllLines($"{AppDataFolder}\\{AppInstallInfo}", fileAllText);
                     }
                     catch (Exception exception)
                     {
@@ -1224,7 +1257,7 @@ namespace SacredUtils
 
                 try
                 {
-                    File.WriteAllBytes(@"bin" + "/" + "balance.bin", Properties.Resources.SacredBalanceVanilla);
+                    File.WriteAllBytes("bin\\balance.bin", Properties.Resources.SacredBalanceVanilla);
                 }
                 catch (Exception exception)
                 {
@@ -1233,7 +1266,7 @@ namespace SacredUtils
 
                 try
                 {
-                    File.WriteAllBytes(@"PAK" + "/" + "creature.pak", Properties.Resources.SacredCreatureVanilla);
+                    File.WriteAllBytes("PAK\\creature.pak", Properties.Resources.SacredCreatureVanilla);
                 }
                 catch (Exception exception)
                 {
@@ -1242,16 +1275,16 @@ namespace SacredUtils
 
                 Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists(AppDataFolder + "/" + AppInstallInfo))
+                if (File.Exists($"{AppDataFolder}\\{AppInstallInfo}"))
                 {
                     try
                     {
-                        var fileAllText = File.ReadAllLines(AppDataFolder + "/" + AppInstallInfo);
+                        var fileAllText = File.ReadAllLines($"{AppDataFolder}\\{AppInstallInfo}");
 
                         fileAllText[3] = "; Veteranmod by ufo installed = false";
                         fileAllText[4] = "; Veteranmod dragonfix installed = false";
 
-                        File.WriteAllLines(AppDataFolder + "/" + AppInstallInfo, fileAllText);
+                        File.WriteAllLines($"{AppDataFolder}\\{AppInstallInfo}", fileAllText);
                     }
                     catch (Exception exception)
                     {
@@ -1271,7 +1304,7 @@ namespace SacredUtils
 
                 try
                 {
-                    File.WriteAllBytes(@"bin" + "/" + "balance.bin", Properties.Resources.SacredBalanceDragonFix);
+                    File.WriteAllBytes("bin\\balance.bin", Properties.Resources.SacredBalanceDragonFix);
                 }
                 catch (Exception exception)
                 {
@@ -1280,7 +1313,7 @@ namespace SacredUtils
 
                 try
                 {
-                    File.WriteAllBytes(@"PAK" + "/" + "creature.pak", Properties.Resources.SacredCreatureDragonFix);
+                    File.WriteAllBytes("PAK\\creature.pak", Properties.Resources.SacredCreatureDragonFix);
                 }
                 catch (Exception exception)
                 {
@@ -1289,16 +1322,16 @@ namespace SacredUtils
 
                 Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists(AppDataFolder + "/" + AppInstallInfo))
+                if (File.Exists($"{AppDataFolder}\\{AppInstallInfo}"))
                 {
                     try
                     {
-                        var fileAllText = File.ReadAllLines(AppDataFolder + "/" + AppInstallInfo);
+                        var fileAllText = File.ReadAllLines($"{AppDataFolder}\\{AppInstallInfo}");
 
                         fileAllText[3] = "; Veteranmod by ufo installed = false";
                         fileAllText[4] = "; Veteranmod dragonfix installed = true";
 
-                        File.WriteAllLines(AppDataFolder + "/" + AppInstallInfo, fileAllText);
+                        File.WriteAllLines($"{AppDataFolder}\\{AppInstallInfo}", fileAllText);
                     }
                     catch (Exception exception)
                     {
@@ -1314,7 +1347,7 @@ namespace SacredUtils
 
                 try
                 {
-                    File.WriteAllBytes(@"bin" + "/" + "balance.bin", Properties.Resources.SacredBalanceVanilla);
+                    File.WriteAllBytes("bin\\balance.bin", Properties.Resources.SacredBalanceVanilla);
                 }
                 catch (Exception exception)
                 {
@@ -1323,7 +1356,7 @@ namespace SacredUtils
 
                 try
                 {
-                    File.WriteAllBytes(@"PAK" + "/" + "creature.pak", Properties.Resources.SacredCreatureVanilla);
+                    File.WriteAllBytes("PAK\\creature.pak", Properties.Resources.SacredCreatureVanilla);
                 }
                 catch (Exception exception)
                 {
@@ -1332,16 +1365,16 @@ namespace SacredUtils
 
                 Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists(AppDataFolder + "/" + AppInstallInfo))
+                if (File.Exists($"{AppDataFolder}\\{AppInstallInfo}"))
                 {
                     try
                     {
-                        var fileAllText = File.ReadAllLines(AppDataFolder + "/" + AppInstallInfo);
+                        var fileAllText = File.ReadAllLines($"{AppDataFolder}\\{AppInstallInfo}");
 
                         fileAllText[3] = "; Veteranmod by ufo installed = false";
                         fileAllText[4] = "; Veteranmod dragonfix installed = false";
 
-                        File.WriteAllLines(AppDataFolder + "/" + AppInstallInfo, fileAllText);
+                        File.WriteAllLines($"{AppDataFolder}\\{AppInstallInfo}", fileAllText);
                     }
                     catch (Exception exception)
                     {
@@ -1373,15 +1406,15 @@ namespace SacredUtils
 
                 Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists(AppDataFolder + "/" + AppInstallInfo))
+                if (File.Exists($"{AppDataFolder}\\{AppInstallInfo}"))
                 {
                     try
                     {
-                        var fileAllText = File.ReadAllLines(AppDataFolder + "/" + AppInstallInfo);
+                        var fileAllText = File.ReadAllLines($"{AppDataFolder}\\{AppInstallInfo}");
 
                         fileAllText[5] = "; Sacred 2.29.14 patch installed = true";
 
-                        File.WriteAllLines(AppDataFolder + "/" + AppInstallInfo, fileAllText);
+                        File.WriteAllLines($"{AppDataFolder}\\{AppInstallInfo}", fileAllText);
                     }
                     catch (Exception exception)
                     {
@@ -1409,15 +1442,15 @@ namespace SacredUtils
 
                 Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists(AppDataFolder + "/" + AppInstallInfo))
+                if (File.Exists($"{AppDataFolder}\\{AppInstallInfo}"))
                 {
                     try
                     {
-                        var fileAllText = File.ReadAllLines(AppDataFolder + "/" + AppInstallInfo);
+                        var fileAllText = File.ReadAllLines($"{AppDataFolder}\\{AppInstallInfo}");
 
                         fileAllText[5] = "; Sacred 2.29.14 patch installed = false";
 
-                        File.WriteAllLines(AppDataFolder + "/" + AppInstallInfo, fileAllText);
+                        File.WriteAllLines($"{AppDataFolder}\\{AppInstallInfo}", fileAllText);
                     }
                     catch (Exception exception)
                     {
@@ -1449,15 +1482,15 @@ namespace SacredUtils
 
                 Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists(AppDataFolder + "/" + AppInstallInfo))
+                if (File.Exists($"{AppDataFolder}\\{AppInstallInfo}"))
                 {
                     try
                     {
-                        var fileAllText = File.ReadAllLines(AppDataFolder + "/" + AppInstallInfo);
+                        var fileAllText = File.ReadAllLines($"{AppDataFolder}\\{AppInstallInfo}");
 
                         fileAllText[6] = "; Server multicore fix installed = true";
 
-                        File.WriteAllLines(AppDataFolder + "/" + AppInstallInfo, fileAllText);
+                        File.WriteAllLines($"{AppDataFolder}\\{AppInstallInfo}", fileAllText);
                     }
                     catch (Exception exception)
                     {
@@ -1485,15 +1518,15 @@ namespace SacredUtils
 
                 Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists(AppDataFolder + "/" + AppInstallInfo))
+                if (File.Exists($"{AppDataFolder}\\{AppInstallInfo}"))
                 {
                     try
                     {
-                        var fileAllText = File.ReadAllLines(AppDataFolder + "/" + AppInstallInfo);
+                        var fileAllText = File.ReadAllLines($"{AppDataFolder}\\{AppInstallInfo}");
 
                         fileAllText[6] = "; Server multicore fix installed = false";
 
-                        File.WriteAllLines(AppDataFolder + "/" + AppInstallInfo, fileAllText);
+                        File.WriteAllLines($"{AppDataFolder}\\{AppInstallInfo}", fileAllText);
                     }
                     catch (Exception exception)
                     {
@@ -1557,7 +1590,7 @@ namespace SacredUtils
 
         #endregion
 
-        #region SacredUtilsSettingsButtonEventHandlers.
+        #region SettingsButtonEventHandlers.
 
         public void ChangeConfiguration(int index, string text, string func, string state)
         {
@@ -1701,34 +1734,23 @@ namespace SacredUtils
 
         #endregion
 
-        #region SacredUtilsAboutButtonEventHandlers.
+        #region AboutButtonEventHandlers.
 
-        private void FeedBackBtn_Click(object sender, RoutedEventArgs e) => Process.Start("https://vk.cc/85SSFN");
+        private void FeedBackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://vk.cc/85SSFN");
+        }
 
-        private void CreatorBtn_Click(object sender, RoutedEventArgs e) => Process.Start("https://vk.cc/85SSXC");
+        private void CreatorBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://vk.cc/85SSXC");
+        }
 
-        private void DonateBtn_Click(object sender, RoutedEventArgs e) => Process.Start("https://qiwi.me/mairwunnx");
-
-        private void GitHubBtn_Click(object sender, RoutedEventArgs e) => Process.Start("https://github.com/MairwunNx/SacredUtils/");
+        private void DonateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://qiwi.me/mairwunnx");
+        }
 
         #endregion
-
-        private async void SilentUpdateLbl_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            ChangeConfiguration(16,
-                "# - Automatically get and install updates = true                   #",
-                "Automatically get and install updates",
-                "true");
-
-            SilentUpdateLbl.Visibility = Visibility.Hidden;
-
-            var checkAppUpdates = new CheckAppUpdates();
-            await checkAppUpdates.GetAvailableAppUpdatesAsync("silent");
-
-            ChangeConfiguration(16,
-                "# - Automatically get and install updates = false                  #",
-                "Automatically get and install updates",
-                "false");
-        }
     }
 }

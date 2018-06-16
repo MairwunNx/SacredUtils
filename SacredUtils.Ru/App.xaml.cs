@@ -14,25 +14,19 @@ namespace SacredUtils
             var loadingWindow = new LoadingWindow(); loadingWindow.Show();
             loadingWindow.InitializeComponent();
 
+            var checkAppTempFiles = new CheckAppTempFiles();
+            checkAppTempFiles.CheckAvailableTempFiles();
+
             Task.Run(() => Logger.InitLogger());
-
-            var checkAppPdbFile = new CheckAppDebugDbFile();
-            Task.Run(() => checkAppPdbFile.GetAvailablePdbFile());
-
-            var checkAppLicenseFile = new CheckAppLicenseFile();
-            Task.Run(() => checkAppLicenseFile.GetAvailableLicenseFile());
-
-            var checkLogConfiguration = new CheckLogConfiguration();
-            Task.Run(() => checkLogConfiguration.GetAvailableLogConfig());
+            
+            var createImportantFiles = new CreateImportantFiles();
+            Task.Run(() => createImportantFiles.CreateFiles());
 
             var sendDownloadStatistic = new SendDownloadStatistic();
             Task.Run(() => sendDownloadStatistic.CheckFirstInstallAsync());
 
-            var checkAppConfiguration = new CheckAppConfiguration();
+            var checkAppConfiguration = new CheckAvailableConfigs();
             checkAppConfiguration.GetAvailableAppConfig();
-
-            var checkAppTempFiles = new CheckAppTempFiles();
-            checkAppTempFiles.CheckAvailableTempFiles();
         }
     }
 }

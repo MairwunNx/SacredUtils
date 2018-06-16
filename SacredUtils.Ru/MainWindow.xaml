@@ -58,6 +58,10 @@
             <materialDesign:PackIcon Kind="Git" Foreground="{Binding Foreground, ElementName=FlexibleSpaceElementColor}" Height="25" Width="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Button>
 
+        <Button x:Name="Forum" Grid.Row="1" Height="50" Style="{StaticResource MaterialDesignToolForegroundButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,10,116,304" VerticalAlignment="Center" HorizontalAlignment="Right" Width="50" materialDesign:RippleAssist.RippleSizeMultiplier="0.7" materialDesign:RippleAssist.IsCentered="True" Click="Forum_Click">
+            <materialDesign:PackIcon Kind="Forum" Foreground="{Binding Foreground, ElementName=FlexibleSpaceElementColor}" Height="25" Width="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
+
         <Grid x:Name="SettingsGrid" Row="1" RowSpan="2">
             <materialDesign:Card VerticalAlignment="Top" HorizontalAlignment="Left" Padding="300,156,99,-58" Margin="107,104,0,0" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="162" Height="544" Background="{Binding Background, ElementName=CardBackgroundColor}" />
             <materialDesign:Card VerticalAlignment="Top" HorizontalAlignment="Right" Padding="300,156,99,-58" Margin="0,104,107,0" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="592" Height="544" Background="{Binding Background, ElementName=CardBackgroundColor}"/>

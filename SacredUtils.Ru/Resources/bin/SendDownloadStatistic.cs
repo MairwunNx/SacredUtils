@@ -9,7 +9,7 @@ using static SacredUtils.Resources.bin.AncillaryConstsStrings;
 
 namespace SacredUtils.Resources.bin
 {
-    internal class SendDownloadStatistic
+    public class SendDownloadStatistic
     {
         public async Task CheckFirstInstallAsync()
         {
@@ -23,7 +23,7 @@ namespace SacredUtils.Resources.bin
 
                     key.SetValue("Downloaded", "false"); key.Close();
 
-                    await GetFileDownloadStatisticAsync();
+                    await GetFileStatisticAsync();
                 }
 
                 if (reg != null)
@@ -35,7 +35,7 @@ namespace SacredUtils.Resources.bin
                     {
                         key.SetValue("Downloaded", "false"); key.Close();
 
-                        await GetFileDownloadStatisticAsync();
+                        await GetFileStatisticAsync();
                     }
                 }
             }
@@ -45,7 +45,7 @@ namespace SacredUtils.Resources.bin
             }
         }
 
-        public async Task GetFileDownloadStatisticAsync()
+        public async Task GetFileStatisticAsync()
         {
             try
             {
@@ -62,12 +62,12 @@ namespace SacredUtils.Resources.bin
 
                 Directory.CreateDirectory(AppDataFolder);
 
-                using (Stream fileStream = File.Create(AppDataFolder + "/" + "downloadstat.dat"))
+                using (Stream fileStream = File.Create($"{AppDataFolder}\\downloadstat.dat"))
                 {
                     responseStream.CopyTo(fileStream);
                 }
 
-                reader.Close(); response.Close(); await SetValueFileStatisticAsync();
+                reader.Close(); response.Close(); await SetValueStatisticAsync();
             }
             catch (Exception exception)
             {
@@ -75,21 +75,21 @@ namespace SacredUtils.Resources.bin
             }
         }
 
-        public async Task SetValueFileStatisticAsync()
+        public async Task SetValueStatisticAsync()
         {
             try
             {
-                var text = File.ReadAllText(AppDataFolder + "/" + "downloadstat.dat");
+                var text = File.ReadAllText($"{AppDataFolder}\\downloadstat.dat");
 
                 var numberOfStartups = Regex.Match(text, @"\d+").Value;
 
                 var newNumberOfStartups = Convert.ToInt32(numberOfStartups) + 1;
 
-                var fileAllText = File.ReadAllLines(AppDataFolder + "/" + "downloadstat.dat");
-                fileAllText[0] = "; The program is downloaded " + newNumberOfStartups + " time(s)";
-                File.WriteAllLines(AppDataFolder + "/" + "downloadstat.dat", fileAllText, Encoding.UTF8);
+                var fileAllText = File.ReadAllLines($"{AppDataFolder}\\downloadstat.dat");
+                fileAllText[0] = $"; The program is downloaded {newNumberOfStartups} time(s)";
+                File.WriteAllLines($"{AppDataFolder}\\downloadstat.dat", fileAllText, Encoding.UTF8);
 
-                await SendFileDownloadStatisticAsync();
+                await SendFileStatisticAsync();
             }
             catch (Exception exception)
             {
@@ -97,7 +97,7 @@ namespace SacredUtils.Resources.bin
             }
         }
 
-        public async Task SendFileDownloadStatisticAsync()
+        public async Task SendFileStatisticAsync()
         {
             try
             {
@@ -107,7 +107,7 @@ namespace SacredUtils.Resources.bin
 
                 await Task.Run(() => request.Credentials = new NetworkCredential("mairwunnxstatistic", "11317151PleaseNotChange"));
 
-                StreamReader sourceStream = await Task.Run(() => new StreamReader(AppDataFolder + "/" + "downloadstat.dat"));
+                StreamReader sourceStream = await Task.Run(() => new StreamReader($"{AppDataFolder}\\downloadstat.dat"));
                 byte[] fileContents = await Task.Run(() => Encoding.UTF8.GetBytes(sourceStream.ReadToEnd()));
                 sourceStream.Close(); request.ContentLength = fileContents.Length;
 
