@@ -13,11 +13,11 @@
                  GlowBrush="{DynamicResource AccentColorBrush}"
                  d:DataContext="{d:DesignInstance bin:BindingLanguageStrings}"
                  Title="SacredUtils" Height="752" Width="986" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}" Icon="Resources/img/icons8_Gas.ico" Loaded="Window_Loaded" KeyDown="Window_KeyDown">
-    <Grid MouseDown="Grid_MouseDown" MinWidth="986" MinHeight="752" Width="986" Height="752">
+    <Grid MouseDown="Grid_MouseDown" MinHeight="752" MaxHeight="752" MinWidth="986" MaxWidth="986">
         <Grid.RowDefinitions>
-            <RowDefinition Height="24"/>
-            <RowDefinition Height="364"/>
-            <RowDefinition Height="363"/>
+            <RowDefinition Height="25" MinHeight="24" MaxHeight="24"/>
+            <RowDefinition Height="364" MinHeight="364" MaxHeight="364"/>
+            <RowDefinition Height="363" MinHeight="363" MaxHeight="364"/>
         </Grid.RowDefinitions>
 
         <Label x:Name="FlexibleSpaceElementColor" Foreground="White" Grid.Row="0" Visibility="Hidden"/>
@@ -28,9 +28,9 @@
 
         <Label x:Name="CardCaptionsColor" Foreground="#DD404040" Grid.Row="0" Visibility="Hidden"/>
 
-        <materialDesign:Card x:Name="CardBackgroundColor" Background="#FFFFFFFF" Grid.Row="0" Visibility="Hidden"/>
+        <materialDesign:Card x:Name="CardBackgroundColor" Background="#FFFFFFFF" Grid.Row="0" Visibility="Hidden" Height="0"/>
 
-        <ComboBox Grid.Row="1" Visibility="Hidden" x:Name="ColorCombobox" Background="White" Foreground="Black"/>
+        <ComboBox Grid.Row="1" Visibility="Hidden" x:Name="ColorCombobox" Background="White" Foreground="Black" Height="28" Margin="0,168"/>
 
         <TextBox Grid.Row="1" Visibility="Hidden" x:Name="ColorTxBox" Foreground="Black"/>
 
@@ -52,7 +52,7 @@
             <materialDesign:PackIcon Kind="Circle" Foreground="{Binding Foreground, ElementName=ToolSpaceElementColor}" Height="10" Width="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Button>
 
-        <Label x:Name="SilentUpdateLbl" Content="..." Grid.Row="0" Foreground="{Binding Foreground, ElementName=FlexibleSpaceElementColor}" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Margin="10,-2,0,361" Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand" Height="30" FontSize="13" Visibility="Hidden" MouseDown="SilentUpdateLbl_MouseDown"/>
+        <Label x:Name="SilentUpdateLbl" Content="..." Grid.Row="0" Foreground="{Binding Foreground, ElementName=FlexibleSpaceElementColor}" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Margin="10,-2,0,361" Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand" Height="30" FontSize="13" Visibility="Hidden" MouseDown="SilentUpdateLbl_MouseDown" Width="20"/>
 
         <Label Content="{Binding BindingString0020}" Grid.Row="1" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" FontSize="20" Foreground="{Binding Foreground, ElementName=FlexibleSpaceElementColor}" Margin="29,16,700,313" TextOptions.TextHintingMode="Animated"/>
 
