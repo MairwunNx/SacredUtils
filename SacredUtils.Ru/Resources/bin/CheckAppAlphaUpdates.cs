@@ -45,12 +45,20 @@ namespace SacredUtils.Resources.bin
 
                                 await GetSacredUtilsUpdateAsync();
                             }
+                            else
+                            {
+                                UpdateProcess = false;
+                            }
                         }
                     }
                     catch (Exception exception)
                     {
                         Log.Error(exception.ToString());
                     }
+                }
+                else
+                {
+                    UpdateProcess = false;
                 }
             }
             catch (Exception exception)

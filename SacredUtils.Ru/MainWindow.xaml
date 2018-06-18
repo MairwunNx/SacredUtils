@@ -52,7 +52,7 @@
             <materialDesign:PackIcon Kind="Circle" Foreground="{Binding Foreground, ElementName=ToolSpaceElementColor}" Height="10" Width="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Button>
 
-        <Label x:Name="SilentUpdateLbl" Content="..." Grid.Row="0" Foreground="{Binding Foreground, ElementName=FlexibleSpaceElementColor}" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Margin="10,-2,0,361" Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand" Height="30" FontSize="13" Visibility="Hidden" MouseDown="SilentUpdateLbl_MouseDown" Width="20"/>
+        <Label x:Name="SilentUpdateLbl" Content="..." Grid.Row="0" Foreground="{Binding Foreground, ElementName=FlexibleSpaceElementColor}" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Margin="10,-2,0,361" Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand" Height="30" FontSize="13" MouseDown="SilentUpdateLbl_MouseDown" Width="372" Visibility="Hidden"/>
 
         <Label Content="{Binding BindingString0020}" Grid.Row="1" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" FontSize="20" Foreground="{Binding Foreground, ElementName=FlexibleSpaceElementColor}" Margin="29,16,700,313" TextOptions.TextHintingMode="Animated"/>
 

@@ -28,8 +28,18 @@ namespace SacredUtils.Resources.bin
         public const string AppAlphaVersion = "1.2A Rv4 B7 (150618)";
 
         public const string AppColorValue = "User interface color SacredUtils";
+
+        public const string AppCurrentVersion = "1.2A Rv4 B7 (180618)";
+
+        public static string Msg = "";
         
+        public static string Caption = "";
+
+        public static bool Changes = false;
+
         public static bool SilentAvailableUpdate = false;
+
+        public static bool UpdateProcess = true;
 
         public static string SilentUpdateNewVer = "";
 

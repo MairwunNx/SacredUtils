@@ -60,6 +60,10 @@ namespace SacredUtils.Resources.bin
                          Log.Error(exception.ToString());
                     }
                 }
+                else
+                {
+                    UpdateProcess = false;
+                }
             }
             catch (Exception exception)
             {

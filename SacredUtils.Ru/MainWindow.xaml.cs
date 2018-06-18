@@ -1112,6 +1112,14 @@ namespace SacredUtils
                     SilentUpdateLbl.Visibility = Visibility.Hidden;
                 }
             }
+
+            var changeLogShow = new ChangeLogShow();
+            await Task.Run(() => changeLogShow.CheckLaunchedVersion());
+
+            if (Changes)
+            {
+                FlexibleMessageBox.Show(Msg, Caption);
+            }
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
