@@ -3,7 +3,13 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Windows;
 using System.Windows.Forms;
+using Clipboard = System.Windows.Forms.Clipboard;
+using FontStyle = System.Drawing.FontStyle;
+using Point = System.Drawing.Point;
+using Size = System.Drawing.Size;
+using SystemFonts = System.Drawing.SystemFonts;
 
 namespace SacredUtils.Resources.bin
 {
@@ -158,9 +164,9 @@ namespace SacredUtils.Resources.bin
         /// <param name="text">The text.</param>
         /// <param name="caption">The caption.</param>
         /// <returns>The dialog result.</returns>
-        public static DialogResult Show(IWin32Window owner, string text, string caption)
+        public static DialogResult Show(Window owner, string text, string caption)
         {
-            return FlexibleMessageBoxForm.Show(owner, text, caption, MessageBoxButtons.OK, MessageBoxIcon.None,
+            return FlexibleMessageBoxForm.Show(null, text, caption, MessageBoxButtons.OK, MessageBoxIcon.None,
                 MessageBoxDefaultButton.Button1);
         }
 

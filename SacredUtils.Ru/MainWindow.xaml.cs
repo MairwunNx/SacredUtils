@@ -1118,7 +1118,7 @@ namespace SacredUtils
 
             if (Changes)
             {
-                FlexibleMessageBox.Show(Msg, Caption);
+                FlexibleMessageBox.Show(System.Windows.Application.Current.MainWindow, Msg, Caption);
             }
         }
 
