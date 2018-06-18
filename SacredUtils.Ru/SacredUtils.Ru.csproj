@@ -128,6 +128,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\bin\AncillaryConstsStrings.cs" />
+    <Compile Include="Resources\bin\ChangeLogShow.cs" />
+    <Compile Include="Resources\bin\FlexibleMessageBox.cs" />
     <Compile Include="Resources\bin\LanguageConstsStrings.cs" />
     <Compile Include="Resources\bin\BindingLanguageStrings.cs" />
     <Compile Include="Resources\bin\CheckAppAlphaUpdates.cs" />
@@ -201,6 +203,7 @@
     </None>
     <EmbeddedResource Include="Resources\etc\GameSettings.su" />
     <None Include="Resources\etc\AppSettings.su" />
+    <None Include="Resources\etc\AppVersion.su" />
     <None Include="Resources\etc\installinfo.dat" />
     <None Include="Resources\etc\launchstat.dat" />
     <None Include="Resources\etc\SacredUtils.exe.config" />
