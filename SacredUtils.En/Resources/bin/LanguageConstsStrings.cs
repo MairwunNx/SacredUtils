@@ -27,7 +27,7 @@ namespace SacredUtils.Resources.bin
         public const string String0020 = "SacredUtils (Release).";
         public const string String0021 = "Settings category.";
         public const string String0022 = "Settings.";
-        public const string String0023 = "<Select what you would like to configure. />";
+        public const string String0023 = "< Select what you would like to configure. />";
         public const string String0024 = "  Graphics settings 1.";
         public const string String0025 = "  Graphics Settings 2.";
         public const string String0026 = "  Sound settings.";
