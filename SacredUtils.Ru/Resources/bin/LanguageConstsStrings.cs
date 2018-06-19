@@ -24,7 +24,7 @@
         public const string String0017 = "Загрузка программы.";
         public const string String0018 = "Загрузка компонентов и фоновая проверка файлов.";
         public const string String0019 = "Честно, займет максимум секунды 2 - 4.";
-        public const string String0020 = "SacredUtils (Alpha 6).";
+        public const string String0020 = "SacredUtils (Release).";
         public const string String0021 = "Выбор настроек.";
         public const string String0022 = "Настройки.";
         public const string String0023 = "< Выберите, что бы вы хотели настроить. />";
@@ -125,7 +125,7 @@
         public const string String0119 = "Закрыть программу до запуска Sacred.";
         public const string String0120 = "Восстанавливать Settings.cfg если он поврежден.";
         public const string String0121 = "Логировать ошибки программы.";
-        public const string String0122 = "Сборка #7, Версия 1.2A Rv4 B7 (180618)";
+        public const string String0122 = "Сборка #7, Версия 1.2R Rv4 B7 (190618)";
         public const string String0123 = "Liquid2Win. Apache 2.0. 2018.";
         public const string String0124 = "Copyright 2018 MairwunNx Лицензировано согласно Лицензии Apache, Версия 2.0 (Лицензия);";
         public const string String0125 = "вы можете использовать этот файл только в соответствии с Лицензией.";
@@ -140,6 +140,6 @@
         public const string String0134 = "Доступно обновление :";
         public const string String0135 = "Произошла ошибка. Попробуйте через 30 секунд.\nОкно само закроется через 10 секунд.";
         public static string String0136 = $"Изменения {String0137}";
-        public static string String0137 = "1.2A Rv4 B7 (180618)";
+        public static string String0137 = "1.2R Rv4 B7 (190618)";
     }
 }

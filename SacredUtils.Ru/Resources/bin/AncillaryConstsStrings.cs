@@ -23,13 +23,13 @@ namespace SacredUtils.Resources.bin
 
         public const string SacredExe = "Sacred.exe";
 
-        public const string AppReleaseVersion = "1.2R Rv4 B6 (070618)";
+        public const string AppReleaseVersion = "1.2R Rv4 B7 (190618)";
 
         public const string AppAlphaVersion = "1.2A Rv4 B7 (150618)";
 
         public const string AppColorValue = "User interface color SacredUtils";
 
-        public const string AppCurrentVersion = "1.2A Rv4 B7 (180618)";
+        public const string AppCurrentVersion = "1.2R Rv4 B7 (190618)";
 
         public static string Msg = "";
         

@@ -412,7 +412,6 @@
 
             <Grid x:Name="AboutGrid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">
                 <Image Source="{StaticResource Liquid}" Height="236" Width="172" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="42,143,0,165"/>
-
                 <Label Content="{Binding BindingString0122}" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="214,248,0,268" Height="28" FontSize="14" Width="378" HorizontalContentAlignment="Center"/>
                 <Label Content="{Binding BindingString0123}" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="214,276,0,240" Height="28" FontSize="14" Width="378" HorizontalContentAlignment="Center"/>
                 <Label Content="{Binding BindingString0124}" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="30,480,30,0" Height="28" HorizontalContentAlignment="Center" FontSize="11"/>
