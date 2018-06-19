@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2043
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SacredUtils.Ru", "SacredUtils.Ru\SacredUtils.Ru.csproj", "{CA9ED263-FE41-4DF3-BC94-C1685B8E0C78}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SacredUtils.En", "SacredUtils.En\SacredUtils.En.csproj", "{260FB74A-DEFC-4DD7-9CEA-A15858A1EA58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CA9ED263-FE41-4DF3-BC94-C1685B8E0C78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA9ED263-FE41-4DF3-BC94-C1685B8E0C78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA9ED263-FE41-4DF3-BC94-C1685B8E0C78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{260FB74A-DEFC-4DD7-9CEA-A15858A1EA58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{260FB74A-DEFC-4DD7-9CEA-A15858A1EA58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{260FB74A-DEFC-4DD7-9CEA-A15858A1EA58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{260FB74A-DEFC-4DD7-9CEA-A15858A1EA58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
