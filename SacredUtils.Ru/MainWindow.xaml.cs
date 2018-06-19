@@ -1231,7 +1231,22 @@ namespace SacredUtils
                 "A village full of mindless farmers. Should I show them what I am?",
                 "QXJvdW5kIHRoZSB3aG9yZS4gV2h5Pw==",
                 "Timberton, the heart of the DeMordrey timber industry...",
-                "To assassinate for humans? That was a great idea..."
+                "To assassinate for humans? That was a great idea...",
+
+                // Thanks shalinorus for next splashes :
+
+                "Чего копаешься в шрифтах?",
+                "What are you doing with the typefaces?",
+                "Пора Анкарию спасать!",
+                "It's time to save Ancaria!",
+                "Могилы вскрыты, ожил прах!",
+                "The graves are open, the ashes come to life!",
+                "Кромсай вражин, иль ты-слабак?!",
+                "Kill your enemies, or you're a wimp?!",
+                "^_^ Не задерживайся,тебя уже ждут!",
+                "^_^ Don't stay long! You're expected!",
+                "Впиши свое имя на могилке!",
+                "Write your name on the grave!",
             };
 
             string[] shuffled = randomStrings.OrderBy(n => Guid.NewGuid()).ToArray();
