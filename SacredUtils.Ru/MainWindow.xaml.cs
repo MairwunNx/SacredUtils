@@ -1246,7 +1246,7 @@ namespace SacredUtils
                 "^_^ Не задерживайся,тебя уже ждут!",
                 "^_^ Don't stay long! You're expected!",
                 "Впиши свое имя на могилке!",
-                "Write your name on the grave!",
+                "Write your name on the grave!"
             };
 
             string[] shuffled = randomStrings.OrderBy(n => Guid.NewGuid()).ToArray();
