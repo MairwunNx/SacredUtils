@@ -3,7 +3,7 @@ namespace SacredUtils.Resources.bin
     public class LanguageConstsStrings
     {
         // Constants strings in code.
-        public const string String0001 = "You upgraded to version";
+        public const string String0001 = "You updating to version";
         public const string String0002 = "Voiceover";
         public const string String0003 = "GUI language";
         public const string String0004 = "Loading archives";
@@ -46,11 +46,11 @@ namespace SacredUtils.Resources.bin
         public const string String0039 = "128Mbit memory video card.";
         public const string String0040 = "Image Smoothing.";
         public const string String0041 = "Video compatibility mode.";
-        public const string String0042 = "The color depth is 32 bit.";
+        public const string String0042 = "32 bit color depth.";
         public const string String0043 = "Vertical synchronization.";
         public const string String0044 = "Full-screen mode.";
         public const string String0045 = "Forced black shadows.";
-        public const string String0046 = "Show game video.";
+        public const string String0046 = "Show movies.";
         public const string String0047 = "Graphics quality.";
         public const string String0048 = "Transparency of the map.";
         public const string String0049 = "The darkness of the night.";
@@ -72,11 +72,11 @@ namespace SacredUtils.Resources.bin
         public const string String0065 = "Spanish";
         public const string String0066 = "French";
         public const string String0067 = "Hide the CD key.";
-        public const string String0068 = "Information about the hero.";
+        public const string String0068 = "Hero information.";
         public const string String0069 = "Export to ladder (Deprecated).";
         public const string String0070 = "Accept license.";
-        public const string String0071 = "Network Logging.";
-        public const string String0072 = "Connection Type.";
+        public const string String0071 = "Network logging.";
+        public const string String0072 = "Connection type.";
         public const string String0073 = "Ip address and Port.";
         public const string String0074 = "Server name.";
         public const string String0075 = "Game nickname.";
@@ -90,10 +90,10 @@ namespace SacredUtils.Resources.bin
         public const string String0083 = "Chat transparency.";
         public const string String0084 = "Multicolored chat.";
         public const string String0085 = "Game doping bar.";
-        public const string String0086 = "Information about enemies.";
-        public const string String0087 = "Selection animation.";
-        public const string String0088 = "Auto save.";
-        public const string String0089 = "The earthquake effect.";
+        public const string String0086 = "Enemies information.";
+        public const string String0087 = "Pickup animation.";
+        public const string String0088 = "Autosave.";
+        public const string String0089 = "Earthquake effect.";
         public const string String0090 = "Choosing the default skills.";
         public const string String0091 = "Fog of war on a minimap.";
         public const string String0092 = "Smoothing fonts.";
@@ -136,7 +136,7 @@ namespace SacredUtils.Resources.bin
         public const string String0130 = "Sorry, maybe you did not know, but you had auto-update turned on.";
         public const string String0131 = "Installing the update.";
         public const string String0132 = "We think it will not take long.";
-        public const string String0133 = "You will upgrade to the version: Error FxE01.";
+        public const string String0133 = "You will update to the version: Error FxE01.";
         public const string String0134 = "Update available:";
         public const string String0135 = "An error occurred, please try again in 30 seconds.\nThe window closes itself in 10 seconds.";
         public const string String0136 = "Changes 1.2R Rv4 B7 (190618)";
