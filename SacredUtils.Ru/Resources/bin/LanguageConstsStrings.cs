@@ -139,7 +139,6 @@
         public const string String0133 = "Вы обновитесь до версии : Error FxE01.";
         public const string String0134 = "Доступно обновление :";
         public const string String0135 = "Произошла ошибка. Попробуйте через 30 секунд.\nОкно само закроется через 10 секунд.";
-        public static string String0136 = $"Изменения {String0137}";
-        public static string String0137 = "1.2R Rv4 B7 (190618)";
+        public static string String0136 = "Изменения 1.2R Rv4 B7 (190618)";
     }
 }
