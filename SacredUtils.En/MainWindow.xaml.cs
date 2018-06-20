@@ -808,6 +808,8 @@ namespace SacredUtils
                 }
             }
 
+
+
             if (LogSacredUtilsToggleBtn.IsChecked == false)
             {
                 File.WriteAllText("SacredUtils-errlog.log", "Log disabled by user (◍ • ﹏ •)");

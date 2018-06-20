@@ -103,6 +103,36 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        internal static byte[] languagede {
+            get {
+                object obj = ResourceManager.GetObject("languagede", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] languageen {
+            get {
+                object obj = ResourceManager.GetObject("languageen", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] languageru {
+            get {
+                object obj = ResourceManager.GetObject("languageru", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         internal static byte[] launchstat {
             get {
                 object obj = ResourceManager.GetObject("launchstat", resourceCulture);

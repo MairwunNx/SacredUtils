@@ -1124,6 +1124,12 @@ namespace SacredUtils
             {
                 FlexibleMessageBox.Show(System.Windows.Application.Current.MainWindow, Msg, Caption);
             }
+
+            if (NotSelectedLbl.Content.ToString() == "< Select what you would like to configure. />" ||
+                NotSelectedLbl.Content.ToString() == "< Wahlen Sie, was Sie konfigurieren mochten. />")
+            {
+                WarnLbl.Visibility = Visibility.Visible;
+            }
         }
 
         public void RandomChangeExampleText()
@@ -1889,6 +1895,31 @@ namespace SacredUtils
         private void DonateBtn_Click(object sender, RoutedEventArgs e)
         {
             Process.Start("https://qiwi.me/mairwunnx");
+        }
+
+        #endregion
+
+        #region LanguageButtonEventHandlers.
+
+        private void RussiaLang_Click(object sender, RoutedEventArgs e)
+        {
+            File.WriteAllBytes(".SacredUtilsData\\language.dat", Properties.Resources.languageru);
+
+            SettingsListBox.SelectedIndex = 15;
+        }
+
+        private void EnglishLang_Click(object sender, RoutedEventArgs e)
+        {
+            File.WriteAllBytes(".SacredUtilsData\\language.dat", Properties.Resources.languageen);
+
+            SettingsListBox.SelectedIndex = 15;
+        }
+
+        private void DeutschLang_Click(object sender, RoutedEventArgs e)
+        {
+            File.WriteAllBytes(".SacredUtilsData\\language.dat", Properties.Resources.languagede);
+
+            SettingsListBox.SelectedIndex = 15;
         }
 
         #endregion

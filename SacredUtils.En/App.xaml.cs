@@ -9,6 +9,9 @@ namespace SacredUtils
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            var languageConstsStrings = new LanguageConstsStrings();
+            languageConstsStrings.GetStrings();
+
             base.OnStartup(e);
 
             var loadingWindow = new LoadingWindow(); loadingWindow.Show();

@@ -130,6 +130,7 @@
     <Compile Include="Resources\bin\AncillaryConstsStrings.cs" />
     <Compile Include="Resources\bin\ChangeLogShow.cs" />
     <Compile Include="Resources\bin\FlexibleMessageBox.cs" />
+    <Compile Include="Resources\bin\GetSystemLanguage.cs" />
     <Compile Include="Resources\bin\LanguageConstsStrings.cs" />
     <Compile Include="Resources\bin\BindingLanguageStrings.cs" />
     <Compile Include="Resources\bin\CheckAppAlphaUpdates.cs" />
@@ -140,6 +141,7 @@
     <Compile Include="Resources\bin\GetAppSettings.cs" />
     <Compile Include="Resources\bin\GetGameSettings.cs" />
     <Compile Include="Resources\bin\CheckAppTempFiles.cs" />
+    <Compile Include="Resources\bin\LoadStrings.cs" />
     <Compile Include="Resources\bin\SendDownloadStatistic.cs" />
     <Compile Include="Resources\bin\Logger.cs" />
     <Compile Include="Resources\bin\SilentGetAvailableUpdate.cs" />
@@ -207,6 +209,9 @@
     <None Include="Resources\etc\installinfo.dat" />
     <None Include="Resources\etc\launchstat.dat" />
     <None Include="Resources\etc\SacredUtils.exe.config" />
+    <None Include="Resources\lng\languagede.dat" />
+    <None Include="Resources\lng\languageen.dat" />
+    <None Include="Resources\lng\languageru.dat" />
     <None Include="Resources\opt\SacredBalanceDragonFix.bin" />
     <None Include="Resources\opt\SacredBalanceVanilla.bin" />
     <None Include="Resources\opt\SacredBalanceVeteran.bin" />

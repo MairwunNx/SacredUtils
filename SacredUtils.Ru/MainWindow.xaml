@@ -6,12 +6,10 @@
                  xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                  xmlns:bin="clr-namespace:SacredUtils.Resources.bin"
                  xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
-                 mc:Ignorable="d" 
-                 NonActiveGlowBrush="#808080"
-                 ShowTitleBar="False"
-                 ShowCloseButton="False"
+                 mc:Ignorable="d" NonActiveGlowBrush="#808080"
+                 ShowTitleBar="False" ShowCloseButton="False"
                  GlowBrush="{DynamicResource AccentColorBrush}"
-                 d:DataContext="{d:DesignInstance bin:BindingLanguageStrings}"
+                 d:DataContext="{d:DesignInstance {x:Type bin:BindingLanguageStrings}}"
                  Title="SacredUtils" Height="752" Width="986" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}" Icon="Resources/img/icons8_Gas.ico" Loaded="Window_Loaded" KeyDown="Window_KeyDown">
     <Grid MouseDown="Grid_MouseDown" MinHeight="752" MaxHeight="752" MinWidth="986" MaxWidth="986">
         <Grid.RowDefinitions>
@@ -56,6 +54,8 @@
 
         <Label Content="{Binding BindingString0020}" Grid.Row="1" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" FontSize="20" Foreground="{Binding Foreground, ElementName=FlexibleSpaceElementColor}" Margin="29,16,700,313" TextOptions.TextHintingMode="Animated"/>
 
+        <Label x:Name="WarnLbl" Content="A warning! English is done with the help of machine translation, there may be errors! Suggest a Corrigendum MairwunNx@gmail.com" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" FontSize="14" Foreground="#DDFF0000" Margin="10,327,10,10" HorizontalContentAlignment="Center" Grid.Row="2" Visibility="Hidden"/>
+
         <Button x:Name="ChangeColor" Grid.Row="1" Height="50" Style="{StaticResource MaterialDesignToolForegroundButton}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,10,16,304" VerticalAlignment="Center" HorizontalAlignment="Right" Width="50" materialDesign:RippleAssist.RippleSizeMultiplier="0.7" materialDesign:RippleAssist.IsCentered="True" Click="ChangeColor_Click" >
             <materialDesign:PackIcon Kind="InvertColors" Foreground="{Binding Foreground, ElementName=FlexibleSpaceElementColor}" Height="25" Width="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Button>
@@ -68,12 +68,23 @@
             <materialDesign:PackIcon Kind="Forum" Foreground="{Binding Foreground, ElementName=FlexibleSpaceElementColor}" Height="25" Width="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Button>
 
-        <Grid x:Name="SettingsGrid" Row="1" RowSpan="2">
+        <materialDesign:PopupBox Grid.Row="1" DockPanel.Dock="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Width="50" Margin="765,9,0,305" Height="50">
+            <materialDesign:PopupBox.ToggleContent>
+                <materialDesign:PackIcon Kind="GoogleTranslate" Foreground="{Binding Foreground, ElementName=FlexibleSpaceElementColor}" Height="25" Width="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </materialDesign:PopupBox.ToggleContent>
+            <StackPanel Background="{Binding Background, ElementName=CardBackgroundColor}">
+                <Button x:Name="RussiaLang" Content="Русский" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" FontSize="14" Foreground="{Binding Foreground, ElementName=CardCaptionsColor}" Click="RussiaLang_Click"/>
+                <Button x:Name="EnglishLang" Content="English" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" FontSize="14" Foreground="{Binding Foreground, ElementName=CardCaptionsColor}" Click="EnglishLang_Click"/>
+                <Button x:Name="DeutschLang" Content="Deutsch" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" FontSize="14" Foreground="{Binding Foreground, ElementName=CardCaptionsColor}" Click="DeutschLang_Click"/>
+            </StackPanel>
+        </materialDesign:PopupBox>
+
+        <Grid x:Name="SettingsGrid" Grid.Row="1" Grid.RowSpan="2">
             <materialDesign:Card VerticalAlignment="Top" HorizontalAlignment="Left" Padding="300,156,99,-58" Margin="107,104,0,0" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="162" Height="544" Background="{Binding Background, ElementName=CardBackgroundColor}" />
             <materialDesign:Card VerticalAlignment="Top" HorizontalAlignment="Right" Padding="300,156,99,-58" Margin="0,104,107,0" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="592" Height="544" Background="{Binding Background, ElementName=CardBackgroundColor}"/>
 
-            <Label Content="{Binding BindingString0021}" Foreground="{Binding Foreground, ElementName=CardCaptionsColor}" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" FontSize="14" Margin="119,118,740,582" Height="27"/>
-            <Label Content="{Binding BindingString0022}" Foreground="{Binding Foreground, ElementName=CardCaptionsColor}" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" FontSize="14" Margin="304,118,594,582" Height="27"/>
+            <Label Content="{Binding BindingString0021}" Foreground="{Binding Foreground, ElementName=CardCaptionsColor}" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" FontSize="14" Margin="119,118,717,582" Height="27"/>
+            <Label Content="{Binding BindingString0022}" Foreground="{Binding Foreground, ElementName=CardCaptionsColor}" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" FontSize="14" Margin="304,118,416,582" Height="27"/>
 
             <Label x:Name="NotSelectedLbl" Content="{Binding BindingString0023}" Height="Auto" Width="Auto" Foreground="#DD7E7E7E" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Margin="287,104,107,79" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
@@ -97,14 +108,14 @@
             </ListBox>
 
             <Grid x:Name="GraphicsSettings01Grid" Margin="287,104,107,79" Visibility="Hidden">
-                <Label Content="{Binding BindingString0039}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,107,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0040}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,152,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0041}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,197,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0042}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,242,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0043}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,287,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0044}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,377,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0045}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,332,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0046}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,422,0,0" Height="25"/>
+                <Label Content="{Binding BindingString0039}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,107,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0040}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,152,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0041}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,197,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0042}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,242,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0043}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,287,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0044}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,377,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0045}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,332,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0046}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,422,0,0" Height="25" Width="350"/>
 
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,92,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,137,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
@@ -127,12 +138,12 @@
             </Grid>
 
             <Grid x:Name="GraphicsSettings02Grid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">
-                <Label Content="{Binding BindingString0047}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,152,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0048}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,197,0,0" Width="144" Height="25"/>
-                <Label Content="{Binding BindingString0049}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,242,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0050}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,287,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0051}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,332,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0052}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,377,0,0" Height="25"/>
+                <Label Content="{Binding BindingString0047}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,152,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0048}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,197,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0049}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,242,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0050}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,287,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0051}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,332,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0052}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,377,0,0" Height="25" Width="350"/>
 
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,137,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,182,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
@@ -163,12 +174,12 @@
             </Grid>
 
             <Grid x:Name="SoundSettingsGrid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">
-                <Label Content="{Binding BindingString0053}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,197,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0054}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,242,0,0" Width="144" Height="25"/>
-                <Label Content="{Binding BindingString0055}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,287,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0056}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,332,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0057}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,152,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0058}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,377,0,0" Height="25"/>
+                <Label Content="{Binding BindingString0053}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,197,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0054}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,242,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0055}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,287,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0056}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,332,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0057}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,152,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0058}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,377,0,0" Height="25" Width="350"/>
 
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,137,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,182,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
@@ -199,11 +210,11 @@
             </Grid>
 
             <Grid x:Name="NetworkSettings01Grid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">
-                <Label Content="{Binding BindingString0067}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,210,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0068}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,255,0,0" Width="144" Height="25"/>
-                <Label Content="{Binding BindingString0069}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,300,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0070}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,345,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0071}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,165,0,0" Height="25"/>
+                <Label Content="{Binding BindingString0067}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,210,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0068}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,255,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0069}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,300,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0070}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,345,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0071}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,165,0,0" Height="25" Width="350"/>
 
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,195,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,240,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
@@ -220,12 +231,12 @@
             </Grid>
 
             <Grid x:Name="NetworkSettings02Grid"  Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">
-                <Label Content="{Binding BindingString0072}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,152,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0073}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,197,0,0" Width="104" Height="25"/>
-                <Label Content="{Binding BindingString0074}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,242,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0075}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,287,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0076}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,332,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0077}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,377,0,0" Height="25"/>
+                <Label Content="{Binding BindingString0072}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,152,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0073}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,197,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0074}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,242,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0075}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,287,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0076}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,332,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0077}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,377,0,0" Height="25" Width="350"/>
 
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,137,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,182,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
@@ -250,10 +261,10 @@
             </Grid>
 
             <Grid x:Name="ChatSettingsGrid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">
-                <Label Content="{Binding BindingString0081}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,242,0,0" Width="161" Height="25"/>
-                <Label Content="{Binding BindingString0082}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,287,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0083}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,332,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0084}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,197,0,0" Height="25"/>
+                <Label Content="{Binding BindingString0081}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,242,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0082}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,287,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0083}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,332,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0084}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,197,0,0" Height="25" Width="350"/>
 
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,182,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,227,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
@@ -269,13 +280,13 @@
             </Grid>
 
             <Grid x:Name="GameSettings01Grid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">
-                <Label Content="{Binding BindingString0085}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,135,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0086}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,180,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0087}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,225,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0088}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,270,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0089}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,315,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0090}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,360,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0091}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,405,0,0" Height="25"/>
+                <Label Content="{Binding BindingString0085}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,135,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0086}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,180,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0087}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,225,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0088}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,270,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0089}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,315,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0090}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,360,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0091}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,405,0,0" Height="25" Width="350"/>
 
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,120,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,165,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
@@ -296,13 +307,13 @@
             </Grid>
 
             <Grid x:Name="GameSettings02Grid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">
-                <Label Content="{Binding BindingString0092}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,135,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0093}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,180,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0094}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,225,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0095}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,270,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0096}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,315,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0097}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,360,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0098}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,405,0,0" Height="25"/>
+                <Label Content="{Binding BindingString0092}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,135,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0093}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,180,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0094}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,225,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0095}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,270,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0096}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,315,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0097}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,360,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0098}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,405,0,0" Height="25" Width="350"/>
 
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,165,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,210,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
@@ -323,8 +334,8 @@
             </Grid>
 
             <Grid x:Name="FontsSettingsGrid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">
-                <Label Content="{Binding BindingString0099}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,242,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0100}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,287,0,0" Height="25"/>
+                <Label Content="{Binding BindingString0099}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,242,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0100}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,287,0,0" Height="25" Width="350"/>
                 <Label Content="{Binding BindingString0101}" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="#DDFF0000" Margin="36,197,39,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="25"/>
                 <Label x:Name="FontsTestLbl" Content="{Binding Text, ElementName=FontChangeTextInTemplate}" VerticalAlignment="Top" FontFamily="{Binding Text, ElementName=FontLibraryCmbBox}" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="10,317,10,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="5" Height="54" FontSize="14"/>
 
@@ -340,9 +351,9 @@
             </Grid>
 
             <Grid x:Name="OtherSettingsGrid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">
-                <Label Content="{Binding BindingString0103}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,213,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0104}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,258,0,0" Width="187" Height="25"/>
-                <Label Content="{Binding BindingString0105}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,303,0,0" Height="25"/>
+                <Label Content="{Binding BindingString0103}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,213,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0104}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,258,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0105}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,303,0,0" Height="25" Width="350"/>
 
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,198,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,243,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
@@ -360,12 +371,12 @@
             </Grid>
 
             <Grid x:Name="ModdingSettingsGrid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">
-                <Label Content="{Binding BindingString0109}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,152,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0110}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,197,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0111}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,242,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0112}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,287,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0113}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,332,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0114}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,377,0,0" Height="25"/>
+                <Label Content="{Binding BindingString0109}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,152,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0110}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,197,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0111}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,242,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0112}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,287,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0113}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,332,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0114}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,377,0,0" Height="25" Width="350"/>
 
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,137,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,182,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
@@ -384,13 +395,13 @@
             </Grid>
 
             <Grid x:Name="AppSettingsGrid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">
-                <Label Content="{Binding BindingString0115}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,135,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0116}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,180,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0117}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,225,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0118}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,270,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0119}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,315,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0120}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,360,0,0" Height="25"/>
-                <Label Content="{Binding BindingString0121}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,405,0,0" Height="25"/>
+                <Label Content="{Binding BindingString0115}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,135,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0116}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,180,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0117}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,225,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0118}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,270,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0119}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,315,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0120}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,360,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0121}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,405,0,0" Height="25" Width="350"/>
 
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,120,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,165,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
@@ -424,7 +435,7 @@
             </Grid>
         </Grid>
 
-        <Grid x:Name="UpdateGrid" Row="1" RowSpan="2" Visibility="Hidden">
+        <Grid x:Name="UpdateGrid" Grid.Row="1" Grid.RowSpan="2" Visibility="Hidden">
             <Label Foreground="{Binding Foreground, ElementName=CardCaptionsColor}"/>
 
             <materialDesign:Card HorizontalAlignment="Center" VerticalAlignment="Center" Height="182" Width="510" Background="{Binding Background, ElementName=CardBackgroundColor}">

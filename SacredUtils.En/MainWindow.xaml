@@ -437,6 +437,6 @@
             <Label Content="{Binding BindingString0132}" Foreground="{Binding Foreground, ElementName=CardCaptionsColor}" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" FontSize="14" Margin="256,356,252,344" Height="27"/>
             <Label x:Name="NewVersionLbl" Content="{Binding BindingString0133}" Foreground="{Binding Foreground, ElementName=CardCaptionsColor}" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" FontSize="14" Margin="256,329,264,371" Height="27"/>
         </Grid>
-        <Label Content="A warning! English is done with the help of machine translation, there may be errors! Suggest a Corrigendum MairwunNx@gmail.com" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" FontSize="14" Foreground="#DDFF0000" Margin="10,327,10,10" HorizontalContentAlignment="Center" Grid.Row="2"/>
+        <Label x:Name="wrnlbl" Content="A warning! English is done with the help of machine translation, there may be errors! Suggest a Corrigendum MairwunNx@gmail.com" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" FontSize="14" Foreground="#DDFF0000" Margin="10,327,10,10" HorizontalContentAlignment="Center" Grid.Row="2"/>
     </Grid>
 </mah:MetroWindow>

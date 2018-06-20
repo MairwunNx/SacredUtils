@@ -7,7 +7,7 @@ using System.Windows;
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
 [assembly: AssemblyTitle("SacredUtils")]
-[assembly: AssemblyDescription("Альтернативный конфигуратор для Sacred.")]
+[assembly: AssemblyDescription("Alternate configurator for Sacred.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SacredUtils")]

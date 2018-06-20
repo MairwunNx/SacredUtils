@@ -169,4 +169,13 @@
   <data name="AppVersion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\etc\AppVersion.su;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="languagede" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lng\languagede.dat;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="languageen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lng\languageen.dat;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="languageru" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lng\languageru.dat;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
