@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SacredUtils.Ru", "SacredUti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SacredUtils.En", "SacredUtils.En\SacredUtils.En.csproj", "{260FB74A-DEFC-4DD7-9CEA-A15858A1EA58}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SacredUtils.De", "SacredUtils.De\SacredUtils.De.csproj", "{6A3DCB52-AA9C-40FA-A086-568E2149610C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{260FB74A-DEFC-4DD7-9CEA-A15858A1EA58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{260FB74A-DEFC-4DD7-9CEA-A15858A1EA58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{260FB74A-DEFC-4DD7-9CEA-A15858A1EA58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A3DCB52-AA9C-40FA-A086-568E2149610C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A3DCB52-AA9C-40FA-A086-568E2149610C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A3DCB52-AA9C-40FA-A086-568E2149610C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A3DCB52-AA9C-40FA-A086-568E2149610C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
