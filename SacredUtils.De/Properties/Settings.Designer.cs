@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SacredUtils.De.Properties
+namespace SacredUtils.Properties
 {
 
 
@@ -19,12 +19,6 @@ namespace SacredUtils.De.Properties
 
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
 
-        public static Settings Default
-        {
-            get
-            {
-                return defaultInstance;
-            }
-        }
+        public static Settings Default { get {return defaultInstance;} }
     }
 }

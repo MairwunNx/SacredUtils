@@ -1,17 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
+﻿using System.Windows;
 using System.Threading.Tasks;
-using System.Windows;
+using SacredUtils.Resources.bin;
+using SacredUtils.Resources.wnd;
 
-namespace SacredUtils.De
+namespace SacredUtils
 {
-    /// <summary>
-    /// Логика взаимодействия для App.xaml
-    /// </summary>
-    public partial class App : Application
+    public partial class App
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            var loadingWindow = new LoadingWindow(); loadingWindow.Show();
+            loadingWindow.InitializeComponent();
+
+            var checkAppTempFiles = new CheckAppTempFiles();
+            checkAppTempFiles.CheckAvailableTempFiles();
+
+            Task.Run(() => Logger.InitLogger());
+            
+            var createImportantFiles = new CreateImportantFiles();
+            Task.Run(() => createImportantFiles.CreateFiles());
+
+            var sendDownloadStatistic = new SendDownloadStatistic();
+            Task.Run(() => sendDownloadStatistic.CheckFirstInstallAsync());
+
+            var checkAppConfiguration = new CheckAvailableConfigs();
+            checkAppConfiguration.GetAvailableAppConfig();
+        }
     }
 }

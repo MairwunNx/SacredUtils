@@ -125,7 +125,7 @@ namespace SacredUtils.Resources.bin
         public const string String0119 = "Close the program before running Sacred.";
         public const string String0120 = "Restore Settings.cfg if it is corrupted.";
         public const string String0121 = "Log program errors.";
-        public const string String0122 = "Build # 7, Version 1.2R Rv4 B7 (190618)";
+        public const string String0122 = "Build #7, Version 1.2R Rv4 B7 (190618)";
         public const string String0123 = "Liquid2Win. Apache 2.0. 2018.";
         public const string String0124 = "Copyright 2018 MairwunNx Licensed under the Apache License, Version 2.0 (License);";
         public const string String0125 = "you can use this file only in accordance with the License.";
