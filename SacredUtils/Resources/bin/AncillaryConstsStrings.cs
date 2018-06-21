@@ -7,29 +7,37 @@ namespace SacredUtils.Resources.bin
 {
     public class AncillaryConstsStrings
     {
-        public const string AppSettings = "Settings.su";
+        public static string AppSettings = "Settings.su";
 
-        public const string AppStatistic = "launchstat.dat";
+        public static string AppStatistic = "launchstat.dat";
 
-        public const string AppInstallInfo = "installinfo.dat";
+        public static string AppInstallInfo = "installinfo.dat";
 
-        public const string AppDataFolder = ".SacredUtilsData";
+        public static string AppDataFolder = ".SacredUtilsData";
 
-        public const string AppTempFolder = "Temp";
+        public static string AppBackupFolder = $"{AppDataFolder}\\backup";
 
-        public const string AppUpdaterExe = "SacredUtilsUpdater.exe";
+        public static string AppLngBackupFolder = $"{AppBackupFolder}\\lng";
 
-        public const string SacredSettings = "Settings.cfg";
+        public static string AppLngDataFolder = $"{AppDataFolder}\\language.dat";
+        
+        public static string AppTempLngFolder = $"{AppDataFolder}\\templng";
 
-        public const string SacredExe = "Sacred.exe";
+        public static string AppTempFolder = "Temp";
 
-        public const string AppReleaseVersion = "1.2R Rv4 B7 (190618)";
+        public static string AppUpdaterExe = "SacredUtilsUpdater.exe";
 
-        public const string AppAlphaVersion = "1.2A Rv4 B7 (150618)";
+        public static string SacredSettings = "Settings.cfg";
 
-        public const string AppColorValue = "User interface color SacredUtils";
+        public static string SacredExe = "Sacred.exe";
 
-        public const string AppCurrentVersion = "1.2R Rv4 B7 (190618)";
+        public static string AppReleaseVersion = "1.2R Rv4 B7 (190618)";
+
+        public static string AppAlphaVersion = "1.2A Rv4 B7 (150618)";
+
+        public static string AppColorValue = "User interface color SacredUtils";
+
+        public static string AppCurrentVersion = "1.2R Rv4 B7 (190618)";
 
         public static string Msg = "";
         

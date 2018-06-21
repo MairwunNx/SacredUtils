@@ -918,7 +918,8 @@ namespace SacredUtils
                 InstalledFontCollection installedFonts = new InstalledFontCollection();
                 List<string> fonts = installedFonts.Families.Select(font => font.Name).ToList();
 
-                FontLibraryCmbBox.ItemsSource = fonts; fonts.Remove("");
+                FontLibraryCmbBox.ItemsSource = fonts;
+                fonts.Remove("");
             }
             catch (Exception exception)
             {
@@ -948,159 +949,180 @@ namespace SacredUtils
             {
                 try
                 {
-                    if (text1[i].Contains(AppColorValue + " = default") || text1[i].Contains("User interface color SacredUtils = indigo"))
+                    if (text1[i].Contains(AppColorValue + " = default") ||
+                        text1[i].Contains("User interface color SacredUtils = indigo"))
                     {
-                        var colorWindow = new ColorWindow(); colorWindow.Close();
+                        var colorWindow = new ColorWindow();
+                        colorWindow.Close();
 
                         colorWindow.ChangeColor("#7986cb", "#303f9f", "#3f51b5", "#c5cae9", "Indigo", "#FFFFFFFF");
                     }
 
                     if (text1[i].Contains(AppColorValue + " = red"))
                     {
-                        var colorWindow = new ColorWindow(); colorWindow.Close();
+                        var colorWindow = new ColorWindow();
+                        colorWindow.Close();
 
                         colorWindow.ChangeColor("#e57373", "#d32f2f", "#f44336", "#ffcdd2", "Red", "#FFFFFFFF");
                     }
 
                     if (text1[i].Contains(AppColorValue + " = pink"))
                     {
-                        var colorWindow = new ColorWindow(); colorWindow.Close();
+                        var colorWindow = new ColorWindow();
+                        colorWindow.Close();
 
                         colorWindow.ChangeColor("#f06292", "#c2185b", "#e91e63", "#f8bbd0", "Pink", "#FFFFFFFF");
                     }
 
                     if (text1[i].Contains(AppColorValue + " = purple"))
                     {
-                        var colorWindow = new ColorWindow(); colorWindow.Close();
+                        var colorWindow = new ColorWindow();
+                        colorWindow.Close();
 
                         colorWindow.ChangeColor("#ba68c8", "#7b1fa2", "#9c27b0", "#e1bee7", "Purple", "#FFFFFFFF");
                     }
 
                     if (text1[i].Contains(AppColorValue + " = deeppurple"))
                     {
-                        var colorWindow = new ColorWindow(); colorWindow.Close();
+                        var colorWindow = new ColorWindow();
+                        colorWindow.Close();
 
                         colorWindow.ChangeColor("#9575cd", "#512da8", "#673ab7", "#d1c4e9", "DeepPurple", "#FFFFFFFF");
                     }
 
                     if (text1[i].Contains(AppColorValue + " = blue"))
                     {
-                        var colorWindow = new ColorWindow(); colorWindow.Close();
+                        var colorWindow = new ColorWindow();
+                        colorWindow.Close();
 
                         colorWindow.ChangeColor("#64b5f6", "#1976d2", "#2196f3", "#bbdefb", "Blue", "#FFFFFFFF");
                     }
 
                     if (text1[i].Contains(AppColorValue + " = lightblue"))
                     {
-                        var colorWindow = new ColorWindow(); colorWindow.Close();
+                        var colorWindow = new ColorWindow();
+                        colorWindow.Close();
 
                         colorWindow.ChangeColor("#4fc3f7", "#0288d1", "#03a9f4", "#b3e5fc", "LightBlue", "#000000");
                     }
 
                     if (text1[i].Contains(AppColorValue + " = cyan"))
                     {
-                        var colorWindow = new ColorWindow(); colorWindow.Close();
+                        var colorWindow = new ColorWindow();
+                        colorWindow.Close();
 
                         colorWindow.ChangeColor("#4dd0e1", "#0097a7", "#00bcd4", "#b2ebf2", "Cyan", "#000000");
                     }
 
                     if (text1[i].Contains(AppColorValue + " = teal"))
                     {
-                        var colorWindow = new ColorWindow(); colorWindow.Close();
+                        var colorWindow = new ColorWindow();
+                        colorWindow.Close();
 
                         colorWindow.ChangeColor("#4db6ac", "#00796b", "#009688", "#b2dfdb", "Teal", "#ffffff");
                     }
 
                     if (text1[i].Contains(AppColorValue + " = green"))
                     {
-                        var colorWindow = new ColorWindow(); colorWindow.Close();
+                        var colorWindow = new ColorWindow();
+                        colorWindow.Close();
 
                         colorWindow.ChangeColor("#81c784", "#388e3c", "#4caf50", "#c8e6c9", "Green", "#ffffff");
                     }
 
                     if (text1[i].Contains(AppColorValue + " = lightgreen"))
                     {
-                        var colorWindow = new ColorWindow(); colorWindow.Close();
+                        var colorWindow = new ColorWindow();
+                        colorWindow.Close();
 
                         colorWindow.ChangeColor("#aed581", "#689f38", "#8bc34a", "#dcedc8", "LightGreen", "#000000");
                     }
 
                     if (text1[i].Contains(AppColorValue + " = lime"))
                     {
-                        var colorWindow = new ColorWindow(); colorWindow.Close();
+                        var colorWindow = new ColorWindow();
+                        colorWindow.Close();
 
                         colorWindow.ChangeColor("#dce775", "#afb42b", "#cddc39", "#f0f4c3", "Lime", "#000000");
                     }
 
                     if (text1[i].Contains(AppColorValue + " = yellow"))
                     {
-                        var colorWindow = new ColorWindow(); colorWindow.Close();
+                        var colorWindow = new ColorWindow();
+                        colorWindow.Close();
 
                         colorWindow.ChangeColor("#fff176", "#fbc02d", "#ffeb3b", "#fff9c4", "Yellow", "#000000");
                     }
 
                     if (text1[i].Contains(AppColorValue + " = amber"))
                     {
-                        var colorWindow = new ColorWindow(); colorWindow.Close();
+                        var colorWindow = new ColorWindow();
+                        colorWindow.Close();
 
                         colorWindow.ChangeColor("#ffd54f", "#ffa000", "#ffc107", "#ffecb3", "Amber", "#000000");
                     }
 
                     if (text1[i].Contains(AppColorValue + " = orange"))
                     {
-                        var colorWindow = new ColorWindow(); colorWindow.Close();
+                        var colorWindow = new ColorWindow();
+                        colorWindow.Close();
 
                         colorWindow.ChangeColor("#ffb74d", "#f57c00", "#ff9800", "#ffe0b2", "Orange", "#000000");
                     }
 
                     if (text1[i].Contains(AppColorValue + " = deeporange"))
                     {
-                        var colorWindow = new ColorWindow(); colorWindow.Close();
+                        var colorWindow = new ColorWindow();
+                        colorWindow.Close();
 
                         colorWindow.ChangeColor("#ff8a65", "#e64a19", "#ff5722", "#ffccbc", "DeepOrange", "#000000");
                     }
 
                     if (text1[i].Contains(AppColorValue + " = brown"))
                     {
-                        var colorWindow = new ColorWindow(); colorWindow.Close();
+                        var colorWindow = new ColorWindow();
+                        colorWindow.Close();
 
                         colorWindow.ChangeColor("#a1887f", "#5d4037", "#795548", "#d7ccc8", "Brown", "#ffffff");
                     }
 
                     if (text1[i].Contains(AppColorValue + " = grey"))
                     {
-                        var colorWindow = new ColorWindow(); colorWindow.Close();
+                        var colorWindow = new ColorWindow();
+                        colorWindow.Close();
 
                         colorWindow.ChangeColor("#e0e0e0", "#616161", "#9e9e9e", "#f5f5f5", "Grey", "#000000");
                     }
 
                     if (text1[i].Contains(AppColorValue + " = bluegrey"))
                     {
-                        var colorWindow = new ColorWindow(); colorWindow.Close();
+                        var colorWindow = new ColorWindow();
+                        colorWindow.Close();
 
                         colorWindow.ChangeColor("#90a4ae", "#455a64", "#607d8b", "#cfd8dc", "BlueGrey", "#ffffff");
                     }
 
                     if (text1[i].Contains(AppColorValue + " = black"))
                     {
-                        var colorWindow = new ColorWindow(); colorWindow.Close();
+                        var colorWindow = new ColorWindow();
+                        colorWindow.Close();
 
                         colorWindow.ChangeColor("#484848", "#000000", "#212121", "#484848", "DeepOrange", "#ffffff");
 
                         BrushConverter bc = new BrushConverter();
 
-                        CardBackgroundColor.Background = (Brush)bc.ConvertFrom("#2c2c2c");
+                        CardBackgroundColor.Background = (Brush) bc.ConvertFrom("#2c2c2c");
 
-                        NotSelectedLbl.Foreground = (Brush)bc.ConvertFrom("#DDCBCBCB");
+                        NotSelectedLbl.Foreground = (Brush) bc.ConvertFrom("#DDCBCBCB");
 
-                        SettingsNameColor.Foreground = (Brush)bc.ConvertFrom("#eeeeee");
+                        SettingsNameColor.Foreground = (Brush) bc.ConvertFrom("#eeeeee");
 
-                        CardCaptionsColor.Foreground = (Brush)bc.ConvertFrom("#e0e0e0");
+                        CardCaptionsColor.Foreground = (Brush) bc.ConvertFrom("#e0e0e0");
 
-                        ColorCombobox.Foreground = (Brush)bc.ConvertFrom("#eeeeee");
-                        ColorCombobox.Background = (Brush)bc.ConvertFrom("#2c2c2c");
+                        ColorCombobox.Foreground = (Brush) bc.ConvertFrom("#eeeeee");
+                        ColorCombobox.Background = (Brush) bc.ConvertFrom("#2c2c2c");
 
-                        ColorTxBox.Foreground = (Brush)bc.ConvertFrom("#eeeeee");
+                        ColorTxBox.Foreground = (Brush) bc.ConvertFrom("#eeeeee");
                     }
                 }
                 catch (Exception exception)
@@ -1138,6 +1160,19 @@ namespace SacredUtils
                 NotSelectedLbl.Content.ToString() == "< Wahlen Sie, was Sie konfigurieren mochten. />")
             {
                 WarnLbl.Visibility = Visibility.Visible;
+            }
+
+            try
+            {
+                var text2 = File.ReadAllLines($"{AppTempLngFolder}\\langinfo-err.dat");
+
+                FlexibleMessageBox.Show(this,$"{String0139}\n\n{String0140} {text2[0]}\n\n{String0141}\n\n{String0142} {text2[1]}\n\n{String0143}", $"{String0138}");
+
+                File.Delete($"{AppTempLngFolder}\\langinfo-err.dat");
+            }
+            catch
+            {
+                // Ignore.
             }
         }
 

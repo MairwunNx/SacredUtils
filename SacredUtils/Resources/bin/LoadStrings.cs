@@ -3,8 +3,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
-using static SacredUtils.Resources.bin.LanguageConstsStrings;
 using static SacredUtils.Resources.bin.AncillaryConstsStrings;
+using static SacredUtils.Resources.bin.LanguageConstsStrings;
 
 namespace SacredUtils.Resources.bin
 {
@@ -12,9 +12,8 @@ namespace SacredUtils.Resources.bin
     {
         public async Task GetStringsAsync()
         {
-            StreamReader streamReader = new StreamReader(".SacredUtilsData\\language.dat", Encoding.Default);
+            StreamReader streamReader = new StreamReader(AppLngDataFolder, Encoding.Default);
             string[] stringss = streamReader.ReadToEnd().Split('\n');
-
 
             for (var i = 0; i < stringss.Length; i++)
             {
@@ -167,45 +166,104 @@ namespace SacredUtils.Resources.bin
                 String0135 = stringss[133];
                 String0136 = stringss[134];
                 String0137 = stringss[135];
+                String0138 = stringss[136];
+                String0139 = stringss[137];
+                String0140 = stringss[138];
+                String0141 = stringss[139];
+                String0142 = stringss[140];
+                String0143 = stringss[141];
             }
             catch
             {
                 if (String0001 == "Вы обновитесь до версии")
                 {
-                    Directory.CreateDirectory(".SacredUtilsData\\backup");
+                    Random rnd = new Random();
+                    
+                    int rndInt = rnd.Next(210618, 1498640135);
 
-                    await Task.Run(() => File.Copy(".SacredUtilsData\\language.dat", $".SacredUtilsData\\backup\\language_ru_{DateTime.Now:yyyy-dd-M--HH-mm-ss}.dat"));
+                    Directory.CreateDirectory(AppLngBackupFolder);
 
-                    await Task.Run(() => File.WriteAllBytes(".SacredUtilsData\\language.dat", Properties.Resources.languageru));
+                    await Task.Run(() => File.Copy(AppLngDataFolder, $"{AppLngBackupFolder}\\language_ru_id_{rndInt}.dat"));
+
+                    await Task.Run(() => File.WriteAllBytes(AppLngDataFolder, Properties.Resources.languageru));
+
+                    await CreateTempInfoFile(AppLngDataFolder, $"{AppLngBackupFolder}\\language_ru_id_{rndInt}.dat");
 
                     Process.Start(Appname); Environment.Exit(0);
                 }
 
                 if (String0001 == "You updating to version")
                 {
-                    Directory.CreateDirectory(".SacredUtilsData\\backup");
+                    Random rnd = new Random();
 
-                    await Task.Run(() => File.Copy(".SacredUtilsData\\language.dat", $".SacredUtilsData\\backup\\language_en_{DateTime.Now:yyyy-dd-M--HH-mm-ss}.dat"));
+                    int rndInt = rnd.Next(210618, 1498640135);
 
-                    await Task.Run(() => File.WriteAllBytes(".SacredUtilsData\\language.dat", Properties.Resources.languageru));
+                    Directory.CreateDirectory(AppLngBackupFolder);
 
-                    File.WriteAllBytes(".SacredUtilsData\\language.dat", Properties.Resources.languageen);
+                    await Task.Run(() => File.Copy(AppLngDataFolder, $"{AppLngBackupFolder}\\language_en_id_{rndInt}.dat"));
+
+                    await Task.Run(() => File.WriteAllBytes(AppLngDataFolder, Properties.Resources.languageen));
+
+                    await CreateTempInfoFile(AppLngDataFolder, $"{AppLngBackupFolder}\\language_en_id_{rndInt}.dat");
 
                     Process.Start(Appname); Environment.Exit(0);
                 }
 
                 if (String0001 == "Sie aktualisieren auf Version")
                 {
-                    Directory.CreateDirectory(".SacredUtilsData\\backup");
+                    Random rnd = new Random();
 
-                    await Task.Run(() => File.Copy(".SacredUtilsData\\language.dat", $".SacredUtilsData\\backup\\language_de_{DateTime.Now:yyyy-dd-M--HH-mm-ss}.dat"));
+                    int rndInt = rnd.Next(210618, 1498640135);
 
-                    await Task.Run(() => File.WriteAllBytes(".SacredUtilsData\\language.dat", Properties.Resources.languageru));
+                    Directory.CreateDirectory(AppLngBackupFolder);
 
-                    File.WriteAllBytes(".SacredUtilsData\\language.dat", Properties.Resources.languagede);
+                    await Task.Run(() => File.Copy(AppLngDataFolder, $"{AppLngBackupFolder}\\language_de_id_{rndInt}.dat"));
+
+                    await Task.Run(() => File.WriteAllBytes(AppLngDataFolder, Properties.Resources.languagede));
+
+                    await CreateTempInfoFile(AppLngDataFolder, $"{AppLngBackupFolder}\\language_de_id_{rndInt}.dat");
 
                     Process.Start(Appname); Environment.Exit(0);
                 }
+
+                if (String0001 == "")
+                {
+                    Random rnd = new Random();
+
+                    int rndInt = rnd.Next(210618, 1498640135);
+
+                    Directory.CreateDirectory(AppLngBackupFolder);
+
+                    await Task.Run(() => File.Copy(AppLngDataFolder, $"{AppLngBackupFolder}\\language_any_id_{rndInt}.dat"));
+
+                    await Task.Run(() => File.Delete(AppLngDataFolder));
+
+                    await CreateTempInfoFile(AppLngDataFolder, $"{AppLngBackupFolder}\\language_any_id_{rndInt}.dat");
+
+                    Process.Start(Appname); Environment.Exit(0);
+                }
+            }
+        }
+
+        public async Task CreateTempInfoFile(string file, string pathToBackupFile)
+        {
+            try
+            {
+                if (File.Exists($"{AppTempLngFolder}\\langinfo-err.dat"))
+                {
+                    await Task.Run(() => File.Delete($"{AppTempLngFolder}\\langinfo-err.dat"));
+                }
+
+                await Task.Run(() => Directory.CreateDirectory(AppTempLngFolder));
+
+                StreamWriter textFile = new StreamWriter($"{AppTempLngFolder}\\langinfo-err.dat");
+                textFile.WriteLine(file);
+                textFile.WriteLine(pathToBackupFile);
+                textFile.Close();
+            }
+            catch (Exception e)
+            {
+                FlexibleMessageBox.Show(e.ToString());
             }
         }
     }
