@@ -51,8 +51,8 @@ using System.Windows;
 // Можно задать все значения или принять номер сборки и номер редакции по умолчанию.
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.3.7")]
-[assembly: AssemblyFileVersion("1.2.3.7")]
+[assembly: AssemblyVersion("1.2.3.8")]
+[assembly: AssemblyFileVersion("1.2.3.8")]
 [assembly: Guid("CDAA45BE-EA1A-41BF-A36A-6F14199667E1")]
 [assembly: NeutralResourcesLanguage("ru")]
 
