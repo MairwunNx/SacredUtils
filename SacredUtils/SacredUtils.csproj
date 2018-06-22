@@ -132,6 +132,7 @@
     </Compile>
     <Compile Include="Resources\bin\AncillaryConstsStrings.cs" />
     <Compile Include="Resources\bin\ChangeLogShow.cs" />
+    <Compile Include="Resources\bin\CheckLangVersion.cs" />
     <Compile Include="Resources\bin\FlexibleMessageBox.cs" />
     <Compile Include="Resources\bin\GetSystemLanguage.cs" />
     <Compile Include="Resources\bin\LanguageConstsStrings.cs" />
@@ -210,6 +211,7 @@
     <None Include="Resources\etc\AppSettings.su" />
     <None Include="Resources\etc\AppVersion.su" />
     <None Include="Resources\etc\installinfo.dat" />
+    <None Include="Resources\etc\LangVersion.su" />
     <None Include="Resources\etc\launchstat.dat" />
     <None Include="Resources\etc\SacredUtils.exe.config" />
     <None Include="Resources\lng\languagede.dat" />

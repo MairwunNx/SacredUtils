@@ -1162,21 +1162,29 @@ namespace SacredUtils
                 WarnLbl.Visibility = Visibility.Visible;
             }
 
-            if (File.Exists(AppLngErrorFile))
+
+            try
             {
-                try
-                {
-                    var text2 = File.ReadAllLines(AppLngErrorFile);
+                var text2 = File.ReadAllLines(AppLngErrorFile);
 
+                if (text2[0] != "Update")
+                {
                     FlexibleMessageBox.Show(this, $"{String0139}\n\n{String0140} {text2[0]}\n\n{String0141}\n\n{String0142} {text2[1]}\n\n{String0143}", $"{String0138}");
-
-                    File.Delete(AppLngErrorFile);
                 }
-                catch
+                else if (text2[0] == "Update")
                 {
-                    // Ignore.
+                    FlexibleMessageBox.Show(this, $"{String0144}\n\n{String0145} {text2[1]}\n\n{String0146}\n\n{String0147} {text2[2]}\n\n{String0148}", $"{String0138}");
+
+                    File.WriteAllBytes(".SacredUtilsData\\LangVersion.su", Properties.Resources.LangVersion);
                 }
+
+                File.Delete(AppLngErrorFile);
             }
+            catch
+            {
+                // Ignore.
+            }
+
         }
 
         public void RandomChangeExampleText()

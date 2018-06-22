@@ -15,6 +15,9 @@ namespace SacredUtils
             var loadStrings = new LoadStrings();
             loadStrings.GetStringsAsync();
 
+            var checkLangVersion = new CheckLangVersion();
+            checkLangVersion.GetLanguageVersionAsync();
+
             base.OnStartup(e);
 
             var loadingWindow = new LoadingWindow(); loadingWindow.Show();

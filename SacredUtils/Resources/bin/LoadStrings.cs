@@ -25,7 +25,6 @@ namespace SacredUtils.Resources.bin
 
                     stringss[i] = tempdata1;
                 }
-
             }
 
             try
@@ -172,12 +171,17 @@ namespace SacredUtils.Resources.bin
                 String0141 = stringss[139];
                 String0142 = stringss[140];
                 String0143 = stringss[141];
+                String0144 = stringss[142];
+                String0145 = stringss[143];
+                String0146 = stringss[144];
+                String0147 = stringss[145];
+                String0148 = stringss[146];
             }
             catch
             {
                 if (String0001 == "Вы обновитесь до версии")
                 {
-                    Random.Org.Random rnd = new Random.Org.Random();
+                    System.Random rnd = new System.Random();
                     
                     int rndInt = rnd.Next(210618, 1498640135);
 
@@ -194,7 +198,7 @@ namespace SacredUtils.Resources.bin
 
                 if (String0001 == "You updating to version")
                 {
-                    Random.Org.Random rnd = new Random.Org.Random();
+                    System.Random rnd = new System.Random();
 
                     int rndInt = rnd.Next(210618, 1498640135);
 
@@ -211,7 +215,7 @@ namespace SacredUtils.Resources.bin
 
                 if (String0001 == "Sie aktualisieren auf Version")
                 {
-                    Random.Org.Random rnd = new Random.Org.Random();
+                    System.Random rnd = new System.Random();
 
                     int rndInt = rnd.Next(210618, 1498640135);
 
@@ -228,7 +232,7 @@ namespace SacredUtils.Resources.bin
 
                 if (String0001 == "")
                 {
-                    Random.Org.Random rnd = new Random.Org.Random();
+                    System.Random rnd = new System.Random();
 
                     int rndInt = rnd.Next(210618, 1498640135);
 
@@ -249,11 +253,6 @@ namespace SacredUtils.Resources.bin
         {
             try
             {
-                if (File.Exists(AppLngErrorFile))
-                {
-                    await Task.Run(() => File.Delete(AppLngErrorFile));
-                }
-
                 await Task.Run(() => Directory.CreateDirectory(AppTempLngFolder));
 
                 StreamWriter textFile = new StreamWriter(AppLngErrorFile);
