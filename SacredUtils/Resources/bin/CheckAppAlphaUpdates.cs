@@ -1,9 +1,9 @@
 ﻿using System;
-using System.IO;
-using System.Windows;
 using System.Diagnostics;
+using System.IO;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
+using System.Windows;
 using static SacredUtils.Resources.bin.AncillaryConstsStrings;
 using static SacredUtils.Resources.bin.LanguageConstsStrings;
 
@@ -15,7 +15,7 @@ namespace SacredUtils.Resources.bin
 
         public async Task GetAvailableAppUpdatesAsync()
         {
-            var fileText = File.ReadAllText(AppSettings);
+            var fileText = File.ReadAllText(AppSettingsFile);
 
             try
             {
@@ -80,7 +80,7 @@ namespace SacredUtils.Resources.bin
 
             try
             {
-                await Task.Run(() => File.WriteAllBytes(AppTempFolder + "\\" + AppUpdaterExe, Properties.Resources.SacredUtilsUpdater));
+                await Task.Run(() => File.WriteAllBytes($"{AppTempFolder}\\{AppUpdaterFile}", Properties.Resources.SacredUtilsUpdater));
             }
             catch (Exception exception)
             {
@@ -100,7 +100,7 @@ namespace SacredUtils.Resources.bin
 
             try
             {
-                Process.Start(AppTempFolder + "\\" + AppUpdaterExe, "_newVersionSacredUtilsTemp.exe " + Appname);
+                Process.Start($"{AppTempFolder}\\{AppUpdaterFile}", "_newVersionSacredUtilsTemp.exe " + AppnameFile);
             }
             catch (Exception exception)
             {

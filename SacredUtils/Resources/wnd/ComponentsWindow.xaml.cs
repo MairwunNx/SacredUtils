@@ -1,7 +1,7 @@
-﻿using System.IO;
+﻿using SacredUtils.Resources.bin;
+using System.IO;
 using System.Text;
 using System.Windows.Media;
-using SacredUtils.Resources.bin;
 using static SacredUtils.Resources.bin.AncillaryConstsStrings;
 
 namespace SacredUtils.Resources.wnd
@@ -16,7 +16,7 @@ namespace SacredUtils.Resources.wnd
 
         public void LoadColorTheme()
         {
-            var text =  File.ReadAllLines(AppSettings, Encoding.ASCII);
+            var text =  File.ReadAllLines(AppSettingsFile, Encoding.ASCII);
 
             var bc = new BrushConverter();
 

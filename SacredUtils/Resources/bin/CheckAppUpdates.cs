@@ -1,9 +1,9 @@
 ﻿using System;
-using System.IO;
-using System.Windows;
 using System.Diagnostics;
+using System.IO;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
+using System.Windows;
 using static SacredUtils.Resources.bin.AncillaryConstsStrings;
 using static SacredUtils.Resources.bin.LanguageConstsStrings;
 
@@ -15,7 +15,7 @@ namespace SacredUtils.Resources.bin
 
         public async Task GetAvailableAppUpdatesAsync(string type)
         {
-            var fileText = File.ReadAllText(AppSettings);
+            var fileText = File.ReadAllText(AppSettingsFile);
 
             try
             {
@@ -84,13 +84,13 @@ namespace SacredUtils.Resources.bin
 
             try
             {
-                await Task.Run(() => File.WriteAllBytes(AppTempFolder + "/" + AppUpdaterExe, Properties.Resources.SacredUtilsUpdater));
+                await Task.Run(() => File.WriteAllBytes($"{AppTempFolder}\\{AppUpdaterFile}", Properties.Resources.SacredUtilsUpdater));
             }
             catch (Exception exception)
             {
-                 Log.Fatal(exception.ToString()); Environment.Exit(0);
+                Log.Fatal(exception.ToString()); Environment.Exit(0);
             }
-            
+
             const string appLatest = @"https://drive.google.com/uc?export=download&id=1sDiiIYW0_JXMqh6IAHMOyf3IKPySCr4Q";
 
             try
@@ -113,7 +113,7 @@ namespace SacredUtils.Resources.bin
                         "false");
                 }
 
-                Process.Start(AppTempFolder + "\\" + AppUpdaterExe, "_newVersionSacredUtilsTemp.exe " + Appname);
+                Process.Start($"{AppTempFolder}\\{AppUpdaterFile}", "_newVersionSacredUtilsTemp.exe " + AppnameFile);
             }
             catch (Exception exception)
             {

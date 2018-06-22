@@ -1,5 +1,5 @@
-﻿using System;
-using log4net.Config;
+﻿using log4net.Config;
+using System;
 
 namespace SacredUtils.Resources.bin
 {

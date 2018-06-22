@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.IO;
 using System.Net;
 using System.Text;
-using Microsoft.Win32;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using static SacredUtils.Resources.bin.AncillaryConstsStrings;
 
 namespace SacredUtils.Resources.bin
@@ -62,7 +62,7 @@ namespace SacredUtils.Resources.bin
 
                 Directory.CreateDirectory(AppDataFolder);
 
-                using (Stream fileStream = File.Create($"{AppDataFolder}\\downloadstat.dat"))
+                using (Stream fileStream = File.Create(AppDownloadStatFile))
                 {
                     responseStream.CopyTo(fileStream);
                 }
@@ -79,15 +79,15 @@ namespace SacredUtils.Resources.bin
         {
             try
             {
-                var text = File.ReadAllText($"{AppDataFolder}\\downloadstat.dat");
+                var text = File.ReadAllText(AppDownloadStatFile);
 
                 var numberOfStartups = Regex.Match(text, @"\d+").Value;
 
                 var newNumberOfStartups = Convert.ToInt32(numberOfStartups) + 1;
 
-                var fileAllText = File.ReadAllLines($"{AppDataFolder}\\downloadstat.dat");
+                var fileAllText = File.ReadAllLines(AppDownloadStatFile);
                 fileAllText[0] = $"; The program is downloaded {newNumberOfStartups} time(s)";
-                File.WriteAllLines($"{AppDataFolder}\\downloadstat.dat", fileAllText, Encoding.UTF8);
+                File.WriteAllLines(AppDownloadStatFile, fileAllText, Encoding.UTF8);
 
                 await SendFileStatisticAsync();
             }
@@ -107,7 +107,7 @@ namespace SacredUtils.Resources.bin
 
                 await Task.Run(() => request.Credentials = new NetworkCredential("mairwunnxstatistic", "11317151PleaseNotChange"));
 
-                StreamReader sourceStream = await Task.Run(() => new StreamReader($"{AppDataFolder}\\downloadstat.dat"));
+                StreamReader sourceStream = await Task.Run(() => new StreamReader(AppDownloadStatFile));
                 byte[] fileContents = await Task.Run(() => Encoding.UTF8.GetBytes(sourceStream.ReadToEnd()));
                 sourceStream.Close(); request.ContentLength = fileContents.Length;
 

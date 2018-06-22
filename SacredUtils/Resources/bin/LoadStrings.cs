@@ -8,11 +8,11 @@ using static SacredUtils.Resources.bin.LanguageConstsStrings;
 
 namespace SacredUtils.Resources.bin
 {
-    class LoadStrings
+    public class LoadStrings
     {
         public async Task GetStringsAsync()
         {
-            StreamReader streamReader = new StreamReader(AppLngDataFolder, Encoding.Default);
+            StreamReader streamReader = new StreamReader(AppLngDataFile, Encoding.Default);
             string[] stringss = streamReader.ReadToEnd().Split('\n');
 
             for (var i = 0; i < stringss.Length; i++)
@@ -177,70 +177,70 @@ namespace SacredUtils.Resources.bin
             {
                 if (String0001 == "Вы обновитесь до версии")
                 {
-                    Random rnd = new Random();
+                    Random.Org.Random rnd = new Random.Org.Random();
                     
                     int rndInt = rnd.Next(210618, 1498640135);
 
                     Directory.CreateDirectory(AppLngBackupFolder);
 
-                    await Task.Run(() => File.Copy(AppLngDataFolder, $"{AppLngBackupFolder}\\language_ru_id_{rndInt}.dat"));
+                    await Task.Run(() => File.Copy(AppLngDataFile, $"{AppLngBackupFolder}\\language_ru_id_{rndInt}.dat"));
 
-                    await Task.Run(() => File.WriteAllBytes(AppLngDataFolder, Properties.Resources.languageru));
+                    await Task.Run(() => File.WriteAllBytes(AppLngDataFile, Properties.Resources.languageru));
 
-                    await CreateTempInfoFile(AppLngDataFolder, $"{AppLngBackupFolder}\\language_ru_id_{rndInt}.dat");
+                    await CreateTempInfoFile(AppLngDataFile, $"{AppLngBackupFolder}\\language_ru_id_{rndInt}.dat");
 
-                    Process.Start(Appname); Environment.Exit(0);
+                    Process.Start(AppnameFile); Environment.Exit(0);
                 }
 
                 if (String0001 == "You updating to version")
                 {
-                    Random rnd = new Random();
+                    Random.Org.Random rnd = new Random.Org.Random();
 
                     int rndInt = rnd.Next(210618, 1498640135);
 
                     Directory.CreateDirectory(AppLngBackupFolder);
 
-                    await Task.Run(() => File.Copy(AppLngDataFolder, $"{AppLngBackupFolder}\\language_en_id_{rndInt}.dat"));
+                    await Task.Run(() => File.Copy(AppLngDataFile, $"{AppLngBackupFolder}\\language_en_id_{rndInt}.dat"));
 
-                    await Task.Run(() => File.WriteAllBytes(AppLngDataFolder, Properties.Resources.languageen));
+                    await Task.Run(() => File.WriteAllBytes(AppLngDataFile, Properties.Resources.languageen));
 
-                    await CreateTempInfoFile(AppLngDataFolder, $"{AppLngBackupFolder}\\language_en_id_{rndInt}.dat");
+                    await CreateTempInfoFile(AppLngDataFile, $"{AppLngBackupFolder}\\language_en_id_{rndInt}.dat");
 
-                    Process.Start(Appname); Environment.Exit(0);
+                    Process.Start(AppnameFile); Environment.Exit(0);
                 }
 
                 if (String0001 == "Sie aktualisieren auf Version")
                 {
-                    Random rnd = new Random();
+                    Random.Org.Random rnd = new Random.Org.Random();
 
                     int rndInt = rnd.Next(210618, 1498640135);
 
                     Directory.CreateDirectory(AppLngBackupFolder);
 
-                    await Task.Run(() => File.Copy(AppLngDataFolder, $"{AppLngBackupFolder}\\language_de_id_{rndInt}.dat"));
+                    await Task.Run(() => File.Copy(AppLngDataFile, $"{AppLngBackupFolder}\\language_de_id_{rndInt}.dat"));
 
-                    await Task.Run(() => File.WriteAllBytes(AppLngDataFolder, Properties.Resources.languagede));
+                    await Task.Run(() => File.WriteAllBytes(AppLngDataFile, Properties.Resources.languagede));
 
-                    await CreateTempInfoFile(AppLngDataFolder, $"{AppLngBackupFolder}\\language_de_id_{rndInt}.dat");
+                    await CreateTempInfoFile(AppLngDataFile, $"{AppLngBackupFolder}\\language_de_id_{rndInt}.dat");
 
-                    Process.Start(Appname); Environment.Exit(0);
+                    Process.Start(AppnameFile); Environment.Exit(0);
                 }
 
                 if (String0001 == "")
                 {
-                    Random rnd = new Random();
+                    Random.Org.Random rnd = new Random.Org.Random();
 
                     int rndInt = rnd.Next(210618, 1498640135);
 
                     Directory.CreateDirectory(AppLngBackupFolder);
 
-                    await Task.Run(() => File.Copy(AppLngDataFolder, $"{AppLngBackupFolder}\\language_any_id_{rndInt}.dat"));
+                    await Task.Run(() => File.Copy(AppLngDataFile, $"{AppLngBackupFolder}\\language_any_id_{rndInt}.dat"));
 
-                    await Task.Run(() => File.Delete(AppLngDataFolder));
+                    await Task.Run(() => File.Delete(AppLngDataFile));
 
-                    await CreateTempInfoFile(AppLngDataFolder, $"{AppLngBackupFolder}\\language_any_id_{rndInt}.dat");
+                    await CreateTempInfoFile(AppLngDataFile, $"{AppLngBackupFolder}\\language_any_id_{rndInt}.dat");
 
-                    Process.Start(Appname); Environment.Exit(0);
+                    Process.Start(AppnameFile); Environment.Exit(0);
                 }
             }
         }
@@ -249,14 +249,14 @@ namespace SacredUtils.Resources.bin
         {
             try
             {
-                if (File.Exists($"{AppTempLngFolder}\\langinfo-err.dat"))
+                if (File.Exists(AppLngErrorFile))
                 {
-                    await Task.Run(() => File.Delete($"{AppTempLngFolder}\\langinfo-err.dat"));
+                    await Task.Run(() => File.Delete(AppLngErrorFile));
                 }
 
                 await Task.Run(() => Directory.CreateDirectory(AppTempLngFolder));
 
-                StreamWriter textFile = new StreamWriter($"{AppTempLngFolder}\\langinfo-err.dat");
+                StreamWriter textFile = new StreamWriter(AppLngErrorFile);
                 textFile.WriteLine(file);
                 textFile.WriteLine(pathToBackupFile);
                 textFile.Close();

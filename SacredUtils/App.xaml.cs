@@ -1,7 +1,7 @@
-﻿using System.Windows;
-using System.Threading.Tasks;
-using SacredUtils.Resources.bin;
+﻿using SacredUtils.Resources.bin;
 using SacredUtils.Resources.wnd;
+using System.Threading.Tasks;
+using System.Windows;
 
 namespace SacredUtils
 {

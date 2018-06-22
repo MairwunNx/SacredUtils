@@ -11,9 +11,9 @@ namespace SacredUtils.Resources.bin
             try
             {
                 File.WriteAllBytes($"{AppNameWithoutExtension}.pdb", Properties.Resources.SacredUtils);
-                File.WriteAllBytes($"{Appname}.config", Properties.Resources.SacredUtils_exe);
-                File.WriteAllBytes("license.txt", Properties.Resources.license);
-                File.WriteAllBytes("notise.txt", Properties.Resources.notise);
+                File.WriteAllBytes($"{AppnameFile}.config", Properties.Resources.SacredUtils_exe);
+                File.WriteAllBytes(AppLicenseFile, Properties.Resources.license);
+                File.WriteAllBytes(AppNotiseFile, Properties.Resources.notise);
             }
             catch (Exception exception)
             {

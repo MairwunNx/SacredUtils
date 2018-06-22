@@ -1,11 +1,11 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using SacredUtils.Resources.bin;
+using System;
 using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
-using MaterialDesignThemes.Wpf;
-using SacredUtils.Resources.bin;
 using static SacredUtils.Resources.bin.AncillaryConstsStrings;
 
 namespace SacredUtils.Resources.wnd
@@ -35,7 +35,7 @@ namespace SacredUtils.Resources.wnd
 
         private void LoadColorFromConfig()
         {
-            var text = File.ReadAllLines(AppSettings, Encoding.ASCII);
+            var text = File.ReadAllLines(AppSettingsFile, Encoding.ASCII);
 
             var bc = new BrushConverter();
 
@@ -252,9 +252,9 @@ namespace SacredUtils.Resources.wnd
 
                 try
                 { 
-                    var fileAllText00 = File.ReadAllLines(AppSettings);
+                    var fileAllText00 = File.ReadAllLines(AppSettingsFile);
                     fileAllText00[28] = "# - User interface color SacredUtils = red                         #";
-                    File.WriteAllLines(AppSettings, fileAllText00); Close();
+                    File.WriteAllLines(AppSettingsFile, fileAllText00); Close();
                 }
                 catch (Exception exception)
                 {
@@ -271,9 +271,9 @@ namespace SacredUtils.Resources.wnd
 
                 try
                 {
-                    var fileAllText01 = File.ReadAllLines(AppSettings);
+                    var fileAllText01 = File.ReadAllLines(AppSettingsFile);
                     fileAllText01[28] = "# - User interface color SacredUtils = pink                        #";
-                    File.WriteAllLines(AppSettings, fileAllText01); Close();
+                    File.WriteAllLines(AppSettingsFile, fileAllText01); Close();
                 }
                 catch (Exception exception)
                 {
@@ -291,9 +291,9 @@ namespace SacredUtils.Resources.wnd
 
                 try
                 {
-                    var fileAllText02 = File.ReadAllLines(AppSettings);
+                    var fileAllText02 = File.ReadAllLines(AppSettingsFile);
                     fileAllText02[28] = "# - User interface color SacredUtils = purple                      #";
-                    File.WriteAllLines(AppSettings, fileAllText02); Close();
+                    File.WriteAllLines(AppSettingsFile, fileAllText02); Close();
                 }
                 catch (Exception exception)
                 {
@@ -310,9 +310,9 @@ namespace SacredUtils.Resources.wnd
 
                 try
                 {
-                    var fileAllText03 = File.ReadAllLines(AppSettings);
+                    var fileAllText03 = File.ReadAllLines(AppSettingsFile);
                     fileAllText03[28] = "# - User interface color SacredUtils = deeppurple                  #";
-                    File.WriteAllLines(AppSettings, fileAllText03); Close();
+                    File.WriteAllLines(AppSettingsFile, fileAllText03); Close();
                 }
                 catch (Exception exception)
                 {
@@ -329,9 +329,9 @@ namespace SacredUtils.Resources.wnd
 
                 try
                 {
-                    var fileAllText04 = File.ReadAllLines(AppSettings);
+                    var fileAllText04 = File.ReadAllLines(AppSettingsFile);
                     fileAllText04[28] = "# - User interface color SacredUtils = indigo                      #";
-                    File.WriteAllLines(AppSettings, fileAllText04); Close();
+                    File.WriteAllLines(AppSettingsFile, fileAllText04); Close();
                 }
                 catch (Exception exception)
                 {
@@ -348,9 +348,9 @@ namespace SacredUtils.Resources.wnd
 
                 try
                 {
-                    var fileAllText05 = File.ReadAllLines(AppSettings);
+                    var fileAllText05 = File.ReadAllLines(AppSettingsFile);
                     fileAllText05[28] = "# - User interface color SacredUtils = blue                        #";
-                    File.WriteAllLines(AppSettings, fileAllText05); Close();
+                    File.WriteAllLines(AppSettingsFile, fileAllText05); Close();
                 }
                 catch (Exception exception)
                 {
@@ -367,9 +367,9 @@ namespace SacredUtils.Resources.wnd
 
                 try
                 {
-                    var fileAllText06 = File.ReadAllLines(AppSettings);
+                    var fileAllText06 = File.ReadAllLines(AppSettingsFile);
                     fileAllText06[28] = "# - User interface color SacredUtils = lightblue                   #";
-                    File.WriteAllLines(AppSettings, fileAllText06); Close();
+                    File.WriteAllLines(AppSettingsFile, fileAllText06); Close();
                 }
                 catch (Exception exception)
                 {
@@ -386,9 +386,9 @@ namespace SacredUtils.Resources.wnd
 
                 try
                 {
-                    var fileAllText07 = File.ReadAllLines(AppSettings);
+                    var fileAllText07 = File.ReadAllLines(AppSettingsFile);
                     fileAllText07[28] = "# - User interface color SacredUtils = cyan                        #";
-                    File.WriteAllLines(AppSettings, fileAllText07); Close();
+                    File.WriteAllLines(AppSettingsFile, fileAllText07); Close();
                 }
                 catch (Exception exception)
                 {
@@ -405,9 +405,9 @@ namespace SacredUtils.Resources.wnd
 
                 try
                 {
-                    var fileAllText08 = File.ReadAllLines(AppSettings);
+                    var fileAllText08 = File.ReadAllLines(AppSettingsFile);
                     fileAllText08[28] = "# - User interface color SacredUtils = teal                        #";
-                    File.WriteAllLines(AppSettings, fileAllText08); Close();
+                    File.WriteAllLines(AppSettingsFile, fileAllText08); Close();
                 }
                 catch (Exception exception)
                 {
@@ -424,9 +424,9 @@ namespace SacredUtils.Resources.wnd
 
                 try
                 {
-                    var fileAllText09 = File.ReadAllLines(AppSettings);
+                    var fileAllText09 = File.ReadAllLines(AppSettingsFile);
                     fileAllText09[28] = "# - User interface color SacredUtils = green                       #";
-                    File.WriteAllLines(AppSettings, fileAllText09); Close();
+                    File.WriteAllLines(AppSettingsFile, fileAllText09); Close();
                 }
                 catch (Exception exception)
                 {
@@ -443,9 +443,9 @@ namespace SacredUtils.Resources.wnd
 
                 try
                 {
-                    var fileAllText10 = File.ReadAllLines(AppSettings);
+                    var fileAllText10 = File.ReadAllLines(AppSettingsFile);
                     fileAllText10[28] = "# - User interface color SacredUtils = lightgreen                  #";
-                    File.WriteAllLines(AppSettings, fileAllText10); Close();
+                    File.WriteAllLines(AppSettingsFile, fileAllText10); Close();
                 }
                 catch (Exception exception)
                 {
@@ -462,9 +462,9 @@ namespace SacredUtils.Resources.wnd
 
                 try
                 {
-                    var fileAllText11 = File.ReadAllLines(AppSettings);
+                    var fileAllText11 = File.ReadAllLines(AppSettingsFile);
                     fileAllText11[28] = "# - User interface color SacredUtils = lime                        #";
-                    File.WriteAllLines(AppSettings, fileAllText11); Close();
+                    File.WriteAllLines(AppSettingsFile, fileAllText11); Close();
                 }
                 catch (Exception exception)
                 {
@@ -481,9 +481,9 @@ namespace SacredUtils.Resources.wnd
 
                 try
                 {
-                    var fileAllText12 = File.ReadAllLines(AppSettings);
+                    var fileAllText12 = File.ReadAllLines(AppSettingsFile);
                     fileAllText12[28] = "# - User interface color SacredUtils = yellow                      #";
-                    File.WriteAllLines(AppSettings, fileAllText12); Close();
+                    File.WriteAllLines(AppSettingsFile, fileAllText12); Close();
                 }
                 catch (Exception exception)
                 {
@@ -500,9 +500,9 @@ namespace SacredUtils.Resources.wnd
 
                 try
                 {
-                    var fileAllText13 = File.ReadAllLines(AppSettings);
+                    var fileAllText13 = File.ReadAllLines(AppSettingsFile);
                     fileAllText13[28] = "# - User interface color SacredUtils = amber                       #";
-                    File.WriteAllLines(AppSettings, fileAllText13); Close();
+                    File.WriteAllLines(AppSettingsFile, fileAllText13); Close();
                 }
                 catch (Exception exception)
                 {
@@ -519,9 +519,9 @@ namespace SacredUtils.Resources.wnd
 
                 try
                 {
-                    var fileAllText14 = File.ReadAllLines(AppSettings);
+                    var fileAllText14 = File.ReadAllLines(AppSettingsFile);
                     fileAllText14[28] = "# - User interface color SacredUtils = orange                      #";
-                    File.WriteAllLines(AppSettings, fileAllText14); Close();
+                    File.WriteAllLines(AppSettingsFile, fileAllText14); Close();
                 }
                 catch (Exception exception)
                 {
@@ -538,9 +538,9 @@ namespace SacredUtils.Resources.wnd
 
                 try
                 {
-                    var fileAllText15 = File.ReadAllLines(AppSettings);
+                    var fileAllText15 = File.ReadAllLines(AppSettingsFile);
                     fileAllText15[28] = "# - User interface color SacredUtils = deeporange                  #";
-                    File.WriteAllLines(AppSettings, fileAllText15); Close();
+                    File.WriteAllLines(AppSettingsFile, fileAllText15); Close();
                 }
                 catch (Exception exception)
                 {
@@ -557,9 +557,9 @@ namespace SacredUtils.Resources.wnd
 
                 try
                 {
-                    var fileAllText16 = File.ReadAllLines(AppSettings);
+                    var fileAllText16 = File.ReadAllLines(AppSettingsFile);
                     fileAllText16[28] = "# - User interface color SacredUtils = brown                       #";
-                    File.WriteAllLines(AppSettings, fileAllText16); Close();
+                    File.WriteAllLines(AppSettingsFile, fileAllText16); Close();
                 }
                 catch (Exception exception)
                 {
@@ -576,9 +576,9 @@ namespace SacredUtils.Resources.wnd
 
                 try
                 {
-                    var fileAllText17 = File.ReadAllLines(AppSettings);
+                    var fileAllText17 = File.ReadAllLines(AppSettingsFile);
                     fileAllText17[28] = "# - User interface color SacredUtils = grey                        #";
-                    File.WriteAllLines(AppSettings, fileAllText17); Close();
+                    File.WriteAllLines(AppSettingsFile, fileAllText17); Close();
                 }
                 catch (Exception exception)
                 {
@@ -595,9 +595,9 @@ namespace SacredUtils.Resources.wnd
 
                 try
                 {
-                    var fileAllText18 = File.ReadAllLines(AppSettings);
+                    var fileAllText18 = File.ReadAllLines(AppSettingsFile);
                     fileAllText18[28] = "# - User interface color SacredUtils = bluegrey                    #";
-                    File.WriteAllLines(AppSettings, fileAllText18); Close();
+                    File.WriteAllLines(AppSettingsFile, fileAllText18); Close();
                 }
                 catch (Exception exception)
                 {
@@ -635,9 +635,9 @@ namespace SacredUtils.Resources.wnd
 
                 try
                 {
-                    var fileAllText18 = File.ReadAllLines(AppSettings);
+                    var fileAllText18 = File.ReadAllLines(AppSettingsFile);
                     fileAllText18[28] = "# - User interface color SacredUtils = black                       #";
-                    File.WriteAllLines(AppSettings, fileAllText18); Close();
+                    File.WriteAllLines(AppSettingsFile, fileAllText18); Close();
                 }
                 catch (Exception exception)
                 {

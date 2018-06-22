@@ -8,7 +8,7 @@ namespace SacredUtils.Resources.bin
     {
         public void GetAvailableUpdate()
         {
-            var fileText = File.ReadAllText(AppSettings);
+            var fileText = File.ReadAllText(AppSettingsFile);
 
             try
             {

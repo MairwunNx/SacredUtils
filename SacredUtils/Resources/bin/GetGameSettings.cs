@@ -12,7 +12,7 @@ namespace SacredUtils.Resources.bin
         {
             try
             {
-                var text = File.ReadAllLines(SacredSettings, Encoding.ASCII);
+                var text = File.ReadAllLines(SacredSettingsFile, Encoding.ASCII);
 
                 for (int i = 0; i < text.Length; i++)
                 {
@@ -725,7 +725,7 @@ namespace SacredUtils.Resources.bin
                     }
                 }
 
-                using (StreamReader sr = new StreamReader(SacredSettings))
+                using (StreamReader sr = new StreamReader(SacredSettingsFile))
                 {
                     string contents = sr.ReadToEnd();
 

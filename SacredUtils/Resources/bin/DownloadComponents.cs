@@ -1,14 +1,14 @@
-﻿using System;
-using Ionic.Zip;
+﻿using Ionic.Zip;
+using SacredUtils.Resources.wnd;
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
-using System.Windows;
-using System.Reflection;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using SacredUtils.Resources.wnd;
 using System.Net.NetworkInformation;
+using System.Reflection;
 using System.Threading;
+using System.Threading.Tasks;
+using System.Windows;
 using static SacredUtils.Resources.bin.AncillaryConstsStrings;
 using static SacredUtils.Resources.bin.LanguageConstsStrings;
 
@@ -32,7 +32,7 @@ namespace SacredUtils.Resources.bin
                 {
                     Directory.CreateDirectory(neededDirectory); Directory.CreateDirectory(extractFolder);
 
-                    if (File.Exists(extractFolder + "/" + newFile)) { File.Delete(extractFolder + "/" + newFile); }
+                    if (File.Exists($"{extractFolder}\\{newFile}")) { File.Delete($"{extractFolder}\\{newFile}"); }
 
                     componentsWindow.DownloadPercent01.Content = $"{String0004} " + component + " ...";
 
@@ -112,7 +112,7 @@ namespace SacredUtils.Resources.bin
                         {
                             await Task.Run(() => e.Extract(extractFolder));
 
-                            await Task.Run(() => File.Move(extractFolder + "/" + oldFile, extractFolder + "/" + newFile));
+                            await Task.Run(() => File.Move($"{extractFolder}\\{oldFile}", $"{extractFolder}\\{newFile}"));
                         }
 
                         catch (Exception exception)

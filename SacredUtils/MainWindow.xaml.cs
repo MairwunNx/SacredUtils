@@ -1,27 +1,27 @@
 ﻿#region UsingDirectives.
 
-using System;
 using log4net;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Windows;
-using System.Reflection;
+using SacredUtils.Resources.bin;
+using SacredUtils.Resources.wnd;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing.Text;
 using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using SacredUtils.Resources.bin;
-using System.Collections.Generic;
-using SacredUtils.Resources.wnd;
-using System.Text.RegularExpressions;
 using static SacredUtils.Resources.bin.AncillaryConstsStrings;
-using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 using static SacredUtils.Resources.bin.LanguageConstsStrings;
+using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 
 #endregion
 
@@ -169,40 +169,40 @@ namespace SacredUtils
                 {
                     if (ChangeImputLangToggleBtn.IsChecked == true)
                     {
-                        if (File.Exists(SacredExe))
+                        if (File.Exists(SacredExeFile))
                         {
                             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
 
-                            Process.Start(SacredExe); Environment.Exit(0);
+                            Process.Start(SacredExeFile); Environment.Exit(0);
                         }
                     }
                     else if (ChangeImputLangToggleBtn.IsChecked == false)
                     {
-                        if (File.Exists(SacredExe)) { Process.Start(SacredExe); Environment.Exit(0); }
+                        if (File.Exists(SacredExeFile)) { Process.Start(SacredExeFile); Environment.Exit(0); }
                     }
                 }
                 else if (MinimizeProgramToggleBtn.IsChecked == true)
                 {
                     if (ChangeImputLangToggleBtn.IsChecked == true)
                     {
-                        if (File.Exists(SacredExe))
+                        if (File.Exists(SacredExeFile))
                         {
                             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
 
-                            Process.Start(SacredExe); WindowState = WindowState.Minimized;
+                            Process.Start(SacredExeFile); WindowState = WindowState.Minimized;
                         }
                     }
                     else if (ChangeImputLangToggleBtn.IsChecked == false)
                     {
-                        if (File.Exists(SacredExe)) { Process.Start(SacredExe); WindowState = WindowState.Minimized; }
+                        if (File.Exists(SacredExeFile)) { Process.Start(SacredExeFile); WindowState = WindowState.Minimized; }
                     }
                 }
-                else { if (File.Exists(SacredExe)) { Process.Start(SacredExe); } }
+                else { if (File.Exists(SacredExeFile)) { Process.Start(SacredExeFile); } }
             }
 
             if (SettingsListBox.SelectedIndex == 15)
             {
-                Process.Start(Appname); Environment.Exit(0);
+                Process.Start(AppnameFile); Environment.Exit(0);
             }
         }
 
@@ -217,11 +217,11 @@ namespace SacredUtils
 
         public void SetSettingsValue(string s, string v)
         {
-            if (!File.Exists(SacredSettings))
+            if (!File.Exists(SacredSettingsFile))
             {
                 try
                 {
-                    File.WriteAllBytes(SacredSettings, Properties.Resources.GameSettings);
+                    File.WriteAllBytes(SacredSettingsFile, Properties.Resources.GameSettings);
                 }
                 catch (Exception exception)
                 {
@@ -229,7 +229,7 @@ namespace SacredUtils
                 }
             }
 
-            var text = File.ReadAllLines(SacredSettings, Encoding.ASCII);
+            var text = File.ReadAllLines(SacredSettingsFile, Encoding.ASCII);
 
             for (int i = 0; i < text.Length; i++)
             {
@@ -237,7 +237,7 @@ namespace SacredUtils
                 {
                     try
                     {
-                        text[i] = $"{s} : {v}"; File.WriteAllLines(SacredSettings, text);
+                        text[i] = $"{s} : {v}"; File.WriteAllLines(SacredSettingsFile, text);
                     }
                     catch (Exception exception)
                     {
@@ -249,11 +249,11 @@ namespace SacredUtils
 
         public void SetSettingsValueForFont(string s, string v)
         {
-            if (!File.Exists(SacredSettings))
+            if (!File.Exists(SacredSettingsFile))
             {
                 try
                 {
-                    File.WriteAllBytes(SacredSettings, Properties.Resources.GameSettings);
+                    File.WriteAllBytes(SacredSettingsFile, Properties.Resources.GameSettings);
                 }
                 catch (Exception exception)
                 {
@@ -261,7 +261,7 @@ namespace SacredUtils
                 }
             }
 
-            var text = File.ReadAllLines(SacredSettings, Encoding.ASCII);
+            var text = File.ReadAllLines(SacredSettingsFile, Encoding.ASCII);
 
             for (int i = 0; i < text.Length; i++)
             {
@@ -269,7 +269,7 @@ namespace SacredUtils
                 {
                     try
                     {
-                        text[i] = s + v; File.WriteAllLines(SacredSettings, text);
+                        text[i] = s + v; File.WriteAllLines(SacredSettingsFile, text);
                     }
                     catch (Exception exception)
                     {
@@ -281,11 +281,11 @@ namespace SacredUtils
 
         public void SetSettingsValueWithDouble(string s, double v)
         {
-            if (!File.Exists(SacredSettings))
+            if (!File.Exists(SacredSettingsFile))
             {
                 try
                 {
-                    File.WriteAllBytes(SacredSettings, Properties.Resources.GameSettings);
+                    File.WriteAllBytes(SacredSettingsFile, Properties.Resources.GameSettings);
                 }
                 catch (Exception exception)
                 {
@@ -293,7 +293,7 @@ namespace SacredUtils
                 }
             }
 
-            var text = File.ReadAllLines(SacredSettings, Encoding.ASCII);
+            var text = File.ReadAllLines(SacredSettingsFile, Encoding.ASCII);
 
             for (int i = 0; i < text.Length; i++)
             {
@@ -301,7 +301,7 @@ namespace SacredUtils
                 {
                     try
                     {
-                        text[i] = $"{s} : {v}"; File.WriteAllLines(SacredSettings, text);
+                        text[i] = $"{s} : {v}"; File.WriteAllLines(SacredSettingsFile, text);
                     }
                     catch (Exception exception)
                     {
@@ -821,79 +821,79 @@ namespace SacredUtils
                 }
             }
 
-            if (File.Exists(AppDataFolder + "/" + AppInstallInfo))
+            if (File.Exists(AppInstallInfo))
             {
-                var text = File.ReadAllText(AppDataFolder + "/" + AppInstallInfo, Encoding.ASCII);
+                var text = File.ReadAllText(AppInstallInfo, Encoding.ASCII);
 
-                CompileGlobalResBtn.Content = $"{String0137}";
-                DecompileGlobalResBtn.Content = $"{String0137}";
+                CompileGlobalResBtn.Content = String0137;
+                DecompileGlobalResBtn.Content = String0137;
 
                 if (text.Contains("Veteranmod by ufo installed = true"))
                 {
-                    VeteranModUfoBtn.Content = $"{String0007}";
+                    VeteranModUfoBtn.Content = String0007;
                 }
                 else if (text.Contains("Veteranmod by ufo installed = false"))
                 {
-                    VeteranModUfoBtn.Content = $"{String0008}";
+                    VeteranModUfoBtn.Content = String0008;
                 }
 
                 if (text.Contains("Veteranmod dragonfix installed = true"))
                 {
-                    VeteranModDragonFixBtn.Content = $"{String0007}";
+                    VeteranModDragonFixBtn.Content = String0007;
                 }
                 else if (text.Contains("Veteranmod dragonfix installed = false"))
                 {
-                    VeteranModDragonFixBtn.Content = $"{String0008}";
+                    VeteranModDragonFixBtn.Content = String0008;
                 }
 
                 if (text.Contains("Sacred 2.29.14 patch installed = true"))
                 {
-                    SacredNewUpdateBtn.Content = $"{String0007}";
+                    SacredNewUpdateBtn.Content = String0007;
                 }
                 else if (text.Contains("Sacred 2.29.14 patch installed = false"))
                 {
-                    SacredNewUpdateBtn.Content = $"{String0008}";
+                    SacredNewUpdateBtn.Content = String0008;
                 }
 
                 if (text.Contains("Server multicore fix installed = true"))
                 {
-                    ServerMulticoreFixBtn.Content = $"{String0007}";
+                    ServerMulticoreFixBtn.Content = String0007;
                 }
                 else if (text.Contains("Server multicore fix installed = false"))
                 {
-                    ServerMulticoreFixBtn.Content = $"{String0008}";
+                    ServerMulticoreFixBtn.Content = String0008;
                 }
             }
-            else if (!File.Exists(AppDataFolder + "/" + AppInstallInfo))
+            else if (!File.Exists(AppInstallInfo))
             {
                 Directory.CreateDirectory(AppDataFolder);
 
                 try
                 {
-                    File.WriteAllBytes(AppDataFolder + "/" + AppInstallInfo, Properties.Resources.installinfo);
+                    File.WriteAllBytes(AppInstallInfo, Properties.Resources.installinfo);
                 }
                 catch (Exception exception)
                 {
                      Log.Error(exception.ToString());
                 }
 
-                VeteranModUfoBtn.Content = $"{String0008}"; VeteranModDragonFixBtn.Content = $"{String0008}";
-                SacredNewUpdateBtn.Content = $"{String0008}"; ServerMulticoreFixBtn.Content = $"{String0008}";
+                VeteranModUfoBtn.Content = String0008; VeteranModDragonFixBtn.Content = String0008;
+                SacredNewUpdateBtn.Content = String0008; ServerMulticoreFixBtn.Content = String0008;
             }
 
-            if (File.Exists(AppDataFolder + "/" + AppStatistic))
+            if (File.Exists(AppStatisticFile))
             {
                 try
                 {
-                    var text = File.ReadAllText(AppDataFolder + "/" + AppStatistic);
+                    var text = File.ReadAllText(AppStatisticFile);
 
                     var numberOfStartups = Regex.Match(text, @"\d+").Value;
 
                     var newNumberOfStartups = Convert.ToInt32(numberOfStartups) + 1;
 
-                    var fileAllText = File.ReadAllLines(AppDataFolder + "/" + AppStatistic);
+                    var fileAllText = File.ReadAllLines(AppStatisticFile);
                     fileAllText[3] = "; The program is launched " + newNumberOfStartups + " time(s)";
-                    File.WriteAllLines(AppDataFolder + "/" + AppStatistic, fileAllText);
+                    File.WriteAllLines(AppStatisticFile, fileAllText);
                 }
                 catch (Exception exception)
                 {
@@ -901,11 +901,11 @@ namespace SacredUtils
                 }
 
             }
-            else if (!File.Exists(AppDataFolder + "/" + AppStatistic))
+            else if (!File.Exists(AppStatisticFile))
             {
-                Directory.CreateDirectory(".SacredUtilsData");
+                Directory.CreateDirectory(AppDataFolder);
 
-                File.WriteAllBytes(AppDataFolder + "/" + AppStatistic, Properties.Resources.launchstat);
+                File.WriteAllBytes(AppStatisticFile, Properties.Resources.launchstat);
             }
 
             RandomChangeExampleText();
@@ -926,7 +926,7 @@ namespace SacredUtils
                 Log.Error(exception.ToString());
             }
 
-            var text = File.ReadAllLines(SacredSettings, Encoding.ASCII);
+            var text = File.ReadAllLines(SacredSettingsFile, Encoding.ASCII);
 
             for (var i = 0; i < text.Length; i++)
             {
@@ -943,7 +943,7 @@ namespace SacredUtils
                 }
             }
 
-            var text1 = File.ReadAllLines("Settings.su", Encoding.ASCII);
+            var text1 = File.ReadAllLines(AppSettingsFile, Encoding.ASCII);
 
             for (var i = 0; i < text1.Length; i++)
             {
@@ -1162,23 +1162,26 @@ namespace SacredUtils
                 WarnLbl.Visibility = Visibility.Visible;
             }
 
-            try
+            if (File.Exists(AppLngErrorFile))
             {
-                var text2 = File.ReadAllLines($"{AppTempLngFolder}\\langinfo-err.dat");
+                try
+                {
+                    var text2 = File.ReadAllLines(AppLngErrorFile);
 
-                FlexibleMessageBox.Show(this,$"{String0139}\n\n{String0140} {text2[0]}\n\n{String0141}\n\n{String0142} {text2[1]}\n\n{String0143}", $"{String0138}");
+                    FlexibleMessageBox.Show(this, $"{String0139}\n\n{String0140} {text2[0]}\n\n{String0141}\n\n{String0142} {text2[1]}\n\n{String0143}", $"{String0138}");
 
-                File.Delete($"{AppTempLngFolder}\\langinfo-err.dat");
-            }
-            catch
-            {
-                // Ignore.
+                    File.Delete(AppLngErrorFile);
+                }
+                catch
+                {
+                    // Ignore.
+                }
             }
         }
 
         public void RandomChangeExampleText()
         {
-            var rnd = new Random();
+            var rnd = new System.Random();
 
             string[] randomStrings =
             {
@@ -1398,7 +1401,7 @@ namespace SacredUtils
 
         private void VeteranModUfoBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (VeteranModUfoBtn.Content.ToString() == $"{String0008}")
+            if (VeteranModUfoBtn.Content.ToString() == String0008)
             {
                 Directory.CreateDirectory("bin"); Directory.CreateDirectory("PAK");
 
@@ -1422,26 +1425,26 @@ namespace SacredUtils
 
                 Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists(AppDataFolder + "/" + AppInstallInfo))
+                if (File.Exists(AppInstallInfo))
                 {
                     try
                     {
-                        var fileAllText = File.ReadAllLines($"{AppDataFolder}\\{AppInstallInfo}");
+                        var fileAllText = File.ReadAllLines(AppInstallInfo);
 
                         fileAllText[3] = "; Veteranmod by ufo installed = true";
                         fileAllText[4] = "; Veteranmod dragonfix installed = false";
 
-                        File.WriteAllLines($"{AppDataFolder}\\{AppInstallInfo}", fileAllText);
+                        File.WriteAllLines(AppInstallInfo, fileAllText);
                     }
                     catch (Exception exception)
                     {
                         Log.Error(exception.ToString());
                     }
 
-                    VeteranModUfoBtn.Content = $"{String0007}"; VeteranModDragonFixBtn.Content = $"{String0008}";
+                    VeteranModUfoBtn.Content = String0007; VeteranModDragonFixBtn.Content = String0008;
                 }
             }
-            else if (VeteranModUfoBtn.Content.ToString() == $"{String0007}")
+            else if (VeteranModUfoBtn.Content.ToString() == String0007)
             {
                 Directory.CreateDirectory("bin"); Directory.CreateDirectory("PAK");
 
@@ -1465,30 +1468,30 @@ namespace SacredUtils
 
                 Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists($"{AppDataFolder}\\{AppInstallInfo}"))
+                if (File.Exists(AppInstallInfo))
                 {
                     try
                     {
-                        var fileAllText = File.ReadAllLines($"{AppDataFolder}\\{AppInstallInfo}");
+                        var fileAllText = File.ReadAllLines(AppInstallInfo);
 
                         fileAllText[3] = "; Veteranmod by ufo installed = false";
                         fileAllText[4] = "; Veteranmod dragonfix installed = false";
 
-                        File.WriteAllLines($"{AppDataFolder}\\{AppInstallInfo}", fileAllText);
+                        File.WriteAllLines(AppInstallInfo, fileAllText);
                     }
                     catch (Exception exception)
                     {
                         Log.Error(exception.ToString());
                     }
 
-                    VeteranModUfoBtn.Content = $"{String0008}"; VeteranModDragonFixBtn.Content = $"{String0008}";
+                    VeteranModUfoBtn.Content = String0008; VeteranModDragonFixBtn.Content = String0008;
                 }
             }
         }
         
         private void VeteranModDragonFixBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (VeteranModDragonFixBtn.Content.ToString() == $"{String0008}")
+            if (VeteranModDragonFixBtn.Content.ToString() == String0008)
             {
                 Directory.CreateDirectory("bin"); Directory.CreateDirectory("PAK");
 
@@ -1512,26 +1515,26 @@ namespace SacredUtils
 
                 Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists($"{AppDataFolder}\\{AppInstallInfo}"))
+                if (File.Exists(AppInstallInfo))
                 {
                     try
                     {
-                        var fileAllText = File.ReadAllLines($"{AppDataFolder}\\{AppInstallInfo}");
+                        var fileAllText = File.ReadAllLines(AppInstallInfo);
 
                         fileAllText[3] = "; Veteranmod by ufo installed = false";
                         fileAllText[4] = "; Veteranmod dragonfix installed = true";
 
-                        File.WriteAllLines($"{AppDataFolder}\\{AppInstallInfo}", fileAllText);
+                        File.WriteAllLines(AppInstallInfo, fileAllText);
                     }
                     catch (Exception exception)
                     {
                         Log.Error(exception.ToString());
                     }
 
-                    VeteranModUfoBtn.Content = $"{String0008}"; VeteranModDragonFixBtn.Content = $"{String0007}";
+                    VeteranModUfoBtn.Content = String0008; VeteranModDragonFixBtn.Content = String0007;
                 }
             }
-            else if (VeteranModDragonFixBtn.Content.ToString() == $"{String0007}")
+            else if (VeteranModDragonFixBtn.Content.ToString() == String0007)
             {
                 Directory.CreateDirectory("bin"); Directory.CreateDirectory("PAK");
 
@@ -1555,30 +1558,30 @@ namespace SacredUtils
 
                 Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists($"{AppDataFolder}\\{AppInstallInfo}"))
+                if (File.Exists(AppInstallInfo))
                 {
                     try
                     {
-                        var fileAllText = File.ReadAllLines($"{AppDataFolder}\\{AppInstallInfo}");
+                        var fileAllText = File.ReadAllLines(AppInstallInfo);
 
                         fileAllText[3] = "; Veteranmod by ufo installed = false";
                         fileAllText[4] = "; Veteranmod dragonfix installed = false";
 
-                        File.WriteAllLines($"{AppDataFolder}\\{AppInstallInfo}", fileAllText);
+                        File.WriteAllLines(AppInstallInfo, fileAllText);
                     }
                     catch (Exception exception)
                     {
                         Log.Error(exception.ToString());
                     }
 
-                    VeteranModUfoBtn.Content = $"{String0008}"; VeteranModDragonFixBtn.Content = $"{String0008}";
+                    VeteranModUfoBtn.Content = String0008; VeteranModDragonFixBtn.Content = String0008;
                 }
             }
         }
 
         private async void SacredNewUpdateBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (SacredNewUpdateBtn.Content.ToString() == $"{String0008}")
+            if (SacredNewUpdateBtn.Content.ToString() == String0008)
             {
                 try
                 {
@@ -1596,25 +1599,25 @@ namespace SacredUtils
 
                 Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists($"{AppDataFolder}\\{AppInstallInfo}"))
+                if (File.Exists(AppInstallInfo))
                 {
                     try
                     {
-                        var fileAllText = File.ReadAllLines($"{AppDataFolder}\\{AppInstallInfo}");
+                        var fileAllText = File.ReadAllLines(AppInstallInfo);
 
                         fileAllText[5] = "; Sacred 2.29.14 patch installed = true";
 
-                        File.WriteAllLines($"{AppDataFolder}\\{AppInstallInfo}", fileAllText);
+                        File.WriteAllLines(AppInstallInfo, fileAllText);
                     }
                     catch (Exception exception)
                     {
                         Log.Error(exception.ToString());
                     }
 
-                    SacredNewUpdateBtn.Content = $"{String0007}";
+                    SacredNewUpdateBtn.Content = String0007;
                 }
             }
-            else if (SacredNewUpdateBtn.Content.ToString() == $"{String0007}")
+            else if (SacredNewUpdateBtn.Content.ToString() == String0007)
             {
                 try
                 {
@@ -1632,29 +1635,29 @@ namespace SacredUtils
 
                 Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists($"{AppDataFolder}\\{AppInstallInfo}"))
+                if (File.Exists(AppInstallInfo))
                 {
                     try
                     {
-                        var fileAllText = File.ReadAllLines($"{AppDataFolder}\\{AppInstallInfo}");
+                        var fileAllText = File.ReadAllLines(AppInstallInfo);
 
                         fileAllText[5] = "; Sacred 2.29.14 patch installed = false";
 
-                        File.WriteAllLines($"{AppDataFolder}\\{AppInstallInfo}", fileAllText);
+                        File.WriteAllLines(AppInstallInfo, fileAllText);
                     }
                     catch (Exception exception)
                     {
                         Log.Error(exception.ToString());
                     }
 
-                    SacredNewUpdateBtn.Content = $"{String0008}";
+                    SacredNewUpdateBtn.Content = String0008;
                 }
             }
         }
 
         private async void ServerMulticoreFixBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (ServerMulticoreFixBtn.Content.ToString() == $"{String0008}")
+            if (ServerMulticoreFixBtn.Content.ToString() == String0008)
             {
                 try
                 {
@@ -1672,25 +1675,25 @@ namespace SacredUtils
 
                 Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists($"{AppDataFolder}\\{AppInstallInfo}"))
+                if (File.Exists(AppInstallInfo))
                 {
                     try
                     {
-                        var fileAllText = File.ReadAllLines($"{AppDataFolder}\\{AppInstallInfo}");
+                        var fileAllText = File.ReadAllLines(AppInstallInfo);
 
                         fileAllText[6] = "; Server multicore fix installed = true";
 
-                        File.WriteAllLines($"{AppDataFolder}\\{AppInstallInfo}", fileAllText);
+                        File.WriteAllLines(AppInstallInfo, fileAllText);
                     }
                     catch (Exception exception)
                     {
                         Log.Error(exception.ToString());
                     }
 
-                    ServerMulticoreFixBtn.Content = $"{String0007}";
+                    ServerMulticoreFixBtn.Content = String0007;
                 }
             }
-            else if (ServerMulticoreFixBtn.Content.ToString() == $"{String0007}")
+            else if (ServerMulticoreFixBtn.Content.ToString() == String0007)
             {
                 try
                 {
@@ -1708,22 +1711,22 @@ namespace SacredUtils
 
                 Directory.CreateDirectory(AppDataFolder);
 
-                if (File.Exists($"{AppDataFolder}\\{AppInstallInfo}"))
+                if (File.Exists(AppInstallInfo))
                 {
                     try
                     {
-                        var fileAllText = File.ReadAllLines($"{AppDataFolder}\\{AppInstallInfo}");
+                        var fileAllText = File.ReadAllLines(AppInstallInfo);
 
                         fileAllText[6] = "; Server multicore fix installed = false";
 
-                        File.WriteAllLines($"{AppDataFolder}\\{AppInstallInfo}", fileAllText);
+                        File.WriteAllLines(AppInstallInfo, fileAllText);
                     }
                     catch (Exception exception)
                     {
                         Log.Error(exception.ToString());
                     }
 
-                    ServerMulticoreFixBtn.Content = $"{String0008}";
+                    ServerMulticoreFixBtn.Content = String0008;
                 }
             }
         }
@@ -1786,9 +1789,9 @@ namespace SacredUtils
         {
             try
             {
-                var fileAllText = File.ReadAllLines(AppSettings);
+                var fileAllText = File.ReadAllLines(AppSettingsFile);
                 fileAllText[index] = text;
-                File.WriteAllLines(AppSettings, fileAllText);
+                File.WriteAllLines(AppSettingsFile, fileAllText);
             }
             catch (Exception exception)
             {
@@ -1947,21 +1950,21 @@ namespace SacredUtils
 
         private void RussiaLang_Click(object sender, RoutedEventArgs e)
         {
-            File.WriteAllBytes(".SacredUtilsData\\language.dat", Properties.Resources.languageru);
+            File.WriteAllBytes(AppLngDataFile, Properties.Resources.languageru);
 
             SettingsListBox.SelectedIndex = 15;
         }
 
         private void EnglishLang_Click(object sender, RoutedEventArgs e)
         {
-            File.WriteAllBytes(".SacredUtilsData\\language.dat", Properties.Resources.languageen);
+            File.WriteAllBytes(AppLngDataFile, Properties.Resources.languageen);
 
             SettingsListBox.SelectedIndex = 15;
         }
 
         private void DeutschLang_Click(object sender, RoutedEventArgs e)
         {
-            File.WriteAllBytes(".SacredUtilsData\\language.dat", Properties.Resources.languagede);
+            File.WriteAllBytes(AppLngDataFile, Properties.Resources.languagede);
 
             SettingsListBox.SelectedIndex = 15;
         }

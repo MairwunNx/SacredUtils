@@ -1,6 +1,7 @@
-﻿using System.IO;
+﻿using System.Globalization;
+using System.IO;
 using System.Threading;
-using System.Globalization;
+using static SacredUtils.Resources.bin.AncillaryConstsStrings;
 
 namespace SacredUtils.Resources.bin
 {
@@ -10,32 +11,32 @@ namespace SacredUtils.Resources.bin
         {
             CultureInfo currentCulture = Thread.CurrentThread.CurrentCulture;
 
-            if (!File.Exists(".SacredUtilsData\\language.dat"))
+            if (!File.Exists(AppLngDataFile))
             {
                 if (currentCulture.TwoLetterISOLanguageName == "ru" || currentCulture.TwoLetterISOLanguageName == "uk" ||
                     currentCulture.TwoLetterISOLanguageName == "uk" || currentCulture.TwoLetterISOLanguageName == "ro" ||
                     currentCulture.TwoLetterISOLanguageName == "bg" || currentCulture.TwoLetterISOLanguageName == "be")
                 {
-                    File.WriteAllBytes(".SacredUtilsData\\language.dat", Properties.Resources.languageru);
+                    File.WriteAllBytes(AppLngDataFile, Properties.Resources.languageru);
                 }
             }
 
-            if (!File.Exists(".SacredUtilsData\\language.dat"))
+            if (!File.Exists(AppLngDataFile))
             {
                 if (currentCulture.TwoLetterISOLanguageName != "ru" || currentCulture.TwoLetterISOLanguageName != "uk" ||
                     currentCulture.TwoLetterISOLanguageName != "uk" || currentCulture.TwoLetterISOLanguageName != "ro" ||
                     currentCulture.TwoLetterISOLanguageName != "bg" || currentCulture.TwoLetterISOLanguageName != "be" ||
                     currentCulture.TwoLetterISOLanguageName != "de")
                 {
-                    File.WriteAllBytes(".SacredUtilsData\\language.dat", Properties.Resources.languageen);
+                    File.WriteAllBytes(AppLngDataFile, Properties.Resources.languageen);
                 }
             }
 
-            if (!File.Exists(".SacredUtilsData\\language.dat"))
+            if (!File.Exists(AppLngDataFile))
             {
                 if (currentCulture.TwoLetterISOLanguageName == "de")
                 {
-                    File.WriteAllBytes(".SacredUtilsData\\language.dat", Properties.Resources.languagede);
+                    File.WriteAllBytes(AppLngDataFile, Properties.Resources.languagede);
                 }
             }
         }

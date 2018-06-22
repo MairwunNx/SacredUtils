@@ -8,11 +8,11 @@ namespace SacredUtils.Resources.bin
     {
         public void GetAvailableAppConfig()
         {
-            if (!File.Exists(AppSettings))
+            if (!File.Exists(AppSettingsFile))
             {
                 try
                 {
-                    File.WriteAllBytes(AppSettings, Properties.Resources.AppSettings);
+                    File.WriteAllBytes(AppSettingsFile, Properties.Resources.AppSettings);
                 }
                 catch (Exception exception)
                 {
@@ -25,11 +25,11 @@ namespace SacredUtils.Resources.bin
 
         public void GetAvailableGameConfig()
         {
-            if (!File.Exists(SacredSettings))
+            if (!File.Exists(SacredSettingsFile))
             {
                 try
                 {
-                    File.WriteAllBytes(SacredSettings, Properties.Resources.GameSettings);
+                    File.WriteAllBytes(SacredSettingsFile, Properties.Resources.GameSettings);
                 }
                 catch (Exception exception)
                 {
@@ -42,11 +42,11 @@ namespace SacredUtils.Resources.bin
 
         public void GetGameConfigIntegrity()
         {
-            if (File.Exists(SacredSettings) && File.Exists(AppSettings))
+            if (File.Exists(SacredSettingsFile) && File.Exists(AppSettingsFile))
             {
-                var fileText = File.ReadAllText(AppSettings);
+                var fileText = File.ReadAllText(AppSettingsFile);
 
-                var fileTextSacred = File.ReadAllText(SacredSettings);
+                var fileTextSacred = File.ReadAllText(SacredSettingsFile);
 
                 try
                 {
@@ -59,7 +59,7 @@ namespace SacredUtils.Resources.bin
                         {
                             try
                             {
-                                File.WriteAllBytes(SacredSettings, Properties.Resources.GameSettings);
+                                File.WriteAllBytes(SacredSettingsFile, Properties.Resources.GameSettings);
                             }
                             catch (Exception exception)
                             {

@@ -10,7 +10,7 @@ namespace SacredUtils.Resources.bin
     {
         public void LoadAppSettings()
         {
-            var text = File.ReadAllLines(AppSettings, Encoding.ASCII);
+            var text = File.ReadAllLines(AppSettingsFile, Encoding.ASCII);
             
             bool a = false; bool b = false; bool c = false;
             bool d = false; bool e = false; bool f = false; bool g = false;
@@ -97,13 +97,13 @@ namespace SacredUtils.Resources.bin
 
             try
             {
-                var strings = File.ReadAllLines(AppSettings, Encoding.ASCII);
+                var strings = File.ReadAllLines(AppSettingsFile, Encoding.ASCII);
 
                 if (!strings[14].Contains("Configuration file version = 1.0.0.5"))
                 {
                     try
                     {
-                        File.WriteAllBytes(AppSettings, Properties.Resources.AppSettings);
+                        File.WriteAllBytes(AppSettingsFile, Properties.Resources.AppSettings);
                     }
                     catch (Exception exception)
                     {
@@ -198,9 +198,9 @@ namespace SacredUtils.Resources.bin
         {
             try
             {
-                var readAllLines = File.ReadAllLines(AppSettings);
+                var readAllLines = File.ReadAllLines(AppSettingsFile);
                 readAllLines[index] = parametr;
-                File.WriteAllLines(AppSettings, readAllLines);
+                File.WriteAllLines(AppSettingsFile, readAllLines);
             }
             catch (Exception exception)
             {
