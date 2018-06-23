@@ -690,6 +690,24 @@ namespace SacredUtils
             if (SoundQualityCmbBox.SelectedIndex == 2) { SetSettingsValue("SOUNDQUALITY", "2"); }
         }
 
+        public void SaveVoiceoverData(string lang)
+        {
+            if (File.Exists(AppVoiceoverFile))
+            {
+                var text = File.ReadAllLines(AppVoiceoverFile, Encoding.ASCII);
+
+                text[3] = $"; Installed voiceover = {lang}"; File.WriteAllLines(AppVoiceoverFile, text);
+            }
+            else
+            {
+                File.WriteAllBytes(AppVoiceoverFile, Properties.Resources.voiceoverinfo);
+
+                var text = File.ReadAllLines(AppVoiceoverFile, Encoding.ASCII);
+
+                text[3] = $"; Installed voiceover = {lang}"; File.WriteAllLines(AppVoiceoverFile, text);
+            }
+        }
+
         private async void SoundLanguageCmbBox_DropDownClosed(object sender, EventArgs e)
         {
             if (SoundLanguageCmbBox.SelectedIndex == 0)
@@ -697,7 +715,9 @@ namespace SacredUtils
                 var soundWindow = new ComponentsWindow(); soundWindow.Show();
 
                 var downloadComponents = new DownloadComponents();
-                await downloadComponents.GetSoundComponent("ru");       
+                await downloadComponents.GetSoundComponent("ru");
+
+                SaveVoiceoverData("ru");
             }
 
             if (SoundLanguageCmbBox.SelectedIndex == 1)
@@ -706,6 +726,8 @@ namespace SacredUtils
 
                 var downloadComponents = new DownloadComponents();
                 await downloadComponents.GetSoundComponent("us");
+
+                SaveVoiceoverData("us");
             }
 
             if (SoundLanguageCmbBox.SelectedIndex == 2)
@@ -714,6 +736,8 @@ namespace SacredUtils
 
                 var downloadComponents = new DownloadComponents();
                 await downloadComponents.GetSoundComponent("de");
+
+                SaveVoiceoverData("de");
             }
 
             if (SoundLanguageCmbBox.SelectedIndex == 3)
@@ -722,6 +746,8 @@ namespace SacredUtils
 
                 var downloadComponents = new DownloadComponents();
                 await downloadComponents.GetSoundComponent("sp");
+
+                SaveVoiceoverData("sp");
             }
         }
 
@@ -1185,6 +1211,30 @@ namespace SacredUtils
                 // Ignore.
             }
 
+            if (File.Exists(AppVoiceoverFile))
+            {
+                var text3 = File.ReadAllLines(AppVoiceoverFile, Encoding.ASCII);
+
+                if (text3[3] == "; Installed voiceover = ru")
+                {
+                    SoundLanguageCmbBox.SelectedIndex = 0;
+                }
+
+                if (text3[3] == "; Installed voiceover = us")
+                {
+                    SoundLanguageCmbBox.SelectedIndex = 1;
+                }
+
+                if (text3[3] == "; Installed voiceover = de")
+                {
+                    SoundLanguageCmbBox.SelectedIndex = 2;
+                }
+
+                if (text3[3] == "; Installed voiceover = sp")
+                {
+                    SoundLanguageCmbBox.SelectedIndex = 3;
+                }
+            }
         }
 
         public void RandomChangeExampleText()

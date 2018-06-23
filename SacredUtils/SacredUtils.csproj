@@ -214,6 +214,7 @@
     <None Include="Resources\etc\LangVersion.su" />
     <None Include="Resources\etc\launchstat.dat" />
     <None Include="Resources\etc\SacredUtils.exe.config" />
+    <None Include="Resources\etc\voiceoverinfo.dat" />
     <None Include="Resources\lng\languagede.dat" />
     <None Include="Resources\lng\languageen.dat" />
     <None Include="Resources\lng\languageru.dat" />

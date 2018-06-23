@@ -46,7 +46,9 @@ namespace SacredUtils.Resources.bin
         public static string AppLngDataFile = $"{AppDataFolder}\\language.dat";
 
         public static string AppStatisticFile = $"{AppDataFolder}\\launchstat.dat";
-        
+
+        public static string AppVoiceoverFile = $"{AppDataFolder}\\voiceoverinfo.dat";
+
         public static string AppLngErrorFile = $"{AppTempLngFolder}\\langinfo-err.dat";
 
         // The lines responsible for the version of the program.
