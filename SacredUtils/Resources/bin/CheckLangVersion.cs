@@ -12,12 +12,17 @@ namespace SacredUtils.Resources.bin
     {
         public async Task GetLanguageVersionAsync()
         {
-            if (!File.Exists(".SacredUtilsData\\LangVersion.su"))
+            if (File.Exists(".SacredUtilsData\\LangVersion.su"))
             {
-                File.WriteAllBytes(".SacredUtilsData\\LangVersion.su", Properties.Resources.LangVersion);
+                File.Move(".SacredUtilsData\\LangVersion.su", ".SacredUtilsData\\langversion.dat");
             }
 
-            var strings = File.ReadAllLines(".SacredUtilsData\\LangVersion.su", Encoding.ASCII);
+            if (!File.Exists(".SacredUtilsData\\langversion.dat"))
+            {
+                File.WriteAllBytes(".SacredUtilsData\\langversion.dat", Properties.Resources.LangVersion);
+            }
+
+            var strings = File.ReadAllLines(".SacredUtilsData\\langversion.dat", Encoding.ASCII);
 
             if (!strings[3].Contains("; Current language version = 1"))
             {
@@ -35,7 +40,7 @@ namespace SacredUtils.Resources.bin
 
                     await CreateTempInfoFile("Update", AppLngDataFile, $"{AppLngBackupFolder}\\language_ru_id_{rndInt}.dat");
 
-                    await Task.Run(() => File.WriteAllBytes(".SacredUtilsData\\LangVersion.su", Properties.Resources.LangVersion));
+                    await Task.Run(() => File.WriteAllBytes(".SacredUtilsData\\langversion.dat", Properties.Resources.LangVersion));
 
                     Process.Start(AppnameFile); Environment.Exit(0);
                 }
@@ -54,7 +59,7 @@ namespace SacredUtils.Resources.bin
 
                     await CreateTempInfoFile("Update", AppLngDataFile, $"{AppLngBackupFolder}\\language_en_id_{rndInt}.dat");
 
-                    await Task.Run(() => File.WriteAllBytes(".SacredUtilsData\\LangVersion.su", Properties.Resources.LangVersion));
+                    await Task.Run(() => File.WriteAllBytes(".SacredUtilsData\\langversion.dat", Properties.Resources.LangVersion));
 
                     Process.Start(AppnameFile); Environment.Exit(0);
                 }
@@ -73,7 +78,7 @@ namespace SacredUtils.Resources.bin
 
                     await CreateTempInfoFile("Update", AppLngDataFile, $"{AppLngBackupFolder}\\language_de_id_{rndInt}.dat");
 
-                    await Task.Run(() => File.WriteAllBytes(".SacredUtilsData\\LangVersion.su", Properties.Resources.LangVersion));
+                    await Task.Run(() => File.WriteAllBytes(".SacredUtilsData\\langversion.dat", Properties.Resources.LangVersion));
 
                     Process.Start(AppnameFile); Environment.Exit(0);
                 }
@@ -92,7 +97,7 @@ namespace SacredUtils.Resources.bin
 
                     await CreateTempInfoFile("Update", AppLngDataFile, $"{AppLngBackupFolder}\\language_any_id_{rndInt}.dat");
 
-                    await Task.Run(() => File.WriteAllBytes(".SacredUtilsData\\LangVersion.su", Properties.Resources.LangVersion));
+                    await Task.Run(() => File.WriteAllBytes(".SacredUtilsData\\langversion.dat", Properties.Resources.LangVersion));
 
                     Process.Start(AppnameFile); Environment.Exit(0);
                 }

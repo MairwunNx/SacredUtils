@@ -1201,7 +1201,7 @@ namespace SacredUtils
                 {
                     FlexibleMessageBox.Show(this, $"{String0144}\n\n{String0145} {text2[1]}\n\n{String0146}\n\n{String0147} {text2[2]}\n\n{String0148}", $"{String0138}");
 
-                    File.WriteAllBytes(".SacredUtilsData\\LangVersion.su", Properties.Resources.LangVersion);
+                    File.WriteAllBytes(".SacredUtilsData\\langversion.dat", Properties.Resources.LangVersion);
                 }
 
                 File.Delete(AppLngErrorFile);
