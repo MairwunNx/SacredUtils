@@ -33,6 +33,26 @@ namespace SacredUtils
 
         private void CloseBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (File.Exists("SacredUtils.exe.config"))
+            {
+                File.Delete("SacredUtils.exe.config");
+            }
+
+            if (File.Exists("SacredUtils.pdb"))
+            {
+                File.Delete("SacredUtils.pdb");
+            }
+
+            if (File.Exists("license.txt"))
+            {
+                File.Delete("license.txt");
+            }
+
+            if (File.Exists("notise.txt"))
+            {
+                File.Delete("notise.txt");
+            }
+
             Environment.Exit(0);
         }
 
