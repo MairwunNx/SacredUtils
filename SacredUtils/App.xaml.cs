@@ -1,5 +1,6 @@
 ﻿using SacredUtils.Resources.bin;
 using SacredUtils.Resources.wnd;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -9,6 +10,8 @@ namespace SacredUtils
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            Directory.CreateDirectory(".SacredUtilsData");
+                
             var getSystemLanguage = new GetSystemLanguage();
             getSystemLanguage.GetCultureInfo();
 
