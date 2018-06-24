@@ -8,6 +8,12 @@ namespace SacredUtils.Resources.bin
     {
         public void GetAvailableAppConfig()
         {
+            System.Random rnds = new System.Random();
+
+            int rndIntf = rnds.Next(240618, 1498640135);
+            
+            string pathf = $"{AppBackupFolder}\\config_bck_id_{rndIntf}";
+
             if (!File.Exists(AppSettingsFile))
             {
                 try
@@ -19,11 +25,21 @@ namespace SacredUtils.Resources.bin
                     Log.Fatal(exception.ToString()); Environment.Exit(0);
                 }
             }
+            else
+            {
+                System.Random rnd = new System.Random();
 
-            GetAvailableGameConfig();
+                int rndInt = rnd.Next(240618, 1498640135);
+
+                Directory.CreateDirectory(pathf);
+
+                File.Copy(AppSettingsFile, $"{pathf}\\config_app_id_{rndInt}.dat");
+            }
+
+            GetAvailableGameConfig(pathf);
         }
 
-        public void GetAvailableGameConfig()
+        public void GetAvailableGameConfig(string pathf)
         {
             if (!File.Exists(SacredSettingsFile))
             {
@@ -35,6 +51,16 @@ namespace SacredUtils.Resources.bin
                 {
                     Log.Fatal(exception.ToString()); Environment.Exit(0);
                 }
+            }
+            else
+            {
+                System.Random rnd = new System.Random();
+
+                int rndInt = rnd.Next(240618, 1498640135);
+
+                Directory.CreateDirectory(pathf);
+
+                File.Copy(SacredSettingsFile, $"{pathf}\\config_game_id_{rndInt}.dat");
             }
 
             GetGameConfigIntegrity();
