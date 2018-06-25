@@ -94,9 +94,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Resources\Libraries\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
-    <Reference Include="Random.Org, Version=0.1.4759.19552, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Random.Org.0.1.4759.19552\lib\net40\Random.Org.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
