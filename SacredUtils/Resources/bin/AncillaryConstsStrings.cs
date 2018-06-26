@@ -53,11 +53,11 @@ namespace SacredUtils.Resources.bin
 
         // The lines responsible for the version of the program.
 
-        public static string AppReleaseVersion = "1.2R Rv4 B8 (220618)";
+        public static string AppReleaseVersion = "1.2R Rv4 B9 (260618)";
 
         public static string AppAlphaVersion = "1.2A Rv4 B7 (150618)";
 
-        public static string AppCurrentVersion = "1.2R Rv4 B8 (220618)";
+        public static string AppCurrentVersion = "1.2R Rv4 B9 (260618)";
 
         // Lines containing naming options in the configuration.
 

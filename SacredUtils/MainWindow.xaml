@@ -86,7 +86,7 @@
             <Label Content="{Binding BindingString0021}" Foreground="{Binding Foreground, ElementName=CardCaptionsColor}" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" FontSize="14" Margin="119,118,717,582" Height="27"/>
             <Label Content="{Binding BindingString0022}" Foreground="{Binding Foreground, ElementName=CardCaptionsColor}" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" FontSize="14" Margin="304,118,416,582" Height="27"/>
 
-            <Label x:Name="NotSelectedLbl" Content="{Binding BindingString0023}" Height="Auto" Width="Auto" Foreground="#DD7E7E7E" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Margin="287,104,107,79" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="NotSelectedLbl" Content="{Binding BindingString0023}" Height="Auto" Width="Auto" Foreground="#DD7E7E7E" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Margin="287,104,107,79" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Visibility="Hidden"/>
 
             <ListBox x:Name="SettingsListBox" HorizontalAlignment="Left" Height="487" HorizontalContentAlignment="Left" VerticalAlignment="Top" Width="162" Margin="107,154,0,0" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalContentAlignment="Stretch" Padding="0" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=CardCaptionsColor}" SelectionChanged="SettingsListBox_SelectionChanged">
                 <ListBoxItem Content="{Binding BindingString0024}"/>
@@ -333,21 +333,24 @@
                 <ToggleButton x:Name="CombineSlotsToggleBtn" Style="{StaticResource MaterialDesignSwitchToggleButton}" Margin="525,405,15,114" Height="25" Width="52" Click="CombineSlotsToggleBtn_Click"/>
             </Grid>
 
-            <Grid x:Name="FontsSettingsGrid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">
-                <Label Content="{Binding BindingString0099}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,242,0,0" Height="25" Width="350"/>
-                <Label Content="{Binding BindingString0100}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,287,0,0" Height="25" Width="350"/>
-                <Label Content="{Binding BindingString0101}" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="#DDFF0000" Margin="36,197,39,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="25"/>
-                <Label x:Name="FontsTestLbl" Content="{Binding Text, ElementName=FontChangeTextInTemplate}" VerticalAlignment="Top" FontFamily="{Binding Text, ElementName=FontLibraryCmbBox}" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="10,317,10,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="5" Height="54" FontSize="14"/>
+            <Grid x:Name="FontsSettingsGrid" Margin="287,104,107,79" Width="592" Height="544">
+                <Label Content="{Binding BindingString0099}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,197,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0100}" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,242,0,0" Height="25" Width="350"/>
+                <Label Content="{Binding BindingString0101}" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="#DDFF0000" Margin="37,152,38,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="25"/>
 
+                <Border BorderBrush="{x:Null}" Margin="10,282,10,137" Padding="5" Height="125">
+                    <TextBlock x:Name="FontsTestLbl" Text="{Binding Text, ElementName=FontChangeTextInTemplate}" TextAlignment="Center" TextWrapping="WrapWithOverflow" FontFamily="{Binding Text, ElementName=FontLibraryCmbBox}" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" FontSize="14" Margin="-5,0" VerticalAlignment="Center"/>
+                </Border>
+
+                <Separator HorizontalAlignment="Left" Height="10" Margin="0,137,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,182,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,227,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
                 <Separator HorizontalAlignment="Left" Height="10" Margin="0,272,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
-                <Separator HorizontalAlignment="Left" Height="10" Margin="0,317,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
-                <Separator HorizontalAlignment="Left" Height="10" Margin="0,362,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
+                <Separator HorizontalAlignment="Left" Height="10" Margin="0,407,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
 
-                <ComboBox x:Name="FontLibraryCmbBox" VerticalAlignment="Top" Margin="370,241,20,0" IsSynchronizedWithCurrentItem="False" UseLayoutRounding="False" Background="{Binding Background, ElementName=ColorCombobox}" Height="27" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" DropDownClosed="FontLibraryCmbBox_DropDownClosed" Foreground="{Binding Foreground, ElementName=ColorCombobox}"/>
+                <ComboBox x:Name="FontLibraryCmbBox" VerticalAlignment="Top" Margin="370,196,20,0" IsSynchronizedWithCurrentItem="False" UseLayoutRounding="False" Background="{Binding Background, ElementName=ColorCombobox}" Height="27" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans" DropDownClosed="FontLibraryCmbBox_DropDownClosed" Foreground="{Binding Foreground, ElementName=ColorCombobox}"/>
 
-                <TextBox x:Name="FontChangeTextInTemplate" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="48" Height="27" Text="Perhaps you can change the fonts." VerticalAlignment="Top" Margin="370,286,20,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans"/>
+                <TextBox x:Name="FontChangeTextInTemplate" Foreground="{Binding Foreground, ElementName=ColorTxBox}" MaxLength="48" Height="27" Text="Perhaps you can change the fonts." VerticalAlignment="Top" Margin="370,241,20,0" FontFamily="/SacredUtils;component/Resources/Fonts/#Google Sans"/>
             </Grid>
 
             <Grid x:Name="OtherSettingsGrid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">

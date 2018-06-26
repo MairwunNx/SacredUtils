@@ -20,7 +20,7 @@ namespace SacredUtils.Resources.bin
 
                         Changes = true;
 
-                        Msg = "- Added the ability to quickly change the language.\n\n- Removed .En, .De, .Ru projects, they are merged into one.\n\n- Some code optimization.\n\n- Added checking of the integrity of language files.\n\n- Added version checking of language files.\n\n- Added more random splashes!"; Caption = String0136;
+                        Msg = "- Added debug menu and console.\n\n- Fixed bug with update from 1 build to 9.\n\n- Updated Costura Fody and Fody libraries.\n\n- Added automatic copying configurations to backup folder.\n\n- Added auto deleting unnecessary files.\n\n- Renamed LangVersion.su file to langversion.dat.\n\n- Added saving info about voiceovers.\n\n- Added more random splashes!"; Caption = String0136;
                     }
 
                     if (File.Exists(AppVersionFile))
@@ -33,7 +33,7 @@ namespace SacredUtils.Resources.bin
                             {
                                 Changes = true;
 
-                                Msg = "- Added the ability to quickly change the language.\n\n- Removed .En, .De, .Ru projects, they are merged into one.\n\n- Some code optimization.\n\n- Added checking of the integrity of language files.\n\n- Added version checking of language files.\n\n- Added more random splashes!"; Caption = String0136;
+                                Msg = "- Added debug menu and console.\n\n- Fixed bug with update from 1 build to 9.\n\n- Updated Costura Fody and Fody libraries.\n\n- Added automatic copying configurations to backup folder.\n\n- Added auto deleting unnecessary files.\n\n- Renamed LangVersion.su file to langversion.dat.\n\n- Added saving info about voiceovers.\n\n- Added more random splashes!"; Caption = String0136;
 
                                 var fileAllText = File.ReadAllLines(AppVersionFile);
                                 fileAllText[3] = $"; Current SacredUtils version = {AppCurrentVersion}";

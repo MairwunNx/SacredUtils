@@ -24,11 +24,11 @@ namespace SacredUtils.Resources.bin
 
             var strings = File.ReadAllLines(".SacredUtilsData\\langversion.dat", Encoding.ASCII);
 
-            if (!strings[3].Contains("; Current language version = 1"))
+            if (!strings[3].Contains("; Current language version = 2"))
             {
                 if (String0001 == "Вы обновитесь до версии")
                 {
-                    System.Random rnd = new System.Random();
+                    Random rnd = new Random();
 
                     int rndInt = rnd.Next(220618, 1498640135);
 
@@ -47,7 +47,7 @@ namespace SacredUtils.Resources.bin
 
                 if (String0001 == "You updating to version")
                 {
-                    System.Random rnd = new System.Random();
+                    Random rnd = new Random();
 
                     int rndInt = rnd.Next(220618, 1498640135);
 
@@ -66,7 +66,7 @@ namespace SacredUtils.Resources.bin
 
                 if (String0001 == "Sie aktualisieren auf Version")
                 {
-                    System.Random rnd = new System.Random();
+                    Random rnd = new Random();
 
                     int rndInt = rnd.Next(220618, 1498640135);
 
@@ -85,7 +85,7 @@ namespace SacredUtils.Resources.bin
 
                 if (String0001 == "")
                 {
-                    System.Random rnd = new System.Random();
+                    Random rnd = new Random();
 
                     int rndInt = rnd.Next(220618, 1498640135);
 
