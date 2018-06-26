@@ -88,7 +88,7 @@
 
             <Label x:Name="NotSelectedLbl" Content="{Binding BindingString0023}" Height="Auto" Width="Auto" Foreground="#DD7E7E7E" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Margin="287,104,107,79" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
-            <ListBox x:Name="SettingsListBox" HorizontalAlignment="Left" Height="494" HorizontalContentAlignment="Left" VerticalAlignment="Top" Width="162" Margin="107,154,0,0" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalContentAlignment="Stretch" Padding="0" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=CardCaptionsColor}" SelectionChanged="SettingsListBox_SelectionChanged">
+            <ListBox x:Name="SettingsListBox" HorizontalAlignment="Left" Height="487" HorizontalContentAlignment="Left" VerticalAlignment="Top" Width="162" Margin="107,154,0,0" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalContentAlignment="Stretch" Padding="0" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=CardCaptionsColor}" SelectionChanged="SettingsListBox_SelectionChanged">
                 <ListBoxItem Content="{Binding BindingString0024}"/>
                 <ListBoxItem Content="{Binding BindingString0025}"/>
                 <ListBoxItem Content="{Binding BindingString0026}"/>
@@ -101,7 +101,7 @@
                 <ListBoxItem Content="{Binding BindingString0033}"/>
                 <ListBoxItem Content="{Binding BindingString0034}"/>
                 <ListBoxItem Content="{Binding BindingString0035}"/>
-                <ListBoxItem Content="{Binding BindingString0036}"/>
+                <ListBoxItem Content="{Binding BindingString0036}" MouseLeftButtonUp="ListBoxItem_MouseLeftButtonUp"/>
                 <Separator Margin="-8,0,-8,0"/>
                 <ListBoxItem Content="{Binding BindingString0037}"/>
                 <ListBoxItem Content="{Binding BindingString0038}"/>
@@ -432,6 +432,13 @@
                 <Button x:Name="FeedBackBtn" Style="{StaticResource MaterialDesignFlatButton}" Content="{Binding BindingString0127}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" Height="29" Margin="25,436,394,79" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Click="FeedBackBtn_Click"/>
                 <Button x:Name="CreatorBtn" Style="{StaticResource MaterialDesignFlatButton}" Content="{Binding BindingString0128}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Width="186" Height="29" Margin="0,436,203,79" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Click="CreatorBtn_Click"/>
                 <Button x:Name="DonateBtn" Style="{StaticResource MaterialDesignFlatButton}" Content="{Binding BindingString0129}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right" Width="173" Height="29" Margin="0,436,25,79" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Click="DonateBtn_Click"/>
+            </Grid>
+
+            <Grid x:Name="DebugConsoleGrid" Margin="287,104,107,79" Width="592" Height="544" Visibility="Hidden">
+                <Label Content="Command." HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" Margin="15,270,0,0" Height="25" Width="87"/>
+                <Separator HorizontalAlignment="Left" Height="10" Margin="0,255,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
+                <Separator HorizontalAlignment="Left" Height="10" Margin="0,300,0,0" VerticalAlignment="Top" Width="592" IsEnabled="False"/>
+                <TextBox x:Name="DebugCommandTxBox" Foreground="{Binding Foreground, ElementName=SettingsNameColor}" MaxLength="48" Height="27" materialDesign:HintAssist.Hint="type command here start with '&amp;:'" VerticalAlignment="Top" Margin="107,268,20,0" FontFamily="/SacredUtils;component/Resources/fnt/#Google Sans Medium" TextChanged="DebugCommandTxBox_TextChanged"/>
             </Grid>
         </Grid>
 

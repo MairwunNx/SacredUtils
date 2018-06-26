@@ -22,6 +22,7 @@ using System.Windows.Media;
 using static SacredUtils.Resources.bin.AncillaryConstsStrings;
 using static SacredUtils.Resources.bin.LanguageConstsStrings;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
+using MessageBox = System.Windows.MessageBox;
 
 #endregion
 
@@ -29,6 +30,8 @@ namespace SacredUtils
 {
     public partial class MainWindow
     {
+        public int Clicks;
+
         #region NotifyBarControls.
 
         private void CloseBtn_Click(object sender, RoutedEventArgs e)
@@ -223,6 +226,11 @@ namespace SacredUtils
             if (SettingsListBox.SelectedIndex == 15)
             {
                 Process.Start(AppnameFile); Environment.Exit(0);
+            }
+
+            if (SettingsListBox.SelectedIndex == 16)
+            {
+                ChangeSettingsCategory(DebugConsoleGrid);
             }
         }
 
@@ -2087,5 +2095,137 @@ namespace SacredUtils
         }
 
         #endregion
+
+        private void ListBoxItem_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (Clicks == 9)
+            {
+                ListBoxItem itm = new ListBoxItem { Content = "  Debug console." };
+
+                SettingsListBox.Items.Add(itm);
+
+                FlexibleMessageBox.Show("Debug console mode successful enabled.\n\nHow it use? - Simply scroll down the setup category menu.", "SacredUtils :: Debug mode.");
+
+                Clicks++;
+            }
+            else
+            {
+                Clicks++;
+            }
+        }
+
+        private async void DebugCommandTxBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (DebugCommandTxBox.Text == "&:App:Shutdown")
+            {
+                Environment.Exit(0);
+            }
+
+            if (DebugCommandTxBox.Text == "&:App:Minimize")
+            {
+                WindowState = WindowState.Minimized;
+
+                DebugCommandTxBox.Clear();
+            }
+
+            if (DebugCommandTxBox.Text == "&:App:Reload")
+            {
+                SettingsListBox.SelectedIndex = 15;
+            }
+
+            if (DebugCommandTxBox.Text == "&:App:CheckUpdate")
+            {
+                SilentUpdateLbl.Visibility = Visibility.Visible;
+
+                var silentGetAvailableUpdate = new SilentGetAvailableUpdate();
+                await Task.Run(() => silentGetAvailableUpdate.GetAvailableUpdate());
+
+                if (SilentAvailableUpdate)
+                {
+                    SilentUpdateLbl.Content = $"{String0134} {SilentUpdateNewVer}.";
+                }
+                else if (!SilentAvailableUpdate)
+                {
+                    SilentUpdateLbl.Visibility = Visibility.Hidden;
+                }
+
+                DebugCommandTxBox.Clear();
+            }
+
+            if (DebugCommandTxBox.Text == "&:App:ClearDirectory")
+            {
+                if (File.Exists("SacredUtils.exe.config"))
+                {
+                    File.Delete("SacredUtils.exe.config");
+                }
+
+                if (File.Exists("SacredUtils.pdb"))
+                {
+                    File.Delete("SacredUtils.pdb");
+                }
+
+                if (File.Exists("license.txt"))
+                {
+                    File.Delete("license.txt");
+                }
+
+                if (File.Exists("notise.txt"))
+                {
+                    File.Delete("notise.txt");
+                }
+
+                DebugCommandTxBox.Clear();
+            }
+
+            if (DebugCommandTxBox.Text == "&:App:Regenerate")
+            {
+                if (File.Exists("SacredUtils.exe.config"))
+                {
+                    File.Delete("SacredUtils.exe.config");
+                }
+
+                if (File.Exists("SacredUtils.pdb"))
+                {
+                    File.Delete("SacredUtils.pdb");
+                }
+
+                if (File.Exists("license.txt"))
+                {
+                    File.Delete("license.txt");
+                }
+
+                if (File.Exists("notise.txt"))
+                {
+                    File.Delete("notise.txt");
+                }
+
+                if (File.Exists("notise.txt"))
+                {
+                    File.Delete("notise.txt");
+                }
+
+                if (File.Exists("SacredUtils-errlog.log"))
+                {
+                    File.Delete("SacredUtils-errlog.log");
+                }
+
+                if (File.Exists("Settings.cfg"))
+                {
+                    File.Delete("Settings.cfg");
+                }
+
+                if (File.Exists("Settings.su"))
+                {
+                    File.Delete("Settings.su");
+                }
+
+                if (Directory.Exists(".SacredUtilsData"))
+                {
+                    Directory.Delete(".SacredUtilsData", true);
+                }
+
+                SettingsListBox.SelectedIndex = 15;
+            }
+        }
     }
 }

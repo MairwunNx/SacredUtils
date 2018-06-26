@@ -20,7 +20,7 @@ namespace SacredUtils.Resources.bin
         public static string SacredSettingsFile = "Settings.cfg";
         
         public static string AppSettingsFile = "Settings.su";
-
+        
         public static string SacredExeFile = "Sacred.exe";
         
         // Files in .SacredUtilsData folder.
@@ -38,7 +38,7 @@ namespace SacredUtils.Resources.bin
         public static string AppTempLngFolder = $"{AppDataFolder}\\templng";
 
         public static string AppVersionFile = $"{AppDataFolder}\\appversion.dat";
-        
+
         public static string AppDownloadStatFile = $"{AppDataFolder}\\downloadstat.dat";
 
         public static string AppInstallInfo = $"{AppDataFolder}\\installinfo.dat";

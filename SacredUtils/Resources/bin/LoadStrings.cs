@@ -181,7 +181,7 @@ namespace SacredUtils.Resources.bin
             {
                 if (String0001 == "Вы обновитесь до версии")
                 {
-                    System.Random rnd = new System.Random();
+                    Random rnd = new Random();
                     
                     int rndInt = rnd.Next(210618, 1498640135);
 
@@ -198,7 +198,7 @@ namespace SacredUtils.Resources.bin
 
                 if (String0001 == "You updating to version")
                 {
-                    System.Random rnd = new System.Random();
+                    Random rnd = new Random();
 
                     int rndInt = rnd.Next(210618, 1498640135);
 
@@ -215,7 +215,7 @@ namespace SacredUtils.Resources.bin
 
                 if (String0001 == "Sie aktualisieren auf Version")
                 {
-                    System.Random rnd = new System.Random();
+                    Random rnd = new Random();
 
                     int rndInt = rnd.Next(210618, 1498640135);
 
@@ -232,7 +232,7 @@ namespace SacredUtils.Resources.bin
 
                 if (String0001 == "")
                 {
-                    System.Random rnd = new System.Random();
+                    Random rnd = new Random();
 
                     int rndInt = rnd.Next(210618, 1498640135);
 
