@@ -610,7 +610,8 @@ namespace SacredUtils.Resources.wnd
         {
             if (ChangeColorBlackToggleBtn.IsChecked == true)
             {
-                ChangeColor("#484848", "#000000", "#212121", "#484848", "DeepOrange", "#ffffff");
+//                ChangeColor("#484848", "#000000", "#212121", "#484848", "DeepOrange", "#ffffff");
+                ChangeColor("#484848", "#000000", "#212121", "#484848", "Blue", "#ffffff");
 
                 foreach (Window window in Application.Current.Windows)
                 {

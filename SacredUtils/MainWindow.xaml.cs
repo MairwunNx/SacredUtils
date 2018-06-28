@@ -1161,7 +1161,8 @@ namespace SacredUtils
                         var colorWindow = new ColorWindow();
                         colorWindow.Close();
 
-                        colorWindow.ChangeColor("#484848", "#000000", "#212121", "#484848", "DeepOrange", "#ffffff");
+                        //                        colorWindow.ChangeColor("#484848", "#000000", "#212121", "#484848", "DeepOrange", "#ffffff");
+                        colorWindow.ChangeColor("#484848", "#000000", "#212121", "#484848", "Blue", "#ffffff");
 
                         BrushConverter bc = new BrushConverter();
 
