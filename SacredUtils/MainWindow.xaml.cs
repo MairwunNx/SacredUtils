@@ -2261,5 +2261,10 @@ namespace SacredUtils
                 SettingsListBox.SelectedIndex = 15;
             }
         }
+
+        private void Logo_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            Process.Start("https://sites.google.com/view/sacredutils/info");
+        }
     }
 }
