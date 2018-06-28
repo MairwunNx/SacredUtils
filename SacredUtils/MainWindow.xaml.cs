@@ -1466,6 +1466,8 @@ namespace SacredUtils
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.Key == Key.Tab) { e.Handled = true; }
+
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.D1)
             {
                 SettingsListBox.SelectedIndex = 0;
