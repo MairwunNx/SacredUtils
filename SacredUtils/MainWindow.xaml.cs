@@ -2134,11 +2134,11 @@ namespace SacredUtils
         {
             if (Clicks == 9)
             {
-                ListBoxItem itm = new ListBoxItem { Content = "  Debug console." };
+                ListBoxItem itm = new ListBoxItem { Content = "  Debug menu." };
 
                 SettingsListBox.Items.Add(itm);
 
-                FlexibleMessageBox.Show("Debug console mode successful enabled.\n\nHow it use? - Simply scroll down the setup category menu.", "SacredUtils :: Debug mode.");
+                FlexibleMessageBox.Show("Debug menu mode successful enabled.\n\nHow it use? - Simply scroll down the setup category menu.", "SacredUtils :: Debug mode.");
 
                 Clicks++;
             }
