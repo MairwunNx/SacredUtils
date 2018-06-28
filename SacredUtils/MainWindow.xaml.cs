@@ -2262,9 +2262,12 @@ namespace SacredUtils
             }
         }
 
-        private void Logo_MouseUp(object sender, MouseButtonEventArgs e)
+        private void Logo_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Process.Start("https://sites.google.com/view/sacredutils/info");
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                Process.Start("https://sites.google.com/view/sacredutils/info");
+            }
         }
     }
 }
