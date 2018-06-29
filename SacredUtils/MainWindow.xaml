@@ -13,7 +13,7 @@
                  Title="SacredUtils" Height="752" Width="986" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}" Icon="Resources/img/icons8_Gas.ico" Loaded="Window_Loaded" KeyDown="Window_KeyDown" KeyboardNavigation.TabNavigation = "None">
     <Grid MouseDown="Grid_MouseDown" MinHeight="752" MaxHeight="752" MinWidth="986" MaxWidth="986">
         <Grid.RowDefinitions>
-            <RowDefinition Height="25" MinHeight="24" MaxHeight="24"/>
+            <RowDefinition Height="25" MinHeight="25" MaxHeight="25"/>
             <RowDefinition Height="364" MinHeight="364" MaxHeight="364"/>
             <RowDefinition Height="363" MinHeight="363" MaxHeight="364"/>
         </Grid.RowDefinitions>

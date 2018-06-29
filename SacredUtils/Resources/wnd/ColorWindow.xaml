@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:bin="clr-namespace:SacredUtils.Resources.bin" mc:Ignorable="d" 
         d:DataContext="{d:DesignInstance bin:BindingLanguageStrings}"
-        Title="SacredUtils" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" Visibility="Visible" Background="#66000000" ScrollViewer.VerticalScrollBarVisibility="Disabled" Icon="/SacredUtils;component/Resources/img/icons8_Gas.ico" WindowState="Maximized" Topmost="True" ShowInTaskbar="False" KeyDown="Window_KeyDown" MouseUp="Window_MouseUp">
+        Title="SacredUtils" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" AllowsTransparency="True" WindowStyle="None" Visibility="Visible" Background="#66000000" ScrollViewer.VerticalScrollBarVisibility="Disabled" Icon="/SacredUtils;component/Resources/img/icons8_Gas.ico" WindowState="Normal" Topmost="False" ShowInTaskbar="False" KeyDown="Window_KeyDown" MouseUp="Window_MouseUp" Width="2000" Height="1997">
     <materialDesign:Card x:Name="ColorCrd" VerticalAlignment="Center" Background="White" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" Width="343" Height="304" MouseUp="Card_MouseUp">
         <materialDesign:Card.RenderTransform>
             <TransformGroup>

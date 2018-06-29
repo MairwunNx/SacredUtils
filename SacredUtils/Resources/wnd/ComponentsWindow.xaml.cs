@@ -11,7 +11,7 @@ namespace SacredUtils.Resources.wnd
         public ComponentsWindow()
         {
             InitializeComponent(); LoadColorTheme();
-            DataContext = new BindingLanguageStrings(); 
+            DataContext = new BindingLanguageStrings();
         }
 
         public void LoadColorTheme()

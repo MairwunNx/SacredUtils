@@ -19,42 +19,65 @@ namespace SacredUtils.Resources.bin
         private readonly bool _connect = NetworkInterface.GetIsNetworkAvailable();
 
         private int _attemps;
-        
+
         public async Task DownloadManyFiles(Dictionary<Uri, string> files, string neededDirectory, string file, string extractFolder, string oldFile, string newFile, string component)
         {
             retry:
 
             if (_connect)
             {
-                ComponentsWindow componentsWindow = new ComponentsWindow(); CloseSoundWindow();
-
                 try
                 {
                     Directory.CreateDirectory(neededDirectory); Directory.CreateDirectory(extractFolder);
 
                     if (File.Exists($"{extractFolder}\\{newFile}")) { File.Delete($"{extractFolder}\\{newFile}"); }
 
-                    componentsWindow.DownloadPercent01.Content = $"{String0004} " + component + " ...";
-
-                    componentsWindow.ComponentInstallName.Content = $"{String0005}" + " | " + component + " |";
+                    foreach (Window window in Application.Current.Windows)
+                    {
+                        if (window.GetType() == typeof(ComponentsWindow))
+                        {
+                            ((ComponentsWindow)window).DownloadPercent01.Content = $"{String0004} " + component + " ...";
+                            ((ComponentsWindow)window).ComponentInstallName.Content = $"{String0005}" + " | " + component + " |";
+                        }
+                    }
+//                    componentsWindow.DownloadPercent01.Content = $"{String0004} " + component + " ...";
+//
+//                    componentsWindow.ComponentInstallName.Content = $"{String0005}" + " | " + component + " |";
 
                     WebClient wc = new WebClient();
 
                     wc.DownloadProgressChanged += (s, e) =>
                     {
-                        componentsWindow.DownloadProgress.Value = Convert.ToDouble(e.ProgressPercentage);
-                        componentsWindow.DownloadPercent.Content = e.ProgressPercentage + "%";
+                        foreach (Window window in Application.Current.Windows)
+                        {
+                            if (window.GetType() == typeof(ComponentsWindow))
+                            {
+                                ((ComponentsWindow)window).DownloadProgress.Value = Convert.ToDouble(e.ProgressPercentage);
+                                ((ComponentsWindow)window).DownloadPercent.Content = e.ProgressPercentage + "%";
+                            }
+                        }
+//                        componentsWindow.DownloadProgress.Value = Convert.ToDouble(e.ProgressPercentage);
+//                        componentsWindow.DownloadPercent.Content = e.ProgressPercentage + "%";
                     };
 
                     foreach (KeyValuePair<Uri, string> pair in files) { await wc.DownloadFileTaskAsync(pair.Key, pair.Value); }
 
                     wc.Dispose();
 
-                    componentsWindow.DownloadProgress.IsIndeterminate = true;
-
-                    componentsWindow.DownloadPercent01.Content = $"{String0006} " + component + " ...";
-
-                    componentsWindow.DownloadPercent.Content = "NaN%";
+                    foreach (Window window in Application.Current.Windows)
+                    {
+                        if (window.GetType() == typeof(ComponentsWindow))
+                        {
+                            ((ComponentsWindow)window).DownloadProgress.IsIndeterminate = true;
+                            ((ComponentsWindow)window).DownloadPercent01.Content = $"{String0006} " + component + " ...";
+                            ((ComponentsWindow)window).DownloadPercent.Content = "NaN%";
+                        }
+                    }
+//                    componentsWindow.DownloadProgress.IsIndeterminate = true;
+//
+//                    componentsWindow.DownloadPercent01.Content = $"{String0006} " + component + " ...";
+//
+//                    componentsWindow.DownloadPercent.Content = "NaN%";
 
                     await UnpackDownloadedFile(file, extractFolder, oldFile, newFile);
                 }
@@ -68,15 +91,30 @@ namespace SacredUtils.Resources.bin
                     {
                         Log.Fatal(exception.ToString());
 
-                        componentsWindow.Label001.Visibility = Visibility.Visible;
-                        componentsWindow.Label002.Visibility = Visibility.Hidden;
-                        componentsWindow.Label000.Visibility = Visibility.Hidden;
-                        componentsWindow.DownloadProgress.Visibility = Visibility.Hidden;
-                        componentsWindow.ComponentInstallName.Visibility = Visibility.Hidden;
-                        componentsWindow.DownloadPercent01.Visibility = Visibility.Hidden;
-                        componentsWindow.DownloadPercent.Visibility = Visibility.Hidden;
-                        componentsWindow.SpeedDownloadingLbl.Visibility = Visibility.Hidden;
-                        componentsWindow.WarningLbl.Visibility = Visibility.Hidden;
+                        foreach (Window window in Application.Current.Windows)
+                        {
+                            if (window.GetType() == typeof(ComponentsWindow))
+                            {
+                                ((ComponentsWindow)window).Label001.Visibility = Visibility.Visible;
+                                ((ComponentsWindow)window).Label002.Visibility = Visibility.Hidden;
+                                ((ComponentsWindow)window).Label000.Visibility = Visibility.Hidden;
+                                ((ComponentsWindow)window).DownloadProgress.Visibility = Visibility.Hidden;
+                                ((ComponentsWindow)window).ComponentInstallName.Visibility = Visibility.Hidden;
+                                ((ComponentsWindow)window).DownloadPercent01.Visibility = Visibility.Hidden;
+                                ((ComponentsWindow)window).DownloadPercent.Visibility = Visibility.Hidden;
+                                ((ComponentsWindow)window).SpeedDownloadingLbl.Visibility = Visibility.Hidden;
+                                ((ComponentsWindow)window).WarningLbl.Visibility = Visibility.Hidden;
+                            }
+                        }
+//                        componentsWindow.Label001.Visibility = Visibility.Visible;
+//                        componentsWindow.Label002.Visibility = Visibility.Hidden;
+//                        componentsWindow.Label000.Visibility = Visibility.Hidden;
+//                        componentsWindow.DownloadProgress.Visibility = Visibility.Hidden;
+//                        componentsWindow.ComponentInstallName.Visibility = Visibility.Hidden;
+//                        componentsWindow.DownloadPercent01.Visibility = Visibility.Hidden;
+//                        componentsWindow.DownloadPercent.Visibility = Visibility.Hidden;
+//                        componentsWindow.SpeedDownloadingLbl.Visibility = Visibility.Hidden;
+//                        componentsWindow.WarningLbl.Visibility = Visibility.Hidden;
 
                         Thread.Sleep(10000);
 

@@ -1,6 +1,7 @@
 ﻿#region UsingDirectives.
 
 using log4net;
+using MaterialDesignThemes.Wpf;
 using SacredUtils.Resources.bin;
 using SacredUtils.Resources.wnd;
 using System;
@@ -13,6 +14,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,6 +23,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using static SacredUtils.Resources.bin.AncillaryConstsStrings;
 using static SacredUtils.Resources.bin.LanguageConstsStrings;
+using Application = System.Windows.Application;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 using MessageBox = System.Windows.MessageBox;
 
@@ -88,7 +91,20 @@ namespace SacredUtils
 
         private void ChangeColor_Click(object sender, RoutedEventArgs e)
         {
-            var colorPicker = new ColorWindow(); colorPicker.Show();
+            var colorPicker = new ColorWindow();
+
+            var x = Left;
+            var y = Top;
+
+            colorPicker.MaxHeight = Height;
+            colorPicker.MaxWidth = Width;
+
+            colorPicker.Owner = this;
+
+            colorPicker.ShowDialog();
+
+            colorPicker.Left = x;
+            colorPicker.Top = y;
         }
 
         private void GitHubBtn_Click(object sender, RoutedEventArgs e)
@@ -555,23 +571,63 @@ namespace SacredUtils
                 {
                     File.Delete("scripts\\ru\\global.res");
 
-                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+                    var soundWindow = new ComponentsWindow();
+                    var mainWindow = new MainWindow();
+
+                    var x = Left;
+                    var y = Top;
+
+                    soundWindow.MaxHeight = Height;
+                    soundWindow.MaxWidth = Width;
+                    soundWindow.Height = Height;
+                    soundWindow.MinHeight = Height;
+                    soundWindow.Width = Width;
+                    soundWindow.MinWidth = Width;
+
+                    soundWindow.Owner = this;
+
+                    soundWindow.Left = x;
+                    soundWindow.Top = y;
+
+                    soundWindow.Show();
 
                     var downloadComponents = new DownloadComponents();
                     await downloadComponents.GetSoundComponent("rugui");
 
                     SetSettingsValue("LANGUAGE", "RU");
+
+                    InterfaceLanguageCmbBox.SelectedIndex = 0;
                 }
                 else if (!File.Exists("scripts\\ru\\global.res"))
                 {
                     Directory.CreateDirectory("scripts\\ru");
 
-                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+                    var soundWindow = new ComponentsWindow();
+                    var mainWindow = new MainWindow();
+
+                    var x = Left;
+                    var y = Top;
+
+                    soundWindow.MaxHeight = Height;
+                    soundWindow.MaxWidth = Width;
+                    soundWindow.Height = Height;
+                    soundWindow.MinHeight = Height;
+                    soundWindow.Width = Width;
+                    soundWindow.MinWidth = Width;
+
+                    soundWindow.Owner = this;
+
+                    soundWindow.Left = x;
+                    soundWindow.Top = y;
+
+                    soundWindow.Show();
 
                     var downloadComponents = new DownloadComponents();
                     await downloadComponents.GetSoundComponent("rugui");
 
                     SetSettingsValue("LANGUAGE", "RU");
+
+                    InterfaceLanguageCmbBox.SelectedIndex = 0;
                 }
             }
 
@@ -581,23 +637,63 @@ namespace SacredUtils
                 {
                     File.Delete("scripts\\us\\global.res");
 
-                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+                    var soundWindow = new ComponentsWindow();
+                    var mainWindow = new MainWindow();
+
+                    var x = mainWindow.Left;
+                    var y = mainWindow.Top;
+
+                    soundWindow.MaxHeight = mainWindow.Height;
+                    soundWindow.MaxWidth = mainWindow.Width;
+                    soundWindow.Height = mainWindow.Height;
+                    soundWindow.MinHeight = mainWindow.Height;
+                    soundWindow.Width = mainWindow.Width;
+                    soundWindow.MinWidth = mainWindow.Width;
+
+                    soundWindow.Owner = this;
+
+                    soundWindow.Left = x;
+                    soundWindow.Top = y;
+
+                    soundWindow.Show();
 
                     var downloadComponents = new DownloadComponents();
                     await downloadComponents.GetSoundComponent("usgui");
 
                     SetSettingsValue("LANGUAGE", "US");
+
+                    InterfaceLanguageCmbBox.SelectedIndex = 1;
                 }
                 else if (!File.Exists("scripts\\us\\global.res"))
                 {
                     Directory.CreateDirectory("scripts\\us");
 
-                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+                    var soundWindow = new ComponentsWindow();
+                    var mainWindow = new MainWindow();
+
+                    var x = mainWindow.Left;
+                    var y = mainWindow.Top;
+
+                    soundWindow.MaxHeight = mainWindow.Height;
+                    soundWindow.MaxWidth = mainWindow.Width;
+                    soundWindow.Height = mainWindow.Height;
+                    soundWindow.MinHeight = mainWindow.Height;
+                    soundWindow.Width = mainWindow.Width;
+                    soundWindow.MinWidth = mainWindow.Width;
+
+                    soundWindow.Owner = this;
+
+                    soundWindow.Left = x;
+                    soundWindow.Top = y;
+
+                    soundWindow.Show();
 
                     var downloadComponents = new DownloadComponents();
                     await downloadComponents.GetSoundComponent("usgui");
 
                     SetSettingsValue("LANGUAGE", "US");
+
+                    InterfaceLanguageCmbBox.SelectedIndex = 1;
                 }
             }
 
@@ -607,23 +703,63 @@ namespace SacredUtils
                 {
                     File.Delete("scripts\\de\\global.res");
 
-                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+                    var soundWindow = new ComponentsWindow();
+                    var mainWindow = new MainWindow();
+
+                    var x = mainWindow.Left;
+                    var y = mainWindow.Top;
+
+                    soundWindow.MaxHeight = mainWindow.Height;
+                    soundWindow.MaxWidth = mainWindow.Width;
+                    soundWindow.Height = mainWindow.Height;
+                    soundWindow.MinHeight = mainWindow.Height;
+                    soundWindow.Width = mainWindow.Width;
+                    soundWindow.MinWidth = mainWindow.Width;
+
+                    soundWindow.Owner = this;
+
+                    soundWindow.Left = x;
+                    soundWindow.Top = y;
+
+                    soundWindow.Show();
 
                     var downloadComponents = new DownloadComponents();
                     await downloadComponents.GetSoundComponent("degui");
 
                     SetSettingsValue("LANGUAGE", "DE");
+
+                    InterfaceLanguageCmbBox.SelectedIndex = 2;
                 }
                 else if (!File.Exists("scripts\\de\\global.res"))
                 {
                     Directory.CreateDirectory("scripts\\de");
 
-                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+                    var soundWindow = new ComponentsWindow();
+                    var mainWindow = new MainWindow();
+
+                    var x = mainWindow.Left;
+                    var y = mainWindow.Top;
+
+                    soundWindow.MaxHeight = mainWindow.Height;
+                    soundWindow.MaxWidth = mainWindow.Width;
+                    soundWindow.Height = mainWindow.Height;
+                    soundWindow.MinHeight = mainWindow.Height;
+                    soundWindow.Width = mainWindow.Width;
+                    soundWindow.MinWidth = mainWindow.Width;
+
+                    soundWindow.Owner = this;
+
+                    soundWindow.Left = x;
+                    soundWindow.Top = y;
+
+                    soundWindow.Show();
 
                     var downloadComponents = new DownloadComponents();
                     await downloadComponents.GetSoundComponent("degui");
 
                     SetSettingsValue("LANGUAGE", "DE");
+
+                    InterfaceLanguageCmbBox.SelectedIndex = 2;
                 }
             }
 
@@ -633,23 +769,63 @@ namespace SacredUtils
                 {
                     File.Delete("scripts\\sp\\global.res");
 
-                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+                    var soundWindow = new ComponentsWindow();
+                    var mainWindow = new MainWindow();
+
+                    var x = mainWindow.Left;
+                    var y = mainWindow.Top;
+
+                    soundWindow.MaxHeight = mainWindow.Height;
+                    soundWindow.MaxWidth = mainWindow.Width;
+                    soundWindow.Height = mainWindow.Height;
+                    soundWindow.MinHeight = mainWindow.Height;
+                    soundWindow.Width = mainWindow.Width;
+                    soundWindow.MinWidth = mainWindow.Width;
+
+                    soundWindow.Owner = this;
+
+                    soundWindow.Left = x;
+                    soundWindow.Top = y;
+
+                    soundWindow.Show();
 
                     var downloadComponents = new DownloadComponents();
                     await downloadComponents.GetSoundComponent("spgui");
 
                     SetSettingsValue("LANGUAGE", "SP");
+
+                    InterfaceLanguageCmbBox.SelectedIndex = 3;
                 }
                 else if (!File.Exists("scripts\\sp\\global.res"))
                 {
                     Directory.CreateDirectory("scripts\\sp");
 
-                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+                    var soundWindow = new ComponentsWindow();
+                    var mainWindow = new MainWindow();
+
+                    var x = mainWindow.Left;
+                    var y = mainWindow.Top;
+
+                    soundWindow.MaxHeight = mainWindow.Height;
+                    soundWindow.MaxWidth = mainWindow.Width;
+                    soundWindow.Height = mainWindow.Height;
+                    soundWindow.MinHeight = mainWindow.Height;
+                    soundWindow.Width = mainWindow.Width;
+                    soundWindow.MinWidth = mainWindow.Width;
+
+                    soundWindow.Owner = this;
+
+                    soundWindow.Left = x;
+                    soundWindow.Top = y;
+
+                    soundWindow.Show();
 
                     var downloadComponents = new DownloadComponents();
                     await downloadComponents.GetSoundComponent("spgui");
 
                     SetSettingsValue("LANGUAGE", "SP");
+
+                    InterfaceLanguageCmbBox.SelectedIndex = 3;
                 }
             }
 
@@ -659,23 +835,63 @@ namespace SacredUtils
                 {
                     File.Delete("scripts\\fr\\global.res");
 
-                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+                    var soundWindow = new ComponentsWindow();
+                    var mainWindow = new MainWindow();
+
+                    var x = mainWindow.Left;
+                    var y = mainWindow.Top;
+
+                    soundWindow.MaxHeight = mainWindow.Height;
+                    soundWindow.MaxWidth = mainWindow.Width;
+                    soundWindow.Height = mainWindow.Height;
+                    soundWindow.MinHeight = mainWindow.Height;
+                    soundWindow.Width = mainWindow.Width;
+                    soundWindow.MinWidth = mainWindow.Width;
+
+                    soundWindow.Owner = this;
+
+                    soundWindow.Left = x;
+                    soundWindow.Top = y;
+
+                    soundWindow.Show();
 
                     var downloadComponents = new DownloadComponents();
                     await downloadComponents.GetSoundComponent("frgui");
 
                     SetSettingsValue("LANGUAGE", "FR");
+
+                    InterfaceLanguageCmbBox.SelectedIndex = 4;
                 }
                 else if (!File.Exists("scripts\\fr\\global.res"))
                 {
                     Directory.CreateDirectory("scripts\\fr");
 
-                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+                    var soundWindow = new ComponentsWindow();
+                    var mainWindow = new MainWindow();
+
+                    var x = mainWindow.Left;
+                    var y = mainWindow.Top;
+
+                    soundWindow.MaxHeight = mainWindow.Height;
+                    soundWindow.MaxWidth = mainWindow.Width;
+                    soundWindow.Height = mainWindow.Height;
+                    soundWindow.MinHeight = mainWindow.Height;
+                    soundWindow.Width = mainWindow.Width;
+                    soundWindow.MinWidth = mainWindow.Width;
+
+                    soundWindow.Owner = this;
+
+                    soundWindow.Left = x;
+                    soundWindow.Top = y;
+
+                    soundWindow.Show();
 
                     var downloadComponents = new DownloadComponents();
                     await downloadComponents.GetSoundComponent("frgui");
 
                     SetSettingsValue("LANGUAGE", "FR");
+
+                    InterfaceLanguageCmbBox.SelectedIndex = 4;
                 }
             }
         }
@@ -740,42 +956,122 @@ namespace SacredUtils
         {
             if (SoundLanguageCmbBox.SelectedIndex == 0)
             {
-                var soundWindow = new ComponentsWindow(); soundWindow.Show();
+                var soundWindow = new ComponentsWindow();
+                var mainWindow = new MainWindow();
+
+                var x = mainWindow.Left;
+                var y = mainWindow.Top;
+
+                soundWindow.MaxHeight = mainWindow.Height;
+                soundWindow.MaxWidth = mainWindow.Width;
+                soundWindow.Height = mainWindow.Height;
+                soundWindow.MinHeight = mainWindow.Height;
+                soundWindow.Width = mainWindow.Width;
+                soundWindow.MinWidth = mainWindow.Width;
+
+                soundWindow.Owner = this;
+
+                soundWindow.Left = x;
+                soundWindow.Top = y;
+
+                soundWindow.Show();
 
                 var downloadComponents = new DownloadComponents();
                 await downloadComponents.GetSoundComponent("ru");
 
                 SaveVoiceoverData("ru");
+
+                SoundLanguageCmbBox.SelectedIndex = 0;
             }
 
             if (SoundLanguageCmbBox.SelectedIndex == 1)
             {
-                var soundWindow = new ComponentsWindow(); soundWindow.Show();
+                var soundWindow = new ComponentsWindow();
+                var mainWindow = new MainWindow();
+
+                var x = mainWindow.Left;
+                var y = mainWindow.Top;
+
+                soundWindow.MaxHeight = mainWindow.Height;
+                soundWindow.MaxWidth = mainWindow.Width;
+                soundWindow.Height = mainWindow.Height;
+                soundWindow.MinHeight = mainWindow.Height;
+                soundWindow.Width = mainWindow.Width;
+                soundWindow.MinWidth = mainWindow.Width;
+
+                soundWindow.Owner = this;
+
+                soundWindow.Left = x;
+                soundWindow.Top = y;
+
+                soundWindow.Show();
 
                 var downloadComponents = new DownloadComponents();
                 await downloadComponents.GetSoundComponent("us");
 
                 SaveVoiceoverData("us");
+
+                SoundLanguageCmbBox.SelectedIndex = 1;
             }
 
             if (SoundLanguageCmbBox.SelectedIndex == 2)
             {
-                var soundWindow = new ComponentsWindow(); soundWindow.Show();
+                var soundWindow = new ComponentsWindow();
+                var mainWindow = new MainWindow();
+
+                var x = mainWindow.Left;
+                var y = mainWindow.Top;
+
+                soundWindow.MaxHeight = mainWindow.Height;
+                soundWindow.MaxWidth = mainWindow.Width;
+                soundWindow.Height = mainWindow.Height;
+                soundWindow.MinHeight = mainWindow.Height;
+                soundWindow.Width = mainWindow.Width;
+                soundWindow.MinWidth = mainWindow.Width;
+
+                soundWindow.Owner = this;
+
+                soundWindow.Left = x;
+                soundWindow.Top = y;
+
+                soundWindow.Show();
 
                 var downloadComponents = new DownloadComponents();
                 await downloadComponents.GetSoundComponent("de");
 
                 SaveVoiceoverData("de");
+
+                SoundLanguageCmbBox.SelectedIndex = 2;
             }
 
             if (SoundLanguageCmbBox.SelectedIndex == 3)
             {
-                var soundWindow = new ComponentsWindow(); soundWindow.Show();
+                var soundWindow = new ComponentsWindow();
+                var mainWindow = new MainWindow();
+
+                var x = mainWindow.Left;
+                var y = mainWindow.Top;
+
+                soundWindow.MaxHeight = mainWindow.Height;
+                soundWindow.MaxWidth = mainWindow.Width;
+                soundWindow.Height = mainWindow.Height;
+                soundWindow.MinHeight = mainWindow.Height;
+                soundWindow.Width = mainWindow.Width;
+                soundWindow.MinWidth = mainWindow.Width;
+
+                soundWindow.Owner = this;
+
+                soundWindow.Left = x;
+                soundWindow.Top = y;
+
+                soundWindow.Show();
 
                 var downloadComponents = new DownloadComponents();
                 await downloadComponents.GetSoundComponent("sp");
 
                 SaveVoiceoverData("sp");
+
+                SoundLanguageCmbBox.SelectedIndex = 3;
             }
         }
 
@@ -1525,7 +1821,20 @@ namespace SacredUtils
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.W)
             {
-                var colorPicker = new ColorWindow(); colorPicker.Show();
+                var colorPicker = new ColorWindow();
+
+                var x = Left;
+                var y = Top;
+
+                colorPicker.MaxHeight = Height;
+                colorPicker.MaxWidth = Width;
+
+                colorPicker.Owner = this;
+
+                colorPicker.ShowDialog();
+
+                colorPicker.Left = x;
+                colorPicker.Top = y;
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.E)
@@ -1746,7 +2055,25 @@ namespace SacredUtils
                 {
                     File.Delete("Sacred.exe");
 
-                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+                    var soundWindow = new ComponentsWindow();
+                    var mainWindow = new MainWindow();
+
+                    var x = mainWindow.Left;
+                    var y = mainWindow.Top;
+
+                    soundWindow.MaxHeight = mainWindow.Height;
+                    soundWindow.MaxWidth = mainWindow.Width;
+                    soundWindow.Height = mainWindow.Height;
+                    soundWindow.MinHeight = mainWindow.Height;
+                    soundWindow.Width = mainWindow.Width;
+                    soundWindow.MinWidth = mainWindow.Width;
+
+                    soundWindow.Owner = this;
+
+                    soundWindow.Left = x;
+                    soundWindow.Top = y;
+
+                    soundWindow.Show();
 
                     var downloadComponents = new DownloadComponents();
                     await downloadComponents.GetSoundComponent("sacred229");
@@ -1782,7 +2109,25 @@ namespace SacredUtils
                 {
                     File.Delete("Sacred.exe");
 
-                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+                    var soundWindow = new ComponentsWindow();
+                    var mainWindow = new MainWindow();
+
+                    var x = mainWindow.Left;
+                    var y = mainWindow.Top;
+
+                    soundWindow.MaxHeight = mainWindow.Height;
+                    soundWindow.MaxWidth = mainWindow.Width;
+                    soundWindow.Height = mainWindow.Height;
+                    soundWindow.MinHeight = mainWindow.Height;
+                    soundWindow.Width = mainWindow.Width;
+                    soundWindow.MinWidth = mainWindow.Width;
+
+                    soundWindow.Owner = this;
+
+                    soundWindow.Left = x;
+                    soundWindow.Top = y;
+
+                    soundWindow.Show();
 
                     var downloadComponents = new DownloadComponents();
                     await downloadComponents.GetSoundComponent("sacred228");
@@ -1822,7 +2167,25 @@ namespace SacredUtils
                 {
                     File.Delete("Gameserver.exe");
 
-                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+                    var soundWindow = new ComponentsWindow();
+                    var mainWindow = new MainWindow();
+
+                    var x = mainWindow.Left;
+                    var y = mainWindow.Top;
+
+                    soundWindow.MaxHeight = mainWindow.Height;
+                    soundWindow.MaxWidth = mainWindow.Width;
+                    soundWindow.Height = mainWindow.Height;
+                    soundWindow.MinHeight = mainWindow.Height;
+                    soundWindow.Width = mainWindow.Width;
+                    soundWindow.MinWidth = mainWindow.Width;
+
+                    soundWindow.Owner = this;
+
+                    soundWindow.Left = x;
+                    soundWindow.Top = y;
+
+                    soundWindow.Show();
 
                     var downloadComponents = new DownloadComponents();
                     await downloadComponents.GetSoundComponent("server229");
@@ -1858,7 +2221,25 @@ namespace SacredUtils
                 {
                     File.Delete("Gameserver.exe");
 
-                    var soundWindow = new ComponentsWindow(); soundWindow.Show();
+                    var soundWindow = new ComponentsWindow();
+                    var mainWindow = new MainWindow();
+
+                    var x = mainWindow.Left;
+                    var y = mainWindow.Top;
+
+                    soundWindow.MaxHeight = mainWindow.Height;
+                    soundWindow.MaxWidth = mainWindow.Width;
+                    soundWindow.Height = mainWindow.Height;
+                    soundWindow.MinHeight = mainWindow.Height;
+                    soundWindow.Width = mainWindow.Width;
+                    soundWindow.MinWidth = mainWindow.Width;
+
+                    soundWindow.Owner = this;
+
+                    soundWindow.Left = x;
+                    soundWindow.Top = y;
+
+                    soundWindow.Show();
 
                     var downloadComponents = new DownloadComponents();
                     await downloadComponents.GetSoundComponent("server228");
@@ -2182,6 +2563,26 @@ namespace SacredUtils
                 {
                     SilentUpdateLbl.Visibility = Visibility.Hidden;
                 }
+
+                DebugCommandTxBox.Clear();
+            }
+
+            if (DebugCommandTxBox.Text == "&:App:RunModalWindow")
+            {
+                ColorWindow w = new ColorWindow();
+
+                var x = Left;
+                var y = Top;
+
+                w.MaxHeight = Height;
+                w.MaxWidth = Width;
+
+                w.Owner = this;
+
+                w.ShowDialog();
+
+                w.Left = x;
+                w.Top = y;
 
                 DebugCommandTxBox.Clear();
             }
