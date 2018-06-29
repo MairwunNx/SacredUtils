@@ -24,7 +24,7 @@ namespace SacredUtils.Resources.bin
 
             var strings = File.ReadAllLines(".SacredUtilsData\\langversion.dat", Encoding.ASCII);
 
-            if (!strings[3].Contains("; Current language version = 2"))
+            if (!strings[3].Contains("; Current language version = 3"))
             {
                 if (String0001 == "Вы обновитесь до версии")
                 {

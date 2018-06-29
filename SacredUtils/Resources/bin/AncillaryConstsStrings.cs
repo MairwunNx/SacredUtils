@@ -55,9 +55,9 @@ namespace SacredUtils.Resources.bin
 
         public static string AppReleaseVersion = "1.2R Rv4 B9 (260618)";
 
-        public static string AppAlphaVersion = "1.2A Rv4 B7 (150618)";
+        public static string AppAlphaVersion = "1.2A Rv4 B10 (290618)";
 
-        public static string AppCurrentVersion = "1.2R Rv4 B9 (260618)";
+        public static string AppCurrentVersion = "1.2A Rv4 B10 (290618)";
 
         // Lines containing naming options in the configuration.
 
