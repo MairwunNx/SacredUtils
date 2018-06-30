@@ -1513,7 +1513,6 @@ namespace SacredUtils
                 WarnLbl.Visibility = Visibility.Visible;
             }
 
-
             try
             {
                 var text2 = File.ReadAllLines(AppLngErrorFile);
