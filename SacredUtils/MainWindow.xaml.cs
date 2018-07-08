@@ -2660,6 +2660,26 @@ namespace SacredUtils
 
                 SettingsListBox.SelectedIndex = 15;
             }
+
+            if (DebugCommandTxBox.Text == "&:App:RefreshLang")
+            {
+                try
+                {
+                    var loadStrings = new LoadStrings();
+                    loadStrings.GetStringsAsync();
+
+                    DataContext = null;
+                    DataContext = new BindingLanguageStrings();
+
+                    MessageBox.Show("Ok!");
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.ToString());
+
+                    throw;
+                }
+            }
         }
 
         private void Logo_MouseDown(object sender, MouseButtonEventArgs e)
