@@ -1,24 +1,50 @@
 # SacredUtils
-A simple and beautiful configurator for Sacred Underworld, with using the MaterialDesign.
+A simple and beautiful configurator for Sacred and Sacred Underworld, with using the Material Design.
 
 ![Alt text](images/SacredUtils_HomeScreen.png "SacredUtils home screen.")
 
-# Summary
+# Features
 
  * Material Design style application. Thanks [Material Design In Xaml](http://materialdesigninxaml.net/).
- * Many useful and very useful settings for the game Sacred.
+ * Many useful and very useful settings for the game Sacred and Sacred Underworld.
  * Flexibility in customization, you can change a lot in SacredUtils!
  * Constant support and updates, bug fixes, help with the game.
  * Convenient management of settings and quick work.
- * Compatible from Sacred 1.0 to Sacred 2.29.14. (Modifications not supported).
+ * Compatible from Sacred 1.0 to Sacred 2.29.14. (Modifications not supported (e.g FaithfulMod, RavenRock)).
  * Run the game with optimized parameters right from the SacredUtils!
- * Installing voiceovers and gui languages, and gameserver multicore fix!
+ * Installing voiceovers (ru, en, de, sp) and gui languages (ru, en, de, sp, fr), and gameserver multicore fix!
+ * Installing veteran mod and veteran mod dragon fix (by UFO or thourium).
+ * Installing 2.29.14 and 2.28.01 patches on Sacred Underworld!
+ * Working with global.res files (e.g decompiling and compiling global.res).
+ * Settings generation, auto generate settings.cfg if there is no file.
+ * Is multilanguage! SacredUtils support: ru, en, de languages. (en and de semi-machine translation).
+ * This is a power of attorney! Check the components of the Sacred Underworld (only 2.24 - 2.29.14) for integrity (Rv5).
+ 
+# Downloads
 
-# See It Action
-
- * Download the source and run the SacredUtils (compiling source requires VS2017+).
+ * Download the source and run the SacredUtils (compiling source requires VS2017+ and .NET 4.7.1+ and C# 7.2).
  * Download a pre-compiled SacredUtils from the [releases](https://github.com/MairwunNx/SacredUtils/releases) page.
+ * Download latest version from google drive [Release](https://drive.google.com/file/d/1sDiiIYW0_JXMqh6IAHMOyf3IKPySCr4Q/view) type or [Alpha](https://drive.google.com/file/d/1xZzaj0v41S7nkSXkn4GWoDTkBtzeRc2Y/view) type. 
 
+# Want to say thanks?
+
+ * Hit the star button or say thanks message to MairwunNx@gmail.com .
+ * May be... Donate please :) [QIWI](https://qiwi.me/mairwunnx) or [Yandex.Money](https://money.yandex.ru/to/410015993365458).
+ * Well, or the easiest way to leave feedback [here](https://docs.google.com/forms/d/e/1FAIpQLSfkNwFlN2VV_gju2jo9iTxb5FRfmuUZC6FM-vd2ZErQBA1gwQ/viewform).
+ 
+# Special thanks
+
+ * Special thanks to Resharper for the free student license! Use this wonderful product!
+ * Special thanks to Sha**no*us for testing for errors and bugs and design work test!
+ 
+# In future
+
+ * New updated simple and fast and beautiful ui design with material design components. (In Rv5).
+ * Enabling or disabling func "Water animation" without set low graphics. (In Rv5).
+ * Install hotkeys, change hotkeys, and complete management of the keys in Sacred and Sacred Underworld. (In Rv5).
+ * Check the components of the Sacred Underworld (only 2.24 - 2.29.14) for integrity. (In Rv5).
+ * Better printscreen func for Sacred and SacredUnderworld (Support .PNG and .JPG and 4k res). (In Rv5).
+ 
 # Screenshots
 
 ![Alt text](images/SacredUtils_LoadingScreen.png "SacredUtils loading screen")
