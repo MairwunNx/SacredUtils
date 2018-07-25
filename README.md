@@ -25,6 +25,7 @@ A simple and beautiful configurator for Sacred and Sacred Underworld, with using
  * Download the source and run the SacredUtils (compiling source requires VS2017+ and .NET 4.7.1+ and C# 7.2).
  * Download a pre-compiled SacredUtils from the [releases](https://github.com/MairwunNx/SacredUtils/releases) page.
  * Download latest version from google drive [Release](https://drive.google.com/file/d/1sDiiIYW0_JXMqh6IAHMOyf3IKPySCr4Q/view) type or [Alpha](https://drive.google.com/file/d/1xZzaj0v41S7nkSXkn4GWoDTkBtzeRc2Y/view) type. 
+ * Download latest [design-preview](https://drive.google.com/file/d/1HOQdDpvEDiESwlYc-gbNzPWhTs7ktrR-/view) version, only for design testers.
 
 # Want to say thanks?
 
@@ -41,6 +42,7 @@ A simple and beautiful configurator for Sacred and Sacred Underworld, with using
 
  * New updated simple and fast and beautiful ui design with material design components. (In Rv5).
  * Enabling or disabling func "Water animation" without set low graphics. (In Rv5).
+ * Enabling or disabling func "bog animation", "lava animation", "player footprints". (In Rv5).
  * Install hotkeys, change hotkeys, and complete management of the keys in Sacred and Sacred Underworld. (In Rv5).
  * Check the components of the Sacred Underworld (only 2.24 - 2.29.14) for integrity. (In Rv5).
  * Better printscreen func for Sacred and SacredUnderworld (Support .PNG and .JPG and 4k res). (In Rv5).
