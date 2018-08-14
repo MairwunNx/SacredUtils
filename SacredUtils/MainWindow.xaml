@@ -83,7 +83,8 @@
                 Grid.Row="0"
                 Grid.RowSpan="2"
                 Height="5"
-                Margin="0,0,0,661" />
+                Margin="0,0,0,661"
+                Background="#FFCDCDCD" />
         </Grid>
     </materialDesign:Card>
 </Window>
