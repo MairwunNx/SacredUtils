@@ -15,11 +15,14 @@ using SharpConfig;
 
 namespace SacredUtils
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         public MainWindow()
         {
             InitializeComponent();
+
+            CloseBtn.Click += (s, e) => Application.Current.Shutdown();
+            MinimizeBtn.Click += (s, e) => WindowState = WindowState.Minimized;
         }
     }
 }
