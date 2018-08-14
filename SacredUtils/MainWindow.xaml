@@ -27,7 +27,10 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="0" Background="#ffffff">
+            <StackPanel
+                x:Name="ToolPanel"
+                Grid.Row="0"
+                Background="#ffffff">
                 <Button
                     x:Name="CloseBtn"
                     Width="25"
@@ -42,7 +45,7 @@
                         Height="10"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Foreground="#8d1a66"
+                        Foreground="#4285F4"
                         Kind="Circle" />
                 </Button>
 
@@ -60,7 +63,7 @@
                         Height="10"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Foreground="#8d1a66"
+                        Foreground="#4285F4"
                         Kind="Circle" />
                 </Button>
 
@@ -68,7 +71,7 @@
                     x:Name="UpdateLbl"
                     Width="168"
                     Height="25"
-                    Margin="0,-25,5,0"
+                    Margin="0,-24.3,5,0"
                     HorizontalAlignment="Right"
                     HorizontalContentAlignment="Right"
                     VerticalContentAlignment="Center"
@@ -76,7 +79,8 @@
                     Cursor="Hand"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     FontSize="11"
-                    FontWeight="Bold" />
+                    FontWeight="Bold"
+                    Foreground="#FF4285F4" />
             </StackPanel>
 
             <Separator

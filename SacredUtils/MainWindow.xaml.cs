@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using Castle.Core.Logging;
 using FluentFTP;
 using NLog;
@@ -23,6 +24,12 @@ namespace SacredUtils
 
             CloseBtn.Click += (s, e) => Application.Current.Shutdown();
             MinimizeBtn.Click += (s, e) => WindowState = WindowState.Minimized;
+            ToolPanel.MouseDown += DragWindow;
+        }
+
+        public void DragWindow(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left) { DragMove(); }
         }
     }
 }
