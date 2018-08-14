@@ -1,5 +1,6 @@
-﻿using System.Resources;
-using System.Reflection;
+﻿using System.Reflection;
+using System.Resources;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows;
 
@@ -7,11 +8,11 @@ using System.Windows;
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
 [assembly: AssemblyTitle("SacredUtils")]
-[assembly: AssemblyDescription("Alternate configurator for Sacred.")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SacredUtils")]
-[assembly: AssemblyCopyright("Copyright (c) 2018 MairwunNx. Apache 2.0.")]
+[assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -19,7 +20,6 @@ using System.Windows;
 // для компонентов COM. Если необходимо обратиться к типу в этой сборке через
 // COM, задайте атрибуту ComVisible значение TRUE для этого типа.
 [assembly: ComVisible(false)]
-[assembly: log4net.Config.XmlConfigurator(Watch = true)]
 
 //Чтобы начать создание локализуемых приложений, задайте
 //<UICulture>CultureYouAreCodingWith</UICulture> в файле .csproj
@@ -51,8 +51,5 @@ using System.Windows;
 // Можно задать все значения или принять номер сборки и номер редакции по умолчанию.
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.3.9")]
-[assembly: AssemblyFileVersion("1.2.3.9")]
-[assembly: Guid("CDAA45BE-EA1A-41BF-A36A-6F14199667E1")]
-[assembly: NeutralResourcesLanguage("ru")]
-
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

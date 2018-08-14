@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27428.2043
+VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SacredUtils", "SacredUtils\SacredUtils.csproj", "{CA9ED263-FE41-4DF3-BC94-C1685B8E0C78}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SacredUtils", "SacredUtils\SacredUtils.csproj", "{ECDE6FD5-BCE0-43AF-BA62-4E1DD5086046}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CA9ED263-FE41-4DF3-BC94-C1685B8E0C78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA9ED263-FE41-4DF3-BC94-C1685B8E0C78}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA9ED263-FE41-4DF3-BC94-C1685B8E0C78}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA9ED263-FE41-4DF3-BC94-C1685B8E0C78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECDE6FD5-BCE0-43AF-BA62-4E1DD5086046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECDE6FD5-BCE0-43AF-BA62-4E1DD5086046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECDE6FD5-BCE0-43AF-BA62-4E1DD5086046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECDE6FD5-BCE0-43AF-BA62-4E1DD5086046}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {6AE3C03A-ADEB-46AF-BCDB-9FD9106992D7}
+		SolutionGuid = {8A5574FB-0285-464E-87A4-8E3DC24835FD}
 	EndGlobalSection
 EndGlobal
