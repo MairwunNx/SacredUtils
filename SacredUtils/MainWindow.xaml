@@ -11,6 +11,7 @@
     AllowsTransparency="True"
     Background="{x:Null}"
     ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
     WindowStyle="None"
     mc:Ignorable="d">
 
@@ -26,7 +27,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="0" Background="#e4f2ff">
+            <StackPanel Grid.Row="0" Background="#ffffff">
                 <Button
                     x:Name="CloseBtn"
                     Width="25"
@@ -77,6 +78,12 @@
                     FontSize="11"
                     FontWeight="Bold" />
             </StackPanel>
+
+            <Separator
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Height="5"
+                Margin="0,0,0,661" />
         </Grid>
     </materialDesign:Card>
 </Window>
