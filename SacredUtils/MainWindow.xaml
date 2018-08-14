@@ -89,6 +89,178 @@
                 Height="5"
                 Margin="0,0,0,661"
                 Background="#FFCDCDCD" />
+
+            <Border
+                Grid.Row="1"
+                Width="190"
+                HorizontalAlignment="Left"
+                BorderBrush="#FFCDCDCD"
+                BorderThickness="0,0,1,0">
+
+                <StackPanel HorizontalAlignment="Left" Background="#ffffff">
+
+                    <Grid>
+                        <StackPanel
+                            x:Name="GraphicsPanel"
+                            Height="40"
+                            Margin="0,140,0,540"
+                            Background="#FFFFFF">
+
+                            <Label
+                                x:Name="MenuGrLabel"
+                                Height="30"
+                                Margin="0,5"
+                                VerticalContentAlignment="Center"
+                                Content="     ГРАФИКА"
+                                FontFamily="Google Sans Medium"
+                                FontSize="14"
+                                Foreground="#FF9B9B9D" />
+                        </StackPanel>
+
+                        <StackPanel
+                            x:Name="SoundPanel"
+                            Height="40"
+                            Margin="0,180,0,500"
+                            Background="#FFFFFF">
+
+                            <Label
+                                x:Name="MenuSnLabel"
+                                Height="30"
+                                Margin="0,5"
+                                VerticalContentAlignment="Center"
+                                Content="     ЗВУК И ОЗВУЧКА"
+                                FontFamily="Google Sans Medium"
+                                FontSize="14"
+                                Foreground="#FF9B9B9D" />
+                        </StackPanel>
+
+                        <StackPanel
+                            x:Name="GameplayPanel"
+                            Height="40"
+                            Margin="0,220,0,460"
+                            Background="#FFFFFF">
+
+                            <Label
+                                x:Name="MenuGpLabel"
+                                Height="30"
+                                Margin="0,5"
+                                VerticalContentAlignment="Center"
+                                Content="     ГЕЙМПЛЕЙ"
+                                FontFamily="Google Sans Medium"
+                                FontSize="14"
+                                Foreground="#FF9B9B9D" />
+                        </StackPanel>
+
+                        <StackPanel
+                            x:Name="ChatPanel"
+                            Height="40"
+                            Margin="0,260,0,420"
+                            Background="#FFFFFF">
+
+                            <Label
+                                x:Name="MenuCtLabel"
+                                Height="30"
+                                Margin="0,5"
+                                VerticalContentAlignment="Center"
+                                Content="     ЧАТ И ЯЗЫК"
+                                FontFamily="Google Sans Medium"
+                                FontSize="14"
+                                Foreground="#FF9B9B9D" />
+                        </StackPanel>
+
+                        <StackPanel
+                            x:Name="FontsPanel"
+                            Height="40"
+                            Margin="0,300,0,380"
+                            Background="#FFFFFF">
+
+                            <Label
+                                x:Name="MenuFtLabel"
+                                Height="30"
+                                Margin="0,5"
+                                VerticalContentAlignment="Center"
+                                Content="     ШРИФТЫ"
+                                FontFamily="Google Sans Medium"
+                                FontSize="14"
+                                Foreground="#FF9B9B9D" />
+                        </StackPanel>
+
+                        <StackPanel
+                            x:Name="ModifPanel"
+                            Height="40"
+                            Margin="0,340"
+                            Background="#FFFFFF">
+
+                            <Label
+                                x:Name="MenuMdLabel"
+                                Height="30"
+                                Margin="0,5"
+                                VerticalContentAlignment="Center"
+                                Content="     МОДИФИКАЦИИ"
+                                FontFamily="Google Sans Medium"
+                                FontSize="14"
+                                Foreground="#FF9B9B9D" />
+                        </StackPanel>
+
+                        <StackPanel
+                            x:Name="PlayPanel"
+                            Height="40"
+                            Margin="0,380,0,300"
+                            Background="#FFFFFF">
+
+                            <Label
+                                x:Name="MenuPlLabel"
+                                Height="30"
+                                Margin="0,5"
+                                VerticalContentAlignment="Center"
+                                Content="     ЗАПУСТИТЬ ИГРУ"
+                                FontFamily="Google Sans Medium"
+                                FontSize="14"
+                                Foreground="#FF9B9B9D" />
+                        </StackPanel>
+
+                        <StackPanel
+                            x:Name="SettingsPanel"
+                            Height="40"
+                            Margin="0,460,0,220"
+                            Background="#FFFFFF">
+
+                            <Label
+                                x:Name="MenuStLabel"
+                                Height="30"
+                                Margin="0,5"
+                                VerticalContentAlignment="Center"
+                                Content="     НАСТРОЙКИ SU"
+                                FontFamily="Google Sans Medium"
+                                FontSize="14"
+                                Foreground="#FF9B9B9D" />
+                        </StackPanel>
+
+                        <Ellipse
+                            x:Name="smallball"
+                            Width="127"
+                            Height="127"
+                            Margin="84,618,-21,-25"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="#bfdeff"
+                            StrokeThickness="0" />
+
+                        <Ellipse
+                            x:Name="bigball"
+                            Width="167"
+                            Height="167"
+                            Margin="-47,589,0,-36"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Fill="#96caff"
+                            StrokeThickness="0" />
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+
+
         </Grid>
     </materialDesign:Card>
 </Window>
