@@ -5,9 +5,78 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="MainWindow"
-    Width="800"
-    Height="450"
+    Title="SacredUtils"
+    Width="1086"
+    Height="720"
+    AllowsTransparency="True"
+    Background="{x:Null}"
+    ResizeMode="NoResize"
+    WindowStyle="None"
     mc:Ignorable="d">
-    <Grid x:Name="grd" />
+
+    <materialDesign:Card
+        Width="1076"
+        Margin="5,5,5,5"
+        VerticalAlignment="Stretch"
+        Background="White">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Background="#e4f2ff">
+                <Button
+                    x:Name="CloseBtn"
+                    Width="25"
+                    Height="25"
+                    Margin="5,0,0,0"
+                    HorizontalAlignment="Left"
+                    materialDesign:RippleAssist.IsCentered="True"
+                    materialDesign:RippleAssist.RippleSizeMultiplier="0.7"
+                    Style="{StaticResource MaterialDesignToolForegroundButton}">
+                    <materialDesign:PackIcon
+                        Width="10"
+                        Height="10"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Foreground="#8d1a66"
+                        Kind="Circle" />
+                </Button>
+
+                <Button
+                    x:Name="MinimizeBtn"
+                    Width="25"
+                    Height="25"
+                    Margin="25,-25,0,0"
+                    HorizontalAlignment="Left"
+                    materialDesign:RippleAssist.IsCentered="True"
+                    materialDesign:RippleAssist.RippleSizeMultiplier="0.7"
+                    Style="{StaticResource MaterialDesignToolForegroundButton}">
+                    <materialDesign:PackIcon
+                        Width="10"
+                        Height="10"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Foreground="#8d1a66"
+                        Kind="Circle" />
+                </Button>
+
+                <Label
+                    x:Name="UpdateLbl"
+                    Width="168"
+                    Height="25"
+                    Margin="0,-25,5,0"
+                    HorizontalAlignment="Right"
+                    HorizontalContentAlignment="Right"
+                    VerticalContentAlignment="Center"
+                    Content="ОБНОВИТЬ УТИЛИТУ"
+                    Cursor="Hand"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    FontSize="11"
+                    FontWeight="Bold" />
+            </StackPanel>
+        </Grid>
+    </materialDesign:Card>
 </Window>

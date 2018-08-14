@@ -125,6 +125,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="resources\ico\icons8_Gas.ico" />
+    <Resource Include="resources\ico\icons8_Gas_128.png" />
+    <Resource Include="resources\ico\icons8_Gas_16.png" />
+    <Resource Include="resources\ico\icons8_Gas_256.png" />
+    <Resource Include="resources\ico\icons8_Gas_32.png" />
+    <Resource Include="resources\ico\icons8_Gas_48.png" />
+    <Resource Include="resources\ico\icons8_Gas_528.png" />
+    <Resource Include="resources\ico\icons8_Gas_64.png" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -140,6 +148,12 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="resources\fnt\GoogleSans-Bold.ttf" />
+    <Resource Include="resources\fnt\GoogleSans-BoldItalic.ttf" />
+    <Resource Include="resources\fnt\GoogleSans-Italic.ttf" />
+    <Resource Include="resources\fnt\GoogleSans-Medium.ttf" />
+    <Resource Include="resources\fnt\GoogleSans-MediumItalic.ttf" />
+    <Resource Include="resources\fnt\GoogleSans-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -147,8 +161,6 @@
   <ItemGroup>
     <Folder Include="resources\bin\" />
     <Folder Include="resources\etc\" />
-    <Folder Include="resources\fnt\" />
-    <Folder Include="resources\ico\" />
     <Folder Include="resources\lib\" />
     <Folder Include="resources\lng\" />
     <Folder Include="resources\opt\" />
