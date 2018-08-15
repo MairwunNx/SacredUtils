@@ -13,7 +13,6 @@ using NLog;
 using NLog.Targets;
 using SharpConfig;
 
-
 namespace SacredUtils
 {
     public partial class MainWindow
