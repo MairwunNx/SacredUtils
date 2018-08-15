@@ -14,6 +14,7 @@
             </ResourceDictionary.MergedDictionaries>
 
             <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FF4285F4" />
+            <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="#FF4285F4" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>
