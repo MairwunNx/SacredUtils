@@ -540,6 +540,7 @@
                             materialDesign:RippleAssist.IsCentered="True"
                             materialDesign:RippleAssist.RippleSizeMultiplier="0.5"
                             Background="#FF4182EF"
+                            IsEnabled="False"
                             Style="{StaticResource MaterialDesignToolForegroundButton}">
 
                             <materialDesign:PackIcon
@@ -1037,6 +1038,7 @@
                             materialDesign:RippleAssist.IsCentered="True"
                             materialDesign:RippleAssist.RippleSizeMultiplier="0.5"
                             Background="#FF4182EF"
+                            IsEnabled="False"
                             Style="{StaticResource MaterialDesignToolForegroundButton}">
 
                             <materialDesign:PackIcon
@@ -1071,7 +1073,7 @@
             <Grid
                 x:Name="SoundSt01"
                 Row="1"
-                Visibility="Visible">
+                Visibility="Hidden">
 
                 <Border
                     Width="810"
@@ -1109,7 +1111,7 @@
 
                     <Grid>
                         <TextBlock
-                            Margin="15,12,65,12"
+                            Margin="15,12,188,12"
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
@@ -1141,7 +1143,7 @@
 
                     <Grid>
                         <TextBlock
-                            Margin="15,12,65,12"
+                            Margin="15,12,195,12"
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
@@ -1172,7 +1174,7 @@
 
                     <Grid>
                         <TextBlock
-                            Margin="15,12,65,12"
+                            Margin="15,12,195,12"
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
@@ -1203,7 +1205,7 @@
 
                     <Grid>
                         <TextBlock
-                            Margin="15,12,65,12"
+                            Margin="15,12,195,12"
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
@@ -1234,7 +1236,7 @@
 
                     <Grid>
                         <TextBlock
-                            Margin="15,12,65,12"
+                            Margin="15,12,188,12"
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
@@ -1299,6 +1301,548 @@
                             materialDesign:RippleAssist.RippleSizeMultiplier="0.5"
                             Background="#FF4182EF"
                             IsEnabled="False"
+                            Style="{StaticResource MaterialDesignToolForegroundButton}">
+
+                            <materialDesign:PackIcon
+                                Width="28"
+                                Height="28"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Foreground="#FF4285F4"
+                                Kind="ChevronLeft" />
+                        </Button>
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <Grid
+                x:Name="GameplaySt01"
+                Row="1"
+                Visibility="Hidden">
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,118,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,12,188,12"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Режим автоподбора" />
+
+                        <ComboBox
+                            Height="27"
+                            Margin="625,5,15,0"
+                            VerticalAlignment="Top"
+                            BorderBrush="#5E000000"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                            Foreground="#FF444444">
+                            <ComboBoxItem Content="Только золото" />
+                            <ComboBoxItem Content="Золото и вещи" />
+                            <ComboBoxItem Content="Абсолютно все" />
+                        </ComboBox>
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,169,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,12,188,12"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Тип интернет соединения" />
+                        <ComboBox
+                            Height="27"
+                            Margin="625,5,15,0"
+                            VerticalAlignment="Top"
+                            BorderBrush="#5E000000"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                            Foreground="#FF444444">
+                            <ComboBoxItem Content="Modem \ ISDN" />
+                            <ComboBoxItem Content="DSL \ Cable \ LAN" />
+                        </ComboBox>
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,220,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,12,188,12"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Картинка при запуске игры" />
+                        <TextBox
+                            Height="27"
+                            Margin="625,5,15,0"
+                            VerticalAlignment="Top"
+                            BorderBrush="#5E000000"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                            Foreground="#FF444444"
+                            MaxLength="32" />
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,271,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,12,188,12"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Картинка при save \ load игры" />
+                        <TextBox
+                            Height="27"
+                            Margin="625,5,15,0"
+                            VerticalAlignment="Top"
+                            BorderBrush="#5E000000"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                            Foreground="#FF444444"
+                            MaxLength="32" />
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,322,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,12,195,12"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Уровень красной вспышки" />
+
+                        <Slider
+                            Width="183"
+                            Margin="618,-25,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            BorderBrush="#00FF0000"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                            Foreground="#FF4182EF"
+                            Maximum="80"
+                            Minimum="10"
+                            Style="{StaticResource MaterialDesignDiscreteSlider}" />
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,373,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,12,65,12"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Игровой допинг бар" />
+
+                        <ToggleButton
+                            Width="50"
+                            Margin="748,0,10,0"
+                            Background="#FF4182EF" />
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,424,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,12,65,12"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Информация о врагах" />
+
+                        <ToggleButton
+                            Width="50"
+                            Margin="748,0,10,0"
+                            Background="#FF4182EF" />
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,475,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,12,65,12"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Автоматическое сохранение" />
+
+                        <ToggleButton
+                            Width="50"
+                            Margin="748,0,10,0"
+                            Background="#FF4182EF" />
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="42"
+                    Margin="227,603,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,12,65,12"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Страница 1 / 2" />
+
+                        <Button
+                            Width="38"
+                            Margin="765,4,5,4"
+                            materialDesign:RippleAssist.IsCentered="True"
+                            materialDesign:RippleAssist.RippleSizeMultiplier="0.5"
+                            Background="#FF4182EF"
+                            Style="{StaticResource MaterialDesignToolForegroundButton}">
+
+                            <materialDesign:PackIcon
+                                Width="28"
+                                Height="28"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Foreground="#FF4285F4"
+                                Kind="ChevronRight" />
+                        </Button>
+
+                        <Button
+                            Width="38"
+                            Margin="5,4,765,4"
+                            materialDesign:RippleAssist.IsCentered="True"
+                            materialDesign:RippleAssist.RippleSizeMultiplier="0.5"
+                            Background="#FF4182EF"
+                            IsEnabled="False"
+                            Style="{StaticResource MaterialDesignToolForegroundButton}">
+
+                            <materialDesign:PackIcon
+                                Width="28"
+                                Height="28"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Foreground="#FF4285F4"
+                                Kind="ChevronLeft" />
+                        </Button>
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <Grid
+                x:Name="GameplaySt02"
+                Row="1"
+                Visibility="Hidden">
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,118,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,12,65,12"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Эффект землетрясения" />
+                        <ToggleButton
+                            Width="50"
+                            Margin="748,0,10,0"
+                            Background="#FF4182EF" />
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,169,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,12,65,12"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Выбор умений по умолчанию" />
+                        <ToggleButton
+                            Width="50"
+                            Margin="748,0,10,0"
+                            Background="#FF4182EF" />
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,220,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,12,65,12"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Включить ведение debug-лога" />
+                        <ToggleButton
+                            Width="50"
+                            Margin="748,0,10,0"
+                            Background="#FF4182EF" />
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,271,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,12,65,12"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Значки типа повреждения" />
+                        <ToggleButton
+                            Width="50"
+                            Margin="748,0,10,0"
+                            Background="#FF4182EF" />
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,322,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,12,65,12"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Автонаводка на противника" />
+                        <ToggleButton
+                            Width="50"
+                            Margin="748,0,10,0"
+                            Background="#FF4182EF" />
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,373,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,12,65,12"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Комбинировать слоты" />
+
+                        <ToggleButton
+                            Width="50"
+                            Margin="748,0,10,0"
+                            Background="#FF4182EF" />
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,424,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,12,65,12"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Информация о игроке" />
+
+                        <ToggleButton
+                            Width="50"
+                            Margin="748,0,10,0"
+                            Background="#FF4182EF" />
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,475,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,12,65,12"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Принять лицензию" />
+
+                        <ToggleButton
+                            Width="50"
+                            Margin="748,0,10,0"
+                            Background="#FF4182EF" />
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="42"
+                    Margin="227,603,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,12,65,12"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Страница 2 / 2" />
+
+                        <Button
+                            Width="38"
+                            Margin="765,4,5,4"
+                            materialDesign:RippleAssist.IsCentered="True"
+                            materialDesign:RippleAssist.RippleSizeMultiplier="0.5"
+                            Background="#FF4182EF"
+                            IsEnabled="False"
+                            Style="{StaticResource MaterialDesignToolForegroundButton}">
+
+                            <materialDesign:PackIcon
+                                Width="28"
+                                Height="28"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Foreground="#FF4285F4"
+                                Kind="ChevronRight" />
+                        </Button>
+
+                        <Button
+                            Width="38"
+                            Margin="5,4,765,4"
+                            materialDesign:RippleAssist.IsCentered="True"
+                            materialDesign:RippleAssist.RippleSizeMultiplier="0.5"
+                            Background="#FF4182EF"
                             Style="{StaticResource MaterialDesignToolForegroundButton}">
 
                             <materialDesign:PackIcon
