@@ -1155,7 +1155,7 @@
                             BorderBrush="#00FF0000"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                             Foreground="#FF4182EF"
-                            Maximum="100"
+                            Maximum="128"
                             Style="{StaticResource MaterialDesignDiscreteSlider}" />
                     </Grid>
                 </Border>
@@ -1186,7 +1186,7 @@
                             BorderBrush="#00FF0000"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                             Foreground="#FF4182EF"
-                            Maximum="100"
+                            Maximum="128"
                             Style="{StaticResource MaterialDesignDiscreteSlider}" />
                     </Grid>
                 </Border>
@@ -1217,7 +1217,7 @@
                             BorderBrush="#00FF0000"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                             Foreground="#FF4182EF"
-                            Maximum="100"
+                            Maximum="128"
                             Style="{StaticResource MaterialDesignDiscreteSlider}" />
                     </Grid>
                 </Border>
