@@ -259,6 +259,20 @@
                 </StackPanel>
             </Border>
 
+            <Grid Grid.Row="1">
+                <Label
+                    Width="867"
+                    Height="28"
+                    Margin="199,328,10,329"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    Content="Выберите: что бы вы хотели настроить."
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontSize="14"
+                    Foreground="#FF4285F4" />
+            </Grid>
+
             <Grid
                 x:Name="GraphicsSt01"
                 Row="1"
