@@ -19,12 +19,12 @@ A simple and beautiful configurator for Sacred and Sacred Underworld, with using
  * Settings generation, auto generate settings.cfg if there is no file.
  * Is multilanguage! SacredUtils support: ru, en, de languages. (en and de semi-machine translation).
  * This is a power of attorney! Check the components of the Sacred Underworld (only 2.24 - 2.29.14) for integrity (Rv5).
- 
+
 # Downloads
 
  * Download the source and run the SacredUtils (compiling source requires VS2017+ and .NET 4.7.1+ and C# 7.2).
  * Download a pre-compiled SacredUtils from the [releases](https://github.com/MairwunNx/SacredUtils/releases) page.
- * Download latest version from google drive [Release](https://drive.google.com/file/d/1sDiiIYW0_JXMqh6IAHMOyf3IKPySCr4Q/view) type or [Alpha](https://drive.google.com/file/d/1xZzaj0v41S7nkSXkn4GWoDTkBtzeRc2Y/view) type. 
+ * Download latest version from google drive [Release](https://drive.google.com/file/d/1sDiiIYW0_JXMqh6IAHMOyf3IKPySCr4Q/view) type or [Alpha](https://drive.google.com/file/d/1xZzaj0v41S7nkSXkn4GWoDTkBtzeRc2Y/view) type.
  * Download latest [design-preview](https://drive.google.com/file/d/1HOQdDpvEDiESwlYc-gbNzPWhTs7ktrR-/view) version, only for design testers.
 
 # Want to say thanks?
@@ -32,12 +32,25 @@ A simple and beautiful configurator for Sacred and Sacred Underworld, with using
  * Hit the star button or say thanks message to MairwunNx@gmail.com .
  * May be... Donate please :) [QIWI](https://qiwi.me/mairwunnx) or [Yandex.Money](https://money.yandex.ru/to/410015993365458).
  * Well, or the easiest way to leave feedback [here](https://docs.google.com/forms/d/e/1FAIpQLSfkNwFlN2VV_gju2jo9iTxb5FRfmuUZC6FM-vd2ZErQBA1gwQ/viewform).
- 
+
 # Special thanks
 
- * Special thanks to Resharper for the free student license! Use this wonderful product!
  * Special thanks to Sha**no*us for testing for errors and bugs and design work test!
- 
+ * Special thanks to Resharper for the free student license! Use this wonderful product!
+
+# Tools
+
+ * I use these awesome tools to build and develop SacredUtils.
+
+ <div>
+   <a href="http://materialdesigninxaml.net/">
+     <img alt="Material Design In Xaml" width="128" heigth="128" src="./images/materialdesigninxaml.png">
+   </a>
+   <a href="https://www.jetbrains.com/resharper/">
+     <img alt="Resharper" width="128" heigth="128" hspace="40" src="./images/resharper.png">
+   </a>
+ </div>
+
 # In future
 
  * New updated simple and fast and beautiful ui design with material design components. (In Rv5).
@@ -46,7 +59,7 @@ A simple and beautiful configurator for Sacred and Sacred Underworld, with using
  * Install hotkeys, change hotkeys, and complete management of the keys in Sacred and Sacred Underworld. (In Rv5).
  * Check the components of the Sacred Underworld (only 2.24 - 2.29.14) for integrity. (In Rv5).
  * Better printscreen func for Sacred and SacredUnderworld (Support .PNG and .JPG and 4k res). (In Rv5).
- 
+
 # Screenshots
 
 ![Alt text](images/SacredUtils_LoadingScreen.png "SacredUtils loading screen")
