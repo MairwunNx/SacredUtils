@@ -22,7 +22,7 @@ A simple and beautiful configurator for Sacred and Sacred Underworld, with using
 
 # Downloads
 
- * Download the source and run the SacredUtils (compiling source requires VS2017+ and .NET 4.7.1+ and C# 7.2).
+ * Download the source and run the SacredUtils (compiling source requires VS2017+ and .NET 4.7.2+ and C# 7.2).
  * Download a pre-compiled SacredUtils from the [releases](https://github.com/MairwunNx/SacredUtils/releases) page.
  * Download latest version from google drive [Release](https://drive.google.com/file/d/1sDiiIYW0_JXMqh6IAHMOyf3IKPySCr4Q/view) type or [Alpha](https://drive.google.com/file/d/1xZzaj0v41S7nkSXkn4GWoDTkBtzeRc2Y/view) type.
  * Download latest [design-preview](https://drive.google.com/file/d/1HOQdDpvEDiESwlYc-gbNzPWhTs7ktrR-/view) version, only for design testers.
