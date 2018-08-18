@@ -2530,6 +2530,339 @@
                     </Grid>
                 </Border>
             </Grid>
+
+            <Grid
+                x:Name="SettingsSt01"
+                Row="1"
+                Visibility="Visible">
+
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,169,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+
+                        <Border
+                            Width="118"
+                            Height="39"
+                            Margin="690,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            BorderBrush="#FFCDCDCD"
+                            BorderThickness="1,0,0,0"
+                            CornerRadius="3">
+
+                            <Label
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Content="ИЗМЕНИТЬ"
+                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                                Foreground="#FF4285F4" />
+                        </Border>
+                        <TextBlock
+                            Margin="15,5,123,19"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Режим разработчика" />
+                        <TextBlock
+                            Margin="15,20.125,123,4.875"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontSize="11"
+                            Foreground="#FF4285F4"
+                            Text="based on user name" />
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,220,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+
+                        <Border
+                            Width="118"
+                            Height="39"
+                            Margin="690,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            BorderBrush="#FFCDCDCD"
+                            BorderThickness="1,0,0,0"
+                            CornerRadius="3">
+
+                            <Label
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Content="ИЗМЕНИТЬ"
+                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                                Foreground="#FF4285F4" />
+                        </Border>
+                        <TextBlock
+                            Margin="15,5,123,19"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Язык утилиты" />
+                        <TextBlock
+                            Margin="15,20.125,123,5.125"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontSize="11"
+                            Foreground="#FF4285F4"
+                            Text="based on system" />
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,271,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+
+                        <Border
+                            Width="118"
+                            Height="39"
+                            Margin="690,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            BorderBrush="#FFCDCDCD"
+                            BorderThickness="1,0,0,0"
+                            CornerRadius="3">
+
+                            <Label
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Content="ИЗМЕНИТЬ"
+                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                                Foreground="#FF4285F4" />
+                        </Border>
+                        <TextBlock
+                            Margin="15,5,123,19"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Действия до запуска Sacred" />
+                        <TextBlock
+                            Margin="15,20.125,123,5.125"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontSize="11"
+                            Foreground="#FF4285F4"
+                            Text="сворачивать утилиту" />
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,322,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+
+                        <Border
+                            Width="118"
+                            Height="39"
+                            Margin="690,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            BorderBrush="#FFCDCDCD"
+                            BorderThickness="1,0,0,0"
+                            CornerRadius="3">
+
+                            <Label
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Content="ИЗМЕНИТЬ"
+                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                                Foreground="#FF4285F4" />
+                        </Border>
+                        <TextBlock
+                            Margin="15,5,123,19"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Тема SacredUtils" />
+                        <TextBlock
+                            Margin="15,20.25,123,5"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontSize="11"
+                            Foreground="#FF4285F4"
+                            Text="светлая" />
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,373,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,5,123,19"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Автоматическая проверка обновлений" />
+                        <TextBlock
+                            Margin="15,20.375,123,4.875"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontSize="11"
+                            Foreground="#FF4285F4"
+                            Text="включена" />
+
+                        <Border
+                            Width="118"
+                            Height="39"
+                            Margin="690,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            BorderBrush="#FFCDCDCD"
+                            BorderThickness="1,0,0,0"
+                            CornerRadius="3">
+
+                            <Label
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Content="ИЗМЕНИТЬ"
+                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                                Foreground="#FF4285F4" />
+                        </Border>
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="41"
+                    Margin="227,424,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,5,123,19"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Автоматическая проверка alpha обновлений" />
+                        <TextBlock
+                            Margin="15,20.5,123,4.5"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontSize="11"
+                            Foreground="#FF4285F4"
+                            Text="выключена" />
+
+                        <Border
+                            Width="118"
+                            Height="39"
+                            Margin="690,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            BorderBrush="#FFCDCDCD"
+                            BorderThickness="1,0,0,0"
+                            CornerRadius="3">
+
+                            <Label
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Content="ИЗМЕНИТЬ"
+                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                                Foreground="#FF4285F4" />
+                        </Border>
+                    </Grid>
+                </Border>
+
+                <Border
+                    Width="810"
+                    Height="42"
+                    Margin="227,603,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    BorderBrush="#FFCDCDCD"
+                    BorderThickness="1,1,1,1"
+                    CornerRadius="3">
+
+                    <Grid>
+                        <TextBlock
+                            Margin="15,12,65,12"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Страница 1 / 1" />
+
+                        <Button
+                            Width="38"
+                            Margin="765,4,5,4"
+                            materialDesign:RippleAssist.IsCentered="True"
+                            materialDesign:RippleAssist.RippleSizeMultiplier="0.5"
+                            Background="#FF4182EF"
+                            IsEnabled="False"
+                            Style="{StaticResource MaterialDesignToolForegroundButton}">
+
+                            <materialDesign:PackIcon
+                                Width="28"
+                                Height="28"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Foreground="#FF4285F4"
+                                Kind="ChevronRight" />
+                        </Button>
+
+                        <Button
+                            Width="38"
+                            Margin="5,4,765,4"
+                            materialDesign:RippleAssist.IsCentered="True"
+                            materialDesign:RippleAssist.RippleSizeMultiplier="0.5"
+                            Background="#FF4182EF"
+                            IsEnabled="False"
+                            Style="{StaticResource MaterialDesignToolForegroundButton}">
+
+                            <materialDesign:PackIcon
+                                Width="28"
+                                Height="28"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Foreground="#FF4285F4"
+                                Kind="ChevronLeft" />
+                        </Button>
+                    </Grid>
+                </Border>
+            </Grid>
         </Grid>
     </materialDesign:Card>
 </Window>
