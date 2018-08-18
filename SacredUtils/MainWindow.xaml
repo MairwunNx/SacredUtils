@@ -295,8 +295,10 @@
                     Foreground="#FF4285F4" />
             </Grid>
 
-            <Grid x:Name="GraphicsSt04" Row="1">
-
+            <Grid
+                x:Name="GraphicsSt01"
+                Row="1"
+                Visibility="Hidden">
                 <Border
                     Width="810"
                     Height="41"
@@ -314,6 +316,7 @@
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
                             Text="Качество графики" />
+
                         <ComboBox
                             Height="27"
                             Margin="625,5,15,0"
@@ -479,7 +482,7 @@
             </Grid>
 
             <Grid
-                x:Name="GraphicsSt01"
+                x:Name="GraphicsSt02"
                 Row="1"
                 Visibility="Hidden">
                 <Border
@@ -494,22 +497,15 @@
 
                     <Grid>
                         <TextBlock
-                            Margin="15,12,188,12"
+                            Margin="15,12,65,12"
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
-                            Text="Качество графики" />
-                        <ComboBox
-                            Height="27"
-                            Margin="625,5,15,0"
-                            VerticalAlignment="Top"
-                            BorderBrush="#5E000000"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                            Foreground="#FF444444">
-                            <ComboBoxItem Content="Низкое" />
-                            <ComboBoxItem Content="Среднее" />
-                            <ComboBoxItem Content="Высокое" />
-                        </ComboBox>
+                            Text="128mbit видеопамяти" />
+                        <ToggleButton
+                            Width="50"
+                            Margin="748,0,10,0"
+                            Background="#FF4182EF" />
                     </Grid>
                 </Border>
 
@@ -525,22 +521,15 @@
 
                     <Grid>
                         <TextBlock
-                            Margin="15,12,188,12"
+                            Margin="15,12,65,12"
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
-                            Text="Прозрачность карты" />
-
-                        <Slider
-                            Width="183"
-                            Margin="618,-25,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            BorderBrush="#00FF0000"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                            Foreground="#FF4182EF"
-                            Maximum="255"
-                            Style="{StaticResource MaterialDesignDiscreteSlider}" />
+                            Text="32bit глубина цвета" />
+                        <ToggleButton
+                            Width="50"
+                            Margin="748,0,10,0"
+                            Background="#FF4182EF" />
                     </Grid>
                 </Border>
 
@@ -556,22 +545,15 @@
 
                     <Grid>
                         <TextBlock
-                            Margin="15,12,188,12"
+                            Margin="15,12,65,12"
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
-                            Text="Темнота ночи" />
-
-                        <Slider
-                            Width="183"
-                            Margin="618,-25,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            BorderBrush="#00FF0000"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                            Foreground="#FF4182EF"
-                            Maximum="100"
-                            Style="{StaticResource MaterialDesignDiscreteSlider}" />
+                            Text="Анимация подбора" />
+                        <ToggleButton
+                            Width="50"
+                            Margin="748,0,10,0"
+                            Background="#FF4182EF" />
                     </Grid>
                 </Border>
 
@@ -591,7 +573,7 @@
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
-                            Text="Полноэкранный режим" />
+                            Text="Лужицы крови после убийства" />
 
                         <ToggleButton
                             Width="50"
@@ -616,7 +598,7 @@
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
-                            Text="32 битная глубина цвета" />
+                            Text="Полноэкранный режим" />
 
                         <ToggleButton
                             Width="50"
@@ -641,7 +623,7 @@
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
-                            Text="Режим видео совместимости" />
+                            Text="Полноэкранное сглаживание" />
 
                         <ToggleButton
                             Width="50"
@@ -666,7 +648,7 @@
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
-                            Text="Непрозрачные тени" />
+                            Text="Показывать игровые ролики" />
 
                         <ToggleButton
                             Width="50"
@@ -691,7 +673,7 @@
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
-                            Text="Вертикальная синхронизация" />
+                            Text="Показывать финальный ролик" />
 
                         <ToggleButton
                             Width="50"
@@ -717,7 +699,7 @@
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
-                            Text="Страница 1 / 3" />
+                            Text="Страница 2 / 4" />
 
                         <Button
                             Width="38"
@@ -758,33 +740,9 @@
             </Grid>
 
             <Grid
-                x:Name="GraphicsSt02"
+                x:Name="GraphicsSt03"
                 Row="1"
                 Visibility="Hidden">
-                <Border
-                    Width="810"
-                    Height="41"
-                    Margin="227,118,0,0"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Top"
-                    BorderBrush="#FFCDCDCD"
-                    BorderThickness="1,1,1,1"
-                    CornerRadius="3">
-
-                    <Grid>
-                        <TextBlock
-                            Margin="15,12,65,12"
-                            VerticalAlignment="Center"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            Foreground="#FF4285F4"
-                            Text="Показывать игровые ролики" />
-                        <ToggleButton
-                            Width="50"
-                            Margin="748,0,10,0"
-                            Background="#FF4182EF" />
-                    </Grid>
-                </Border>
-
                 <Border
                     Width="810"
                     Height="41"
@@ -801,7 +759,7 @@
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
-                            Text="Показывать финальный ролик" />
+                            Text="Принудительно черные тени" />
                         <ToggleButton
                             Width="50"
                             Margin="748,0,10,0"
@@ -825,7 +783,7 @@
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
-                            Text="Ограничение 128Mbit видеопамяти" />
+                            Text="Режим видеосовместимости" />
                         <ToggleButton
                             Width="50"
                             Margin="748,0,10,0"
@@ -849,8 +807,7 @@
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
-                            Text="Анимация подбора" />
-
+                            Text="Сглаживание шрифтов" />
                         <ToggleButton
                             Width="50"
                             Margin="748,0,10,0"
@@ -874,7 +831,7 @@
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
-                            Text="Сглаживание шрифтов" />
+                            Text="Сглаживание изображения" />
 
                         <ToggleButton
                             Width="50"
@@ -885,7 +842,7 @@
 
                 <Border
                     Width="810"
-                    Height="41"
+                    Height="42"
                     Margin="227,373,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
@@ -900,56 +857,6 @@
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
                             Text="Фильтрация шрифтов" />
-
-                        <ToggleButton
-                            Width="50"
-                            Margin="748,0,10,0"
-                            Background="#FF4182EF" />
-                    </Grid>
-                </Border>
-
-                <Border
-                    Width="810"
-                    Height="41"
-                    Margin="227,424,0,0"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Top"
-                    BorderBrush="#FFCDCDCD"
-                    BorderThickness="1,1,1,1"
-                    CornerRadius="3">
-
-                    <Grid>
-                        <TextBlock
-                            Margin="15,12,65,12"
-                            VerticalAlignment="Center"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            Foreground="#FF4285F4"
-                            Text="Лужицы крови после убийства" />
-
-                        <ToggleButton
-                            Width="50"
-                            Margin="748,0,10,0"
-                            Background="#FF4182EF" />
-                    </Grid>
-                </Border>
-
-                <Border
-                    Width="810"
-                    Height="41"
-                    Margin="227,475,0,0"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Top"
-                    BorderBrush="#FFCDCDCD"
-                    BorderThickness="1,1,1,1"
-                    CornerRadius="3">
-
-                    <Grid>
-                        <TextBlock
-                            Margin="15,12,65,12"
-                            VerticalAlignment="Center"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            Foreground="#FF4285F4"
-                            Text="Сглаживание изображения" />
 
                         <ToggleButton
                             Width="50"
@@ -975,7 +882,7 @@
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
-                            Text="Страница 2 / 3" />
+                            Text="Страница 3 / 4" />
 
                         <Button
                             Width="38"
@@ -1015,7 +922,7 @@
             </Grid>
 
             <Grid
-                x:Name="GraphicsSt03"
+                x:Name="GraphicsSt04"
                 Row="1"
                 Visibility="Hidden">
                 <Border
@@ -1029,16 +936,16 @@
                     CornerRadius="3">
 
                     <Grid>
+                        <ToggleButton
+                            Width="50"
+                            Margin="748,0,10,0"
+                            Background="#FF4182EF" />
                         <TextBlock
                             Margin="15,12,65,12"
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
-                            Text="Туман войны на миникарте" />
-                        <ToggleButton
-                            Width="50"
-                            Margin="748,0,10,0"
-                            Background="#FF4182EF" />
+                            Text="Использовать статичное болото" />
                     </Grid>
                 </Border>
 
@@ -1101,17 +1008,18 @@
                     CornerRadius="3">
 
                     <Grid>
-                        <TextBlock
-                            Margin="15,12,65,12"
-                            VerticalAlignment="Center"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            Foreground="#FF4285F4"
-                            Text="Отключить следы игрока" />
+
 
                         <ToggleButton
                             Width="50"
                             Margin="748,0,10,0"
                             Background="#FF4182EF" />
+                        <TextBlock
+                            Margin="15,12,65,12"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Использовать старые текстуры кнопок" />
                     </Grid>
                 </Border>
 
@@ -1176,17 +1084,18 @@
                     CornerRadius="3">
 
                     <Grid>
-                        <TextBlock
-                            Margin="15,12,65,12"
-                            VerticalAlignment="Center"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            Foreground="#FF4285F4"
-                            Text="Использовать старые текстуры кнопок" />
 
                         <ToggleButton
                             Width="50"
                             Margin="748,0,10,0"
                             Background="#FF4182EF" />
+
+                        <TextBlock
+                            Margin="15,12,65,12"
+                            VerticalAlignment="Center"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4"
+                            Text="Отключить следы игрока" />
                     </Grid>
                 </Border>
 
@@ -1232,7 +1141,7 @@
                             VerticalAlignment="Center"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="#FF4285F4"
-                            Text="Страница 3 / 3" />
+                            Text="Страница 4 / 4" />
 
                         <Button
                             Width="38"
