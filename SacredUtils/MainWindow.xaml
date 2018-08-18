@@ -22,7 +22,7 @@
         VerticalAlignment="Stretch"
         Background="White">
 
-        <Grid x:Name="BaseGrid">
+        <Grid x:Name="BaseGrid" Margin="-1,0,1,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="25" />
                 <RowDefinition Height="*" />
@@ -3141,25 +3141,54 @@
                 </Border>
             </Grid>
 
+
+
             <materialDesign:DialogHost
                 x:Name="DialogHost"
                 Grid.Row="1"
+                Margin="0,0,-1,0"
                 CloseOnClickAway="True"
                 IsOpen="False"
-                Visibility="Hidden">
+                Visibility="Visible">
                 <materialDesign:DialogHost.DialogContent>
-                    <Grid Height="80">
-                        <TextBlock Margin="20" Text="A simple dialog" />
-                        <Button
-                            x:Name="twe"
-                            VerticalAlignment="Bottom"
-                            Content="Click please" />
+                    <Grid
+                        Width="450"
+                        Height="115"
+                        Background="#FFFFFF"
+                        Row="1">
+                        <Label
+                            Height="30"
+                            Margin="15,11,190,0"
+                            VerticalAlignment="Top"
+                            Content="Установка компонентов"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontSize="16"
+                            Foreground="#FF4285F4" />
+
+                        <Label
+                            Height="28"
+                            Margin="70,59,10,0"
+                            VerticalAlignment="Top"
+                            Content="Загрузка компонента (0%)..."
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontSize="14"
+                            Foreground="#FF4285F4" />
+
+                        <ProgressBar
+                            Width="25"
+                            Height="25"
+                            Margin="21,60,404,0"
+                            VerticalAlignment="Top"
+                            IsIndeterminate="True"
+                            Style="{DynamicResource MaterialDesignCircularProgressBar}" />
+
                     </Grid>
                 </materialDesign:DialogHost.DialogContent>
                 <Button
-                    Margin="50,0,0,0"
+                    Margin="190,362,0,291"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
+                    Click="Button_Click"
                     Content="Show Dialog" />
             </materialDesign:DialogHost>
         </Grid>

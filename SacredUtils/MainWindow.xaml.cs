@@ -39,5 +39,10 @@ namespace SacredUtils
         {
             if (e.ChangedButton == MouseButton.Left) { DragMove(); }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DialogHost.IsOpen = true;
+        }
     }
 }
