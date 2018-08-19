@@ -20,14 +20,14 @@
       </requestedPrivileges>
       <applicationRequestMinimum>
         <defaultAssemblyRequest permissionSetReference="Custom" />
-        <PermissionSet class="System.Security.PermissionSet" version="1" Unrestricted="true" ID="Custom" SameSite="site" />
+        <PermissionSet class="System.Security.PermissionSet" version="1" ID="Custom" SameSite="site" Unrestricted="true" />
       </applicationRequestMinimum>
     </security>
   </trustInfo>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
     <application>
       <!-- Список версий Windows, на которых это приложение было протестировано
- и будет           работать. Раскомментируйте соответствующие элементы, чтобы ОС Windows 
+           и будет работать. Раскомментируйте соответствующие элементы, чтобы ОС Windows 
            автоматически выбрала наиболее совместимое окружение. -->
       <!-- Windows Vista -->
       <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->

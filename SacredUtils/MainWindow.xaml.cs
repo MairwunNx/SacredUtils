@@ -12,6 +12,7 @@ using Castle.Core.Logging;
 using FluentFTP;
 using NLog;
 using NLog.Targets;
+using SacredUtils.resources.pgs;
 using SharpConfig;
 
 namespace SacredUtils
@@ -26,13 +27,14 @@ namespace SacredUtils
             MinimizeBtn.Click += (s, e) => WindowState = WindowState.Minimized;
             ToolPanel.MouseDown += DragWindow;
 
-            
-            Height = Height * 1.2;
-            Width = Width * 1.2;
-            BaseCard.LayoutTransform = new ScaleTransform(1.2, 1.2);
-           SettingsBorder.BorderThickness = new Thickness(0,1,1,0);
 
-          
+            graphics_settings_three page = new graphics_settings_three();
+            SettingsFrame.Content = page;
+
+            //            Height = Height * 1.2;
+            //            Width = Width * 1.2;
+            //            BaseCard.LayoutTransform = new ScaleTransform(1.2, 1.2);
+            //            SettingsBorder.BorderThickness = new Thickness(0,1,1,0);
         }
 
         public void DragWindow(object sender, MouseButtonEventArgs e)

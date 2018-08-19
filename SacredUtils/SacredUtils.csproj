@@ -45,6 +45,9 @@
   <PropertyGroup>
     <ApplicationIcon>resources\ico\icons8_Gas.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Core.4.3.1\lib\net45\Castle.Core.dll</HintPath>
@@ -105,6 +108,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="resources\pgs\graphics_settings_four.xaml.cs">
+      <DependentUpon>graphics_settings_four.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\pgs\graphics_settings_one.xaml.cs">
+      <DependentUpon>graphics_settings_one.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\pgs\graphics_settings_three.xaml.cs">
+      <DependentUpon>graphics_settings_three.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\pgs\graphics_settings_two.xaml.cs">
+      <DependentUpon>graphics_settings_two.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\pgs\unselected_settings_one.xaml.cs">
+      <DependentUpon>unselected_settings_one.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -117,6 +135,26 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="resources\pgs\graphics_settings_four.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\pgs\graphics_settings_one.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\pgs\graphics_settings_three.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\pgs\graphics_settings_two.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\pgs\unselected_settings_one.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
