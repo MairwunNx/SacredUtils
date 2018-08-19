@@ -108,6 +108,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="resources\pgs\gameplay_settings_one.xaml.cs">
+      <DependentUpon>gameplay_settings_one.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\pgs\gameplay_settings_three.xaml.cs">
+      <DependentUpon>gameplay_settings_three.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\pgs\gameplay_settings_two.xaml.cs">
+      <DependentUpon>gameplay_settings_two.xaml</DependentUpon>
+    </Compile>
     <Compile Include="resources\pgs\graphics_settings_four.xaml.cs">
       <DependentUpon>graphics_settings_four.xaml</DependentUpon>
     </Compile>
@@ -138,6 +147,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="resources\pgs\gameplay_settings_one.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\pgs\gameplay_settings_three.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\pgs\gameplay_settings_two.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="resources\pgs\graphics_settings_four.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
