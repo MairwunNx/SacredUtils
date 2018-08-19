@@ -108,6 +108,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="resources\pgs\application_settings_one.xaml.cs">
+      <DependentUpon>application_settings_one.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\pgs\application_settings_two.xaml.cs">
+      <DependentUpon>application_settings_two.xaml</DependentUpon>
+    </Compile>
     <Compile Include="resources\pgs\chat_settings_one.xaml.cs">
       <DependentUpon>chat_settings_one.xaml</DependentUpon>
     </Compile>
@@ -156,6 +162,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="resources\pgs\application_settings_one.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\pgs\application_settings_two.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="resources\pgs\chat_settings_one.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
