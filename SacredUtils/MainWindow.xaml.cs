@@ -28,7 +28,7 @@ namespace SacredUtils
             ToolPanel.MouseDown += DragWindow;
 
 
-            gameplay_settings_three page = new gameplay_settings_three();
+            chat_settings_one page = new chat_settings_one();
             SettingsFrame.Content = page;
 
             //            Height = Height * 1.2;
