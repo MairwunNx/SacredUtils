@@ -53,10 +53,10 @@ namespace SacredUtils
 
             SelectSettings(unselectedStgOne);
 
-//            Height = Height * 1.2;
-//            Width = Width * 1.2;
-//            BaseCard.LayoutTransform = new ScaleTransform(1.2, 1.2);
-//            SettingsBorder.BorderThickness = new Thickness(0,1,1,0);
+            Height = Height * 1.2;
+            Width = Width * 1.2;
+            BaseCard.LayoutTransform = new ScaleTransform(1.2, 1.2);
+            SettingsBorder.BorderThickness = new Thickness(0,1,1,0);
         }
 
         public void DragWindow(object sender, MouseButtonEventArgs e)
@@ -71,7 +71,7 @@ namespace SacredUtils
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            DialogHost.IsOpen = true;
+            HotkeyDialog.IsOpen = true;
         }
     }
 }

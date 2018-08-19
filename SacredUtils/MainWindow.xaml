@@ -281,9 +281,76 @@
             <Grid
                 x:Name="SettingsGrid"
                 Grid.Row="1"
-                Visibility="Visible">
+                Visibility="Collapsed">
                 <Frame x:Name="SettingsFrame" NavigationUIVisibility="Hidden" />
             </Grid>
+
+
+
+            <materialDesign:DialogHost
+                x:Name="HotkeyDialog"
+                Grid.Row="1"
+                Margin="0,0,-1,0"
+                CloseOnClickAway="True"
+                IsOpen="False"
+                Visibility="Visible">
+                <materialDesign:DialogHost.DialogContent>
+                    <Grid
+                        Width="450"
+                        Height="111"
+                        Background="#FFFFFF"
+                        Row="1">
+                        <Label
+                            Height="30"
+                            Margin="15,11,190,0"
+                            VerticalAlignment="Top"
+                            Content="Смена клавишь игры"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontSize="16"
+                            Foreground="#FF4285F4" />
+
+                        <ComboBox
+                            Width="187"
+                            Height="26"
+                            Margin="241,63,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            BorderBrush="#5E000000"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                            Foreground="#FF444444">
+                            <ComboBoxItem Content="E" />
+                            <ComboBoxItem Content="R" />
+                        </ComboBox>
+                        <Label
+                            Height="28"
+                            Margin="212,63,214,0"
+                            VerticalAlignment="Top"
+                            Content="-&gt;"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontSize="14"
+                            Foreground="#FF4285F4" />
+                        <ComboBox
+                            Width="187"
+                            Height="26"
+                            Margin="20,63,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            BorderBrush="#5E000000"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                            Foreground="#FF444444">
+                            <ComboBoxItem Content="F1" />
+                            <ComboBoxItem Content="F2" />
+                        </ComboBox>
+
+                    </Grid>
+                </materialDesign:DialogHost.DialogContent>
+                <Button
+                    Margin="190,362,0,291"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Click="Button_Click"
+                    Content="Show Dialog" />
+            </materialDesign:DialogHost>
 
             <materialDesign:DialogHost
                 x:Name="DialogHost"
@@ -296,7 +363,7 @@
                     <Grid
                         Width="450"
                         Height="115"
-                        Background="#FFFFFF"
+                        Background="White"
                         Row="1">
                         <Label
                             Height="30"
