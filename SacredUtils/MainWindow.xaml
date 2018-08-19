@@ -278,8 +278,11 @@
                 </StackPanel>
             </Border>
 
-            <Grid x:Name="SettingsGrid" Grid.Row="1">
-                <Frame x:Name="SettingsFrame" />
+            <Grid
+                x:Name="SettingsGrid"
+                Grid.Row="1"
+                Visibility="Visible">
+                <Frame x:Name="SettingsFrame" NavigationUIVisibility="Hidden" />
             </Grid>
 
             <materialDesign:DialogHost
