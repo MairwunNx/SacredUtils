@@ -28,7 +28,7 @@ namespace SacredUtils
             ToolPanel.MouseDown += DragWindow;
 
 
-            font_settings_one page = new font_settings_one();
+            modify_settings_one page = new modify_settings_one();
             SettingsFrame.Content = page;
 
             //            Height = Height * 1.2;

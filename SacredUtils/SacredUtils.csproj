@@ -135,6 +135,9 @@
     <Compile Include="resources\pgs\graphics_settings_two.xaml.cs">
       <DependentUpon>graphics_settings_two.xaml</DependentUpon>
     </Compile>
+    <Compile Include="resources\pgs\modify_settings_one.xaml.cs">
+      <DependentUpon>modify_settings_one.xaml</DependentUpon>
+    </Compile>
     <Compile Include="resources\pgs\sound_settings_one.xaml.cs">
       <DependentUpon>sound_settings_one.xaml</DependentUpon>
     </Compile>
@@ -186,6 +189,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="resources\pgs\graphics_settings_two.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\pgs\modify_settings_one.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
