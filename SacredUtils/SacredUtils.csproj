@@ -111,6 +111,9 @@
     <Compile Include="resources\pgs\chat_settings_one.xaml.cs">
       <DependentUpon>chat_settings_one.xaml</DependentUpon>
     </Compile>
+    <Compile Include="resources\pgs\font_settings_one.xaml.cs">
+      <DependentUpon>font_settings_one.xaml</DependentUpon>
+    </Compile>
     <Compile Include="resources\pgs\gameplay_settings_one.xaml.cs">
       <DependentUpon>gameplay_settings_one.xaml</DependentUpon>
     </Compile>
@@ -151,6 +154,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="resources\pgs\chat_settings_one.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\pgs\font_settings_one.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -28,7 +28,7 @@ namespace SacredUtils
             ToolPanel.MouseDown += DragWindow;
 
 
-            chat_settings_one page = new chat_settings_one();
+            font_settings_one page = new font_settings_one();
             SettingsFrame.Content = page;
 
             //            Height = Height * 1.2;
