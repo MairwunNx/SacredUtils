@@ -295,16 +295,12 @@
                 IsOpen="False"
                 Visibility="Visible">
                 <materialDesign:DialogHost.DialogContent>
-                    <Grid
-                        Width="450"
-                        Height="300"
-                        Background="White"
-                        Row="1">
+                    <Grid Height="273" Background="White">
                         <Label
                             Height="30"
-                            Margin="15,11,190,0"
+                            Margin="15,11,135,0"
                             VerticalAlignment="Top"
-                            Content="Проверка компонентов игры"
+                            Content="Восстановление компонентов"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
                             Foreground="#FF4285F4" />
@@ -326,39 +322,27 @@
                             FontSize="12"
                             Foreground="#FF4285F4" />
 
-                        <RichTextBox
-                            Margin="15,119,15,15"
-                            BorderBrush="White"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                            FontSize="12"
-                            Foreground="#FF4285F4"
-                            HorizontalScrollBarVisibility="Disabled"
-                            IsReadOnly="True"
-                            ScrollViewer.CanContentScroll="True"
-                            SelectionBrush="#FF464646"
-                            VerticalScrollBarVisibility="Auto">
-                            <FlowDocument>
-                                <Paragraph>
-                                    <Run>Компонент granny.dll возможно поврежден, контрольная сумма ganny.dll не совпадает с оригинальным файлом Sacred 2.28. (Имеет разные MD5 и SHA256 хеш-суммы!)</Run>
-                                </Paragraph>
-                                <Paragraph>
-                                    <Run>Компонент sets.bin возможно поврежден, контрольная сумма sets.bin не совпадает с оригинальным файлом Sacred 2.28. (Имеет разные MD5 и SHA256 хеш-суммы!)</Run>
-                                </Paragraph>
-                                <Paragraph>
-                                    <Run>Компонент Static.PAK возможно поврежден, контрольная сумма Static.PAK не совпадает с оригинальным файлом Sacred 2.28. (Имеет разные MD5 и SHA256 хеш-суммы!)</Run>
-                                </Paragraph>
-                                <Paragraph>
-                                    <Run>Компонент sectors.keyx возможно поврежден, контрольная сумма sectors.keyx не совпадает с оригинальным файлом Sacred 2.28. (Имеет разные MD5 и SHA256 хеш-суммы!)</Run>
-                                </Paragraph>
-                            </FlowDocument>
-                        </RichTextBox>
+                        <ListBox
+                            Height="128"
+                            Margin="16,98,15,0"
+                            VerticalAlignment="Top"
+                            BorderBrush="#FFCDCDCD"
+                            BorderThickness="1"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            Foreground="#FF4285F4">
+                            <ListBoxItem Content="granny.dll" />
+                            <ListBoxItem Content="sectors.key" />
+                            <ListBoxItem Content="tincat2.dll" />
+                            <ListBoxItem Content="sets.bin" />
+                            <ListBoxItem Content="static.pak" />
+                        </ListBox>
                         <Label
                             Height="23"
-                            Margin="16,96,64,0"
+                            Margin="16,237,15,0"
                             VerticalAlignment="Top"
-                            Content="Список поврежденных компонентов, нажмите ENTER что бы восстановить ..."
+                            Content="Нажмите ENTER что бы восстановить компоненты в списке выше."
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            FontSize="9"
+                            FontSize="11"
                             Foreground="#FF4285F4" />
 
                     </Grid>
