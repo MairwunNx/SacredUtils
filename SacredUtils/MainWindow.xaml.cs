@@ -71,7 +71,7 @@ namespace SacredUtils
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            FindErrorDialog.IsOpen = true;
+            SuccessComponentsDialog.IsOpen = true;
         }
     }
 }
