@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="BaseWindow"
     Title="SacredUtils"
     Width="1086"
     Height="720"
@@ -20,9 +21,13 @@
         Width="1076"
         Margin="5,5,5,5"
         VerticalAlignment="Stretch"
-        Background="White">
+        Background="#FFFFFF">
 
-        <Grid x:Name="BaseGrid" Margin="-1,0,1,0">
+        <Grid
+            x:Name="BaseGrid"
+            Margin="-1,0,1,0"
+            Background="#FFFFFF">
+
             <Grid.RowDefinitions>
                 <RowDefinition Height="25" />
                 <RowDefinition Height="*" />
@@ -31,7 +36,8 @@
             <StackPanel
                 x:Name="ToolPanel"
                 Grid.Row="0"
-                Background="#ffffff">
+                Background="#FFFFFF">
+
                 <Button
                     x:Name="CloseBtn"
                     Width="25"
@@ -41,6 +47,7 @@
                     materialDesign:RippleAssist.IsCentered="True"
                     materialDesign:RippleAssist.RippleSizeMultiplier="0.7"
                     Style="{StaticResource MaterialDesignToolForegroundButton}">
+
                     <materialDesign:PackIcon
                         Width="10"
                         Height="10"
@@ -59,6 +66,7 @@
                     materialDesign:RippleAssist.IsCentered="True"
                     materialDesign:RippleAssist.RippleSizeMultiplier="0.7"
                     Style="{StaticResource MaterialDesignToolForegroundButton}">
+
                     <materialDesign:PackIcon
                         Width="10"
                         Height="10"
@@ -85,6 +93,7 @@
             </StackPanel>
 
             <Separator
+                x:Name="ToolBarSepator"
                 Grid.Row="0"
                 Grid.RowSpan="2"
                 Height="5"
@@ -262,7 +271,7 @@
                             Margin="84,618,-21,-25"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Top"
-                            Fill="#bfdeff"
+                            Fill="#BFDEFF"
                             StrokeThickness="0" />
 
                         <Ellipse
@@ -272,18 +281,60 @@
                             Margin="-47,589,0,-36"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Top"
-                            Fill="#96caff"
+                            Fill="#96CAFF"
                             StrokeThickness="0" />
                     </Grid>
                 </StackPanel>
             </Border>
 
-            <Grid
-                x:Name="SettingsGrid"
-                Grid.Row="1"
-                Visibility="Visible">
+            <Grid x:Name="SettingsGrid" Grid.Row="1">
                 <Frame x:Name="SettingsFrame" NavigationUIVisibility="Hidden" />
             </Grid>
+
+            <materialDesign:DialogHost
+                x:Name="ErrorDialog"
+                Grid.Row="1"
+                Margin="0,0,-1,0"
+                CloseOnClickAway="True"
+                IsOpen="False"
+                Visibility="Hidden">
+
+                <materialDesign:DialogHost.DialogContent>
+
+                    <Grid
+                        Width="450"
+                        Height="115"
+                        Background="#FFFFFF"
+                        Row="1">
+
+                        <Label
+                            Height="30"
+                            Margin="15,11,190,0"
+                            VerticalAlignment="Top"
+                            Content="Упс, ошибочка!"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontSize="16"
+                            Foreground="#FF4285F4" />
+
+                        <Label
+                            Height="28"
+                            Margin="70,59,43,0"
+                            VerticalAlignment="Top"
+                            Content="Критическая ошибка, код ошибки 21252008!"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontSize="14"
+                            Foreground="#FF4285F4" />
+
+                        <materialDesign:PackIcon
+                            Width="25"
+                            Height="25"
+                            Margin="21,60,404,0"
+                            VerticalAlignment="Top"
+                            Foreground="#FF4285F4"
+                            Kind="CloseCircle" />
+                    </Grid>
+                </materialDesign:DialogHost.DialogContent>
+            </materialDesign:DialogHost>
 
             <materialDesign:DialogHost
                 x:Name="AboutDialog"
@@ -292,12 +343,15 @@
                 CloseOnClickAway="True"
                 IsOpen="False"
                 Visibility="Hidden">
+
                 <materialDesign:DialogHost.DialogContent>
+
                     <Grid
                         Width="450"
                         Height="115"
                         Background="#FFFFFF"
                         Row="1">
+
                         <Label
                             Height="30"
                             Margin="15,11,190,0"
@@ -323,30 +377,26 @@
                             VerticalAlignment="Top"
                             Foreground="#FF4285F4"
                             Kind="Information" />
-
                     </Grid>
                 </materialDesign:DialogHost.DialogContent>
-                <Button
-                    Margin="190,362,0,291"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Click="Button_Click"
-                    Content="Show Dialog" />
             </materialDesign:DialogHost>
 
             <materialDesign:DialogHost
-                x:Name="SuccessComponentsDialog01"
+                x:Name="AlmostSuccessfulDialog"
                 Grid.Row="1"
                 Margin="0,0,-1,0"
                 CloseOnClickAway="True"
                 IsOpen="False"
                 Visibility="Hidden">
+
                 <materialDesign:DialogHost.DialogContent>
+
                     <Grid
                         Width="450"
                         Height="115"
                         Background="White"
                         Row="1">
+
                         <Label
                             Height="30"
                             Margin="15,11,190,0"
@@ -372,25 +422,20 @@
                             VerticalAlignment="Top"
                             Foreground="#FF4285F4"
                             Kind="Check" />
-
                     </Grid>
                 </materialDesign:DialogHost.DialogContent>
-                <Button
-                    Margin="190,362,0,291"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Click="Button_Click"
-                    Content="Show Dialog" />
             </materialDesign:DialogHost>
 
             <materialDesign:DialogHost
-                x:Name="FindErrorDialog"
+                x:Name="ErrorsFindedDialog"
                 Grid.Row="1"
                 Margin="0,0,-1,0"
                 CloseOnClickAway="True"
                 IsOpen="False"
                 Visibility="Hidden">
+
                 <materialDesign:DialogHost.DialogContent>
+
                     <Grid Height="273" Background="White">
                         <Label
                             Height="30"
@@ -409,6 +454,7 @@
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="14"
                             Foreground="#FF4285F4" />
+
                         <Label
                             Height="23"
                             Margin="16,70,64,0"
@@ -425,12 +471,8 @@
                             BorderBrush="#FFCDCDCD"
                             BorderThickness="1"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            Foreground="#FF4285F4">
-                            <ListBoxItem Content="granny.dll" />
-                            <ListBoxItem Content="sectors.key" />
-                            <ListBoxItem Content="tincat2.dll" />
-                            <ListBoxItem Content="sets.bin" />
-                        </ListBox>
+                            Foreground="#FF4285F4" />
+
                         <Label
                             Height="23"
                             Margin="16,237,15,0"
@@ -439,30 +481,26 @@
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="11"
                             Foreground="#FF4285F4" />
-
                     </Grid>
                 </materialDesign:DialogHost.DialogContent>
-                <Button
-                    Margin="190,362,0,291"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Click="Button_Click"
-                    Content="Show Dialog" />
             </materialDesign:DialogHost>
 
             <materialDesign:DialogHost
-                x:Name="RepairComponentsDialog"
+                x:Name="RestoringСomponentsDialog"
                 Grid.Row="1"
                 Margin="0,0,-1,0"
                 CloseOnClickAway="True"
                 IsOpen="False"
                 Visibility="Hidden">
+
                 <materialDesign:DialogHost.DialogContent>
+
                     <Grid
                         Width="450"
                         Height="115"
                         Background="White"
                         Row="1">
+
                         <Label
                             Height="30"
                             Margin="15,11,190,0"
@@ -488,30 +526,26 @@
                             VerticalAlignment="Top"
                             IsIndeterminate="True"
                             Style="{DynamicResource MaterialDesignCircularProgressBar}" />
-
                     </Grid>
                 </materialDesign:DialogHost.DialogContent>
-                <Button
-                    Margin="190,362,0,291"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Click="Button_Click"
-                    Content="Show Dialog" />
             </materialDesign:DialogHost>
 
             <materialDesign:DialogHost
-                x:Name="SuccessComponentsDialog"
+                x:Name="RestoringSuccessDialog"
                 Grid.Row="1"
                 Margin="0,0,-1,0"
                 CloseOnClickAway="True"
                 IsOpen="False"
                 Visibility="Hidden">
+
                 <materialDesign:DialogHost.DialogContent>
+
                     <Grid
                         Width="450"
                         Height="115"
                         Background="White"
                         Row="1">
+
                         <Label
                             Height="30"
                             Margin="15,11,190,0"
@@ -537,30 +571,26 @@
                             VerticalAlignment="Top"
                             Foreground="#FF4285F4"
                             Kind="Check" />
-
                     </Grid>
                 </materialDesign:DialogHost.DialogContent>
-                <Button
-                    Margin="190,362,0,291"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Click="Button_Click"
-                    Content="Show Dialog" />
             </materialDesign:DialogHost>
 
             <materialDesign:DialogHost
-                x:Name="NotFoundComponentsDialog"
+                x:Name="NoDamagedComponentsDialog"
                 Grid.Row="1"
                 Margin="0,0,-1,0"
                 CloseOnClickAway="True"
                 IsOpen="False"
                 Visibility="Hidden">
+
                 <materialDesign:DialogHost.DialogContent>
+
                     <Grid
                         Width="450"
                         Height="115"
                         Background="White"
                         Row="1">
+
                         <Label
                             Height="30"
                             Margin="15,11,190,0"
@@ -586,30 +616,26 @@
                             VerticalAlignment="Top"
                             Foreground="#FF4285F4"
                             Kind="Check" />
-
                     </Grid>
                 </materialDesign:DialogHost.DialogContent>
-                <Button
-                    Margin="190,362,0,291"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Click="Button_Click"
-                    Content="Show Dialog" />
             </materialDesign:DialogHost>
 
             <materialDesign:DialogHost
-                x:Name="CheckFilesDialog"
+                x:Name="CheckComponentsDialog"
                 Grid.Row="1"
                 Margin="0,0,-1,0"
                 CloseOnClickAway="True"
                 IsOpen="False"
                 Visibility="Hidden">
+
                 <materialDesign:DialogHost.DialogContent>
+
                     <Grid
                         Width="450"
                         Height="115"
                         Background="White"
                         Row="1">
+
                         <Label
                             Height="30"
                             Margin="15,11,190,0"
@@ -635,30 +661,26 @@
                             VerticalAlignment="Top"
                             IsIndeterminate="True"
                             Style="{DynamicResource MaterialDesignCircularProgressBar}" />
-
                     </Grid>
                 </materialDesign:DialogHost.DialogContent>
-                <Button
-                    Margin="190,362,0,291"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Click="Button_Click"
-                    Content="Show Dialog" />
             </materialDesign:DialogHost>
 
             <materialDesign:DialogHost
-                x:Name="HotkeyDialog"
+                x:Name="HotkeyEditDialog"
                 Grid.Row="1"
                 Margin="0,0,-1,0"
                 CloseOnClickAway="True"
                 IsOpen="False"
                 Visibility="Hidden">
+
                 <materialDesign:DialogHost.DialogContent>
+
                     <Grid
                         Width="450"
                         Height="111"
                         Background="#FFFFFF"
                         Row="1">
+
                         <Label
                             Height="30"
                             Margin="15,11,190,0"
@@ -680,6 +702,7 @@
                             <ComboBoxItem Content="E" />
                             <ComboBoxItem Content="R" />
                         </ComboBox>
+
                         <Label
                             Height="28"
                             Margin="212,63,214,0"
@@ -688,6 +711,7 @@
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="14"
                             Foreground="#FF4285F4" />
+
                         <ComboBox
                             Width="187"
                             Height="26"
@@ -700,30 +724,26 @@
                             <ComboBoxItem Content="F1" />
                             <ComboBoxItem Content="F2" />
                         </ComboBox>
-
                     </Grid>
                 </materialDesign:DialogHost.DialogContent>
-                <Button
-                    Margin="190,362,0,291"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Click="Button_Click"
-                    Content="Show Dialog" />
             </materialDesign:DialogHost>
 
             <materialDesign:DialogHost
-                x:Name="DialogHost"
+                x:Name="GetComponentsDialog"
                 Grid.Row="1"
                 Margin="0,0,-1,0"
                 CloseOnClickAway="False"
                 IsOpen="False"
                 Visibility="Hidden">
+
                 <materialDesign:DialogHost.DialogContent>
+
                     <Grid
                         Width="450"
                         Height="115"
                         Background="White"
                         Row="1">
+
                         <Label
                             Height="30"
                             Margin="15,11,190,0"
@@ -749,16 +769,17 @@
                             VerticalAlignment="Top"
                             IsIndeterminate="True"
                             Style="{DynamicResource MaterialDesignCircularProgressBar}" />
-
                     </Grid>
                 </materialDesign:DialogHost.DialogContent>
-                <Button
-                    Margin="190,362,0,291"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Click="Button_Click"
-                    Content="Show Dialog" />
             </materialDesign:DialogHost>
+
+            <Button
+                Grid.Row="1"
+                Margin="190,362,0,291"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Click="Button_Click"
+                Content="Show Dialog" />
         </Grid>
     </materialDesign:Card>
 </Window>
