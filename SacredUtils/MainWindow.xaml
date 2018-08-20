@@ -293,7 +293,7 @@
                 Margin="0,0,-1,0"
                 CloseOnClickAway="True"
                 IsOpen="False"
-                Visibility="Visible">
+                Visibility="Hidden">
                 <materialDesign:DialogHost.DialogContent>
                     <Grid Height="273" Background="White">
                         <Label
@@ -334,7 +334,6 @@
                             <ListBoxItem Content="sectors.key" />
                             <ListBoxItem Content="tincat2.dll" />
                             <ListBoxItem Content="sets.bin" />
-                            <ListBoxItem Content="static.pak" />
                         </ListBox>
                         <Label
                             Height="23"
@@ -355,6 +354,54 @@
                     Content="Show Dialog" />
             </materialDesign:DialogHost>
 
+            <materialDesign:DialogHost
+                x:Name="RepairComponentsDialog"
+                Grid.Row="1"
+                Margin="0,0,-1,0"
+                CloseOnClickAway="True"
+                IsOpen="False"
+                Visibility="Visible">
+                <materialDesign:DialogHost.DialogContent>
+                    <Grid
+                        Width="450"
+                        Height="115"
+                        Background="White"
+                        Row="1">
+                        <Label
+                            Height="30"
+                            Margin="15,11,190,0"
+                            VerticalAlignment="Top"
+                            Content="Восстановление компонентов"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontSize="16"
+                            Foreground="#FF4285F4" />
+
+                        <Label
+                            Height="28"
+                            Margin="70,59,10,0"
+                            VerticalAlignment="Top"
+                            Content="Восстановление компонентов (0%) ..."
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontSize="14"
+                            Foreground="#FF4285F4" />
+
+                        <ProgressBar
+                            Width="25"
+                            Height="25"
+                            Margin="21,60,404,0"
+                            VerticalAlignment="Top"
+                            IsIndeterminate="True"
+                            Style="{DynamicResource MaterialDesignCircularProgressBar}" />
+
+                    </Grid>
+                </materialDesign:DialogHost.DialogContent>
+                <Button
+                    Margin="190,362,0,291"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Click="Button_Click"
+                    Content="Show Dialog" />
+            </materialDesign:DialogHost>
 
             <materialDesign:DialogHost
                 x:Name="CheckFilesDialog"
