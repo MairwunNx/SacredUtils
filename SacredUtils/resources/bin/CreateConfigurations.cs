@@ -86,6 +86,16 @@ namespace SacredUtils.resources.bin
             }
 
 
+            GetLoggerConfig.Log.Info("Checking availability first install settings");
+
+            if (!File.Exists("$SacredUtils\\conf\\firstinstall.json"))
+            {
+                File.WriteAllBytes("$SacredUtils\\conf\\firstinstall.json", Properties.Resources.firstinstall);
+
+                GetLoggerConfig.Log.Info("First install settings were created in conf folder");
+            }
+
+
             GetLoggerConfig.Log.Info("Checking availability game settings");
 
             if (!File.Exists("settings.cfg"))

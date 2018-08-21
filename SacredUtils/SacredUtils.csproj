@@ -115,6 +115,7 @@
     <Compile Include="resources\bin\GetLanguage.cs" />
     <Compile Include="resources\bin\GetLoggerConfig.cs" />
     <Compile Include="resources\bin\CreateConfigurations.cs" />
+    <Compile Include="resources\bin\SendStatistic.cs" />
     <Compile Include="resources\pgs\application_settings_one.xaml.cs">
       <DependentUpon>application_settings_one.xaml</DependentUpon>
     </Compile>
@@ -243,6 +244,7 @@
     <Content Include="resources\etc\SacredUtils.pdb" />
     <Content Include="resources\opt\mnxupdater.exe" />
     <Content Include="resources\opt\SacredRes2Csv.exe" />
+    <None Include="resources\etc\firstinstall.json" />
     <None Include="resources\etc\langinfo_en.json" />
     <None Include="resources\etc\langinfo_ru.json" />
     <None Include="resources\etc\reqiredfiles.json" />
