@@ -108,6 +108,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="resources\bin\GetLoggerConfig.cs" />
     <Compile Include="resources\pgs\application_settings_one.xaml.cs">
       <DependentUpon>application_settings_one.xaml</DependentUpon>
     </Compile>
@@ -233,6 +234,25 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Content Include="resources\opt\mnxupdater.exe" />
+    <Content Include="resources\opt\SacredRes2Csv.exe" />
+    <None Include="resources\lng\language_en.json" />
+    <None Include="resources\lng\language_ru.json" />
+    <None Include="resources\opt\SacredBalanceDragonFix.bin" />
+    <None Include="resources\opt\SacredBalanceVanilla.bin" />
+    <None Include="resources\opt\SacredBalanceVeteran.bin" />
+    <None Include="resources\opt\SacredCreatureDragonFix.pak" />
+    <None Include="resources\opt\SacredCreatureVanilla.pak" />
+    <None Include="resources\opt\SacredCreatureVeteran.pak" />
+    <Resource Include="resources\etc\license.txt" />
+    <None Include="resources\etc\advanced.json" />
+    <None Include="resources\etc\changelog.json" />
+    <None Include="resources\etc\gamesettings.cfg" />
+    <None Include="resources\etc\hotkeys.json" />
+    <None Include="resources\etc\installinfo.json" />
+    <None Include="resources\etc\settings.json" />
+    <None Include="resources\etc\statistinfo.json" />
+    <None Include="resources\etc\voiceover.json" />
     <Resource Include="resources\ico\icons8_Gas.ico" />
     <Resource Include="resources\ico\icons8_Gas_128.png" />
     <Resource Include="resources\ico\icons8_Gas_16.png" />
@@ -267,13 +287,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="resources\bin\" />
-    <Folder Include="resources\etc\" />
-    <Folder Include="resources\lib\" />
-    <Folder Include="resources\lng\" />
-    <Folder Include="resources\opt\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

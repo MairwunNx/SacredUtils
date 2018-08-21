@@ -5,13 +5,27 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using NLog;
+using NLog.Targets;
+using SacredUtils.resources.bin;
+using static SacredUtils.resources.bin.GetLoggerConfig;
 
 namespace SacredUtils
 {
-    /// <summary>
-    /// Логика взаимодействия для App.xaml
-    /// </summary>
-    public partial class App : Application
+    public partial class App
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            var getLoggerConfig = new GetLoggerConfig();
+            getLoggerConfig.Get();
+
+            Log.Info("Lol, test");
+
+
+
+
+        }
     }
 }
