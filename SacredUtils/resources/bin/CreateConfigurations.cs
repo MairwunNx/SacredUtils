@@ -66,16 +66,6 @@ namespace SacredUtils.resources.bin
             }
 
 
-            GetLoggerConfig.Log.Info("Checking availability statinfo settings");
-
-            if (!File.Exists("$SacredUtils\\conf\\statinfo.json"))
-            {
-                File.WriteAllBytes("$SacredUtils\\conf\\statinfo.json", Properties.Resources.statistinfo);
-
-                GetLoggerConfig.Log.Info("Statinfo settings were created in conf folder");
-            }
-
-
             GetLoggerConfig.Log.Info("Checking availability voiceover settings");
 
             if (!File.Exists("$SacredUtils\\conf\\voiceover.json"))

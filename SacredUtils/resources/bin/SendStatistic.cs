@@ -18,9 +18,6 @@ namespace SacredUtils.resources.bin
     
     public class SendStatistic
     {
-        public IDownloadCount DownloadCount = new ConfigurationBuilder<IDownloadCount>()
-            .UseJsonFile("$SacredUtils\\conf\\statinfo.json").Build();
-
         public IFirstInstall FirstInstall = new ConfigurationBuilder<IFirstInstall>()
             .UseJsonFile("$SacredUtils\\conf\\firstinstall.json").Build();
 
@@ -56,9 +53,12 @@ namespace SacredUtils.resources.bin
         {
             try
             {
+                IDownloadCount downloadCount = new ConfigurationBuilder<IDownloadCount>()
+                    .UseJsonFile("$SacredUtils\\conf\\statinfo.json").Build();
+
                 GetLoggerConfig.Log.Info("Updating statistic file, adding download num");
 
-                DownloadCount.Downloads = DownloadCount.Downloads + 1;
+                downloadCount.Downloads = downloadCount.Downloads + 1;
             }
             catch (Exception e)
             {
