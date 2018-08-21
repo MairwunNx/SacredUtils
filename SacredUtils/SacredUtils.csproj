@@ -108,7 +108,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="resources\bin\ApplicationInfo.cs" />
+    <Compile Include="resources\bin\CreateRequiredFiles.cs" />
+    <Compile Include="resources\bin\GetAvailableFolders.cs" />
+    <Compile Include="resources\bin\GetLanguage.cs" />
     <Compile Include="resources\bin\GetLoggerConfig.cs" />
+    <Compile Include="resources\bin\CreateConfigurations.cs" />
     <Compile Include="resources\pgs\application_settings_one.xaml.cs">
       <DependentUpon>application_settings_one.xaml</DependentUpon>
     </Compile>
@@ -234,8 +239,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Content Include="resources\etc\SacredUtils.pdb" />
     <Content Include="resources\opt\mnxupdater.exe" />
     <Content Include="resources\opt\SacredRes2Csv.exe" />
+    <None Include="resources\etc\langinfo_en.json" />
+    <None Include="resources\etc\langinfo_ru.json" />
+    <None Include="resources\etc\reqiredfiles.json" />
     <None Include="resources\lng\language_en.json" />
     <None Include="resources\lng\language_ru.json" />
     <None Include="resources\opt\SacredBalanceDragonFix.bin" />

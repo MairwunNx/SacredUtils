@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
+﻿using SacredUtils.resources.bin;
 using System.Threading.Tasks;
 using System.Windows;
-using NLog;
-using NLog.Targets;
-using SacredUtils.resources.bin;
-using static SacredUtils.resources.bin.GetLoggerConfig;
 
 namespace SacredUtils
 {
@@ -18,14 +10,15 @@ namespace SacredUtils
         {
             base.OnStartup(e);
 
-            var getLoggerConfig = new GetLoggerConfig();
-            getLoggerConfig.Get();
+            new GetLoggerConfig().Get();
 
-            Log.Info("Lol, test");
+            new GetAvailableFolders().Get();
 
+            new CreateConfigurations().Create();
 
+            Task.Run(() => new CreateRequiredFiles().Create());
 
-
+            Task.Run(() => new GetLanguage().Get());
         }
     }
 }

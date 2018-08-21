@@ -1,5 +1,6 @@
 ﻿using NLog;
 using NLog.Targets;
+using static SacredUtils.resources.bin.ApplicationInfo;
 
 namespace SacredUtils.resources.bin
 {
@@ -24,6 +25,9 @@ namespace SacredUtils.resources.bin
             config.AddRule(LogLevel.Info, LogLevel.Fatal, logfile);
 
             LogManager.Configuration = config;
+
+            Log.Info($"Starting {Name} configurator version {Version}");
+            Log.Info($"You have launched an official {Type} build");
         }
     }
 }
