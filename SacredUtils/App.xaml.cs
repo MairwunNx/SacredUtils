@@ -19,6 +19,8 @@ namespace SacredUtils
             Task.Run(() => new CreateRequiredFiles().Create());
 
             Task.Run(() => new GetLanguage().Get());
+
+            new GetConfigCorrectness().Get();
         }
     }
 }

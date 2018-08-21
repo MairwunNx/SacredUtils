@@ -111,6 +111,7 @@
     <Compile Include="resources\bin\ApplicationInfo.cs" />
     <Compile Include="resources\bin\CreateRequiredFiles.cs" />
     <Compile Include="resources\bin\GetAvailableFolders.cs" />
+    <Compile Include="resources\bin\GetConfigCorrectness.cs" />
     <Compile Include="resources\bin\GetLanguage.cs" />
     <Compile Include="resources\bin\GetLoggerConfig.cs" />
     <Compile Include="resources\bin\CreateConfigurations.cs" />

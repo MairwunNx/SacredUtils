@@ -70,7 +70,7 @@ namespace SacredUtils.resources.bin
 
             if (!File.Exists("$SacredUtils\\conf\\statinfo.json"))
             {
-                File.WriteAllBytes("$SacredUtils\\conf\\hostatinfotkeys.json", Properties.Resources.statistinfo);
+                File.WriteAllBytes("$SacredUtils\\conf\\statinfo.json", Properties.Resources.statistinfo);
 
                 GetLoggerConfig.Log.Info("Statinfo settings were created in conf folder");
             }
