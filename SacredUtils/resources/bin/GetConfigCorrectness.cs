@@ -39,7 +39,6 @@ namespace SacredUtils.resources.bin
 
                 File.WriteAllBytes("$SacredUtils\\conf\\settings.json", Properties.Resources.settings);
             }
-            
         }
     }
 }

@@ -21,22 +21,28 @@
         Width="1076"
         Margin="5,5,5,5"
         VerticalAlignment="Stretch"
-        Background="#FFFFFF">
+        Background="{Binding Background, ElementName=BackgroundColorBrush}">
 
         <Grid
             x:Name="BaseGrid"
             Margin="-1,0,1,0"
-            Background="#FFFFFF">
+            Background="{Binding Background, ElementName=BackgroundColorBrush}">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="25" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <StackPanel
-                x:Name="ToolPanel"
+            <Label
+                x:Name="BackgroundColorBrush"
                 Grid.Row="0"
-                Background="#FFFFFF">
+                Background="White"
+                Visibility="Collapsed" />
+
+            <StackPanel
+                x:Name="HeaderPanel"
+                Grid.Row="0"
+                Background="{Binding Background, ElementName=BackgroundColorBrush}">
 
                 <Button
                     x:Name="CloseBtn"
@@ -93,7 +99,7 @@
             </StackPanel>
 
             <Separator
-                x:Name="ToolBarSepator"
+                x:Name="HeaderSepator"
                 Grid.Row="0"
                 Grid.RowSpan="2"
                 Height="5"
@@ -108,14 +114,13 @@
                 BorderBrush="#FFCDCDCD"
                 BorderThickness="0,0,1,0">
 
-                <StackPanel HorizontalAlignment="Left" Background="#ffffff">
+                <StackPanel HorizontalAlignment="Left">
 
                     <Grid>
                         <StackPanel
                             x:Name="GraphicsPanel"
                             Height="40"
                             Margin="0,140,0,540"
-                            Background="#FFFFFF"
                             Cursor="Hand">
 
                             <Label
@@ -133,7 +138,6 @@
                             x:Name="SoundPanel"
                             Height="40"
                             Margin="0,180,0,500"
-                            Background="#FFFFFF"
                             Cursor="Hand">
 
                             <Label
@@ -151,7 +155,6 @@
                             x:Name="GameplayPanel"
                             Height="40"
                             Margin="0,220,0,460"
-                            Background="#FFFFFF"
                             Cursor="Hand">
 
                             <Label
@@ -169,7 +172,6 @@
                             x:Name="ChatPanel"
                             Height="40"
                             Margin="0,260,0,420"
-                            Background="#FFFFFF"
                             Cursor="Hand">
 
                             <Label
@@ -187,7 +189,6 @@
                             x:Name="FontsPanel"
                             Height="40"
                             Margin="0,300,0,380"
-                            Background="#FFFFFF"
                             Cursor="Hand">
 
                             <Label
@@ -205,7 +206,6 @@
                             x:Name="ModifPanel"
                             Height="40"
                             Margin="0,340"
-                            Background="#FFFFFF"
                             Cursor="Hand">
 
                             <Label
@@ -223,7 +223,6 @@
                             x:Name="PlayPanel"
                             Height="40"
                             Margin="0,380,0,300"
-                            Background="#FFFFFF"
                             Cursor="Hand">
 
                             <Label
@@ -241,7 +240,6 @@
                             x:Name="SettingsPanel"
                             Height="40"
                             Margin="0,460,0,220"
-                            Background="#FFFFFF"
                             Cursor="Hand">
 
                             <Label
@@ -288,7 +286,10 @@
             </Border>
 
             <Grid x:Name="SettingsGrid" Grid.Row="1">
-                <Frame x:Name="SettingsFrame" NavigationUIVisibility="Hidden" />
+                <Frame
+                    x:Name="SettingsFrame"
+                    NavigationUIVisibility="Hidden"
+                    Visibility="Hidden" />
             </Grid>
 
             <materialDesign:DialogHost
@@ -779,7 +780,8 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
                 Click="Button_Click"
-                Content="Show Dialog" />
+                Content="Show Dialog"
+                Visibility="Hidden" />
         </Grid>
     </materialDesign:Card>
 </Window>
