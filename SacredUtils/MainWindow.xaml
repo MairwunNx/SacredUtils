@@ -42,6 +42,7 @@
             <StackPanel
                 x:Name="HeaderPanel"
                 Grid.Row="0"
+                Margin="0,0,-1,0"
                 Background="{Binding Background, ElementName=BackgroundColorBrush}">
 
                 <Button
@@ -98,24 +99,15 @@
                     Foreground="#FF4285F4" />
             </StackPanel>
 
-            <Separator
-                x:Name="HeaderSepator"
-                Grid.Row="0"
-                Grid.RowSpan="2"
-                Height="5"
-                Margin="0,0,0,661"
-                Background="#FFCDCDCD" />
-
             <Border
-                x:Name="SettingsBorder"
+                x:Name="CategoryBorder"
                 Grid.Row="1"
                 Width="190"
                 HorizontalAlignment="Left"
                 BorderBrush="#FFCDCDCD"
-                BorderThickness="0,0,1,0">
+                BorderThickness="0,1,1,0">
 
                 <StackPanel HorizontalAlignment="Left">
-
                     <Grid>
                         <StackPanel
                             x:Name="GraphicsPanel"
@@ -285,12 +277,17 @@
                 </StackPanel>
             </Border>
 
-            <Grid x:Name="SettingsGrid" Grid.Row="1">
+            <Border
+                x:Name="SettingsBorder"
+                Grid.Row="1"
+                Margin="190,0,-1,0"
+                BorderBrush="#FFCDCDCD"
+                BorderThickness="0,1,0,0">
                 <Frame
                     x:Name="SettingsFrame"
                     NavigationUIVisibility="Hidden"
-                    Visibility="Hidden" />
-            </Grid>
+                    Visibility="Visible" />
+            </Border>
 
             <materialDesign:DialogHost
                 x:Name="ErrorDialog"

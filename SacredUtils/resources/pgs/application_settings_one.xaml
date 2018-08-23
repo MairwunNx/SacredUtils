@@ -7,10 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="application_settings_one"
     d:DesignHeight="685"
-    d:DesignWidth="1076"
+    d:DesignWidth="886"
     mc:Ignorable="d">
 
-    <Grid Visibility="Visible">
+    <Grid Visibility="Visible" HorizontalAlignment="Right" Width="886">
 
         <Label
             x:Name="BorderBorderBrush"
@@ -35,8 +35,8 @@
         <Border
             Width="810"
             Height="41"
-            Margin="227,220,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,220,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
             BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
@@ -67,8 +67,8 @@
         <Border
             Width="810"
             Height="41"
-            Margin="227,271,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,271,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
             BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
@@ -98,8 +98,8 @@
         <Border
             Width="810"
             Height="41"
-            Margin="227,322,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,322,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
             BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
@@ -130,8 +130,8 @@
         <Border
             Width="810"
             Height="41"
-            Margin="227,373,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,373,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
             BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
@@ -160,8 +160,8 @@
         <Border
             Width="810"
             Height="42"
-            Margin="227,603,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,603,37,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
             BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
