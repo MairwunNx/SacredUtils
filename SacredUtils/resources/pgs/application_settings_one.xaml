@@ -5,12 +5,14 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="application_settings_one"
     d:DesignHeight="685"
     d:DesignWidth="886"
     mc:Ignorable="d">
 
-    <Grid Visibility="Visible" HorizontalAlignment="Right" Width="886">
+    <Grid
+        Width="886"
+        HorizontalAlignment="Center"
+        Visibility="Visible">
 
         <Label
             x:Name="BorderBorderBrush"
@@ -24,12 +26,12 @@
 
         <Label
             x:Name="ComboBoxBorderBrush"
-            Background="#FF444444"
+            Background="#5E000000"
             Visibility="Hidden" />
 
         <Label
             x:Name="ComboBoxForegroundBrush"
-            Background="#5E000000"
+            Background="#FF444444"
             Visibility="Hidden" />
 
         <Border
@@ -41,9 +43,9 @@
             BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="AppUiLanguageLbl"
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
@@ -51,13 +53,13 @@
                     Text="Язык интерфейса" />
 
                 <ComboBox
-                    x:Name="InterfaceLanguageCmbBox"
+                    x:Name="AppUiLanguageCmbBox"
                     Height="27"
                     Margin="625,5,15,0"
                     VerticalAlignment="Top"
-                    BorderBrush="#5E000000"
+                    BorderBrush="{Binding Background, ElementName=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                    Foreground="#FF444444">
+                    Foreground="{Binding Background, ElementName=ComboBoxForegroundBrush}">
                     <ComboBoxItem Content="Русский" />
                     <ComboBoxItem Content="Английский" />
                 </ComboBox>
@@ -73,20 +75,21 @@
             BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="AppUiThemeLbl"
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                     Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Тема приложения" />
+
                 <ComboBox
-                    x:Name="InterfaceThemeCmbBox"
+                    x:Name="AppUiThemeCmbBox"
                     Height="27"
                     Margin="625,5,15,0"
                     VerticalAlignment="Top"
-                    BorderBrush="#5E000000"
+                    BorderBrush="{Binding Background, ElementName=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{Binding Background, ElementName=ComboBoxForegroundBrush}">
                     <ComboBoxItem Content="Светлая" />
@@ -107,19 +110,21 @@
 
             <Grid>
                 <TextBlock
+                    x:Name="AppStartSacredParamsLbl"
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                     Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Параметры запуска игры" />
+
                 <ComboBox
-                    x:Name="GameStartParamsCmbBox"
+                    x:Name="AppStartSacredParamsCmbBox"
                     Height="27"
                     Margin="625,5,15,0"
                     VerticalAlignment="Top"
-                    BorderBrush="{Binding Background, ElementName=ComboBoxForegroundBrush}"
+                    BorderBrush="{Binding Background, ElementName=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                    Foreground="{Binding Background, ElementName=ComboBoxBorderBrush}">
+                    Foreground="{Binding Background, ElementName=ComboBoxForegroundBrush}">
                     <ComboBoxItem Content="Закрыть SU до игры" />
                     <ComboBoxItem Content="Свернуть SU до игры" />
                     <ComboBoxItem Content="Ничего не делать" />
@@ -136,21 +141,23 @@
             BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="AppUiScaleLbl"
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                     Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Масштаб интерфейса" />
+
                 <ComboBox
+                    x:Name="AppUiScaleCmbBox"
                     Height="27"
                     Margin="625,5,15,0"
                     VerticalAlignment="Top"
-                    BorderBrush="#5E000000"
+                    BorderBrush="{Binding Background, ElementName=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                    Foreground="{Binding Background, ElementName=ComboBoxBorderBrush}">
+                    Foreground="{Binding Background, ElementName=ComboBoxForegroundBrush}">
                     <ComboBoxItem Content="100%" />
                     <ComboBoxItem Content="120%" />
                 </ComboBox>
@@ -166,9 +173,9 @@
             BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="AppStgOnePagesLbl"
                     Margin="15,12,65,12"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
@@ -177,11 +184,12 @@
                     Text="Страница 1 / 2" />
 
                 <Button
+                    x:Name="AppStgOnePagesToTwoBtn"
                     Width="38"
                     Margin="765,4,5,4"
                     materialDesign:RippleAssist.IsCentered="True"
                     materialDesign:RippleAssist.RippleSizeMultiplier="0.5"
-                    Background="#FF4182EF"
+                    Background="{Binding Background, ElementName=LabelForegroundBrush}"
                     Style="{StaticResource MaterialDesignToolForegroundButton}">
 
                     <materialDesign:PackIcon
@@ -194,11 +202,12 @@
                 </Button>
 
                 <Button
+                    x:Name="AppStgOnePagesToNullBtn"
                     Width="38"
                     Margin="5,4,765,4"
                     materialDesign:RippleAssist.IsCentered="True"
                     materialDesign:RippleAssist.RippleSizeMultiplier="0.5"
-                    Background="#FF4182EF"
+                    Background="{Binding Background, ElementName=LabelForegroundBrush}"
                     IsEnabled="False"
                     Style="{StaticResource MaterialDesignToolForegroundButton}">
 

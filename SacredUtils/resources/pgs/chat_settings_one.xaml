@@ -6,17 +6,20 @@
     xmlns:local="clr-namespace:SacredUtils.resources.pgs"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="chat_settings_one"
     d:DesignHeight="685"
-    d:DesignWidth="1076"
+    d:DesignWidth="886"
     mc:Ignorable="d">
 
-    <Grid Visibility="Visible">
+    <Grid
+        Width="886"
+        HorizontalAlignment="Right"
+        Visibility="Visible">
+
         <Border
             Width="810"
             Height="41"
-            Margin="227,195,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,195,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
             BorderBrush="#FFCDCDCD"
             BorderThickness="1,1,1,1"
@@ -39,8 +42,8 @@
         <Border
             Width="810"
             Height="41"
-            Margin="227,246,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,246,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
             BorderBrush="#FFCDCDCD"
             BorderThickness="1,1,1,1"
@@ -72,8 +75,8 @@
         <Border
             Width="810"
             Height="41"
-            Margin="227,297,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,297,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
             BorderBrush="#FFCDCDCD"
             BorderThickness="1,1,1,1"
@@ -103,8 +106,8 @@
         <Border
             Width="810"
             Height="41"
-            Margin="227,348,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,348,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
             BorderBrush="#FFCDCDCD"
             BorderThickness="1,1,1,1"
@@ -135,8 +138,8 @@
         <Border
             Width="810"
             Height="41"
-            Margin="227,399,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,399,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
             BorderBrush="#FFCDCDCD"
             BorderThickness="1,1,1,1"
@@ -166,8 +169,8 @@
         <Border
             Width="810"
             Height="42"
-            Margin="227,603,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,603,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
             BorderBrush="#FFCDCDCD"
             BorderThickness="1,1,1,1"
