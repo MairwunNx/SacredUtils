@@ -15,24 +15,46 @@
         HorizontalAlignment="Right"
         Visibility="Visible">
 
+        <Label
+            x:Name="BorderBorderBrush"
+            Background="#FFCDCDCD"
+            Visibility="Hidden" />
+
+        <Label
+            x:Name="LabelForegroundBrush"
+            Background="#FF4285F4"
+            Visibility="Hidden" />
+
+        <Label
+            x:Name="ComboBoxBorderBrush"
+            Background="#5E000000"
+            Visibility="Hidden" />
+
+        <Label
+            x:Name="ComboBoxForegroundBrush"
+            Background="#FF444444"
+            Visibility="Hidden" />
+
         <Border
             Width="810"
             Height="41"
             Margin="0,195,39,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="#FFCDCDCD"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="GameRainbowChatLbl"
                     Margin="15,12,65,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="#FF4285F4"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Разноцветный чат" />
+
                 <ToggleButton
+                    x:Name="GameRainbowChatTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     Background="#FF4182EF" />
@@ -45,24 +67,26 @@
             Margin="0,246,39,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="#FFCDCDCD"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="GameUiLanguageLbl"
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="#FF4285F4"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Язык интерфейса игры" />
+
                 <ComboBox
+                    x:Name="GameUiLanguageCmbBox"
                     Height="27"
                     Margin="625,5,15,0"
                     VerticalAlignment="Top"
-                    BorderBrush="#5E000000"
+                    BorderBrush="{Binding Background, ElementName=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                    Foreground="#FF444444">
+                    Foreground="{Binding Background, ElementName=ComboBoxForegroundBrush}">
                     <ComboBoxItem Content="Русский" />
                     <ComboBoxItem Content="Английский" />
                     <ComboBoxItem Content="Немецкий" />
@@ -78,18 +102,20 @@
             Margin="0,297,39,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="#FFCDCDCD"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="GameCountLinesLbl"
                     Margin="15,12,195,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="#FF4285F4"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Количество строк в чате" />
+
                 <Slider
+                    x:Name="GameCountLinesSlider"
                     Width="183"
                     Margin="618,-25,0,0"
                     HorizontalAlignment="Left"
@@ -109,19 +135,20 @@
             Margin="0,348,39,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="#FFCDCDCD"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="GameTextDelayLbl"
                     Margin="15,12,195,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="#FF4285F4"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Задержка текста в чате" />
 
                 <Slider
+                    x:Name="GameTextDelaySlider"
                     Width="183"
                     Margin="618,-25,0,0"
                     HorizontalAlignment="Left"
@@ -141,18 +168,20 @@
             Margin="0,399,39,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="#FFCDCDCD"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="GameChatTransparentLbl"
                     Margin="15,12,195,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="#FF4285F4"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Прозрачность чата" />
+
                 <Slider
+                    x:Name="GameChatTransparentSlider"
                     Width="183"
                     Margin="618,-25,0,0"
                     HorizontalAlignment="Left"
@@ -172,17 +201,17 @@
             Margin="0,603,39,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="#FFCDCDCD"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="ChatStgOnePagesLbl"
                     Margin="15,12,65,12"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="#FF4285F4"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Страница 1 / 1" />
 
                 <Button
@@ -199,7 +228,7 @@
                         Height="28"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Foreground="#FF4285F4"
+                        Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                         Kind="ChevronRight" />
                 </Button>
 
@@ -217,7 +246,7 @@
                         Height="28"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Foreground="#FF4285F4"
+                        Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                         Kind="ChevronLeft" />
                 </Button>
             </Grid>
