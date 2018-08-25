@@ -221,5 +221,115 @@
                 </Button>
             </Grid>
         </Border>
+
+        <Border
+            Width="135"
+            Height="42"
+            Margin="0,540,37,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3"
+            Cursor="Hand">
+            <Grid Margin="0,0,0,0" Cursor="Hand">
+                <Label
+                    x:Name="AppGitHubLbl"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Content="GitHub"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontSize="16"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}" />
+            </Grid>
+        </Border>
+
+        <Border
+            Width="136"
+            Height="42"
+            Margin="0,540,711,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3"
+            Cursor="Hand">
+            <Grid Margin="0,0,0,0" Cursor="Hand">
+                <Label
+                    x:Name="AppAboutLbl"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Content="About"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontSize="16"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}" />
+            </Grid>
+        </Border>
+
+        <Border
+            Width="136"
+            Height="42"
+            Margin="0,540,560,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3"
+            Cursor="Hand">
+            <Grid Margin="0,0,0,0" Cursor="Hand">
+                <Label
+                    x:Name="AppFeedbackLbl"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Content="Feedback"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontSize="16"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}" />
+            </Grid>
+        </Border>
+
+        <Border
+            Width="135"
+            Height="42"
+            Margin="0,540,187,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3"
+            Cursor="Hand">
+            <Grid Margin="0,0,0,0" Cursor="Hand">
+                <Label
+                    x:Name="AppCreatorLbl"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Content="Creator"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontSize="16"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}" />
+            </Grid>
+        </Border>
+
+        <Border
+            Width="208"
+            Height="42"
+            Margin="0,540,337,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3"
+            Cursor="Hand">
+            <Grid Margin="0,0,0,0" Cursor="Hand">
+                <Label
+                    x:Name="AppDonateLbl"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Content="Donate"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontSize="16"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}" />
+            </Grid>
+        </Border>
     </Grid>
 </Page>
