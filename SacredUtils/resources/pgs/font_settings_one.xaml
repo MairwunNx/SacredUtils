@@ -139,7 +139,7 @@
                 FontFamily="{Binding Text, ElementName=FontCmbBox}"
                 FontSize="14"
                 Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
-                Text="{Binding Text, ElementName=FontExampleTxBox}"
+                Text="{Binding Text, ElementName=GameFontExampleTxBox}"
                 TextAlignment="Center"
                 TextWrapping="WrapWithOverflow" />
         </Border>

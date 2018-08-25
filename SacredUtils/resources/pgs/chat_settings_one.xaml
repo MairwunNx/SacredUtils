@@ -121,7 +121,7 @@
                     VerticalAlignment="Top"
                     BorderBrush="#00FF0000"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                    Foreground="#FF4182EF"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Maximum="25"
                     Minimum="1"
                     Style="{StaticResource MaterialDesignDiscreteSlider}" />
@@ -154,7 +154,7 @@
                     VerticalAlignment="Top"
                     BorderBrush="#00FF0000"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                    Foreground="#FF4182EF"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Maximum="120"
                     Minimum="10"
                     Style="{StaticResource MaterialDesignDiscreteSlider}" />
@@ -187,7 +187,7 @@
                     VerticalAlignment="Top"
                     BorderBrush="#00FF0000"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                    Foreground="#FF4182EF"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Maximum="255"
                     Minimum="0"
                     Style="{StaticResource MaterialDesignDiscreteSlider}" />
