@@ -3,57 +3,82 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:SacredUtils.resources.pgs"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="graphics_settings_two"
     d:DesignHeight="685"
-    d:DesignWidth="1076"
+    d:DesignWidth="886"
     mc:Ignorable="d">
 
-    <Grid Visibility="Visible">
+    <Grid
+        Width="886"
+        HorizontalAlignment="Center"
+        Visibility="Visible">
+
+        <Label
+            x:Name="BorderBorderBrush"
+            Background="#FFCDCDCD"
+            Visibility="Hidden" />
+
+        <Label
+            x:Name="LabelForegroundBrush"
+            Background="#FF4285F4"
+            Visibility="Hidden" />
+
+        <Label
+            x:Name="ComboBoxBorderBrush"
+            Background="#5E000000"
+            Visibility="Hidden" />
+
+        <Label
+            x:Name="ComboBoxForegroundBrush"
+            Background="#FF444444"
+            Visibility="Hidden" />
+
         <Border
             Width="810"
             Height="41"
-            Margin="227,118,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,118,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="#FFCDCDCD"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="Game128MbitVideoLbl"
                     Margin="15,12,65,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="#FF4285F4"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="128mbit видеопамяти" />
+
                 <ToggleButton
+                    x:Name="Game128MbitVideoTglBtn"
                     Width="50"
-                    Margin="748,0,10,0"
-                    Background="#FF4182EF" />
+                    Margin="748,0,10,0" />
             </Grid>
         </Border>
 
         <Border
             Width="810"
             Height="41"
-            Margin="227,169,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,169,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="#FFCDCDCD"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="Game32BitColorLbl"
                     Margin="15,12,65,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="#FF4285F4"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="32bit глубина цвета" />
+
                 <ToggleButton
+                    x:Name="Game32BitColorTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     Background="#FF4182EF" />
@@ -63,21 +88,23 @@
         <Border
             Width="810"
             Height="41"
-            Margin="227,220,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,220,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="#FFCDCDCD"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="GamePickupAnimLbl"
                     Margin="15,12,65,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="#FF4285F4"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Анимация подбора" />
+
                 <ToggleButton
+                    x:Name="GamePickupAnimTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     Background="#FF4182EF" />
@@ -87,22 +114,23 @@
         <Border
             Width="810"
             Height="41"
-            Margin="227,271,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,271,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="#FFCDCDCD"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="GameViolenceLbl"
                     Margin="15,12,65,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="#FF4285F4"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Лужицы крови после убийства" />
 
                 <ToggleButton
+                    x:Name="GameViolenceTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     Background="#FF4182EF" />
@@ -112,22 +140,23 @@
         <Border
             Width="810"
             Height="41"
-            Margin="227,322,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,322,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="#FFCDCDCD"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="GameFullScreenLbl"
                     Margin="15,12,65,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="#FF4285F4"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Полноэкранный режим" />
 
                 <ToggleButton
+                    x:Name="GameFullScreenTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     Background="#FF4182EF" />
@@ -137,22 +166,23 @@
         <Border
             Width="810"
             Height="41"
-            Margin="227,373,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,373,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="#FFCDCDCD"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="GameFullScreenAaLbl"
                     Margin="15,12,65,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="#FF4285F4"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Полноэкранное сглаживание" />
 
                 <ToggleButton
+                    x:Name="GameFullScreenAaTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     Background="#FF4182EF" />
@@ -162,22 +192,23 @@
         <Border
             Width="810"
             Height="41"
-            Margin="227,424,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,424,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="#FFCDCDCD"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="GameMoviesLbl"
                     Margin="15,12,65,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="#FF4285F4"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Показывать игровые ролики" />
 
                 <ToggleButton
+                    x:Name="GameMoviesTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     Background="#FF4182EF" />
@@ -187,22 +218,23 @@
         <Border
             Width="810"
             Height="41"
-            Margin="227,475,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,475,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="#FFCDCDCD"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="GameFinalMovieLbl"
                     Margin="15,12,65,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="#FF4285F4"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Показывать финальный ролик" />
 
                 <ToggleButton
+                    x:Name="GameFinalMovieTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     Background="#FF4182EF" />
@@ -212,23 +244,24 @@
         <Border
             Width="810"
             Height="42"
-            Margin="227,603,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,603,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="#FFCDCDCD"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="GraphicsStgTwoPagesLbl"
                     Margin="15,12,65,12"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="#FF4285F4"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Страница 2 / 4" />
 
                 <Button
+                    x:Name="GraphicsStgTwoPagesToThreeBtn"
                     Width="38"
                     Margin="765,4,5,4"
                     materialDesign:RippleAssist.IsCentered="True"
@@ -241,11 +274,12 @@
                         Height="28"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Foreground="#FF4285F4"
+                        Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                         Kind="ChevronRight" />
                 </Button>
 
                 <Button
+                    x:Name="GraphicsStgTwoPagesToOneBtn"
                     Width="38"
                     Margin="5,4,765,4"
                     materialDesign:RippleAssist.IsCentered="True"
@@ -258,7 +292,7 @@
                         Height="28"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Foreground="#FF4285F4"
+                        Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                         Kind="ChevronLeft" />
                 </Button>
             </Grid>

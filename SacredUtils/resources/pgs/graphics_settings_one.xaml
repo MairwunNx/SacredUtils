@@ -5,37 +5,61 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="graphics_settings_one"
     d:DesignHeight="685"
-    d:DesignWidth="1076"
+    d:DesignWidth="886"
     mc:Ignorable="d">
 
-    <Grid Visibility="Visible">
+    <Grid
+        Width="886"
+        HorizontalAlignment="Center"
+        Visibility="Visible">
+
+        <Label
+            x:Name="BorderBorderBrush"
+            Background="#FFCDCDCD"
+            Visibility="Hidden" />
+
+        <Label
+            x:Name="LabelForegroundBrush"
+            Background="#FF4285F4"
+            Visibility="Hidden" />
+
+        <Label
+            x:Name="ComboBoxBorderBrush"
+            Background="#5E000000"
+            Visibility="Hidden" />
+
+        <Label
+            x:Name="ComboBoxForegroundBrush"
+            Background="#FF444444"
+            Visibility="Hidden" />
+
         <Border
             Width="810"
             Height="41"
-            Margin="227,220,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,220,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="#FFCDCDCD"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="GameGraphicsQualityLbl"
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="#FF4285F4"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Качество графики" />
 
                 <ComboBox
+                    x:Name="GameGraphicsQualityCmbBox"
                     Height="27"
                     Margin="625,5,15,0"
                     VerticalAlignment="Top"
-                    BorderBrush="#5E000000"
+                    BorderBrush="{Binding Background, ElementName=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                    Foreground="#FF444444">
+                    Foreground="{Binding Background, ElementName=ComboBoxForegroundBrush}">
                     <ComboBoxItem Content="Низкое" />
                     <ComboBoxItem Content="Среднее" />
                     <ComboBoxItem Content="Высокое" />
@@ -46,29 +70,30 @@
         <Border
             Width="810"
             Height="41"
-            Margin="227,271,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,271,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="#FFCDCDCD"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="GameWaitReTraceLbl"
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="#FF4285F4"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Кол-во ожиданий обратного хода луча монитора" />
 
                 <Slider
+                    x:Name="GameWaitReTraceSlider"
                     Width="183"
                     Margin="618,-25,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     BorderBrush="#00FF0000"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                    Foreground="#FF4182EF"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Maximum="8"
                     Style="{StaticResource MaterialDesignDiscreteSlider}" />
             </Grid>
@@ -77,29 +102,30 @@
         <Border
             Width="810"
             Height="41"
-            Margin="227,322,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,322,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="#FFCDCDCD"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="GameMapTransparentLbl"
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="#FF4285F4"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Прозрачность карты" />
 
                 <Slider
+                    x:Name="GameMapTransparentLSlider"
                     Width="183"
                     Margin="618,-25,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     BorderBrush="#00FF0000"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                    Foreground="#FF4182EF"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Maximum="255"
                     Style="{StaticResource MaterialDesignDiscreteSlider}" />
             </Grid>
@@ -108,29 +134,30 @@
         <Border
             Width="810"
             Height="41"
-            Margin="227,373,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,373,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="#FFCDCDCD"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="GameNightBrightnessLbl"
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="#FF4285F4"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Темнота ночи" />
 
                 <Slider
+                    x:Name="GameNightBrightnessSlider"
                     Width="183"
                     Margin="618,-25,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     BorderBrush="#00FF0000"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                    Foreground="#FF4182EF"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Maximum="100"
                     Style="{StaticResource MaterialDesignDiscreteSlider}" />
             </Grid>
@@ -139,23 +166,24 @@
         <Border
             Width="810"
             Height="42"
-            Margin="227,603,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,603,39,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="#FFCDCDCD"
+            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
-
             <Grid>
                 <TextBlock
+                    x:Name="GraphicsStgOnePagesLbl"
                     Margin="15,12,65,12"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="#FF4285F4"
+                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Text="Страница 1 / 4" />
 
                 <Button
+                    x:Name="GraphicsStgOnePagesToTwoBtn"
                     Width="38"
                     Margin="765,4,5,4"
                     materialDesign:RippleAssist.IsCentered="True"
@@ -168,7 +196,7 @@
                         Height="28"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Foreground="#FF4285F4"
+                        Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                         Kind="ChevronRight" />
                 </Button>
 
@@ -186,7 +214,7 @@
                         Height="28"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Foreground="#FF4285F4"
+                        Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                         Kind="ChevronLeft" />
                 </Button>
             </Grid>
