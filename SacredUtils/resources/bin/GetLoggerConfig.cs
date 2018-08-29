@@ -14,12 +14,12 @@ namespace SacredUtils.resources.bin
 
             var logfile = new FileTarget("logfile")
             {
-                FileName = "${basedir}/$SacredUtils/logs/latest.log",
-                ArchiveFileName = "${basedir}/$SacredUtils/logs/${shortdate}.log.gz",
-                Layout = "[${longdate}] [${threadid}/${uppercase:${level}}]: ${message}",
-                ArchiveOldFileOnStartup = true,
+                FileName                     = "${basedir}/$SacredUtils/logs/latest.log",
+                ArchiveFileName              = "${basedir}/$SacredUtils/logs/${shortdate}.log.gz",
+                Layout                       = "[${longdate}] [${threadid}/${uppercase:${level}}]: ${message}",
+                ArchiveOldFileOnStartup      = true,
                 EnableArchiveFileCompression = true,
-                MaxArchiveFiles = 10
+                MaxArchiveFiles              = 10
             };
 
             config.AddRule(LogLevel.Info, LogLevel.Fatal, logfile);

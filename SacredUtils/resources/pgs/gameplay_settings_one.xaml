@@ -189,7 +189,11 @@
                     Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
                     Maximum="80"
                     Minimum="10"
-                    Style="{StaticResource MaterialDesignDiscreteSlider}" />
+                    Style="{StaticResource MaterialDesignDiscreteSlider}">
+                    <Slider.Resources>
+                        <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="#FF666666" />
+                    </Slider.Resources>
+                </Slider>
             </Grid>
         </Border>
 

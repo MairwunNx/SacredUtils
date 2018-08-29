@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using Castle.Core.Logging;
 using FluentFTP;
+using MaterialDesignThemes.Wpf;
 using NLog;
 using NLog.Targets;
 using SacredUtils.resources.bin;
@@ -54,9 +55,9 @@ namespace SacredUtils
 
             SelectSettings(unselectedStgOne);
 
-            Height = Height * 1.3;
-            Width = Width * 1.3;
-            BaseCard.LayoutTransform = new ScaleTransform(1.3, 1.3);
+//            Height = Height * 1.3;
+//            Width = Width * 1.3;
+//            BaseCard.LayoutTransform = new ScaleTransform(1.3, 1.3);
         }
 
         public void DragWindow(object sender, MouseButtonEventArgs e)

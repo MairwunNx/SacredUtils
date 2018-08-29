@@ -66,10 +66,10 @@ namespace SacredUtils.resources.bin
         {
             Configuration.LoadFromFile("$SacredUtils\\temp\\~Settings.cfg", Encoding.ASCII);
             
-            var configload = Configuration.LoadFromFile("$SacredUtils\\temp\\~Settings.cfg");
-            var section = configload["General"];
+            var configload     = Configuration.LoadFromFile("$SacredUtils\\temp\\~Settings.cfg");
+            var section        = configload["General"];
 
-            int someString = section["EXPLOREMAP"].IntValue;
+            int someString     = section["EXPLOREMAP"].IntValue;
             string someString1 = section["GFXSTARTUP"].StringValue;
 
 //            tglbtn.IsChecked = someString == 1;
