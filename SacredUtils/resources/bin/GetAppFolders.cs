@@ -2,7 +2,7 @@
 
 namespace SacredUtils.resources.bin
 {
-    public class GetAvailableFolders
+    public class GetAppFolders
     {
         public void Get()
         {
@@ -12,6 +12,11 @@ namespace SacredUtils.resources.bin
             Directory.CreateDirectory("$SacredUtils\\logs");
             Directory.CreateDirectory("$SacredUtils\\temp");
             Directory.CreateDirectory("$SacredUtils\\back");
+            Directory.CreateDirectory("$SacredUtils\\themes");
+            Directory.CreateDirectory("$SacredUtils\\lang\\ru-RU");
+            Directory.CreateDirectory("$SacredUtils\\lang\\en-US");
+            Directory.CreateDirectory("$SacredUtils\\themes\\dark");
+            Directory.CreateDirectory("$SacredUtils\\themes\\light");
         }
     }
 }

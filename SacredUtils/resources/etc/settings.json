@@ -1,3 +1,11 @@
 {
-  "SettingsVersion": "1"
+  "ConfigVersion": "1",
+  "AcceptLicense": "true",
+  "CheckAutoUpdate": "true",
+  "CheckAutoAlphaUpdate": "false",
+  "MakeAutoBackupConf": "true",
+  "ShowChangeLog": "true",
+  "ColorTheme": "light",
+  "SacredStartArgs": "minimize",
+  "GuiScale": "1.0"
 }

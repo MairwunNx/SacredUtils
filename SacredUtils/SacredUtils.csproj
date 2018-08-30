@@ -102,6 +102,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WPFSharp.Globalizer, Version=1.0.6.0, Culture=neutral, PublicKeyToken=8de4abfa85fe6c31, processorArchitecture=MSIL">
+      <HintPath>..\packages\WPFSharp.Globalizer.1.0.6\lib\net40-client\WPFSharp.Globalizer.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -110,8 +113,8 @@
     </ApplicationDefinition>
     <Compile Include="resources\bin\ApplicationInfo.cs" />
     <Compile Include="resources\bin\CreateRequiredFiles.cs" />
-    <Compile Include="resources\bin\GetAvailableFolders.cs" />
-    <Compile Include="resources\bin\GetConfigCorrectness.cs" />
+    <Compile Include="resources\bin\CreateAppFolders.cs" />
+    <Compile Include="resources\bin\GetAppSettings.cs" />
     <Compile Include="resources\bin\GetGameSettings.cs" />
     <Compile Include="resources\bin\GetLanguage.cs" />
     <Compile Include="resources\bin\GetLoggerConfig.cs" />
@@ -159,6 +162,15 @@
     <Compile Include="resources\pgs\unselected_settings_one.xaml.cs">
       <DependentUpon>unselected_settings_one.xaml</DependentUpon>
     </Compile>
+    <Content Include="resources\lib\WPFSharp.Globalizer.dll" />
+    <Content Include="resources\lng\en-US\en-US.xaml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\lng\ru-RU\ru-RU.xaml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -171,6 +183,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Properties\DesignTimeResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="resources\pgs\application_settings_one.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -227,6 +243,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Content Include="resources\themes\Light.xaml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\themes\Dark.xaml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -252,8 +276,6 @@
     <None Include="resources\etc\langinfo_en.json" />
     <None Include="resources\etc\langinfo_ru.json" />
     <None Include="resources\etc\reqiredfiles.json" />
-    <None Include="resources\lng\language_en.json" />
-    <None Include="resources\lng\language_ru.json" />
     <None Include="resources\opt\SacredBalanceDragonFix.bin" />
     <None Include="resources\opt\SacredBalanceVanilla.bin" />
     <None Include="resources\opt\SacredBalanceVeteran.bin" />
@@ -261,7 +283,7 @@
     <None Include="resources\opt\SacredCreatureVanilla.pak" />
     <None Include="resources\opt\SacredCreatureVeteran.pak" />
     <Resource Include="resources\etc\license.txt" />
-    <None Include="resources\etc\advanced.json" />
+    <None Include="resources\etc\graphics.json" />
     <None Include="resources\etc\changelog.json" />
     <None Include="resources\etc\gamesettings.cfg" />
     <None Include="resources\etc\hotkeys.json" />
@@ -280,6 +302,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

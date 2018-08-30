@@ -2,35 +2,15 @@
 
 namespace SacredUtils.resources.bin
 {
-    public class CreateConfigurations
+    public class GetConfigurations
     {
-        public void Create()
+        public void Get()
         {
-            GetLoggerConfig.Log.Info("Checking availability reqiredfiles settings");
-
-            if (!File.Exists("$SacredUtils\\conf\\reqiredfiles.json"))
-            {
-                File.WriteAllBytes("$SacredUtils\\conf\\reqiredfiles.json", Properties.Resources.reqiredfiles);
-
-                GetLoggerConfig.Log.Info("Reqiredfiles settings were created in conf folder");
-            } 
-
-
-            GetLoggerConfig.Log.Info("Checking availability application settings");
-
-            if (!File.Exists("$SacredUtils\\conf\\settings.json"))
-            {
-                File.WriteAllBytes("$SacredUtils\\conf\\settings.json", Properties.Resources.settings);
-
-                GetLoggerConfig.Log.Info("Application settings were created in conf folder");
-            }
-
-
             GetLoggerConfig.Log.Info("Checking availability advanced settings");
 
             if (!File.Exists("$SacredUtils\\conf\\advanced.json"))
             {
-                File.WriteAllBytes("$SacredUtils\\conf\\advanced.json", Properties.Resources.advanced);
+                File.WriteAllBytes("$SacredUtils\\conf\\advanced.json", Properties.Resources.graphics);
 
                 GetLoggerConfig.Log.Info("Advanced settings were created in conf folder");
             }
@@ -73,16 +53,6 @@ namespace SacredUtils.resources.bin
                 File.WriteAllBytes("$SacredUtils\\conf\\voiceover.json", Properties.Resources.voiceover);
 
                 GetLoggerConfig.Log.Info("Voiceover settings were created in conf folder");
-            }
-
-
-            GetLoggerConfig.Log.Info("Checking availability first install settings");
-
-            if (!File.Exists("$SacredUtils\\conf\\firstinstall.json"))
-            {
-                File.WriteAllBytes("$SacredUtils\\conf\\firstinstall.json", Properties.Resources.firstinstall);
-
-                GetLoggerConfig.Log.Info("First install settings were created in conf folder");
             }
 
 

@@ -1,6 +1,7 @@
 ﻿using Config.Net;
 using FluentFTP;
 using System;
+using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -16,14 +17,23 @@ namespace SacredUtils.resources.bin
         bool First { get; set; }
     }
     
-    public class SendStatistic
+    public class GetStatistic
     {
-        public IFirstInstall FirstInstall = new ConfigurationBuilder<IFirstInstall>()
-            .UseJsonFile("$SacredUtils\\conf\\firstinstall.json").Build();
-
         public async void Get()
         {
-            if (FirstInstall.First)
+            GetLoggerConfig.Log.Info("Checking availability first install settings");
+
+            if (!File.Exists("$SacredUtils\\conf\\firstinstall.json"))
+            {
+                File.WriteAllBytes("$SacredUtils\\conf\\firstinstall.json", Properties.Resources.firstinstall);
+
+                GetLoggerConfig.Log.Info("First install settings were created in conf folder");
+            }
+
+            IFirstInstall firstInstall = new ConfigurationBuilder<IFirstInstall>()
+                .UseJsonFile("$SacredUtils\\conf\\firstinstall.json").Build();
+
+            if (firstInstall.First)
             {
                 try
                 {
@@ -70,6 +80,9 @@ namespace SacredUtils.resources.bin
 
         public async void Send()
         {
+            IFirstInstall firstInstall = new ConfigurationBuilder<IFirstInstall>()
+                .UseJsonFile("$SacredUtils\\conf\\firstinstall.json").Build();
+
             try
             {
                 FtpClient client = new FtpClient("145.14.145.124");
@@ -84,7 +97,7 @@ namespace SacredUtils.resources.bin
 
                 GetLoggerConfig.Log.Info("Upload statistic successfully done!");
 
-                FirstInstall.First = false;
+                firstInstall.First = false;
             }
             catch (Exception e)
             {

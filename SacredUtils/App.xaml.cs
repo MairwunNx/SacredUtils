@@ -1,4 +1,4 @@
-ï»¿using SacredUtils.resources.bin;
+using SacredUtils.resources.bin;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
@@ -9,30 +9,32 @@ namespace SacredUtils
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            base.OnStartup(e);
-
             try
             {
                 new GetLoggerConfig().Get();
 
-                new GetAvailableFolders().Get();
+                new GetGlobalizerLib().Get();
 
-                new CreateConfigurations().Create();
+                new GetAppFolders().Get();
 
-                Task.Run(() => new CreateRequiredFiles().Create());
+                new GetConfigurations().Get(); // Â ïðîöåññå.
+
+                Task.Run(() => new GetRequiredFiles().Get());
+
+                Task.Run(() => new GetStatistic().Get());
+
+                Task.Run(() => new GetAppSettings().Get());
+
+                base.OnStartup(e); // Launch OnStartup method in WPFSharp.Globalizer.
 
                 Task.Run(() => new GetLanguage().Get());
-
-                Task.Run(() => new SendStatistic().Get());
-
-                new GetConfigCorrectness().Get();
             }
             catch (Exception exception)
             {
                 GetLoggerConfig.Log.Fatal("There was a critical error of the program, sorry please, if the program could not start. Contact the Creator of the utility.");
+
                 GetLoggerConfig.Log.Fatal(exception.ToString);
             }
-
         }
     }
 }

@@ -1,21 +1,23 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using Castle.Core.Logging;
-using FluentFTP;
 using MaterialDesignThemes.Wpf;
 using NLog;
 using NLog.Targets;
 using SacredUtils.resources.bin;
 using SacredUtils.resources.pgs;
 using SharpConfig;
+using WPFSharp.Globalizer;
 
 namespace SacredUtils
 {
@@ -55,9 +57,12 @@ namespace SacredUtils
 
             SelectSettings(unselectedStgOne);
 
-//            Height = Height * 1.3;
-//            Width = Width * 1.3;
-//            BaseCard.LayoutTransform = new ScaleTransform(1.3, 1.3);
+            Height = Height * 1.3;
+            Width = Width * 1.3;
+            BaseCard.LayoutTransform = new ScaleTransform(1.3, 1.3);
+
+            GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
+            (ApplicationInfo.Lang == "ru" ? "ru-RU" : "en-US", true);
         }
 
         public void DragWindow(object sender, MouseButtonEventArgs e)

@@ -1,7 +1,8 @@
-﻿<Application
+<globalizer:GlobalizedApplication
     x:Class="SacredUtils.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:globalizer="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
     StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -16,4 +17,4 @@
             <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="#FF4285F4" />
         </ResourceDictionary>
     </Application.Resources>
-</Application>
+</globalizer:GlobalizedApplication>

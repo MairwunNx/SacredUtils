@@ -2,7 +2,9 @@
     x:Class="SacredUtils.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Globalizer="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:globcntrls="clr-namespace:WPFSharp.Globalizer.Controls;assembly=WPFSharp.Globalizer"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="BaseWindow"
@@ -38,6 +40,11 @@
                 Grid.Row="0"
                 Background="White"
                 Visibility="Collapsed" />
+
+            <globcntrls:LanguageSelectionComboBox
+                Grid.Row="1"
+                Width="160"
+                Height="20" />
 
             <StackPanel
                 x:Name="HeaderPanel"

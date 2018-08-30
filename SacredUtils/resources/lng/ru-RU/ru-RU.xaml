@@ -1,0 +1,27 @@
+﻿<Globalization:GlobalizationResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Globalization="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    Name="ru-RU">
+
+    <!--  Main Window  -->
+    <sys:String x:Key="MainWindow_Title">WPF Globalization Example (Spanish)</sys:String>
+
+    <!--  Menu strings  -->
+    <sys:String x:Key="Menu_File">_Archivo</sys:String>
+    <sys:String x:Key="Menu_File_Exit">_Salir</sys:String>
+    <sys:String x:Key="Menu_Language">_Idioma</sys:String>
+    <sys:String x:Key="Menu_Language_English">_Inglés</sys:String>
+    <sys:String x:Key="Menu_Language_Spanish">_Español</sys:String>
+    <sys:String x:Key="Menu_Language_Hebrew">_Hebreo</sys:String>
+
+    <sys:String x:Key="LanguageSelectionLabel">_Idioma</sys:String>
+
+    <!--  Form strings  -->
+    <sys:String x:Key="Form_FirstName">Nombre de pila</sys:String>
+    <sys:String x:Key="Form_LastName">Appellido</sys:String>
+    <sys:String x:Key="Form_Age">Edad</sys:String>
+    <sys:String x:Key="Form_Button_Clear">borrar</sys:String>
+
+</Globalization:GlobalizationResourceDictionary>

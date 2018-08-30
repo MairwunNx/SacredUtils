@@ -22,7 +22,7 @@ namespace SacredUtils.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace SacredUtils.Properties {
         ///   Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SacredUtils.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace SacredUtils.Properties {
         ///   обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,17 +63,7 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] advanced {
-            get {
-                object obj = ResourceManager.GetObject("advanced", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        internal static byte[] changelog {
+        public static byte[] changelog {
             get {
                 object obj = ResourceManager.GetObject("changelog", resourceCulture);
                 return ((byte[])(obj));
@@ -83,7 +73,17 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] firstinstall {
+        public static byte[] en_US {
+            get {
+                object obj = ResourceManager.GetObject("en_US", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] firstinstall {
             get {
                 object obj = ResourceManager.GetObject("firstinstall", resourceCulture);
                 return ((byte[])(obj));
@@ -93,7 +93,7 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] gamesettings {
+        public static byte[] gamesettings {
             get {
                 object obj = ResourceManager.GetObject("gamesettings", resourceCulture);
                 return ((byte[])(obj));
@@ -103,7 +103,17 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] hotkeys {
+        public static byte[] graphics {
+            get {
+                object obj = ResourceManager.GetObject("graphics", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] hotkeys {
             get {
                 object obj = ResourceManager.GetObject("hotkeys", resourceCulture);
                 return ((byte[])(obj));
@@ -113,7 +123,7 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] installinfo {
+        public static byte[] installinfo {
             get {
                 object obj = ResourceManager.GetObject("installinfo", resourceCulture);
                 return ((byte[])(obj));
@@ -123,7 +133,7 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] langinfo_en {
+        public static byte[] langinfo_en {
             get {
                 object obj = ResourceManager.GetObject("langinfo_en", resourceCulture);
                 return ((byte[])(obj));
@@ -133,7 +143,7 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] langinfo_ru {
+        public static byte[] langinfo_ru {
             get {
                 object obj = ResourceManager.GetObject("langinfo_ru", resourceCulture);
                 return ((byte[])(obj));
@@ -143,27 +153,7 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] language_en {
-            get {
-                object obj = ResourceManager.GetObject("language_en", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        internal static byte[] language_ru {
-            get {
-                object obj = ResourceManager.GetObject("language_ru", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        internal static byte[] license {
+        public static byte[] license {
             get {
                 object obj = ResourceManager.GetObject("license", resourceCulture);
                 return ((byte[])(obj));
@@ -173,7 +163,7 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] mnxupdater {
+        public static byte[] mnxupdater {
             get {
                 object obj = ResourceManager.GetObject("mnxupdater", resourceCulture);
                 return ((byte[])(obj));
@@ -183,7 +173,7 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] reqiredfiles {
+        public static byte[] reqiredfiles {
             get {
                 object obj = ResourceManager.GetObject("reqiredfiles", resourceCulture);
                 return ((byte[])(obj));
@@ -193,7 +183,17 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] SacredBalanceDragonFix {
+        public static byte[] ru_RU {
+            get {
+                object obj = ResourceManager.GetObject("ru_RU", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] SacredBalanceDragonFix {
             get {
                 object obj = ResourceManager.GetObject("SacredBalanceDragonFix", resourceCulture);
                 return ((byte[])(obj));
@@ -203,7 +203,7 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] SacredBalanceVanilla {
+        public static byte[] SacredBalanceVanilla {
             get {
                 object obj = ResourceManager.GetObject("SacredBalanceVanilla", resourceCulture);
                 return ((byte[])(obj));
@@ -213,7 +213,7 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] SacredBalanceVeteran {
+        public static byte[] SacredBalanceVeteran {
             get {
                 object obj = ResourceManager.GetObject("SacredBalanceVeteran", resourceCulture);
                 return ((byte[])(obj));
@@ -223,7 +223,7 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] SacredCreatureDragonFix {
+        public static byte[] SacredCreatureDragonFix {
             get {
                 object obj = ResourceManager.GetObject("SacredCreatureDragonFix", resourceCulture);
                 return ((byte[])(obj));
@@ -233,7 +233,7 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] SacredCreatureVanilla {
+        public static byte[] SacredCreatureVanilla {
             get {
                 object obj = ResourceManager.GetObject("SacredCreatureVanilla", resourceCulture);
                 return ((byte[])(obj));
@@ -243,7 +243,7 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] SacredCreatureVeteran {
+        public static byte[] SacredCreatureVeteran {
             get {
                 object obj = ResourceManager.GetObject("SacredCreatureVeteran", resourceCulture);
                 return ((byte[])(obj));
@@ -253,7 +253,7 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] SacredRes2Csv {
+        public static byte[] SacredRes2Csv {
             get {
                 object obj = ResourceManager.GetObject("SacredRes2Csv", resourceCulture);
                 return ((byte[])(obj));
@@ -263,7 +263,7 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] SacredUtils {
+        public static byte[] SacredUtils {
             get {
                 object obj = ResourceManager.GetObject("SacredUtils", resourceCulture);
                 return ((byte[])(obj));
@@ -273,7 +273,7 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] settings {
+        public static byte[] settings {
             get {
                 object obj = ResourceManager.GetObject("settings", resourceCulture);
                 return ((byte[])(obj));
@@ -283,7 +283,7 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] statistinfo {
+        public static byte[] statistinfo {
             get {
                 object obj = ResourceManager.GetObject("statistinfo", resourceCulture);
                 return ((byte[])(obj));
@@ -293,9 +293,19 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] voiceover {
+        public static byte[] voiceover {
             get {
                 object obj = ResourceManager.GetObject("voiceover", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] WPFSharp_Globalizer {
+            get {
+                object obj = ResourceManager.GetObject("WPFSharp_Globalizer", resourceCulture);
                 return ((byte[])(obj));
             }
         }
