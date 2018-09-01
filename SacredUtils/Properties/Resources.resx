@@ -118,20 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="changelog" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\etc\changelog.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="gamesettings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\etc\gamesettings.cfg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="hotkeys" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\etc\hotkeys.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="installinfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\etc\installinfo.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="license" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\etc\license.txt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="mnxupdater" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\opt\mnxupdater.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -157,29 +145,8 @@
   <data name="SacredRes2Csv" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\opt\SacredRes2Csv.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\etc\settings.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="statistinfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\etc\statistinfo.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="voiceover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\etc\voiceover.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="SacredUtils" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\etc\SacredUtils.pdb;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="reqiredfiles" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\etc\reqiredfiles.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="langinfo_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\etc\langinfo_en.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="langinfo_ru" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\etc\langinfo_ru.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="firstinstall" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\etc\firstinstall.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="WPFSharp_Globalizer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\lib\WPFSharp.Globalizer.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -190,7 +157,22 @@
   <data name="ru_RU" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\lng\ru-RU\ru-RU.xaml;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="graphics" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\etc\graphics.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="changelog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cfg\changelog.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="firstinstall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cfg\firstinstall.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="language" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cfg\language.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="license" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\lic\license.txt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cfg\settings.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="statistinfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cfg\statistinfo.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

@@ -1,0 +1,19 @@
+{
+  "AcceptLicense": "false",
+  "CheckAutoAlphaUpdate": "false",
+  "CheckAutoUpdate": "true",
+  "ColorTheme": "light",
+  "ConfigFileCreate": "false",
+  "ConfigVersion": "1",
+  "DebugFileCreate": "false",
+  "DisableLogging": "false",
+  "DisableTelemetry": "false",
+  "GameVoiceover": "none",
+  "LicenseFileCreate": "true",
+  "MakeAutoBackupConfigs": "true",
+  "NLogConfigFileCreate": "false",
+  "RemoveTempContent": "false",
+  "SacredStartArgs": "minimize",
+  "SacredUtilsGuiScale": "1.0",
+  "ShowChangeLog": "true"
+}

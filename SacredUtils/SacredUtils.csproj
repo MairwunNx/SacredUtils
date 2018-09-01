@@ -112,14 +112,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="resources\bin\ApplicationInfo.cs" />
-    <Compile Include="resources\bin\CreateRequiredFiles.cs" />
-    <Compile Include="resources\bin\CreateAppFolders.cs" />
+    <Compile Include="resources\bin\GetRequiredFiles.cs" />
+    <Compile Include="resources\bin\GetAppFolders.cs" />
     <Compile Include="resources\bin\GetAppSettings.cs" />
     <Compile Include="resources\bin\GetGameSettings.cs" />
+    <Compile Include="resources\bin\GetGlobalizerLib.cs" />
     <Compile Include="resources\bin\GetLanguage.cs" />
     <Compile Include="resources\bin\GetLoggerConfig.cs" />
-    <Compile Include="resources\bin\CreateConfigurations.cs" />
-    <Compile Include="resources\bin\SendStatistic.cs" />
+    <Compile Include="resources\bin\GetConfigurations.cs" />
+    <Compile Include="resources\bin\GetStatistic.cs" />
     <Compile Include="resources\pgs\application_settings_one.xaml.cs">
       <DependentUpon>application_settings_one.xaml</DependentUpon>
     </Compile>
@@ -272,25 +273,19 @@
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="resources\etc\firstinstall.json" />
-    <None Include="resources\etc\langinfo_en.json" />
-    <None Include="resources\etc\langinfo_ru.json" />
-    <None Include="resources\etc\reqiredfiles.json" />
+    <None Include="resources\cfg\firstinstall.json" />
+    <None Include="resources\cfg\language.json" />
     <None Include="resources\opt\SacredBalanceDragonFix.bin" />
     <None Include="resources\opt\SacredBalanceVanilla.bin" />
     <None Include="resources\opt\SacredBalanceVeteran.bin" />
     <None Include="resources\opt\SacredCreatureDragonFix.pak" />
     <None Include="resources\opt\SacredCreatureVanilla.pak" />
     <None Include="resources\opt\SacredCreatureVeteran.pak" />
-    <Resource Include="resources\etc\license.txt" />
-    <None Include="resources\etc\graphics.json" />
-    <None Include="resources\etc\changelog.json" />
+    <Resource Include="resources\lic\license.txt" />
+    <None Include="resources\cfg\changelog.json" />
     <None Include="resources\etc\gamesettings.cfg" />
-    <None Include="resources\etc\hotkeys.json" />
-    <None Include="resources\etc\installinfo.json" />
-    <None Include="resources\etc\settings.json" />
-    <None Include="resources\etc\statistinfo.json" />
-    <None Include="resources\etc\voiceover.json" />
+    <None Include="resources\cfg\settings.json" />
+    <None Include="resources\cfg\statistinfo.json" />
     <Resource Include="resources\ico\icons8_Gas.ico" />
     <Resource Include="resources\ico\icons8_Gas_128.png" />
     <Resource Include="resources\ico\icons8_Gas_16.png" />
