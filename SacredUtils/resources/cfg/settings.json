@@ -6,8 +6,10 @@
   "ConfigFileCreate": "false",
   "ConfigVersion": "1",
   "DebugFileCreate": "false",
+  "DisableFootSteps": "none",
   "DisableLogging": "false",
   "DisableTelemetry": "false",
+  "EnableHealthCircles": "none",
   "GameVoiceover": "none",
   "LicenseFileCreate": "true",
   "MakeAutoBackupConfigs": "true",
@@ -15,5 +17,11 @@
   "RemoveTempContent": "false",
   "SacredStartArgs": "minimize",
   "SacredUtilsGuiScale": "1.0",
-  "ShowChangeLog": "true"
+  "ShowChangeLog": "true",
+  "UseOldButtonTextures": "none",
+  "UseOldMenuTextures": "none",
+  "UseOldSlotsTextures": "none",
+  "UseStaticBog": "none",
+  "UseStaticLava": "none",
+  "UseStaticWater": "none"
 }
