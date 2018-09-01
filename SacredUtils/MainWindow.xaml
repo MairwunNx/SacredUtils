@@ -18,6 +18,8 @@
     WindowStyle="None"
     mc:Ignorable="d">
 
+
+
     <materialDesign:Card
         x:Name="BaseCard"
         Width="1076"
@@ -30,6 +32,11 @@
             Margin="-1,0,1,0"
             Background="{Binding Background, ElementName=BackgroundColorBrush}">
 
+            <Label
+                x:Name="BorderBorderBrush"
+                Background="#FFCDCDCD"
+                Visibility="Collapsed" />
+
             <Grid.RowDefinitions>
                 <RowDefinition Height="25" />
                 <RowDefinition Height="*" />
@@ -39,6 +46,11 @@
                 x:Name="BackgroundColorBrush"
                 Grid.Row="0"
                 Background="White"
+                Visibility="Collapsed" />
+
+            <Label
+                x:Name="LabelForegroundBrush"
+                Background="#FF4285F4"
                 Visibility="Collapsed" />
 
             <globcntrls:LanguageSelectionComboBox
@@ -293,8 +305,128 @@
                 <Frame
                     x:Name="SettingsFrame"
                     NavigationUIVisibility="Hidden"
-                    Visibility="Visible" />
+                    Visibility="Hidden" />
             </Border>
+
+
+
+            <materialDesign:DialogHost
+                x:Name="LicenseDialog"
+                Grid.Row="1"
+                Margin="0,0,-1,0"
+                CloseOnClickAway="False"
+                IsOpen="False"
+                Visibility="Visible">
+
+                <materialDesign:DialogHost.DialogContent>
+
+                    <Grid
+                        Width="450"
+                        Height="300"
+                        Background="#FFFFFF"
+                        Row="1">
+
+                        <Border
+                            Height="36"
+                            Margin="18,202,18,0"
+                            VerticalAlignment="Top"
+                            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
+                            BorderThickness="1,1,1,1"
+                            CornerRadius="3"
+                            Cursor="Hand">
+
+                            <Button
+                                x:Name="ReadLicenseBtn"
+                                Height="Auto"
+                                ClipToBounds="True"
+                                Content="Прочитать лиц. соглашение"
+                                Cursor="Hand"
+                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                                FontSize="14"
+                                Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
+                                Style="{StaticResource MaterialDesignToolForegroundButton}" />
+                        </Border>
+
+                        <Label
+                            Height="30"
+                            Margin="15,11,10,0"
+                            VerticalAlignment="Top"
+                            Content="Лицензионное соглашение"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontSize="16"
+                            Foreground="#FF4285F4" />
+                        <TextBlock
+                            Height="37"
+                            Margin="18,57,34,0"
+                            VerticalAlignment="Top"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontSize="12"
+                            Foreground="#FF4285F4"
+                            Text="Пожалуйста, рассмотрите лицензионное соглашение и условия использования SacredUtils, до соглашения!"
+                            TextWrapping="Wrap" />
+                        <TextBlock
+                            Height="66"
+                            Margin="18,94,34,0"
+                            VerticalAlignment="Top"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontSize="12"
+                            Foreground="#FF4285F4"
+                            Text="Использование нелицензионного программного обеспечения является нарушением авторских и смежных прав и влечет за собой административную (ст. 7.12. КоАП РФ), уголовную (ст. 146 УК РФ) и гражданско-правовую ответственность."
+                            TextWrapping="Wrap" />
+                        <TextBlock
+                            Height="37"
+                            Margin="18,160,34,0"
+                            VerticalAlignment="Top"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontSize="12"
+                            Foreground="#FF4285F4"
+                            Text="Пожалуйста и не забывайте про ГК РФ Статья 1252. Защита исключительных прав"
+                            TextWrapping="Wrap" />
+                        <Border
+                            Width="200"
+                            Height="36"
+                            Margin="232,246,18,0"
+                            VerticalAlignment="Top"
+                            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
+                            BorderThickness="1,1,1,1"
+                            CornerRadius="3"
+                            Cursor="Hand">
+
+                            <Button
+                                x:Name="ReadLicenseBtn1"
+                                Height="Auto"
+                                ClipToBounds="True"
+                                Content="Принял условия"
+                                Cursor="Hand"
+                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                                FontSize="14"
+                                Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
+                                Style="{StaticResource MaterialDesignToolForegroundButton}" />
+                        </Border>
+                        <Border
+                            Width="200"
+                            Height="36"
+                            Margin="18,246,232,0"
+                            VerticalAlignment="Top"
+                            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
+                            BorderThickness="1,1,1,1"
+                            CornerRadius="3"
+                            Cursor="Hand">
+
+                            <Button
+                                x:Name="ReadLicenseBtn2"
+                                Height="Auto"
+                                ClipToBounds="True"
+                                Content="Закрыть SacredUtils"
+                                Cursor="Hand"
+                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                                FontSize="14"
+                                Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
+                                Style="{StaticResource MaterialDesignToolForegroundButton}" />
+                        </Border>
+                    </Grid>
+                </materialDesign:DialogHost.DialogContent>
+            </materialDesign:DialogHost>
 
             <materialDesign:DialogHost
                 x:Name="ErrorDialog"
@@ -780,12 +912,11 @@
 
             <Button
                 Grid.Row="1"
-                Margin="190,362,0,291"
+                Margin="43,524,0,129"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
                 Click="Button_Click"
-                Content="Show Dialog"
-                Visibility="Hidden" />
+                Content="Show Dialog" />
         </Grid>
     </materialDesign:Card>
 </Window>
