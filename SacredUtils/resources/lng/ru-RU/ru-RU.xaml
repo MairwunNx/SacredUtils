@@ -125,4 +125,20 @@
     <sys:String x:Key="String0095">Проверить компоненты игры на целостность</sys:String>
     <sys:String x:Key="String0096">Страница 1 / 1</sys:String>
 
+    <!--  Sound settings one  -->
+    <sys:String x:Key="String0097">Включить звук в игре</sys:String>
+    <sys:String x:Key="String0098">Качество звука</sys:String>
+    <sys:String x:Key="String0099">Низкое</sys:String>
+    <sys:String x:Key="String0100">Среднее</sys:String>
+    <sys:String x:Key="String0101">Высокое</sys:String>
+    <sys:String x:Key="String0102">Язык озвучки</sys:String>
+    <sys:String x:Key="String0103">Русский</sys:String>
+    <sys:String x:Key="String0104">Английский</sys:String>
+    <sys:String x:Key="String0105">Немецкий</sys:String>
+    <sys:String x:Key="String0106">Испанский</sys:String>
+    <sys:String x:Key="String0107">Громкость музыки</sys:String>
+    <sys:String x:Key="String0108">Громкость эффектов</sys:String>
+    <sys:String x:Key="String0109">Громкость голоса</sys:String>
+    <sys:String x:Key="String0110">Страница 1 / 1</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>
