@@ -114,4 +114,15 @@
     <sys:String x:Key="String0086">Отображать круги здоровья</sys:String>
     <sys:String x:Key="String0087">Страница 4 / 4</sys:String>
 
+    <!--  Modify settings one  -->
+    <sys:String x:Key="String0088">Генератор ника с поддержкой цветов</sys:String>
+    <sys:String x:Key="String0089">Veteran-mod by UFO</sys:String>
+    <sys:String x:Key="String0090">Veteran-mod DragonFix by mnx</sys:String>
+    <sys:String x:Key="String0091">Обновление Sacred до 2.29.14</sys:String>
+    <sys:String x:Key="String0092">Изменить хоткеи игры</sys:String>
+    <sys:String x:Key="String0093">Декомпилировать global.res</sys:String>
+    <sys:String x:Key="String0094">Скомпилировать global.res</sys:String>
+    <sys:String x:Key="String0095">Проверить компоненты игры на целостность</sys:String>
+    <sys:String x:Key="String0096">Страница 1 / 1</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>
