@@ -141,4 +141,7 @@
     <sys:String x:Key="String0109">Громкость голоса</sys:String>
     <sys:String x:Key="String0110">Страница 1 / 1</sys:String>
 
+    <!--  Unselected settings one  -->
+    <sys:String x:Key="String0111">Выберите: что бы вы хотели настроить.</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>
