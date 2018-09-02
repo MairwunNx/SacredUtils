@@ -39,4 +39,10 @@
     <sys:String x:Key="String0027">Прозрачность чата</sys:String>
     <sys:String x:Key="String0028">Страница 1 / 1</sys:String>
 
+    <!--  Font settings one  -->
+    <sys:String x:Key="String0029">Используется автоподбор шрифта, с нестандартными шрифтами возможно будут проблемы!</sys:String>
+    <sys:String x:Key="String0030">Название шрифта</sys:String>
+    <sys:String x:Key="String0031">Текст примера</sys:String>
+    <sys:String x:Key="String0032">Страница 1 / 1</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>
