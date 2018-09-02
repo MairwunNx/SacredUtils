@@ -45,4 +45,33 @@
     <sys:String x:Key="String0031">Текст примера</sys:String>
     <sys:String x:Key="String0032">Страница 1 / 1</sys:String>
 
+    <!--  GamePlay settings one  -->
+    <sys:String x:Key="String0033">Режим автоподбора</sys:String>
+    <sys:String x:Key="String0034">Только золото</sys:String>
+    <sys:String x:Key="String0035">Золото и вещи</sys:String>
+    <sys:String x:Key="String0036">Абсолютно все</sys:String>
+    <sys:String x:Key="String0037">Тип интернет соединения</sys:String>
+    <sys:String x:Key="String0038">Картинка при запуске игры</sys:String>
+    <sys:String x:Key="String0039">Картинка при save \ load игры</sys:String>
+    <sys:String x:Key="String0040">Уровень красной вспышки</sys:String>
+    <sys:String x:Key="String0041">Страница 1 / 3</sys:String>
+
+    <!--  GamePlay settings two  -->
+    <sys:String x:Key="String0042">Автонаводка на противника</sys:String>
+    <sys:String x:Key="String0043">Автосохранение на этапах</sys:String>
+    <sys:String x:Key="String0044">Выбор умений по умолчанию</sys:String>
+    <sys:String x:Key="String0045">Включить ведение debug-лога</sys:String>
+    <sys:String x:Key="String0046">Значки типа повреждения</sys:String>
+    <sys:String x:Key="String0047">Игровой допинг бар</sys:String>
+    <sys:String x:Key="String0048">Информация о игроке</sys:String>
+    <sys:String x:Key="String0049">Информация о противнике</sys:String>
+    <sys:String x:Key="String0050">Страница 2 / 3</sys:String>
+
+    <!--  GamePlay settings three  -->
+    <sys:String x:Key="String0051">Комбинировать слоты</sys:String>
+    <sys:String x:Key="String0052">Принять лицензию</sys:String>
+    <sys:String x:Key="String0053">Первый вход в игру</sys:String>
+    <sys:String x:Key="String0054">Эффект землетрясения</sys:String>
+    <sys:String x:Key="String0055">Страница 3 / 3</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>
