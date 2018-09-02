@@ -316,7 +316,7 @@
                 Margin="0,0,-1,0"
                 CloseOnClickAway="False"
                 IsOpen="False"
-                Visibility="Visible">
+                Visibility="Hidden">
 
                 <materialDesign:DialogHost.DialogContent>
 
@@ -916,7 +916,8 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
                 Click="Button_Click"
-                Content="Show Dialog" />
+                Content="Show Dialog"
+                Visibility="Hidden" />
         </Grid>
     </materialDesign:Card>
 </Window>

@@ -57,9 +57,9 @@ namespace SacredUtils
 
             SelectSettings(unselectedStgOne);
 
-            Height = Height * 1.3;
-            Width = Width * 1.3;
-            BaseCard.LayoutTransform = new ScaleTransform(1.3, 1.3);
+//            Height = Height * 1.3;
+//            Width = Width * 1.3;
+//            BaseCard.LayoutTransform = new ScaleTransform(1.3, 1.3);
 
             GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
             (ApplicationInfo.Lang == "ru" ? "ru-RU" : "en-US", true);
