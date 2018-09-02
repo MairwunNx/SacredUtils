@@ -3,219 +3,184 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:globalizer="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignHeight="685"
     d:DesignWidth="886"
     mc:Ignorable="d">
-
-    <Grid
-        Width="886"
-        HorizontalAlignment="Center"
-        Visibility="Visible">
-
-        <Label
-            x:Name="BorderBorderBrush"
-            Background="#FFCDCDCD"
-            Visibility="Hidden" />
-
-        <Label
-            x:Name="LabelForegroundBrush"
-            Background="#FF4285F4"
-            Visibility="Hidden" />
-
-        <Label
-            x:Name="ComboBoxBorderBrush"
-            Background="#5E000000"
-            Visibility="Hidden" />
-
-        <Label
-            x:Name="ComboBoxForegroundBrush"
-            Background="#FF444444"
-            Visibility="Hidden" />
-
+    <Grid>
         <Border
             Width="810"
             Height="41"
-            Margin="0,169,39,0"
-            HorizontalAlignment="Right"
+            Margin="0,169,0,0"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
             <Grid>
                 <TextBlock
-                    x:Name="AppBlackShadowsLbl"
                     Margin="15,12,65,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
-                    Text="Принудительно черные тени" />
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0073}" />
 
                 <ToggleButton
-                    x:Name="AppBlackShadowsTglBtn"
+                    x:Name="BlackShadowsTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
-                    Background="#FF4182EF" />
+                    Background="{DynamicResource ResourceKey=LabelForegroundBrush}" />
             </Grid>
         </Border>
 
         <Border
             Width="810"
             Height="41"
-            Margin="0,220,39,0"
-            HorizontalAlignment="Right"
+            Margin="0,220,0,0"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
             <Grid>
                 <TextBlock
-                    x:Name="AppCompatVideoLbl"
                     Margin="15,12,65,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
-                    Text="Режим видеосовместимости" />
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0074}" />
 
                 <ToggleButton
-                    x:Name="AppCompatVideoTglBtn"
+                    x:Name="CompatVideoTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
-                    Background="#FF4182EF" />
+                    Background="{DynamicResource ResourceKey=LabelForegroundBrush}" />
             </Grid>
         </Border>
 
         <Border
             Width="810"
             Height="41"
-            Margin="0,271,39,0"
-            HorizontalAlignment="Right"
+            Margin="0,271,0,0"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
             <Grid>
                 <TextBlock
-                    x:Name="AppFontAaLbl"
                     Margin="15,12,65,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
-                    Text="Сглаживание шрифтов" />
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0075}" />
 
                 <ToggleButton
-                    x:Name="AppFontAaTglBtn"
+                    x:Name="FontAaTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
-                    Background="#FF4182EF" />
+                    Background="{DynamicResource ResourceKey=LabelForegroundBrush}" />
             </Grid>
         </Border>
 
         <Border
             Width="810"
             Height="41"
-            Margin="0,322,39,0"
-            HorizontalAlignment="Right"
+            Margin="0,322,0,0"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
             <Grid>
                 <TextBlock
-                    x:Name="AppFullScreenAaLbl"
                     Margin="15,12,65,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
-                    Text="Сглаживание изображения" />
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0076}" />
 
                 <ToggleButton
-                    x:Name="AppFullScreenAaTglBtn"
+                    x:Name="FullScreenAaTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
-                    Background="#FF4182EF" />
+                    Background="{DynamicResource ResourceKey=LabelForegroundBrush}" />
             </Grid>
         </Border>
 
         <Border
             Width="810"
             Height="42"
-            Margin="0,373,39,0"
-            HorizontalAlignment="Right"
+            Margin="0,373,0,0"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
             <Grid>
                 <TextBlock
-                    x:Name="AppFontFilterLbl"
                     Margin="15,12,65,12"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
-                    Text="Фильтрация шрифтов" />
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0077}" />
 
                 <ToggleButton
-                    x:Name="AppFontFilterTglBtn"
+                    x:Name="FontFilterTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
-                    Background="#FF4182EF" />
+                    Background="{DynamicResource ResourceKey=LabelForegroundBrush}" />
             </Grid>
         </Border>
 
         <Border
             Width="810"
             Height="42"
-            Margin="0,603,39,0"
-            HorizontalAlignment="Right"
+            Margin="0,603,0,0"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
             BorderThickness="1,1,1,1"
             CornerRadius="3">
             <Grid>
                 <TextBlock
-                    x:Name="GraphicsStgThreePagesLbl"
-                    Margin="15,12,65,12"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                    Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
-                    Text="Страница 3 / 4" />
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0078}" />
 
                 <Button
-                    x:Name="GraphicsStgThreePagesToFourBtn"
+                    x:Name="ToFourPageBtn"
                     Width="38"
                     Margin="765,4,5,4"
                     materialDesign:RippleAssist.IsCentered="True"
                     materialDesign:RippleAssist.RippleSizeMultiplier="0.5"
-                    Background="#FF4182EF"
                     Style="{StaticResource MaterialDesignToolForegroundButton}">
-
                     <materialDesign:PackIcon
                         Width="28"
                         Height="28"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                         Kind="ChevronRight" />
                 </Button>
 
                 <Button
-                    x:Name="GraphicsStgThreePagesToTwoBtn"
+                    x:Name="ToTwoPageBtn"
                     Width="38"
                     Margin="5,4,765,4"
                     materialDesign:RippleAssist.IsCentered="True"
                     materialDesign:RippleAssist.RippleSizeMultiplier="0.5"
-                    Background="#FF4182EF"
                     Style="{StaticResource MaterialDesignToolForegroundButton}">
-
                     <materialDesign:PackIcon
                         Width="28"
                         Height="28"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                         Kind="ChevronLeft" />
                 </Button>
             </Grid>

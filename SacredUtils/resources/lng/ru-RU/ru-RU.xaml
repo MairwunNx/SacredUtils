@@ -74,4 +74,44 @@
     <sys:String x:Key="String0054">Эффект землетрясения</sys:String>
     <sys:String x:Key="String0055">Страница 3 / 3</sys:String>
 
+    <!--  Graphics settings one  -->
+    <sys:String x:Key="String0056">Качество графики</sys:String>
+    <sys:String x:Key="String0057">Низкое</sys:String>
+    <sys:String x:Key="String0058">Среднее</sys:String>
+    <sys:String x:Key="String0059">Высокое</sys:String>
+    <sys:String x:Key="String0060">Кол-во ожиданий обратного хода луча монитора</sys:String>
+    <sys:String x:Key="String0061">Прозрачность карты</sys:String>
+    <sys:String x:Key="String0062">Темнота ночи</sys:String>
+    <sys:String x:Key="String0063">Страница 1 / 4</sys:String>
+
+    <!--  Graphics settings two  -->
+    <sys:String x:Key="String0064">128mbit видеопамяти</sys:String>
+    <sys:String x:Key="String0065">32bit глубина цвета</sys:String>
+    <sys:String x:Key="String0066">Анимация подбора</sys:String>
+    <sys:String x:Key="String0067">Лужицы крови после убийства</sys:String>
+    <sys:String x:Key="String0068">Полноэкранный режим</sys:String>
+    <sys:String x:Key="String0069">Полноэкранное сглаживание</sys:String>
+    <sys:String x:Key="String0070">Показывать игровые ролики</sys:String>
+    <sys:String x:Key="String0071">Показывать финальный ролик</sys:String>
+    <sys:String x:Key="String0072">Страница 2 / 4</sys:String>
+
+    <!--  Graphics settings three  -->
+    <sys:String x:Key="String0073">Принудительно черные тени</sys:String>
+    <sys:String x:Key="String0074">Режим видеосовместимости</sys:String>
+    <sys:String x:Key="String0075">Сглаживание шрифтов</sys:String>
+    <sys:String x:Key="String0076">Сглаживание изображения</sys:String>
+    <sys:String x:Key="String0077">Фильтрация шрифтов</sys:String>
+    <sys:String x:Key="String0078">Страница 3 / 4</sys:String>
+
+    <!--  Graphics settings four  -->
+    <sys:String x:Key="String0079">Использовать статичное болото</sys:String>
+    <sys:String x:Key="String0080">Использовать статичную воду</sys:String>
+    <sys:String x:Key="String0081">Использовать статичную лаву</sys:String>
+    <sys:String x:Key="String0082">Использовать старые текстуры кнопок</sys:String>
+    <sys:String x:Key="String0083">Использовать старую окантовку слотов</sys:String>
+    <sys:String x:Key="String0084">Использовать старое Sacred меню</sys:String>
+    <sys:String x:Key="String0085">Отключить следы игрока</sys:String>
+    <sys:String x:Key="String0086">Отображать круги здоровья</sys:String>
+    <sys:String x:Key="String0087">Страница 4 / 4</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>
