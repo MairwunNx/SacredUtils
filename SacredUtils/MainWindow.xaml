@@ -17,52 +17,23 @@
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
     mc:Ignorable="d">
-
-
-
     <materialDesign:Card
-        x:Name="BaseCard"
         Width="1076"
         Margin="5,5,5,5"
         VerticalAlignment="Stretch"
-        Background="{Binding Background, ElementName=BackgroundColorBrush}">
+        Background="{DynamicResource ResourceKey=BackgroundColorBrush}">
 
-        <Grid
-            x:Name="BaseGrid"
-            Margin="-1,0,1,0"
-            Background="{Binding Background, ElementName=BackgroundColorBrush}">
-
-            <Label
-                x:Name="BorderBorderBrush"
-                Background="#FFCDCDCD"
-                Visibility="Collapsed" />
-
+        <Grid Margin="-1,0,1,0" Background="{DynamicResource ResourceKey=BackgroundColorBrush}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="25" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Label
-                x:Name="BackgroundColorBrush"
-                Grid.Row="0"
-                Background="White"
-                Visibility="Collapsed" />
-
-            <Label
-                x:Name="LabelForegroundBrush"
-                Background="#FF4285F4"
-                Visibility="Collapsed" />
-
-            <globcntrls:LanguageSelectionComboBox
-                Grid.Row="1"
-                Width="160"
-                Height="20" />
-
             <StackPanel
                 x:Name="HeaderPanel"
                 Grid.Row="0"
                 Margin="0,0,-1,0"
-                Background="{Binding Background, ElementName=BackgroundColorBrush}">
+                Background="{DynamicResource ResourceKey=BackgroundColorBrush}">
 
                 <Button
                     x:Name="CloseBtn"
@@ -73,13 +44,12 @@
                     materialDesign:RippleAssist.IsCentered="True"
                     materialDesign:RippleAssist.RippleSizeMultiplier="0.7"
                     Style="{StaticResource MaterialDesignToolForegroundButton}">
-
                     <materialDesign:PackIcon
                         Width="10"
                         Height="10"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Foreground="#4285F4"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                         Kind="Circle" />
                 </Button>
 
@@ -92,13 +62,12 @@
                     materialDesign:RippleAssist.IsCentered="True"
                     materialDesign:RippleAssist.RippleSizeMultiplier="0.7"
                     Style="{StaticResource MaterialDesignToolForegroundButton}">
-
                     <materialDesign:PackIcon
                         Width="10"
                         Height="10"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Foreground="#4285F4"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                         Kind="Circle" />
                 </Button>
 
@@ -115,7 +84,7 @@
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     FontSize="11"
                     FontWeight="Bold"
-                    Foreground="#FF4285F4" />
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
             </StackPanel>
 
             <Border
@@ -123,9 +92,8 @@
                 Grid.Row="1"
                 Width="190"
                 HorizontalAlignment="Left"
-                BorderBrush="#FFCDCDCD"
+                BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
                 BorderThickness="0,1,1,0">
-
                 <StackPanel HorizontalAlignment="Left">
                     <Grid>
                         <StackPanel
@@ -133,7 +101,6 @@
                             Height="40"
                             Margin="0,140,0,540"
                             Cursor="Hand">
-
                             <Label
                                 x:Name="MenuGrLabel"
                                 Height="30"
@@ -142,7 +109,7 @@
                                 Content="     ГРАФИКА"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
-                                Foreground="#737373" />
+                                Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
                         </StackPanel>
 
                         <StackPanel
@@ -159,7 +126,7 @@
                                 Content="     ЗВУК И ОЗВУЧКА"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
-                                Foreground="#737373" />
+                                Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
                         </StackPanel>
 
                         <StackPanel
@@ -176,7 +143,7 @@
                                 Content="     ГЕЙМПЛЕЙ"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
-                                Foreground="#737373" />
+                                Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
                         </StackPanel>
 
                         <StackPanel
@@ -193,7 +160,7 @@
                                 Content="     ЧАТ И ЯЗЫК"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
-                                Foreground="#737373" />
+                                Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
                         </StackPanel>
 
                         <StackPanel
@@ -210,7 +177,7 @@
                                 Content="     ШРИФТЫ"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
-                                Foreground="#737373" />
+                                Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
                         </StackPanel>
 
                         <StackPanel
@@ -227,7 +194,7 @@
                                 Content="     МОДИФИКАЦИИ"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
-                                Foreground="#737373" />
+                                Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
                         </StackPanel>
 
                         <StackPanel
@@ -244,7 +211,7 @@
                                 Content="     ЗАПУСТИТЬ ИГРУ"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
-                                Foreground="#737373" />
+                                Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
                         </StackPanel>
 
                         <StackPanel
@@ -261,7 +228,7 @@
                                 Content="     НАСТРОЙКИ SU"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
-                                Foreground="#737373" />
+                                Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
 
                             <materialDesign:PackIcon
                                 Width="16"
@@ -280,7 +247,7 @@
                             Margin="84,618,-21,-25"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Top"
-                            Fill="#BFDEFF"
+                            Fill="{DynamicResource ResourceKey=SmallBallColorBrush}"
                             StrokeThickness="0" />
 
                         <Ellipse
@@ -290,7 +257,7 @@
                             Margin="-47,589,0,-36"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Top"
-                            Fill="#96CAFF"
+                            Fill="{DynamicResource ResourceKey=BigBallColorBrush}"
                             StrokeThickness="0" />
                     </Grid>
                 </StackPanel>
@@ -300,12 +267,12 @@
                 x:Name="SettingsBorder"
                 Grid.Row="1"
                 Margin="190,0,-1,0"
-                BorderBrush="#FFCDCDCD"
+                BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
                 BorderThickness="0,1,0,0">
                 <Frame
                     x:Name="SettingsFrame"
                     NavigationUIVisibility="Hidden"
-                    Visibility="Hidden" />
+                    Visibility="Visible" />
             </Border>
 
 
@@ -323,9 +290,8 @@
                     <Grid
                         Width="450"
                         Height="300"
-                        Background="#FFFFFF"
+                        Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
                         Row="1">
-
                         <Border
                             Height="36"
                             Margin="18,202,18,0"
@@ -354,14 +320,14 @@
                             Content="Лицензионное соглашение"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
                         <TextBlock
                             Height="37"
                             Margin="18,57,34,0"
                             VerticalAlignment="Top"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="12"
-                            Foreground="#FF4285F4"
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                             Text="Пожалуйста, рассмотрите лицензионное соглашение и условия использования SacredUtils, до соглашения!"
                             TextWrapping="Wrap" />
                         <TextBlock
@@ -370,7 +336,7 @@
                             VerticalAlignment="Top"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="12"
-                            Foreground="#FF4285F4"
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                             Text="Использование нелицензионного программного обеспечения является нарушением авторских и смежных прав и влечет за собой административную (ст. 7.12. КоАП РФ), уголовную (ст. 146 УК РФ) и гражданско-правовую ответственность."
                             TextWrapping="Wrap" />
                         <TextBlock
@@ -379,7 +345,7 @@
                             VerticalAlignment="Top"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="12"
-                            Foreground="#FF4285F4"
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                             Text="Пожалуйста и не забывайте про ГК РФ Статья 1252. Защита исключительных прав"
                             TextWrapping="Wrap" />
                         <Border
@@ -441,7 +407,7 @@
                     <Grid
                         Width="450"
                         Height="115"
-                        Background="#FFFFFF"
+                        Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
                         Row="1">
 
                         <Label
@@ -451,7 +417,7 @@
                             Content="Упс, ошибочка!"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <Label
                             Height="28"
@@ -460,14 +426,14 @@
                             Content="Критическая ошибка, код ошибки 21252008!"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="14"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <materialDesign:PackIcon
                             Width="25"
                             Height="25"
                             Margin="21,60,404,0"
                             VerticalAlignment="Top"
-                            Foreground="#FF4285F4"
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                             Kind="CloseCircle" />
                     </Grid>
                 </materialDesign:DialogHost.DialogContent>
@@ -486,7 +452,7 @@
                     <Grid
                         Width="450"
                         Height="115"
-                        Background="#FFFFFF"
+                        Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
                         Row="1">
 
                         <Label
@@ -496,7 +462,7 @@
                             Content="О SacredUtils"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <Label
                             Height="28"
@@ -505,14 +471,14 @@
                             Content="Версия 1.2.4.0.2008A1 (Официальная сборка)"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="14"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <materialDesign:PackIcon
                             Width="25"
                             Height="25"
                             Margin="21,60,404,0"
                             VerticalAlignment="Top"
-                            Foreground="#FF4285F4"
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                             Kind="Information" />
                     </Grid>
                 </materialDesign:DialogHost.DialogContent>
@@ -531,7 +497,7 @@
                     <Grid
                         Width="450"
                         Height="115"
-                        Background="White"
+                        Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
                         Row="1">
 
                         <Label
@@ -541,7 +507,7 @@
                             Content="Восстановление компонентов"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <Label
                             Height="28"
@@ -550,14 +516,14 @@
                             Content="Восстановлено 5 из 10 компонентов (см. логи)."
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="14"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <materialDesign:PackIcon
                             Width="25"
                             Height="25"
                             Margin="21,60,404,0"
                             VerticalAlignment="Top"
-                            Foreground="#FF4285F4"
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                             Kind="Check" />
                     </Grid>
                 </materialDesign:DialogHost.DialogContent>
@@ -573,7 +539,7 @@
 
                 <materialDesign:DialogHost.DialogContent>
 
-                    <Grid Height="273" Background="White">
+                    <Grid Height="273" Background="{DynamicResource ResourceKey=BackgroundColorBrush}">
                         <Label
                             Height="30"
                             Margin="15,11,135,0"
@@ -581,7 +547,7 @@
                             Content="Восстановление компонентов"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <Label
                             Height="28"
@@ -590,7 +556,7 @@
                             Content="Проверенно 15 из 20 компонентов"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="14"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <Label
                             Height="23"
@@ -599,16 +565,16 @@
                             Content="И 5 компонентов повреждено"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="12"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <ListBox
                             Height="128"
                             Margin="16,98,15,0"
                             VerticalAlignment="Top"
-                            BorderBrush="#FFCDCDCD"
+                            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
                             BorderThickness="1"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <Label
                             Height="23"
@@ -617,7 +583,7 @@
                             Content="Нажмите ENTER что бы восстановить компоненты в списке выше."
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="11"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
                     </Grid>
                 </materialDesign:DialogHost.DialogContent>
             </materialDesign:DialogHost>
@@ -635,7 +601,7 @@
                     <Grid
                         Width="450"
                         Height="115"
-                        Background="White"
+                        Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
                         Row="1">
 
                         <Label
@@ -645,7 +611,7 @@
                             Content="Восстановление компонентов"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <Label
                             Height="28"
@@ -654,7 +620,7 @@
                             Content="Восстановление компонентов (0%) ..."
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="14"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <ProgressBar
                             Width="25"
@@ -680,7 +646,7 @@
                     <Grid
                         Width="450"
                         Height="115"
-                        Background="White"
+                        Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
                         Row="1">
 
                         <Label
@@ -690,7 +656,7 @@
                             Content="Восстановление компонентов"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <Label
                             Height="28"
@@ -699,14 +665,14 @@
                             Content="Восстановление компонентов завершено!"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="14"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <materialDesign:PackIcon
                             Width="25"
                             Height="25"
                             Margin="21,60,404,0"
                             VerticalAlignment="Top"
-                            Foreground="#FF4285F4"
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                             Kind="Check" />
                     </Grid>
                 </materialDesign:DialogHost.DialogContent>
@@ -725,7 +691,7 @@
                     <Grid
                         Width="450"
                         Height="115"
-                        Background="White"
+                        Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
                         Row="1">
 
                         <Label
@@ -735,7 +701,7 @@
                             Content="Проверка компонентов"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <Label
                             Height="28"
@@ -744,14 +710,14 @@
                             Content="Поврежденных компонентов не обнаружено!"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="14"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <materialDesign:PackIcon
                             Width="25"
                             Height="25"
                             Margin="21,60,404,0"
                             VerticalAlignment="Top"
-                            Foreground="#FF4285F4"
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                             Kind="Check" />
                     </Grid>
                 </materialDesign:DialogHost.DialogContent>
@@ -770,7 +736,7 @@
                     <Grid
                         Width="450"
                         Height="115"
-                        Background="White"
+                        Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
                         Row="1">
 
                         <Label
@@ -780,7 +746,7 @@
                             Content="Проверка компонентов игры"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <Label
                             Height="28"
@@ -789,7 +755,7 @@
                             Content="Проверка компонентов (0%) ..."
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="14"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <ProgressBar
                             Width="25"
@@ -815,7 +781,7 @@
                     <Grid
                         Width="450"
                         Height="111"
-                        Background="#FFFFFF"
+                        Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
                         Row="1">
 
                         <Label
@@ -825,7 +791,7 @@
                             Content="Смена клавишь игры"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <ComboBox
                             Width="187"
@@ -847,7 +813,7 @@
                             Content="-&gt;"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="14"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <ComboBox
                             Width="187"
@@ -878,7 +844,7 @@
                     <Grid
                         Width="450"
                         Height="115"
-                        Background="White"
+                        Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
                         Row="1">
 
                         <Label
@@ -888,7 +854,7 @@
                             Content="Установка компонентов"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <Label
                             Height="28"
@@ -897,7 +863,7 @@
                             Content="Загрузка компонента (0%) ..."
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="14"
-                            Foreground="#FF4285F4" />
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <ProgressBar
                             Width="25"
