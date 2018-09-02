@@ -26,4 +26,17 @@
     <sys:String x:Key="String0016">Я принял условия использования SacredUtils</sys:String>
     <sys:String x:Key="String0017">Страница 2 / 2</sys:String>
 
+    <!--  Chat settings one  -->
+    <sys:String x:Key="String0018">Разноцветный чат</sys:String>
+    <sys:String x:Key="String0019">Язык интерфейса игры</sys:String>
+    <sys:String x:Key="String0020">Русский</sys:String>
+    <sys:String x:Key="String0021">Английский</sys:String>
+    <sys:String x:Key="String0022">Немецкий</sys:String>
+    <sys:String x:Key="String0023">Испанский</sys:String>
+    <sys:String x:Key="String0024">Французский</sys:String>
+    <sys:String x:Key="String0025">Количество строк в чате</sys:String>
+    <sys:String x:Key="String0026">Задержка текста в чате</sys:String>
+    <sys:String x:Key="String0027">Прозрачность чата</sys:String>
+    <sys:String x:Key="String0028">Страница 1 / 1</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>
