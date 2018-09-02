@@ -1,5 +1,6 @@
 {
   "AcceptLicense": "false",
+  "AllowExperimentalScale": "false",
   "CheckAutoAlphaUpdate": "false",
   "CheckAutoUpdate": "true",
   "ColorTheme": "light",
