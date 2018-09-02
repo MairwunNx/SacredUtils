@@ -19,20 +19,11 @@
     <sys:String x:Key="String0011">Масштаб интерфейса</sys:String>
     <sys:String x:Key="String0012">Страница 1 / 2</sys:String>
 
-    <!--  Menu strings  -->
-    <sys:String x:Key="Menu_File">_Archivo</sys:String>
-    <sys:String x:Key="Menu_File_Exit">_Salir</sys:String>
-    <sys:String x:Key="Menu_Language">Язык интерфейса</sys:String>
-    <sys:String x:Key="Menu_Language_English">_Inglés</sys:String>
-    <sys:String x:Key="Menu_Language_Spanish">_Español</sys:String>
-    <sys:String x:Key="Menu_Language_Hebrew">_Hebreo</sys:String>
-
-    <sys:String x:Key="LanguageSelectionLabel">_Idioma</sys:String>
-
-    <!--  Form strings  -->
-    <sys:String x:Key="Form_FirstName">Nombre de pila</sys:String>
-    <sys:String x:Key="Form_LastName">Appellido</sys:String>
-    <sys:String x:Key="Form_Age">Edad</sys:String>
-    <sys:String x:Key="Form_Button_Clear">borrar</sys:String>
+    <!--  Application settings two  -->
+    <sys:String x:Key="String0013">Автоматически проверять наличие обновлений</sys:String>
+    <sys:String x:Key="String0014">Автоматически проверять наличие alpha обновлений</sys:String>
+    <sys:String x:Key="String0015">Создавать резервные копии конфигураций</sys:String>
+    <sys:String x:Key="String0016">Я принял условия использования SacredUtils</sys:String>
+    <sys:String x:Key="String0017">Страница 2 / 2</sys:String>
 
 </Globalization:GlobalizationResourceDictionary>
