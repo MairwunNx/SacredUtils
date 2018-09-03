@@ -195,4 +195,7 @@
     <sys:String x:Key="String0141">Проверка компонентов игры</sys:String>
     <sys:String x:Key="String0142">Проверка компонентов</sys:String>
 
+    <!--  Hotkey change dialog  -->
+    <sys:String x:Key="String0143">Смена клавишь игры</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>

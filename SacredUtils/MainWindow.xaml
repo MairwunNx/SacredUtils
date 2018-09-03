@@ -723,6 +723,7 @@
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <Label
+                            x:Name="CheckingComponentsLabel"
                             Height="28"
                             Margin="70,59,10,0"
                             VerticalAlignment="Top"
@@ -749,20 +750,17 @@
                 CloseOnClickAway="True"
                 IsOpen="False"
                 Visibility="Hidden">
-
                 <materialDesign:DialogHost.DialogContent>
-
                     <Grid
                         Width="450"
                         Height="111"
                         Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
                         Row="1">
-
                         <Label
                             Height="30"
                             Margin="15,11,190,0"
                             VerticalAlignment="Top"
-                            Content="Смена клавишь игры"
+                            Content="{Globalizer:GlobalizedResource String0143}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -773,9 +771,9 @@
                             Margin="241,63,0,0"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Top"
-                            BorderBrush="#5E000000"
+                            BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                            Foreground="#FF444444">
+                            Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}">
                             <ComboBoxItem Content="E" />
                             <ComboBoxItem Content="R" />
                         </ComboBox>
@@ -795,9 +793,9 @@
                             Margin="20,63,0,0"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Top"
-                            BorderBrush="#5E000000"
+                            BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                            Foreground="#FF444444">
+                            Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}">
                             <ComboBoxItem Content="F1" />
                             <ComboBoxItem Content="F2" />
                         </ComboBox>
