@@ -179,4 +179,8 @@
     <sys:String x:Key="String0133">Восстановление компонентов</sys:String>
     <sys:String x:Key="String0134">Нажмите ENTER что бы восстановить компоненты в списке выше.</sys:String>
 
+    <!--  Restoring components dialog  -->
+    <sys:String x:Key="String0135">Восстановление компонентов</sys:String>
+    <sys:String x:Key="String0136">Восстановление компонентов</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>
