@@ -168,4 +168,8 @@
     <sys:String x:Key="String0128">Упс, ошибочка!</sys:String>
     <sys:String x:Key="String0129">Критическая ошибка, код ошибки</sys:String>
 
+    <!--  About SacredUtils dialog  -->
+    <sys:String x:Key="String0130">О SacredUtils</sys:String>
+    <sys:String x:Key="String0131">Версия 1.2.4.0.2008A1 (Официальная сборка)</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>
