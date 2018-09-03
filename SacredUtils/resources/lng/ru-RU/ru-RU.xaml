@@ -191,4 +191,8 @@
     <sys:String x:Key="String0139">Проверка компонентов</sys:String>
     <sys:String x:Key="String0140">Поврежденных компонентов не обнаружено!</sys:String>
 
+    <!--  Checking components dialog  -->
+    <sys:String x:Key="String0141">Проверка компонентов игры</sys:String>
+    <sys:String x:Key="String0142">Проверка компонентов</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>
