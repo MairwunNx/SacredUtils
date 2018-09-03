@@ -665,20 +665,17 @@
                 CloseOnClickAway="True"
                 IsOpen="False"
                 Visibility="Hidden">
-
                 <materialDesign:DialogHost.DialogContent>
-
                     <Grid
                         Width="450"
                         Height="115"
                         Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
                         Row="1">
-
                         <Label
                             Height="30"
                             Margin="15,11,190,0"
                             VerticalAlignment="Top"
-                            Content="Проверка компонентов"
+                            Content="{Globalizer:GlobalizedResource String0139}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -687,7 +684,7 @@
                             Height="28"
                             Margin="70,59,10,0"
                             VerticalAlignment="Top"
-                            Content="Поврежденных компонентов не обнаружено!"
+                            Content="{Globalizer:GlobalizedResource String0140}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="14"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />

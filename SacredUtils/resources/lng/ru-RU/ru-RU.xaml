@@ -187,4 +187,8 @@
     <sys:String x:Key="String0137">Восстановление компонентов</sys:String>
     <sys:String x:Key="String0138">Восстановление компонентов завершено!</sys:String>
 
+    <!--  Not found errors dialog  -->
+    <sys:String x:Key="String0139">Проверка компонентов</sys:String>
+    <sys:String x:Key="String0140">Поврежденных компонентов не обнаружено!</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>
