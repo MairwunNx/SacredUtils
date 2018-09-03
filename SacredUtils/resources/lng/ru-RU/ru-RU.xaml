@@ -198,4 +198,8 @@
     <!--  Hotkey change dialog  -->
     <sys:String x:Key="String0143">Смена клавишь игры</sys:String>
 
+    <!--  Get components change dialog  -->
+    <sys:String x:Key="String0144">Установка компонентов</sys:String>
+    <sys:String x:Key="String0145">Загрузка компонента</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>
