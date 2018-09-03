@@ -17,6 +17,7 @@
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
     mc:Ignorable="d">
+
     <materialDesign:Card
         Width="1076"
         Margin="5,5,5,5"
@@ -34,7 +35,6 @@
                 Grid.Row="0"
                 Margin="0,0,-1,0"
                 Background="{DynamicResource ResourceKey=BackgroundColorBrush}">
-
                 <Button
                     x:Name="CloseBtn"
                     Width="25"
@@ -79,7 +79,7 @@
                     HorizontalAlignment="Right"
                     HorizontalContentAlignment="Right"
                     VerticalContentAlignment="Center"
-                    Content="ОБНОВИТЬ УТИЛИТУ"
+                    Content="{Globalizer:GlobalizedResource String0112}"
                     Cursor="Hand"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     FontSize="11"
@@ -88,7 +88,6 @@
             </StackPanel>
 
             <Border
-                x:Name="CategoryBorder"
                 Grid.Row="1"
                 Width="190"
                 HorizontalAlignment="Left"
@@ -106,7 +105,7 @@
                                 Height="30"
                                 Margin="0,5"
                                 VerticalContentAlignment="Center"
-                                Content="     ГРАФИКА"
+                                Content="{Globalizer:GlobalizedResource String0113}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
@@ -117,13 +116,12 @@
                             Height="40"
                             Margin="0,180,0,500"
                             Cursor="Hand">
-
                             <Label
                                 x:Name="MenuSnLabel"
                                 Height="30"
                                 Margin="0,5"
                                 VerticalContentAlignment="Center"
-                                Content="     ЗВУК И ОЗВУЧКА"
+                                Content="{Globalizer:GlobalizedResource String0114}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
@@ -134,13 +132,12 @@
                             Height="40"
                             Margin="0,220,0,460"
                             Cursor="Hand">
-
                             <Label
                                 x:Name="MenuGpLabel"
                                 Height="30"
                                 Margin="0,5"
                                 VerticalContentAlignment="Center"
-                                Content="     ГЕЙМПЛЕЙ"
+                                Content="{Globalizer:GlobalizedResource String0115}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
@@ -151,13 +148,12 @@
                             Height="40"
                             Margin="0,260,0,420"
                             Cursor="Hand">
-
                             <Label
                                 x:Name="MenuCtLabel"
                                 Height="30"
                                 Margin="0,5"
                                 VerticalContentAlignment="Center"
-                                Content="     ЧАТ И ЯЗЫК"
+                                Content="{Globalizer:GlobalizedResource String0116}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
@@ -168,13 +164,12 @@
                             Height="40"
                             Margin="0,300,0,380"
                             Cursor="Hand">
-
                             <Label
                                 x:Name="MenuFtLabel"
                                 Height="30"
                                 Margin="0,5"
                                 VerticalContentAlignment="Center"
-                                Content="     ШРИФТЫ"
+                                Content="{Globalizer:GlobalizedResource String0117}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
@@ -185,13 +180,12 @@
                             Height="40"
                             Margin="0,340"
                             Cursor="Hand">
-
                             <Label
                                 x:Name="MenuMdLabel"
                                 Height="30"
                                 Margin="0,5"
                                 VerticalContentAlignment="Center"
-                                Content="     МОДИФИКАЦИИ"
+                                Content="{Globalizer:GlobalizedResource String0118}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
@@ -202,13 +196,12 @@
                             Height="40"
                             Margin="0,380,0,300"
                             Cursor="Hand">
-
                             <Label
                                 x:Name="MenuPlLabel"
                                 Height="30"
                                 Margin="0,5"
                                 VerticalContentAlignment="Center"
-                                Content="     ЗАПУСТИТЬ ИГРУ"
+                                Content="{Globalizer:GlobalizedResource String0119}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
@@ -219,13 +212,12 @@
                             Height="40"
                             Margin="0,460,0,220"
                             Cursor="Hand">
-
                             <Label
                                 x:Name="MenuStLabel"
                                 Height="30"
                                 Margin="0,5"
                                 VerticalContentAlignment="Center"
-                                Content="     НАСТРОЙКИ SU"
+                                Content="{Globalizer:GlobalizedResource String0120}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
@@ -236,12 +228,11 @@
                                 Margin="0,-40,23,0"
                                 HorizontalAlignment="Right"
                                 VerticalAlignment="Center"
-                                Foreground="#FF737373"
+                                Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}"
                                 Kind="Settings" />
                         </StackPanel>
 
                         <Ellipse
-                            x:Name="SmallBalEllipse"
                             Width="127"
                             Height="127"
                             Margin="84,618,-21,-25"
@@ -251,7 +242,6 @@
                             StrokeThickness="0" />
 
                         <Ellipse
-                            x:Name="BigBalEllipse"
                             Width="167"
                             Height="167"
                             Margin="-47,589,0,-36"
@@ -264,7 +254,6 @@
             </Border>
 
             <Border
-                x:Name="SettingsBorder"
                 Grid.Row="1"
                 Margin="190,0,-1,0"
                 BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
@@ -275,8 +264,6 @@
                     Visibility="Visible" />
             </Border>
 
-
-
             <materialDesign:DialogHost
                 x:Name="LicenseDialog"
                 Grid.Row="1"
@@ -284,9 +271,7 @@
                 CloseOnClickAway="False"
                 IsOpen="False"
                 Visibility="Hidden">
-
                 <materialDesign:DialogHost.DialogContent>
-
                     <Grid
                         Width="450"
                         Height="300"
@@ -296,7 +281,7 @@
                             Height="36"
                             Margin="18,202,18,0"
                             VerticalAlignment="Top"
-                            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
+                            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
                             BorderThickness="1,1,1,1"
                             CornerRadius="3"
                             Cursor="Hand">
@@ -305,11 +290,11 @@
                                 x:Name="ReadLicenseBtn"
                                 Height="Auto"
                                 ClipToBounds="True"
-                                Content="Прочитать лиц. соглашение"
+                                Content="{Globalizer:GlobalizedResource String0121}"
                                 Cursor="Hand"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
-                                Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
+                                Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
                         </Border>
 
@@ -317,10 +302,11 @@
                             Height="30"
                             Margin="15,11,10,0"
                             VerticalAlignment="Top"
-                            Content="Лицензионное соглашение"
+                            Content="{Globalizer:GlobalizedResource String0122}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
+
                         <TextBlock
                             Height="37"
                             Margin="18,57,34,0"
@@ -328,8 +314,9 @@
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="12"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                            Text="Пожалуйста, рассмотрите лицензионное соглашение и условия использования SacredUtils, до соглашения!"
+                            Text="{Globalizer:GlobalizedResource String0123}"
                             TextWrapping="Wrap" />
+
                         <TextBlock
                             Height="66"
                             Margin="18,94,34,0"
@@ -337,8 +324,9 @@
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="12"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                            Text="Использование нелицензионного программного обеспечения является нарушением авторских и смежных прав и влечет за собой административную (ст. 7.12. КоАП РФ), уголовную (ст. 146 УК РФ) и гражданско-правовую ответственность."
+                            Text="{Globalizer:GlobalizedResource String0124}"
                             TextWrapping="Wrap" />
+
                         <TextBlock
                             Height="37"
                             Margin="18,160,34,0"
@@ -346,48 +334,48 @@
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="12"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                            Text="Пожалуйста и не забывайте про ГК РФ Статья 1252. Защита исключительных прав"
+                            Text="{Globalizer:GlobalizedResource String0125}"
                             TextWrapping="Wrap" />
+
                         <Border
                             Width="200"
                             Height="36"
                             Margin="232,246,18,0"
                             VerticalAlignment="Top"
-                            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
+                            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
                             BorderThickness="1,1,1,1"
                             CornerRadius="3"
                             Cursor="Hand">
-
                             <Button
                                 x:Name="ReadLicenseBtn1"
                                 Height="Auto"
                                 ClipToBounds="True"
-                                Content="Принял условия"
+                                Content="{Globalizer:GlobalizedResource String0126}"
                                 Cursor="Hand"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
-                                Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
+                                Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
                         </Border>
+
                         <Border
                             Width="200"
                             Height="36"
                             Margin="18,246,232,0"
                             VerticalAlignment="Top"
-                            BorderBrush="{Binding Background, ElementName=BorderBorderBrush}"
+                            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
                             BorderThickness="1,1,1,1"
                             CornerRadius="3"
                             Cursor="Hand">
-
                             <Button
                                 x:Name="ReadLicenseBtn2"
                                 Height="Auto"
                                 ClipToBounds="True"
-                                Content="Закрыть SacredUtils"
+                                Content="{Globalizer:GlobalizedResource String0127}"
                                 Cursor="Hand"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
-                                Foreground="{Binding Background, ElementName=LabelForegroundBrush}"
+                                Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
                         </Border>
                     </Grid>
