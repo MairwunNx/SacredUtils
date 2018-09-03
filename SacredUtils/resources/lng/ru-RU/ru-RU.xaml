@@ -183,4 +183,8 @@
     <sys:String x:Key="String0135">Восстановление компонентов</sys:String>
     <sys:String x:Key="String0136">Восстановление компонентов</sys:String>
 
+    <!--  Restoring success dialog  -->
+    <sys:String x:Key="String0137">Восстановление компонентов</sys:String>
+    <sys:String x:Key="String0138">Восстановление компонентов завершено!</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>
