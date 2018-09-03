@@ -164,4 +164,8 @@
     <sys:String x:Key="String0126">Принял условия</sys:String>
     <sys:String x:Key="String0127">Закрыть SacredUtils</sys:String>
 
+    <!--  Error oops ;) dialog  -->
+    <sys:String x:Key="String0128">Упс, ошибочка!</sys:String>
+    <sys:String x:Key="String0129">Критическая ошибка, код ошибки</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>
