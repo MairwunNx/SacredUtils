@@ -175,4 +175,8 @@
     <!--  AlmostSuccess check dialog  -->
     <sys:String x:Key="String0132">Восстановление компонентов</sys:String>
 
+    <!--  Error finded check dialog  -->
+    <sys:String x:Key="String0133">Восстановление компонентов</sys:String>
+    <sys:String x:Key="String0134">Нажмите ENTER что бы восстановить компоненты в списке выше.</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>

@@ -520,20 +520,19 @@
                 CloseOnClickAway="True"
                 IsOpen="False"
                 Visibility="Hidden">
-
                 <materialDesign:DialogHost.DialogContent>
-
                     <Grid Height="273" Background="{DynamicResource ResourceKey=BackgroundColorBrush}">
                         <Label
                             Height="30"
                             Margin="15,11,135,0"
                             VerticalAlignment="Top"
-                            Content="Восстановление компонентов"
+                            Content="{Globalizer:GlobalizedResource String0133}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <Label
+                            x:Name="CheckedComponentsLabel"
                             Height="28"
                             Margin="16,50,64,0"
                             VerticalAlignment="Top"
@@ -543,6 +542,7 @@
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                         <Label
+                            x:Name="ErrorComponentsLabel"
                             Height="23"
                             Margin="16,70,64,0"
                             VerticalAlignment="Top"
@@ -564,7 +564,7 @@
                             Height="23"
                             Margin="16,237,15,0"
                             VerticalAlignment="Top"
-                            Content="Нажмите ENTER что бы восстановить компоненты в списке выше."
+                            Content="{Globalizer:GlobalizedResource String0134}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="11"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
