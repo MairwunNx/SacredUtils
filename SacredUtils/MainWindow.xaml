@@ -2,9 +2,8 @@
     x:Class="SacredUtils.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:Globalizer="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:globcntrls="clr-namespace:WPFSharp.Globalizer.Controls;assembly=WPFSharp.Globalizer"
+    xmlns:globalizer="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="BaseWindow"
@@ -17,14 +16,11 @@
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
     mc:Ignorable="d">
-
     <materialDesign:Card
-        Width="1076"
         Margin="5,5,5,5"
         VerticalAlignment="Stretch"
         Background="{DynamicResource ResourceKey=BackgroundColorBrush}">
-
-        <Grid Margin="-1,0,1,0" Background="{DynamicResource ResourceKey=BackgroundColorBrush}">
+        <Grid Background="{DynamicResource ResourceKey=BackgroundColorBrush}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="25" />
                 <RowDefinition Height="*" />
@@ -33,7 +29,6 @@
             <StackPanel
                 x:Name="HeaderPanel"
                 Grid.Row="0"
-                Margin="0,0,-1,0"
                 Background="{DynamicResource ResourceKey=BackgroundColorBrush}">
                 <Button
                     x:Name="CloseBtn"
@@ -79,7 +74,7 @@
                     HorizontalAlignment="Right"
                     HorizontalContentAlignment="Right"
                     VerticalContentAlignment="Center"
-                    Content="{Globalizer:GlobalizedResource String0112}"
+                    Content="{globalizer:GlobalizedResource String0112}"
                     Cursor="Hand"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     FontSize="11"
@@ -105,7 +100,7 @@
                                 Height="30"
                                 Margin="0,5"
                                 VerticalContentAlignment="Center"
-                                Content="{Globalizer:GlobalizedResource String0113}"
+                                Content="{globalizer:GlobalizedResource String0113}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
@@ -121,7 +116,7 @@
                                 Height="30"
                                 Margin="0,5"
                                 VerticalContentAlignment="Center"
-                                Content="{Globalizer:GlobalizedResource String0114}"
+                                Content="{globalizer:GlobalizedResource String0114}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
@@ -137,7 +132,7 @@
                                 Height="30"
                                 Margin="0,5"
                                 VerticalContentAlignment="Center"
-                                Content="{Globalizer:GlobalizedResource String0115}"
+                                Content="{globalizer:GlobalizedResource String0115}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
@@ -153,7 +148,7 @@
                                 Height="30"
                                 Margin="0,5"
                                 VerticalContentAlignment="Center"
-                                Content="{Globalizer:GlobalizedResource String0116}"
+                                Content="{globalizer:GlobalizedResource String0116}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
@@ -169,7 +164,7 @@
                                 Height="30"
                                 Margin="0,5"
                                 VerticalContentAlignment="Center"
-                                Content="{Globalizer:GlobalizedResource String0117}"
+                                Content="{globalizer:GlobalizedResource String0117}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
@@ -185,7 +180,7 @@
                                 Height="30"
                                 Margin="0,5"
                                 VerticalContentAlignment="Center"
-                                Content="{Globalizer:GlobalizedResource String0118}"
+                                Content="{globalizer:GlobalizedResource String0118}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
@@ -201,7 +196,7 @@
                                 Height="30"
                                 Margin="0,5"
                                 VerticalContentAlignment="Center"
-                                Content="{Globalizer:GlobalizedResource String0119}"
+                                Content="{globalizer:GlobalizedResource String0119}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
@@ -217,7 +212,7 @@
                                 Height="30"
                                 Margin="0,5"
                                 VerticalContentAlignment="Center"
-                                Content="{Globalizer:GlobalizedResource String0120}"
+                                Content="{globalizer:GlobalizedResource String0120}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}" />
@@ -261,7 +256,7 @@
                 <Frame
                     x:Name="SettingsFrame"
                     NavigationUIVisibility="Hidden"
-                    Visibility="Visible" />
+                    Visibility="Hidden" />
             </Border>
 
             <materialDesign:DialogHost
@@ -290,7 +285,7 @@
                                 x:Name="ReadLicenseBtn"
                                 Height="Auto"
                                 ClipToBounds="True"
-                                Content="{Globalizer:GlobalizedResource String0121}"
+                                Content="{globalizer:GlobalizedResource String0121}"
                                 Cursor="Hand"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
@@ -302,7 +297,7 @@
                             Height="30"
                             Margin="15,11,10,0"
                             VerticalAlignment="Top"
-                            Content="{Globalizer:GlobalizedResource String0122}"
+                            Content="{globalizer:GlobalizedResource String0122}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -314,7 +309,7 @@
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="12"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                            Text="{Globalizer:GlobalizedResource String0123}"
+                            Text="{globalizer:GlobalizedResource String0123}"
                             TextWrapping="Wrap" />
 
                         <TextBlock
@@ -324,7 +319,7 @@
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="12"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                            Text="{Globalizer:GlobalizedResource String0124}"
+                            Text="{globalizer:GlobalizedResource String0124}"
                             TextWrapping="Wrap" />
 
                         <TextBlock
@@ -334,7 +329,7 @@
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="12"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                            Text="{Globalizer:GlobalizedResource String0125}"
+                            Text="{globalizer:GlobalizedResource String0125}"
                             TextWrapping="Wrap" />
 
                         <Border
@@ -350,7 +345,7 @@
                                 x:Name="ReadLicenseBtn1"
                                 Height="Auto"
                                 ClipToBounds="True"
-                                Content="{Globalizer:GlobalizedResource String0126}"
+                                Content="{globalizer:GlobalizedResource String0126}"
                                 Cursor="Hand"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
@@ -371,7 +366,7 @@
                                 x:Name="ReadLicenseBtn2"
                                 Height="Auto"
                                 ClipToBounds="True"
-                                Content="{Globalizer:GlobalizedResource String0127}"
+                                Content="{globalizer:GlobalizedResource String0127}"
                                 Cursor="Hand"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
@@ -400,7 +395,7 @@
                             Height="30"
                             Margin="15,11,190,0"
                             VerticalAlignment="Top"
-                            Content="{Globalizer:GlobalizedResource String0128}"
+                            Content="{globalizer:GlobalizedResource String0128}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -410,7 +405,7 @@
                             Height="28"
                             Margin="70,59,43,0"
                             VerticalAlignment="Top"
-                            Content="{Globalizer:GlobalizedResource String0129}"
+                            Content="{globalizer:GlobalizedResource String0129}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="14"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -444,7 +439,7 @@
                             Height="30"
                             Margin="15,11,190,0"
                             VerticalAlignment="Top"
-                            Content="{Globalizer:GlobalizedResource String0130}"
+                            Content="{globalizer:GlobalizedResource String0130}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -453,7 +448,7 @@
                             Height="28"
                             Margin="70,59,43,0"
                             VerticalAlignment="Top"
-                            Content="{Globalizer:GlobalizedResource String0131}"
+                            Content="{globalizer:GlobalizedResource String0131}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="14"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -487,7 +482,7 @@
                             Height="30"
                             Margin="15,11,190,0"
                             VerticalAlignment="Top"
-                            Content="{Globalizer:GlobalizedResource String0132}"
+                            Content="{globalizer:GlobalizedResource String0132}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -526,7 +521,7 @@
                             Height="30"
                             Margin="15,11,135,0"
                             VerticalAlignment="Top"
-                            Content="{Globalizer:GlobalizedResource String0133}"
+                            Content="{globalizer:GlobalizedResource String0133}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -564,7 +559,7 @@
                             Height="23"
                             Margin="16,237,15,0"
                             VerticalAlignment="Top"
-                            Content="{Globalizer:GlobalizedResource String0134}"
+                            Content="{globalizer:GlobalizedResource String0134}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="11"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -590,7 +585,7 @@
                             Height="30"
                             Margin="15,11,190,0"
                             VerticalAlignment="Top"
-                            Content="{Globalizer:GlobalizedResource String0135}"
+                            Content="{globalizer:GlobalizedResource String0135}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -600,7 +595,7 @@
                             Height="28"
                             Margin="70,59,10,0"
                             VerticalAlignment="Top"
-                            Content="{Globalizer:GlobalizedResource String0136}"
+                            Content="{globalizer:GlobalizedResource String0136}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="14"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -633,7 +628,7 @@
                             Height="30"
                             Margin="15,11,190,0"
                             VerticalAlignment="Top"
-                            Content="{Globalizer:GlobalizedResource String0137}"
+                            Content="{globalizer:GlobalizedResource String0137}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -642,7 +637,7 @@
                             Height="28"
                             Margin="70,59,10,0"
                             VerticalAlignment="Top"
-                            Content="{Globalizer:GlobalizedResource String0138}"
+                            Content="{globalizer:GlobalizedResource String0138}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="14"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -675,7 +670,7 @@
                             Height="30"
                             Margin="15,11,190,0"
                             VerticalAlignment="Top"
-                            Content="{Globalizer:GlobalizedResource String0139}"
+                            Content="{globalizer:GlobalizedResource String0139}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -684,7 +679,7 @@
                             Height="28"
                             Margin="70,59,10,0"
                             VerticalAlignment="Top"
-                            Content="{Globalizer:GlobalizedResource String0140}"
+                            Content="{globalizer:GlobalizedResource String0140}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="14"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -717,7 +712,7 @@
                             Height="30"
                             Margin="15,11,190,0"
                             VerticalAlignment="Top"
-                            Content="{Globalizer:GlobalizedResource String0141}"
+                            Content="{globalizer:GlobalizedResource String0141}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -727,7 +722,7 @@
                             Height="28"
                             Margin="70,59,10,0"
                             VerticalAlignment="Top"
-                            Content="{Globalizer:GlobalizedResource String0142}"
+                            Content="{globalizer:GlobalizedResource String0142}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="14"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -760,7 +755,7 @@
                             Height="30"
                             Margin="15,11,190,0"
                             VerticalAlignment="Top"
-                            Content="{Globalizer:GlobalizedResource String0143}"
+                            Content="{globalizer:GlobalizedResource String0143}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -820,7 +815,7 @@
                             Height="30"
                             Margin="15,11,190,0"
                             VerticalAlignment="Top"
-                            Content="{Globalizer:GlobalizedResource String0144}"
+                            Content="{globalizer:GlobalizedResource String0144}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="16"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -830,7 +825,7 @@
                             Height="28"
                             Margin="70,59,10,0"
                             VerticalAlignment="Top"
-                            Content="{Globalizer:GlobalizedResource String0145}"
+                            Content="{globalizer:GlobalizedResource String0145}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             FontSize="14"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
