@@ -1,25 +1,17 @@
-﻿<Globalization:StyleResourceDictionary 
+﻿<Globalization:StyleResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:sys="clr-namespace:System;assembly=mscorlib"
     xmlns:Globalization="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
-    xmlns:local="clr-namespace:WPFSharp.Globalizer.Example" 
-    Name="Red Style"
-    >
+    Name="Dark">
 
-    <FlowDirection x:Key="FlowDirection_Default">LeftToRight</FlowDirection>
-    <FlowDirection x:Key="FlowDirection_Reverse">RightToLeft</FlowDirection>
-
-    <sys:Double x:Key="CommonFontSize">14</sys:Double>
-
-    <Style TargetType="{x:Type Label}">
-        <Setter Property="Foreground" Value="White" />
-        <Setter Property="Height" Value="Auto" />
-        <Setter Property="Width" Value="Auto" />
-        <Setter Property="FontSize" Value="{StaticResource ResourceKey=CommonFontSize}" />
-        <Setter Property="Margin" Value="2" />
-    </Style>
-
-    <SolidColorBrush x:Key="MainWindowBackground" Color="Red" />
+    <SolidColorBrush x:Key="BorderBorderBrush" Color="#FF383838" />
+    <SolidColorBrush x:Key="LabelForegroundBrush" Color="#FF4285F4" />
+    <SolidColorBrush x:Key="ComboBoxBorderBrush" Color="#5EFFFFFF" />
+    <SolidColorBrush x:Key="ComboBoxForegroundBrush" Color="#FFB4B4B4" />
+    <SolidColorBrush x:Key="LabelWarningForegroundBrush" Color="#FFF44242" />
+    <SolidColorBrush x:Key="BackgroundColorBrush" Color="#000000" />
+    <SolidColorBrush x:Key="BigBallColorBrush" Color="#323133" />
+    <SolidColorBrush x:Key="SmallBallColorBrush" Color="#3C3B3D" />
+    <SolidColorBrush x:Key="CategoryForegroundColorBrush" Color="#FF737373" />
 
 </Globalization:StyleResourceDictionary>
