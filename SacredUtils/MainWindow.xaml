@@ -266,58 +266,6 @@
                     NavigationUIVisibility="Hidden"
                     Visibility="Visible" />
             </StackPanel>
-
-            <materialDesign:DialogHost
-                x:Name="GetComponentsDialog"
-                Grid.Row="1"
-                Margin="0,0,-1,0"
-                CloseOnClickAway="False"
-                IsOpen="False"
-                Visibility="Hidden">
-                <materialDesign:DialogHost.DialogContent>
-                    <Grid
-                        Width="450"
-                        Height="115"
-                        Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
-                        Row="1">
-                        <Label
-                            Height="30"
-                            Margin="15,11,190,0"
-                            VerticalAlignment="Top"
-                            Content="{globalizer:GlobalizedResource String0144}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            FontSize="16"
-                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
-
-                        <Label
-                            x:Name="GettingComponentLabel"
-                            Height="28"
-                            Margin="70,59,10,0"
-                            VerticalAlignment="Top"
-                            Content="{globalizer:GlobalizedResource String0145}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            FontSize="14"
-                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
-
-                        <ProgressBar
-                            Width="25"
-                            Height="25"
-                            Margin="21,60,404,0"
-                            VerticalAlignment="Top"
-                            IsIndeterminate="True"
-                            Style="{DynamicResource MaterialDesignCircularProgressBar}" />
-                    </Grid>
-                </materialDesign:DialogHost.DialogContent>
-            </materialDesign:DialogHost>
-
-            <Button
-                Grid.Row="1"
-                Margin="43,524,0,129"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center"
-                Click="Button_Click"
-                Content="Show Dialog"
-                Visibility="Hidden" />
         </Grid>
     </materialDesign:Card>
 </Window>
