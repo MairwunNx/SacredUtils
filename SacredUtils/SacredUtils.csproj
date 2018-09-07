@@ -124,6 +124,39 @@
     <Compile Include="resources\bin\GetLoggerConfig.cs" />
     <Compile Include="resources\bin\GetConfigurations.cs" />
     <Compile Include="resources\bin\GetStatistic.cs" />
+    <Compile Include="resources\dlg\about_dialog.xaml.cs">
+      <DependentUpon>about_dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\dlg\checking_components_dialog.xaml.cs">
+      <DependentUpon>checking_components_dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\dlg\error_dialog.xaml.cs">
+      <DependentUpon>error_dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\dlg\error_finded_dialog.xaml.cs">
+      <DependentUpon>error_finded_dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\dlg\error_not_found_dialog.xaml.cs">
+      <DependentUpon>error_not_found_dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\dlg\get_components_dialog.xaml.cs">
+      <DependentUpon>get_components_dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\dlg\hotkey_dialog.xaml.cs">
+      <DependentUpon>hotkey_dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\dlg\license_dialog.xaml.cs">
+      <DependentUpon>license_dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\dlg\nearly_restored_dialog.xaml.cs">
+      <DependentUpon>nearly_restored_dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\dlg\restoring_components_dialog.xaml.cs">
+      <DependentUpon>restoring_components_dialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\dlg\restoring_success_dialog.xaml.cs">
+      <DependentUpon>restoring_success_dialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="resources\pgs\application_settings_one.xaml.cs">
       <DependentUpon>application_settings_one.xaml</DependentUpon>
     </Compile>
@@ -190,6 +223,50 @@
     <Page Include="Properties\DesignTimeResources.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="resources\dlg\about_dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\dlg\checking_components_dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\dlg\error_dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\dlg\error_finded_dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\dlg\error_not_found_dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\dlg\get_components_dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\dlg\hotkey_dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\dlg\license_dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\dlg\nearly_restored_dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\dlg\restoring_components_dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\dlg\restoring_success_dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="resources\pgs\application_settings_one.xaml">
       <SubType>Designer</SubType>
@@ -321,9 +398,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="resources\dlg\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
