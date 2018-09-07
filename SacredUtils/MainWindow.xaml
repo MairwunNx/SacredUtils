@@ -268,66 +268,6 @@
             </StackPanel>
 
             <materialDesign:DialogHost
-                x:Name="HotkeyEditDialog"
-                Grid.Row="1"
-                Margin="0,0,-1,0"
-                CloseOnClickAway="True"
-                IsOpen="False"
-                Visibility="Hidden">
-                <materialDesign:DialogHost.DialogContent>
-                    <Grid
-                        Width="450"
-                        Height="111"
-                        Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
-                        Row="1">
-                        <Label
-                            Height="30"
-                            Margin="15,11,190,0"
-                            VerticalAlignment="Top"
-                            Content="{globalizer:GlobalizedResource String0143}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            FontSize="16"
-                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
-
-                        <ComboBox
-                            Width="187"
-                            Height="26"
-                            Margin="241,63,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                            Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}">
-                            <ComboBoxItem Content="E" />
-                            <ComboBoxItem Content="R" />
-                        </ComboBox>
-
-                        <Label
-                            Height="28"
-                            Margin="212,63,214,0"
-                            VerticalAlignment="Top"
-                            Content="-&gt;"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            FontSize="14"
-                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
-
-                        <ComboBox
-                            Width="187"
-                            Height="26"
-                            Margin="20,63,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                            Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}">
-                            <ComboBoxItem Content="F1" />
-                            <ComboBoxItem Content="F2" />
-                        </ComboBox>
-                    </Grid>
-                </materialDesign:DialogHost.DialogContent>
-            </materialDesign:DialogHost>
-
-            <materialDesign:DialogHost
                 x:Name="GetComponentsDialog"
                 Grid.Row="1"
                 Margin="0,0,-1,0"
