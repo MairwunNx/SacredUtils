@@ -271,64 +271,7 @@
 
 
 
-            <materialDesign:DialogHost
-                x:Name="ErrorsFindedDialog"
-                Grid.Row="1"
-                Margin="0,0,-1,0"
-                CloseOnClickAway="True"
-                IsOpen="False"
-                Visibility="Hidden">
-                <materialDesign:DialogHost.DialogContent>
-                    <Grid Height="273" Background="{DynamicResource ResourceKey=BackgroundColorBrush}">
-                        <Label
-                            Height="30"
-                            Margin="15,11,135,0"
-                            VerticalAlignment="Top"
-                            Content="{globalizer:GlobalizedResource String0133}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            FontSize="16"
-                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
-                        <Label
-                            x:Name="CheckedComponentsLabel"
-                            Height="28"
-                            Margin="16,50,64,0"
-                            VerticalAlignment="Top"
-                            Content="Проверенно 15 из 20 компонентов"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            FontSize="14"
-                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
-
-                        <Label
-                            x:Name="ErrorComponentsLabel"
-                            Height="23"
-                            Margin="16,70,64,0"
-                            VerticalAlignment="Top"
-                            Content="И 5 компонентов повреждено"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            FontSize="12"
-                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
-
-                        <ListBox
-                            Height="128"
-                            Margin="16,98,15,0"
-                            VerticalAlignment="Top"
-                            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
-                            BorderThickness="1"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
-
-                        <Label
-                            Height="23"
-                            Margin="16,237,15,0"
-                            VerticalAlignment="Top"
-                            Content="{globalizer:GlobalizedResource String0134}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            FontSize="11"
-                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
-                    </Grid>
-                </materialDesign:DialogHost.DialogContent>
-            </materialDesign:DialogHost>
 
             <materialDesign:DialogHost
                 x:Name="RestoringСomponentsDialog"
