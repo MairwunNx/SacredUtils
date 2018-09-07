@@ -267,89 +267,9 @@
                     Visibility="Visible" />
             </StackPanel>
 
-            <materialDesign:DialogHost
-                x:Name="RestoringSuccessDialog"
-                Grid.Row="1"
-                Margin="0,0,-1,0"
-                CloseOnClickAway="True"
-                IsOpen="False"
-                Visibility="Hidden">
-                <materialDesign:DialogHost.DialogContent>
-                    <Grid
-                        Width="450"
-                        Height="115"
-                        Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
-                        Row="1">
-                        <Label
-                            Height="30"
-                            Margin="15,11,190,0"
-                            VerticalAlignment="Top"
-                            Content="{globalizer:GlobalizedResource String0137}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            FontSize="16"
-                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
-                        <Label
-                            Height="28"
-                            Margin="70,59,10,0"
-                            VerticalAlignment="Top"
-                            Content="{globalizer:GlobalizedResource String0138}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            FontSize="14"
-                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
-                        <materialDesign:PackIcon
-                            Width="25"
-                            Height="25"
-                            Margin="21,60,404,0"
-                            VerticalAlignment="Top"
-                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                            Kind="Check" />
-                    </Grid>
-                </materialDesign:DialogHost.DialogContent>
-            </materialDesign:DialogHost>
 
-            <materialDesign:DialogHost
-                x:Name="NoDamagedComponentsDialog"
-                Grid.Row="1"
-                Margin="0,0,-1,0"
-                CloseOnClickAway="True"
-                IsOpen="False"
-                Visibility="Hidden">
-                <materialDesign:DialogHost.DialogContent>
-                    <Grid
-                        Width="450"
-                        Height="115"
-                        Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
-                        Row="1">
-                        <Label
-                            Height="30"
-                            Margin="15,11,190,0"
-                            VerticalAlignment="Top"
-                            Content="{globalizer:GlobalizedResource String0139}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            FontSize="16"
-                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
-
-                        <Label
-                            Height="28"
-                            Margin="70,59,10,0"
-                            VerticalAlignment="Top"
-                            Content="{globalizer:GlobalizedResource String0140}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            FontSize="14"
-                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
-
-                        <materialDesign:PackIcon
-                            Width="25"
-                            Height="25"
-                            Margin="21,60,404,0"
-                            VerticalAlignment="Top"
-                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                            Kind="Check" />
-                    </Grid>
-                </materialDesign:DialogHost.DialogContent>
-            </materialDesign:DialogHost>
 
             <materialDesign:DialogHost
                 x:Name="CheckComponentsDialog"
