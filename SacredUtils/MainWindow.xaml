@@ -12,6 +12,7 @@
     Height="720"
     AllowsTransparency="True"
     Background="{x:Null}"
+    Icon="resources/ico/icons8_Gas.ico"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
@@ -259,123 +260,14 @@
                     Visibility="Hidden" />
             </Border>
 
-            <materialDesign:DialogHost
-                x:Name="LicenseDialog"
-                Grid.Row="1"
-                Margin="0,0,-1,0"
-                CloseOnClickAway="False"
-                IsOpen="False"
-                Visibility="Hidden">
-                <materialDesign:DialogHost.DialogContent>
-                    <Grid
-                        Width="450"
-                        Height="300"
-                        Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
-                        Row="1">
-                        <Border
-                            Height="36"
-                            Margin="18,202,18,0"
-                            VerticalAlignment="Top"
-                            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
-                            BorderThickness="1,1,1,1"
-                            CornerRadius="3"
-                            Cursor="Hand">
+            <StackPanel Grid.Row="1">
+                <Frame
+                    x:Name="DialogFrame"
+                    NavigationUIVisibility="Hidden"
+                    Visibility="Visible" />
+            </StackPanel>
 
-                            <Button
-                                x:Name="ReadLicenseBtn"
-                                Height="Auto"
-                                ClipToBounds="True"
-                                Content="{globalizer:GlobalizedResource String0121}"
-                                Cursor="Hand"
-                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                                FontSize="14"
-                                Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                                Style="{StaticResource MaterialDesignToolForegroundButton}" />
-                        </Border>
 
-                        <Label
-                            Height="30"
-                            Margin="15,11,10,0"
-                            VerticalAlignment="Top"
-                            Content="{globalizer:GlobalizedResource String0122}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            FontSize="16"
-                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
-
-                        <TextBlock
-                            Height="37"
-                            Margin="18,57,34,0"
-                            VerticalAlignment="Top"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            FontSize="12"
-                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                            Text="{globalizer:GlobalizedResource String0123}"
-                            TextWrapping="Wrap" />
-
-                        <TextBlock
-                            Height="66"
-                            Margin="18,94,34,0"
-                            VerticalAlignment="Top"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            FontSize="12"
-                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                            Text="{globalizer:GlobalizedResource String0124}"
-                            TextWrapping="Wrap" />
-
-                        <TextBlock
-                            Height="37"
-                            Margin="18,160,34,0"
-                            VerticalAlignment="Top"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                            FontSize="12"
-                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                            Text="{globalizer:GlobalizedResource String0125}"
-                            TextWrapping="Wrap" />
-
-                        <Border
-                            Width="200"
-                            Height="36"
-                            Margin="232,246,18,0"
-                            VerticalAlignment="Top"
-                            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
-                            BorderThickness="1,1,1,1"
-                            CornerRadius="3"
-                            Cursor="Hand">
-                            <Button
-                                x:Name="ReadLicenseBtn1"
-                                Height="Auto"
-                                ClipToBounds="True"
-                                Content="{globalizer:GlobalizedResource String0126}"
-                                Cursor="Hand"
-                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                                FontSize="14"
-                                Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                                Style="{StaticResource MaterialDesignToolForegroundButton}" />
-                        </Border>
-
-                        <Border
-                            Width="200"
-                            Height="36"
-                            Margin="18,246,232,0"
-                            VerticalAlignment="Top"
-                            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
-                            BorderThickness="1,1,1,1"
-                            CornerRadius="3"
-                            Cursor="Hand">
-                            <Button
-                                x:Name="ReadLicenseBtn2"
-                                Height="Auto"
-                                ClipToBounds="True"
-                                Content="{globalizer:GlobalizedResource String0127}"
-                                Cursor="Hand"
-                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                                FontSize="14"
-                                Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                                Style="{StaticResource MaterialDesignToolForegroundButton}" />
-                        </Border>
-                    </Grid>
-                </materialDesign:DialogHost.DialogContent>
-            </materialDesign:DialogHost>
 
             <materialDesign:DialogHost
                 x:Name="ErrorDialog"
