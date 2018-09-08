@@ -13,5 +13,7 @@
     <SolidColorBrush x:Key="BigBallColorBrush" Color="#323133" />
     <SolidColorBrush x:Key="SmallBallColorBrush" Color="#3C3B3D" />
     <SolidColorBrush x:Key="CategoryForegroundColorBrush" Color="#FF737373" />
+    <SolidColorBrush x:Key="CategoryNotActiveColorBrush" Color="#000000" />
+    <SolidColorBrush x:Key="CategoryActiveColorBrush" Color="#4C9E9E9E" />
 
 </Globalization:StyleResourceDictionary>
