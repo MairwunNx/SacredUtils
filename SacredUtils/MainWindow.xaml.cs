@@ -57,12 +57,17 @@ namespace SacredUtils
 
             SelectSettings(unselectedStgOne);
 
-//            Height = Height * 1.3;
-//            Width = Width * 1.3;
-//            BaseCard.LayoutTransform = new ScaleTransform(1.3, 1.3);
+            Height = Height * 1.2;
+            Width = Width * 1.2;
+            BaseCard.LayoutTransform = new ScaleTransform(1.2, 1.2);
 
             GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
             (ApplicationInfo.Lang == "ru" ? "ru-RU" : "en-US", true);
+
+            GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage("ru-RU", true);
+
+            GlobalizedApplication.Instance.StyleManager.SwitchStyle("Light.xaml");
+
         }
 
         public void DragWindow(object sender, MouseButtonEventArgs e)
@@ -73,12 +78,14 @@ namespace SacredUtils
         public void SelectSettings(UIElement element)
         {
             SettingsFrame.Content = element;
+
+            GlobalizedApplication.Instance.StyleManager.SwitchStyle("Dark.xaml");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ErrorDialog.Visibility = Visibility.Visible;
-            ErrorDialog.IsOpen = true;
+//            ErrorDialog.Visibility = Visibility.Visible;
+//            ErrorDialog.IsOpen = true;
         }
     }
 }

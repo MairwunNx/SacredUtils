@@ -21,7 +21,7 @@ namespace SacredUtils.resources.bin
 
             if (!File.Exists("$SacredUtils\\conf\\reqiredfiles.json"))
             {
-                File.WriteAllBytes("$SacredUtils\\conf\\reqiredfiles.json", Properties.Resources.reqiredfiles);
+//                File.WriteAllBytes("$SacredUtils\\conf\\reqiredfiles.json", Properties.Resources.reqiredfiles);
 
                 GetLoggerConfig.Log.Info("Reqiredfiles settings were created in conf folder");
 
@@ -44,7 +44,7 @@ namespace SacredUtils.resources.bin
 
                     _licenseFileCreate = reqiredFilesSettings.LicenseFileCreate;
 
-                    File.WriteAllBytes("$SacredUtils\\conf\\reqiredfiles.json", Properties.Resources.reqiredfiles);
+//                    File.WriteAllBytes("$SacredUtils\\conf\\reqiredfiles.json", Properties.Resources.reqiredfiles);
 
                     IReqiredFilesSettings reqiredFilesSettingsRepair = new ConfigurationBuilder<IReqiredFilesSettings>()
                         .UseJsonFile("$SacredUtils\\conf\\reqiredfiles.json").Build();

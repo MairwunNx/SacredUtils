@@ -38,7 +38,7 @@ namespace SacredUtils.resources.bin
                 {
                     ApplicationInfo.Lang = "ru";
 
-                    File.WriteAllBytes("$SacredUtils\\lang\\langinfo.json", Properties.Resources.langinfo_ru);
+//                    File.WriteAllBytes("$SacredUtils\\lang\\langinfo.json", Properties.Resources.langinfo_ru);
 
                     GetLoggerConfig.Log.Info("Language ru settings were created in conf folder");
 
@@ -50,7 +50,7 @@ namespace SacredUtils.resources.bin
 
                     ApplicationInfo.Lang = "en";
 
-                    File.WriteAllBytes("$SacredUtils\\lang\\langinfo.json", Properties.Resources.langinfo_en);
+//                    File.WriteAllBytes("$SacredUtils\\lang\\langinfo.json", Properties.Resources.langinfo_en);
 
                     GetLoggerConfig.Log.Info("Language en settings were created in conf folder");
 
@@ -70,7 +70,7 @@ namespace SacredUtils.resources.bin
 
                     language = languageSettings.Language;
 
-                    File.WriteAllBytes("$SacredUtils\\lang\\langinfo.json", Properties.Resources.langinfo_en);
+//                    File.WriteAllBytes("$SacredUtils\\lang\\langinfo.json", Properties.Resources.langinfo_en);
 
                     ILanguageSettings languageSettingsRepair = new ConfigurationBuilder<ILanguageSettings>()
                         .UseJsonFile("$SacredUtils\\lang\\langinfo.json").Build();

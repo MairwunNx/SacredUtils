@@ -28,7 +28,7 @@
                     Text="{globalizer:GlobalizedResource String0064}" />
 
                 <ToggleButton
-                    x:Name="128MbitVideoTglBtn"
+                    x:Name="MbitVideoTglBtn"
                     Width="50"
                     Margin="748,0,10,0" />
             </Grid>
@@ -52,7 +52,7 @@
                     Text="{globalizer:GlobalizedResource String0065}" />
 
                 <ToggleButton
-                    x:Name="32BitColorTglBtn"
+                    x:Name="BitColorTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}" />

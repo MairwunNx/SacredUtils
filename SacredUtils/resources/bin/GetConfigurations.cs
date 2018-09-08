@@ -10,7 +10,7 @@ namespace SacredUtils.resources.bin
 
             if (!File.Exists("$SacredUtils\\conf\\advanced.json"))
             {
-                File.WriteAllBytes("$SacredUtils\\conf\\advanced.json", Properties.Resources.graphics);
+//                File.WriteAllBytes("$SacredUtils\\conf\\advanced.json", Properties.Resources.graphics);
 
                 GetLoggerConfig.Log.Info("Advanced settings were created in conf folder");
             }
@@ -30,7 +30,7 @@ namespace SacredUtils.resources.bin
 
             if (!File.Exists("$SacredUtils\\conf\\installinfo.json"))
             {
-                File.WriteAllBytes("$SacredUtils\\conf\\installinfo.json", Properties.Resources.installinfo);
+//                File.WriteAllBytes("$SacredUtils\\conf\\installinfo.json", Properties.Resources.installinfo);
 
                 GetLoggerConfig.Log.Info("Installinfo settings were created in conf folder");
             }
@@ -40,7 +40,7 @@ namespace SacredUtils.resources.bin
 
             if (!File.Exists("$SacredUtils\\conf\\hotkeys.json"))
             {
-                File.WriteAllBytes("$SacredUtils\\conf\\hotkeys.json", Properties.Resources.hotkeys);
+//                File.WriteAllBytes("$SacredUtils\\conf\\hotkeys.json", Properties.Resources.hotkeys);
 
                 GetLoggerConfig.Log.Info("Hotkeys settings were created in conf folder");
             }
@@ -50,7 +50,7 @@ namespace SacredUtils.resources.bin
 
             if (!File.Exists("$SacredUtils\\conf\\voiceover.json"))
             {
-                File.WriteAllBytes("$SacredUtils\\conf\\voiceover.json", Properties.Resources.voiceover);
+//                File.WriteAllBytes("$SacredUtils\\conf\\voiceover.json", Properties.Resources.voiceover);
 
                 GetLoggerConfig.Log.Info("Voiceover settings were created in conf folder");
             }
