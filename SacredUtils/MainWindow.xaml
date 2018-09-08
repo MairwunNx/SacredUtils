@@ -113,7 +113,7 @@
                                 Content="{globalizer:GlobalizedResource String0113}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
-                                Foreground="#FF737373"
+                                Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}"
                                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
                         </StackPanel>
 
