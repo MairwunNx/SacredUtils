@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Text;
@@ -8,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 using Castle.Core.Logging;
@@ -26,7 +28,7 @@ namespace SacredUtils
         public MainWindow()
         {
             InitializeComponent();
-
+            
             application_settings_one appStgOne       = new application_settings_one();
             chat_settings_one chatStgOne             = new chat_settings_one();
             font_settings_one fontStgOne             = new font_settings_one();
@@ -36,20 +38,20 @@ namespace SacredUtils
             sound_settings_one soundStgOne           = new sound_settings_one();
             unselected_settings_one unselectedStgOne = new unselected_settings_one();
 
-            MenuGrLabel.Click += (s, e) => SelectSettings(graphicsStgOne);
-            MenuSnLabel.Click += (s, e) => SelectSettings(soundStgOne);
-            MenuGpLabel.Click += (s, e) => SelectSettings(gameplayStgOne);
-            MenuCtLabel.Click += (s, e) => SelectSettings(chatStgOne);
-            MenuFtLabel.Click += (s, e) => SelectSettings(fontStgOne);
-            MenuMdLabel.Click += (s, e) => SelectSettings(modifyStgOne);
-            MenuStLabel.Click += (s, e) => SelectSettings(appStgOne);
+            MenuGrLabel.Click += (s, e) => SelectSettings(graphicsStgOne, GraphicsPanel);
+            MenuSnLabel.Click += (s, e) => SelectSettings(soundStgOne, SoundPanel);
+            MenuGpLabel.Click += (s, e) => SelectSettings(gameplayStgOne, GameplayPanel);
+            MenuCtLabel.Click += (s, e) => SelectSettings(chatStgOne, ChatPanel);
+            MenuFtLabel.Click += (s, e) => SelectSettings(fontStgOne, FontsPanel);
+            MenuMdLabel.Click += (s, e) => SelectSettings(modifyStgOne, ModifPanel);
+            MenuStLabel.Click += (s, e) => SelectSettings(appStgOne, SettingsPanel);
 
             CloseBtn.Click += (s, e) => Application.Current.Shutdown();
             MinimizeBtn.Click += (s, e) => WindowState = WindowState.Minimized;
 
             HeaderPanel.MouseDown += DragWindow;
 
-            SelectSettings(unselectedStgOne);
+            SelectSettings(unselectedStgOne, MenuGpLabel);
 
 //            Height = Height * 1.2;
 //            Width = Width * 1.2;
@@ -69,17 +71,40 @@ namespace SacredUtils
             if (e.ChangedButton == MouseButton.Left) { DragMove(); }
         }
 
-        public void SelectSettings(UIElement element)
+        public void SelectSettings(UIElement element, object sender)
         {
             SettingsFrame.Content = element;
 
-//            GlobalizedApplication.Instance.StyleManager.SwitchStyle("Dark.xaml");
+            StackPanel s = sender as StackPanel;
+
+            BrushConverter bc = new BrushConverter();
+
+            if (sender.Equals(s))
+            {
+                if (s != null)
+                {
+                    foreach (StackPanel sp in SettingsGrid.Children.OfType<StackPanel>())
+                    {
+                        try
+                        {
+                            sp.SetResourceReference(BackgroundProperty, "CategoryNotActiveColorBrush");
+                        }
+                        catch (Exception e)
+                        {
+                            MessageBox.Show(e.ToString());
+                        }
+                    }
+
+                    s.SetResourceReference(BackgroundProperty, "CategoryActiveColorBrush");
+                }
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-//            ErrorDialog.Visibility = Visibility.Visible;
-//            ErrorDialog.IsOpen = true;
+            //            ErrorDialog.Visibility = Visibility.Visible;
+            //            ErrorDialog.IsOpen = true;
+            //GlobalizedApplication.Instance.StyleManager.SwitchStyle("Dark.xaml");
         }
     }
 }
