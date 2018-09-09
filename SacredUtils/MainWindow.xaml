@@ -292,12 +292,12 @@
 
             <!--#region Content for page dialogs.-->
 
-            <StackPanel Grid.Row="1">
+            <Border Grid.Row="1">
                 <Frame
                     x:Name="DialogFrame"
                     NavigationUIVisibility="Hidden"
-                    Visibility="Hidden" />
-            </StackPanel>
+                    Visibility="Visible" />
+            </Border>
 
             <!--#endregion-->
         </Grid>

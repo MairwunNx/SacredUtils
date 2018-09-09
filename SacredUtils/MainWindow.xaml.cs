@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -17,6 +18,7 @@ using MaterialDesignThemes.Wpf;
 using NLog;
 using NLog.Targets;
 using SacredUtils.resources.bin;
+using SacredUtils.resources.dlg;
 using SacredUtils.resources.pgs;
 using SharpConfig;
 using WPFSharp.Globalizer;
@@ -53,9 +55,9 @@ namespace SacredUtils
 
             SelectSettings(unselectedStgOne, MenuGpLabel);
 
-            Height = Height * 1.3;
-            Width = Width * 1.3;
-            BaseCard.LayoutTransform = new ScaleTransform(1.3, 1.3);
+//            Height = Height * 1.3;
+//            Width = Width * 1.3;
+//            BaseCard.LayoutTransform = new ScaleTransform(1.3, 1.3);
 
 
             GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
