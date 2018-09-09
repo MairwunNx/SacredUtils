@@ -53,9 +53,10 @@ namespace SacredUtils
 
             SelectSettings(unselectedStgOne, MenuGpLabel);
 
-//            Height = Height * 1.2;
-//            Width = Width * 1.2;
-//            BaseCard.LayoutTransform = new ScaleTransform(1.2, 1.2);
+            Height = Height * 1.3;
+            Width = Width * 1.3;
+            BaseCard.LayoutTransform = new ScaleTransform(1.3, 1.3);
+
 
             GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
             (ApplicationInfo.Lang == "ru" ? "ru-RU" : "en-US", true);
@@ -77,26 +78,14 @@ namespace SacredUtils
 
             StackPanel s = sender as StackPanel;
 
-            BrushConverter bc = new BrushConverter();
-
-            if (sender.Equals(s))
+            if (sender.Equals(s) && s != null)
             {
-                if (s != null)
+                foreach (StackPanel sp in SettingsGrid.Children.OfType<StackPanel>())
                 {
-                    foreach (StackPanel sp in SettingsGrid.Children.OfType<StackPanel>())
-                    {
-                        try
-                        {
-                            sp.SetResourceReference(BackgroundProperty, "CategoryNotActiveColorBrush");
-                        }
-                        catch (Exception e)
-                        {
-                            MessageBox.Show(e.ToString());
-                        }
-                    }
-
-                    s.SetResourceReference(BackgroundProperty, "CategoryActiveColorBrush");
+                    sp.SetResourceReference(BackgroundProperty, "CategoryNotActiveColorBrush");
                 }
+
+                s.SetResourceReference(BackgroundProperty, "CategoryActiveColorBrush");
             }
         }
 

@@ -9,11 +9,11 @@
     <SolidColorBrush x:Key="ComboBoxBorderBrush" Color="#5EFFFFFF" />
     <SolidColorBrush x:Key="ComboBoxForegroundBrush" Color="#FFB4B4B4" />
     <SolidColorBrush x:Key="LabelWarningForegroundBrush" Color="#FFF44242" />
-    <SolidColorBrush x:Key="BackgroundColorBrush" Color="#000000" />
+    <SolidColorBrush x:Key="BackgroundColorBrush" Color="#212121" />
     <SolidColorBrush x:Key="BigBallColorBrush" Color="#323133" />
     <SolidColorBrush x:Key="SmallBallColorBrush" Color="#3C3B3D" />
     <SolidColorBrush x:Key="CategoryForegroundColorBrush" Color="#FF737373" />
-    <SolidColorBrush x:Key="CategoryNotActiveColorBrush" Color="#000000" />
-    <SolidColorBrush x:Key="CategoryActiveColorBrush" Color="#4C9E9E9E" />
+    <SolidColorBrush x:Key="CategoryNotActiveColorBrush" Color="#212121" />
+    <SolidColorBrush x:Key="CategoryActiveColorBrush" Color="#4C7A7A7A" />
 
 </Globalization:StyleResourceDictionary>
