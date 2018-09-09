@@ -13,9 +13,11 @@ namespace SacredUtils
             {
                 GetLoggerConfig.Get();
 
-                GetGlobalizerLib.Get();
+                GetGlobalizerLib.Get(1);
 
                 GetAppFolders.Get();
+
+                CreateThemeFiles.Create();
 
                 new GetConfigurations().Get(); // В процессе.
 

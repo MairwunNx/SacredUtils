@@ -73,6 +73,16 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        public static byte[] Dark {
+            get {
+                object obj = ResourceManager.GetObject("Dark", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         public static byte[] en_US {
             get {
                 object obj = ResourceManager.GetObject("en_US", resourceCulture);
@@ -116,6 +126,16 @@ namespace SacredUtils.Properties {
         public static byte[] license {
             get {
                 object obj = ResourceManager.GetObject("license", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] Light {
+            get {
+                object obj = ResourceManager.GetObject("Light", resourceCulture);
                 return ((byte[])(obj));
             }
         }

@@ -2,12 +2,12 @@
 
 namespace SacredUtils.resources.bin
 {
-    public class ApplicationInfo
+    public static class ApplicationInfo
     {
-        public static string Name    = "SacredUtils";
-        public static string Version = "1.2.4.0.3108A1";
-        public static string Type    = "Alpha";
-        public static string AppName = Assembly.GetExecutingAssembly().Location;
-        public static string Lang    = "None";
+        public static readonly string Name    = "SacredUtils";
+        public static readonly string Version = "1.2.4.0.3108A1";
+        public static readonly string Type    = "Alpha";
+        public static readonly string AppName = Assembly.GetExecutingAssembly().Location;
+        public static readonly string Lang    = "None";
     }
 }
