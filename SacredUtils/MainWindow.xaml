@@ -296,7 +296,7 @@
                 <Frame
                     x:Name="DialogFrame"
                     NavigationUIVisibility="Hidden"
-                    Visibility="Visible" />
+                    Visibility="Hidden" />
             </Border>
 
             <!--#endregion-->

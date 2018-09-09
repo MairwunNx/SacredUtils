@@ -124,6 +124,9 @@
     <Compile Include="resources\bin\GetLoggerConfig.cs" />
     <Compile Include="resources\bin\GetConfigurations.cs" />
     <Compile Include="resources\bin\GetStatistic.cs" />
+    <Compile Include="resources\dlg\change_log_dialog.xaml.cs">
+      <DependentUpon>change_log_dialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="resources\dlg\about_dialog.xaml.cs">
       <DependentUpon>about_dialog.xaml</DependentUpon>
     </Compile>
@@ -221,6 +224,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Properties\DesignTimeResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="resources\dlg\change_log_dialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
