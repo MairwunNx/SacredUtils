@@ -63,6 +63,16 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        public static byte[] application {
+            get {
+                object obj = ResourceManager.GetObject("application", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         public static byte[] changelog {
             get {
                 object obj = ResourceManager.GetObject("changelog", resourceCulture);

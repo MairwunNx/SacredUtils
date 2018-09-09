@@ -125,6 +125,7 @@
     <Compile Include="resources\bin\GetLanguage.cs" />
     <Compile Include="resources\bin\GetLoggerConfig.cs" />
     <Compile Include="resources\bin\GetConfigurations.cs" />
+    <Compile Include="resources\bin\GetSettingsVersion.cs" />
     <Compile Include="resources\bin\GetStatistic.cs" />
     <Compile Include="resources\dlg\change_log_dialog.xaml.cs">
       <DependentUpon>change_log_dialog.xaml</DependentUpon>
@@ -362,6 +363,7 @@
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="resources\cfg\application.json" />
     <None Include="resources\cfg\firstinstall.json" />
     <None Include="resources\cfg\language.json" />
     <None Include="resources\opt\SacredBalanceDragonFix.bin" />
@@ -418,4 +420,5 @@
   </Target>
   <Import Project="..\packages\Costura.Fody.3.1.0\build\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.3.1.0\build\Costura.Fody.targets')" />
   <Import Project="..\packages\Fody.3.2.1\build\Fody.targets" Condition="Exists('..\packages\Fody.3.2.1\build\Fody.targets')" />
+  <ProjectExtensions />
 </Project>

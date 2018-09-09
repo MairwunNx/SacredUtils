@@ -17,21 +17,21 @@ namespace SacredUtils
 
                 GetAppFolders.Get();
 
+                new GetSettingsVersion().Get();
+
                 Task.Run(() => CreateThemeFiles.Create());
 
                 Task.Run(() => CreateLanguageFiles.Create());
-
-                new GetConfigurations().Get(); // В процессе.
 
                 Task.Run(() => new GetRequiredFiles().Get());
 
                 Task.Run(() => new GetStatistic().Get());
 
-                Task.Run(() => new GetAppSettings().Get());
+                //Task.Run(() => new GetAppSettings().Get());
 
                 base.OnStartup(e); // Launch OnStartup method in WPFSharp.Globalizer.
 
-                Task.Run(() => new GetLanguage().Get());
+                //Task.Run(() => new GetLanguage().Get());
             }
             catch (Exception exception)
             {
