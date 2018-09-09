@@ -115,6 +115,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="resources\bin\ApplicationInfo.cs" />
+    <Compile Include="resources\bin\CreateLanguageFiles.cs" />
     <Compile Include="resources\bin\CreateThemeFiles.cs" />
     <Compile Include="resources\bin\GetRequiredFiles.cs" />
     <Compile Include="resources\bin\GetAppFolders.cs" />

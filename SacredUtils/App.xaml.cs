@@ -17,7 +17,9 @@ namespace SacredUtils
 
                 GetAppFolders.Get();
 
-                CreateThemeFiles.Create();
+                Task.Run(() => CreateThemeFiles.Create());
+
+                Task.Run(() => CreateLanguageFiles.Create());
 
                 new GetConfigurations().Get(); // В процессе.
 
