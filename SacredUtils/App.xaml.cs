@@ -11,9 +11,9 @@ namespace SacredUtils
         {
             try
             {
-                new GetLoggerConfig().Get();
+                GetLoggerConfig.Get();
 
-                new GetGlobalizerLib().Get();
+                GetGlobalizerLib.Get();
 
                 new GetAppFolders().Get();
 
@@ -31,9 +31,13 @@ namespace SacredUtils
             }
             catch (Exception exception)
             {
-                GetLoggerConfig.Log.Fatal("There was a critical error of the program, sorry please, if the program could not start. Contact the Creator of the utility.");
+                GetLoggerConfig.Log.Fatal("There was a critical error of the program, sorry please, if the program could not start. Contact the Creator of the utility");
 
                 GetLoggerConfig.Log.Fatal(exception.ToString);
+
+                GetLoggerConfig.Log.Info("Shutting down SacredUtils configurator ...");
+
+                Current.Shutdown();
             }
         }
     }

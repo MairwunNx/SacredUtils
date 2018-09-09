@@ -4,15 +4,15 @@ using static SacredUtils.resources.bin.ApplicationInfo;
 
 namespace SacredUtils.resources.bin
 {
-    public class GetLoggerConfig
+    public static class GetLoggerConfig
     { 
-        public static Logger Log = LogManager.GetCurrentClassLogger();
+        public static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
-        public void Get()
+        public static void Get()
         {
-            var config = new NLog.Config.LoggingConfiguration();
+            NLog.Config.LoggingConfiguration config = new NLog.Config.LoggingConfiguration();
 
-            var logfile = new FileTarget("logfile")
+            FileTarget logfile = new FileTarget("logfile")
             {
                 FileName                     = "${basedir}/$SacredUtils/logs/latest.log",
                 ArchiveFileName              = "${basedir}/$SacredUtils/logs/${shortdate}.log.gz",
