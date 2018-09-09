@@ -1,22 +1,39 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Windows;
 
 namespace SacredUtils.resources.bin
 {
-    public class GetAppFolders
+    public static class GetAppFolders
     {
-        public void Get()
+        public static void Get()
         {
-            Directory.CreateDirectory("$SacredUtils");
-            Directory.CreateDirectory("$SacredUtils\\conf");
-            Directory.CreateDirectory("$SacredUtils\\lang");
-            Directory.CreateDirectory("$SacredUtils\\logs");
-            Directory.CreateDirectory("$SacredUtils\\temp");
-            Directory.CreateDirectory("$SacredUtils\\back");
-            Directory.CreateDirectory("$SacredUtils\\themes");
-            Directory.CreateDirectory("$SacredUtils\\lang\\ru-RU");
-            Directory.CreateDirectory("$SacredUtils\\lang\\en-US");
-            Directory.CreateDirectory("$SacredUtils\\themes\\dark");
-            Directory.CreateDirectory("$SacredUtils\\themes\\light");
+            try
+            {
+                GetLoggerConfig.Log.Info("Creating folders for SacredUtils files ...");
+
+                Directory.CreateDirectory("$SacredUtils");
+                Directory.CreateDirectory("$SacredUtils\\conf");
+                Directory.CreateDirectory("$SacredUtils\\lang");
+                Directory.CreateDirectory("$SacredUtils\\logs");
+                Directory.CreateDirectory("$SacredUtils\\temp");
+                Directory.CreateDirectory("$SacredUtils\\back");
+                Directory.CreateDirectory("$SacredUtils\\themes");
+                Directory.CreateDirectory("$SacredUtils\\lang\\ru-RU");
+                Directory.CreateDirectory("$SacredUtils\\lang\\en-US");
+
+                GetLoggerConfig.Log.Info("Creating folders for SacredUtils files done!");
+            }
+            catch (Exception exception)
+            {
+                GetLoggerConfig.Log.Fatal("There was a critical error of the program, sorry please, if the program could not start. Contact the Creator of the utility");
+
+                GetLoggerConfig.Log.Fatal(exception.ToString);
+
+                GetLoggerConfig.Log.Info("Shutting down SacredUtils configurator ...");
+
+                Application.Current.Shutdown();
+            }
         }
     }
 }

@@ -15,7 +15,7 @@ namespace SacredUtils
 
                 GetGlobalizerLib.Get();
 
-                new GetAppFolders().Get();
+                GetAppFolders.Get();
 
                 new GetConfigurations().Get(); // В процессе.
 
