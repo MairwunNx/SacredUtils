@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Windows;
 
 namespace SacredUtils.resources.bin
 {
@@ -32,7 +31,7 @@ namespace SacredUtils.resources.bin
 
                 GetLoggerConfig.Log.Info("Shutting down SacredUtils configurator ...");
 
-                Application.Current.Shutdown();
+                Environment.Exit(0);
             }
         }
     }

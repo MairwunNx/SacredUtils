@@ -17,9 +17,9 @@ namespace SacredUtils.resources.bin
         bool First { get; set; }
     }
     
-    public class GetStatistic
+    public static class GetStatistic
     {
-        public async void Get()
+        public static async void Get()
         {
             GetLoggerConfig.Log.Info("Checking availability first install settings");
 
@@ -37,15 +37,15 @@ namespace SacredUtils.resources.bin
             {
                 try
                 {
-                    FtpClient client = new FtpClient("145.14.145.124");
+                    FtpClient client = new FtpClient("145.14.144.87");
 
                     client.Credentials = new NetworkCredential("mairwunnxstatistic", "11317151PleaseNotChange");
 
-                    await Task.Run(() => client.Connect());
+                    await Task.Run(() => client.ConnectAsync());
 
                     await Task.Run(() => client.DownloadFileAsync("$SacredUtils\\conf\\statinfo.json", "/sacredutils/downloads.json"));
 
-                    await Task.Run(() => client.Disconnect());
+                    await Task.Run(() => client.DisconnectAsync());
 
                     GetLoggerConfig.Log.Info("Download statistic successfully downloaded!");
 
@@ -59,7 +59,7 @@ namespace SacredUtils.resources.bin
             }
         }
 
-        public void Add()
+        public static void Add()
         {
             try
             {
@@ -78,22 +78,22 @@ namespace SacredUtils.resources.bin
             Send();
         }
 
-        public async void Send()
+        public static async void Send()
         {
             IFirstInstall firstInstall = new ConfigurationBuilder<IFirstInstall>()
                 .UseJsonFile("$SacredUtils\\conf\\firstinstall.json").Build();
 
             try
             {
-                FtpClient client = new FtpClient("145.14.145.124");
+                FtpClient client = new FtpClient("145.14.144.87");
 
                 client.Credentials = new NetworkCredential("mairwunnxstatistic", "11317151PleaseNotChange");
 
-                await Task.Run(() => client.Connect());
+                await Task.Run(() => client.ConnectAsync());
 
                 await Task.Run(() => client.UploadFileAsync("$SacredUtils\\conf\\statinfo.json", "/sacredutils/downloads.json"));
 
-                await Task.Run(() => client.Disconnect());
+                await Task.Run(() => client.DisconnectAsync());
 
                 GetLoggerConfig.Log.Info("Upload statistic successfully done!");
 

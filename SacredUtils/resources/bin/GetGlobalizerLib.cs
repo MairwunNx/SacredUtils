@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using System.Windows;
 using static SacredUtils.resources.bin.ApplicationInfo;
 
 namespace SacredUtils.resources.bin
@@ -39,7 +38,7 @@ namespace SacredUtils.resources.bin
 
                     Process.Start(AppName);
 
-                    Application.Current.Shutdown();
+                    Environment.Exit(0);
                 }
                 catch (Exception exception)
                 {
@@ -49,7 +48,7 @@ namespace SacredUtils.resources.bin
 
                     GetLoggerConfig.Log.Info("Shutting down SacredUtils configurator ...");
 
-                    Application.Current.Shutdown();
+                    Environment.Exit(0);
                 }
             }
         }
@@ -68,7 +67,7 @@ namespace SacredUtils.resources.bin
 
                 Process.Start(AppName);
 
-                Application.Current.Shutdown();
+                Environment.Exit(0);
             }
             catch (Exception exception)
             {
@@ -78,7 +77,7 @@ namespace SacredUtils.resources.bin
 
                 GetLoggerConfig.Log.Info("Shutting down SacredUtils configurator ...");
 
-                Application.Current.Shutdown();
+                Environment.Exit(0);
             }
         }
     }

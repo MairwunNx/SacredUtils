@@ -13,19 +13,19 @@ namespace SacredUtils
             {
                 GetLoggerConfig.Get();
 
-                GetGlobalizerLib.Get(1);
-
                 GetAppFolders.Get();
 
-                new GetSettingsVersion().Get();
+                Task.Run(() => GetStatistic.Get());
 
                 Task.Run(() => CreateThemeFiles.Create());
 
                 Task.Run(() => CreateLanguageFiles.Create());
 
-                Task.Run(() => new GetRequiredFiles().Get());
+                GetGlobalizerLib.Get(1);
 
-                Task.Run(() => new GetStatistic().Get());
+                new GetSettingsVersion().Get();
+
+                Task.Run(() => new GetRequiredFiles().Get());
 
                 //Task.Run(() => new GetAppSettings().Get());
 
@@ -36,12 +36,13 @@ namespace SacredUtils
             catch (Exception exception)
             {
                 GetLoggerConfig.Log.Fatal("There was a critical error of the program, sorry please, if the program could not start. Contact the Creator of the utility");
+                GetLoggerConfig.Log.Fatal("Please contact MairwunNx, MairwunNx@gmail.com. May be it our problem. Sorry.");
 
                 GetLoggerConfig.Log.Fatal(exception.ToString);
 
                 GetLoggerConfig.Log.Info("Shutting down SacredUtils configurator ...");
 
-                Current.Shutdown();
+                Environment.Exit(0);
             }
         }
     }

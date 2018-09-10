@@ -1,10 +1,12 @@
 ﻿using Config.Net;
+using System;
 using System.IO;
 
 namespace SacredUtils.resources.bin
 {
     public class GetSettingsVersion
     {
+        private int _trynum = 0;
         private bool _acceptLicense;
         private bool _allowExperimentalScale;
         private bool _checkAutoAlphaUpdate;
@@ -65,13 +67,38 @@ namespace SacredUtils.resources.bin
 
             if (!File.Exists("$SacredUtils\\conf\\settings.json"))
             {
-                GetLoggerConfig.Log.Info("Creating application settings file in this folder ...");
+                while (_trynum < 10)
+                {
+                    try
+                    {
+                        GetLoggerConfig.Log.Info("Creating application settings file in this folder ...");
 
-                File.WriteAllBytes("$SacredUtils\\conf\\settings.json", Properties.Resources.settings);
+                        File.WriteAllBytes("$SacredUtils\\conf\\settings.json", Properties.Resources.settings);
 
-                GetLoggerConfig.Log.Info("Creating application settings file in this folder done!");
+                        GetLoggerConfig.Log.Info("Creating application settings file in this folder done!");
 
-                GetLoggerConfig.Log.Info("Creating license file in this folder ...");
+                        _trynum = 10;
+                    }
+                    catch (Exception exception)
+                    {
+                        if (_trynum == 10)
+                        {
+                            GetLoggerConfig.Log.Fatal(exception.ToString);
+                            GetLoggerConfig.Log.Fatal("Creating application settings file in this folder done with critical error!");
+                            GetLoggerConfig.Log.Fatal("Please contact MairwunNx, MairwunNx@gmail.com. May be it our problem. Sorry.");
+
+                            GetLoggerConfig.Log.Info("Shutting down SacredUtils configurator ...");
+
+                            Environment.Exit(0);
+                        }
+
+                        _trynum = + 1;
+
+                        GetLoggerConfig.Log.Fatal(exception.ToString);
+                        GetLoggerConfig.Log.Fatal("Creating application settings file in this folder done with critical error!");
+                        GetLoggerConfig.Log.Warn($"We try fix it problem or try again, attemp {_trynum} ...");
+                    }
+                }
             }
             else
             {
