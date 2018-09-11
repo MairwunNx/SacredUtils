@@ -9,5 +9,6 @@ namespace SacredUtils.resources.bin
         public static string Type    = "Alpha";
         public static string AppName = Assembly.GetExecutingAssembly().Location;
         public static string Lang    = "None";
+        public static string Connect = "None";
     }
 }

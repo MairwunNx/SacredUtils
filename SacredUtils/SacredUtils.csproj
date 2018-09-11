@@ -117,6 +117,7 @@
     <Compile Include="resources\bin\ApplicationInfo.cs" />
     <Compile Include="resources\bin\CreateLanguageFiles.cs" />
     <Compile Include="resources\bin\CreateThemeFiles.cs" />
+    <Compile Include="resources\bin\GetFtpBase64Pass.cs" />
     <Compile Include="resources\bin\GetRequiredFiles.cs" />
     <Compile Include="resources\bin\GetAppFolders.cs" />
     <Compile Include="resources\bin\GetAppSettings.cs" />
