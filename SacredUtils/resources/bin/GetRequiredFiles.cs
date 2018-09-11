@@ -10,9 +10,9 @@ namespace SacredUtils.resources.bin
         bool ConfigFileCreate { get; }
     }
 
-    public class GetRequiredFiles
+    public static class GetRequiredFiles
     {
-        public void Get()
+        public static void Get()
         {
             IReqiredFilesSettings reqiredFilesSettings = new ConfigurationBuilder<IReqiredFilesSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();

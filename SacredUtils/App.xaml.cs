@@ -25,13 +25,11 @@ namespace SacredUtils
 
                 new GetSettingsVersion().Get();
 
-                Task.Run(() => new GetRequiredFiles().Get());
+                Task.Run(() => GetLanguage.Get());
 
-                //Task.Run(() => new GetAppSettings().Get());
+                Task.Run(() => GetRequiredFiles.Get());
 
                 base.OnStartup(e); // Launch OnStartup method in WPFSharp.Globalizer.
-
-                //Task.Run(() => new GetLanguage().Get());
             }
             catch (Exception exception)
             {

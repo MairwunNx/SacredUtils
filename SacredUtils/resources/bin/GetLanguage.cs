@@ -7,26 +7,20 @@ namespace SacredUtils.resources.bin
 {
     public interface ILanguageSettings
     {
-        int ConfigVersion { get; set; }
         string Language { get; set; }
     }
 
-    public class GetLanguage
+    public static class GetLanguage
     {
-        public void Get()
+        public static void Get()
         {
-            string language;
-            
-            GetLoggerConfig.Log.Info("Checking availability language settings");
+            GetLoggerConfig.Log.Info("Checking availability language settings ...");
 
-            File.WriteAllBytes("$SacredUtils\\lang\\ru-RU\\ru-RU.xaml", Properties.Resources.ru_RU);
-            File.WriteAllBytes("$SacredUtils\\lang\\en-US\\en-US.xaml", Properties.Resources.en_US);
-
-            if (!File.Exists("$SacredUtils\\lang\\langinfo.json"))
+            if (!File.Exists("$SacredUtils\\conf\\langinfo.json"))
             {
-                GetLoggerConfig.Log.Warn("Language settings not found! Settings will be based on system");
+                GetLoggerConfig.Log.Warn("Language settings not found! Settings will be based on system!");
 
-                GetLoggerConfig.Log.Info("Getting default system language settings");
+                GetLoggerConfig.Log.Info("Getting default system language settings ...");
 
                 CultureInfo currentCulture = Thread.CurrentThread.CurrentCulture;
 
@@ -36,64 +30,43 @@ namespace SacredUtils.resources.bin
                     currentCulture.TwoLetterISOLanguageName == "ro" ||
                     currentCulture.TwoLetterISOLanguageName == "bg")
                 {
+                    File.WriteAllBytes("$SacredUtils\\conf\\langinfo.json", Properties.Resources.language);
+
+                    ILanguageSettings languageSettings = new ConfigurationBuilder<ILanguageSettings>()
+                        .UseJsonFile("$SacredUtils\\conf\\langinfo.json").Build();
+
                     ApplicationInfo.Lang = "ru";
+                    languageSettings.Language = "ru";
 
-//                    File.WriteAllBytes("$SacredUtils\\lang\\langinfo.json", Properties.Resources.langinfo_ru);
+                    GetLoggerConfig.Log.Info($"Language {ApplicationInfo.Lang} settings were created in conf folder");
 
-                    GetLoggerConfig.Log.Info("Language ru settings were created in conf folder");
-
-                    GetLoggerConfig.Log.Info($"Application starting with {ApplicationInfo.Lang} language");
+                    GetLoggerConfig.Log.Info($"Application starting with {ApplicationInfo.Lang} language ...");
                 }
                 else
                 {
-                    Directory.CreateDirectory("$SacredUtils\\lang\\en-US");
+                    File.WriteAllBytes("$SacredUtils\\conf\\langinfo.json", Properties.Resources.language);
+
+                    ILanguageSettings languageSettings = new ConfigurationBuilder<ILanguageSettings>()
+                        .UseJsonFile("$SacredUtils\\conf\\langinfo.json").Build();
 
                     ApplicationInfo.Lang = "en";
+                    languageSettings.Language = "en";
 
-//                    File.WriteAllBytes("$SacredUtils\\lang\\langinfo.json", Properties.Resources.langinfo_en);
+                    GetLoggerConfig.Log.Info($"Language {ApplicationInfo.Lang} settings were created in conf folder");
 
-                    GetLoggerConfig.Log.Info("Language en settings were created in conf folder");
-
-                    GetLoggerConfig.Log.Info($"Application starting with {ApplicationInfo.Lang} language");
+                    GetLoggerConfig.Log.Info($"Application starting with {ApplicationInfo.Lang} language ...");
                 }
             }
             else
             {
+                GetLoggerConfig.Log.Info("Language settings found! Settings will be based on settings!");
+
                 ILanguageSettings languageSettings = new ConfigurationBuilder<ILanguageSettings>()
-                    .UseJsonFile("$SacredUtils\\lang\\langinfo.json").Build();
+                    .UseJsonFile("$SacredUtils\\conf\\langinfo.json").Build();
 
-                GetLoggerConfig.Log.Info("Checking language config version");
+                ApplicationInfo.Lang = languageSettings.Language == "ru" ? "ru" : "en";
 
-                if (languageSettings.ConfigVersion < 1)
-                {
-                    GetLoggerConfig.Log.Warn("Language configuration is outdated!");
-
-                    language = languageSettings.Language;
-
-//                    File.WriteAllBytes("$SacredUtils\\lang\\langinfo.json", Properties.Resources.langinfo_en);
-
-                    ILanguageSettings languageSettingsRepair = new ConfigurationBuilder<ILanguageSettings>()
-                        .UseJsonFile("$SacredUtils\\lang\\langinfo.json").Build();
-
-                    languageSettingsRepair.Language = language;
-
-                    ApplicationInfo.Lang = languageSettingsRepair.Language == "ru" ? "ru" : "en";
-
-                    GetLoggerConfig.Log.Info("Language information configuration has been updated");
-
-                    GetLoggerConfig.Log.Info($"Application starting with {ApplicationInfo.Lang} language");
-                }
-                else
-                {
-                    GetLoggerConfig.Log.Info("Language configuration undamaged!");
-
-                    ILanguageSettings languageSettingsUpdated = new ConfigurationBuilder<ILanguageSettings>()
-                        .UseJsonFile("$SacredUtils\\lang\\langinfo.json").Build();
-
-                    ApplicationInfo.Lang = languageSettingsUpdated.Language == "ru" ? "ru" : "en";
-
-                    GetLoggerConfig.Log.Info($"Application starting with {ApplicationInfo.Lang} language");
-                }
+                GetLoggerConfig.Log.Info($"Application starting with {ApplicationInfo.Lang} language ...");
             }
         }
     }
