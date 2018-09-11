@@ -33,11 +33,14 @@ namespace SacredUtils.resources.bin
             IFirstInstall firstInstall = new ConfigurationBuilder<IFirstInstall>()
                 .UseJsonFile("$SacredUtils\\conf\\firstinstall.json").Build();
 
+            GetLoggerConfig.Log.Info(firstInstall.First);
+
+
             if (firstInstall.First)
             {
                 try
                 {
-                    FtpClient client = new FtpClient("145.14.144.87");
+                    FtpClient client = new FtpClient("files.000webhost.com");
 
                     client.Credentials = new NetworkCredential("mairwunnxstatistic", "11317151PleaseNotChange");
 
