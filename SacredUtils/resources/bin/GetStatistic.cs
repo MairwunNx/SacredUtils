@@ -115,9 +115,13 @@ namespace SacredUtils.resources.bin
 
                 await Task.Run(() => client.UploadFileAsync("$SacredUtils\\conf\\statinfo.json", "/sacredutils/downloads.json"));
 
+                GetLoggerConfig.Log.Info("Uploading statistic successfully done!");
+
+                GetLoggerConfig.Log.Info("Disconnecting of Ftp statistics server ...");
+
                 await Task.Run(() => client.DisconnectAsync());
 
-                GetLoggerConfig.Log.Info("Uploading statistic successfully done!");
+                GetLoggerConfig.Log.Info("Disconnecting of Ftp statistics server done!");
 
                 firstInstall.First = false;
             }
