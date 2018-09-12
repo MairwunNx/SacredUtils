@@ -69,7 +69,13 @@ namespace SacredUtils.resources.bin
             var configload     = Configuration.LoadFromFile("$SacredUtils\\temp\\~Settings.cfg");
             var section        = configload["General"];
 
-            int someString     = section["EXPLOREMAP"].IntValue;
+
+
+            string someSs = section["sss"].GetValueOrDefault("s");
+
+            bool someString1а = section["TEST1"].GetValueOrDefault(false);
+
+            int someString = section["EXPLOREMAP"].IntValue;
             string someString1 = section["GFXSTARTUP"].StringValue;
 
 //            tglbtn.IsChecked = someString == 1;
