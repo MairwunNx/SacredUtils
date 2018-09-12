@@ -6,7 +6,7 @@ namespace SacredUtils.resources.bin
 {
     public class GetSettingsVersion
     {
-        private int _trynum = 0;
+        private int _trynum;
         private bool _acceptLicense;
         private bool _allowExperimentalScale;
         private bool _checkAutoAlphaUpdate;

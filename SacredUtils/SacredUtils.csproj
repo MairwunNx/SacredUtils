@@ -120,7 +120,6 @@
     <Compile Include="resources\bin\GetFtpBase64Pass.cs" />
     <Compile Include="resources\bin\GetRequiredFiles.cs" />
     <Compile Include="resources\bin\GetAppFolders.cs" />
-    <Compile Include="resources\bin\GetAppSettings.cs" />
     <Compile Include="resources\bin\GetGameSettings.cs" />
     <Compile Include="resources\bin\GetGlobalizerLib.cs" />
     <Compile Include="resources\bin\GetLanguage.cs" />

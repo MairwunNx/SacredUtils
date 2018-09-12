@@ -1,5 +1,5 @@
-﻿using System.IO;
-using Config.Net;
+﻿using Config.Net;
+using System.IO;
 
 namespace SacredUtils.resources.bin
 {

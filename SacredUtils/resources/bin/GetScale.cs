@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media;
-using Config.Net;
+﻿using Config.Net;
 
 namespace SacredUtils.resources.bin
 {
     public interface IScaleSettings
     {
-        double SacredUtilsGuiScale { get; set; }
+        double SacredUtilsGuiScale { get; }
     }
 
     public static class GetScale

@@ -5,7 +5,7 @@ namespace SacredUtils.resources.bin
 {
     public interface IThemeSettings
     {
-        string ColorTheme { get; set; }
+        string ColorTheme { get; }
     }
 
     public static class GetTheme
