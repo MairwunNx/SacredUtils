@@ -126,8 +126,10 @@
     <Compile Include="resources\bin\GetLanguage.cs" />
     <Compile Include="resources\bin\GetLoggerConfig.cs" />
     <Compile Include="resources\bin\GetConfigurations.cs" />
+    <Compile Include="resources\bin\GetScale.cs" />
     <Compile Include="resources\bin\GetSettingsVersion.cs" />
     <Compile Include="resources\bin\GetStatistic.cs" />
+    <Compile Include="resources\bin\GetTheme.cs" />
     <Compile Include="resources\dlg\change_log_dialog.xaml.cs">
       <DependentUpon>change_log_dialog.xaml</DependentUpon>
     </Compile>

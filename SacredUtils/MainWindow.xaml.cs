@@ -27,18 +27,38 @@ namespace SacredUtils
 {
     public partial class MainWindow
     {
+        application_settings_one appStgOne = new application_settings_one();
+        chat_settings_one chatStgOne = new chat_settings_one();
+        font_settings_one fontStgOne = new font_settings_one();
+        gameplay_settings_one gameplayStgOne = new gameplay_settings_one();
+        graphics_settings_one graphicsStgOne = new graphics_settings_one();
+        modify_settings_one modifyStgOne = new modify_settings_one();
+        sound_settings_one soundStgOne = new sound_settings_one();
+        unselected_settings_one unselectedStgOne = new unselected_settings_one();
+
         public MainWindow()
         {
+            GetLoggerConfig.Log.Info("*** Initializing SacredUtils components ...");
+
             InitializeComponent();
-            
-            application_settings_one appStgOne       = new application_settings_one();
-            chat_settings_one chatStgOne             = new chat_settings_one();
-            font_settings_one fontStgOne             = new font_settings_one();
-            gameplay_settings_one gameplayStgOne     = new gameplay_settings_one();
-            graphics_settings_one graphicsStgOne     = new graphics_settings_one();
-            modify_settings_one modifyStgOne         = new modify_settings_one();
-            sound_settings_one soundStgOne           = new sound_settings_one();
-            unselected_settings_one unselectedStgOne = new unselected_settings_one();
+
+            EventSubscribe();
+
+            GetLoggerConfig.Log.Info("Initializing SacredUtils components done!");
+
+            GetLanguage();
+
+            GetTheme();
+
+            GetScale();
+
+            SelectSettings(unselectedStgOne, MenuGpLabel);
+
+        }
+
+        private void EventSubscribe()
+        {
+            GetLoggerConfig.Log.Info("Adding events subscribes on buttons ...");
 
             MenuGrLabel.Click += (s, e) => SelectSettings(graphicsStgOne, GraphicsPanel);
             MenuSnLabel.Click += (s, e) => SelectSettings(soundStgOne, SoundPanel);
@@ -53,28 +73,18 @@ namespace SacredUtils
 
             HeaderPanel.MouseDown += DragWindow;
 
-            SelectSettings(unselectedStgOne, MenuGpLabel);
+            Loaded += (sender, args) => GetLoggerConfig.Log.Info("Loading SacredUtils application fully done!");
 
-//            Height = Height * 1.3;
-//            Width = Width * 1.3;
-//            BaseCard.LayoutTransform = new ScaleTransform(1.3, 1.3);
-
-
-            GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
-            (ApplicationInfo.Lang == "ru" ? "ru-RU" : "en-US", true);
-
-            GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage("ru-RU", true);
-
-            GlobalizedApplication.Instance.StyleManager.SwitchStyle("Light.xaml");
-
+            GetLoggerConfig.Log.Info("Adding events subscribes on buttons done!");
         }
 
-        public void DragWindow(object sender, MouseButtonEventArgs e)
+
+        private void DragWindow(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left) { DragMove(); }
         }
 
-        public void SelectSettings(UIElement element, object sender)
+        private void SelectSettings(UIElement element, object sender)
         {
             SettingsFrame.Content = element;
 
@@ -82,6 +92,8 @@ namespace SacredUtils
 
             if (sender.Equals(s) && s != null)
             {
+                GetLoggerConfig.Log.Info($"Selected settings category {s.Name} by user");
+
                 foreach (StackPanel sp in SettingsGrid.Children.OfType<StackPanel>())
                 {
                     sp.SetResourceReference(BackgroundProperty, "CategoryNotActiveColorBrush");
@@ -91,11 +103,23 @@ namespace SacredUtils
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private static void GetLanguage()
         {
-            //            ErrorDialog.Visibility = Visibility.Visible;
-            //            ErrorDialog.IsOpen = true;
-            //GlobalizedApplication.Instance.StyleManager.SwitchStyle("Dark.xaml");
+            GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
+                (ApplicationInfo.Lang == "ru" ? "ru-RU" : "en-US", true);
+        }
+
+        private static void GetTheme()
+        {
+            GlobalizedApplication.Instance.StyleManager.SwitchStyle
+            (ApplicationInfo.Theme == "light" ? "Light.xaml" : "Dark.xaml");
+        }
+
+        private void GetScale()
+        {
+            Height = Height * ApplicationInfo.Scale;
+            Width = Width * ApplicationInfo.Scale;
+            BaseCard.LayoutTransform = new ScaleTransform(ApplicationInfo.Scale, ApplicationInfo.Scale);
         }
     }
 }
