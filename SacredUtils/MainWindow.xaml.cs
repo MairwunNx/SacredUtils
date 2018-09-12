@@ -1,72 +1,47 @@
-﻿using System;
-using System.ComponentModel;
-using System.Globalization;
-using System.IO;
+﻿using SacredUtils.resources.bin;
+using SacredUtils.resources.pgs;
 using System.Linq;
-using System.Net;
-using System.Reflection;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
-using Castle.Core.Logging;
-using MaterialDesignThemes.Wpf;
-using NLog;
-using NLog.Targets;
-using SacredUtils.resources.bin;
-using SacredUtils.resources.dlg;
-using SacredUtils.resources.pgs;
-using SharpConfig;
 using WPFSharp.Globalizer;
 
 namespace SacredUtils
 {
     public partial class MainWindow
     {
-        application_settings_one appStgOne = new application_settings_one();
-        chat_settings_one chatStgOne = new chat_settings_one();
-        font_settings_one fontStgOne = new font_settings_one();
-        gameplay_settings_one gameplayStgOne = new gameplay_settings_one();
-        graphics_settings_one graphicsStgOne = new graphics_settings_one();
-        modify_settings_one modifyStgOne = new modify_settings_one();
-        sound_settings_one soundStgOne = new sound_settings_one();
-        unselected_settings_one unselectedStgOne = new unselected_settings_one();
+        application_settings_one _appStgOne       = new application_settings_one();
+        chat_settings_one _chatStgOne             = new chat_settings_one();
+        font_settings_one _fontStgOne             = new font_settings_one();
+        gameplay_settings_one _gameplayStgOne     = new gameplay_settings_one();
+        graphics_settings_one _graphicsStgOne     = new graphics_settings_one();
+        modify_settings_one _modifyStgOne         = new modify_settings_one();
+        sound_settings_one _soundStgOne           = new sound_settings_one();
+        unselected_settings_one _unselectedStgOne = new unselected_settings_one();
 
         public MainWindow()
         {
             GetLoggerConfig.Log.Info("*** Initializing SacredUtils components ...");
 
-            InitializeComponent();
-
-            EventSubscribe();
+            InitializeComponent(); EventSubscribe(); GetLanguage(); GetScale();
 
             GetLoggerConfig.Log.Info("Initializing SacredUtils components done!");
 
-            GetLanguage();
-
-            GetTheme();
-
-            GetScale();
-
-            SelectSettings(unselectedStgOne, MenuGpLabel);
-
+            SelectSettings(_unselectedStgOne, MenuGpLabel);
         }
 
         private void EventSubscribe()
         {
             GetLoggerConfig.Log.Info("Adding events subscribes on buttons ...");
 
-            MenuGrLabel.Click += (s, e) => SelectSettings(graphicsStgOne, GraphicsPanel);
-            MenuSnLabel.Click += (s, e) => SelectSettings(soundStgOne, SoundPanel);
-            MenuGpLabel.Click += (s, e) => SelectSettings(gameplayStgOne, GameplayPanel);
-            MenuCtLabel.Click += (s, e) => SelectSettings(chatStgOne, ChatPanel);
-            MenuFtLabel.Click += (s, e) => SelectSettings(fontStgOne, FontsPanel);
-            MenuMdLabel.Click += (s, e) => SelectSettings(modifyStgOne, ModifPanel);
-            MenuStLabel.Click += (s, e) => SelectSettings(appStgOne, SettingsPanel);
+            MenuGrLabel.Click += (s, e) => SelectSettings(_graphicsStgOne, GraphicsPanel);
+            MenuSnLabel.Click += (s, e) => SelectSettings(_soundStgOne, SoundPanel);
+            MenuGpLabel.Click += (s, e) => SelectSettings(_gameplayStgOne, GameplayPanel);
+            MenuCtLabel.Click += (s, e) => SelectSettings(_chatStgOne, ChatPanel);
+            MenuFtLabel.Click += (s, e) => SelectSettings(_fontStgOne, FontsPanel);
+            MenuMdLabel.Click += (s, e) => SelectSettings(_modifyStgOne, ModifPanel);
+            MenuStLabel.Click += (s, e) => SelectSettings(_appStgOne, SettingsPanel);
 
             CloseBtn.Click += (s, e) => Application.Current.Shutdown();
             MinimizeBtn.Click += (s, e) => WindowState = WindowState.Minimized;
@@ -77,7 +52,6 @@ namespace SacredUtils
 
             GetLoggerConfig.Log.Info("Adding events subscribes on buttons done!");
         }
-
 
         private void DragWindow(object sender, MouseButtonEventArgs e)
         {
@@ -103,16 +77,10 @@ namespace SacredUtils
             }
         }
 
-        private static void GetLanguage()
+        private void GetLanguage()
         {
             GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
                 (ApplicationInfo.Lang == "ru" ? "ru-RU" : "en-US", true);
-        }
-
-        private static void GetTheme()
-        {
-            GlobalizedApplication.Instance.StyleManager.SwitchStyle
-            (ApplicationInfo.Theme == "light" ? "Light.xaml" : "Dark.xaml");
         }
 
         private void GetScale()
