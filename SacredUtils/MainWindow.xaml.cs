@@ -29,6 +29,8 @@ namespace SacredUtils
             GetLoggerConfig.Log.Info("Initializing SacredUtils components done!");
 
             SelectSettings(_unselectedStgOne, MenuGpLabel);
+
+
         }
 
         private void EventSubscribe()
@@ -58,8 +60,10 @@ namespace SacredUtils
             if (e.ChangedButton == MouseButton.Left) { DragMove(); }
         }
 
-        private void SelectSettings(UIElement element, object sender)
+        public void SelectSettings(UIElement element, object sender)
         {
+            _appStgOne.GetSettings();
+
             SettingsFrame.Content = element;
 
             StackPanel s = sender as StackPanel;
@@ -88,6 +92,14 @@ namespace SacredUtils
             Height = Height * ApplicationInfo.Scale;
             Width = Width * ApplicationInfo.Scale;
             BaseCard.LayoutTransform = new ScaleTransform(ApplicationInfo.Scale, ApplicationInfo.Scale);
+        }
+
+        private void BaseWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Shift && e.Key == Key.F5)
+            {
+                _appStgOne.GetSettings();
+            }
         }
     }
 }

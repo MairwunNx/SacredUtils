@@ -69,7 +69,7 @@ namespace SacredUtils.resources.bin
             var configload     = Configuration.LoadFromFile("$SacredUtils\\temp\\~Settings.cfg");
             var section        = configload["General"];
 
-
+            section.Add("s", "test");
 
             string someSs = section["sss"].GetValueOrDefault("s");
 

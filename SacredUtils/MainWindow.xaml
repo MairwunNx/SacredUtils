@@ -13,6 +13,7 @@
     AllowsTransparency="True"
     Background="{x:Null}"
     Icon="resources/ico/icons8_Gas.ico"
+    KeyDown="BaseWindow_KeyDown"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
