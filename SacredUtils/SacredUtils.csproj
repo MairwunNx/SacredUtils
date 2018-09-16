@@ -158,6 +158,9 @@
     <Compile Include="resources\dlg\nearly_restored_dialog.xaml.cs">
       <DependentUpon>nearly_restored_dialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="resources\dlg\restart_reqired.xaml.cs">
+      <DependentUpon>restart_reqired.xaml</DependentUpon>
+    </Compile>
     <Compile Include="resources\dlg\restoring_components_dialog.xaml.cs">
       <DependentUpon>restoring_components_dialog.xaml</DependentUpon>
     </Compile>
@@ -268,6 +271,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="resources\dlg\nearly_restored_dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\dlg\restart_reqired.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

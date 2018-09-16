@@ -130,18 +130,13 @@
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}">
                     <ComboBoxItem Content="100%" />
+                    <ComboBoxItem Content="105%" />
+                    <ComboBoxItem Content="110%" />
+                    <ComboBoxItem Content="115%" />
                     <ComboBoxItem Content="125%" />
                     <ComboBoxItem Content="150%" />
                     <ComboBoxItem Content="175%" />
                     <ComboBoxItem Content="200%" />
-                    <ComboBoxItem Content="225%" />
-                    <ComboBoxItem Content="250%" />
-                    <ComboBoxItem Content="275%" />
-                    <ComboBoxItem Content="300%" />
-                    <ComboBoxItem Content="325%" />
-                    <ComboBoxItem Content="350%" />
-                    <ComboBoxItem Content="375%" />
-                    <ComboBoxItem Content="400%" />
                 </ComboBox>
             </Grid>
         </Border>

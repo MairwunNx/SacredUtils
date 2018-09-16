@@ -170,7 +170,7 @@
 
     <!--  About SacredUtils dialog  -->
     <sys:String x:Key="String0130">О SacredUtils</sys:String>
-    <sys:String x:Key="String0131">Версия 1.2.4.0.2008A1 (Официальная сборка)</sys:String>
+    <sys:String x:Key="String0131">Версия 1.2.4.0.1609A1 (Официальная сборка)</sys:String>
 
     <!--  AlmostSuccess check dialog  -->
     <sys:String x:Key="String0132">Восстановление компонентов</sys:String>
