@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using Config.Net;
 using WPFSharp.Globalizer;
 
 namespace SacredUtils
@@ -29,8 +30,6 @@ namespace SacredUtils
             GetLoggerConfig.Log.Info("Initializing SacredUtils components done!");
 
             SelectSettings(_unselectedStgOne, MenuGpLabel);
-
-
         }
 
         private void EventSubscribe()
@@ -62,8 +61,6 @@ namespace SacredUtils
 
         public void SelectSettings(UIElement element, object sender)
         {
-            _appStgOne.GetSettings();
-
             SettingsFrame.Content = element;
 
             StackPanel s = sender as StackPanel;
@@ -71,6 +68,8 @@ namespace SacredUtils
             if (sender.Equals(s) && s != null)
             {
                 GetLoggerConfig.Log.Info($"Selected settings category {s.Name} by user");
+
+                _appStgOne.GetSettings();
 
                 foreach (StackPanel sp in SettingsGrid.Children.OfType<StackPanel>())
                 {
@@ -87,7 +86,7 @@ namespace SacredUtils
                 (ApplicationInfo.Lang == "ru" ? "ru-RU" : "en-US", true);
         }
 
-        private void GetScale()
+        public void GetScale()
         {
             Height = Height * ApplicationInfo.Scale;
             Width = Width * ApplicationInfo.Scale;

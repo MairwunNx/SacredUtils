@@ -205,4 +205,8 @@
     <!--  Change log dialog  -->
     <sys:String x:Key="String0146">Список изменений</sys:String>
 
+    <!--  Restart required dialog  -->
+    <sys:String x:Key="String0147">Предупреждение</sys:String>
+    <sys:String x:Key="String0148">Для изменения настроек нужна перезагрузка!</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>
