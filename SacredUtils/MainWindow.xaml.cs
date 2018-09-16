@@ -114,7 +114,10 @@ namespace SacredUtils
 
         private void BaseWindow_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.F5) { _appStgOne.GetSettings(); }
+            if (e.Key == Key.F5)
+            {
+                _appStgOne.GetSettings(); _appStgTwo.GetSettings();
+            }
         }
     }
 }
