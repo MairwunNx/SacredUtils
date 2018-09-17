@@ -1,4 +1,5 @@
-﻿using Config.Net;
+﻿using System;
+using Config.Net;
 using SacredUtils.resources.bin.etc;
 using SacredUtils.resources.bin.get;
 using SacredUtils.resources.pgs;
@@ -47,7 +48,7 @@ namespace SacredUtils
             MenuMdLabel.Click += (s, e) => SelectSettings(_modifyStgOne, ModifPanel);
             MenuStLabel.Click += (s, e) => SelectSettings(_appStgOne, SettingsPanel);
 
-            CloseBtn.Click += (s, e) => Application.Current.Shutdown();
+            CloseBtn.Click += (s, e) => Shutdown();
             MinimizeBtn.Click += (s, e) => WindowState = WindowState.Minimized;
 
             HeaderPanel.MouseDown += DragWindow;
@@ -55,6 +56,14 @@ namespace SacredUtils
             Loaded += (sender, args) => GetLoggerConfig.Log.Info("Loading SacredUtils application fully done!");
 
             GetLoggerConfig.Log.Info("Adding events subscribes on buttons done!");
+        }
+
+        public void Shutdown()
+        {
+            Application.Current.Shutdown();
+
+            GetLoggerConfig.Log.Info("Thanks for using SacredUtils! Created by MairwunNx");
+            GetLoggerConfig.Log.Info("Shutting down SacredUtils ...");
         }
 
         private void DragWindow(object sender, MouseButtonEventArgs e)
