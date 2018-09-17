@@ -29,7 +29,7 @@ namespace SacredUtils.resources.pgs
         {
             GetLoggerConfig.Log.Info("Gettings settings for application settings one ...");
 
-            InitializeComponent(); GetSettings(); EventSubscribe();
+            InitializeComponent();
 
             GetLoggerConfig.Log.Info("Gettings settings for application settings one done!");
         }

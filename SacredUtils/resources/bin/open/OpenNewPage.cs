@@ -1,5 +1,5 @@
-﻿using SacredUtils.resources.bin.get;
-using SacredUtils.resources.pgs;
+﻿using System;
+using SacredUtils.resources.bin.get;
 using System.Windows;
 
 namespace SacredUtils.resources.bin.open
@@ -8,30 +8,41 @@ namespace SacredUtils.resources.bin.open
     {
         public static void Open(string settings)
         {
-            application_settings_one appStgOne = new application_settings_one();
-            application_settings_two appStgTwo = new application_settings_two();
-
             if (settings == "AppSettingsOne")
             {
-                foreach (Window window in Application.Current.Windows)
+                try
                 {
-                    ((MainWindow)window).SettingsFrame.Content = appStgOne;
-                    ((MainWindow)window)._appStgOne.GetSettings();
-                    ((MainWindow)window)._appStgOne._nums = 1;
-                    ((MainWindow)window)._appStgOne.EventSubscribe();
+                    foreach (Window window in Application.Current.Windows)
+                    {
+                        ((MainWindow)window).SettingsFrame.Content = ((MainWindow)window)._appStgOne;
+                        ((MainWindow)window)._appStgOne.GetSettings();
 
-                    GetLoggerConfig.Log.Info("Application settings one page was opened by user");
+                        GetLoggerConfig.Log.Info("Application settings one page was opened by user");
+                    }
+                }
+                catch (Exception e)
+                {
+                    GetLoggerConfig.Log.Error("An error occurred while user opened aso page");
+                    GetLoggerConfig.Log.Error(e.ToString);
                 }
             }
 
             if (settings == "AppSettingsTwo")
             {
-                foreach (Window window in Application.Current.Windows)
+                try
                 {
-                    ((MainWindow)window).SettingsFrame.Content = appStgTwo;
-                    ((MainWindow)window)._appStgTwo.GetSettings();
+                    foreach (Window window in Application.Current.Windows)
+                    {
+                        ((MainWindow)window).SettingsFrame.Content = ((MainWindow)window)._appStgTwo;
+                        ((MainWindow)window)._appStgTwo.GetSettings();
 
-                    GetLoggerConfig.Log.Info("Application settings two page was opened by user");
+                        GetLoggerConfig.Log.Info("Application settings two page was opened by user");
+                    }
+                }
+                catch (Exception e)
+                {
+                    GetLoggerConfig.Log.Error("An error occurred while user opened ast page");
+                    GetLoggerConfig.Log.Error(e.ToString);
                 }
             }
         }

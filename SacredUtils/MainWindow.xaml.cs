@@ -1,5 +1,4 @@
-﻿using System;
-using Config.Net;
+﻿using Config.Net;
 using SacredUtils.resources.bin.etc;
 using SacredUtils.resources.bin.get;
 using SacredUtils.resources.pgs;
@@ -60,10 +59,10 @@ namespace SacredUtils
 
         public void Shutdown()
         {
-            Application.Current.Shutdown();
-
-            GetLoggerConfig.Log.Info("Thanks for using SacredUtils! Created by MairwunNx");
+            GetLoggerConfig.Log.Info("*** Thanks for using SacredUtils! Created by MairwunNx");
             GetLoggerConfig.Log.Info("Shutting down SacredUtils ...");
+
+            Application.Current.Shutdown();
         }
 
         private void DragWindow(object sender, MouseButtonEventArgs e)
@@ -89,6 +88,14 @@ namespace SacredUtils
                 }
 
                 s.SetResourceReference(BackgroundProperty, "CategoryActiveColorBrush");
+            }
+        }
+
+        private void BaseWindow_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F5)
+            {
+                _appStgOne.GetSettings(); _appStgTwo.GetSettings();
             }
         }
 
@@ -118,14 +125,6 @@ namespace SacredUtils
 
             applicationSettings.SacredUtilsGuiScale =
                 $"{ApplicationInfo.Scale.ToString(CultureInfo.InvariantCulture).Replace(",", ".")}";
-        }
-
-        private void BaseWindow_PreviewKeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.F5)
-            {
-                _appStgOne.GetSettings(); _appStgTwo.GetSettings();
-            }
         }
     }
 }

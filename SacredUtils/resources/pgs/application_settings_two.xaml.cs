@@ -19,7 +19,7 @@ namespace SacredUtils.resources.pgs
         {
             GetLoggerConfig.Log.Info("Gettings settings for application settings two ...");
 
-            InitializeComponent(); GetSettings(); EventSubscribe();
+            InitializeComponent();
 
             GetLoggerConfig.Log.Info("Gettings settings for application settings two done!");
         }
@@ -42,7 +42,7 @@ namespace SacredUtils.resources.pgs
 
         public void GetSettings()
         {
-            
+            EventSubscribe();
         }
     }
 }
