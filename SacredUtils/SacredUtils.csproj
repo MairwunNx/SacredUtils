@@ -115,6 +115,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="resources\bin\change\ChangeAppScale.cs" />
     <Compile Include="resources\bin\etc\ApplicationInfo.cs" />
     <Compile Include="resources\bin\create\CreateLanguageFiles.cs" />
     <Compile Include="resources\bin\create\CreateThemeFiles.cs" />

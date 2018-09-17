@@ -3,6 +3,7 @@ using SacredUtils.resources.bin.get;
 using SacredUtils.resources.bin.open;
 using System;
 using System.Windows;
+using SacredUtils.resources.bin.change;
 using SacredUtils.resources.bin.etc;
 using WPFSharp.Globalizer;
 
@@ -154,40 +155,53 @@ namespace SacredUtils.resources.pgs
 
         private void ChangeScale()
         {
-            switch (UiScaleCmbBox.SelectedIndex)
+            if (UiScaleCmbBox.SelectedIndex == 0)
             {
-                case 0:
-                    ApplicationInfo.Scale = 1.0;
-                    GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
-                    break;
-                case 1:
-                    ApplicationInfo.Scale = 1.05;
-                    GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
-                    break;
-                case 2:
-                    ApplicationInfo.Scale = 1.10;
-                    GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
-                    break;
-                case 3:
-                    ApplicationInfo.Scale = 1.15;
-                    GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
-                    break;
-                case 4:
-                    ApplicationInfo.Scale = 1.25;
-                    GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
-                    break;
-                case 5:
-                    ApplicationInfo.Scale = 1.50;
-                    GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
-                    break;
-                case 6:
-                    ApplicationInfo.Scale = 1.75;
-                    GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
-                    break;
-                case 7:
-                    ApplicationInfo.Scale = 2.0;
-                    GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
-                    break;
+                ApplicationInfo.Scale = 1.0;
+                ChangeAppScale.Change();
+                GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
+            }
+            else if (UiScaleCmbBox.SelectedIndex == 1)
+            {
+                ApplicationInfo.Scale = 1.05;
+                ChangeAppScale.Change();
+                GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
+            }
+            else if (UiScaleCmbBox.SelectedIndex == 2)
+            {
+                ApplicationInfo.Scale = 1.10;
+                ChangeAppScale.Change();
+                GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
+            }
+            else if (UiScaleCmbBox.SelectedIndex == 3)
+            {
+                ApplicationInfo.Scale = 1.15;
+                ChangeAppScale.Change();
+                GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
+            }
+            else if (UiScaleCmbBox.SelectedIndex == 4)
+            {
+                ApplicationInfo.Scale = 1.25;
+                ChangeAppScale.Change();
+                GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
+            }
+            else if (UiScaleCmbBox.SelectedIndex == 5)
+            {
+                ApplicationInfo.Scale = 1.50;
+                ChangeAppScale.Change();
+                GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
+            }
+            else if (UiScaleCmbBox.SelectedIndex == 6)
+            {
+                ApplicationInfo.Scale = 1.75;
+                ChangeAppScale.Change();
+                GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
+            }
+            else if (UiScaleCmbBox.SelectedIndex == 7)
+            {
+                ApplicationInfo.Scale = 2.0;
+                ChangeAppScale.Change();
+                GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
             }
         }
     }

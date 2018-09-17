@@ -110,21 +110,6 @@ namespace SacredUtils
             Height = Height * ApplicationInfo.Scale;
             Width = Width * ApplicationInfo.Scale;
             BaseCard.LayoutTransform = new ScaleTransform(ApplicationInfo.Scale, ApplicationInfo.Scale);
-
-            _appStgOne.UiScaleCmbBox.SelectionChanged += (s, e) => ChangeScale();
-        }
-
-        public void ChangeScale()
-        {
-            Height = 720 * ApplicationInfo.Scale;
-            Width = 1086 * ApplicationInfo.Scale;
-            BaseCard.LayoutTransform = new ScaleTransform(ApplicationInfo.Scale, ApplicationInfo.Scale);
-
-            IApplicationSettings applicationSettings = new ConfigurationBuilder<IApplicationSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
-            applicationSettings.SacredUtilsGuiScale =
-                $"{ApplicationInfo.Scale.ToString(CultureInfo.InvariantCulture).Replace(",", ".")}";
         }
     }
 }
