@@ -1,8 +1,9 @@
 ﻿using NLog;
 using NLog.Targets;
-using static SacredUtils.resources.bin.ApplicationInfo;
+using System.Text;
+using static SacredUtils.resources.bin.etc.ApplicationInfo;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.resources.bin.get
 {
     public static class GetLoggerConfig
     { 
@@ -19,9 +20,10 @@ namespace SacredUtils.resources.bin
                 Layout                       = "[${longdate}] [${threadid}/${uppercase:${level}}]: ${message}",
                 ArchiveOldFileOnStartup      = true,
                 EnableArchiveFileCompression = true,
+                Encoding                     = Encoding.UTF8,
                 MaxArchiveFiles              = 10
             };
-
+            
             config.AddRule(LogLevel.Info, LogLevel.Fatal, logfile);
 
             LogManager.Configuration = config;

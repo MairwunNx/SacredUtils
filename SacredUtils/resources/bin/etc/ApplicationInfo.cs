@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.resources.bin.etc
 {
     public static class ApplicationInfo
     {

@@ -1,11 +1,12 @@
 ﻿using Config.Net;
 using FluentFTP;
+using SacredUtils.resources.bin.etc;
 using System;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.resources.bin.get
 {
     public interface IDownloadCount
     {

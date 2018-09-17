@@ -1,7 +1,8 @@
 ﻿using System;
 using System.IO;
+using SacredUtils.resources.bin.get;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.resources.bin.create
 {
     public static class CreateThemeFiles
     {

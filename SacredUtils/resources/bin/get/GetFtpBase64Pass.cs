@@ -1,7 +1,8 @@
-﻿using System;
+﻿using SacredUtils.resources.bin.etc;
+using System;
 using System.Text;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.resources.bin.get
 {
     public static class GetFtpBase64Pass
     {

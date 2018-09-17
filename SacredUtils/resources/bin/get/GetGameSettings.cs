@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using SharpConfig;
+using System;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using SharpConfig;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.resources.bin.get
 {
     public class GetGameSettings
     {

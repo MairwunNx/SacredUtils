@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using static SacredUtils.resources.bin.ApplicationInfo;
+using static SacredUtils.resources.bin.etc.ApplicationInfo;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.resources.bin.get
 {
     public static class GetGlobalizerLib
     {

@@ -1,6 +1,7 @@
 ﻿using Config.Net;
+using SacredUtils.resources.bin.etc;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.resources.bin.get
 {
     public interface IScaleSettings
     {
@@ -20,7 +21,7 @@ namespace SacredUtils.resources.bin
 
             GetLoggerConfig.Log.Info("Getting application gui scale done!");
 
-            GetLoggerConfig.Log.Info($"Application starting with {ApplicationInfo.Scale} gui scale ...");
+            GetLoggerConfig.Log.Info($"Application starting with {ApplicationInfo.Scale} gui scale");
         }
     }
 }

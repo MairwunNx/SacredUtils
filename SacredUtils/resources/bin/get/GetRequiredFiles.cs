@@ -1,7 +1,7 @@
 ﻿using Config.Net;
 using System.IO;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.resources.bin.get
 {
     public interface IReqiredFilesSettings
     {

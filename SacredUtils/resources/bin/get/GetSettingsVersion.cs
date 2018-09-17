@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.resources.bin.get
 {
     public class GetSettingsVersion
     {

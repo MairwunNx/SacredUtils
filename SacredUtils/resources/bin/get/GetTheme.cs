@@ -1,7 +1,8 @@
 ﻿using Config.Net;
+using SacredUtils.resources.bin.etc;
 using WPFSharp.Globalizer;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.resources.bin.get
 {
     public interface IThemeSettings
     {

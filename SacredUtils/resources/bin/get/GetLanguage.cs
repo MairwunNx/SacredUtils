@@ -2,8 +2,9 @@
 using System.Globalization;
 using System.IO;
 using System.Threading;
+using SacredUtils.resources.bin.etc;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.resources.bin.get
 {
     public interface ILanguageSettings
     {

@@ -1,10 +1,9 @@
 ﻿using Config.Net;
-using MaterialDesignThemes.Wpf;
-using SacredUtils.resources.bin;
-using SacredUtils.resources.dlg;
+using SacredUtils.resources.bin.get;
+using SacredUtils.resources.bin.open;
 using System;
-using System.Diagnostics;
 using System.Windows;
+using SacredUtils.resources.bin.etc;
 using WPFSharp.Globalizer;
 
 namespace SacredUtils.resources.pgs
@@ -24,9 +23,7 @@ namespace SacredUtils.resources.pgs
     // ReSharper disable once InconsistentNaming
     public partial class application_settings_one
     {
-        application_settings_two _appStgTwo = new application_settings_two();
-
-        int _nums = 1;
+        public int _nums = 1;
 
         public application_settings_one()
         {
@@ -75,7 +72,7 @@ namespace SacredUtils.resources.pgs
             EventSubscribe();
         }
 
-        private void EventSubscribe()
+        public void EventSubscribe()
         {
             if (_nums == 1)
             {
@@ -84,60 +81,16 @@ namespace SacredUtils.resources.pgs
                 StartParamsCmbBox.SelectionChanged += (s, e) => ChangeStart();
                 UiScaleCmbBox.SelectionChanged += (s, e) => ChangeScale();
 
+                GitHubBtn.Click += (s, e) => OpenBrowserLink.Open("https://github.com/MairwunNx/SacredUtils");
+                DonateBtn.Click += (s, e) => OpenBrowserLink.Open("https://money.yandex.ru/to/410015993365458");
+                CreatorBtn.Click += (s, e) => OpenBrowserLink.Open("https://t-do.ru/mairwunnx");
+                FeedbackBtn.Click += (s, e) => OpenBrowserLink.Open("https://docs.google.com/forms/d/1Hx4EcS7VopBFG4bxq-zdsGUmqqD2nKy2NiwzRTiQMgA/edit?usp=sharing");
+                AboutBtn.Click += (s, e) => OpenAppDialog.Open("About");
 
-                GitHubBtn.Click += (s, e) => GoLink("https://github.com/MairwunNx/SacredUtils");
-                DonateBtn.Click += (s, e) => GoLink("https://money.yandex.ru/to/410015993365458");
-                CreatorBtn.Click += (s, e) => GoLink("https://t-do.ru/mairwunnx");
-                FeedbackBtn.Click += (s, e) => GoLink("https://docs.google.com/forms/d/1Hx4EcS7VopBFG4bxq-zdsGUmqqD2nKy2NiwzRTiQMgA/edit?usp=sharing");
-                AboutBtn.Click += (s, e) => GoAboutDialog();
-
-                ToTwoPageBtn.Click += (s, e) => ToTwoPage();
+                ToTwoPageBtn.Click += (s, e) => OpenNewPage.Open("AppSettingsTwo");
 
                 _nums = 2;
             }
-        }
-
-        public void GoLink(string link)
-        {
-            GetLoggerConfig.Log.Info($"Opening link {link}");
-
-            Process.Start(link);
-        }
-
-        public void ToTwoPage()
-        {
-            foreach (Window window in Application.Current.Windows)
-            {
-                GetLoggerConfig.Log.Info("Teleporting to Application settings two :D ...");
-
-                ((MainWindow) window).SettingsFrame.Content = _appStgTwo;
-                ((MainWindow) window)._appStgTwo.GetSettings();
-
-                GetLoggerConfig.Log.Info("Teleporting to Application settings two :D done!");
-            }
-        }
-
-        public void GoAboutDialog()
-        {
-            about_dialog about = new about_dialog();
-
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window.GetType() == typeof(MainWindow))
-                {
-                    ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
-                    ((MainWindow)window).DialogFrame.Content = about;
-                }
-            }
-
-            if (ApplicationInfo.Theme == "dark")
-            {
-                about.AboutDialog.DialogTheme = BaseTheme.Dark;
-            }
-
-            GetLoggerConfig.Log.Info("Opening application about dialog ...");
-
-            about.AboutDialog.IsOpen = true;
         }
 
         private void ChangeLanguage()

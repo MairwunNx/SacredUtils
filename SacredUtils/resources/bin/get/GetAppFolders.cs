@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.resources.bin.get
 {
     public static class GetAppFolders
     {
