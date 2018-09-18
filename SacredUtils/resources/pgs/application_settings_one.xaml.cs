@@ -1,10 +1,9 @@
 ﻿using Config.Net;
+using SacredUtils.resources.bin.change;
+using SacredUtils.resources.bin.etc;
 using SacredUtils.resources.bin.get;
 using SacredUtils.resources.bin.open;
 using System;
-using System.Windows;
-using SacredUtils.resources.bin.change;
-using SacredUtils.resources.bin.etc;
 using WPFSharp.Globalizer;
 
 namespace SacredUtils.resources.pgs
@@ -84,8 +83,6 @@ namespace SacredUtils.resources.pgs
 
         private void ChangeLanguage()
         {
-            GetLoggerConfig.Log.Info($"Changing lanuage to {UiLanguageCmbBox.Text} ...");
-
             ILanguageSettings languageSettings = new ConfigurationBuilder<ILanguageSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\langinfo.json").Build();
 
@@ -96,13 +93,11 @@ namespace SacredUtils.resources.pgs
             GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
                 (UiLanguageCmbBox.SelectedIndex == 0 ? "ru-RU" : "en-US", true);
 
-            GetLoggerConfig.Log.Info($"Changing lanuage to {UiLanguageCmbBox.Text} done!");
+            GetLoggerConfig.Log.Info($"Lanuage changed to {UiLanguageCmbBox.Text}");
         }
 
         private void ChangeTheme()
         {
-            GetLoggerConfig.Log.Info($"Changing theme to {UiThemeCmbBox.Text} ...");
-
             IApplicationSettings applicationSettings = new ConfigurationBuilder<IApplicationSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
@@ -113,13 +108,11 @@ namespace SacredUtils.resources.pgs
             GlobalizedApplication.Instance.StyleManager.SwitchStyle
                 (UiThemeCmbBox.SelectedIndex == 0 ? "Light.xaml" : "Dark.xaml");
 
-            GetLoggerConfig.Log.Info($"Changing theme to {UiThemeCmbBox.Text} done!");
+            GetLoggerConfig.Log.Info($"Theme changed to {UiThemeCmbBox.Text}");
         }
 
         private void ChangeStart()
         {
-            GetLoggerConfig.Log.Info($"Changing sacred startup params to {StartParamsCmbBox.Text} ...");
-
             IApplicationSettings applicationSettings = new ConfigurationBuilder<IApplicationSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
@@ -138,7 +131,7 @@ namespace SacredUtils.resources.pgs
                 applicationSettings.SacredStartArgs = "none";
             }
 
-            GetLoggerConfig.Log.Info($"Changing sacred startup params to {StartParamsCmbBox.Text} done!");
+            GetLoggerConfig.Log.Info($"Sacred startup params changed to {StartParamsCmbBox.Text}");
         }
 
         private void ChangeScale()
@@ -147,49 +140,49 @@ namespace SacredUtils.resources.pgs
             {
                 ApplicationInfo.Scale = 1.0;
                 ChangeAppScale.Change();
-                GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
+                GetLoggerConfig.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
             }
             else if (UiScaleCmbBox.SelectedIndex == 1)
             {
                 ApplicationInfo.Scale = 1.05;
                 ChangeAppScale.Change();
-                GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
+                GetLoggerConfig.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
             }
             else if (UiScaleCmbBox.SelectedIndex == 2)
             {
                 ApplicationInfo.Scale = 1.10;
                 ChangeAppScale.Change();
-                GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
+                GetLoggerConfig.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
             }
             else if (UiScaleCmbBox.SelectedIndex == 3)
             {
                 ApplicationInfo.Scale = 1.15;
                 ChangeAppScale.Change();
-                GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
+                GetLoggerConfig.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
             }
             else if (UiScaleCmbBox.SelectedIndex == 4)
             {
                 ApplicationInfo.Scale = 1.25;
                 ChangeAppScale.Change();
-                GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
+                GetLoggerConfig.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
             }
             else if (UiScaleCmbBox.SelectedIndex == 5)
             {
                 ApplicationInfo.Scale = 1.50;
                 ChangeAppScale.Change();
-                GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
+                GetLoggerConfig.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
             }
             else if (UiScaleCmbBox.SelectedIndex == 6)
             {
                 ApplicationInfo.Scale = 1.75;
                 ChangeAppScale.Change();
-                GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
+                GetLoggerConfig.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
             }
             else if (UiScaleCmbBox.SelectedIndex == 7)
             {
                 ApplicationInfo.Scale = 2.0;
                 ChangeAppScale.Change();
-                GetLoggerConfig.Log.Info($"Changed Ui scale to {UiScaleCmbBox.Text}");
+                GetLoggerConfig.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
             }
         }
     }

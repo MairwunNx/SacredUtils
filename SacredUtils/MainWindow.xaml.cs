@@ -1,14 +1,11 @@
-﻿using Config.Net;
+﻿using SacredUtils.resources.bin.change;
 using SacredUtils.resources.bin.etc;
 using SacredUtils.resources.bin.get;
 using SacredUtils.resources.pgs;
-using System.Globalization;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
-using SacredUtils.resources.bin.change;
 using WPFSharp.Globalizer;
 
 namespace SacredUtils
@@ -81,7 +78,7 @@ namespace SacredUtils
             {
                 GetLoggerConfig.Log.Info($"Selected settings category {s.Name} by user");
 
-                _appStgOne.GetSettings(); _appStgTwo.GetSettings();
+                if (s.Name == "SettingsPanel") { _appStgOne.GetSettings(); }
 
                 foreach (StackPanel sp in SettingsGrid.Children.OfType<StackPanel>())
                 {
