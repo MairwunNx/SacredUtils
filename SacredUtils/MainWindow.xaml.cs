@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using SacredUtils.resources.bin.change;
 using WPFSharp.Globalizer;
 
 namespace SacredUtils
@@ -28,7 +29,7 @@ namespace SacredUtils
         {
             GetLoggerConfig.Log.Info("*** Initializing SacredUtils components ...");
 
-            InitializeComponent(); EventSubscribe(); GetLanguage(); GetScale();
+            InitializeComponent(); EventSubscribe(); GetLanguage(); ChangeAppScale.Change();
 
             GetLoggerConfig.Log.Info("Initializing SacredUtils components done!");
 
@@ -80,7 +81,7 @@ namespace SacredUtils
             {
                 GetLoggerConfig.Log.Info($"Selected settings category {s.Name} by user");
 
-                _appStgOne.GetSettings();
+                _appStgOne.GetSettings(); _appStgTwo.GetSettings();
 
                 foreach (StackPanel sp in SettingsGrid.Children.OfType<StackPanel>())
                 {
@@ -103,13 +104,6 @@ namespace SacredUtils
         {
             GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
                 (ApplicationInfo.Lang == "ru" ? "ru-RU" : "en-US", true);
-        }
-
-        public void GetScale()
-        {
-            Height = Height * ApplicationInfo.Scale;
-            Width = Width * ApplicationInfo.Scale;
-            BaseCard.LayoutTransform = new ScaleTransform(ApplicationInfo.Scale, ApplicationInfo.Scale);
         }
     }
 }

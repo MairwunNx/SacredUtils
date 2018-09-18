@@ -24,6 +24,7 @@ namespace SacredUtils.resources.pgs
     // ReSharper disable once InconsistentNaming
     public partial class application_settings_one
     {
+        // ReSharper disable once InconsistentNaming
         public int _nums = 1;
 
         public application_settings_one()
@@ -60,38 +61,25 @@ namespace SacredUtils.resources.pgs
                 StartParamsCmbBox.SelectedIndex = 2;
             }
 
-            try
-            {
-                int scale = Convert.ToInt32(ApplicationInfo.Scale * 100);
-                UiScaleCmbBox.Text = $"{scale}%";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            UiScaleCmbBox.Text = $"{Convert.ToInt32(ApplicationInfo.Scale * 100)}%";
 
-            EventSubscribe();
+            if (_nums == 1) { EventSubscribe(); _nums = 2; }
         }
 
         public void EventSubscribe()
         {
-            if (_nums == 1)
-            {
-                UiLanguageCmbBox.SelectionChanged += (s, e) => ChangeLanguage();
-                UiThemeCmbBox.SelectionChanged += (s, e) => ChangeTheme();
-                StartParamsCmbBox.SelectionChanged += (s, e) => ChangeStart();
-                UiScaleCmbBox.SelectionChanged += (s, e) => ChangeScale();
+            UiLanguageCmbBox.SelectionChanged += (s, e) => ChangeLanguage();
+            UiThemeCmbBox.SelectionChanged += (s, e) => ChangeTheme();
+            StartParamsCmbBox.SelectionChanged += (s, e) => ChangeStart();
+            UiScaleCmbBox.SelectionChanged += (s, e) => ChangeScale();
 
-                GitHubBtn.Click += (s, e) => OpenBrowserLink.Open("https://github.com/MairwunNx/SacredUtils");
-                DonateBtn.Click += (s, e) => OpenBrowserLink.Open("https://money.yandex.ru/to/410015993365458");
-                CreatorBtn.Click += (s, e) => OpenBrowserLink.Open("https://t-do.ru/mairwunnx");
-                FeedbackBtn.Click += (s, e) => OpenBrowserLink.Open("https://docs.google.com/forms/d/1Hx4EcS7VopBFG4bxq-zdsGUmqqD2nKy2NiwzRTiQMgA/edit?usp=sharing");
-                AboutBtn.Click += (s, e) => OpenAppDialog.Open("About");
+            GitHubBtn.Click += (s, e) => OpenBrowserLink.Open("https://github.com/MairwunNx/SacredUtils");
+            DonateBtn.Click += (s, e) => OpenBrowserLink.Open("https://money.yandex.ru/to/410015993365458");
+            CreatorBtn.Click += (s, e) => OpenBrowserLink.Open("https://t-do.ru/mairwunnx");
+            FeedbackBtn.Click += (s, e) => OpenBrowserLink.Open("https://docs.google.com/forms/d/1Hx4EcS7VopBFG4bxq-zdsGUmqqD2nKy2NiwzRTiQMgA/edit?usp=sharing");
+            AboutBtn.Click += (s, e) => OpenAppDialog.Open("About");
 
-                ToTwoPageBtn.Click += (s, e) => OpenNewPage.Open("AppSettingsTwo");
-
-                _nums = 2;
-            }
+            ToTwoPageBtn.Click += (s, e) => OpenNewPage.Open("AppSettingsTwo");
         }
 
         private void ChangeLanguage()
