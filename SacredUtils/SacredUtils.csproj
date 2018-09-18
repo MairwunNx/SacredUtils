@@ -107,7 +107,8 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="WPFSharp.Globalizer, Version=1.0.6.0, Culture=neutral, PublicKeyToken=8de4abfa85fe6c31, processorArchitecture=MSIL">
-      <HintPath>..\packages\WPFSharp.Globalizer.1.0.6\lib\net40-client\WPFSharp.Globalizer.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>resources\lib\WPFSharp.Globalizer.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
