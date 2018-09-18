@@ -31,21 +31,7 @@ bld/
 [Bb]uild[Ll]og.*
 
 # NuGet Packages
-[Pp]ackages/Castle.Core.4.3.1*/
-[Pp]ackages/Config.Net.4.10.1*/
-[Pp]ackages/Config.Net.Json.4.10.1*/
-[Pp]ackages/Costura.Fody.3.1.1*/
-[Pp]ackages/DotNetZip.1.11.0*/
-[Pp]ackages/FluentFTP.19.2.2*/
-[Pp]ackages/Fody.3.2.3*/
-[Pp]ackages/MaterialDesignColors.1.1.3*/
-[Pp]ackages/MaterialDesignThemes.2.4.1.1101*/
-[Pp]ackages/MaterialDesignThemes.2.5.0-ci1169*/
-[Pp]ackages/Newtonsoft.Json.11.0.2*/
-[Pp]ackages/NLog.4.5.10*/
-[Pp]ackages/NLog.Config.4.5.10*/
-[Pp]ackages/NLog.Schema.4.5.10*/
-[Pp]ackages/sharpconfig.3.2.8*/
+[Pp]ackages*/
 
 # NUNIT
 *.VisualState.xml
