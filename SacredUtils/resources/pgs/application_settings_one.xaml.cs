@@ -28,11 +28,9 @@ namespace SacredUtils.resources.pgs
 
         public application_settings_one()
         {
-            GetLoggerConfig.Log.Info("Gettings settings for application settings one ...");
-
             InitializeComponent();
 
-            GetLoggerConfig.Log.Info("Gettings settings for application settings one done!");
+            GetLoggerConfig.Log.Info("Initialization components for application settings one done!");
         }
 
         public void GetSettings()
@@ -65,7 +63,7 @@ namespace SacredUtils.resources.pgs
             if (_nums == 1) { EventSubscribe(); _nums = 2; }
         }
 
-        public void EventSubscribe()
+        private void EventSubscribe()
         {
             UiLanguageCmbBox.SelectionChanged += (s, e) => ChangeLanguage();
             UiThemeCmbBox.SelectionChanged += (s, e) => ChangeTheme();
