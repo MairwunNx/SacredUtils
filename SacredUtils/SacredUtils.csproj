@@ -117,9 +117,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="resources\bin\change\ChangeAppScale.cs" />
+    <Compile Include="resources\bin\check\AvailabilityAlphaUpdates.cs" />
     <Compile Include="resources\bin\check\AvailabilityGameSettings.cs" />
     <Compile Include="resources\bin\check\AvailabilityInternetConnection.cs" />
     <Compile Include="resources\bin\check\AvailabilityReleaseUpdates.cs" />
+    <Compile Include="resources\bin\check\AvailabilityUpdateTool.cs" />
     <Compile Include="resources\bin\etc\ApplicationInfo.cs" />
     <Compile Include="resources\bin\create\CreateLanguageFiles.cs" />
     <Compile Include="resources\bin\create\CreateThemeFiles.cs" />

@@ -4,13 +4,17 @@ using SacredUtils.resources.bin.get;
 using System;
 using System.IO;
 using System.Net;
+using System.Threading;
+using System.Windows;
+using System.Windows.Threading;
 
 namespace SacredUtils.resources.bin.check
 {
     public static class AvailabilityReleaseUpdates
     {
         static WebClient wc = new WebClient();
-        
+        static bool downloaded;
+
         public interface IReleaseUpdateSettings 
         {
             bool CheckAutoUpdate { get; }
@@ -74,7 +78,7 @@ namespace SacredUtils.resources.bin.check
 
         public async static void GetUpdate()
         {
-            const string release = @"https://drive.google.com/uc?export=download&id=1xZzaj0v41S7nkSXkn4GWoDTkBtzeRc2Y";
+            const string release = @"https://drive.google.com/uc?export=download&id=1sDiiIYW0_JXMqh6IAHMOyf3IKPySCr4Q";
 
             try
             {
@@ -100,7 +104,13 @@ namespace SacredUtils.resources.bin.check
         {
             File.WriteAllBytes("mnxupdater.exe", Properties.Resources.mnxupdater);
 
-            // Показываем лейбл, но я пока не придумал, как это сделать.
+            Dispatcher.CurrentDispatcher.BeginInvoke(new ThreadStart(delegate
+            {
+                foreach (Window window in Application.Current.Windows)
+                {
+                    ((MainWindow)window).UpdateLbl.Visibility = Visibility.Visible;
+                }
+            }));
         }
     }
 }
