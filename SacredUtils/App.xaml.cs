@@ -17,6 +17,8 @@ namespace SacredUtils
 
                 GetAppFolders.Get();
 
+                Task.Run(() => AvailabilityUpdateTool.Get());
+
                 Task.Run(() => AvailabilityGameSettings.Get());
 
                 Task.Run(() => GetStatistic.Get());
