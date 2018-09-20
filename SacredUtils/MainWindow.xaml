@@ -86,6 +86,7 @@
                     FontSize="11"
                     FontWeight="Bold"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    MouseLeftButtonDown="UpdateLbl_MouseLeftButtonDown"
                     Visibility="Hidden" />
             </StackPanel>
 

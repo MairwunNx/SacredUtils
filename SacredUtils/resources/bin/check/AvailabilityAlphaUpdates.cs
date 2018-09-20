@@ -1,30 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Threading;
-using Config.Net;
+﻿using Config.Net;
 using SacredUtils.resources.bin.etc;
 using SacredUtils.resources.bin.get;
+using System;
+using System.IO;
+using System.Net;
+using System.Threading;
+using System.Windows;
+using System.Windows.Threading;
 
 namespace SacredUtils.resources.bin.check
 {
-    public class AvailabilityAlphaUpdates
+    public static class AvailabilityAlphaUpdates
     {
         static WebClient wc = new WebClient();
-        static bool downloaded;
 
         public interface IAlphaUpdateSettings
         {
             bool CheckAutoAlphaUpdate { get; }
         }
 
-        public void GetConnect()
+        public static void GetConnect()
         {
             GetLoggerConfig.Log.Info("Checking internet connection for checking alpha updates ...");
 
@@ -41,7 +36,7 @@ namespace SacredUtils.resources.bin.check
             }
         }
 
-        public void GetPerm()
+        public static void GetPerm()
         {
             GetLoggerConfig.Log.Info("Checking premission for checking alpha updates ...");
 
@@ -57,7 +52,7 @@ namespace SacredUtils.resources.bin.check
             }
         }
 
-        public void Get()
+        public static void Get()
         {
             GetLoggerConfig.Log.Info("Checking for release application updates ...");
 
@@ -82,7 +77,7 @@ namespace SacredUtils.resources.bin.check
             }
         }
 
-        public async void GetUpdate()
+        public static void GetUpdate()
         {
             const string release = @"https://drive.google.com/uc?export=download&id=1xZzaj0v41S7nkSXkn4GWoDTkBtzeRc2Y";
 
@@ -93,7 +88,7 @@ namespace SacredUtils.resources.bin.check
                     File.Delete("_newVersionSacredUtilsTemp.exe");
                 }
 
-                await wc.DownloadFileTaskAsync(new Uri(release), "_newVersionSacredUtilsTemp.exe");
+                wc.DownloadFileTaskAsync(new Uri(release), "_newVersionSacredUtilsTemp.exe");
 
                 GetLoggerConfig.Log.Info("Downloading new alpha update successfully done!");
 
@@ -110,13 +105,20 @@ namespace SacredUtils.resources.bin.check
         {
             File.WriteAllBytes("mnxupdater.exe", Properties.Resources.mnxupdater);
 
-            Dispatcher.CurrentDispatcher.BeginInvoke(new ThreadStart(delegate
+            try
             {
-                foreach (Window window in Application.Current.Windows)
+                Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
                 {
-                    ((MainWindow) window).UpdateLbl.Visibility = Visibility.Visible;
-                }
-            }));
+                    foreach (Window window in Application.Current.Windows)
+                    {
+                        ((MainWindow) window).UpdateLbl.Visibility = Visibility.Visible;
+                    }
+                }));
+            }
+            catch (Exception e)
+            {
+                GetLoggerConfig.Log.Error(e.ToString);
+            }
         }
     }
 }

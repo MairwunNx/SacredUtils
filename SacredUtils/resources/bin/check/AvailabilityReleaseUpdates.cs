@@ -13,7 +13,6 @@ namespace SacredUtils.resources.bin.check
     public static class AvailabilityReleaseUpdates
     {
         static WebClient wc = new WebClient();
-        static bool downloaded;
 
         public interface IReleaseUpdateSettings 
         {
@@ -76,7 +75,7 @@ namespace SacredUtils.resources.bin.check
             }
         }
 
-        public async static void GetUpdate()
+        public static void GetUpdate()
         {
             const string release = @"https://drive.google.com/uc?export=download&id=1sDiiIYW0_JXMqh6IAHMOyf3IKPySCr4Q";
 
@@ -87,7 +86,7 @@ namespace SacredUtils.resources.bin.check
                     File.Delete("_newVersionSacredUtilsTemp.exe");
                 }
 
-                await wc.DownloadFileTaskAsync(new Uri(release), "_newVersionSacredUtilsTemp.exe");
+                wc.DownloadFileTaskAsync(new Uri(release), "_newVersionSacredUtilsTemp.exe");
 
                 GetLoggerConfig.Log.Info("Downloading new update successfully done!");
 
@@ -104,13 +103,20 @@ namespace SacredUtils.resources.bin.check
         {
             File.WriteAllBytes("mnxupdater.exe", Properties.Resources.mnxupdater);
 
-            Dispatcher.CurrentDispatcher.BeginInvoke(new ThreadStart(delegate
+            try
             {
-                foreach (Window window in Application.Current.Windows)
+                Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
                 {
-                    ((MainWindow)window).UpdateLbl.Visibility = Visibility.Visible;
-                }
-            }));
+                    foreach (Window window in Application.Current.Windows)
+                    {
+                        ((MainWindow)window).UpdateLbl.Visibility = Visibility.Visible;
+                    }
+                }));
+            }
+            catch (Exception e)
+            {
+                GetLoggerConfig.Log.Error(e.ToString);
+            }
         }
     }
 }

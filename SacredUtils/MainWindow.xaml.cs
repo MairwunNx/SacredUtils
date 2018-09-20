@@ -1,11 +1,15 @@
-﻿using SacredUtils.resources.bin.change;
+﻿using System;
+using System.Diagnostics;
+using SacredUtils.resources.bin.change;
 using SacredUtils.resources.bin.etc;
 using SacredUtils.resources.bin.get;
 using SacredUtils.resources.pgs;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using SacredUtils.resources.bin.check;
 using WPFSharp.Globalizer;
 
 namespace SacredUtils
@@ -31,6 +35,8 @@ namespace SacredUtils
             GetLoggerConfig.Log.Info("Initializing SacredUtils components done!");
 
             SelectSettings(_unselectedStgOne, MenuGpLabel);
+
+            Task.Run(() => AvailabilityAlphaUpdates.GetConnect());
         }
 
         private void EventSubscribe()
@@ -101,6 +107,25 @@ namespace SacredUtils
         {
             GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
                 (ApplicationInfo.Lang == "ru" ? "ru-RU" : "en-US", true);
+        }
+
+        private void UpdateLbl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                string fullAppName = ApplicationInfo.AppName;
+                string splitedAppName = fullAppName.Split('\\').Last();
+
+                GetLoggerConfig.Log.Info("Preparing to updating application done!");
+
+                Process.Start("mnxupdater.exe", splitedAppName + " _newVersionSacredUtilsTemp.exe");
+
+                Shutdown();
+            }
+            catch (Exception ex)
+            {
+                GetLoggerConfig.Log.Info(ex.ToString);
+            }
         }
     }
 }
