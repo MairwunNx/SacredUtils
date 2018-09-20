@@ -31,6 +31,7 @@
                         <Button
                             x:Name="ReadLicenseBtn"
                             Height="Auto"
+                            Click="ReadLicenseBtn_Click"
                             ClipToBounds="True"
                             Content="{globalizer:GlobalizedResource String0121}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
@@ -89,6 +90,7 @@
                         <Button
                             x:Name="AcceptLicenseBtn"
                             Height="Auto"
+                            Click="AcceptLicenseBtn_Click"
                             ClipToBounds="True"
                             Content="{globalizer:GlobalizedResource String0126}"
                             Cursor="Hand"
@@ -109,6 +111,7 @@
                         <Button
                             x:Name="CloseSacredUtilsBtn"
                             Height="Auto"
+                            Click="CloseSacredUtilsBtn_Click"
                             ClipToBounds="True"
                             Content="{globalizer:GlobalizedResource String0127}"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"

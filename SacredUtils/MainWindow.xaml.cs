@@ -56,7 +56,13 @@ namespace SacredUtils
 
             HeaderPanel.MouseDown += DragWindow;
 
-            Loaded += (sender, args) => GetLoggerConfig.Log.Info("Loading SacredUtils application fully done!");
+            Loaded += (sender, args) =>
+            {
+                GetLoggerConfig.Log.Info("Loading SacredUtils application fully done!"); 
+
+                LicenseState.Get();
+            };
+                
 
             GetLoggerConfig.Log.Info("Adding events subscribes on buttons done!");
         }

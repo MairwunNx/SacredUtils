@@ -136,6 +136,7 @@
     <Compile Include="resources\bin\get\GetSettingsVersion.cs" />
     <Compile Include="resources\bin\get\GetStatistic.cs" />
     <Compile Include="resources\bin\get\GetTheme.cs" />
+    <Compile Include="resources\bin\get\LicenseState.cs" />
     <Compile Include="resources\bin\open\OpenAppDialog.cs" />
     <Compile Include="resources\bin\open\OpenBrowserLink.cs" />
     <Compile Include="resources\bin\open\OpenNewPage.cs" />

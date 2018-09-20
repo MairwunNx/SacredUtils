@@ -41,6 +41,37 @@ namespace SacredUtils.resources.bin.open
                     GetLoggerConfig.Log.Error(e.ToString);
                 }
             }
+
+            if (dialog == "License")
+            {
+                try
+                {
+                    license_dialog license = new license_dialog();
+
+                    foreach (Window window in Application.Current.Windows)
+                    {
+                        if (window.GetType() == typeof(MainWindow))
+                        {
+                            ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
+                            ((MainWindow)window).DialogFrame.Content = license;
+                        }
+                    }
+
+                    if (ApplicationInfo.Theme == "dark")
+                    {
+                        license.LicenseDialog.DialogTheme = BaseTheme.Dark;
+                    }
+
+                    license.LicenseDialog.IsOpen = true;
+
+                    GetLoggerConfig.Log.Info($"{dialog} dialog was opened by user");
+                }
+                catch (Exception e)
+                {
+                    GetLoggerConfig.Log.Error($"Failed to open {dialog} dialog!");
+                    GetLoggerConfig.Log.Error(e.ToString);
+                }
+            }
         }
     }
 }
