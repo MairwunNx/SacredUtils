@@ -7,11 +7,12 @@ namespace SacredUtils.resources.bin.get
 {
     public class GetGameSettings
     {
-        public void GetFile()
-        {
+
+        public void Get()
+        { 
             try
             {
-                GetLoggerConfig.Log.Info("Checking available temporary folder");
+                GetLoggerConfig.Log.Info("Checking available temporary folder ...");
 
                 if (Directory.Exists("$SacredUtils\\temp"))
                 {
@@ -22,15 +23,17 @@ namespace SacredUtils.resources.bin.get
                     GetLoggerConfig.Log.Info("Temporary folder has been deleted");
                 }
 
-                GetLoggerConfig.Log.Info("Temporary folder has been created");
+                GetLoggerConfig.Log.Info("Temporary folder has been created!");
 
                 Directory.CreateDirectory("$SacredUtils\\temp");
 
-                GetLoggerConfig.Log.Info("Copying settings.cfg in temp//~Settings.cfg");
+                GetLoggerConfig.Log.Info("Copying settings.cfg in temp//~Settings.cfg ...");
 
                 File.Copy("Settings.cfg", "$SacredUtils\\temp\\~Settings.cfg");
 
-                GetLoggerConfig.Log.Info("Re-formatting settings.cfg file to true cfg");
+                GetLoggerConfig.Log.Info("Copying settings.cfg in temp//~Settings.cfg done!");
+
+                GetLoggerConfig.Log.Info("Re-formatting settings.cfg file to true cfg ...");
 
                 string content = File.ReadAllText("$SacredUtils\\temp\\~Settings.cfg");
                 content = "[General]" + "\n" + content;
@@ -45,6 +48,8 @@ namespace SacredUtils.resources.bin.get
                     str = reader.ReadToEnd();
                     str = str.Replace(":", "=");
                 }
+
+                GetLoggerConfig.Log.Info("Re-formatting settings.cfg file to true cfg done!");
 
                 using (StreamWriter file = new StreamWriter("$SacredUtils\\temp\\~Settings.cfg"))
                 {

@@ -3,6 +3,7 @@ using SacredUtils.resources.bin.get;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
+using SacredUtils.resources.bin.check;
 
 namespace SacredUtils
 {
@@ -15,6 +16,8 @@ namespace SacredUtils
                 GetLoggerConfig.Get();
 
                 GetAppFolders.Get();
+
+                Task.Run(() => AvailabilityGameSettings.Get());
 
                 Task.Run(() => GetStatistic.Get());
 
