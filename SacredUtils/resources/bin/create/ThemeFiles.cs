@@ -4,7 +4,7 @@ using SacredUtils.resources.bin.get;
 
 namespace SacredUtils.resources.bin.create
 {
-    public static class CreateThemeFiles
+    public static class ThemeFiles
     {
         public static void Create()
         {

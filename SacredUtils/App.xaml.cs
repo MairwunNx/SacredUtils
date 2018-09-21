@@ -23,9 +23,9 @@ namespace SacredUtils
 
                 Task.Run(() => GetStatistic.Get());
 
-                Task.Run(() => CreateThemeFiles.Create());
+                Task.Run(() => ThemeFiles.Create());
 
-                Task.Run(() => CreateLanguageFiles.Create());
+                Task.Run(() => LanguageFiles.Create());
 
                 GetGlobalizerLib.Get(1);
 

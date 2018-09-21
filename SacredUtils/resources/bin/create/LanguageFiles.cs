@@ -4,7 +4,7 @@ using SacredUtils.resources.bin.get;
 
 namespace SacredUtils.resources.bin.create
 {
-    public static class CreateLanguageFiles
+    public static class LanguageFiles
     {
         public static void Create()
         {
