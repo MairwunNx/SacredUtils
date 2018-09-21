@@ -1,9 +1,10 @@
 ﻿using System;
 using System.IO;
+using SacredUtils.resources.bin.get;
 
-namespace SacredUtils.resources.bin.get
+namespace SacredUtils.resources.bin.create
 {
-    public static class GetAppFolders
+    public static class AppFolders
     {
         public static void Get()
         {

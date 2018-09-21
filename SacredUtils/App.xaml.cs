@@ -15,7 +15,7 @@ namespace SacredUtils
             {
                 GetLoggerConfig.Get();
 
-                GetAppFolders.Get();
+                AppFolders.Get();
 
                 Task.Run(() => AvailabilityUpdateTool.Get());
 
