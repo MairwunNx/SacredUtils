@@ -1,12 +1,12 @@
-﻿using System;
+﻿using SacredUtils.resources.bin.get;
+using System;
 using System.IO;
-using SacredUtils.resources.bin.get;
 
 namespace SacredUtils.resources.bin.create
 {
     public static class AppFolders
     {
-        public static void Get()
+        public static void Create()
         {
             try
             {

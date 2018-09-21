@@ -37,14 +37,9 @@ namespace SacredUtils.resources.bin.get
 
             Log.Info($"Version of the common language runtime {Environment.Version}");
 
-            if (Environment.Is64BitOperatingSystem)
-            {
-                Log.Info($"OS version {Environment.OSVersion.VersionString} 64 bit");
-            }
-            else
-            {
-                Log.Info($"OS version {Environment.OSVersion.VersionString} 32 bit");
-            }
+            Log.Info(Environment.Is64BitOperatingSystem
+                ? $"OS version {Environment.OSVersion.VersionString} 64 bit"
+                : $"OS version {Environment.OSVersion.VersionString} 32 bit");
 
             ManagementObjectSearcher searcher = new ManagementObjectSearcher(Query);
             // ReSharper disable once InconsistentNaming
@@ -63,14 +58,9 @@ namespace SacredUtils.resources.bin.get
                 }
             }
 
-            if (Environment.Is64BitProcess)
-            {
-                Log.Info("Bitness of the current SacredUtils process 64 bit");
-            }
-            else
-            {
-                Log.Info("Bitness of the current SacredUtils process 32 bit");
-            }
+            Log.Info(Environment.Is64BitProcess
+                ? "Bitness of the current SacredUtils process 64 bit"
+                : "Bitness of the current SacredUtils process 32 bit");
 
             Log.Info($"Allocated memory for SacredUtils {Environment.WorkingSet / 1024 / 1024} MB");
 

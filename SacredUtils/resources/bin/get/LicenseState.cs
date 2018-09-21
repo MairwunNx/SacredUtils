@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using Config.Net;
+﻿using Config.Net;
 using SacredUtils.resources.bin.open;
+using System.Windows;
 
 namespace SacredUtils.resources.bin.get
 {
     public static class LicenseState
     {
-        public interface ILicenseSettings
+        private interface ILicenseSettings
         {
             bool AcceptLicense { get; }
         }

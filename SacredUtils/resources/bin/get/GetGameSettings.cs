@@ -7,7 +7,6 @@ namespace SacredUtils.resources.bin.get
 {
     public class GetGameSettings
     {
-
         public void Get()
         { 
             try
@@ -45,8 +44,7 @@ namespace SacredUtils.resources.bin.get
                 {
                     GetLoggerConfig.Log.Info("Replacing : on =, in ~Settings.cfg");
 
-                    str = reader.ReadToEnd();
-                    str = str.Replace(":", "=");
+                    str = reader.ReadToEnd().Replace(":", "=");
                 }
 
                 GetLoggerConfig.Log.Info("Re-formatting settings.cfg file to true cfg done!");
