@@ -1,9 +1,9 @@
+using SacredUtils.resources.bin.check;
 using SacredUtils.resources.bin.create;
 using SacredUtils.resources.bin.get;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
-using SacredUtils.resources.bin.check;
 
 namespace SacredUtils
 {

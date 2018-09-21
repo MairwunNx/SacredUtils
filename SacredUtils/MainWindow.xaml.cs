@@ -1,15 +1,15 @@
-﻿using System;
-using System.Diagnostics;
-using SacredUtils.resources.bin.change;
+﻿using SacredUtils.resources.bin.change;
+using SacredUtils.resources.bin.check;
 using SacredUtils.resources.bin.etc;
 using SacredUtils.resources.bin.get;
 using SacredUtils.resources.pgs;
+using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using SacredUtils.resources.bin.check;
 using WPFSharp.Globalizer;
 
 namespace SacredUtils
@@ -30,7 +30,7 @@ namespace SacredUtils
         {
             GetLoggerConfig.Log.Info("*** Initializing SacredUtils components ...");
 
-            InitializeComponent(); EventSubscribe(); GetLanguage(); ChangeAppScale.Change();
+            InitializeComponent(); EventSubscribe(); GetLanguage(); AppScale.Change();
 
             GetLoggerConfig.Log.Info("Initializing SacredUtils components done!");
 
