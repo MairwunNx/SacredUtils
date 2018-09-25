@@ -16,6 +16,7 @@ namespace SacredUtils.resources.bin.get
         {
             string Query = "Select Name from Win32_OperatingSystem";
             NLog.Config.LoggingConfiguration config = new NLog.Config.LoggingConfiguration();
+            AppDomain domain = AppDomain.CurrentDomain;
 
             FileTarget logfile = new FileTarget("logfile")
             {
@@ -34,6 +35,11 @@ namespace SacredUtils.resources.bin.get
 
             Log.Info($"Starting {Name} configurator version {ApplicationInfo.Version}");
             Log.Info($"You have launched an official {ApplicationInfo.Type} build");
+            Log.Info($"Current launched SacredUtils app name {domain.FriendlyName}");
+
+            Log.Info(domain.IsFullyTrusted
+                ? "Current launched SacredUtils application is fully trusted"
+                : "Current launched SacredUtils application is not fully trusted");
 
             Log.Info($"Version of the common language runtime {Environment.Version}");
 

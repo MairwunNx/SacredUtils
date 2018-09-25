@@ -56,24 +56,32 @@ namespace SacredUtils.resources.bin.check
         {
             GetLoggerConfig.Log.Info("Checking for release application updates ...");
 
-            const string appAlphaVersionWeb = "https://drive.google.com/uc?export=download&id=1Fc0QIxzUn7-ellW5e4_W1Wv05-V1hsJ8";
-
-            string appAlphaVersion = wc.DownloadString(appAlphaVersionWeb);
-
-            GetLoggerConfig.Log.Info($"The last received SacredUtils release version {appAlphaVersion}");
-
-            if (!appAlphaVersion.Contains(ApplicationInfo.AVersion))
+            try
             {
-                GetLoggerConfig.Log.Warn($"SacredUtils application {ApplicationInfo.AVersion} is outdated!");
-                GetLoggerConfig.Log.Info($"Downloading {appAlphaVersion} update ...");
+                const string appAlphaVersionWeb = "https://drive.google.com/uc?export=download&id=1Fc0QIxzUn7-ellW5e4_W1Wv05-V1hsJ8";
 
-                GetUpdate();
+                string appAlphaVersion = wc.DownloadString(appAlphaVersionWeb);
+
+                GetLoggerConfig.Log.Info($"The last received SacredUtils release version {appAlphaVersion}");
+
+                if (!appAlphaVersion.Contains(ApplicationInfo.AVersion))
+                {
+                    GetLoggerConfig.Log.Warn($"SacredUtils application {ApplicationInfo.AVersion} is outdated!");
+                    GetLoggerConfig.Log.Info($"Downloading {appAlphaVersion} update ...");
+
+                    GetUpdate();
+                }
+                else
+                {
+                    GetLoggerConfig.Log.Info("SacredUtils application no need to alpha update!");
+
+                    AvailabilityReleaseUpdates.GetInternet();
+                }
             }
-            else
+            catch (Exception e)
             {
-                GetLoggerConfig.Log.Info("SacredUtils application no need to alpha update!");
-
-                AvailabilityReleaseUpdates.GetInternet();
+                GetLoggerConfig.Log.Info("Checking SacredUtils alpha updates done with error!");
+                GetLoggerConfig.Log.Info(e.ToString);
             }
         }
 

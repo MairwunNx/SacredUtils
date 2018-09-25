@@ -56,22 +56,30 @@ namespace SacredUtils.resources.bin.check
         {
             GetLoggerConfig.Log.Info("Checking for release application updates ...");
 
-            const string appReleaseVersionWeb = "https://drive.google.com/uc?export=download&id=13N9ZfalxDfTAIdYxFuGBr8QPMW9OODc_";
-
-            string appReleaseVersion = wc.DownloadString(appReleaseVersionWeb);
-
-            GetLoggerConfig.Log.Info($"The last received SacredUtils release version {appReleaseVersion}");
-
-            if (!appReleaseVersion.Contains(ApplicationInfo.Version))
+            try
             {
-                GetLoggerConfig.Log.Warn($"SacredUtils application {ApplicationInfo.Version} is outdated!");
-                GetLoggerConfig.Log.Info($"Downloading {appReleaseVersion} update ...");
+                const string appReleaseVersionWeb = "https://drive.google.com/uc?export=download&id=13N9ZfalxDfTAIdYxFuGBr8QPMW9OODc_";
 
-                GetUpdate(); 
+                string appReleaseVersion = wc.DownloadString(appReleaseVersionWeb);
+
+                GetLoggerConfig.Log.Info($"The last received SacredUtils release version {appReleaseVersion}");
+
+                if (!appReleaseVersion.Contains(ApplicationInfo.Version))
+                {
+                    GetLoggerConfig.Log.Warn($"SacredUtils application {ApplicationInfo.Version} is outdated!");
+                    GetLoggerConfig.Log.Info($"Downloading {appReleaseVersion} update ...");
+
+                    GetUpdate();
+                }
+                else
+                {
+                    GetLoggerConfig.Log.Info("SacredUtils application no need to update!");
+                }
             }
-            else
+            catch (Exception e)
             {
-                GetLoggerConfig.Log.Info("SacredUtils application no need to update!");
+                GetLoggerConfig.Log.Info("Checking SacredUtils release updates done with error!");
+                GetLoggerConfig.Log.Info(e.ToString);
             }
         }
 

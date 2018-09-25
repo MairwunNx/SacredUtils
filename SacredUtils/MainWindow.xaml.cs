@@ -119,12 +119,11 @@ namespace SacredUtils
         {
             try
             {
-                string fullAppName = ApplicationInfo.AppName;
-                string splitedAppName = fullAppName.Split('\\').Last();
+                AppDomain domain = AppDomain.CurrentDomain;
 
                 GetLoggerConfig.Log.Info("Preparing to updating application done!");
 
-                Process.Start("mnxupdater.exe", splitedAppName + " _newVersionSacredUtilsTemp.exe");
+                Process.Start("mnxupdater.exe", domain.FriendlyName + " _newVersionSacredUtilsTemp.exe");
 
                 Shutdown();
             }
