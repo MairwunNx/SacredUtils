@@ -12,6 +12,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using WPFSharp.Globalizer;
+using SacredGameSettings = SacredUtils.resources.bin.convert.SacredGameSettings;
 
 namespace SacredUtils
 {
@@ -107,6 +108,11 @@ namespace SacredUtils
             if (e.Key == Key.F5)
             {
                 _appStgOne.GetSettings(); _appStgTwo.GetSettings();
+            }
+
+            if (e.Key == Key.F4)
+            {
+                SacredGameSettings.ConvertToCfg();
             }
         }
 

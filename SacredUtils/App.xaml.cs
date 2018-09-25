@@ -5,6 +5,7 @@ using System;
 using System.Threading.Tasks;
 using System.Windows;
 using SacredUtils.resources.bin.getting;
+using SacredGameSettings = SacredUtils.resources.bin.convert.SacredGameSettings;
 
 namespace SacredUtils
 {
@@ -41,6 +42,8 @@ namespace SacredUtils
                 Task.Run(() => RequiredApplicationFiles.Get());
 
                 base.OnStartup(e);
+
+                SacredGameSettings.ConvertToIni();
             }
             catch (Exception exception)
             {
