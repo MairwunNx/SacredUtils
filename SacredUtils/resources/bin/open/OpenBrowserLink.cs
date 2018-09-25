@@ -1,4 +1,4 @@
-﻿using SacredUtils.resources.bin.get;
+﻿using SacredUtils.resources.bin.logger;
 using System.Diagnostics;
 
 namespace SacredUtils.resources.bin.open
@@ -9,7 +9,7 @@ namespace SacredUtils.resources.bin.open
         {
             Process.Start(link);
 
-            GetLoggerConfig.Log.Info($"{link} link was opened by user");
+            Logger.Log.Info($"{link} link was opened by user");
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using MaterialDesignThemes.Wpf;
 using SacredUtils.resources.bin.etc;
-using SacredUtils.resources.bin.get;
+using SacredUtils.resources.bin.logger;
 using SacredUtils.resources.dlg;
 using System;
 using System.Windows;
@@ -33,12 +33,12 @@ namespace SacredUtils.resources.bin.open
 
                     about.AboutDialog.IsOpen = true;
 
-                    GetLoggerConfig.Log.Info($"{dialog} dialog was opened by user");
+                    Logger.Log.Info($"{dialog} dialog was opened by user");
                 }
                 catch (Exception e)
                 {
-                    GetLoggerConfig.Log.Error($"Failed to open {dialog} dialog!");
-                    GetLoggerConfig.Log.Error(e.ToString);
+                    Logger.Log.Error($"Failed to open {dialog} dialog!");
+                    Logger.Log.Error(e.ToString);
                 }
             }
 
@@ -64,12 +64,12 @@ namespace SacredUtils.resources.bin.open
 
                     license.LicenseDialog.IsOpen = true;
 
-                    GetLoggerConfig.Log.Info($"{dialog} dialog was opened by user");
+                    Logger.Log.Info($"{dialog} dialog was opened by user");
                 }
                 catch (Exception e)
                 {
-                    GetLoggerConfig.Log.Error($"Failed to open {dialog} dialog!");
-                    GetLoggerConfig.Log.Error(e.ToString);
+                    Logger.Log.Error($"Failed to open {dialog} dialog!");
+                    Logger.Log.Error(e.ToString);
                 }
             }
         }

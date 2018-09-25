@@ -1,4 +1,4 @@
-﻿using SacredUtils.resources.bin.get;
+﻿using SacredUtils.resources.bin.logger;
 using System;
 using System.IO;
 
@@ -10,7 +10,7 @@ namespace SacredUtils.resources.bin.create
         {
             try
             {
-                GetLoggerConfig.Log.Info("Creating folders for SacredUtils files ...");
+                Logger.Log.Info("Creating folders for SacredUtils files ...");
 
                 Directory.CreateDirectory("$SacredUtils");
                 Directory.CreateDirectory("$SacredUtils\\conf");
@@ -22,15 +22,15 @@ namespace SacredUtils.resources.bin.create
                 Directory.CreateDirectory("$SacredUtils\\lang\\ru-RU");
                 Directory.CreateDirectory("$SacredUtils\\lang\\en-US");
 
-                GetLoggerConfig.Log.Info("Creating folders for SacredUtils files done!");
+                Logger.Log.Info("Creating folders for SacredUtils files done!");
             }
             catch (Exception exception)
             {
-                GetLoggerConfig.Log.Fatal("There was a critical error of the program, sorry please, if the program could not start. Contact the Creator of the utility");
+                Logger.Log.Fatal("There was a critical error of the program, sorry please, if the program could not start. Contact the Creator of the utility");
 
-                GetLoggerConfig.Log.Fatal(exception.ToString);
+                Logger.Log.Fatal(exception.ToString);
 
-                GetLoggerConfig.Log.Info("Shutting down SacredUtils configurator ...");
+                Logger.Log.Info("Shutting down SacredUtils configurator ...");
 
                 Environment.Exit(0);
             }

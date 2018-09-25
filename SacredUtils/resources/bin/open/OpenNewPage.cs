@@ -1,5 +1,5 @@
 ﻿using System;
-using SacredUtils.resources.bin.get;
+using SacredUtils.resources.bin.logger;
 using System.Windows;
 
 namespace SacredUtils.resources.bin.open
@@ -17,13 +17,13 @@ namespace SacredUtils.resources.bin.open
                         ((MainWindow)window).SettingsFrame.Content = ((MainWindow)window)._appStgOne;
                         ((MainWindow)window)._appStgOne.GetSettings();
 
-                        GetLoggerConfig.Log.Info("Application settings one page was opened by user");
+                        Logger.Log.Info("Application settings one page was opened by user");
                     }
                 }
                 catch (Exception e)
                 {
-                    GetLoggerConfig.Log.Error("An error occurred while user opened aso page");
-                    GetLoggerConfig.Log.Error(e.ToString);
+                    Logger.Log.Error("An error occurred while user opened aso page");
+                    Logger.Log.Error(e.ToString);
                 }
             }
 
@@ -36,13 +36,13 @@ namespace SacredUtils.resources.bin.open
                         ((MainWindow)window).SettingsFrame.Content = ((MainWindow)window)._appStgTwo;
                         ((MainWindow)window)._appStgTwo.GetSettings();
 
-                        GetLoggerConfig.Log.Info("Application settings two page was opened by user");
+                        Logger.Log.Info("Application settings two page was opened by user");
                     }
                 }
                 catch (Exception e)
                 {
-                    GetLoggerConfig.Log.Error("An error occurred while user opened ast page");
-                    GetLoggerConfig.Log.Error(e.ToString);
+                    Logger.Log.Error("An error occurred while user opened ast page");
+                    Logger.Log.Error(e.ToString);
                 }
             }
         }

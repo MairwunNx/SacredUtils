@@ -1,6 +1,6 @@
 ﻿using Config.Net;
 using SacredUtils.resources.bin.etc;
-using SacredUtils.resources.bin.get;
+using SacredUtils.resources.bin.logger;
 using SacredUtils.resources.pgs;
 using System;
 using System.Globalization;
@@ -30,8 +30,8 @@ namespace SacredUtils.resources.bin.change
             }
             catch (Exception e)
             {
-                GetLoggerConfig.Log.Error("An error occurred while user changed app scale");
-                GetLoggerConfig.Log.Error(e.ToString);
+                Logger.Log.Error("An error occurred while user changed app scale");
+                Logger.Log.Error(e.ToString);
             }
         }
     }

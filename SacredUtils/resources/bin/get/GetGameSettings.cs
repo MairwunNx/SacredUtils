@@ -1,4 +1,5 @@
-﻿using SharpConfig;
+﻿using SacredUtils.resources.bin.logger;
+using SharpConfig;
 using System;
 using System.IO;
 using System.Text;
@@ -11,28 +12,28 @@ namespace SacredUtils.resources.bin.get
         { 
             try
             {
-                GetLoggerConfig.Log.Info("Checking available temporary folder ...");
+                Logger.Log.Info("Checking available temporary folder ...");
 
                 if (Directory.Exists("$SacredUtils\\temp"))
                 {
-                    GetLoggerConfig.Log.Info("The temporary folder was detected, we'll delete it");
+                    Logger.Log.Info("The temporary folder was detected, we'll delete it");
 
                     Directory.Delete("$SacredUtils\\temp", true);
 
-                    GetLoggerConfig.Log.Info("Temporary folder has been deleted");
+                    Logger.Log.Info("Temporary folder has been deleted");
                 }
 
-                GetLoggerConfig.Log.Info("Temporary folder has been created!");
+                Logger.Log.Info("Temporary folder has been created!");
 
                 Directory.CreateDirectory("$SacredUtils\\temp");
 
-                GetLoggerConfig.Log.Info("Copying settings.cfg in temp//~Settings.cfg ...");
+                Logger.Log.Info("Copying settings.cfg in temp//~Settings.cfg ...");
 
                 File.Copy("Settings.cfg", "$SacredUtils\\temp\\~Settings.cfg");
 
-                GetLoggerConfig.Log.Info("Copying settings.cfg in temp//~Settings.cfg done!");
+                Logger.Log.Info("Copying settings.cfg in temp//~Settings.cfg done!");
 
-                GetLoggerConfig.Log.Info("Re-formatting settings.cfg file to true cfg ...");
+                Logger.Log.Info("Re-formatting settings.cfg file to true cfg ...");
 
                 string content = File.ReadAllText("$SacredUtils\\temp\\~Settings.cfg");
                 content = "[General]" + "\n" + content;
@@ -42,23 +43,23 @@ namespace SacredUtils.resources.bin.get
 
                 using (StreamReader reader = File.OpenText("$SacredUtils\\temp\\~Settings.cfg"))
                 {
-                    GetLoggerConfig.Log.Info("Replacing : on =, in ~Settings.cfg");
+                    Logger.Log.Info("Replacing : on =, in ~Settings.cfg");
 
                     str = reader.ReadToEnd().Replace(":", "=");
                 }
 
-                GetLoggerConfig.Log.Info("Re-formatting settings.cfg file to true cfg done!");
+                Logger.Log.Info("Re-formatting settings.cfg file to true cfg done!");
 
                 using (StreamWriter file = new StreamWriter("$SacredUtils\\temp\\~Settings.cfg"))
                 {
-                    GetLoggerConfig.Log.Info("Preparing to loading settings from ~Settings.cfg");
+                    Logger.Log.Info("Preparing to loading settings from ~Settings.cfg");
 
                     file.Write(str);
                 }
             }
             catch (Exception e)
             {
-                GetLoggerConfig.Log.Info(e.ToString);
+                Logger.Log.Info(e.ToString);
             }
         }
 

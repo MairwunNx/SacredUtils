@@ -1,4 +1,5 @@
 ﻿using Config.Net;
+using SacredUtils.resources.bin.logger;
 using System;
 using System.IO;
 
@@ -63,7 +64,7 @@ namespace SacredUtils.resources.bin.get
 
         public void Get()
         {
-            GetLoggerConfig.Log.Info("Checking availability application settings ...");
+            Logger.Log.Info("Checking availability application settings ...");
 
             if (!File.Exists("$SacredUtils\\conf\\settings.json"))
             {
@@ -71,11 +72,11 @@ namespace SacredUtils.resources.bin.get
                 {
                     try
                     {
-                        GetLoggerConfig.Log.Info("Creating application settings file in this folder ...");
+                        Logger.Log.Info("Creating application settings file in this folder ...");
 
                         File.WriteAllBytes("$SacredUtils\\conf\\settings.json", Properties.Resources.settings);
 
-                        GetLoggerConfig.Log.Info("Creating application settings file in this folder done!");
+                        Logger.Log.Info("Creating application settings file in this folder done!");
 
                         _trynum = 10;
                     }
@@ -83,36 +84,36 @@ namespace SacredUtils.resources.bin.get
                     {
                         if (_trynum == 10)
                         {
-                            GetLoggerConfig.Log.Fatal(exception.ToString);
-                            GetLoggerConfig.Log.Fatal("Creating application settings file in this folder done with critical error!");
-                            GetLoggerConfig.Log.Fatal("Please contact MairwunNx, MairwunNx@gmail.com. May be it our problem. Sorry.");
+                            Logger.Log.Fatal(exception.ToString);
+                            Logger.Log.Fatal("Creating application settings file in this folder done with critical error!");
+                            Logger.Log.Fatal("Please contact MairwunNx, MairwunNx@gmail.com. May be it our problem. Sorry.");
 
-                            GetLoggerConfig.Log.Info("Shutting down SacredUtils configurator ...");
+                            Logger.Log.Info("Shutting down SacredUtils configurator ...");
 
                             Environment.Exit(0);
                         }
 
                         _trynum = + 1;
 
-                        GetLoggerConfig.Log.Fatal(exception.ToString);
-                        GetLoggerConfig.Log.Fatal("Creating application settings file in this folder done with critical error!");
-                        GetLoggerConfig.Log.Warn($"We try fix it problem or try again, attemp {_trynum} ...");
+                        Logger.Log.Fatal(exception.ToString);
+                        Logger.Log.Fatal("Creating application settings file in this folder done with critical error!");
+                        Logger.Log.Warn($"We try fix it problem or try again, attemp {_trynum} ...");
                     }
                 }
             }
             else
             {
-                GetLoggerConfig.Log.Info("Checking availability application settings done!");
+                Logger.Log.Info("Checking availability application settings done!");
             }
 
-            GetLoggerConfig.Log.Info("Checking application settings config version ...");
+            Logger.Log.Info("Checking application settings config version ...");
 
             IApplicationSettings applicationSettings = new ConfigurationBuilder<IApplicationSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
             if (applicationSettings.ConfigVersion < 1)
             {
-                GetLoggerConfig.Log.Warn("Application settings configuration is out of date!");
+                Logger.Log.Warn("Application settings configuration is out of date!");
 
                 _acceptLicense = applicationSettings.AcceptLicense;
 
@@ -219,11 +220,11 @@ namespace SacredUtils.resources.bin.get
 
                 reqiredFilesSettingsRepair.UseStaticWater = _useStaticWater;
 
-                GetLoggerConfig.Log.Info("Application settings configuration has been updated!");
+                Logger.Log.Info("Application settings configuration has been updated!");
             }
             else
             {
-                GetLoggerConfig.Log.Info("Application settings configuration undamaged!");
+                Logger.Log.Info("Application settings configuration undamaged!");
             }
         }
     }

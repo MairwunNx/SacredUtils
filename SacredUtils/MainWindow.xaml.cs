@@ -2,6 +2,7 @@
 using SacredUtils.resources.bin.check;
 using SacredUtils.resources.bin.etc;
 using SacredUtils.resources.bin.get;
+using SacredUtils.resources.bin.logger;
 using SacredUtils.resources.pgs;
 using System;
 using System.Diagnostics;
@@ -28,11 +29,11 @@ namespace SacredUtils
 
         public MainWindow()
         {
-            GetLoggerConfig.Log.Info("*** Initializing SacredUtils components ...");
+            Logger.Log.Info("*** Initializing SacredUtils components ...");
 
             InitializeComponent(); EventSubscribe(); GetLanguage(); AppScale.Change();
 
-            GetLoggerConfig.Log.Info("Initializing SacredUtils components done!");
+            Logger.Log.Info("Initializing SacredUtils components done!");
 
             SelectSettings(_unselectedStgOne, MenuGpLabel);
 
@@ -41,7 +42,7 @@ namespace SacredUtils
 
         private void EventSubscribe()
         {
-            GetLoggerConfig.Log.Info("Adding events subscribes on buttons ...");
+            Logger.Log.Info("Adding events subscribes on buttons ...");
 
             MenuGrLabel.Click += (s, e) => SelectSettings(_graphicsStgOne, GraphicsPanel);
             MenuSnLabel.Click += (s, e) => SelectSettings(_soundStgOne, SoundPanel);
@@ -58,19 +59,19 @@ namespace SacredUtils
 
             Loaded += (sender, args) =>
             {
-                GetLoggerConfig.Log.Info("Loading SacredUtils application fully done!"); 
+                Logger.Log.Info("Loading SacredUtils application fully done!"); 
 
                 LicenseState.Get();
             };
                 
 
-            GetLoggerConfig.Log.Info("Adding events subscribes on buttons done!");
+            Logger.Log.Info("Adding events subscribes on buttons done!");
         }
 
         public void Shutdown()
         {
-            GetLoggerConfig.Log.Info("*** Thanks for using SacredUtils! Created by MairwunNx");
-            GetLoggerConfig.Log.Info("Shutting down SacredUtils ...");
+            Logger.Log.Info("*** Thanks for using SacredUtils! Created by MairwunNx");
+            Logger.Log.Info("Shutting down SacredUtils ...");
 
             Application.Current.Shutdown();
         }
@@ -88,7 +89,7 @@ namespace SacredUtils
 
             if (sender.Equals(s) && s != null)
             {
-                GetLoggerConfig.Log.Info($"Selected settings category {s.Name} by user");
+                Logger.Log.Info($"Selected settings category {s.Name} by user");
 
                 if (s.Name == "SettingsPanel") { _appStgOne.GetSettings(); }
 
@@ -121,7 +122,7 @@ namespace SacredUtils
             {
                 AppDomain domain = AppDomain.CurrentDomain;
 
-                GetLoggerConfig.Log.Info("Preparing to updating application done!");
+                Logger.Log.Info("Preparing to updating application done!");
 
                 Process.Start("mnxupdater.exe", domain.FriendlyName + " _newVersionSacredUtilsTemp.exe");
 
@@ -129,7 +130,7 @@ namespace SacredUtils
             }
             catch (Exception ex)
             {
-                GetLoggerConfig.Log.Info(ex.ToString);
+                Logger.Log.Info(ex.ToString);
             }
         }
     }

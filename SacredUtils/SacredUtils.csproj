@@ -131,7 +131,7 @@
     <Compile Include="resources\bin\get\GetGameSettings.cs" />
     <Compile Include="resources\bin\get\GetGlobalizerLib.cs" />
     <Compile Include="resources\bin\get\GetLanguage.cs" />
-    <Compile Include="resources\bin\get\GetLoggerConfig.cs" />
+    <Compile Include="resources\bin\logger\Logger.cs" />
     <Compile Include="resources\bin\get\GetScale.cs" />
     <Compile Include="resources\bin\get\GetSettingsVersion.cs" />
     <Compile Include="resources\bin\get\GetStatistic.cs" />

@@ -1,5 +1,6 @@
 ﻿using Config.Net;
 using SacredUtils.resources.bin.etc;
+using SacredUtils.resources.bin.logger;
 
 namespace SacredUtils.resources.bin.get
 {
@@ -12,16 +13,16 @@ namespace SacredUtils.resources.bin.get
     {
         public static void Get()
         {
-            GetLoggerConfig.Log.Info("Getting application gui scale ...");
+            Logger.Log.Info("Getting application gui scale ...");
 
             IScaleSettings scaleSettings = new ConfigurationBuilder<IScaleSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
             ApplicationInfo.Scale = scaleSettings.SacredUtilsGuiScale;
 
-            GetLoggerConfig.Log.Info("Getting application gui scale done!");
+            Logger.Log.Info("Getting application gui scale done!");
 
-            GetLoggerConfig.Log.Info($"Application starting with {ApplicationInfo.Scale} gui scale");
+            Logger.Log.Info($"Application starting with {ApplicationInfo.Scale} gui scale");
         }
     }
 }

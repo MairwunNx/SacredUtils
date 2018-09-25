@@ -1,5 +1,5 @@
 ﻿using Config.Net;
-using SacredUtils.resources.bin.get;
+using SacredUtils.resources.bin.logger;
 using SacredUtils.resources.bin.open;
 
 namespace SacredUtils.resources.pgs
@@ -21,7 +21,7 @@ namespace SacredUtils.resources.pgs
         {
             InitializeComponent();
 
-            GetLoggerConfig.Log.Info("Initialization components for application settings two done!");
+            Logger.Log.Info("Initialization components for application settings two done!");
         }
 
         public void GetSettings()
@@ -65,13 +65,13 @@ namespace SacredUtils.resources.pgs
             {
                 applicationSettings.CheckAutoUpdate = UpdateCheckTglBtn.IsChecked == true;
 
-                GetLoggerConfig.Log.Info($"Checking for updates set to {applicationSettings.CheckAutoUpdate} by user");
+                Logger.Log.Info($"Checking for updates set to {applicationSettings.CheckAutoUpdate} by user");
             }
             else
             {
                 applicationSettings.CheckAutoAlphaUpdate = UpdateAlphaCheckTglBtn.IsChecked == true;
 
-                GetLoggerConfig.Log.Info($"Checking for alpha updates set to {applicationSettings.CheckAutoAlphaUpdate} by user");
+                Logger.Log.Info($"Checking for alpha updates set to {applicationSettings.CheckAutoAlphaUpdate} by user");
             }
         }
 
@@ -82,7 +82,7 @@ namespace SacredUtils.resources.pgs
 
             applicationSettings.MakeAutoBackupConfigs = MakeBackupTglBtn.IsChecked == true;
 
-            GetLoggerConfig.Log.Info($"Backup making settings set to {applicationSettings.MakeAutoBackupConfigs} by user");
+            Logger.Log.Info($"Backup making settings set to {applicationSettings.MakeAutoBackupConfigs} by user");
         }
 
         private void ChangeLicenseAgreement()
@@ -92,7 +92,7 @@ namespace SacredUtils.resources.pgs
 
             applicationSettings.AcceptLicense = LicenseTglBtn.IsChecked == true;
 
-            GetLoggerConfig.Log.Info($"Accept license set to {applicationSettings.AcceptLicense} by user");
+            Logger.Log.Info($"Accept license set to {applicationSettings.AcceptLicense} by user");
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using SacredUtils.resources.bin.etc;
+using SacredUtils.resources.bin.logger;
 using System;
 using System.Text;
 
@@ -8,12 +9,12 @@ namespace SacredUtils.resources.bin.get
     {
         public static void Get()
         {
-            GetLoggerConfig.Log.Info("Getting needed data for download statistics ...");
+            Logger.Log.Info("Getting needed data for download statistics ...");
 
             byte[] base64EncodedBytes = Convert.FromBase64String("MTEzMTcxNTFQbGVhc2VOb3RDaGFuZ2U=");
             ApplicationInfo.Connect = Encoding.UTF8.GetString(base64EncodedBytes);
 
-            GetLoggerConfig.Log.Info("Getting needed data for download statistics done!");
+            Logger.Log.Info("Getting needed data for download statistics done!");
         }
     }
 }

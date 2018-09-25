@@ -1,5 +1,6 @@
 ﻿using Config.Net;
 using SacredUtils.resources.bin.etc;
+using SacredUtils.resources.bin.logger;
 using System.Globalization;
 using System.IO;
 using System.Threading;
@@ -15,13 +16,13 @@ namespace SacredUtils.resources.bin.get
     {
         public static void Get()
         {
-            GetLoggerConfig.Log.Info("Checking availability language settings ...");
+            Logger.Log.Info("Checking availability language settings ...");
 
             if (!File.Exists("$SacredUtils\\conf\\langinfo.json"))
             {
-                GetLoggerConfig.Log.Warn("Language settings not found! Settings will be based on system!");
+                Logger.Log.Warn("Language settings not found! Settings will be based on system!");
 
-                GetLoggerConfig.Log.Info("Getting default system language settings ...");
+                Logger.Log.Info("Getting default system language settings ...");
 
                 CultureInfo currentCulture = Thread.CurrentThread.CurrentCulture;
 
@@ -39,9 +40,9 @@ namespace SacredUtils.resources.bin.get
                     ApplicationInfo.Lang = "ru";
                     languageSettings.Language = "ru";
 
-                    GetLoggerConfig.Log.Info($"Language {ApplicationInfo.Lang} settings were created in conf folder");
+                    Logger.Log.Info($"Language {ApplicationInfo.Lang} settings were created in conf folder");
 
-                    GetLoggerConfig.Log.Info($"Application starting with {ApplicationInfo.Lang} language ...");
+                    Logger.Log.Info($"Application starting with {ApplicationInfo.Lang} language ...");
                 }
                 else
                 {
@@ -53,21 +54,21 @@ namespace SacredUtils.resources.bin.get
                     ApplicationInfo.Lang = "en";
                     languageSettings.Language = "en";
 
-                    GetLoggerConfig.Log.Info($"Language {ApplicationInfo.Lang} settings were created in conf folder");
+                    Logger.Log.Info($"Language {ApplicationInfo.Lang} settings were created in conf folder");
 
-                    GetLoggerConfig.Log.Info($"Application starting with {ApplicationInfo.Lang} language ...");
+                    Logger.Log.Info($"Application starting with {ApplicationInfo.Lang} language ...");
                 }
             }
             else
             {
-                GetLoggerConfig.Log.Info("Language settings found! Settings will be based on settings!");
+                Logger.Log.Info("Language settings found! Settings will be based on settings!");
 
                 ILanguageSettings languageSettings = new ConfigurationBuilder<ILanguageSettings>()
                     .UseJsonFile("$SacredUtils\\conf\\langinfo.json").Build();
 
                 ApplicationInfo.Lang = languageSettings.Language == "ru" ? "ru" : "en";
 
-                GetLoggerConfig.Log.Info($"Application starting with {ApplicationInfo.Lang} language ...");
+                Logger.Log.Info($"Application starting with {ApplicationInfo.Lang} language ...");
             }
         }
     }

@@ -6,11 +6,11 @@ using System.Management;
 using System.Text;
 using static SacredUtils.resources.bin.etc.ApplicationInfo;
 
-namespace SacredUtils.resources.bin.get
+namespace SacredUtils.resources.bin.logger
 {
-    public static class GetLoggerConfig
+    public static class Logger
     { 
-        public static readonly Logger Log = LogManager.GetCurrentClassLogger();
+        public static readonly NLog.Logger Log = LogManager.GetCurrentClassLogger();
 
         public static void Get()
         {
