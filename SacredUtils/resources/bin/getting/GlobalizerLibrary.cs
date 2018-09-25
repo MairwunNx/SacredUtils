@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using static SacredUtils.resources.bin.etc.ApplicationInfo;
 
-namespace SacredUtils.resources.bin.get
+namespace SacredUtils.resources.bin.getting
 {
     public static class GlobalizerLibrary
     {

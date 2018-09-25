@@ -7,7 +7,7 @@ using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace SacredUtils.resources.bin.get
+namespace SacredUtils.resources.bin.getting
 {
     public interface IDownloadCount
     {

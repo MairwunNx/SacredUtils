@@ -5,7 +5,7 @@ using System.Globalization;
 using System.IO;
 using System.Threading;
 
-namespace SacredUtils.resources.bin.get
+namespace SacredUtils.resources.bin.getting 
 {
     public interface ILanguageSettings
     {

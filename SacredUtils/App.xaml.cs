@@ -1,10 +1,10 @@
 using SacredUtils.resources.bin.check;
 using SacredUtils.resources.bin.create;
-using SacredUtils.resources.bin.get;
 using SacredUtils.resources.bin.logger;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
+using SacredUtils.resources.bin.getting;
 
 namespace SacredUtils
 {

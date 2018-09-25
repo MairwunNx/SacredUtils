@@ -3,7 +3,7 @@ using SacredUtils.resources.bin.logger;
 using System;
 using System.IO;
 
-namespace SacredUtils.resources.bin.get
+namespace SacredUtils.resources.bin.getting
 {
     public class SettingsVersion
     {

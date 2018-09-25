@@ -1,7 +1,7 @@
 ﻿using SacredUtils.resources.bin.change;
 using SacredUtils.resources.bin.check;
 using SacredUtils.resources.bin.etc;
-using SacredUtils.resources.bin.get;
+using SacredUtils.resources.bin.getting;
 using SacredUtils.resources.bin.logger;
 using SacredUtils.resources.pgs;
 using System;

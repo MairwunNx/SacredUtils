@@ -2,7 +2,7 @@
 using SacredUtils.resources.bin.etc;
 using SacredUtils.resources.bin.logger;
 
-namespace SacredUtils.resources.bin.get
+namespace SacredUtils.resources.bin.getting
 {
     public interface IScaleSettings
     {

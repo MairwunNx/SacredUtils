@@ -2,7 +2,7 @@
 using SacredUtils.resources.bin.open;
 using System.Windows;
 
-namespace SacredUtils.resources.bin.get
+namespace SacredUtils.resources.bin.getting
 {
     public static class ApplicationLicenseState
     {

@@ -4,7 +4,7 @@ using System;
 using System.IO;
 using System.Text;
 
-namespace SacredUtils.resources.bin.get
+namespace SacredUtils.resources.bin.getting
 {
     public class SacredGameSettings
     {

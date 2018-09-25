@@ -3,7 +3,7 @@ using SacredUtils.resources.bin.logger;
 using System;
 using System.Text;
 
-namespace SacredUtils.resources.bin.get
+namespace SacredUtils.resources.bin.getting
 {
     public static class FtpBase64Password
     {
