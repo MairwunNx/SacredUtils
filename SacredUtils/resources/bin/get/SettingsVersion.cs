@@ -5,7 +5,7 @@ using System.IO;
 
 namespace SacredUtils.resources.bin.get
 {
-    public class GetSettingsVersion
+    public class SettingsVersion
     {
         private int _trynum;
         private bool _acceptLicense;

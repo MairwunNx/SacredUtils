@@ -47,13 +47,13 @@ namespace SacredUtils.resources.pgs
             MakeBackupTglBtn.Click += (s, e) => ChangeBackupMake();
             LicenseTglBtn.Click += (s, e) => ChangeLicenseAgreement();
 
-            GitHubBtn.Click += (s, e) => OpenBrowserLink.Open("https://github.com/MairwunNx/SacredUtils");
-            DonateBtn.Click += (s, e) => OpenBrowserLink.Open("https://money.yandex.ru/to/410015993365458");
-            CreatorBtn.Click += (s, e) => OpenBrowserLink.Open("https://t-do.ru/mairwunnx");
-            FeedbackBtn.Click += (s, e) => OpenBrowserLink.Open("https://docs.google.com/forms/d/1Hx4EcS7VopBFG4bxq-zdsGUmqqD2nKy2NiwzRTiQMgA/edit?usp=sharing");
-            AboutBtn.Click += (s, e) => OpenAppDialog.Open("About");
+            GitHubBtn.Click += (s, e) => BrowserLink.Open("https://github.com/MairwunNx/SacredUtils");
+            DonateBtn.Click += (s, e) => BrowserLink.Open("https://money.yandex.ru/to/410015993365458");
+            CreatorBtn.Click += (s, e) => BrowserLink.Open("https://t-do.ru/mairwunnx");
+            FeedbackBtn.Click += (s, e) => BrowserLink.Open("https://docs.google.com/forms/d/1Hx4EcS7VopBFG4bxq-zdsGUmqqD2nKy2NiwzRTiQMgA/edit?usp=sharing");
+            AboutBtn.Click += (s, e) => ApplicationDialog.Open("About");
 
-            ToOnePageBtn.Click += (s, e) => OpenNewPage.Open("AppSettingsOne");
+            ToOnePageBtn.Click += (s, e) => SettingsPage.Open("AppSettingsOne");
         }
 
         private void ChangeUpdateCheck(bool alphaUpdate)

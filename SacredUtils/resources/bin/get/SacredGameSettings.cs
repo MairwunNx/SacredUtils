@@ -6,7 +6,7 @@ using System.Text;
 
 namespace SacredUtils.resources.bin.get
 {
-    public class GetGameSettings
+    public class SacredGameSettings
     {
         public void Get()
         { 

@@ -9,7 +9,7 @@ namespace SacredUtils.resources.bin.get
         double SacredUtilsGuiScale { get; }
     }
 
-    public static class GetScale
+    public static class ApplicationScale
     {
         public static void Get()
         {

@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace SacredUtils.resources.bin.open
 {
-    public static class OpenBrowserLink
+    public static class BrowserLink
     {
         public static void Open(string link)
         {

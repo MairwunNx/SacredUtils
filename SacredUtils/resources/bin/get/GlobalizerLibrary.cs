@@ -6,7 +6,7 @@ using static SacredUtils.resources.bin.etc.ApplicationInfo;
 
 namespace SacredUtils.resources.bin.get
 {
-    public static class GetGlobalizerLib
+    public static class GlobalizerLibrary
     {
         public static void Get(int ver)
         {

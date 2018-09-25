@@ -9,7 +9,7 @@ using System.Windows.Media;
 
 namespace SacredUtils.resources.bin.change
 {
-    public static class AppScale
+    public static class ApplicationScale
     {
         public static void Change()
         {

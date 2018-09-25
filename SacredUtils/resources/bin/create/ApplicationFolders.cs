@@ -4,7 +4,7 @@ using System.IO;
 
 namespace SacredUtils.resources.bin.create
 {
-    public static class AppFolders
+    public static class ApplicationFolders
     {
         public static void Create()
         {

@@ -31,7 +31,7 @@ namespace SacredUtils
         {
             Logger.Log.Info("*** Initializing SacredUtils components ...");
 
-            InitializeComponent(); EventSubscribe(); GetLanguage(); AppScale.Change();
+            InitializeComponent(); EventSubscribe(); GetLanguage(); resources.bin.change.ApplicationScale.Change();
 
             Logger.Log.Info("Initializing SacredUtils components done!");
 
@@ -61,7 +61,7 @@ namespace SacredUtils
             {
                 Logger.Log.Info("Loading SacredUtils application fully done!"); 
 
-                LicenseState.Get();
+                ApplicationLicenseState.Get();
             };
                 
 

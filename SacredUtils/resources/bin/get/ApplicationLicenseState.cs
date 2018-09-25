@@ -4,7 +4,7 @@ using System.Windows;
 
 namespace SacredUtils.resources.bin.get
 {
-    public static class LicenseState
+    public static class ApplicationLicenseState
     {
         public interface ILicenseSettings
         {
@@ -27,7 +27,7 @@ namespace SacredUtils.resources.bin.get
                     }
                 }
 
-                OpenAppDialog.Open("License");
+                ApplicationDialog.Open("License");
             }
         }
     }

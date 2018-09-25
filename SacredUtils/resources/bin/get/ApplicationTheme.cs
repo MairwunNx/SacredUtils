@@ -10,7 +10,7 @@ namespace SacredUtils.resources.bin.get
         string ColorTheme { get; }
     }
 
-    public static class GetTheme
+    public static class ApplicationTheme
     {
         public static void Get()
         {

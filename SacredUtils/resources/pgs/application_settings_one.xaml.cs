@@ -70,13 +70,13 @@ namespace SacredUtils.resources.pgs
             StartParamsCmbBox.SelectionChanged += (s, e) => ChangeStart();
             UiScaleCmbBox.SelectionChanged += (s, e) => ChangeScale();
 
-            GitHubBtn.Click += (s, e) => OpenBrowserLink.Open("https://github.com/MairwunNx/SacredUtils");
-            DonateBtn.Click += (s, e) => OpenBrowserLink.Open("https://money.yandex.ru/to/410015993365458");
-            CreatorBtn.Click += (s, e) => OpenBrowserLink.Open("https://t-do.ru/mairwunnx");
-            FeedbackBtn.Click += (s, e) => OpenBrowserLink.Open("https://docs.google.com/forms/d/1Hx4EcS7VopBFG4bxq-zdsGUmqqD2nKy2NiwzRTiQMgA/edit?usp=sharing");
-            AboutBtn.Click += (s, e) => OpenAppDialog.Open("About");
+            GitHubBtn.Click += (s, e) => BrowserLink.Open("https://github.com/MairwunNx/SacredUtils");
+            DonateBtn.Click += (s, e) => BrowserLink.Open("https://money.yandex.ru/to/410015993365458");
+            CreatorBtn.Click += (s, e) => BrowserLink.Open("https://t-do.ru/mairwunnx");
+            FeedbackBtn.Click += (s, e) => BrowserLink.Open("https://docs.google.com/forms/d/1Hx4EcS7VopBFG4bxq-zdsGUmqqD2nKy2NiwzRTiQMgA/edit?usp=sharing");
+            AboutBtn.Click += (s, e) => ApplicationDialog.Open("About");
 
-            ToTwoPageBtn.Click += (s, e) => OpenNewPage.Open("AppSettingsTwo");
+            ToTwoPageBtn.Click += (s, e) => SettingsPage.Open("AppSettingsTwo");
         }
 
         private void ChangeLanguage()
@@ -137,49 +137,49 @@ namespace SacredUtils.resources.pgs
             if (UiScaleCmbBox.SelectedIndex == 0)
             {
                 ApplicationInfo.Scale = 1.0;
-                AppScale.Change();
+                ApplicationScale.Change();
                 Logger.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
             }
             else if (UiScaleCmbBox.SelectedIndex == 1)
             {
                 ApplicationInfo.Scale = 1.05;
-                AppScale.Change();
+                ApplicationScale.Change();
                 Logger.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
             }
             else if (UiScaleCmbBox.SelectedIndex == 2)
             {
                 ApplicationInfo.Scale = 1.10;
-                AppScale.Change();
+                ApplicationScale.Change();
                 Logger.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
             }
             else if (UiScaleCmbBox.SelectedIndex == 3)
             {
                 ApplicationInfo.Scale = 1.15;
-                AppScale.Change();
+                ApplicationScale.Change();
                 Logger.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
             }
             else if (UiScaleCmbBox.SelectedIndex == 4)
             {
                 ApplicationInfo.Scale = 1.25;
-                AppScale.Change();
+                ApplicationScale.Change();
                 Logger.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
             }
             else if (UiScaleCmbBox.SelectedIndex == 5)
             {
                 ApplicationInfo.Scale = 1.50;
-                AppScale.Change();
+                ApplicationScale.Change();
                 Logger.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
             }
             else if (UiScaleCmbBox.SelectedIndex == 6)
             {
                 ApplicationInfo.Scale = 1.75;
-                AppScale.Change();
+                ApplicationScale.Change();
                 Logger.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
             }
             else if (UiScaleCmbBox.SelectedIndex == 7)
             {
                 ApplicationInfo.Scale = 2.0;
-                AppScale.Change();
+                ApplicationScale.Change();
                 Logger.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
             }
         }

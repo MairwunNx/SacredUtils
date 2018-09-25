@@ -12,7 +12,7 @@ namespace SacredUtils.resources.bin.get
         string Language { get; set; }
     }
 
-    public static class GetLanguage
+    public static class ApplicationLanguage
     {
         public static void Get()
         {

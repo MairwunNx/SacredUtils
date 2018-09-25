@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SacredUtils.resources.bin.get
 {
-    public static class GetFtpBase64Pass
+    public static class FtpBase64Password
     {
         public static void Get()
         {

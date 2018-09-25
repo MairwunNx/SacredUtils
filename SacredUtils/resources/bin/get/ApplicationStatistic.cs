@@ -19,7 +19,7 @@ namespace SacredUtils.resources.bin.get
         bool First { get; set; }
     }
     
-    public static class GetStatistic
+    public static class ApplicationStatistic
     {
         public static async void Get()
         {
@@ -41,7 +41,7 @@ namespace SacredUtils.resources.bin.get
             {
                 try
                 {
-                    GetFtpBase64Pass.Get();
+                    FtpBase64Password.Get();
 
                     FtpClient client = new FtpClient("files.000webhost.com");
 

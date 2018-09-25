@@ -116,7 +116,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="resources\bin\change\AppScale.cs" />
+    <Compile Include="resources\bin\change\ApplicationScale.cs" />
     <Compile Include="resources\bin\check\AvailabilityAlphaUpdates.cs" />
     <Compile Include="resources\bin\check\AvailabilityGameSettings.cs" />
     <Compile Include="resources\bin\check\AvailabilityInternetConnection.cs" />
@@ -125,21 +125,21 @@
     <Compile Include="resources\bin\etc\ApplicationInfo.cs" />
     <Compile Include="resources\bin\create\LanguageFiles.cs" />
     <Compile Include="resources\bin\create\ThemeFiles.cs" />
-    <Compile Include="resources\bin\get\GetFtpBase64Pass.cs" />
-    <Compile Include="resources\bin\get\GetRequiredFiles.cs" />
-    <Compile Include="resources\bin\create\AppFolders.cs" />
-    <Compile Include="resources\bin\get\GetGameSettings.cs" />
-    <Compile Include="resources\bin\get\GetGlobalizerLib.cs" />
-    <Compile Include="resources\bin\get\GetLanguage.cs" />
+    <Compile Include="resources\bin\get\FtpBase64Password.cs" />
+    <Compile Include="resources\bin\get\RequiredApplicationFiles.cs" />
+    <Compile Include="resources\bin\create\ApplicationFolders.cs" />
+    <Compile Include="resources\bin\get\SacredGameSettings.cs" />
+    <Compile Include="resources\bin\get\GlobalizerLibrary.cs" />
+    <Compile Include="resources\bin\get\ApplicationLanguage.cs" />
     <Compile Include="resources\bin\logger\Logger.cs" />
-    <Compile Include="resources\bin\get\GetScale.cs" />
-    <Compile Include="resources\bin\get\GetSettingsVersion.cs" />
-    <Compile Include="resources\bin\get\GetStatistic.cs" />
-    <Compile Include="resources\bin\get\GetTheme.cs" />
-    <Compile Include="resources\bin\get\LicenseState.cs" />
-    <Compile Include="resources\bin\open\OpenAppDialog.cs" />
-    <Compile Include="resources\bin\open\OpenBrowserLink.cs" />
-    <Compile Include="resources\bin\open\OpenNewPage.cs" />
+    <Compile Include="resources\bin\get\ApplicationScale.cs" />
+    <Compile Include="resources\bin\get\SettingsVersion.cs" />
+    <Compile Include="resources\bin\get\ApplicationStatistic.cs" />
+    <Compile Include="resources\bin\get\ApplicationTheme.cs" />
+    <Compile Include="resources\bin\get\ApplicationLicenseState.cs" />
+    <Compile Include="resources\bin\open\ApplicationDialog.cs" />
+    <Compile Include="resources\bin\open\BrowserLink.cs" />
+    <Compile Include="resources\bin\open\SettingsPage.cs" />
     <Compile Include="resources\dlg\change_log_dialog.xaml.cs">
       <DependentUpon>change_log_dialog.xaml</DependentUpon>
     </Compile>

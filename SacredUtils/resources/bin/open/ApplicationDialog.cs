@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace SacredUtils.resources.bin.open
 {
-    public static class OpenAppDialog
+    public static class ApplicationDialog
     {
         public static void Open(string dialog)
         {

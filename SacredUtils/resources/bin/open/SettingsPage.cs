@@ -4,7 +4,7 @@ using System.Windows;
 
 namespace SacredUtils.resources.bin.open
 {
-    public static class OpenNewPage
+    public static class SettingsPage
     {
         public static void Open(string settings)
         {

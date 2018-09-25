@@ -16,29 +16,29 @@ namespace SacredUtils
             {
                 Logger.Get();
 
-                AppFolders.Create();
+                ApplicationFolders.Create();
 
                 Task.Run(() => AvailabilityUpdateTool.Get());
 
                 Task.Run(() => AvailabilityGameSettings.Get());
 
-                Task.Run(() => GetStatistic.Get());
+                Task.Run(() => ApplicationStatistic.Get());
 
                 Task.Run(() => ThemeFiles.Create());
 
                 Task.Run(() => LanguageFiles.Create());
 
-                GetGlobalizerLib.Get(1);
+                GlobalizerLibrary.Get(1);
 
-                new GetSettingsVersion().Get();
+                new SettingsVersion().Get();
 
-                Task.Run(() => GetLanguage.Get());
+                Task.Run(() => ApplicationLanguage.Get());
 
-                Task.Run(() => GetTheme.Get());
+                Task.Run(() => ApplicationTheme.Get());
 
-                Task.Run(() => GetScale.Get());
+                Task.Run(() => ApplicationScale.Get());
 
-                Task.Run(() => GetRequiredFiles.Get());
+                Task.Run(() => RequiredApplicationFiles.Get());
 
                 base.OnStartup(e);
             }

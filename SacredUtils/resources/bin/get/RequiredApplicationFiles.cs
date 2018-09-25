@@ -11,7 +11,7 @@ namespace SacredUtils.resources.bin.get
         bool ConfigFileCreate { get; }
     }
 
-    public static class GetRequiredFiles
+    public static class RequiredApplicationFiles
     {
         public static void Get()
         {
