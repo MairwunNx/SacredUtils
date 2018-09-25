@@ -6,7 +6,7 @@ namespace SacredUtils.resources.bin.get
 {
     public static class LicenseState
     {
-        private interface ILicenseSettings
+        public interface ILicenseSettings
         {
             bool AcceptLicense { get; }
         }
