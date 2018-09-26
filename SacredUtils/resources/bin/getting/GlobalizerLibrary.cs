@@ -2,13 +2,16 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Security.Cryptography;
+using System.Text;
+using System.Windows;
 using static SacredUtils.resources.bin.etc.ApplicationInfo;
 
 namespace SacredUtils.resources.bin.getting
 {
     public static class GlobalizerLibrary
     {
-        public static void Get(int ver)
+        public static void Get()
         {
             Logger.Log.Info("Checking availability WPFSharp.Globalizer.dll file");
 
@@ -21,36 +24,6 @@ namespace SacredUtils.resources.bin.getting
             else
             {
                 Logger.Log.Info("WPFSharp.Globalizer.dll file was found");
-            }
-
-            if (ver > 1)
-            {
-                try
-                {
-                    Logger.Log.Warn("WPFSharp.Globalizer.dll file is out of date!");
-
-                    Logger.Log.Info("Updating WPFSharp.Globalizer.dll file ...");
-
-                    File.WriteAllBytes("WPFSharp.Globalizer.dll", Properties.Resources.WPFSharp_Globalizer);
-
-                    Logger.Log.Info("Updating WPFSharp.Globalizer.dll file done!");
-
-                    Logger.Log.Info("Reloading SacredUtils configurator ...");
-
-                    Process.Start(AppName);
-
-                    Environment.Exit(0);
-                }
-                catch (Exception exception)
-                {
-                    Logger.Log.Fatal("Updating WPFSharp.Globalizer.dll library done with fatal level error!!!");
-
-                    Logger.Log.Fatal(exception.ToString);
-
-                    Logger.Log.Info("Shutting down SacredUtils configurator ...");
-
-                    Environment.Exit(0);
-                }
             }
         }
 

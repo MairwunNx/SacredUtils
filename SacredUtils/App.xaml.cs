@@ -3,6 +3,9 @@ using SacredUtils.resources.bin.create;
 using SacredUtils.resources.bin.getting;
 using SacredUtils.resources.bin.logger;
 using System;
+using System.IO;
+using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using SacredGameSettings = SacredUtils.resources.bin.convert.SacredGameSettings;
@@ -17,7 +20,7 @@ namespace SacredUtils
             {
                 Logger.Get();
 
-                GlobalizerLibrary.Get(1);
+                GlobalizerLibrary.Get();
 
                 ApplicationFolders.Create();
 
