@@ -3,11 +3,9 @@ using SacredUtils.resources.bin.create;
 using SacredUtils.resources.bin.getting;
 using SacredUtils.resources.bin.logger;
 using System;
-using System.IO;
-using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using static SacredUtils.resources.bin.etc.ApplicationInfo;
 using SacredGameSettings = SacredUtils.resources.bin.convert.SacredGameSettings;
 
 namespace SacredUtils
@@ -16,6 +14,8 @@ namespace SacredUtils
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            sw.Start();
+
             try
             {
                 Logger.Get();

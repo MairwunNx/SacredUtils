@@ -9,8 +9,11 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using static SacredUtils.resources.bin.etc.ApplicationInfo;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Threading;
+using Config.Net;
 using WPFSharp.Globalizer;
 using SacredGameSettings = SacredUtils.resources.bin.convert.SacredGameSettings;
 
@@ -28,6 +31,8 @@ namespace SacredUtils
         public sound_settings_one _soundStgOne           = new sound_settings_one();
         public unselected_settings_one _unselectedStgOne = new unselected_settings_one();
 
+        public DispatcherTimer _timer = new DispatcherTimer();
+
         public MainWindow()
         {
             Logger.Log.Info("*** Initializing SacredUtils components ...");
@@ -39,6 +44,13 @@ namespace SacredUtils
             SelectSettings(_unselectedStgOne, MenuGpLabel);
 
             Task.Run(() => AvailabilityAlphaUpdates.GetConnect());
+
+            _timer.Interval = new TimeSpan(0, 0, 1);
+            _timer.Tick += (s, e) => GetCurrentUsedMemory();
+
+            GetPermCheckingMemory();
+
+
         }
 
         private void EventSubscribe()
@@ -63,10 +75,37 @@ namespace SacredUtils
                 Logger.Log.Info("Loading SacredUtils application fully done!"); 
 
                 ApplicationLicenseState.Get();
+
+                sw.Stop();
+
+                Logger.Log.Info($"Done ({sw.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
             };
-                
 
             Logger.Log.Info("Adding events subscribes on buttons done!");
+        }
+
+        private void GetCurrentUsedMemory()
+        {
+            MemoryLbl.Content = $"USED MEMORY {GC.GetTotalMemory(true) / 1024} KB OF {Environment.WorkingSet / 1024} KB";
+        }
+
+        private void GetPermCheckingMemory()
+        {
+            SettingsVersion.IApplicationSettings applicationSettings = new ConfigurationBuilder<SettingsVersion.IApplicationSettings>()
+                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
+
+            if (applicationSettings.ShowUsedMemory)
+            {
+                MemoryLbl.Visibility = Visibility.Visible;
+
+                _timer.Start();
+            }
+            else
+            {
+                MemoryLbl.Visibility = Visibility.Hidden;
+
+                _timer.Stop();
+            }
         }
 
         public void Shutdown()

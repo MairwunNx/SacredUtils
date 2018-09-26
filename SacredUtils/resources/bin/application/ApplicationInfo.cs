@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Diagnostics;
+using System.Reflection;
 
 namespace SacredUtils.resources.bin.etc
 {
@@ -13,5 +14,6 @@ namespace SacredUtils.resources.bin.etc
         public static string Connect  = "None";
         public static string Theme    = "None";
         public static double Scale    = 1.0;
+        public static Stopwatch sw    = new Stopwatch();
     }
 }

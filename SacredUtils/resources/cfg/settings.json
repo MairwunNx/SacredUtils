@@ -19,6 +19,7 @@
   "SacredStartArgs": "minimize",
   "SacredUtilsGuiScale": "1.0",
   "ShowChangeLog": "true",
+  "ShowUsedMemory": "false",
   "UseOldButtonTextures": "false",
   "UseOldMenuTextures": "false",
   "UseOldSlotsTextures": "false",

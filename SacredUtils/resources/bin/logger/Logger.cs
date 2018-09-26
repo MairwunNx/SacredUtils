@@ -33,6 +33,8 @@ namespace SacredUtils.resources.bin.logger
 
             LogManager.Configuration = config;
 
+            Log.Info("============================================================");
+
             Log.Info($"Starting {Name} configurator version {ApplicationInfo.Version}");
             Log.Info($"You have launched an official {ApplicationInfo.Type} build");
             Log.Info($"Current launched SacredUtils app name {domain.FriendlyName}");
@@ -68,9 +70,11 @@ namespace SacredUtils.resources.bin.logger
                 ? "Bitness of the current SacredUtils process 64 bit"
                 : "Bitness of the current SacredUtils process 32 bit");
 
-            Log.Info($"Allocated memory for SacredUtils {Environment.WorkingSet / 1024 / 1024} MB");
+            Log.Info($"Allocated memory for SacredUtils {Environment.WorkingSet / 1024 / 1024} MB or {Environment.WorkingSet / 1024} KB");
 
             Log.Info($"Running by current user name profile {Environment.UserName}");
+
+            Log.Info("============================================================");
         }
     }
 }

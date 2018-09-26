@@ -26,6 +26,7 @@ namespace SacredUtils.resources.bin.getting
         private string _sacredStartArgs;
         private double _sacredUtilsGuiScale;
         private bool _showChangeLog;
+        private bool _showUsedMemory;
         private bool _useOldButtonTextures;
         private bool _useOldMenuTextures;
         private bool _useOldSlotsTextures;
@@ -54,6 +55,7 @@ namespace SacredUtils.resources.bin.getting
             string SacredStartArgs { get; set; }
             double SacredUtilsGuiScale { get; set; }
             bool ShowChangeLog { get; set; }
+            bool ShowUsedMemory { get; set; }
             bool UseOldButtonTextures { get; set; }
             bool UseOldMenuTextures { get; set; }
             bool UseOldSlotsTextures { get; set; }
@@ -153,6 +155,8 @@ namespace SacredUtils.resources.bin.getting
 
                 _showChangeLog = applicationSettings.ShowChangeLog;
 
+                _showUsedMemory = applicationSettings.ShowUsedMemory;
+
                 _useOldButtonTextures = applicationSettings.UseOldButtonTextures;
 
                 _useOldMenuTextures = applicationSettings.UseOldMenuTextures;
@@ -207,6 +211,8 @@ namespace SacredUtils.resources.bin.getting
                 reqiredFilesSettingsRepair.SacredUtilsGuiScale = _sacredUtilsGuiScale;
 
                 reqiredFilesSettingsRepair.ShowChangeLog = _showChangeLog;
+
+                reqiredFilesSettingsRepair.ShowUsedMemory = _showUsedMemory;
 
                 reqiredFilesSettingsRepair.UseOldButtonTextures = _useOldButtonTextures;
 
