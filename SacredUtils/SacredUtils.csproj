@@ -129,7 +129,6 @@
     <Compile Include="resources\bin\getting\FtpBase64Password.cs" />
     <Compile Include="resources\bin\getting\RequiredApplicationFiles.cs" />
     <Compile Include="resources\bin\create\ApplicationFolders.cs" />
-    <Compile Include="resources\bin\getting\SacredGameSettings.cs" />
     <Compile Include="resources\bin\getting\GlobalizerLibrary.cs" />
     <Compile Include="resources\bin\getting\ApplicationLanguage.cs" />
     <Compile Include="resources\bin\logger\Logger.cs" />

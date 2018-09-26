@@ -17,6 +17,8 @@ namespace SacredUtils
             {
                 Logger.Get();
 
+                GlobalizerLibrary.Get(1);
+
                 ApplicationFolders.Create();
 
                 Task.Run(() => AvailabilityUpdateTool.Get());
@@ -28,8 +30,6 @@ namespace SacredUtils
                 Task.Run(() => ThemeFiles.Create());
 
                 Task.Run(() => LanguageFiles.Create());
-
-                GlobalizerLibrary.Get(1);
 
                 new SettingsVersion().Get();
 
