@@ -112,7 +112,7 @@ namespace SacredUtils
 
             if (e.Key == Key.F4)
             {
-                SacredGameSettings.ConvertToCfg();
+                SacredGameSettings.ConvertToCfg("by program");
             }
         }
 
