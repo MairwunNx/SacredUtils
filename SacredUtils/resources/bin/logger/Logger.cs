@@ -1,10 +1,12 @@
 ﻿using NLog;
 using NLog.Targets;
-using SacredUtils.resources.bin.etc;
+using SacredUtils.resources.bin.application;
 using System;
+using System.IO;
 using System.Management;
 using System.Text;
-using static SacredUtils.resources.bin.etc.ApplicationInfo;
+using System.Threading.Tasks;
+using static SacredUtils.resources.bin.application.ApplicationInfo;
 
 namespace SacredUtils.resources.bin.logger
 {
@@ -66,6 +68,8 @@ namespace SacredUtils.resources.bin.logger
                 }
             }
 
+            // I LOVE PUTIN ❤❤❤❤
+
             Log.Info(Environment.Is64BitProcess
                 ? "Bitness of the current SacredUtils process 64 bit"
                 : "Bitness of the current SacredUtils process 32 bit");
@@ -73,6 +77,14 @@ namespace SacredUtils.resources.bin.logger
             Log.Info($"Allocated memory for SacredUtils {Environment.WorkingSet / 1024 / 1024} MB or {Environment.WorkingSet / 1024} KB");
 
             Log.Info($"Running by current user name profile {Environment.UserName}");
+
+            Directory.CreateDirectory("$SacredUtils\\conf");
+            Directory.CreateDirectory("$SacredUtils\\logs");
+            Directory.CreateDirectory("$SacredUtils\\temp");
+            Directory.CreateDirectory("$SacredUtils\\back");
+            Directory.CreateDirectory("$SacredUtils\\themes");
+            Directory.CreateDirectory("$SacredUtils\\lang\\ru-RU");
+            Directory.CreateDirectory("$SacredUtils\\lang\\en-US");
 
             Log.Info("============================================================");
         }

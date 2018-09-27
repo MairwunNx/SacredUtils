@@ -1,9 +1,10 @@
 ﻿using Config.Net;
-using SacredUtils.resources.bin.etc;
+using SacredUtils.resources.bin.application;
 using SacredUtils.resources.bin.logger;
 using System.Globalization;
 using System.IO;
 using System.Threading;
+using WPFSharp.Globalizer;
 
 namespace SacredUtils.resources.bin.getting
 {
@@ -40,6 +41,8 @@ namespace SacredUtils.resources.bin.getting
                     ApplicationInfo.Lang = "ru";
                     languageSettings.Language = "ru";
 
+                    GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage("ru-RU", true);
+
                     Logger.Log.Info($"Language {ApplicationInfo.Lang} settings were created in conf folder");
 
                     Logger.Log.Info($"Application starting with {ApplicationInfo.Lang} language ...");
@@ -54,6 +57,8 @@ namespace SacredUtils.resources.bin.getting
                     ApplicationInfo.Lang = "en";
                     languageSettings.Language = "en";
 
+                    GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage("en-US", true);
+
                     Logger.Log.Info($"Language {ApplicationInfo.Lang} settings were created in conf folder");
 
                     Logger.Log.Info($"Application starting with {ApplicationInfo.Lang} language ...");
@@ -61,12 +66,13 @@ namespace SacredUtils.resources.bin.getting
             }
             else
             {
-                Logger.Log.Info("Language settings found! Settings will be based on settings!");
-
                 ILanguageSettings languageSettings = new ConfigurationBuilder<ILanguageSettings>()
                     .UseJsonFile("$SacredUtils\\conf\\langinfo.json").Build();
 
                 ApplicationInfo.Lang = languageSettings.Language == "ru" ? "ru" : "en";
+
+                GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
+                    (languageSettings.Language == "ru" ? "ru-RU" : "en-US", true);
 
                 Logger.Log.Info($"Application starting with {ApplicationInfo.Lang} language ...");
             }

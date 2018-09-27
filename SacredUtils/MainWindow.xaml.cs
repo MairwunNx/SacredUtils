@@ -1,6 +1,6 @@
-﻿using SacredUtils.resources.bin.change;
+﻿using Config.Net;
+using SacredUtils.resources.bin.change;
 using SacredUtils.resources.bin.check;
-using SacredUtils.resources.bin.etc;
 using SacredUtils.resources.bin.getting;
 using SacredUtils.resources.bin.logger;
 using SacredUtils.resources.pgs;
@@ -9,12 +9,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using static SacredUtils.resources.bin.etc.ApplicationInfo;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
-using Config.Net;
-using WPFSharp.Globalizer;
+using static SacredUtils.resources.bin.application.ApplicationInfo;
 using SacredGameSettings = SacredUtils.resources.bin.convert.SacredGameSettings;
 
 namespace SacredUtils
@@ -35,13 +33,18 @@ namespace SacredUtils
 
         public MainWindow()
         {
+
             Logger.Log.Info("*** Initializing SacredUtils components ...");
 
-            InitializeComponent(); EventSubscribe(); GetLanguage(); resources.bin.change.ApplicationScale.Change();
+            InitializeComponent(); EventSubscribe(); 
 
             Logger.Log.Info("Initializing SacredUtils components done!");
 
             SelectSettings(_unselectedStgOne, MenuGpLabel);
+
+            ApplicationLanguage.Get(); ApplicationTheme.Get(); ApplicationScale.Get();
+
+            AvailabilityUpdateTemp.Get();
 
             Task.Run(() => AvailabilityAlphaUpdates.GetConnect());
 
@@ -49,14 +52,10 @@ namespace SacredUtils
             _timer.Tick += (s, e) => GetCurrentUsedMemory();
 
             GetPermCheckingMemory();
-
-
         }
 
         private void EventSubscribe()
         {
-            Logger.Log.Info("Adding events subscribes on buttons ...");
-
             MenuGrLabel.Click += (s, e) => SelectSettings(_graphicsStgOne, GraphicsPanel);
             MenuSnLabel.Click += (s, e) => SelectSettings(_soundStgOne, SoundPanel);
             MenuGpLabel.Click += (s, e) => SelectSettings(_gameplayStgOne, GameplayPanel);
@@ -72,13 +71,13 @@ namespace SacredUtils
 
             Loaded += (sender, args) =>
             {
-                Logger.Log.Info("Loading SacredUtils application fully done!"); 
-
                 ApplicationLicenseState.Get();
 
-                sw.Stop();
+                Sw.Stop();
 
-                Logger.Log.Info($"Done ({sw.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
+                Logger.Log.Info("Loading SacredUtils application fully done!");
+
+                Logger.Log.Info($"Done ({Sw.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
             };
 
             Logger.Log.Info("Adding events subscribes on buttons done!");
@@ -86,25 +85,21 @@ namespace SacredUtils
 
         private void GetCurrentUsedMemory()
         {
-            MemoryLbl.Content = $"USED MEMORY {GC.GetTotalMemory(true) / 1024} KB OF {Environment.WorkingSet / 1024} KB";
+            MemoryLbl.Content = $"[{Process.GetCurrentProcess().Id} / {Process.GetCurrentProcess().PriorityClass.ToString().ToUpper()}] USED MEMORY {GC.GetTotalMemory(true) / 1024} KB OF {Environment.WorkingSet / 1024} KB";
         }
 
         private void GetPermCheckingMemory()
         {
-            SettingsVersion.IApplicationSettings applicationSettings = new ConfigurationBuilder<SettingsVersion.IApplicationSettings>()
+            ApplicationSettings.IApplicationSettings applicationSettings = new ConfigurationBuilder<ApplicationSettings.IApplicationSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
             if (applicationSettings.ShowUsedMemory)
             {
-                MemoryLbl.Visibility = Visibility.Visible;
-
-                _timer.Start();
+                MemoryLbl.Visibility = Visibility.Visible; _timer.Start();
             }
             else
             {
-                MemoryLbl.Visibility = Visibility.Hidden;
-
-                _timer.Stop();
+                MemoryLbl.Visibility = Visibility.Hidden; _timer.Stop();
             }
         }
 
@@ -131,8 +126,6 @@ namespace SacredUtils
             {
                 Logger.Log.Info($"Selected settings category {s.Name} by user");
 
-                if (s.Name == "SettingsPanel") { _appStgOne.GetSettings(); }
-
                 foreach (StackPanel sp in SettingsGrid.Children.OfType<StackPanel>())
                 {
                     sp.SetResourceReference(BackgroundProperty, "CategoryNotActiveColorBrush");
@@ -148,17 +141,6 @@ namespace SacredUtils
             {
                 _appStgOne.GetSettings(); _appStgTwo.GetSettings();
             }
-
-            if (e.Key == Key.F4)
-            {
-                SacredGameSettings.ConvertToCfg("by program");
-            }
-        }
-
-        private void GetLanguage()
-        {
-            GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
-                (ApplicationInfo.Lang == "ru" ? "ru-RU" : "en-US", true);
         }
 
         private void UpdateLbl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

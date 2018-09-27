@@ -2,10 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Security.Cryptography;
-using System.Text;
-using System.Windows;
-using static SacredUtils.resources.bin.etc.ApplicationInfo;
+using static SacredUtils.resources.bin.application.ApplicationInfo;
 
 namespace SacredUtils.resources.bin.getting
 {
@@ -13,17 +10,15 @@ namespace SacredUtils.resources.bin.getting
     {
         public static void Get()
         {
-            Logger.Log.Info("Checking availability WPFSharp.Globalizer.dll file");
+            Logger.Log.Info("Checking availability WPFSharp.Globalizer.dll file ...");
 
             if (!File.Exists("WPFSharp.Globalizer.dll"))
             {
-                Logger.Log.Warn("WPFSharp.Globalizer.dll file not found!");
-
-                Create();
+                Logger.Log.Warn("WPFSharp.Globalizer.dll file not found!"); Create();
             }
             else
             {
-                Logger.Log.Info("WPFSharp.Globalizer.dll file was found");
+                Logger.Log.Info("WPFSharp.Globalizer.dll file was found!");
             }
         }
 
@@ -39,9 +34,7 @@ namespace SacredUtils.resources.bin.getting
 
                 Logger.Log.Info("Reloading SacredUtils configurator ...");
 
-                Process.Start(AppName);
-
-                Environment.Exit(0);
+                Process.Start(AppPatch); Environment.Exit(0);
             }
             catch (Exception exception)
             {

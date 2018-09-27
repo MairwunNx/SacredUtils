@@ -4,23 +4,14 @@ using System.IO;
 
 namespace SacredUtils.resources.bin.getting
 {
-    public interface IReqiredFilesSettings
-    {
-        bool DebugFileCreate { get; }
-        bool LicenseFileCreate { get; }
-        bool ConfigFileCreate { get; }
-    }
-
     public static class RequiredApplicationFiles
     {
         public static void Get()
         {
-            IReqiredFilesSettings reqiredFilesSettings = new ConfigurationBuilder<IReqiredFilesSettings>()
+            ApplicationSettings.IApplicationSettings applicationSettings = new ConfigurationBuilder<ApplicationSettings.IApplicationSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
-            Logger.Log.Info("Checking permission to create debug file ...");
-
-            if (reqiredFilesSettings.DebugFileCreate)
+            if (applicationSettings.DebugFileCreate)
             {
                 File.WriteAllBytes("SacredUtils.pdb", Properties.Resources.SacredUtils);
 
@@ -31,9 +22,7 @@ namespace SacredUtils.resources.bin.getting
                 Logger.Log.Info("No permission to create debug file!");
             }
 
-            Logger.Log.Info("Checking permission to create license file");
-
-            if (reqiredFilesSettings.LicenseFileCreate)
+            if (applicationSettings.LicenseFileCreate)
             {
                 File.WriteAllBytes("License.txt", Properties.Resources.license);
 
@@ -44,9 +33,7 @@ namespace SacredUtils.resources.bin.getting
                 Logger.Log.Info("No permission to create license file!");
             }
 
-            Logger.Log.Info("Checking permission to create AppConfig file");
-
-            if (reqiredFilesSettings.ConfigFileCreate)
+            if (applicationSettings.ConfigFileCreate)
             {
                 File.WriteAllBytes("SacredUtils.exe.config", Properties.Resources.application);
 

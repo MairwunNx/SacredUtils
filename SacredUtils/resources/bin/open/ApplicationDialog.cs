@@ -1,5 +1,5 @@
 ﻿using MaterialDesignThemes.Wpf;
-using SacredUtils.resources.bin.etc;
+using SacredUtils.resources.bin.application;
 using SacredUtils.resources.bin.logger;
 using SacredUtils.resources.dlg;
 using System;

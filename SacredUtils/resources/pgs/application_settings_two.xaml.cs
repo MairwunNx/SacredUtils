@@ -19,7 +19,7 @@ namespace SacredUtils.resources.pgs
 
         public application_settings_two()
         {
-            InitializeComponent();
+            InitializeComponent(); GetSettings();
 
             Logger.Log.Info("Initialization components for application settings two done!");
         }

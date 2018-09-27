@@ -96,7 +96,6 @@
                     HorizontalAlignment="Center"
                     HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"
-                    Content="USED MEMORY 1024 OF 1606 MB"
                     Cursor="Hand"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     FontSize="11"
@@ -307,6 +306,24 @@
             </Border>
 
             <!--#endregion-->
+
+            <Label
+                x:Name="ExperimentalLbl"
+                Grid.Row="1"
+                Width="1077"
+                Margin="0,0,0,0"
+                HorizontalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Content="EXPERIMENTAL"
+                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                FontSize="110"
+                FontWeight="Bold"
+                Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                IsEnabled="False"
+                IsHitTestVisible="False"
+                Opacity="0.1"
+                Visibility="Visible" />
 
             <!--#region Content for page dialogs.-->
 

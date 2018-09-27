@@ -1,6 +1,6 @@
 ﻿using Config.Net;
 using SacredUtils.resources.bin.change;
-using SacredUtils.resources.bin.etc;
+using SacredUtils.resources.bin.application;
 using SacredUtils.resources.bin.logger;
 using SacredUtils.resources.bin.open;
 using System;
@@ -28,7 +28,7 @@ namespace SacredUtils.resources.pgs
 
         public application_settings_one()
         {
-            InitializeComponent();
+            InitializeComponent(); GetSettings();
 
             Logger.Log.Info("Initialization components for application settings one done!");
         }

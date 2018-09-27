@@ -5,7 +5,7 @@ using SacredUtils.resources.bin.logger;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
-using static SacredUtils.resources.bin.etc.ApplicationInfo;
+using static SacredUtils.resources.bin.application.ApplicationInfo;
 using SacredGameSettings = SacredUtils.resources.bin.convert.SacredGameSettings;
 
 namespace SacredUtils
@@ -14,7 +14,7 @@ namespace SacredUtils
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            sw.Start();
+            Sw.Start();
 
             try
             {
@@ -22,31 +22,21 @@ namespace SacredUtils
 
                 GlobalizerLibrary.Get();
 
-                ApplicationFolders.Create();
+                ThemeFiles.Create();
 
-                Task.Run(() => AvailabilityUpdateTool.Get());
+                LanguageFiles.Create();
 
-                Task.Run(() => AvailabilityGameSettings.Get());
+                ApplicationSettings.Get();
+
+                AvailabilityGameSettings.Get();
+
+                SacredGameSettings.ConvertToIni("by program");
+
+                RequiredApplicationFiles.Get();
 
                 Task.Run(() => ApplicationStatistic.Get());
 
-                Task.Run(() => ThemeFiles.Create());
-
-                Task.Run(() => LanguageFiles.Create());
-
-                new SettingsVersion().Get();
-
-                Task.Run(() => ApplicationLanguage.Get());
-
-                Task.Run(() => ApplicationTheme.Get());
-
-                Task.Run(() => ApplicationScale.Get());
-
-                Task.Run(() => RequiredApplicationFiles.Get());
-
                 base.OnStartup(e);
-
-                SacredGameSettings.ConvertToIni("by program");
             }
             catch (Exception exception)
             {

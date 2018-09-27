@@ -10,12 +10,10 @@ namespace SacredUtils.resources.bin.create
         {
             try
             {
-                Logger.Log.Info("Creating SacredUtils language files ...");
-
                 File.WriteAllBytes("$SacredUtils\\lang\\ru-RU\\ru-RU.xaml", Properties.Resources.ru_RU);
                 File.WriteAllBytes("$SacredUtils\\lang\\en-US\\en-US.xaml", Properties.Resources.en_US);
 
-                Logger.Log.Info("Creating SacredUtils language files done!");
+                Logger.Log.Info("Creating SacredUtils language files successfully done!");
             }
             catch (Exception exception)
             {

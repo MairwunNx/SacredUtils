@@ -15,7 +15,6 @@ namespace SacredUtils.resources.bin.open
                     foreach (Window window in Application.Current.Windows)
                     {
                         ((MainWindow)window).SettingsFrame.Content = ((MainWindow)window)._appStgOne;
-                        ((MainWindow)window)._appStgOne.GetSettings();
 
                         Logger.Log.Info("Application settings one page was opened by user");
                     }
@@ -34,7 +33,6 @@ namespace SacredUtils.resources.bin.open
                     foreach (Window window in Application.Current.Windows)
                     {
                         ((MainWindow)window).SettingsFrame.Content = ((MainWindow)window)._appStgTwo;
-                        ((MainWindow)window)._appStgTwo.GetSettings();
 
                         Logger.Log.Info("Application settings two page was opened by user");
                     }

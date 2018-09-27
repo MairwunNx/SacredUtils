@@ -1,6 +1,6 @@
 ﻿using Config.Net;
 using FluentFTP;
-using SacredUtils.resources.bin.etc;
+using SacredUtils.resources.bin.application;
 using SacredUtils.resources.bin.logger;
 using System;
 using System.IO;
@@ -23,19 +23,19 @@ namespace SacredUtils.resources.bin.getting
     {
         public static async void Get()
         {
-            Logger.Log.Info("Checking availability first install settings");
+            Logger.Log.Info("Checking availability first install settings ...");
 
             if (!File.Exists("$SacredUtils\\conf\\firstinstall.json"))
             {
                 File.WriteAllBytes("$SacredUtils\\conf\\firstinstall.json", Properties.Resources.firstinstall);
 
-                Logger.Log.Info("First install settings were created in conf folder");
+                Logger.Log.Info("First install settings were created in conf folder!");
             }
 
             IFirstInstall firstInstall = new ConfigurationBuilder<IFirstInstall>()
                 .UseJsonFile("$SacredUtils\\conf\\firstinstall.json").Build();
 
-            Logger.Log.Info("Checking first installing of SacredUtils ...");
+            Logger.Log.Info("Checking for first installing of SacredUtils ...");
 
             if (firstInstall.First)
             {

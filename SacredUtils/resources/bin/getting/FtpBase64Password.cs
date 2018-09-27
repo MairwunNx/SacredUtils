@@ -1,4 +1,4 @@
-﻿using SacredUtils.resources.bin.etc;
+﻿using SacredUtils.resources.bin.application;
 using SacredUtils.resources.bin.logger;
 using System;
 using System.Text;

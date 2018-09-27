@@ -10,12 +10,10 @@ namespace SacredUtils.resources.bin.create
         {
             try
             {
-                Logger.Log.Info("Creating SacredUtils theme files ...");
-
                 File.WriteAllBytes("$SacredUtils\\themes\\Light.xaml", Properties.Resources.Light);
                 File.WriteAllBytes("$SacredUtils\\themes\\Dark.xaml", Properties.Resources.Dark);
 
-                Logger.Log.Info("Creating SacredUtils theme files done!");
+                Logger.Log.Info("Creating SacredUtils theme files successfully done!");
             }
             catch (Exception exception)
             {
