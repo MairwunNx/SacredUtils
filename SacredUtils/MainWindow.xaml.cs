@@ -13,7 +13,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
 using static SacredUtils.resources.bin.application.ApplicationInfo;
-using SacredGameSettings = SacredUtils.resources.bin.convert.SacredGameSettings;
 
 namespace SacredUtils
 {
@@ -48,7 +47,10 @@ namespace SacredUtils
 
             Task.Run(() => AvailabilityAlphaUpdates.GetConnect());
 
-            _timer.Interval = new TimeSpan(0, 0, 1);
+            ApplicationSettings.IApplicationSettings applicationSettings = new ConfigurationBuilder<ApplicationSettings.IApplicationSettings>()
+                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
+
+            _timer.Interval = new TimeSpan(0, 0, applicationSettings.ShowUsedMemoryUpdateInterval);
             _timer.Tick += (s, e) => GetCurrentUsedMemory();
 
             GetPermCheckingMemory();

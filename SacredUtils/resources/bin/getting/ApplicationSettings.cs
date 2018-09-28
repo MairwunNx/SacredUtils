@@ -29,6 +29,7 @@ namespace SacredUtils.resources.bin.getting
             double SacredUtilsGuiScale { get; set; }
             bool ShowChangeLog { get; set; }
             bool ShowUsedMemory { get; set; }
+            int ShowUsedMemoryUpdateInterval { get; set; }
             bool UseOldButtonTextures { get; set; }
             bool UseOldMenuTextures { get; set; }
             bool UseOldSlotsTextures { get; set; }

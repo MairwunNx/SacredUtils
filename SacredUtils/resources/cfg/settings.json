@@ -19,6 +19,7 @@
   "SacredUtilsGuiScale": "1.0",
   "ShowChangeLog": "true",
   "ShowUsedMemory": "false",
+  "ShowUsedMemoryUpdateInterval": "1", 
   "UseOldButtonTextures": "false",
   "UseOldMenuTextures": "false",
   "UseOldSlotsTextures": "false",
