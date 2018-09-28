@@ -19,6 +19,11 @@ namespace SacredUtils.resources.bin.check
             bool CheckAutoAlphaUpdate { get; }
         }
 
+        public static void GetGarbage()
+        {
+            AvailabilityUpdateTemp.Get(); GetConnect();
+        }
+
         public static void GetConnect()
         {
             Logger.Log.Info("Checking internet connection for checking alpha updates ...");

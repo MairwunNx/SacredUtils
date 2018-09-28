@@ -4,6 +4,7 @@ using SacredUtils.resources.bin.application;
 using SacredUtils.resources.bin.logger;
 using SacredUtils.resources.bin.open;
 using System;
+using SacredUtils.resources.bin.getting;
 using WPFSharp.Globalizer;
 
 namespace SacredUtils.resources.pgs
@@ -35,7 +36,7 @@ namespace SacredUtils.resources.pgs
 
         public void GetSettings()
         {
-            IApplicationSettings applicationSettings = new ConfigurationBuilder<IApplicationSettings>()
+            ApplicationSettings.IApplicationSettings globalApplicationSettings = new ConfigurationBuilder<ApplicationSettings.IApplicationSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
             ILanguageSettings languageSettings = new ConfigurationBuilder<ILanguageSettings>()
@@ -43,22 +44,22 @@ namespace SacredUtils.resources.pgs
 
             UiLanguageCmbBox.SelectedIndex = languageSettings.Language == "ru" ? 0 : 1;
 
-            UiThemeCmbBox.SelectedIndex = applicationSettings.ColorTheme == "light" ? 0 : 1;
+            UiThemeCmbBox.SelectedIndex = globalApplicationSettings.ColorTheme == "light" ? 0 : 1;
 
-            if (applicationSettings.SacredStartArgs == "close")
+            if (globalApplicationSettings.SacredStartArgs == "close")
             {
                 StartParamsCmbBox.SelectedIndex = 0;
             }
-            else if (applicationSettings.SacredStartArgs == "minimize")
+            else if (globalApplicationSettings.SacredStartArgs == "minimize")
             {
                 StartParamsCmbBox.SelectedIndex = 1;
             }
-            else if (applicationSettings.SacredStartArgs == "none")
+            else if (globalApplicationSettings.SacredStartArgs == "none")
             {
                 StartParamsCmbBox.SelectedIndex = 2;
             }
 
-            UiScaleCmbBox.Text = $"{Convert.ToInt32(ApplicationInfo.Scale * 100)}%";
+            UiScaleCmbBox.Text = $"{Convert.ToInt32(globalApplicationSettings.SacredUtilsGuiScale * 100)}%";
 
             if (_nums == 1) { EventSubscribe(); _nums = 2; }
         }
