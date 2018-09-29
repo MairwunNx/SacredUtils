@@ -1,5 +1,4 @@
-﻿using SacredUtils.resources.bin.logger;
-using System;
+﻿using System;
 using System.IO;
 
 namespace SacredUtils.resources.bin.create
@@ -13,15 +12,15 @@ namespace SacredUtils.resources.bin.create
                 File.WriteAllBytes("$SacredUtils\\themes\\Light.xaml", Properties.Resources.Light);
                 File.WriteAllBytes("$SacredUtils\\themes\\Dark.xaml", Properties.Resources.Dark);
 
-                Logger.Log.Info("Creating SacredUtils theme files successfully done!");
+                AppLogger.Log.Info("Creating SacredUtils theme files successfully done!");
             }
             catch (Exception exception)
             {
-                Logger.Log.Fatal("Creating SacredUtils theme files done with fatal level error!!!");
+                AppLogger.Log.Fatal("Creating SacredUtils theme files done with fatal level error!!!");
                 
-                Logger.Log.Fatal(exception.ToString);
+                AppLogger.Log.Fatal(exception.ToString);
 
-                Logger.Log.Info("Shutting down SacredUtils configurator ...");
+                AppLogger.Log.Info("Shutting down SacredUtils configurator ...");
 
                 Environment.Exit(0);
             }

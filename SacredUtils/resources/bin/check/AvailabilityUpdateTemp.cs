@@ -8,7 +8,7 @@ namespace SacredUtils.resources.bin.check
     {
         public static void Get()
         {
-            ApplicationSettings.IApplicationSettings applicationSettings = new ConfigurationBuilder<ApplicationSettings.IApplicationSettings>()
+            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
             if (applicationSettings.RemoveTempContent)

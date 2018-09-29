@@ -1,6 +1,4 @@
 ﻿using Config.Net;
-using SacredUtils.resources.bin.application;
-using SacredUtils.resources.bin.logger;
 using System;
 using System.IO;
 using System.Net;
@@ -14,47 +12,42 @@ namespace SacredUtils.resources.bin.check
     {
         static WebClient wc = new WebClient();
 
-        public interface IReleaseUpdateSettings 
-        {
-            bool CheckAutoUpdate { get; }
-        }
-
         public static void GetInternet()
         {
-            Logger.Log.Info("Checking internet connection for checking release updates ...");
+            AppLogger.Log.Info("Checking internet connection for checking release updates ...");
 
             if (AvailabilityInternetConnection.Connect)
             {
-                Logger.Log.Info("Internet connection was sucessfully found!");
+                AppLogger.Log.Info("Internet connection was sucessfully found!");
 
                 GetPerm();
             }
             else
             {
-                Logger.Log.Warn("**** APPLICATION IS RUNNING IN OFFLINE MODE!");
-                Logger.Log.Warn("The SacredUtils will make no attempt to download new updates. Sorry.");
+                AppLogger.Log.Warn("**** APPLICATION IS RUNNING IN OFFLINE MODE!");
+                AppLogger.Log.Warn("The SacredUtils will make no attempt to download new updates. Sorry.");
             }
         }
 
         public static void GetPerm()
         {
-            Logger.Log.Info("Checking premission for checking release updates ...");
+            AppLogger.Log.Info("Checking premission for checking release updates ...");
 
-            IReleaseUpdateSettings releaseUpdateSettings = new ConfigurationBuilder<IReleaseUpdateSettings>()
+            IAppSettings releaseUpdateSettings = new ConfigurationBuilder<IAppSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
             if (releaseUpdateSettings.CheckAutoUpdate) { Get(); }
             else
             {
-                Logger.Log.Warn("**** APPLICATION IS RUNNING WITH DISABLED CHECKING UPDATE!");
-                Logger.Log.Warn("The SacredUtils will make no attempt to download new updates. Sorry.");
-                Logger.Log.Warn("To change this, set \"CheckAutoUpdate\" to \"true\" in the $SacredUtils/cfg/settings.json file.");
+                AppLogger.Log.Warn("**** APPLICATION IS RUNNING WITH DISABLED CHECKING UPDATE!");
+                AppLogger.Log.Warn("The SacredUtils will make no attempt to download new updates. Sorry.");
+                AppLogger.Log.Warn("To change this, set \"CheckAutoUpdate\" to \"true\" in the $SacredUtils/cfg/settings.json file.");
             }
         }
 
         public static void Get()
         {
-            Logger.Log.Info("Checking for release application updates ...");
+            AppLogger.Log.Info("Checking for release application updates ...");
 
             try
             {
@@ -62,24 +55,24 @@ namespace SacredUtils.resources.bin.check
 
                 string appReleaseVersion = wc.DownloadString(appReleaseVersionWeb);
 
-                Logger.Log.Info($"The last received SacredUtils release version {appReleaseVersion}");
+                AppLogger.Log.Info($"The last received SacredUtils release version {appReleaseVersion}");
 
-                if (!appReleaseVersion.Contains(ApplicationInfo.Version))
+                if (!appReleaseVersion.Contains(AppSummary.Version))
                 {
-                    Logger.Log.Warn($"SacredUtils application {ApplicationInfo.Version} is outdated!");
-                    Logger.Log.Info($"Downloading {appReleaseVersion} update ...");
+                    AppLogger.Log.Warn($"SacredUtils application {AppSummary.Version} is outdated!");
+                    AppLogger.Log.Info($"Downloading {appReleaseVersion} update ...");
 
                     GetUpdate();
                 }
                 else
                 {
-                    Logger.Log.Info("SacredUtils application no need to update!");
+                    AppLogger.Log.Info("SacredUtils application no need to update!");
                 }
             }
             catch (Exception e)
             {
-                Logger.Log.Info("Checking SacredUtils release updates done with error!");
-                Logger.Log.Info(e.ToString);
+                AppLogger.Log.Info("Checking SacredUtils release updates done with error!");
+                AppLogger.Log.Info(e.ToString);
             }
         }
 
@@ -96,14 +89,14 @@ namespace SacredUtils.resources.bin.check
 
                 wc.DownloadFileTaskAsync(new Uri(release), "_newVersionSacredUtilsTemp.exe");
 
-                Logger.Log.Info("Downloading new update successfully done!");
+                AppLogger.Log.Info("Downloading new update successfully done!");
 
                 GetUpdateTool();
             }
             catch (Exception e)
             {
-                Logger.Log.Error("An error occurred while getting SacredUtils updates!");
-                Logger.Log.Error(e.ToString);
+                AppLogger.Log.Error("An error occurred while getting SacredUtils updates!");
+                AppLogger.Log.Error(e.ToString);
             }
         }
 
@@ -123,7 +116,7 @@ namespace SacredUtils.resources.bin.check
             }
             catch (Exception e)
             {
-                Logger.Log.Error(e.ToString);
+                AppLogger.Log.Error(e.ToString);
             }
         }
     }

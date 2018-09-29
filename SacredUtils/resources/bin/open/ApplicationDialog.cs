@@ -1,6 +1,4 @@
 ﻿using MaterialDesignThemes.Wpf;
-using SacredUtils.resources.bin.application;
-using SacredUtils.resources.bin.logger;
 using SacredUtils.resources.dlg;
 using System;
 using System.Windows;
@@ -26,19 +24,19 @@ namespace SacredUtils.resources.bin.open
                         }
                     }
 
-                    if (ApplicationInfo.Theme == "dark")
+                    if (AppSummary.Theme == "dark")
                     {
                         about.AboutDialog.DialogTheme = BaseTheme.Dark;
                     }
 
                     about.AboutDialog.IsOpen = true;
 
-                    Logger.Log.Info($"{dialog} dialog was opened by user");
+                    AppLogger.Log.Info($"{dialog} dialog was opened by user");
                 }
                 catch (Exception e)
                 {
-                    Logger.Log.Error($"Failed to open {dialog} dialog!");
-                    Logger.Log.Error(e.ToString);
+                    AppLogger.Log.Error($"Failed to open {dialog} dialog!");
+                    AppLogger.Log.Error(e.ToString);
                 }
             }
 
@@ -57,19 +55,19 @@ namespace SacredUtils.resources.bin.open
                         }
                     }
 
-                    if (ApplicationInfo.Theme == "dark")
+                    if (AppSummary.Theme == "dark")
                     {
                         license.LicenseDialog.DialogTheme = BaseTheme.Dark;
                     }
 
                     license.LicenseDialog.IsOpen = true;
 
-                    Logger.Log.Info($"{dialog} dialog was opened by user");
+                    AppLogger.Log.Info($"{dialog} dialog was opened by user");
                 }
                 catch (Exception e)
                 {
-                    Logger.Log.Error($"Failed to open {dialog} dialog!");
-                    Logger.Log.Error(e.ToString);
+                    AppLogger.Log.Error($"Failed to open {dialog} dialog!");
+                    AppLogger.Log.Error(e.ToString);
                 }
             }
         }

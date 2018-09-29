@@ -1,5 +1,4 @@
-﻿using SacredUtils.resources.bin.logger;
-using System;
+﻿using System;
 using System.IO;
 
 namespace SacredUtils.resources.bin.create
@@ -13,15 +12,15 @@ namespace SacredUtils.resources.bin.create
                 File.WriteAllBytes("$SacredUtils\\lang\\ru-RU\\ru-RU.xaml", Properties.Resources.ru_RU);
                 File.WriteAllBytes("$SacredUtils\\lang\\en-US\\en-US.xaml", Properties.Resources.en_US);
 
-                Logger.Log.Info("Creating SacredUtils language files successfully done!");
+                AppLogger.Log.Info("Creating SacredUtils language files successfully done!");
             }
             catch (Exception exception)
             {
-                Logger.Log.Fatal("Creating SacredUtils language files done with fatal level error!!!");
+                AppLogger.Log.Fatal("Creating SacredUtils language files done with fatal level error!!!");
 
-                Logger.Log.Fatal(exception.ToString);
+                AppLogger.Log.Fatal(exception.ToString);
 
-                Logger.Log.Info("Shutting down SacredUtils configurator ...");
+                AppLogger.Log.Info("Shutting down SacredUtils configurator ...");
 
                 Environment.Exit(0);
             }

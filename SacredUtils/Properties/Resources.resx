@@ -157,26 +157,11 @@
   <data name="ru_RU" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\lng\ru-RU\ru-RU.xaml;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="changelog" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\cfg\changelog.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="firstinstall" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\cfg\firstinstall.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="language" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\cfg\language.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="license" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\lic\license.txt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cfg\settings.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="statistinfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\cfg\statistinfo.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="application" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\cfg\application.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\thm\Dark.xaml;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

@@ -1,6 +1,4 @@
 ﻿using Config.Net;
-using SacredUtils.resources.bin.application;
-using SacredUtils.resources.bin.logger;
 using System;
 using System.IO;
 using System.Net;
@@ -14,11 +12,6 @@ namespace SacredUtils.resources.bin.check
     {
         static WebClient wc = new WebClient();
 
-        public interface IAlphaUpdateSettings
-        {
-            bool CheckAutoAlphaUpdate { get; }
-        }
-
         public static void GetGarbage()
         {
             AvailabilityUpdateTemp.Get(); GetConnect();
@@ -26,32 +19,32 @@ namespace SacredUtils.resources.bin.check
 
         public static void GetConnect()
         {
-            Logger.Log.Info("Checking internet connection for checking alpha updates ...");
+            AppLogger.Log.Info("Checking internet connection for checking alpha updates ...");
 
             if (AvailabilityInternetConnection.Connect)
             {
-                Logger.Log.Info("Internet connection was sucessfully found!");
+                AppLogger.Log.Info("Internet connection was sucessfully found!");
 
                 GetPerm();
             }
             else
             {
-                Logger.Log.Warn("**** APPLICATION IS RUNNING IN OFFLINE MODE!");
-                Logger.Log.Warn("The SacredUtils will make no attempt to download new updates. Sorry.");
+                AppLogger.Log.Warn("**** APPLICATION IS RUNNING IN OFFLINE MODE!");
+                AppLogger.Log.Warn("The SacredUtils will make no attempt to download new updates. Sorry.");
             }
         }
 
         public static void GetPerm()
         {
-            Logger.Log.Info("Checking premission for checking alpha updates ...");
+            AppLogger.Log.Info("Checking premission for checking alpha updates ...");
 
-            IAlphaUpdateSettings alphaUpdateSettings = new ConfigurationBuilder<IAlphaUpdateSettings>()
+            IAppSettings alphaUpdateSettings = new ConfigurationBuilder<IAppSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
             if (alphaUpdateSettings.CheckAutoAlphaUpdate) { Get(); }
             else
             {
-                Logger.Log.Info("No permission to check alpha updates!");
+                AppLogger.Log.Info("No permission to check alpha updates!");
 
                 AvailabilityReleaseUpdates.GetInternet();
             }
@@ -59,7 +52,7 @@ namespace SacredUtils.resources.bin.check
 
         public static void Get()
         {
-            Logger.Log.Info("Checking for release application updates ...");
+            AppLogger.Log.Info("Checking for release application updates ...");
 
             try
             {
@@ -67,26 +60,26 @@ namespace SacredUtils.resources.bin.check
 
                 string appAlphaVersion = wc.DownloadString(appAlphaVersionWeb);
 
-                Logger.Log.Info($"The last received SacredUtils release version {appAlphaVersion}");
+                AppLogger.Log.Info($"The last received SacredUtils release version {appAlphaVersion}");
 
-                if (!appAlphaVersion.Contains(ApplicationInfo.AVersion))
+                if (!appAlphaVersion.Contains(AppSummary.AVersion))
                 {
-                    Logger.Log.Warn($"SacredUtils application {ApplicationInfo.AVersion} is outdated!");
-                    Logger.Log.Info($"Downloading {appAlphaVersion} update ...");
+                    AppLogger.Log.Warn($"SacredUtils application {AppSummary.AVersion} is outdated!");
+                    AppLogger.Log.Info($"Downloading {appAlphaVersion} update ...");
 
                     GetUpdate();
                 }
                 else
                 {
-                    Logger.Log.Info("SacredUtils application no need to alpha update!");
+                    AppLogger.Log.Info("SacredUtils application no need to alpha update!");
 
                     AvailabilityReleaseUpdates.GetInternet();
                 }
             }
             catch (Exception e)
             {
-                Logger.Log.Info("Checking SacredUtils alpha updates done with error!");
-                Logger.Log.Info(e.ToString);
+                AppLogger.Log.Info("Checking SacredUtils alpha updates done with error!");
+                AppLogger.Log.Info(e.ToString);
             }
         }
 
@@ -103,14 +96,14 @@ namespace SacredUtils.resources.bin.check
 
                 wc.DownloadFileTaskAsync(new Uri(release), "_newVersionSacredUtilsTemp.exe");
 
-                Logger.Log.Info("Downloading new alpha update successfully done!");
+                AppLogger.Log.Info("Downloading new alpha update successfully done!");
 
                 GetUpdateTool();
             }
             catch (Exception e)
             {
-                Logger.Log.Error("An error occurred while getting SacredUtils alpha updates!");
-                Logger.Log.Error(e.ToString);
+                AppLogger.Log.Error("An error occurred while getting SacredUtils alpha updates!");
+                AppLogger.Log.Error(e.ToString);
             }
         }
 
@@ -130,7 +123,7 @@ namespace SacredUtils.resources.bin.check
             }
             catch (Exception e)
             {
-                Logger.Log.Error(e.ToString);
+                AppLogger.Log.Error(e.ToString);
             }
         }
     }

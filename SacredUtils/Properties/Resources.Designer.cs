@@ -63,26 +63,6 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        public static byte[] application {
-            get {
-                object obj = ResourceManager.GetObject("application", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        public static byte[] changelog {
-            get {
-                object obj = ResourceManager.GetObject("changelog", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
         public static byte[] Dark {
             get {
                 object obj = ResourceManager.GetObject("Dark", resourceCulture);
@@ -103,29 +83,9 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        public static byte[] firstinstall {
-            get {
-                object obj = ResourceManager.GetObject("firstinstall", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
         public static byte[] gamesettings {
             get {
                 object obj = ResourceManager.GetObject("gamesettings", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        public static byte[] language {
-            get {
-                object obj = ResourceManager.GetObject("language", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -256,16 +216,6 @@ namespace SacredUtils.Properties {
         public static byte[] settings {
             get {
                 object obj = ResourceManager.GetObject("settings", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        public static byte[] statistinfo {
-            get {
-                object obj = ResourceManager.GetObject("statistinfo", resourceCulture);
                 return ((byte[])(obj));
             }
         }

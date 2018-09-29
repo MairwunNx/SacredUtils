@@ -1,29 +1,20 @@
 ﻿using Config.Net;
-using SacredUtils.resources.bin.application;
-using SacredUtils.resources.bin.logger;
 using System.Globalization;
-using System.IO;
 using System.Threading;
 using WPFSharp.Globalizer;
 
 namespace SacredUtils.resources.bin.getting
 {
-    public interface ILanguageSettings
-    {
-        string Language { get; set; }
-    }
-
     public static class ApplicationLanguage
     {
         public static void Get()
         {
-            Logger.Log.Info("Checking availability language settings ...");
+            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
+                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
-            if (!File.Exists("$SacredUtils\\conf\\langinfo.json"))
+            if (applicationSettings.AppUiLanguage == "based on system")
             {
-                Logger.Log.Warn("Language settings not found! Settings will be based on system!");
-
-                Logger.Log.Info("Getting default system language settings ...");
+                AppLogger.Log.Info("Getting default system language settings ...");
 
                 CultureInfo currentCulture = Thread.CurrentThread.CurrentCulture;
 
@@ -33,48 +24,27 @@ namespace SacredUtils.resources.bin.getting
                     currentCulture.TwoLetterISOLanguageName == "ro" ||
                     currentCulture.TwoLetterISOLanguageName == "bg")
                 {
-                    File.WriteAllBytes("$SacredUtils\\conf\\langinfo.json", Properties.Resources.language);
-
-                    ILanguageSettings languageSettings = new ConfigurationBuilder<ILanguageSettings>()
-                        .UseJsonFile("$SacredUtils\\conf\\langinfo.json").Build();
-
-                    ApplicationInfo.Lang = "ru";
-                    languageSettings.Language = "ru";
+                    applicationSettings.AppUiLanguage = "ru";
 
                     GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage("ru-RU", true);
 
-                    Logger.Log.Info($"Language {ApplicationInfo.Lang} settings were created in conf folder");
-
-                    Logger.Log.Info($"Application starting with {ApplicationInfo.Lang} language ...");
+                    AppLogger.Log.Info("Application starting with ru language ...");
                 }
                 else
                 {
-                    File.WriteAllBytes("$SacredUtils\\conf\\langinfo.json", Properties.Resources.language);
-
-                    ILanguageSettings languageSettings = new ConfigurationBuilder<ILanguageSettings>()
-                        .UseJsonFile("$SacredUtils\\conf\\langinfo.json").Build();
-
-                    ApplicationInfo.Lang = "en";
-                    languageSettings.Language = "en";
+                    applicationSettings.AppUiLanguage = "en";
 
                     GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage("en-US", true);
 
-                    Logger.Log.Info($"Language {ApplicationInfo.Lang} settings were created in conf folder");
-
-                    Logger.Log.Info($"Application starting with {ApplicationInfo.Lang} language ...");
+                    AppLogger.Log.Info("Application starting with en language ...");
                 }
             }
             else
             {
-                ILanguageSettings languageSettings = new ConfigurationBuilder<ILanguageSettings>()
-                    .UseJsonFile("$SacredUtils\\conf\\langinfo.json").Build();
-
-                ApplicationInfo.Lang = languageSettings.Language == "ru" ? "ru" : "en";
-
                 GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
-                    (languageSettings.Language == "ru" ? "ru-RU" : "en-US", true);
+                    (applicationSettings.AppUiLanguage == "ru" ? "ru-RU" : "en-US", true);
 
-                Logger.Log.Info($"Application starting with {ApplicationInfo.Lang} language ...");
+                AppLogger.Log.Info($"Application starting with {applicationSettings.AppUiLanguage} language ...");
             }
         }
     }

@@ -2,7 +2,6 @@
 using SacredUtils.resources.bin.change;
 using SacredUtils.resources.bin.check;
 using SacredUtils.resources.bin.getting;
-using SacredUtils.resources.bin.logger;
 using SacredUtils.resources.pgs;
 using System;
 using System.Diagnostics;
@@ -12,31 +11,29 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
-using static SacredUtils.resources.bin.application.ApplicationInfo;
 
 namespace SacredUtils
 {
     public partial class MainWindow
     {
-        public application_settings_one _appStgOne = new application_settings_one();
-        public application_settings_two _appStgTwo = new application_settings_two();
-        public chat_settings_one _chatStgOne = new chat_settings_one();
-        public font_settings_one _fontStgOne = new font_settings_one();
-        public gameplay_settings_one _gameplayStgOne = new gameplay_settings_one();
-        public graphics_settings_one _graphicsStgOne = new graphics_settings_one();
-        public modify_settings_one _modifyStgOne = new modify_settings_one();
-        public sound_settings_one _soundStgOne = new sound_settings_one();
+        public application_settings_one _appStgOne       = new application_settings_one();
+        public application_settings_two _appStgTwo       = new application_settings_two();
+        public chat_settings_one _chatStgOne             = new chat_settings_one();
+        public font_settings_one _fontStgOne             = new font_settings_one();
+        public gameplay_settings_one _gameplayStgOne     = new gameplay_settings_one();
+        public graphics_settings_one _graphicsStgOne     = new graphics_settings_one();
+        public modify_settings_one _modifyStgOne         = new modify_settings_one();
+        public sound_settings_one _soundStgOne           = new sound_settings_one();
         public unselected_settings_one _unselectedStgOne = new unselected_settings_one();
-
-        public DispatcherTimer _timer = new DispatcherTimer();
+        public DispatcherTimer _timer                    = new DispatcherTimer();
 
         public MainWindow()
         {
-            Logger.Log.Info("*** Initializing SacredUtils components ...");
+            AppLogger.Log.Info("*** Initializing SacredUtils components ...");
 
             InitializeComponent(); EventSubscribe(); GetPermCheckingMemory();
 
-            Logger.Log.Info("Initializing SacredUtils components done!");
+            AppLogger.Log.Info("Initializing SacredUtils components done!");
 
             SelectSettings(_unselectedStgOne, MenuGpLabel);
 
@@ -59,8 +56,8 @@ namespace SacredUtils
             CloseBtn.Click += (s, e) => Shutdown();
             MinimizeBtn.Click += (s, e) => WindowState = WindowState.Minimized;
 
-            ApplicationSettings.IApplicationSettings applicationSettings =
-                new ConfigurationBuilder<ApplicationSettings.IApplicationSettings>()
+            IAppSettings applicationSettings =
+                new ConfigurationBuilder<IAppSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
             _timer.Interval = new TimeSpan(0, 0, applicationSettings.ShowUsedMemoryUpdateInterval);
@@ -68,20 +65,20 @@ namespace SacredUtils
 
             Loaded += (sender, args) =>
             {
-                ApplicationLicenseState.Get(); Sw.Stop();
+                ApplicationLicenseState.Get(); AppSummary.Sw.Stop();
 
-                Logger.Log.Info($"Loading SacredUtils application done ({Sw.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
+                AppLogger.Log.Info($"Loading SacredUtils application done ({AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
             };
         }
 
         private void GetCurrentUsedMemory()
         {
-            MemoryLbl.Content = $"[{Process.GetCurrentProcess().Id} / {Process.GetCurrentProcess().PriorityClass.ToString().ToUpper()}] USED MEMORY {GC.GetTotalMemory(true) / 1024} KB OF {Environment.WorkingSet / 1024} KB";
+            MemoryLbl.Content = $"[{Process.GetCurrentProcess().Id} / {Process.GetCurrentProcess().PriorityClass.ToString().ToUpper()}] USED MEMORY {GC.GetTotalMemory(false) / 1024} KB OF {Environment.WorkingSet / 1024} KB";
         }
 
         private void GetPermCheckingMemory()
         {
-            ApplicationSettings.IApplicationSettings applicationSettings = new ConfigurationBuilder<ApplicationSettings.IApplicationSettings>()
+            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
             if (applicationSettings.ShowUsedMemory)
@@ -96,8 +93,8 @@ namespace SacredUtils
 
         private static void Shutdown()
         {
-            Logger.Log.Info("*** Thanks for using SacredUtils! Created by MairwunNx");
-            Logger.Log.Info("Shutting down SacredUtils ...");
+            AppLogger.Log.Info("*** Thanks for using SacredUtils! Created by MairwunNx");
+            AppLogger.Log.Info("Shutting down SacredUtils ...");
 
             Application.Current.Shutdown();
         }
@@ -115,7 +112,7 @@ namespace SacredUtils
 
             if (sender.Equals(s) && s != null)
             {
-                Logger.Log.Info($"Selected settings category {s.Name} by user");
+                AppLogger.Log.Info($"Selected settings category {s.Name} by user");
 
                 foreach (StackPanel sp in SettingsGrid.Children.OfType<StackPanel>())
                 {
@@ -128,12 +125,18 @@ namespace SacredUtils
 
         private void BaseWindow_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.F5)
+            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
+                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
+
+            Enum.TryParse(applicationSettings.KeyRefreshSettings, out Key refresh);
+            Enum.TryParse(applicationSettings.KeyGotoMainMenu, out Key toMain);
+
+            if (e.Key == refresh)
             {
-                _appStgOne.GetSettings(); _appStgTwo.GetSettings();
+                 _appStgOne.GetSettings(); _appStgTwo.GetSettings();
             }
 
-            if (e.Key == Key.Escape)
+            if (e.Key == toMain)
             {
                 SelectSettings(_unselectedStgOne, MenuGpLabel);
 
@@ -150,7 +153,7 @@ namespace SacredUtils
             {
                 AppDomain domain = AppDomain.CurrentDomain;
 
-                Logger.Log.Info("Preparing to updating application done!");
+                AppLogger.Log.Info("Preparing to updating application done!");
 
                 Process.Start("mnxupdater.exe", domain.FriendlyName + " _newVersionSacredUtilsTemp.exe");
 
@@ -158,7 +161,7 @@ namespace SacredUtils
             }
             catch (Exception ex)
             {
-                Logger.Log.Info(ex.ToString);
+                AppLogger.Log.Info(ex.ToString);
             }
         }
     }

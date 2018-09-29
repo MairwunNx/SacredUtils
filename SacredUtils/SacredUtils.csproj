@@ -116,21 +116,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="resources\bin\change\ApplicationScale.cs" />
     <Compile Include="resources\bin\check\AvailabilityAlphaUpdates.cs" />
     <Compile Include="resources\bin\check\AvailabilityGameSettings.cs" />
     <Compile Include="resources\bin\check\AvailabilityInternetConnection.cs" />
     <Compile Include="resources\bin\check\AvailabilityReleaseUpdates.cs" />
     <Compile Include="resources\bin\check\AvailabilityUpdateTemp.cs" />
-    <Compile Include="resources\bin\application\ApplicationInfo.cs" />
+    <Compile Include="AppSummary.cs" />
     <Compile Include="resources\bin\convert\SacredGameSettings.cs" />
     <Compile Include="resources\bin\create\LanguageFiles.cs" />
     <Compile Include="resources\bin\create\ThemeFiles.cs" />
-    <Compile Include="resources\bin\getting\FtpBase64Password.cs" />
     <Compile Include="resources\bin\getting\RequiredApplicationFiles.cs" />
     <Compile Include="resources\bin\getting\GlobalizerLibrary.cs" />
     <Compile Include="resources\bin\getting\ApplicationLanguage.cs" />
-    <Compile Include="resources\bin\logger\Logger.cs" />
+    <Compile Include="AppLogger.cs" />
     <Compile Include="resources\bin\getting\ApplicationSettings.cs" />
     <Compile Include="resources\bin\getting\ApplicationStatistic.cs" />
     <Compile Include="resources\bin\getting\ApplicationTheme.cs" />
@@ -361,11 +366,6 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -378,9 +378,6 @@
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="resources\cfg\application.json" />
-    <None Include="resources\cfg\firstinstall.json" />
-    <None Include="resources\cfg\language.json" />
     <None Include="resources\opt\SacredBalanceDragonFix.bin" />
     <None Include="resources\opt\SacredBalanceVanilla.bin" />
     <None Include="resources\opt\SacredBalanceVeteran.bin" />
@@ -388,10 +385,8 @@
     <None Include="resources\opt\SacredCreatureVanilla.pak" />
     <None Include="resources\opt\SacredCreatureVeteran.pak" />
     <Resource Include="resources\lic\license.txt" />
-    <None Include="resources\cfg\changelog.json" />
     <None Include="resources\etc\gamesettings.cfg" />
     <None Include="resources\cfg\settings.json" />
-    <None Include="resources\cfg\statistinfo.json" />
     <Resource Include="resources\ico\icons8_Gas.ico" />
     <Resource Include="resources\ico\icons8_Gas_128.png" />
     <Resource Include="resources\ico\icons8_Gas_16.png" />
@@ -402,8 +397,8 @@
     <Resource Include="resources\ico\icons8_Gas_64.png" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
@@ -424,13 +419,13 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions />
-  <Import Project="..\packages\Fody.3.2.4\build\Fody.targets" Condition="Exists('..\packages\Fody.3.2.4\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Fody.3.2.4\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.3.2.4\build\Fody.targets'))" />
     <Error Condition="!Exists('..\packages\Costura.Fody.3.1.2\build\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.3.1.2\build\Costura.Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Fody.3.2.4\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.3.2.4\build\Fody.targets'))" />
   </Target>
   <Import Project="..\packages\Costura.Fody.3.1.2\build\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.3.1.2\build\Costura.Fody.targets')" />
+  <Import Project="..\packages\Fody.3.2.4\build\Fody.targets" Condition="Exists('..\packages\Fody.3.2.4\build\Fody.targets')" />
 </Project>
