@@ -12,7 +12,7 @@ namespace SacredUtils.resources.pgs
     // ReSharper disable once InconsistentNaming
     public partial class application_settings_one
     {
-        int _eventSubsNum = 0;
+        int _eventSubsNum;
 
         public application_settings_one()
         {
