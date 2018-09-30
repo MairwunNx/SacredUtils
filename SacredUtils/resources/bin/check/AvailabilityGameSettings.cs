@@ -18,6 +18,8 @@ namespace SacredUtils.resources.bin.check
 
                     File.WriteAllBytes("Settings.cfg", Properties.Resources.gamesettings);
 
+                    // Please, return to me, Isabella, please ...
+
                     AppLogger.Log.Info("Game settings successfully generated!");
                 }
                 catch (Exception e)

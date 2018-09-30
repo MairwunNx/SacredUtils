@@ -82,6 +82,8 @@ namespace SacredUtils
             IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
+            // Isabella ... Sorry please ...
+
             if (applicationSettings.ShowUsedMemory)
             {
                 MemoryLbl.Visibility = Visibility.Visible; _timer.Start();

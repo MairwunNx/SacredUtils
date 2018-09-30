@@ -12,6 +12,8 @@ namespace SacredUtils.resources.pgs
     // ReSharper disable once InconsistentNaming
     public partial class application_settings_one
     {
+        int _eventSubsNum = 0;
+
         public application_settings_one()
         {
             InitializeComponent(); GetSettings();
@@ -51,7 +53,10 @@ namespace SacredUtils.resources.pgs
 
             ChangeScale(applicationSettings.SacredUtilsGuiScale);
 
-            EventSubscribe();
+            if (_eventSubsNum == 0)
+            {
+                EventSubscribe(); _eventSubsNum++;
+            }
         }
 
         private void EventSubscribe()

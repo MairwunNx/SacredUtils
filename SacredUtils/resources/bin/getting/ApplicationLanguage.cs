@@ -44,6 +44,8 @@ namespace SacredUtils.resources.bin.getting
                 GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
                     (applicationSettings.AppUiLanguage == "ru" ? "ru-RU" : "en-US", true);
 
+                // I love you, Isabella!!!
+
                 AppLogger.Log.Info($"Application starting with {applicationSettings.AppUiLanguage} language ...");
             }
         }

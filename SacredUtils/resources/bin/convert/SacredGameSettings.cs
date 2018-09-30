@@ -6,6 +6,8 @@ namespace SacredUtils.resources.bin.convert
 {
     public static class SacredGameSettings
     {
+        // private static readonly object _love = "Isabella";
+
         public static void ConvertToIni(string type)
         {
             if (type == "by program")
