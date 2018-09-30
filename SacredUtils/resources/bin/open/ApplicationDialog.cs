@@ -10,40 +10,6 @@ namespace SacredUtils.resources.bin.open
     {
         public static void Open(string dialog)
         {
-            if (dialog == "About")
-            {
-                try
-                {
-                    about_dialog about = new about_dialog();
-
-                    foreach (Window window in Application.Current.Windows)
-                    {
-                        if (window.GetType() == typeof(MainWindow))
-                        {
-                            ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
-                            ((MainWindow)window).DialogFrame.Content = about;
-                        }
-                    }
-
-                    IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
-                        .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
-                    if (applicationSettings.ColorTheme == "dark")
-                    {
-                        about.AboutDialog.DialogTheme = BaseTheme.Dark;
-                    }
-
-                    about.AboutDialog.IsOpen = true;
-
-                    AppLogger.Log.Info($"{dialog} dialog was opened by user");
-                }
-                catch (Exception e)
-                {
-                    AppLogger.Log.Error($"Failed to open {dialog} dialog!");
-                    AppLogger.Log.Error(e.ToString);
-                }
-            }
-
             if (dialog == "License")
             {
                 try

@@ -1,8 +1,10 @@
 ﻿using Config.Net;
-using SacredUtils.resources.bin.change;
-using SacredUtils.resources.bin.open;
+using MaterialDesignThemes.Wpf;
+using SacredUtils.resources.dlg;
 using System;
-using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Windows;
+using System.Windows.Media;
 using WPFSharp.Globalizer;
 
 namespace SacredUtils.resources.pgs
@@ -19,14 +21,18 @@ namespace SacredUtils.resources.pgs
 
         public void GetSettings()
         {
-            EventUnsubscribe();
-
             IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
             UiLanguageCmbBox.SelectedIndex = applicationSettings.AppUiLanguage == "ru" ? 0 : 1;
 
+            GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
+                (UiLanguageCmbBox.SelectedIndex == 0 ? "ru-RU" : "en-US", true);
+
             UiThemeCmbBox.SelectedIndex = applicationSettings.ColorTheme == "light" ? 0 : 1;
+
+            GlobalizedApplication.Instance.StyleManager.SwitchStyle
+                (UiThemeCmbBox.SelectedIndex == 0 ? "Light.xaml" : "Dark.xaml");
 
             if (applicationSettings.SacredStartArgs == "close")
             {
@@ -43,23 +49,9 @@ namespace SacredUtils.resources.pgs
 
             UiScaleCmbBox.Text = $"{Convert.ToInt32(applicationSettings.SacredUtilsGuiScale * 100)}%";
 
+            ChangeScale(applicationSettings.SacredUtilsGuiScale);
+
             EventSubscribe();
-        }
-
-        private void EventUnsubscribe()
-        {
-            UiLanguageCmbBox.SelectionChanged -= (s, e) => ChangeLanguage();
-            UiThemeCmbBox.SelectionChanged -= (s, e) => ChangeTheme();
-            StartParamsCmbBox.SelectionChanged -= (s, e) => ChangeStart();
-            UiScaleCmbBox.SelectionChanged -= (s, e) => ChangeScale();
-
-            GitHubBtn.Click -= (s, e) => BrowserLink.Open("https://github.com/MairwunNx/SacredUtils");
-            DonateBtn.Click -= (s, e) => BrowserLink.Open("https://money.yandex.ru/to/410015993365458");
-            CreatorBtn.Click -= (s, e) => BrowserLink.Open("https://t-do.ru/mairwunnx");
-            FeedbackBtn.Click -= (s, e) => BrowserLink.Open("https://docs.google.com/forms/d/1Hx4EcS7VopBFG4bxq-zdsGUmqqD2nKy2NiwzRTiQMgA/edit?usp=sharing");
-            AboutBtn.Click -= (s, e) => ApplicationDialog.Open("About");
-
-            ToTwoPageBtn.Click -= (s, e) => SettingsPage.Open("AppSettingsTwo");
         }
 
         private void EventSubscribe()
@@ -69,13 +61,13 @@ namespace SacredUtils.resources.pgs
             StartParamsCmbBox.SelectionChanged += (s, e) => ChangeStart();
             UiScaleCmbBox.SelectionChanged += (s, e) => ChangeScale();
 
-            GitHubBtn.Click += (s, e) => BrowserLink.Open("https://github.com/MairwunNx/SacredUtils");
-            DonateBtn.Click += (s, e) => BrowserLink.Open("https://money.yandex.ru/to/410015993365458");
-            CreatorBtn.Click += (s, e) => BrowserLink.Open("https://t-do.ru/mairwunnx");
-            FeedbackBtn.Click += (s, e) => BrowserLink.Open("https://docs.google.com/forms/d/1Hx4EcS7VopBFG4bxq-zdsGUmqqD2nKy2NiwzRTiQMgA/edit?usp=sharing");
-            AboutBtn.Click += (s, e) => ApplicationDialog.Open("About");
+            GitHubBtn.Click += (s, e) => OpenLink("https://github.com/MairwunNx/SacredUtils");
+            DonateBtn.Click += (s, e) => OpenLink("https://money.yandex.ru/to/410015993365458");
+            CreatorBtn.Click += (s, e) => OpenLink("https://t-do.ru/mairwunnx");
+            FeedbackBtn.Click += (s, e) => OpenLink("https://docs.google.com/forms/d/1Hx4EcS7VopBFG4bxq-zdsGUmqqD2nKy2NiwzRTiQMgA/edit?usp=sharing");
+            AboutBtn.Click += (s, e) => OpenAboutDialog();
 
-            ToTwoPageBtn.Click += (s, e) => SettingsPage.Open("AppSettingsTwo");
+            ToTwoPageBtn.Click += (s, e) => OpenTwoPage();
         }
 
         private void ChangeLanguage()
@@ -131,43 +123,123 @@ namespace SacredUtils.resources.pgs
         {
             if (UiScaleCmbBox.SelectedIndex == 0)
             {
-                ApplicationScale.Change("1.0");
-                AppLogger.Log.Info($"Ui scale changed to 100% by user");
+                ChangeScale(1.0);
+                AppLogger.Log.Info("Ui scale changed to 100% by user");
             }
             else if (UiScaleCmbBox.SelectedIndex == 1)
             {
-                ApplicationScale.Change("1.05");
+                ChangeScale(1.05);
                 AppLogger.Log.Info("Ui scale changed to 105% by user");
             }
             else if (UiScaleCmbBox.SelectedIndex == 2)
             {
-                ApplicationScale.Change("1.10");
+                ChangeScale(1.10);
                 AppLogger.Log.Info("Ui scale changed to 110% by user");
             }
             else if (UiScaleCmbBox.SelectedIndex == 3)
             {
-                ApplicationScale.Change("1.15");
+                ChangeScale(1.15);
                 AppLogger.Log.Info("Ui scale changed to 115% by user");
             }
             else if (UiScaleCmbBox.SelectedIndex == 4)
             {
-                ApplicationScale.Change("1.25");
+                ChangeScale(1.25);
                 AppLogger.Log.Info("Ui scale changed to 125% by user");
             }
             else if (UiScaleCmbBox.SelectedIndex == 5)
             {
-                ApplicationScale.Change("1.50");
+                ChangeScale(1.50);
                 AppLogger.Log.Info("Ui scale changed to 150% by user");
             }
             else if (UiScaleCmbBox.SelectedIndex == 6)
             {
-                ApplicationScale.Change("1.75");
+                ChangeScale(1.75);
                 AppLogger.Log.Info("Ui scale changed to 175% by user");
             }
             else if (UiScaleCmbBox.SelectedIndex == 7)
             {
-                ApplicationScale.Change("2.0");
+                ChangeScale(2.0);
                 AppLogger.Log.Info("Ui scale changed to 200% by user");
+            }
+        }
+
+        public static void ChangeScale(double scale)
+        {
+            try
+            {
+                foreach (Window window in Application.Current.Windows)
+                {
+                    ((MainWindow)window).Height = 720 * scale;
+                    ((MainWindow)window).Width = 1086 * scale;
+                    ((MainWindow)window).BaseCard.LayoutTransform = new ScaleTransform(scale, scale);
+                }
+
+                IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
+                    .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
+
+                applicationSettings.SacredUtilsGuiScale = scale;
+            }
+            catch (Exception e)
+            {
+                AppLogger.Log.Error("An error occurred while user changed app scale");
+                AppLogger.Log.Error(e.ToString);
+            }
+        }
+
+        private static void OpenLink(string link)
+        {
+            Process.Start(link); AppLogger.Log.Info($"{link} link was opened by user");
+        }
+
+        private void OpenAboutDialog()
+        {
+            try
+            {
+                about_dialog about = new about_dialog();
+
+                foreach (Window window in Application.Current.Windows)
+                {
+                    if (window.GetType() == typeof(MainWindow))
+                    {
+                        ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
+                        ((MainWindow)window).DialogFrame.Content = about;
+                    }
+                }
+
+                IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
+                    .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
+
+                if (applicationSettings.ColorTheme == "dark")
+                {
+                    about.AboutDialog.DialogTheme = BaseTheme.Dark;
+                }
+
+                about.AboutDialog.IsOpen = true;
+
+                AppLogger.Log.Info("About dialog was opened by user");
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Log.Error("Failed to open about dialog!");
+                AppLogger.Log.Error(ex.ToString);
+            }
+        }
+
+        private void OpenTwoPage()
+        {
+            try
+            {
+                foreach (Window window in Application.Current.Windows)
+                {
+                    ((MainWindow)window).SettingsFrame.Content = ((MainWindow)window)._appStgTwo;
+
+                    AppLogger.Log.Info("Application settings two page was opened by user");
+                }
+            }
+            catch (Exception ex)
+            {
+                AppLogger.Log.Error("An error occurred while user opened ast page");
+                AppLogger.Log.Error(ex.ToString);
             }
         }
     }

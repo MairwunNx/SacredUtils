@@ -18,28 +18,10 @@ namespace SacredUtils.resources.bin.open
                         AppLogger.Log.Info("Application settings one page was opened by user");
                     }
                 }
-                catch (Exception e)
+                catch (Exception ex)
                 {
                     AppLogger.Log.Error("An error occurred while user opened aso page");
-                    AppLogger.Log.Error(e.ToString);
-                }
-            }
-
-            if (settings == "AppSettingsTwo")
-            {
-                try
-                {
-                    foreach (Window window in Application.Current.Windows)
-                    {
-                        ((MainWindow)window).SettingsFrame.Content = ((MainWindow)window)._appStgTwo;
-
-                        AppLogger.Log.Info("Application settings two page was opened by user");
-                    }
-                }
-                catch (Exception e)
-                {
-                    AppLogger.Log.Error("An error occurred while user opened ast page");
-                    AppLogger.Log.Error(e.ToString);
+                    AppLogger.Log.Error(ex.ToString);
                 }
             }
         }
