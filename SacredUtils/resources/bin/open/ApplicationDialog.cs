@@ -2,6 +2,7 @@
 using SacredUtils.resources.dlg;
 using System;
 using System.Windows;
+using Config.Net;
 
 namespace SacredUtils.resources.bin.open
 {
@@ -24,7 +25,10 @@ namespace SacredUtils.resources.bin.open
                         }
                     }
 
-                    if (AppSummary.Theme == "dark")
+                    IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
+                        .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
+
+                    if (applicationSettings.ColorTheme == "dark")
                     {
                         about.AboutDialog.DialogTheme = BaseTheme.Dark;
                     }
@@ -55,7 +59,10 @@ namespace SacredUtils.resources.bin.open
                         }
                     }
 
-                    if (AppSummary.Theme == "dark")
+                    IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
+                        .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
+
+                    if (applicationSettings.ColorTheme == "dark")
                     {
                         license.LicenseDialog.DialogTheme = BaseTheme.Dark;
                     }

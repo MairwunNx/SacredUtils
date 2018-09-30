@@ -4,6 +4,7 @@ using NLog.Targets;
 using System;
 using System.IO;
 using System.Management;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace SacredUtils
@@ -22,7 +23,6 @@ namespace SacredUtils
 
                 if (!applicationSettings.DisableLogging)
                 {
-                    string Query = "Select Name from Win32_OperatingSystem";
                     NLog.Config.LoggingConfiguration config = new NLog.Config.LoggingConfiguration();
                     AppDomain domain = AppDomain.CurrentDomain;
 
@@ -52,33 +52,13 @@ namespace SacredUtils
                         : "Current launched SacredUtils application is not fully trusted");
 
                     Log.Info($"Version of the common language runtime {Environment.Version}");
+                    Log.Info($"Full version of the common language runtime {RuntimeInformation.FrameworkDescription}");
 
-                    Log.Info(Environment.Is64BitOperatingSystem
-                        ? $"OS version {Environment.OSVersion.VersionString} 64 bit"
-                        : $"OS version {Environment.OSVersion.VersionString} 32 bit");
-
-                    ManagementObjectSearcher searcher = new ManagementObjectSearcher(Query);
-                    // ReSharper disable once InconsistentNaming
-                    // ReSharper disable once PossibleInvalidCastExceptionInForeachLoop
-                    foreach (ManagementObject Win32 in searcher.Get())
-                    {
-                        // ReSharper disable once InconsistentNaming
-                        string OSVersion = Win32["Name"] as string;
-
-                        if (OSVersion != null)
-                        {
-                            // ReSharper disable once InconsistentNaming
-                            string OSName = OSVersion.Substring(0, OSVersion.LastIndexOf("|", StringComparison.Ordinal) - 11);
-
-                            Log.Info($"OS full name {OSName}");
-                        }
-                    }
+                    Log.Info($"OS version {Environment.OSVersion.VersionString} {RuntimeInformation.OSArchitecture} bit");
 
                     // I LOVE PUTIN ❤❤❤❤
 
-                    Log.Info(Environment.Is64BitProcess
-                        ? "Bitness of the current SacredUtils process 64 bit"
-                        : "Bitness of the current SacredUtils process 32 bit");
+                    Log.Info($"Bitness of the current SacredUtils process {RuntimeInformation.ProcessArchitecture} bit");
 
                     Log.Info($"Allocated memory for SacredUtils {Environment.WorkingSet / 1024 / 1024} MB or {Environment.WorkingSet / 1024} KB");
 

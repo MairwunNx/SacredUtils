@@ -10,12 +10,9 @@ namespace SacredUtils.resources.pgs
     // ReSharper disable once InconsistentNaming
     public partial class application_settings_one
     {
-        // ReSharper disable once InconsistentNaming
-        public int _nums = 1;
-
         public application_settings_one()
         {
-            InitializeComponent(); Task.Run(() => GetSettings());
+            InitializeComponent(); GetSettings();
 
             AppLogger.Log.Info("Initialization components for application settings one done!");
         }
@@ -83,37 +80,33 @@ namespace SacredUtils.resources.pgs
 
         private void ChangeLanguage()
         {
-            ILanguageSettings languageSettings = new ConfigurationBuilder<ILanguageSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\langinfo.json").Build();
+            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
+                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
-            languageSettings.Language = UiLanguageCmbBox.SelectedIndex == 0 ? "ru" : "en";
-
-            AppSummary.Lang = UiLanguageCmbBox.SelectedIndex == 0 ? "ru" : "en";
+            applicationSettings.AppUiLanguage = UiLanguageCmbBox.SelectedIndex == 0 ? "ru" : "en";
 
             GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
                 (UiLanguageCmbBox.SelectedIndex == 0 ? "ru-RU" : "en-US", true);
 
-            AppLogger.Log.Info($"Lanuage changed to {UiLanguageCmbBox.Text}");
+            AppLogger.Log.Info($"Language changed to {UiLanguageCmbBox.Text} by user");
         }
 
         private void ChangeTheme()
         {
-            IApplicationSettings applicationSettings = new ConfigurationBuilder<IApplicationSettings>()
+            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
             applicationSettings.ColorTheme = UiThemeCmbBox.SelectedIndex == 0 ? "light" : "dark";
 
-            AppSummary.Theme = UiThemeCmbBox.SelectedIndex == 0 ? "light" : "dark";
-
             GlobalizedApplication.Instance.StyleManager.SwitchStyle
                 (UiThemeCmbBox.SelectedIndex == 0 ? "Light.xaml" : "Dark.xaml");
 
-            AppLogger.Log.Info($"Theme changed to {UiThemeCmbBox.Text}");
+            AppLogger.Log.Info($"Theme changed to {UiThemeCmbBox.Text} by user");
         }
 
         private void ChangeStart()
         {
-            IApplicationSettings applicationSettings = new ConfigurationBuilder<IApplicationSettings>()
+            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
             if (StartParamsCmbBox.SelectedIndex == 0)
@@ -131,58 +124,50 @@ namespace SacredUtils.resources.pgs
                 applicationSettings.SacredStartArgs = "none";
             }
 
-            AppLogger.Log.Info($"Sacred startup params changed to {StartParamsCmbBox.Text}");
+            AppLogger.Log.Info($"Sacred startup params changed to {StartParamsCmbBox.Text} by user");
         }
 
         private void ChangeScale()
         {
             if (UiScaleCmbBox.SelectedIndex == 0)
             {
-                AppSummary.Scale = 1.0;
-                ApplicationScale.Change();
-                AppLogger.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
+                ApplicationScale.Change("1.0");
+                AppLogger.Log.Info($"Ui scale changed to 100% by user");
             }
             else if (UiScaleCmbBox.SelectedIndex == 1)
             {
-                AppSummary.Scale = 1.05;
-                ApplicationScale.Change();
-                AppLogger.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
+                ApplicationScale.Change("1.05");
+                AppLogger.Log.Info("Ui scale changed to 105% by user");
             }
             else if (UiScaleCmbBox.SelectedIndex == 2)
             {
-                AppSummary.Scale = 1.10;
-                ApplicationScale.Change();
-                AppLogger.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
+                ApplicationScale.Change("1.10");
+                AppLogger.Log.Info("Ui scale changed to 110% by user");
             }
             else if (UiScaleCmbBox.SelectedIndex == 3)
             {
-                AppSummary.Scale = 1.15;
-                ApplicationScale.Change();
-                AppLogger.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
+                ApplicationScale.Change("1.15");
+                AppLogger.Log.Info("Ui scale changed to 115% by user");
             }
             else if (UiScaleCmbBox.SelectedIndex == 4)
             {
-                AppSummary.Scale = 1.25;
-                ApplicationScale.Change();
-                AppLogger.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
+                ApplicationScale.Change("1.25");
+                AppLogger.Log.Info("Ui scale changed to 125% by user");
             }
             else if (UiScaleCmbBox.SelectedIndex == 5)
             {
-                AppSummary.Scale = 1.50;
-                ApplicationScale.Change();
-                AppLogger.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
+                ApplicationScale.Change("1.50");
+                AppLogger.Log.Info("Ui scale changed to 150% by user");
             }
             else if (UiScaleCmbBox.SelectedIndex == 6)
             {
-                AppSummary.Scale = 1.75;
-                ApplicationScale.Change();
-                AppLogger.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
+                ApplicationScale.Change("1.75");
+                AppLogger.Log.Info("Ui scale changed to 175% by user");
             }
             else if (UiScaleCmbBox.SelectedIndex == 7)
             {
-                AppSummary.Scale = 2.0;
-                ApplicationScale.Change();
-                AppLogger.Log.Info($"Ui scale changed to {UiScaleCmbBox.Text}");
+                ApplicationScale.Change("2.0");
+                AppLogger.Log.Info("Ui scale changed to 200% by user");
             }
         }
     }
