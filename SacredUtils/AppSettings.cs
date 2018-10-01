@@ -82,7 +82,7 @@ namespace SacredUtils
         [Option(Alias = "ShowUsedMemory", DefaultValue = "false")]
         bool ShowUsedMemory { get; set; }
 
-        [Option(Alias = "ShowUsedMemoryUpdateInterval", DefaultValue = "1")]
+        [Option(Alias = "ShowUsedMemoryUpdateInterval", DefaultValue = "2")]
         int ShowUsedMemoryUpdateInterval { get; set; }
 
         [Option(Alias = "UseOldButtonTextures", DefaultValue = "false")]

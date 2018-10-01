@@ -139,8 +139,6 @@
     <Compile Include="resources\bin\getting\ApplicationSettings.cs" />
     <Compile Include="resources\bin\getting\ApplicationStatistic.cs" />
     <Compile Include="resources\bin\getting\ApplicationTheme.cs" />
-    <Compile Include="resources\bin\getting\ApplicationLicenseState.cs" />
-    <Compile Include="resources\bin\open\ApplicationDialog.cs" />
     <Compile Include="resources\dlg\change_log_dialog.xaml.cs">
       <DependentUpon>change_log_dialog.xaml</DependentUpon>
     </Compile>

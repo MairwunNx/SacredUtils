@@ -1,10 +1,13 @@
 ﻿using Config.Net;
+using MaterialDesignThemes.Wpf;
 using SacredUtils.resources.bin.change;
 using SacredUtils.resources.bin.check;
 using SacredUtils.resources.bin.getting;
+using SacredUtils.resources.dlg;
 using SacredUtils.resources.pgs;
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
@@ -66,7 +69,7 @@ namespace SacredUtils
 
             Loaded += (sender, args) =>
             {
-                ApplicationLicenseState.Get(); AppSummary.Sw.Stop();
+                GetLicenseState(); AppSummary.Sw.Stop();
 
                 AppLogger.Log.Info($"Loading SacredUtils application done ({AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
             };
@@ -148,6 +151,32 @@ namespace SacredUtils
                     sp.SetResourceReference(BackgroundProperty, "CategoryNotActiveColorBrush");
                 }
             }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.E)
+            {
+                if (File.Exists("$SacredUtils\\logs\\latest.log"))
+                {
+                    Process.Start("notepad", "$SacredUtils\\logs\\latest.log");
+                }
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.R)
+            {
+                if (File.Exists("$SacredUtils\\conf\\settings.json"))
+                {
+                    Process.Start("notepad", "$SacredUtils\\conf\\settings.json");
+                }
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.P)
+            {
+                Shutdown();
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.T)
+            {
+                Process.Start(AppSummary.AppPatch); Environment.Exit(0);
+            }
         }
 
         private void UpdateLbl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -166,6 +195,41 @@ namespace SacredUtils
             {
                 AppLogger.Log.Info(ex.ToString);
             }
+        }
+
+        private void GetLicenseState()
+        {
+            IAppSettings licenseSettings = new ConfigurationBuilder<IAppSettings>()
+                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
+
+            if (!licenseSettings.AcceptLicense || !File.Exists("License.txt"))
+            {
+                File.WriteAllBytes("License.txt", Properties.Resources.license);
+
+                UpdateLbl.IsEnabled = false; MinimizeBtn.IsEnabled = false;
+
+                OpenLicenseDialog();
+            }
+        }
+
+        private void OpenLicenseDialog()
+        {
+            license_dialog license = new license_dialog();
+
+            DialogFrame.Visibility = Visibility.Visible;
+            DialogFrame.Content = license;
+
+            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
+                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
+
+            if (applicationSettings.ColorTheme == "dark")
+            {
+                license.LicenseDialog.DialogTheme = BaseTheme.Dark;
+            }
+
+            license.LicenseDialog.IsOpen = true;
+
+            AppLogger.Log.Info("License dialog was opened by program");
         }
     }
 }
