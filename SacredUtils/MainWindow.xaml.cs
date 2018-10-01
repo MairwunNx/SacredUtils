@@ -168,7 +168,6 @@ namespace SacredUtils
                 }
             }
 
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.P)
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.T)
             {
                 Process.Start(AppSummary.AppPatch); Environment.Exit(0);
@@ -210,7 +209,7 @@ namespace SacredUtils
 
             if (!licenseSettings.AcceptLicense || !File.Exists("License.txt"))
             {
-                File.WriteAllBytes("License.txt", Properties.Resources.license);
+                File.WriteAllBytes("License.txt", Properties.Resources.AppLicense);
 
                 UpdateLbl.IsEnabled = false; MinimizeBtn.IsEnabled = false;
 

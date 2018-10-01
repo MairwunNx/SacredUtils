@@ -380,7 +380,7 @@
     <None Include="resources\opt\SacredCreatureDragonFix.pak" />
     <None Include="resources\opt\SacredCreatureVanilla.pak" />
     <None Include="resources\opt\SacredCreatureVeteran.pak" />
-    <Resource Include="resources\lic\license.txt" />
+    <Resource Include="AppLicense.txt" />
     <None Include="resources\etc\gamesettings.cfg" />
     <None Include="resources\cfg\settings.json" />
     <Resource Include="resources\ico\icons8_Gas.ico" />

@@ -24,7 +24,7 @@ namespace SacredUtils.resources.bin.getting
 
             if (applicationSettings.LicenseFileCreate)
             {
-                File.WriteAllBytes("License.txt", Properties.Resources.license);
+                File.WriteAllBytes("License.txt", Properties.Resources.AppLicense);
 
                 AppLogger.Log.Info("License file were created in this folder");
             }

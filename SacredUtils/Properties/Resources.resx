@@ -157,9 +157,6 @@
   <data name="ru_RU" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\lng\ru-RU\ru-RU.xaml;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="license" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\lic\license.txt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cfg\settings.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -168,5 +165,8 @@
   </data>
   <data name="Light" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\thm\Light.xaml;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="AppLicense" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\AppLicense.txt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
