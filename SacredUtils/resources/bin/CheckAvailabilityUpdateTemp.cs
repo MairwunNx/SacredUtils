@@ -1,10 +1,9 @@
 ﻿using Config.Net;
-using SacredUtils.resources.bin.getting;
 using System.IO;
 
-namespace SacredUtils.resources.bin.check
+namespace SacredUtils.resources.bin
 {
-    public static class AvailabilityUpdateTemp
+    public static class CheckAvailabilityUpdateTemp
     {
         public static void Get()
         {

@@ -2,9 +2,9 @@
 using System.Diagnostics;
 using System.IO;
 
-namespace SacredUtils.resources.bin.getting
+namespace SacredUtils.resources.bin
 {
-    public static class GlobalizerLibrary
+    public static class GetApplicationGlobalizerLibrary
     {
         public static void Get()
         {

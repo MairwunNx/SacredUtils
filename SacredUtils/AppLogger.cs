@@ -3,7 +3,6 @@ using NLog;
 using NLog.Targets;
 using System;
 using System.IO;
-using System.Management;
 using System.Runtime.InteropServices;
 using System.Text;
 

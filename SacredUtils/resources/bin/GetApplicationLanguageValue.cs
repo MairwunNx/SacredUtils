@@ -3,9 +3,9 @@ using System.Globalization;
 using System.Threading;
 using WPFSharp.Globalizer;
 
-namespace SacredUtils.resources.bin.getting
+namespace SacredUtils.resources.bin
 {
-    public static class ApplicationLanguage
+    public static class GetApplicationLanguageValue
     {
         public static void Get()
         {

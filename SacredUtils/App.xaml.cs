@@ -1,7 +1,4 @@
-using SacredUtils.resources.bin.check;
-using SacredUtils.resources.bin.convert;
-using SacredUtils.resources.bin.create;
-using SacredUtils.resources.bin.getting;
+using SacredUtils.resources.bin;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,21 +16,21 @@ namespace SacredUtils
             {
                 if (e.Args.Contains("-fast"))
                 {
-                    AppLogger.Init(true); SacredGameSettings.ConvertToIni("by program");
+                    AppLogger.Init(true); ConvertSacredGameSettings.ConvertToIni("by program");
                 }
                 else
                 {
-                    AppLogger.Init(false); GlobalizerLibrary.Get();
+                    AppLogger.Init(false); GetApplicationGlobalizerLibrary.Get();
 
-                    ThemeFiles.Create(); LanguageFiles.Create();
+                    CreateApplicationThemeFiles.Create(); CreateApplicationLanguageFiles.Create();
 
-                    AvailabilityGameSettings.Get(); ApplicationSettings.Get();
+                    CheckAvailabilityGameSettings.Get(); GetApplicationSettingsValue.Get();
 
-                    SacredGameSettings.ConvertToIni("by program");
+                    ConvertSacredGameSettings.ConvertToIni("by program");
 
-                    RequiredApplicationFiles.Get();
+                    GetRequiredApplicationFiles.Get();
 
-                    Task.Run(() => ApplicationStatistic.Get());
+                    Task.Run(() => GetApplicationDownloadStatistic.Get());
                 }
 
                 base.OnStartup(e);

@@ -70,6 +70,7 @@
                     Maximum="8"
                     Style="{StaticResource MaterialDesignDiscreteSlider}">
                     <Slider.Resources>
+                        <!--  ReSharper disable once Xaml.RedundantResource  -->
                         <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="#FF535353" />
                     </Slider.Resources>
                 </Slider>
@@ -105,6 +106,7 @@
                     Maximum="255"
                     Style="{StaticResource MaterialDesignDiscreteSlider}">
                     <Slider.Resources>
+                        <!--  ReSharper disable once Xaml.RedundantResource  -->
                         <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="#FF535353" />
                     </Slider.Resources>
                 </Slider>
@@ -140,6 +142,7 @@
                     Maximum="100"
                     Style="{StaticResource MaterialDesignDiscreteSlider}">
                     <Slider.Resources>
+                        <!--  ReSharper disable once Xaml.RedundantResource  -->
                         <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="#FF535353" />
                     </Slider.Resources>
                 </Slider>

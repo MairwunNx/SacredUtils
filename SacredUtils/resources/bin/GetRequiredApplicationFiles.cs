@@ -1,9 +1,9 @@
 ﻿using Config.Net;
 using System.IO;
 
-namespace SacredUtils.resources.bin.getting
+namespace SacredUtils.resources.bin
 {
-    public static class RequiredApplicationFiles
+    public static class GetRequiredApplicationFiles
     {
         public static void Get()
         {

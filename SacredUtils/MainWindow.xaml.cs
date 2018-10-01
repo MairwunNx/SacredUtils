@@ -1,12 +1,11 @@
 ﻿using Config.Net;
 using MaterialDesignThemes.Wpf;
-using SacredUtils.resources.bin.change;
-using SacredUtils.resources.bin.check;
-using SacredUtils.resources.bin.getting;
+using SacredUtils.resources.bin;
 using SacredUtils.resources.dlg;
 using SacredUtils.resources.pgs;
 using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -18,6 +17,7 @@ using System.Windows.Threading;
 
 namespace SacredUtils
 {
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public partial class MainWindow
     {
         public application_settings_one _appStgOne       = new application_settings_one();
@@ -41,9 +41,9 @@ namespace SacredUtils
 
             SelectSettings(_unselectedStgOne, MenuGpLabel);
 
-            ApplicationLanguage.Get(); ApplicationTheme.Get(); ApplicationScale.Get();
+            GetApplicationLanguageValue.Get(); GetApplicationThemeValue.Get(); GetApplicationScaleValue.Get();
 
-            Task.Run(() => AvailabilityAlphaUpdates.GetGarbage());
+            Task.Run(() => CheckAvailabilityAlphaUpdates.GetGarbage());
         }
 
         private void EventSubscribe()
@@ -175,6 +175,7 @@ namespace SacredUtils
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.Y)
             {
+                // ReSharper disable once AssignNullToNotNullAttribute
                 Process.Start(Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName));
             }
 

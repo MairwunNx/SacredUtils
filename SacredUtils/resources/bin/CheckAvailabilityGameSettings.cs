@@ -2,9 +2,9 @@
 using System;
 using System.IO;
 
-namespace SacredUtils.resources.bin.check
+namespace SacredUtils.resources.bin
 {
-    public static class AvailabilityGameSettings
+    public static class CheckAvailabilityGameSettings
     {
         public static void Get()
         {

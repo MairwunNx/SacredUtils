@@ -6,9 +6,9 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
 
-namespace SacredUtils.resources.bin.check
+namespace SacredUtils.resources.bin
 {
-    public static class AvailabilityReleaseUpdates
+    public static class CheckAvailabilityReleaseUpdates
     {
         static WebClient wc = new WebClient();
 
@@ -16,7 +16,7 @@ namespace SacredUtils.resources.bin.check
         {
             AppLogger.Log.Info("Checking internet connection for checking release updates ...");
 
-            if (AvailabilityInternetConnection.Connect)
+            if (CheckAvailabilityInternetConnection.Connect)
             {
                 AppLogger.Log.Info("Internet connection was sucessfully found!");
 

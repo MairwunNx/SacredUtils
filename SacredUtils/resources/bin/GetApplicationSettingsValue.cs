@@ -2,9 +2,9 @@
 using System;
 using System.IO;
 
-namespace SacredUtils.resources.bin.getting
+namespace SacredUtils.resources.bin
 {
-    public static class ApplicationSettings
+    public static class GetApplicationSettingsValue
     {
         public static void Get()
         {

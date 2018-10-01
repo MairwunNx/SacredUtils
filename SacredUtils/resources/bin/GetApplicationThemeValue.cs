@@ -1,9 +1,9 @@
 ﻿using Config.Net;
 using WPFSharp.Globalizer;
 
-namespace SacredUtils.resources.bin.getting
+namespace SacredUtils.resources.bin
 {
-    public static class ApplicationTheme
+    public static class GetApplicationThemeValue
     {
         public static void Get()
         {

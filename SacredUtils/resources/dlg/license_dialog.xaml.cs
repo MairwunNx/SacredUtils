@@ -7,26 +7,21 @@ namespace SacredUtils.resources.dlg
     // ReSharper disable once InconsistentNaming
     public partial class license_dialog
     {
-        public interface ILicenseSettings
-        {
-            bool AcceptLicense { get; set; }
-        }
-
         public license_dialog()
         {
             InitializeComponent();
         }
 
-        private void CloseSacredUtilsBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void CloseSacredUtilsBtn_Click(object sender, RoutedEventArgs e)
         {
             Process.GetCurrentProcess().Kill();
         }
 
-        private void AcceptLicenseBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void AcceptLicenseBtn_Click(object sender, RoutedEventArgs e)
         {
             LicenseDialog.IsOpen = false;
 
-            ILicenseSettings licenseSettings = new ConfigurationBuilder<ILicenseSettings>()
+            IAppSettings licenseSettings = new ConfigurationBuilder<IAppSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
             licenseSettings.AcceptLicense = true;

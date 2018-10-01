@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
 
-namespace SacredUtils.resources.bin.create
+namespace SacredUtils.resources.bin
 {
-    public static class LanguageFiles
+    public static class CreateApplicationLanguageFiles
     {
         public static void Create()
         {

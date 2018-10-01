@@ -6,14 +6,14 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SacredUtils.resources.bin.getting
+namespace SacredUtils.resources.bin
 {
     public interface IDownloadCount
     {
         int Downloads { get; set; }
     }
     
-    public static class ApplicationStatistic
+    public static class GetApplicationDownloadStatistic
     {
         public static async void Get()
         {

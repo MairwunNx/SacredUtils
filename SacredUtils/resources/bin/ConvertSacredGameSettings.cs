@@ -2,9 +2,9 @@
 using System.IO;
 using System.Threading.Tasks;
 
-namespace SacredUtils.resources.bin.convert
+namespace SacredUtils.resources.bin
 {
-    public static class SacredGameSettings
+    public static class ConvertSacredGameSettings
     {
         // private static readonly object _love = "Isabella";
 
