@@ -123,23 +123,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="resources\bin\change\ApplicationScale.cs" />
-    <Compile Include="resources\bin\check\AvailabilityAlphaUpdates.cs" />
-    <Compile Include="resources\bin\check\AvailabilityGameSettings.cs" />
-    <Compile Include="resources\bin\check\AvailabilityInternetConnection.cs" />
-    <Compile Include="resources\bin\check\AvailabilityReleaseUpdates.cs" />
-    <Compile Include="resources\bin\check\AvailabilityUpdateTemp.cs" />
+    <Compile Include="resources\bin\GetApplicationScaleValue.cs" />
+    <Compile Include="resources\bin\CheckAvailabilityAlphaUpdates.cs" />
+    <Compile Include="resources\bin\CheckAvailabilityGameSettings.cs" />
+    <Compile Include="resources\bin\CheckAvailabilityInternetConnection.cs" />
+    <Compile Include="resources\bin\CheckAvailabilityReleaseUpdates.cs" />
+    <Compile Include="resources\bin\CheckAvailabilityUpdateTemp.cs" />
     <Compile Include="AppSummary.cs" />
-    <Compile Include="resources\bin\convert\SacredGameSettings.cs" />
-    <Compile Include="resources\bin\create\LanguageFiles.cs" />
-    <Compile Include="resources\bin\create\ThemeFiles.cs" />
-    <Compile Include="resources\bin\getting\RequiredApplicationFiles.cs" />
-    <Compile Include="resources\bin\getting\GlobalizerLibrary.cs" />
-    <Compile Include="resources\bin\getting\ApplicationLanguage.cs" />
+    <Compile Include="resources\bin\ConvertSacredGameSettings.cs" />
+    <Compile Include="resources\bin\CreateApplicationLanguageFiles.cs" />
+    <Compile Include="resources\bin\CreateApplicationThemeFiles.cs" />
+    <Compile Include="resources\bin\GetRequiredApplicationFiles.cs" />
+    <Compile Include="resources\bin\GetApplicationGlobalizerLibrary.cs" />
+    <Compile Include="resources\bin\GetApplicationLanguageValue.cs" />
     <Compile Include="AppLogger.cs" />
-    <Compile Include="resources\bin\getting\ApplicationSettings.cs" />
-    <Compile Include="resources\bin\getting\ApplicationStatistic.cs" />
-    <Compile Include="resources\bin\getting\ApplicationTheme.cs" />
+    <Compile Include="resources\bin\GetApplicationSettingsValue.cs" />
+    <Compile Include="resources\bin\GetApplicationDownloadStatistic.cs" />
+    <Compile Include="resources\bin\GetApplicationThemeValue.cs" />
     <Compile Include="resources\dlg\change_log_dialog.xaml.cs">
       <DependentUpon>change_log_dialog.xaml</DependentUpon>
     </Compile>
