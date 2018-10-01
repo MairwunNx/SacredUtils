@@ -38,6 +38,17 @@ namespace SacredUtils.resources.bin.check
                     new ConfigurationBuilder<IAppSettings>()
                         .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
+                if (Directory.GetFiles("$SacredUtils\\back\\cfg-game\\").Length >
+                    applicationSettings.MaxGameBackupFiles)
+                {
+                    DirectoryInfo directoryInfo = new DirectoryInfo("$SacredUtils\\back\\cfg-game\\");
+
+                    foreach (FileInfo dir in directoryInfo.EnumerateFiles())
+                    {
+                        dir.Delete();
+                    }
+                }
+
                 AppLogger.Log.Info("Game settings was found! Settings will be loaded from settins.cfg");
 
                 if (applicationSettings.MakeAutoBackupConfigs)

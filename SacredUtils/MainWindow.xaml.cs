@@ -169,13 +169,19 @@ namespace SacredUtils
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.P)
-            {
-                Shutdown();
-            }
-
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.T)
             {
                 Process.Start(AppSummary.AppPatch); Environment.Exit(0);
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.Y)
+            {
+                Process.Start(Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName));
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.P)
+            {
+                Shutdown();
             }
         }
 

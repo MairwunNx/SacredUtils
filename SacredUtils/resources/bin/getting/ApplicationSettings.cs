@@ -25,6 +25,17 @@ namespace SacredUtils.resources.bin.getting
                     new ConfigurationBuilder<IAppSettings>()
                         .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
 
+                if (Directory.GetFiles("$SacredUtils\\back\\cfg-app").Length >
+                    applicationSettings.MaxApplicationBackupFiles)
+                {
+                    DirectoryInfo directoryInfo = new DirectoryInfo("$SacredUtils\\back\\cfg-app");
+
+                    foreach (FileInfo dir in directoryInfo.EnumerateFiles())
+                    {
+                        dir.Delete();
+                    }
+                }
+
                 if (applicationSettings.MakeAutoBackupConfigs)
                 {
                     Random rnd = new Random();

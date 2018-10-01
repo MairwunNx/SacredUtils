@@ -61,8 +61,14 @@ namespace SacredUtils
         [Option(Alias = "MakeAutoBackupConfigs", DefaultValue = "true")]
         bool MakeAutoBackupConfigs { get; set; }
 
+        [Option(Alias = "MaxApplicationBackupFiles", DefaultValue = "10")]
+        int MaxApplicationBackupFiles { get; set; }
+
         [Option(Alias = "MaxArchiveFiles", DefaultValue = "10")]
         int MaxArchiveFiles { get; set; }
+
+        [Option(Alias = "MaxGameBackupFiles", DefaultValue = "10")]
+        int MaxGameBackupFiles { get; set; }
 
         [Option(Alias = "NLogConfigFileCreate", DefaultValue = "false")]
         bool NLogConfigFileCreate { get; set; }
