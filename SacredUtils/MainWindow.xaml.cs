@@ -1,11 +1,8 @@
-﻿using Config.Net;
-using MaterialDesignThemes.Wpf;
+﻿using MaterialDesignThemes.Wpf;
 using SacredUtils.resources.bin;
 using SacredUtils.resources.dlg;
-using SacredUtils.resources.pgs;
 using System;
 using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -17,19 +14,9 @@ using System.Windows.Threading;
 
 namespace SacredUtils
 {
-    [SuppressMessage("ReSharper", "InconsistentNaming")]
     public partial class MainWindow
     {
-        public application_settings_one _appStgOne       = new application_settings_one();
-        public application_settings_two _appStgTwo       = new application_settings_two();
-        public chat_settings_one _chatStgOne             = new chat_settings_one();
-        public font_settings_one _fontStgOne             = new font_settings_one();
-        public gameplay_settings_one _gameplayStgOne     = new gameplay_settings_one();
-        public graphics_settings_one _graphicsStgOne     = new graphics_settings_one();
-        public modify_settings_one _modifyStgOne         = new modify_settings_one();
-        public sound_settings_one _soundStgOne           = new sound_settings_one();
-        public unselected_settings_one _unselectedStgOne = new unselected_settings_one();
-        public DispatcherTimer _timer                    = new DispatcherTimer();
+        private readonly DispatcherTimer _timer = new DispatcherTimer();
 
         public MainWindow()
         {
@@ -37,9 +24,7 @@ namespace SacredUtils
 
             InitializeComponent(); EventSubscribe(); GetPermCheckingMemory();
 
-            AppLogger.Log.Info("Initializing SacredUtils components done!");
-
-            SelectSettings(_unselectedStgOne, MenuGpLabel);
+            SelectSettings(InitializeSacredGameSettings.UnselectedStgOne, MenuGpLabel, "");
 
             GetApplicationLanguageValue.Get(); GetApplicationThemeValue.Get(); GetApplicationScaleValue.Get();
 
@@ -48,23 +33,19 @@ namespace SacredUtils
 
         private void EventSubscribe()
         {
-            MenuGrLabel.Click += (s, e) => SelectSettings(_graphicsStgOne, GraphicsPanel);
-            MenuSnLabel.Click += (s, e) => SelectSettings(_soundStgOne, SoundPanel);
-            MenuGpLabel.Click += (s, e) => SelectSettings(_gameplayStgOne, GameplayPanel);
-            MenuCtLabel.Click += (s, e) => SelectSettings(_chatStgOne, ChatPanel);
-            MenuFtLabel.Click += (s, e) => SelectSettings(_fontStgOne, FontsPanel);
-            MenuMdLabel.Click += (s, e) => SelectSettings(_modifyStgOne, ModifPanel);
-            MenuStLabel.Click += (s, e) => SelectSettings(_appStgOne, SettingsPanel);
+            MenuGrLabel.Click += (s, e) => SelectSettings(InitializeSacredGameSettings.GraphicsStgOne, GraphicsPanel, "");
+            MenuSnLabel.Click += (s, e) => SelectSettings(InitializeSacredGameSettings.SoundStgOne, SoundPanel, "");
+            MenuGpLabel.Click += (s, e) => SelectSettings(InitializeSacredGameSettings.GameplayStgOne, GameplayPanel, "");
+            MenuCtLabel.Click += (s, e) => SelectSettings(InitializeSacredGameSettings.ChatStgOne, ChatPanel, "");
+            MenuFtLabel.Click += (s, e) => SelectSettings(InitializeSacredGameSettings.FontStgOne, FontsPanel, "");
+            MenuMdLabel.Click += (s, e) => SelectSettings(InitializeSacredGameSettings.ModifyStgOne, ModifPanel, "");
+            MenuStLabel.Click += (s, e) => SelectSettings(InitializeApplicationSettings.AppStgOne, SettingsPanel, "AppSettingsOne");
 
             HeaderPanel.MouseDown += DragWindow;
             CloseBtn.Click += (s, e) => Shutdown();
             MinimizeBtn.Click += (s, e) => WindowState = WindowState.Minimized;
 
-            IAppSettings applicationSettings =
-                new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
-            _timer.Interval = new TimeSpan(0, 0, applicationSettings.ShowUsedMemoryUpdateInterval);
+            _timer.Interval = new TimeSpan(0, 0, AppSettings.ApplicationSettings.ShowUsedMemoryUpdateInterval);
             _timer.Tick += (s, e) => GetCurrentUsedMemory();
 
             Loaded += (sender, args) =>
@@ -82,12 +63,9 @@ namespace SacredUtils
 
         private void GetPermCheckingMemory()
         {
-            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
             // Isabella ... Sorry please ...
 
-            if (applicationSettings.ShowUsedMemory)
+            if (AppSettings.ApplicationSettings.ShowUsedMemory)
             {
                 MemoryLbl.Visibility = Visibility.Visible; _timer.Start();
             }
@@ -110,41 +88,43 @@ namespace SacredUtils
             if (e.ChangedButton == MouseButton.Left) { DragMove(); }
         }
 
-        private void SelectSettings(UIElement element, object sender)
+        private void SelectSettings(UIElement element, object sender, string name)
         {
             SettingsFrame.Content = element;
 
-            StackPanel s = sender as StackPanel;
-
-            if (sender.Equals(s) && s != null)
+            if (sender.Equals(sender as StackPanel) && sender is StackPanel panel)
             {
-                AppLogger.Log.Info($"Selected settings category {s.Name} by user");
+                if (name == "AppSettingsOne")
+                {
+                    InitializeApplicationSettings.AppStgOne.GetSettings();
+                }
+
+                AppLogger.Log.Info($"Selected settings category {panel.Name} by user");
 
                 foreach (StackPanel sp in SettingsGrid.Children.OfType<StackPanel>())
                 {
                     sp.SetResourceReference(BackgroundProperty, "CategoryNotActiveColorBrush");
-                }
-
-                s.SetResourceReference(BackgroundProperty, "CategoryActiveColorBrush");
+                } 
+                
+                panel.SetResourceReference(BackgroundProperty, "CategoryActiveColorBrush");
             }
         }
 
         private void BaseWindow_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
-            Enum.TryParse(applicationSettings.KeyRefreshSettings, out Key refresh);
-            Enum.TryParse(applicationSettings.KeyGotoMainMenu, out Key toMain);
+            Enum.TryParse(AppSettings.ApplicationSettings.KeyRefreshSettings, out Key refresh);
+            Enum.TryParse(AppSettings.ApplicationSettings.KeyGotoMainMenu, out Key toMain);
 
             if (e.Key == refresh)
             {
-                 _appStgOne.GetSettings(); _appStgTwo.GetSettings();
+                InitializeApplicationSettings.AppStgOne.GetSettings();
+
+                InitializeApplicationSettings.AppStgTwo.GetSettings();
             }
 
             if (e.Key == toMain)
             {
-                SelectSettings(_unselectedStgOne, MenuGpLabel);
+                SelectSettings(InitializeSacredGameSettings.UnselectedStgOne, MenuGpLabel, "");
 
                 foreach (StackPanel sp in SettingsGrid.Children.OfType<StackPanel>())
                 {
@@ -189,11 +169,9 @@ namespace SacredUtils
         {
             try
             {
-                AppDomain domain = AppDomain.CurrentDomain;
-
                 AppLogger.Log.Info("Preparing to updating application done!");
 
-                Process.Start("mnxupdater.exe", domain.FriendlyName + " _newVersionSacredUtilsTemp.exe");
+                Process.Start("mnxupdater.exe", AppDomain.CurrentDomain.FriendlyName + " _newVersionSacredUtilsTemp.exe");
 
                 Shutdown();
             }
@@ -205,10 +183,7 @@ namespace SacredUtils
 
         private void GetLicenseState()
         {
-            IAppSettings licenseSettings = new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
-            if (!licenseSettings.AcceptLicense || !File.Exists("License.txt"))
+            if (!AppSettings.ApplicationSettings.AcceptLicense || !File.Exists("License.txt"))
             {
                 File.WriteAllBytes("License.txt", Properties.Resources.AppLicense);
 
@@ -225,10 +200,7 @@ namespace SacredUtils
             DialogFrame.Visibility = Visibility.Visible;
             DialogFrame.Content = license;
 
-            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
-            if (applicationSettings.ColorTheme == "dark")
+            if (AppSettings.ApplicationSettings.ColorTheme == "dark")
             {
                 license.LicenseDialog.DialogTheme = BaseTheme.Dark;
             }

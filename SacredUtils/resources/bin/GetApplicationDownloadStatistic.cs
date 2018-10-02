@@ -17,16 +17,11 @@ namespace SacredUtils.resources.bin
     {
         public static async void Get()
         {
-            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
-            byte[] base64EncodedBytes = Convert.FromBase64String("MTEzMTcxNTFQbGVhc2VOb3RDaGFuZ2U=");
-
-            AppSummary.Connect = Encoding.UTF8.GetString(base64EncodedBytes);
+            AppSummary.Connect = Encoding.UTF8.GetString(Convert.FromBase64String("MTEzMTcxNTFQbGVhc2VOb3RDaGFuZ2U="));
 
             AppLogger.Log.Info("Checking for first installing of SacredUtils ...");
 
-            if (applicationSettings.WhatIsThisDoingHere)
+            if (AppSettings.ApplicationSettings.WhatIsThisDoingHere)
             {
                 try
                 {
@@ -85,9 +80,6 @@ namespace SacredUtils.resources.bin
 
         private static async void Send()
         {
-            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
             try
             {
                 FtpClient client = new FtpClient("files.000webhost.com");
@@ -114,7 +106,7 @@ namespace SacredUtils.resources.bin
 
                 File.Delete("$SacredUtils\\conf\\statinfo.json");
 
-                applicationSettings.WhatIsThisDoingHere = false;
+                AppSettings.ApplicationSettings.WhatIsThisDoingHere = false;
             }
             catch (Exception e)
             {

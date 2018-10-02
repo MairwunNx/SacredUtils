@@ -16,15 +16,31 @@ namespace SacredUtils
             {
                 if (e.Args.Contains("-fast"))
                 {
-                    AppLogger.Init(true); ConvertSacredGameSettings.ConvertToIni("by program");
+                    AppLogger.Init(true);
+
+                    ConvertSacredGameSettings.ConvertToIni("by program");
                 }
                 else
                 {
-                    AppLogger.Init(false); GetApplicationGlobalizerLibrary.Get();
+                    AppLogger.Init(false);
 
-                    CreateApplicationThemeFiles.Create(); CreateApplicationLanguageFiles.Create();
+                    PrintToLogBaseApplicationInfo.Print();
 
-                    CheckAvailabilityGameSettings.Get(); GetApplicationSettingsValue.Get();
+                    GetApplicationGlobalizerLibrary.Get();
+
+                    CreateApplicationNeededFolders.Create();
+
+                    CreateApplicationLanguageFiles.Create();
+
+                    CreateApplicationThemeFiles.Create();
+
+                    GetApplicationSettingsValue.Get();
+
+                    CheckAvailabilityGameSettings.Get();
+
+                    CreateBackupApplicationSettings.Create();
+
+                    CreateBackupSacredGameSettings.Create();
 
                     ConvertSacredGameSettings.ConvertToIni("by program");
 

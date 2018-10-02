@@ -1,5 +1,4 @@
-﻿using Config.Net;
-using System.IO;
+﻿using System.IO;
 
 namespace SacredUtils.resources.bin
 {
@@ -7,10 +6,7 @@ namespace SacredUtils.resources.bin
     {
         public static void Get()
         {
-            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
-            if (applicationSettings.RemoveTempContent)
+            if (AppSettings.ApplicationSettings.RemoveTempContent)
             {
                 if (File.Exists("mnxupdater.exe"))
                 {

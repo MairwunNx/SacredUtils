@@ -1,5 +1,4 @@
-﻿using Config.Net;
-using System.IO;
+﻿using System.IO;
 
 namespace SacredUtils.resources.bin
 {
@@ -7,11 +6,7 @@ namespace SacredUtils.resources.bin
     {
         public static void Get()
         {
-            IAppSettings applicationSettings =
-                new ConfigurationBuilder<IAppSettings>()
-                    .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
-            if (applicationSettings.DebugFileCreate)
+            if (AppSettings.ApplicationSettings.DebugFileCreate)
             {
                 File.WriteAllBytes("SacredUtils.pdb", Properties.Resources.SacredUtils);
 
@@ -22,7 +17,7 @@ namespace SacredUtils.resources.bin
                 AppLogger.Log.Info("No permission to create debug file!");
             }
 
-            if (applicationSettings.LicenseFileCreate)
+            if (AppSettings.ApplicationSettings.LicenseFileCreate)
             {
                 File.WriteAllBytes("License.txt", Properties.Resources.AppLicense);
 

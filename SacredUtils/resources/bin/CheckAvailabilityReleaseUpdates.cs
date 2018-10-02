@@ -1,5 +1,4 @@
-﻿using Config.Net;
-using System;
+﻿using System;
 using System.IO;
 using System.Net;
 using System.Threading;
@@ -33,10 +32,10 @@ namespace SacredUtils.resources.bin
         {
             AppLogger.Log.Info("Checking premission for checking release updates ...");
 
-            IAppSettings releaseUpdateSettings = new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
-            if (releaseUpdateSettings.CheckAutoUpdate) { Get(); }
+            if (AppSettings.ApplicationSettings.CheckAutoUpdate)
+            {
+                Get(); 
+            }
             else
             {
                 AppLogger.Log.Warn("**** APPLICATION IS RUNNING WITH DISABLED CHECKING UPDATE!");
@@ -51,9 +50,7 @@ namespace SacredUtils.resources.bin
 
             try
             {
-                const string appReleaseVersionWeb = "https://drive.google.com/uc?export=download&id=13N9ZfalxDfTAIdYxFuGBr8QPMW9OODc_";
-
-                string appReleaseVersion = wc.DownloadString(appReleaseVersionWeb);
+                string appReleaseVersion = wc.DownloadString("https://drive.google.com/uc?export=download&id=13N9ZfalxDfTAIdYxFuGBr8QPMW9OODc_");
 
                 AppLogger.Log.Info($"The last received SacredUtils release version {appReleaseVersion}");
 

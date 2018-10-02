@@ -112,4 +112,11 @@ namespace SacredUtils
         [Option(Alias = "WhatIsThisDoingHere", DefaultValue = "true")]
         bool WhatIsThisDoingHere { get; set; }
     }
+
+    public static class AppSettings
+    {
+        public static IAppSettings ApplicationSettings =
+            new ConfigurationBuilder<IAppSettings>()
+                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
+    }
 }

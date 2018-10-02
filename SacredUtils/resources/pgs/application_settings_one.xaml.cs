@@ -1,5 +1,5 @@
-﻿using Config.Net;
-using MaterialDesignThemes.Wpf;
+﻿using MaterialDesignThemes.Wpf;
+using SacredUtils.resources.bin;
 using SacredUtils.resources.dlg;
 using System;
 using System.Diagnostics;
@@ -16,42 +16,39 @@ namespace SacredUtils.resources.pgs
 
         public application_settings_one()
         {
-            InitializeComponent(); GetSettings();
+            InitializeComponent();
 
             AppLogger.Log.Info("Initialization components for application settings one done!");
         }
 
         public void GetSettings()
         {
-            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
-            UiLanguageCmbBox.SelectedIndex = applicationSettings.AppUiLanguage == "ru" ? 0 : 1;
+            UiLanguageCmbBox.SelectedIndex = AppSettings.ApplicationSettings.AppUiLanguage == "ru" ? 0 : 1;
 
             GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
                 (UiLanguageCmbBox.SelectedIndex == 0 ? "ru-RU" : "en-US", true);
 
-            UiThemeCmbBox.SelectedIndex = applicationSettings.ColorTheme == "light" ? 0 : 1;
+            UiThemeCmbBox.SelectedIndex = AppSettings.ApplicationSettings.ColorTheme == "light" ? 0 : 1;
 
             GlobalizedApplication.Instance.StyleManager.SwitchStyle
                 (UiThemeCmbBox.SelectedIndex == 0 ? "Light.xaml" : "Dark.xaml");
 
-            if (applicationSettings.SacredStartArgs == "close")
+            if (AppSettings.ApplicationSettings.SacredStartArgs == "close")
             {
                 StartParamsCmbBox.SelectedIndex = 0;
             }
-            else if (applicationSettings.SacredStartArgs == "minimize")
+            else if (AppSettings.ApplicationSettings.SacredStartArgs == "minimize")
             {
                 StartParamsCmbBox.SelectedIndex = 1;
             }
-            else if (applicationSettings.SacredStartArgs == "none")
+            else if (AppSettings.ApplicationSettings.SacredStartArgs == "none")
             {
                 StartParamsCmbBox.SelectedIndex = 2;
             }
 
-            UiScaleCmbBox.Text = $"{Convert.ToInt32(applicationSettings.SacredUtilsGuiScale * 100)}%";
+            UiScaleCmbBox.Text = $"{Convert.ToInt32(AppSettings.ApplicationSettings.SacredUtilsGuiScale * 100)}%";
 
-            ChangeScale(applicationSettings.SacredUtilsGuiScale);
+            ChangeScale(AppSettings.ApplicationSettings.SacredUtilsGuiScale);
 
             if (_eventSubsNum == 0)
             {
@@ -77,10 +74,7 @@ namespace SacredUtils.resources.pgs
 
         private void ChangeLanguage()
         {
-            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
-            applicationSettings.AppUiLanguage = UiLanguageCmbBox.SelectedIndex == 0 ? "ru" : "en";
+            AppSettings.ApplicationSettings.AppUiLanguage = UiLanguageCmbBox.SelectedIndex == 0 ? "ru" : "en";
 
             GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
                 (UiLanguageCmbBox.SelectedIndex == 0 ? "ru-RU" : "en-US", true);
@@ -90,10 +84,7 @@ namespace SacredUtils.resources.pgs
 
         private void ChangeTheme()
         {
-            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
-            applicationSettings.ColorTheme = UiThemeCmbBox.SelectedIndex == 0 ? "light" : "dark";
+            AppSettings.ApplicationSettings.ColorTheme = UiThemeCmbBox.SelectedIndex == 0 ? "light" : "dark";
 
             GlobalizedApplication.Instance.StyleManager.SwitchStyle
                 (UiThemeCmbBox.SelectedIndex == 0 ? "Light.xaml" : "Dark.xaml");
@@ -103,22 +94,19 @@ namespace SacredUtils.resources.pgs
 
         private void ChangeStart()
         {
-            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
             if (StartParamsCmbBox.SelectedIndex == 0)
             {
-                applicationSettings.SacredStartArgs = "close";
+                AppSettings.ApplicationSettings.SacredStartArgs = "close";
             }
 
             if (StartParamsCmbBox.SelectedIndex == 1)
             {
-                applicationSettings.SacredStartArgs = "minimize";
+                AppSettings.ApplicationSettings.SacredStartArgs = "minimize";
             }
 
             if (StartParamsCmbBox.SelectedIndex == 2)
             {
-                applicationSettings.SacredStartArgs = "none";
+                AppSettings.ApplicationSettings.SacredStartArgs = "none";
             }
 
             AppLogger.Log.Info($"Sacred startup params changed to {StartParamsCmbBox.Text} by user");
@@ -179,10 +167,7 @@ namespace SacredUtils.resources.pgs
                     ((MainWindow)window).BaseCard.LayoutTransform = new ScaleTransform(scale, scale);
                 }
 
-                IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
-                    .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
-                applicationSettings.SacredUtilsGuiScale = scale;
+                AppSettings.ApplicationSettings.SacredUtilsGuiScale = scale;
             }
             catch (Exception e)
             {
@@ -211,10 +196,7 @@ namespace SacredUtils.resources.pgs
                     }
                 }
 
-                IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
-                    .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
-                if (applicationSettings.ColorTheme == "dark")
+                if (AppSettings.ApplicationSettings.ColorTheme == "dark")
                 {
                     about.AboutDialog.DialogTheme = BaseTheme.Dark;
                 }
@@ -236,7 +218,9 @@ namespace SacredUtils.resources.pgs
             {
                 foreach (Window window in Application.Current.Windows)
                 {
-                    ((MainWindow)window).SettingsFrame.Content = ((MainWindow)window)._appStgTwo;
+                    ((MainWindow)window).SettingsFrame.Content = InitializeApplicationSettings.AppStgTwo;
+
+                    InitializeApplicationSettings.AppStgTwo.GetSettings();
 
                     AppLogger.Log.Info("Application settings two page was opened by user");
                 }

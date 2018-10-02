@@ -1,5 +1,4 @@
-﻿using Config.Net;
-using System;
+﻿using System;
 using System.IO;
 using System.Net;
 using System.Threading;
@@ -38,10 +37,10 @@ namespace SacredUtils.resources.bin
         {
             AppLogger.Log.Info("Checking premission for checking alpha updates ...");
 
-            IAppSettings alphaUpdateSettings = new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
-            if (alphaUpdateSettings.CheckAutoAlphaUpdate) { Get(); }
+            if (AppSettings.ApplicationSettings.CheckAutoAlphaUpdate)
+            {
+                Get();
+            }
             else
             {
                 AppLogger.Log.Info("No permission to check alpha updates!");
@@ -56,9 +55,7 @@ namespace SacredUtils.resources.bin
 
             try
             {
-                const string appAlphaVersionWeb = "https://drive.google.com/uc?export=download&id=1Fc0QIxzUn7-ellW5e4_W1Wv05-V1hsJ8";
-
-                string appAlphaVersion = wc.DownloadString(appAlphaVersionWeb);
+                string appAlphaVersion = wc.DownloadString("https://drive.google.com/uc?export=download&id=1Fc0QIxzUn7-ellW5e4_W1Wv05-V1hsJ8");
 
                 AppLogger.Log.Info($"The last received SacredUtils release version {appAlphaVersion}");
 

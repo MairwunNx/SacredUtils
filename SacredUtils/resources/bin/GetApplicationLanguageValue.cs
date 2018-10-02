@@ -1,5 +1,4 @@
-﻿using Config.Net;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Threading;
 using WPFSharp.Globalizer;
 
@@ -9,10 +8,7 @@ namespace SacredUtils.resources.bin
     {
         public static void Get()
         {
-            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
-            if (applicationSettings.AppUiLanguage == "based on system")
+            if (AppSettings.ApplicationSettings.AppUiLanguage == "based on system")
             {
                 AppLogger.Log.Info("Getting default system language settings ...");
 
@@ -24,7 +20,7 @@ namespace SacredUtils.resources.bin
                     currentCulture.TwoLetterISOLanguageName == "ro" ||
                     currentCulture.TwoLetterISOLanguageName == "bg")
                 {
-                    applicationSettings.AppUiLanguage = "ru";
+                    AppSettings.ApplicationSettings.AppUiLanguage = "ru";
 
                     GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage("ru-RU", true);
 
@@ -32,7 +28,7 @@ namespace SacredUtils.resources.bin
                 }
                 else
                 {
-                    applicationSettings.AppUiLanguage = "en";
+                    AppSettings.ApplicationSettings.AppUiLanguage = "en";
 
                     GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage("en-US", true);
 
@@ -42,11 +38,11 @@ namespace SacredUtils.resources.bin
             else
             {
                 GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
-                    (applicationSettings.AppUiLanguage == "ru" ? "ru-RU" : "en-US", true);
+                    (AppSettings.ApplicationSettings.AppUiLanguage == "ru" ? "ru-RU" : "en-US", true);
 
                 // I love you, Isabella!!!
 
-                AppLogger.Log.Info($"Application starting with {applicationSettings.AppUiLanguage} language ...");
+                AppLogger.Log.Info($"Application starting with {AppSettings.ApplicationSettings.AppUiLanguage} language ...");
             }
         }
     }

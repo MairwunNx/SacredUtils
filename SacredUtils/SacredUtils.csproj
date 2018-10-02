@@ -123,6 +123,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="resources\bin\CreateApplicationNeededFolders.cs" />
+    <Compile Include="resources\bin\CreateBackupApplicationSettings.cs" />
+    <Compile Include="resources\bin\CreateBackupSacredGameSettings.cs" />
     <Compile Include="resources\bin\GetApplicationScaleValue.cs" />
     <Compile Include="resources\bin\CheckAvailabilityAlphaUpdates.cs" />
     <Compile Include="resources\bin\CheckAvailabilityGameSettings.cs" />
@@ -140,6 +143,9 @@
     <Compile Include="resources\bin\GetApplicationSettingsValue.cs" />
     <Compile Include="resources\bin\GetApplicationDownloadStatistic.cs" />
     <Compile Include="resources\bin\GetApplicationThemeValue.cs" />
+    <Compile Include="resources\bin\InitializeApplicationSettings.cs" />
+    <Compile Include="resources\bin\InitializeSacredGameSettings.cs" />
+    <Compile Include="resources\bin\PrintToLogBaseApplicationInfo.cs" />
     <Compile Include="resources\dlg\change_log_dialog.xaml.cs">
       <DependentUpon>change_log_dialog.xaml</DependentUpon>
     </Compile>

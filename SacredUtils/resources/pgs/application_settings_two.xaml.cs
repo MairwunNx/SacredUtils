@@ -1,5 +1,5 @@
-﻿using Config.Net;
-using MaterialDesignThemes.Wpf;
+﻿using MaterialDesignThemes.Wpf;
+using SacredUtils.resources.bin;
 using SacredUtils.resources.dlg;
 using System;
 using System.Diagnostics;
@@ -14,23 +14,20 @@ namespace SacredUtils.resources.pgs
 
         public application_settings_two()
         {
-            InitializeComponent(); GetSettings();
+            InitializeComponent();
 
             AppLogger.Log.Info("Initialization components for application settings two done!");
         }
 
         public void GetSettings()
         {
-            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
+            UpdateCheckTglBtn.IsChecked = AppSettings.ApplicationSettings.CheckAutoUpdate;
 
-            UpdateCheckTglBtn.IsChecked = applicationSettings.CheckAutoUpdate;
+            UpdateAlphaCheckTglBtn.IsChecked = AppSettings.ApplicationSettings.CheckAutoAlphaUpdate;
 
-            UpdateAlphaCheckTglBtn.IsChecked = applicationSettings.CheckAutoAlphaUpdate;
+            MakeBackupTglBtn.IsChecked = AppSettings.ApplicationSettings.MakeAutoBackupConfigs;
 
-            MakeBackupTglBtn.IsChecked = applicationSettings.MakeAutoBackupConfigs;
-
-            LicenseTglBtn.IsChecked = applicationSettings.AcceptLicense;
+            LicenseTglBtn.IsChecked = AppSettings.ApplicationSettings.AcceptLicense;
 
             if (_eventSubsNum == 0)
             {
@@ -56,41 +53,32 @@ namespace SacredUtils.resources.pgs
 
         private void ChangeUpdateCheck(bool alphaUpdate)
         {
-            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
             if (!alphaUpdate)
             {
-                applicationSettings.CheckAutoUpdate = UpdateCheckTglBtn.IsChecked == true;
+                AppSettings.ApplicationSettings.CheckAutoUpdate = UpdateCheckTglBtn.IsChecked == true;
 
-                AppLogger.Log.Info($"Checking for updates set to {applicationSettings.CheckAutoUpdate} by user");
+                AppLogger.Log.Info($"Checking for updates set to {AppSettings.ApplicationSettings.CheckAutoUpdate} by user");
             }
             else
             {
-                applicationSettings.CheckAutoAlphaUpdate = UpdateAlphaCheckTglBtn.IsChecked == true;
+                AppSettings.ApplicationSettings.CheckAutoAlphaUpdate = UpdateAlphaCheckTglBtn.IsChecked == true;
 
-                AppLogger.Log.Info($"Checking for alpha updates set to {applicationSettings.CheckAutoAlphaUpdate} by user");
+                AppLogger.Log.Info($"Checking for alpha updates set to {AppSettings.ApplicationSettings.CheckAutoAlphaUpdate} by user");
             }
         }
 
         private void ChangeBackupMake()
         {
-            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
+            AppSettings.ApplicationSettings.MakeAutoBackupConfigs = MakeBackupTglBtn.IsChecked == true;
 
-            applicationSettings.MakeAutoBackupConfigs = MakeBackupTglBtn.IsChecked == true;
-
-            AppLogger.Log.Info($"Backup making settings set to {applicationSettings.MakeAutoBackupConfigs} by user");
+            AppLogger.Log.Info($"Backup making settings set to {AppSettings.ApplicationSettings.MakeAutoBackupConfigs} by user");
         }
 
         private void ChangeLicenseAgreement()
         {
-            IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
+            AppSettings.ApplicationSettings.AcceptLicense = LicenseTglBtn.IsChecked == true;
 
-            applicationSettings.AcceptLicense = LicenseTglBtn.IsChecked == true;
-
-            AppLogger.Log.Info($"Accept license set to {applicationSettings.AcceptLicense} by user");
+            AppLogger.Log.Info($"Accept license set to {AppSettings.ApplicationSettings.AcceptLicense} by user");
         }
 
         private static void OpenLink(string link)
@@ -113,10 +101,7 @@ namespace SacredUtils.resources.pgs
                     }
                 }
 
-                IAppSettings applicationSettings = new ConfigurationBuilder<IAppSettings>()
-                    .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
-                if (applicationSettings.ColorTheme == "dark")
+                if (AppSettings.ApplicationSettings.ColorTheme == "dark")
                 {
                     about.AboutDialog.DialogTheme = BaseTheme.Dark;
                 }
@@ -138,7 +123,7 @@ namespace SacredUtils.resources.pgs
             {
                 foreach (Window window in Application.Current.Windows)
                 {
-                    ((MainWindow)window).SettingsFrame.Content = ((MainWindow)window)._appStgOne;
+                    ((MainWindow)window).SettingsFrame.Content = InitializeApplicationSettings.AppStgOne;
 
                     AppLogger.Log.Info("Application settings one page was opened by user");
                 }

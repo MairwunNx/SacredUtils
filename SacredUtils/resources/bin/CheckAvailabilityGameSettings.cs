@@ -1,5 +1,4 @@
-﻿using Config.Net;
-using System;
+﻿using System;
 using System.IO;
 
 namespace SacredUtils.resources.bin
@@ -30,32 +29,6 @@ namespace SacredUtils.resources.bin
                     AppLogger.Log.Info("Shutting down SacredUtils configurator ...");
 
                     Environment.Exit(0);
-                }
-            }
-            else
-            {
-                IAppSettings applicationSettings =
-                    new ConfigurationBuilder<IAppSettings>()
-                        .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
-                if (Directory.GetFiles("$SacredUtils\\back\\cfg-game\\").Length >
-                    applicationSettings.MaxGameBackupFiles)
-                {
-                    DirectoryInfo directoryInfo = new DirectoryInfo("$SacredUtils\\back\\cfg-game\\");
-
-                    foreach (FileInfo dir in directoryInfo.EnumerateFiles())
-                    {
-                        dir.Delete();
-                    }
-                }
-
-                AppLogger.Log.Info("Game settings was found! Settings will be loaded from settins.cfg");
-
-                if (applicationSettings.MakeAutoBackupConfigs)
-                {
-                    Random rnd = new Random();
-
-                    File.Copy("settings.cfg", $"$SacredUtils\\back\\cfg-game\\config_game_id_{rnd.Next(0, Int32.MaxValue)}.cfg", true);
                 }
             }
         }
