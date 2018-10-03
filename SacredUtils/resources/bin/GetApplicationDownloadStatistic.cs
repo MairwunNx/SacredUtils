@@ -15,6 +15,18 @@ namespace SacredUtils.resources.bin
     
     public static class GetApplicationDownloadStatistic
     {
+        public static void GetConnection()
+        {
+            if (CheckAvailabilityInternetConnection.Connect())
+            {
+                Get();
+            }
+            else
+            {
+                AppLogger.Log.Warn("**** APPLICATION IS RUNNING IN OFFLINE MODE!");
+            }
+        }
+
         public static async void Get()
         {
             AppSummary.Connect = Encoding.UTF8.GetString(Convert.FromBase64String("MTEzMTcxNTFQbGVhc2VOb3RDaGFuZ2U="));

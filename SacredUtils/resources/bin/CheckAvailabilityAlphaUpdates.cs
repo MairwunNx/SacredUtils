@@ -11,45 +11,36 @@ namespace SacredUtils.resources.bin
     {
         static WebClient wc = new WebClient();
 
+        public static void GetConnection()
+        {
+            if (CheckAvailabilityInternetConnection.Connect())
+            {
+                GetGarbage();
+            }
+        } 
+
         public static void GetGarbage()
         {
-            CheckAvailabilityUpdateTemp.Get(); GetConnect();
+            CheckAvailabilityUpdateTemp.Get(); GetPerm();
         }
 
-        public static void GetConnect()
+        private static void GetPerm()
         {
-            AppLogger.Log.Info("Checking internet connection for checking alpha updates ...");
-
-            if (CheckAvailabilityInternetConnection.Connect)
-            {
-                AppLogger.Log.Info("Internet connection was sucessfully found!");
-
-                GetPerm();
-            }
-            else
-            {
-                AppLogger.Log.Warn("**** APPLICATION IS RUNNING IN OFFLINE MODE!");
-                AppLogger.Log.Warn("The SacredUtils will make no attempt to download new updates. Sorry.");
-            }
-        }
-
-        public static void GetPerm()
-        {
-            AppLogger.Log.Info("Checking premission for checking alpha updates ...");
+            AppLogger.Log.Info("Checking permission for checking alpha updates ...");
 
             if (AppSettings.ApplicationSettings.CheckAutoAlphaUpdate)
             {
+                AppLogger.Log.Info("Checking internet connection for checking alpha updates ...");
+
                 Get();
             }
             else
             {
-                AppLogger.Log.Info("No permission to check alpha updates!");
-
-                CheckAvailabilityReleaseUpdates.GetInternet();
+                CheckAvailabilityReleaseUpdates.GetConnection();
             }
         }
 
-        public static void Get()
+        private static void Get()
         {
             AppLogger.Log.Info("Checking for release application updates ...");
 
@@ -70,7 +61,7 @@ namespace SacredUtils.resources.bin
                 {
                     AppLogger.Log.Info("SacredUtils application no need to alpha update!");
 
-                    CheckAvailabilityReleaseUpdates.GetInternet();
+                    CheckAvailabilityReleaseUpdates.GetConnection();
                 }
             }
             catch (Exception e)
@@ -80,7 +71,7 @@ namespace SacredUtils.resources.bin
             }
         }
 
-        public static void GetUpdate()
+        private static void GetUpdate()
         {
             const string release = @"https://drive.google.com/uc?export=download&id=1xZzaj0v41S7nkSXkn4GWoDTkBtzeRc2Y";
 
@@ -104,7 +95,7 @@ namespace SacredUtils.resources.bin
             }
         }
 
-        public static void GetUpdateTool()
+        private static void GetUpdateTool()
         {
             File.WriteAllBytes("mnxupdater.exe", Properties.Resources.mnxupdater);
 

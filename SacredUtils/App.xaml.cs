@@ -46,7 +46,7 @@ namespace SacredUtils
 
                     GetRequiredApplicationFiles.Get();
 
-                    Task.Run(() => GetApplicationDownloadStatistic.Get());
+                    Task.Run(() => GetApplicationDownloadStatistic.GetConnection());
                 }
 
                 base.OnStartup(e);

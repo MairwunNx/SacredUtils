@@ -11,21 +11,17 @@ namespace SacredUtils.resources.bin
     {
         static WebClient wc = new WebClient();
 
-        public static void GetInternet()
+        public static void GetConnection()
         {
-            AppLogger.Log.Info("Checking internet connection for checking release updates ...");
-
-            if (CheckAvailabilityInternetConnection.Connect)
+            if (CheckAvailabilityInternetConnection.Connect())
             {
-                AppLogger.Log.Info("Internet connection was sucessfully found!");
+                GetGarbage();
+            }
+        }
 
-                GetPerm();
-            }
-            else
-            {
-                AppLogger.Log.Warn("**** APPLICATION IS RUNNING IN OFFLINE MODE!");
-                AppLogger.Log.Warn("The SacredUtils will make no attempt to download new updates. Sorry.");
-            }
+        public static void GetGarbage()
+        {
+            CheckAvailabilityUpdateTemp.Get(); GetPerm();
         }
 
         public static void GetPerm()

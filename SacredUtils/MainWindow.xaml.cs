@@ -28,7 +28,7 @@ namespace SacredUtils
 
             GetApplicationLanguageValue.Get(); GetApplicationThemeValue.Get(); GetApplicationScaleValue.Get();
 
-            Task.Run(() => CheckAvailabilityAlphaUpdates.GetGarbage());
+            Task.Run(() => CheckAvailabilityAlphaUpdates.GetConnection());
         }
 
         private void EventSubscribe()
