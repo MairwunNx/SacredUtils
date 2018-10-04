@@ -209,5 +209,10 @@ namespace SacredUtils
 
             AppLogger.Log.Info("License dialog was opened by program");
         }
+
+        private void MemoryLbl_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            GC.Collect();
+        }
     }
 }

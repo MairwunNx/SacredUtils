@@ -21,10 +21,7 @@ namespace SacredUtils.resources.dlg
         {
             LicenseDialog.IsOpen = false;
 
-            IAppSettings licenseSettings = new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-
-            licenseSettings.AcceptLicense = true;
+            AppSettings.ApplicationSettings.AcceptLicense = true;
 
             foreach (Window window in Application.Current.Windows)
             {

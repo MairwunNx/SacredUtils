@@ -101,7 +101,7 @@
                     FontSize="11"
                     FontWeight="Bold"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    Visibility="Visible" />
+                    Visibility="Visible" MouseDown="MemoryLbl_MouseDown" />
             </StackPanel>
 
             <!--#endregion-->
