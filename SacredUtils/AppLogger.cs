@@ -12,7 +12,27 @@ namespace SacredUtils
         {
             if (!fast)
             {
-                if (!AppSettings.ApplicationSettings.DisableLogging)
+                if (!AppSettings.ApplicationSettings.DisableLogging &&
+                    AppSettings.ApplicationSettings.LoggingMethodName)
+                {
+                    NLog.Config.LoggingConfiguration config = new NLog.Config.LoggingConfiguration();
+
+                    FileTarget logfile = new FileTarget("logfile")
+                    {
+                        FileName = "${basedir}/$SacredUtils/logs/latest.log",
+                        ArchiveFileName = "${basedir}/$SacredUtils/logs/${shortdate}.log.gz",
+                        Layout = "[${longdate}] [${callsite}] [${threadid}/${uppercase:${level}}]: ${message}",
+                        ArchiveOldFileOnStartup = AppSettings.ApplicationSettings.ArchiveOldFileOnStartup,
+                        EnableArchiveFileCompression = AppSettings.ApplicationSettings.EnableArchiveFileCompression,
+                        Encoding = Encoding.UTF8,
+                        MaxArchiveFiles = AppSettings.ApplicationSettings.MaxArchiveFiles
+                    };
+
+                    config.AddRule(LogLevel.Info, LogLevel.Fatal, logfile);
+
+                    LogManager.Configuration = config;
+                }
+                else if (!AppSettings.ApplicationSettings.DisableLogging)
                 {
                     NLog.Config.LoggingConfiguration config = new NLog.Config.LoggingConfiguration();
 

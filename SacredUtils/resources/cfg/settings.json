@@ -17,6 +17,7 @@
   "KeyGotoMainMenu": "Escape",
   "KeyRefreshSettings": "F5",
   "LicenseFileCreate": "true",
+  "LoggingMethodName": "false",
   "MakeAutoBackupConfigs": "true",
   "MaxApplicationBackupFiles": "10",
   "MaxArchiveFiles": "10",

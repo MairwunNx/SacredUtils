@@ -58,6 +58,9 @@ namespace SacredUtils
         [Option(Alias = "LicenseFileCreate", DefaultValue = "true")]
         bool LicenseFileCreate { get; set; }
 
+        [Option(Alias = "LoggingMethodName", DefaultValue = "false")]
+        bool LoggingMethodName { get; set; }
+
         [Option(Alias = "MakeAutoBackupConfigs", DefaultValue = "true")]
         bool MakeAutoBackupConfigs { get; set; }
 
@@ -115,7 +118,7 @@ namespace SacredUtils
 
     public static class AppSettings
     {
-        public static IAppSettings ApplicationSettings =
+        public static readonly IAppSettings ApplicationSettings =
             new ConfigurationBuilder<IAppSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
     }
