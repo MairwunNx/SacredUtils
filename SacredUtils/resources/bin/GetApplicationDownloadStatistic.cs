@@ -15,56 +15,47 @@ namespace SacredUtils.resources.bin
     
     public static class GetApplicationDownloadStatistic
     {
-        public static void GetConnection()
+        public static async void Get()
         {
             if (CheckAvailabilityInternetConnection.Connect())
             {
-                Get();
-            }
-            else
-            {
-                AppLogger.Log.Warn("**** APPLICATION IS RUNNING IN OFFLINE MODE!");
-            }
-        }
+                AppSummary.Connect = Encoding.UTF8.GetString(Convert.FromBase64String("MTEzMTcxNTFQbGVhc2VOb3RDaGFuZ2U="));
 
-        public static async void Get()
-        {
-            AppSummary.Connect = Encoding.UTF8.GetString(Convert.FromBase64String("MTEzMTcxNTFQbGVhc2VOb3RDaGFuZ2U="));
+                AppLogger.Log.Info("Checking for first installing of SacredUtils application ...");
 
-            AppLogger.Log.Info("Checking for first installing of SacredUtils ...");
-
-            if (AppSettings.ApplicationSettings.WhatIsThisDoingHere)
-            {
-                try
+                if (AppSettings.ApplicationSettings.WhatIsThisDoingHere)
                 {
-                    FtpClient client = new FtpClient("files.000webhost.com");
+                    try
+                    {
+                        FtpClient client = new FtpClient("files.000webhost.com");
 
-                    client.Credentials = new NetworkCredential("mairwunnxstatistic", AppSummary.Connect);
+                        client.Credentials = new NetworkCredential("mairwunnxstatistic", AppSummary.Connect);
 
-                    AppLogger.Log.Info("Connecting to statistics Ftp server ...");
+                        AppLogger.Log.Info("Connecting to SacredUtils application statistics Ftp server ...");
 
-                    await Task.Run(() => client.ConnectAsync());
+                        await Task.Run(() => client.ConnectAsync());
 
-                    AppLogger.Log.Info("Connecting to statistics Ftp server done!");
+                        AppLogger.Log.Info("Connecting to SacredUtils application statistics Ftp server done!");
 
-                    AppLogger.Log.Info("Downloading SacredUtils statistic ...");
+                        AppLogger.Log.Info("Downloading SacredUtils application statistic from Ftp server ...");
 
-                    await Task.Run(() => client.DownloadFileAsync("$SacredUtils\\conf\\statinfo.json", "/sacredutils/downloads.json"));
+                        await Task.Run(() => client.DownloadFileAsync("$SacredUtils\\conf\\statinfo.json", "/sacredutils/downloads.json"));
 
-                    AppLogger.Log.Info("Downloading SacredUtils statistic done!");
+                        AppLogger.Log.Info("Downloading SacredUtils application statistic from Ftp done!");
 
-                    AppLogger.Log.Info("Disconnecting of Ftp statistics server ...");
+                        AppLogger.Log.Info("Disconnecting of SacredUtils application Ftp statistics server ...");
 
-                    await Task.Run(() => client.DisconnectAsync());
+                        await Task.Run(() => client.DisconnectAsync());
 
-                    AppLogger.Log.Info("Disconnecting of Ftp statistics server done!");
+                        AppLogger.Log.Info("Disconnecting of SacredUtils application Ftp statistics server done!");
 
-                    Add();
-                }
-                catch (Exception e)
-                {
-                    AppLogger.Log.Error("An error occurred while retrieving the statistics file!");
-                    AppLogger.Log.Error(e.ToString);
+                        Add();
+                    }
+                    catch (Exception e)
+                    {
+                        AppLogger.Log.Error("An error occurred while retrieving the statistics file!");
+                        AppLogger.Log.Error(e.ToString);
+                    }
                 }
             }
         }
@@ -76,11 +67,11 @@ namespace SacredUtils.resources.bin
                 IDownloadCount downloadCount = new ConfigurationBuilder<IDownloadCount>()
                     .UseJsonFile("$SacredUtils\\conf\\statinfo.json").Build();
 
-                AppLogger.Log.Info("Updating statistic file, adding download num ...");
+                AppLogger.Log.Info("Updating SacredUtils application statistic file, adding download num ...");
 
                 downloadCount.Downloads = downloadCount.Downloads + 1;
 
-                AppLogger.Log.Info("Updating statistic file, adding download num done!");
+                AppLogger.Log.Info("Updating SacredUtils application statistic file, adding download num done!");
             }
             catch (Exception e)
             {
@@ -98,23 +89,23 @@ namespace SacredUtils.resources.bin
 
                 client.Credentials = new NetworkCredential("mairwunnxstatistic", AppSummary.Connect);
 
-                AppLogger.Log.Info("Connecting to statistics Ftp server ...");
+                AppLogger.Log.Info("Connecting to SacredUtils application statistics Ftp server ...");
 
                 await Task.Run(() => client.ConnectAsync());
 
-                AppLogger.Log.Info("Connecting to statistics Ftp server done!");
+                AppLogger.Log.Info("Connecting to SacredUtils application statistics Ftp server done!");
 
-                AppLogger.Log.Info("Uploading SacredUtils statistic ...");
+                AppLogger.Log.Info("Uploading SacredUtils application statistic to Ftp server ...");
 
                 await Task.Run(() => client.UploadFileAsync("$SacredUtils\\conf\\statinfo.json", "/sacredutils/downloads.json"));
 
-                AppLogger.Log.Info("Uploading statistic successfully done!");
+                AppLogger.Log.Info("Uploading SacredUtils application statistic to Ftp server done!");
 
-                AppLogger.Log.Info("Disconnecting of Ftp statistics server ...");
+                AppLogger.Log.Info("Disconnecting of SacredUtils application Ftp statistics server ...");
 
                 await Task.Run(() => client.DisconnectAsync());
 
-                AppLogger.Log.Info("Disconnecting of Ftp statistics server done!");
+                AppLogger.Log.Info("Disconnecting of SacredUtils application Ftp statistics server done!");
 
                 File.Delete("$SacredUtils\\conf\\statinfo.json");
 
@@ -122,7 +113,7 @@ namespace SacredUtils.resources.bin
             }
             catch (Exception e)
             {
-                AppLogger.Log.Error("An error occurred while uploading the statistics file!");
+                AppLogger.Log.Error("An error occurred while uploading the SacredUtils statistics file!");
                 AppLogger.Log.Error(e.ToString);
             }
         }

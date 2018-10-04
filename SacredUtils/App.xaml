@@ -15,6 +15,14 @@
 
             <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FF4285F4" />
             <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="#FF4285F4" />
+
+            <DrawingImage x:Key="NoInternetConnection">
+                <DrawingImage.Drawing>
+                    <DrawingGroup ClipGeometry="M0,0 V24 H24 V0 H0 Z">
+                        <GeometryDrawing Brush="#FF4285F4" Geometry="F1 M24,24z M0,0z M23.64,7C23.19,6.66 18.71,3 12,3 10.68,3 9.45,3.14 8.31,3.38L18.43,13.5 23.64,7z M4.12,2.01C3.73,1.62 3.1,1.62 2.71,2.01 2.32,2.4 2.32,3.03 2.71,3.42L4.06,4.77C1.91,5.76,0.59,6.82,0.36,7L10.44,19.56C11.24,20.56,12.76,20.56,13.56,19.56L15.91,16.63 18.52,19.24C18.91,19.63 19.54,19.63 19.93,19.24 20.32,18.85 20.32,18.22 19.93,17.83L4.12,2.01z" />
+                    </DrawingGroup>
+                </DrawingImage.Drawing>
+            </DrawingImage>
         </ResourceDictionary>
     </Application.Resources>
 </globalizer:GlobalizedApplication>

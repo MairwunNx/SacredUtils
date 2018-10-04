@@ -1,5 +1,4 @@
-﻿using Config.Net;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Windows;
 
 namespace SacredUtils.resources.dlg

@@ -54,6 +54,7 @@
                         Kind="Circle" />
                 </Button>
 
+
                 <Button
                     x:Name="MinimizeBtn"
                     Width="25"
@@ -101,7 +102,8 @@
                     FontSize="11"
                     FontWeight="Bold"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    Visibility="Visible" MouseDown="MemoryLbl_MouseDown" />
+                    MouseDown="MemoryLbl_MouseDown"
+                    Visibility="Visible" />
             </StackPanel>
 
             <!--#endregion-->
@@ -307,23 +309,14 @@
 
             <!--#endregion-->
 
-            <Label
-                x:Name="ExperimentalLbl"
+            <Image
+                x:Name="NoConnectImage"
                 Grid.Row="1"
-                Width="1077"
-                Margin="0,0,0,0"
-                HorizontalAlignment="Center"
-                HorizontalContentAlignment="Center"
-                VerticalContentAlignment="Center"
-                Content="E X P E R I M E N T A L"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                FontSize="100"
-                FontWeight="Bold"
-                Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                IsEnabled="False"
-                IsHitTestVisible="False"
-                Opacity="0.1"
-                Visibility="Visible" />
+                Width="400"
+                Height="400"
+                Opacity="0.05"
+                Source="{StaticResource ResourceKey=NoInternetConnection}"
+                Visibility="Collapsed" />
 
             <!--#region Content for page dialogs.-->
 

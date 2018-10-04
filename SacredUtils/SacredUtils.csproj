@@ -144,8 +144,6 @@
     <Compile Include="resources\bin\GetApplicationSettingsValue.cs" />
     <Compile Include="resources\bin\GetApplicationDownloadStatistic.cs" />
     <Compile Include="resources\bin\GetApplicationThemeValue.cs" />
-    <Compile Include="resources\bin\InitializeApplicationSettings.cs" />
-    <Compile Include="resources\bin\InitializeSacredGameSettings.cs" />
     <Compile Include="resources\bin\PrintToLogBaseApplicationInfo.cs" />
     <Compile Include="resources\dlg\change_log_dialog.xaml.cs">
       <DependentUpon>change_log_dialog.xaml</DependentUpon>

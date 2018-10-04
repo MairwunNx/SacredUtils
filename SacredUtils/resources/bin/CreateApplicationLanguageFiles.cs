@@ -12,7 +12,7 @@ namespace SacredUtils.resources.bin
                 File.WriteAllBytes("$SacredUtils\\lang\\ru-RU\\ru-RU.xaml", Properties.Resources.ru_RU);
                 File.WriteAllBytes("$SacredUtils\\lang\\en-US\\en-US.xaml", Properties.Resources.en_US);
 
-                AppLogger.Log.Info("Creating SacredUtils language files successfully done!");
+                AppLogger.Log.Info("SacredUtils language files was successfully re-created!");
             }
             catch (Exception exception)
             {

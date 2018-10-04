@@ -6,13 +6,18 @@ namespace SacredUtils.resources.bin
     {
         public static bool Connect()
         {
-            try
+            return NetworkInterface.GetIsNetworkAvailable();
+        }
+
+        public static void GetConnect()
+        {
+            if (!Connect())
             {
-                return new Ping().Send("www.google.com.mx").Status == IPStatus.Success;
+                AppLogger.Log.Warn("SacredUtils application running in offline mode!");
             }
-            catch
+            else
             {
-                return false;
+                AppLogger.Log.Info("SacredUtils application running in online mode!");
             }
         }
     }

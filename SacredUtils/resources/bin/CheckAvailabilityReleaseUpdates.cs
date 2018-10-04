@@ -9,57 +9,45 @@ namespace SacredUtils.resources.bin
 {
     public static class CheckAvailabilityReleaseUpdates
     {
-        static WebClient wc = new WebClient();
-
-        public static void GetConnection()
-        {
-            if (CheckAvailabilityInternetConnection.Connect())
-            {
-                GetGarbage();
-            }
-        }
-
-        public static void GetGarbage()
-        {
-            CheckAvailabilityUpdateTemp.Get(); GetPerm();
-        }
+        private static readonly WebClient Wc = new WebClient();
 
         public static void GetPerm()
         {
-            AppLogger.Log.Info("Checking premission for checking release updates ...");
+            if (CheckAvailabilityInternetConnection.Connect())
+            {
+                AppLogger.Log.Info("Checking premission for checking release SacredUtils updates ...");
 
-            if (AppSettings.ApplicationSettings.CheckAutoUpdate)
-            {
-                Get(); 
-            }
-            else
-            {
-                AppLogger.Log.Warn("**** APPLICATION IS RUNNING WITH DISABLED CHECKING UPDATE!");
-                AppLogger.Log.Warn("The SacredUtils will make no attempt to download new updates. Sorry.");
-                AppLogger.Log.Warn("To change this, set \"CheckAutoUpdate\" to \"true\" in the $SacredUtils/cfg/settings.json file.");
+                if (AppSettings.ApplicationSettings.CheckAutoUpdate)
+                {
+                    Get();
+                }
+                else
+                {
+                    AppLogger.Log.Warn("SacredUtils application is running with disabled checking updates!");
+                }
             }
         }
 
-        public static void Get()
+        private static void Get()
         {
-            AppLogger.Log.Info("Checking for release application updates ...");
+            AppLogger.Log.Info("Checking for release SacredUtils application updates ...");
 
             try
             {
-                string appReleaseVersion = wc.DownloadString("https://drive.google.com/uc?export=download&id=13N9ZfalxDfTAIdYxFuGBr8QPMW9OODc_");
+                string appReleaseVersion = Wc.DownloadString("https://drive.google.com/uc?export=download&id=13N9ZfalxDfTAIdYxFuGBr8QPMW9OODc_");
 
-                AppLogger.Log.Info($"The last received SacredUtils release version {appReleaseVersion}");
+                AppLogger.Log.Info($"The last received SacredUtils application release version {appReleaseVersion}");
 
                 if (!appReleaseVersion.Contains(AppSummary.Version))
                 {
                     AppLogger.Log.Warn($"SacredUtils application {AppSummary.Version} is outdated!");
-                    AppLogger.Log.Info($"Downloading {appReleaseVersion} update ...");
+                    AppLogger.Log.Info($"Downloading SacredUtils application {appReleaseVersion} update ...");
 
                     GetUpdate();
                 }
                 else
                 {
-                    AppLogger.Log.Info("SacredUtils application no need to update!");
+                    AppLogger.Log.Info("SacredUtils application no need to release update!");
                 }
             }
             catch (Exception e)
@@ -69,7 +57,7 @@ namespace SacredUtils.resources.bin
             }
         }
 
-        public static void GetUpdate()
+        private static void GetUpdate()
         {
             const string release = @"https://drive.google.com/uc?export=download&id=1sDiiIYW0_JXMqh6IAHMOyf3IKPySCr4Q";
 
@@ -80,9 +68,9 @@ namespace SacredUtils.resources.bin
                     File.Delete("_newVersionSacredUtilsTemp.exe");
                 }
 
-                wc.DownloadFileTaskAsync(new Uri(release), "_newVersionSacredUtilsTemp.exe");
+                Wc.DownloadFileTaskAsync(new Uri(release), "_newVersionSacredUtilsTemp.exe");
 
-                AppLogger.Log.Info("Downloading new update successfully done!");
+                AppLogger.Log.Info("Downloading new SacredUtils application update successfully done!");
 
                 GetUpdateTool();
             }
@@ -93,7 +81,7 @@ namespace SacredUtils.resources.bin
             }
         }
 
-        public static void GetUpdateTool()
+        private static void GetUpdateTool()
         {
             File.WriteAllBytes("mnxupdater.exe", Properties.Resources.mnxupdater);
 

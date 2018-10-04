@@ -52,9 +52,6 @@ namespace SacredUtils
         [Option(Alias = "KeyGotoMainMenu", DefaultValue = "Escape")]
         string KeyGotoMainMenu { get; set; }
 
-        [Option(Alias = "KeyRefreshSettings", DefaultValue = "F5")]
-        string KeyRefreshSettings { get; set; }
-
         [Option(Alias = "LicenseFileCreate", DefaultValue = "true")]
         bool LicenseFileCreate { get; set; }
 

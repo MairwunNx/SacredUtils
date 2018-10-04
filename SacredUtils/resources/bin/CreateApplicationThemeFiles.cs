@@ -12,7 +12,7 @@ namespace SacredUtils.resources.bin
                 File.WriteAllBytes("$SacredUtils\\themes\\Light.xaml", Properties.Resources.Light);
                 File.WriteAllBytes("$SacredUtils\\themes\\Dark.xaml", Properties.Resources.Dark);
 
-                AppLogger.Log.Info("Creating SacredUtils theme files successfully done!");
+                AppLogger.Log.Info("SacredUtils theme files was successfully re-created!");
             }
             catch (Exception exception)
             {

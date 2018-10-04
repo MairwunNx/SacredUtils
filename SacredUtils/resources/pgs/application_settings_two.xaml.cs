@@ -1,5 +1,4 @@
 ﻿using MaterialDesignThemes.Wpf;
-using SacredUtils.resources.bin;
 using SacredUtils.resources.dlg;
 using System;
 using System.Diagnostics;
@@ -10,29 +9,11 @@ namespace SacredUtils.resources.pgs
     // ReSharper disable once InconsistentNaming
     public partial class application_settings_two
     {
-        int _eventSubsNum;
-
         public application_settings_two()
         {
-            InitializeComponent();
+            InitializeComponent(); EventSubscribe();
 
             AppLogger.Log.Info("Initialization components for application settings two done!");
-        }
-
-        public void GetSettings()
-        {
-            UpdateCheckTglBtn.IsChecked = AppSettings.ApplicationSettings.CheckAutoUpdate;
-
-            UpdateAlphaCheckTglBtn.IsChecked = AppSettings.ApplicationSettings.CheckAutoAlphaUpdate;
-
-            MakeBackupTglBtn.IsChecked = AppSettings.ApplicationSettings.MakeAutoBackupConfigs;
-
-            LicenseTglBtn.IsChecked = AppSettings.ApplicationSettings.AcceptLicense;
-
-            if (_eventSubsNum == 0)
-            {
-                EventSubscribe(); _eventSubsNum++; 
-            }
         }
 
         private void EventSubscribe()
@@ -44,7 +25,8 @@ namespace SacredUtils.resources.pgs
 
             GitHubBtn.Click += (s, e) => OpenLink("https://github.com/MairwunNx/SacredUtils");
             DonateBtn.Click += (s, e) => OpenLink("https://money.yandex.ru/to/410015993365458");
-            CreatorBtn.Click += (s, e) => OpenLink("https://t-do.ru/mairwunnx");
+            CreatorBtn.Click += (s, e) => OpenLink("tg://resolve?domain=MairwunNx");
+            CreatorBtn.Click += (s, e) => OpenLink("mailto://MairwunNx@gmail.com");
             FeedbackBtn.Click += (s, e) => OpenLink("https://docs.google.com/forms/d/1Hx4EcS7VopBFG4bxq-zdsGUmqqD2nKy2NiwzRTiQMgA/edit?usp=sharing");
             AboutBtn.Click += (s, e) => OpenAboutDialog();
 
@@ -57,13 +39,13 @@ namespace SacredUtils.resources.pgs
             {
                 AppSettings.ApplicationSettings.CheckAutoUpdate = UpdateCheckTglBtn.IsChecked == true;
 
-                AppLogger.Log.Info($"Checking for updates set to {AppSettings.ApplicationSettings.CheckAutoUpdate} by user");
+                AppLogger.Log.Info($"Checking for updates changed state to {AppSettings.ApplicationSettings.CheckAutoUpdate} by user");
             }
             else
             {
                 AppSettings.ApplicationSettings.CheckAutoAlphaUpdate = UpdateAlphaCheckTglBtn.IsChecked == true;
 
-                AppLogger.Log.Info($"Checking for alpha updates set to {AppSettings.ApplicationSettings.CheckAutoAlphaUpdate} by user");
+                AppLogger.Log.Info($"Checking for alpha updates changed state to {AppSettings.ApplicationSettings.CheckAutoAlphaUpdate} by user");
             }
         }
 
@@ -71,14 +53,14 @@ namespace SacredUtils.resources.pgs
         {
             AppSettings.ApplicationSettings.MakeAutoBackupConfigs = MakeBackupTglBtn.IsChecked == true;
 
-            AppLogger.Log.Info($"Backup making settings set to {AppSettings.ApplicationSettings.MakeAutoBackupConfigs} by user");
+            AppLogger.Log.Info($"Backup making settings changed state to {AppSettings.ApplicationSettings.MakeAutoBackupConfigs} by user");
         }
 
         private void ChangeLicenseAgreement()
         {
             AppSettings.ApplicationSettings.AcceptLicense = LicenseTglBtn.IsChecked == true;
 
-            AppLogger.Log.Info($"Accept license set to {AppSettings.ApplicationSettings.AcceptLicense} by user");
+            AppLogger.Log.Info($"Accept license changed state to {AppSettings.ApplicationSettings.AcceptLicense} by user");
         }
 
         private static void OpenLink(string link)
@@ -88,50 +70,32 @@ namespace SacredUtils.resources.pgs
 
         private static void OpenAboutDialog()
         {
-            try
+            about_dialog about = new about_dialog();
+
+            foreach (Window window in Application.Current.Windows)
             {
-                about_dialog about = new about_dialog();
-
-                foreach (Window window in Application.Current.Windows)
+                if (window.GetType() == typeof(MainWindow))
                 {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
-                        ((MainWindow)window).DialogFrame.Content = about;
-                    }
+                    ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
+                    ((MainWindow)window).DialogFrame.Content = about;
                 }
-
-                if (AppSettings.ApplicationSettings.ColorTheme == "dark")
-                {
-                    about.AboutDialog.DialogTheme = BaseTheme.Dark;
-                }
-
-                about.AboutDialog.IsOpen = true;
-
-                AppLogger.Log.Info("About dialog was opened by user");
             }
-            catch (Exception ex)
+
+            if (AppSettings.ApplicationSettings.ColorTheme == "dark")
             {
-                AppLogger.Log.Error("Failed to open about dialog!");
-                AppLogger.Log.Error(ex.ToString);
+                about.AboutDialog.DialogTheme = BaseTheme.Dark;
             }
+
+            about.AboutDialog.IsOpen = true;
         }
 
         private static void OpenOnePage()
         {
-            try
+            foreach (Window window in Application.Current.Windows)
             {
-                foreach (Window window in Application.Current.Windows)
-                {
-                    ((MainWindow)window).SettingsFrame.Content = InitializeApplicationSettings.AppStgOne;
+                ((MainWindow)window).SettingsFrame.Content = MainWindow.AppStgOne;
 
-                    AppLogger.Log.Info("Application settings one page was opened by user");
-                }
-            }
-            catch (Exception ex)
-            {
-                AppLogger.Log.Error("An error occurred while user opened aso page");
-                AppLogger.Log.Error(ex.ToString);
+                AppLogger.Log.Info("Application settings one page was opened by user");
             }
         }
     }

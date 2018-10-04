@@ -1,6 +1,7 @@
 ﻿using MaterialDesignThemes.Wpf;
 using SacredUtils.resources.bin;
 using SacredUtils.resources.dlg;
+using SacredUtils.resources.pgs;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -16,33 +17,42 @@ namespace SacredUtils
 {
     public partial class MainWindow
     {
+        public static application_settings_one AppStgOne = new application_settings_one();
+        public static application_settings_two AppStgTwo = new application_settings_two();
+        public static chat_settings_one ChatStgOne = new chat_settings_one();
+        public static font_settings_one FontStgOne = new font_settings_one();
+        public static gameplay_settings_one GameplayStgOne = new gameplay_settings_one();
+        public static graphics_settings_one GraphicsStgOne = new graphics_settings_one();
+        public static modify_settings_one ModifyStgOne = new modify_settings_one();
+        public static sound_settings_one SoundStgOne = new sound_settings_one();
+        public static unselected_settings_one UnselectedStgOne = new unselected_settings_one();
         private readonly DispatcherTimer _timer = new DispatcherTimer();
 
         public MainWindow()
         {
-            AppLogger.Log.Info("*** Initializing SacredUtils components ...");
-
             InitializeComponent(); EventSubscribe(); GetPermCheckingMemory();
 
-            SelectSettings(InitializeSacredGameSettings.UnselectedStgOne, MenuGpLabel, "");
+            SelectSettings(UnselectedStgOne, MenuGpLabel);
+
+            if (!CheckAvailabilityInternetConnection.Connect())
+            {
+                NoConnectImage.Visibility = Visibility.Visible;
+            }
 
             GetApplicationLanguageValue.Get(); GetApplicationThemeValue.Get(); GetApplicationScaleValue.Get();
-
-            Task.Run(() => CheckAvailabilityAlphaUpdates.GetConnection());
         }
 
         private void EventSubscribe()
         {
-            MenuGrLabel.Click += (s, e) => SelectSettings(InitializeSacredGameSettings.GraphicsStgOne, GraphicsPanel, "");
-            MenuSnLabel.Click += (s, e) => SelectSettings(InitializeSacredGameSettings.SoundStgOne, SoundPanel, "");
-            MenuGpLabel.Click += (s, e) => SelectSettings(InitializeSacredGameSettings.GameplayStgOne, GameplayPanel, "");
-            MenuCtLabel.Click += (s, e) => SelectSettings(InitializeSacredGameSettings.ChatStgOne, ChatPanel, "");
-            MenuFtLabel.Click += (s, e) => SelectSettings(InitializeSacredGameSettings.FontStgOne, FontsPanel, "");
-            MenuMdLabel.Click += (s, e) => SelectSettings(InitializeSacredGameSettings.ModifyStgOne, ModifPanel, "");
-            MenuStLabel.Click += (s, e) => SelectSettings(InitializeApplicationSettings.AppStgOne, SettingsPanel, "AppSettingsOne");
+            MenuGrLabel.Click += (s, e) => SelectSettings(GraphicsStgOne, GraphicsPanel);
+            MenuSnLabel.Click += (s, e) => SelectSettings(SoundStgOne, SoundPanel);
+            MenuGpLabel.Click += (s, e) => SelectSettings(GameplayStgOne, GameplayPanel);
+            MenuCtLabel.Click += (s, e) => SelectSettings(ChatStgOne, ChatPanel);
+            MenuFtLabel.Click += (s, e) => SelectSettings(FontStgOne, FontsPanel);
+            MenuMdLabel.Click += (s, e) => SelectSettings(ModifyStgOne, ModifPanel);
+            MenuStLabel.Click += (s, e) => SelectSettings(AppStgOne, SettingsPanel);
 
-            HeaderPanel.MouseDown += DragWindow;
-            CloseBtn.Click += (s, e) => Shutdown();
+            HeaderPanel.MouseDown += DragWindow; CloseBtn.Click += (s, e) => Shutdown();
             MinimizeBtn.Click += (s, e) => WindowState = WindowState.Minimized;
 
             _timer.Interval = new TimeSpan(0, 0, AppSettings.ApplicationSettings.ShowUsedMemoryUpdateInterval);
@@ -53,6 +63,11 @@ namespace SacredUtils
                 GetLicenseState(); AppSummary.Sw.Stop();
 
                 AppLogger.Log.Info($"Loading SacredUtils application done ({AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
+
+                Task.Run(() =>
+                {
+                    GetApplicationDownloadStatistic.Get(); CheckAvailabilityAlphaUpdates.GetPerm();
+                });
             };
         }
 
@@ -78,6 +93,7 @@ namespace SacredUtils
         private static void Shutdown()
         {
             AppLogger.Log.Info("*** Thanks for using SacredUtils! Created by MairwunNx");
+            AppLogger.Log.Info("Special thanks to Shalinorus, Keboo, JetBrains");
             AppLogger.Log.Info("Shutting down SacredUtils ...");
 
             Application.Current.Shutdown();
@@ -88,18 +104,13 @@ namespace SacredUtils
             if (e.ChangedButton == MouseButton.Left) { DragMove(); }
         }
 
-        private void SelectSettings(UIElement element, object sender, string name)
+        private void SelectSettings(UIElement element, object sender)
         {
             SettingsFrame.Content = element;
 
             if (sender.Equals(sender as StackPanel) && sender is StackPanel panel)
             {
-                if (name == "AppSettingsOne")
-                {
-                    InitializeApplicationSettings.AppStgOne.GetSettings();
-                }
-
-                AppLogger.Log.Info($"Selected settings category {panel.Name} by user");
+                AppLogger.Log.Info($"Selected SacredUtils settings category {panel.Name} by user");
 
                 foreach (StackPanel sp in SettingsGrid.Children.OfType<StackPanel>())
                 {
@@ -112,19 +123,11 @@ namespace SacredUtils
 
         private void BaseWindow_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            Enum.TryParse(AppSettings.ApplicationSettings.KeyRefreshSettings, out Key refresh);
             Enum.TryParse(AppSettings.ApplicationSettings.KeyGotoMainMenu, out Key toMain);
-
-            if (e.Key == refresh)
-            {
-                InitializeApplicationSettings.AppStgOne.GetSettings();
-
-                InitializeApplicationSettings.AppStgTwo.GetSettings();
-            }
 
             if (e.Key == toMain)
             {
-                SelectSettings(InitializeSacredGameSettings.UnselectedStgOne, MenuGpLabel, "");
+                SelectSettings(UnselectedStgOne, MenuGpLabel);
 
                 foreach (StackPanel sp in SettingsGrid.Children.OfType<StackPanel>())
                 {
@@ -169,7 +172,7 @@ namespace SacredUtils
         {
             try
             {
-                AppLogger.Log.Info("Preparing to updating application done!");
+                AppLogger.Log.Info("Preparing to updating SacredUtils application done!");
 
                 Process.Start("mnxupdater.exe", AppDomain.CurrentDomain.FriendlyName + " _newVersionSacredUtilsTemp.exe");
 
@@ -206,8 +209,6 @@ namespace SacredUtils
             }
 
             license.LicenseDialog.IsOpen = true;
-
-            AppLogger.Log.Info("License dialog was opened by program");
         }
 
         private void MemoryLbl_MouseDown(object sender, MouseButtonEventArgs e)

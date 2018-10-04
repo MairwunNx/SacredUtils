@@ -1,7 +1,6 @@
 using SacredUtils.resources.bin;
 using System;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace SacredUtils
@@ -26,6 +25,8 @@ namespace SacredUtils
 
                     PrintToLogBaseApplicationInfo.Print();
 
+                    CheckAvailabilityInternetConnection.GetConnect();
+
                     GetApplicationGlobalizerLibrary.Get();
 
                     CreateApplicationNeededFolders.Create();
@@ -46,7 +47,7 @@ namespace SacredUtils
 
                     GetRequiredApplicationFiles.Get();
 
-                    Task.Run(() => GetApplicationDownloadStatistic.GetConnection());
+                    CheckAvailabilityUpdateTemp.Get();
                 }
 
                 base.OnStartup(e);

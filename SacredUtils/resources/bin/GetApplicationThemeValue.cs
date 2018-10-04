@@ -9,7 +9,7 @@ namespace SacredUtils.resources.bin
             GlobalizedApplication.Instance.StyleManager.SwitchStyle
                 (AppSettings.ApplicationSettings.ColorTheme == "light" ? "Light.xaml" : "Dark.xaml");
 
-            AppLogger.Log.Info($"Application starting with {AppSettings.ApplicationSettings.ColorTheme} theme ...");
+            AppLogger.Log.Info($"SacredUtils application starting with ({AppSettings.ApplicationSettings.ColorTheme}) theme!");
         }
     }
 }

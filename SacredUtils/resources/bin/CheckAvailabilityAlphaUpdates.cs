@@ -9,51 +9,39 @@ namespace SacredUtils.resources.bin
 {
     public static class CheckAvailabilityAlphaUpdates
     {
-        static WebClient wc = new WebClient();
+        private static readonly WebClient Wc = new WebClient();
 
-        public static void GetConnection()
+        public static void GetPerm()
         {
             if (CheckAvailabilityInternetConnection.Connect())
             {
-                GetGarbage();
-            }
-        } 
+                AppLogger.Log.Info("Checking permission for checking alpha SacredUtils updates ...");
 
-        public static void GetGarbage()
-        {
-            CheckAvailabilityUpdateTemp.Get(); GetPerm();
-        }
-
-        private static void GetPerm()
-        {
-            AppLogger.Log.Info("Checking permission for checking alpha updates ...");
-
-            if (AppSettings.ApplicationSettings.CheckAutoAlphaUpdate)
-            {
-                AppLogger.Log.Info("Checking internet connection for checking alpha updates ...");
-
-                Get();
-            }
-            else
-            {
-                CheckAvailabilityReleaseUpdates.GetConnection();
+                if (AppSettings.ApplicationSettings.CheckAutoAlphaUpdate)
+                {
+                    Get();
+                }
+                else
+                {
+                    CheckAvailabilityReleaseUpdates.GetPerm();
+                }
             }
         }
 
         private static void Get()
         {
-            AppLogger.Log.Info("Checking for release application updates ...");
+            AppLogger.Log.Info("Checking for alpha SacredUtils application updates ...");
 
             try
             {
-                string appAlphaVersion = wc.DownloadString("https://drive.google.com/uc?export=download&id=1Fc0QIxzUn7-ellW5e4_W1Wv05-V1hsJ8");
+                string appAlphaVersion = Wc.DownloadString("https://drive.google.com/uc?export=download&id=1Fc0QIxzUn7-ellW5e4_W1Wv05-V1hsJ8");
 
-                AppLogger.Log.Info($"The last received SacredUtils release version {appAlphaVersion}");
+                AppLogger.Log.Info($"The last received SacredUtils application alpha version {appAlphaVersion}");
 
                 if (!appAlphaVersion.Contains(AppSummary.AVersion))
                 {
                     AppLogger.Log.Warn($"SacredUtils application {AppSummary.AVersion} is outdated!");
-                    AppLogger.Log.Info($"Downloading {appAlphaVersion} update ...");
+                    AppLogger.Log.Info($"Downloading SacredUtils application {appAlphaVersion} update ...");
 
                     GetUpdate();
                 }
@@ -61,7 +49,7 @@ namespace SacredUtils.resources.bin
                 {
                     AppLogger.Log.Info("SacredUtils application no need to alpha update!");
 
-                    CheckAvailabilityReleaseUpdates.GetConnection();
+                    CheckAvailabilityReleaseUpdates.GetPerm();
                 }
             }
             catch (Exception e)
@@ -82,9 +70,9 @@ namespace SacredUtils.resources.bin
                     File.Delete("_newVersionSacredUtilsTemp.exe");
                 }
 
-                wc.DownloadFileTaskAsync(new Uri(release), "_newVersionSacredUtilsTemp.exe");
+                Wc.DownloadFileTaskAsync(new Uri(release), "_newVersionSacredUtilsTemp.exe");
 
-                AppLogger.Log.Info("Downloading new alpha update successfully done!");
+                AppLogger.Log.Info("Downloading new SacredUtils application alpha update successfully done!");
 
                 GetUpdateTool();
             }

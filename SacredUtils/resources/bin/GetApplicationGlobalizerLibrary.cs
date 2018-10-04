@@ -8,15 +8,15 @@ namespace SacredUtils.resources.bin
     {
         public static void Get()
         {
-            AppLogger.Log.Info("Checking availability WPFSharp.Globalizer.dll file ...");
-
             if (!File.Exists("WPFSharp.Globalizer.dll"))
             {
-                AppLogger.Log.Warn("WPFSharp.Globalizer.dll file not found!"); Create();
+                AppLogger.Log.Warn("WPFSharp.Globalizer.dll library file not found!");
+
+                Create();
             }
             else
             {
-                AppLogger.Log.Info("WPFSharp.Globalizer.dll file was found!");
+                AppLogger.Log.Info("WPFSharp.Globalizer.dll library file was found!");
             }
         }
 
@@ -24,11 +24,11 @@ namespace SacredUtils.resources.bin
         {
             try
             {
-                AppLogger.Log.Info("Creating WPFSharp.Globalizer.dll file ...");
+                AppLogger.Log.Info("Creating WPFSharp.Globalizer.dll lirary file ...");
 
                 File.WriteAllBytes("WPFSharp.Globalizer.dll", Properties.Resources.WPFSharp_Globalizer);
 
-                AppLogger.Log.Info("Creating WPFSharp.Globalizer.dll file done!");
+                AppLogger.Log.Info("Creating WPFSharp.Globalizer.dll library file done!");
 
                 AppLogger.Log.Info("Reloading SacredUtils configurator ...");
 
@@ -36,7 +36,7 @@ namespace SacredUtils.resources.bin
             }
             catch (Exception exception)
             {
-                AppLogger.Log.Fatal("Creating WPFSharp.Globalizer.dll library done with fatal level error!!!");
+                AppLogger.Log.Fatal("Creating WPFSharp.Globalizer.dll library done with fatal level error!");
 
                 AppLogger.Log.Fatal(exception.ToString);
 

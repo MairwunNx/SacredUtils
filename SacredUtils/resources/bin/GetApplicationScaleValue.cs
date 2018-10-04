@@ -15,7 +15,7 @@ namespace SacredUtils.resources.bin
                 ((MainWindow)window).BaseCard.LayoutTransform = new ScaleTransform(AppSettings.ApplicationSettings.SacredUtilsGuiScale, AppSettings.ApplicationSettings.SacredUtilsGuiScale);
             }
 
-            AppLogger.Log.Info($"Application starting with {AppSettings.ApplicationSettings.SacredUtilsGuiScale} gui scale ...");
+            AppLogger.Log.Info($"SacredUtils application starting with ({AppSettings.ApplicationSettings.SacredUtilsGuiScale}) gui scale!");
         }
     }
 }

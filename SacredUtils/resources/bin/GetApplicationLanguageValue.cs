@@ -6,11 +6,11 @@ namespace SacredUtils.resources.bin
 {
     public static class GetApplicationLanguageValue
     {
-        public static void Get()
+        public static void Get() // I love you, Isabella!!!
         {
             if (AppSettings.ApplicationSettings.AppUiLanguage == "based on system")
             {
-                AppLogger.Log.Info("Getting default system language settings ...");
+                AppLogger.Log.Info("Getting default system language settings for SacredUtils ...");
 
                 CultureInfo currentCulture = Thread.CurrentThread.CurrentCulture;
 
@@ -24,7 +24,7 @@ namespace SacredUtils.resources.bin
 
                     GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage("ru-RU", true);
 
-                    AppLogger.Log.Info("Application starting with ru language ...");
+                    AppLogger.Log.Info("SacredUtils application starting with system (ru) language!");
                 }
                 else
                 {
@@ -32,7 +32,7 @@ namespace SacredUtils.resources.bin
 
                     GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage("en-US", true);
 
-                    AppLogger.Log.Info("Application starting with en language ...");
+                    AppLogger.Log.Info("SacredUtils application starting with system (en) language!");
                 }
             }
             else
@@ -40,9 +40,7 @@ namespace SacredUtils.resources.bin
                 GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
                     (AppSettings.ApplicationSettings.AppUiLanguage == "ru" ? "ru-RU" : "en-US", true);
 
-                // I love you, Isabella!!!
-
-                AppLogger.Log.Info($"Application starting with {AppSettings.ApplicationSettings.AppUiLanguage} language ...");
+                AppLogger.Log.Info($"SacredUtils application starting with ({AppSettings.ApplicationSettings.AppUiLanguage}) language!");
             }
         }
     }
