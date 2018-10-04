@@ -14,15 +14,10 @@ namespace SacredUtils.resources.bin
             {
                 try
                 {
-                    AppLogger.Log.Info("Preparing start settings for converting to ini");
+                    File.WriteAllText("$SacredUtils\\temp\\~Settings.ini",
+                        "[BaseSettings]" + "\n" + File.ReadAllText("Settings.cfg").Replace(" : ", "="));
 
-                    AppLogger.Log.Info("Re-formatting settings.cfg file to true cfg ...");
-
-                    string content = File.ReadAllText("Settings.cfg");
-                    content = "[BaseSettings]" + "\n" + content.Replace(" : ", "=");
-                    File.WriteAllText("$SacredUtils\\temp\\~Settings.ini", content);
-
-                    AppLogger.Log.Info("Re-formatting settings.cfg file to true cfg done!");
+                    AppLogger.Log.Info("Re-formatting settings.cfg file to true cfg (ini) done!");
                 }
                 catch (Exception e)
                 {
@@ -36,9 +31,8 @@ namespace SacredUtils.resources.bin
                 {
                     Task.Run(() =>
                     {
-                        string content = File.ReadAllText("Settings.cfg");
-                        content = "[BaseSettings]" + "\n" + content.Replace(" : ", "=");
-                        File.WriteAllText("$SacredUtils\\temp\\~Settings.ini", content);
+                        File.WriteAllText("$SacredUtils\\temp\\~Settings.ini",
+                            "[BaseSettings]" + "\n" + File.ReadAllText("Settings.cfg").Replace(" : ", "="));
                     });
                 }
                 catch (Exception e)
@@ -54,15 +48,10 @@ namespace SacredUtils.resources.bin
             {
                 try
                 {
-                    AppLogger.Log.Info("Preparing start settings for converting to cfg");
+                    File.WriteAllText("Settings.cfg",
+                        File.ReadAllText("$SacredUtils\\temp\\~Settings.ini").Replace("=", " : ").Remove(0, 15));
 
-                    AppLogger.Log.Info("Re-formatting settings.ini file to old cfg ...");
-
-                    string content = File.ReadAllText("$SacredUtils\\temp\\~Settings.ini");
-                    content = content.Replace("=", " : ").Remove(0, 15);
-                    File.WriteAllText("Settings.cfg", content);
-
-                    AppLogger.Log.Info("Re-formatting settings.ini file to old cfg done!");
+                    AppLogger.Log.Info("Re-formatting settings.ini file to old (sacred) cfg done!");
                 }
                 catch (Exception e)
                 {
@@ -76,9 +65,8 @@ namespace SacredUtils.resources.bin
                 {
                     Task.Run(() =>
                     {
-                        string content = File.ReadAllText("$SacredUtils\\temp\\~Settings.ini");
-                        content = content.Replace("=", " : ").Remove(0, 15);
-                        Task.Run(() => File.WriteAllText("Settings.cfg", content));
+                        File.WriteAllText("Settings.cfg",
+                            File.ReadAllText("$SacredUtils\\temp\\~Settings.ini").Replace("=", " : ").Remove(0, 15));
                     });
                 }
                 catch (Exception e)
