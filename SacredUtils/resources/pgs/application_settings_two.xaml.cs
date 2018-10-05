@@ -1,6 +1,5 @@
 ﻿using MaterialDesignThemes.Wpf;
 using SacredUtils.resources.dlg;
-using System;
 using System.Diagnostics;
 using System.Windows;
 

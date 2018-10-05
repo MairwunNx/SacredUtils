@@ -27,15 +27,15 @@ namespace SacredUtils
 
                     CheckAvailabilityInternetConnection.GetConnect();
 
-                    GetApplicationGlobalizerLibrary.Get();
-
                     CreateApplicationNeededFolders.Create();
+
+                    GetApplicationSettingsValue.Get();
+
+                    GetApplicationGlobalizerLibrary.Get();
 
                     CreateApplicationLanguageFiles.Create();
 
                     CreateApplicationThemeFiles.Create();
-
-                    GetApplicationSettingsValue.Get();
 
                     CheckAvailabilityGameSettings.Get();
 

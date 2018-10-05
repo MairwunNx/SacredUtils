@@ -17,7 +17,7 @@ namespace SacredUtils.resources.bin
 
             if (AppSettings.ApplicationSettings.MakeAutoBackupConfigs)
             {
-                File.Copy("settings.cfg", $"$SacredUtils\\back\\cfg-app\\config_app_id_{new Random().Next(0, int.MaxValue)}.cfg", true);
+                File.Copy("$SacredUtils\\conf\\settings.json", $"$SacredUtils\\back\\cfg-app\\config_app_id_{new Random().Next(0, int.MaxValue)}.cfg", true);
             }
             else
             {

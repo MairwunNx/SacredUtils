@@ -2,6 +2,7 @@
 using SacredUtils.resources.dlg;
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Media;
 using WPFSharp.Globalizer;
@@ -20,7 +21,9 @@ namespace SacredUtils.resources.pgs
 
         private void GetSettings()
         {
-            UiLanguageCmbBox.SelectedIndex = AppSettings.ApplicationSettings.AppUiLanguage == "ru" ? 0 : 1;
+            CultureInfo currentCulture = CultureInfo.InstalledUICulture;
+
+            UiLanguageCmbBox.SelectedIndex = currentCulture.TwoLetterISOLanguageName == "ru" ? 0 : 1;
 
             GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
                 (UiLanguageCmbBox.SelectedIndex == 0 ? "ru-RU" : "en-US", true);
@@ -44,8 +47,6 @@ namespace SacredUtils.resources.pgs
             }
 
             UiScaleCmbBox.Text = $"{Convert.ToInt32(AppSettings.ApplicationSettings.SacredUtilsGuiScale * 100)}%";
-
-            ChangeScale(AppSettings.ApplicationSettings.SacredUtilsGuiScale);
 
             EventSubscribe();
         }
@@ -74,7 +75,7 @@ namespace SacredUtils.resources.pgs
             GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
                 (UiLanguageCmbBox.SelectedIndex == 0 ? "ru-RU" : "en-US", true);
 
-            AppLogger.Log.Info($"Language changed state to {UiLanguageCmbBox.Text} by user");
+            AppLogger.Log.Info($"SacredUtils application language changed state to {UiLanguageCmbBox.Text} by user");
         }
 
         private void ChangeTheme()
@@ -84,7 +85,9 @@ namespace SacredUtils.resources.pgs
             GlobalizedApplication.Instance.StyleManager.SwitchStyle
                 (UiThemeCmbBox.SelectedIndex == 0 ? "Light.xaml" : "Dark.xaml");
 
-            AppLogger.Log.Info($"Theme changed state to {UiThemeCmbBox.Text} by user");
+            AppLogger.Log.Info(UiThemeCmbBox.SelectedIndex == 0
+                ? "SacredUtils application theme changed state to light by user"
+                : "SacredUtils application theme changed state to dark by user");
         }
 
         private void ChangeStart()
