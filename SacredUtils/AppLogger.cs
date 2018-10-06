@@ -1,4 +1,5 @@
 ﻿using NLog;
+using NLog.Config;
 using NLog.Targets;
 using System.Text;
 
@@ -15,7 +16,7 @@ namespace SacredUtils
                 if (!AppSettings.ApplicationSettings.DisableLogging &&
                     AppSettings.ApplicationSettings.LoggingMethodName)
                 {
-                    NLog.Config.LoggingConfiguration config = new NLog.Config.LoggingConfiguration();
+                    LoggingConfiguration config = new LoggingConfiguration();
 
                     FileTarget logfile = new FileTarget("logfile")
                     {
@@ -34,7 +35,7 @@ namespace SacredUtils
                 }
                 else if (!AppSettings.ApplicationSettings.DisableLogging)
                 {
-                    NLog.Config.LoggingConfiguration config = new NLog.Config.LoggingConfiguration();
+                    LoggingConfiguration config = new LoggingConfiguration();
 
                     FileTarget logfile = new FileTarget("logfile")
                     {

@@ -23,7 +23,7 @@ namespace SacredUtils.resources.bin
                 }
                 else
                 {
-                    AppLogger.Log.Warn("SacredUtils application is running with disabled checking updates!");
+                    AppLogger.Log.Warn("SacredUtils is running with disabled checking updates!");
                 }
             }
         }
@@ -36,7 +36,7 @@ namespace SacredUtils.resources.bin
             {
                 string appReleaseVersion = Wc.DownloadString("https://drive.google.com/uc?export=download&id=13N9ZfalxDfTAIdYxFuGBr8QPMW9OODc_");
 
-                AppLogger.Log.Info($"The last received SacredUtils application release version {appReleaseVersion}");
+                AppLogger.Log.Info($"The last received SacredUtils release version {appReleaseVersion}");
 
                 if (!appReleaseVersion.Contains(AppSummary.Version))
                 {

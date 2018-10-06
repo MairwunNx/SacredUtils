@@ -17,7 +17,7 @@ namespace SacredUtils
                 {
                     AppLogger.Init(true);
 
-                    ConvertSacredGameSettings.ConvertToIni("by program");
+                    ConvertSacredGameSettings.ConvertToIni();
                 }
                 else
                 {
@@ -43,7 +43,7 @@ namespace SacredUtils
 
                     CreateBackupSacredGameSettings.Create();
 
-                    ConvertSacredGameSettings.ConvertToIni("by program");
+                    ConvertSacredGameSettings.ConvertToIni();
 
                     GetRequiredApplicationFiles.Get();
 
@@ -54,8 +54,7 @@ namespace SacredUtils
             }
             catch (Exception exception)
             {
-                AppLogger.Log.Fatal("There was a critical error of the program, sorry please, if the program could not start. Contact the Creator of the utility");
-                AppLogger.Log.Fatal("Please contact MairwunNx, MairwunNx@gmail.com. May be it our problem. Sorry. );");
+                AppLogger.Log.Fatal("\n\n    There was a critical error of the program, sorry please, if the program could not start \n    Please contact MairwunNx, MairwunNx@gmail.com. May be it our problem. Sorry. );\n\n    In extreme cases, write in the VK (rus) or telegram (eng) (telegram \\ vk (@MairwunNx))\n");
 
                 AppLogger.Log.Fatal(exception.ToString);
 

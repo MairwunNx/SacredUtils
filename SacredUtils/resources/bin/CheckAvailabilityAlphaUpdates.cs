@@ -36,7 +36,7 @@ namespace SacredUtils.resources.bin
             {
                 string appAlphaVersion = Wc.DownloadString("https://drive.google.com/uc?export=download&id=1Fc0QIxzUn7-ellW5e4_W1Wv05-V1hsJ8");
 
-                AppLogger.Log.Info($"The last received SacredUtils application alpha version {appAlphaVersion}");
+                AppLogger.Log.Info($"The last received SacredUtils alpha version {appAlphaVersion}");
 
                 if (!appAlphaVersion.Contains(AppSummary.AVersion))
                 {
@@ -72,7 +72,7 @@ namespace SacredUtils.resources.bin
 
                 Wc.DownloadFileTaskAsync(new Uri(release), "_newVersionSacredUtilsTemp.exe");
 
-                AppLogger.Log.Info("Downloading new SacredUtils application alpha update successfully done!");
+                AppLogger.Log.Info("Downloading new SacredUtils alpha update successfully done!");
 
                 GetUpdateTool();
             }

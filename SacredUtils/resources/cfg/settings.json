@@ -22,7 +22,7 @@
   "MaxArchiveFiles": "10",
   "MaxGameBackupFiles": "10",
   "NLogConfigFileCreate": "false",
-  "RemoveTempContent": "false",
+  "RemoveTempContent": "true",
   "SacredStartArgs": "minimize",
   "SacredUtilsGuiScale": "1.0",
   "ShowChangeLog": "true",
