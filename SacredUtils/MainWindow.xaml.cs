@@ -131,7 +131,13 @@ namespace SacredUtils
         private void BaseWindow_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             Enum.TryParse(AppSettings.ApplicationSettings.KeyGotoMainMenu, out Key toMain);
-
+            Enum.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredUtilsLogs, out Key openLogs);
+            Enum.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredUtilsSettings, out Key openSettings);
+            Enum.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredUtilsDirectory, out Key openDirectory);
+            Enum.TryParse(AppSettings.ApplicationSettings.KeyReloadSacredUtils, out Key reloadSacredUtils);
+            Enum.TryParse(AppSettings.ApplicationSettings.KeyShutdownSacredUtils, out Key shutdownSacredUtils);
+            Enum.TryParse(AppSettings.ApplicationSettings.KeyReloadFastSacredUtils, out Key fastReloadSacredUtils);
+             
             if (e.Key == toMain)
             {
                 SelectSettings(UnselectedStgOne, MenuGpLabel);
@@ -142,7 +148,7 @@ namespace SacredUtils
                 }
             }
 
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.E)
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == openLogs)
             {
                 if (File.Exists("$SacredUtils\\logs\\latest.log"))
                 {
@@ -150,7 +156,7 @@ namespace SacredUtils
                 }
             }
 
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.R)
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == openSettings)
             {
                 if (File.Exists("$SacredUtils\\conf\\settings.json"))
                 {
@@ -158,20 +164,25 @@ namespace SacredUtils
                 }
             }
 
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.T)
-            {
-                Process.Start(AppSummary.AppPatch); Environment.Exit(0);
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.Y)
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == openDirectory)
             {
                 // ReSharper disable once AssignNullToNotNullAttribute
                 Process.Start(Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName));
             }
 
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.P)
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == reloadSacredUtils)
+            {
+                Process.Start(AppSummary.AppPatch); Environment.Exit(0);
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == shutdownSacredUtils)
             {
                 Shutdown();
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == fastReloadSacredUtils)
+            {
+                Process.Start(AppSummary.AppPatch, " -fast"); Environment.Exit(0);
             }
         }
 
@@ -179,8 +190,6 @@ namespace SacredUtils
         {
             try
             {
-                AppLogger.Log.Info("Preparing to updating SacredUtils application done!");
-
                 Process.Start("mnxupdater.exe", AppDomain.CurrentDomain.FriendlyName + " _newVersionSacredUtilsTemp.exe");
 
                 Shutdown();

@@ -52,6 +52,24 @@ namespace SacredUtils
         [Option(Alias = "KeyGotoMainMenu", DefaultValue = "Escape")]
         string KeyGotoMainMenu { get; set; }
 
+        [Option(Alias = "KeyOpenSacredUtilsDirectory", DefaultValue = "F3")]
+        string KeyOpenSacredUtilsDirectory { get; set; }
+
+        [Option(Alias = "KeyOpenSacredUtilsLogs", DefaultValue = "F1")]
+        string KeyOpenSacredUtilsLogs { get; set; }
+
+        [Option(Alias = "KeyOpenSacredUtilsSettings", DefaultValue = "F2")]
+        string KeyOpenSacredUtilsSettings { get; set; }
+
+        [Option(Alias = "KeyReloadFastSacredUtils", DefaultValue = "F6")]
+        string KeyReloadFastSacredUtils { get; set; }
+
+        [Option(Alias = "KeyReloadSacredUtils", DefaultValue = "F4")]
+        string KeyReloadSacredUtils { get; set; }
+
+        [Option(Alias = "KeyShutdownSacredUtils", DefaultValue = "F5")]
+        string KeyShutdownSacredUtils { get; set; }
+
         [Option(Alias = "LicenseFileCreate", DefaultValue = "true")]
         bool LicenseFileCreate { get; set; }
 
