@@ -205,23 +205,23 @@ namespace SacredUtils.resources.pgs
 
         private static void OpenAboutDialog()
         {
-            about_dialog about = new about_dialog();
+            ApplicationAboutDialog applicationAboutDialog = new ApplicationAboutDialog();
 
             foreach (Window window in Application.Current.Windows)
             {
                 if (window.GetType() == typeof(MainWindow))
                 {
                     ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
-                    ((MainWindow)window).DialogFrame.Content = about;
+                    ((MainWindow)window).DialogFrame.Content = applicationAboutDialog;
                 }
             }
 
             if (AppSettings.ApplicationSettings.ColorTheme == "dark")
             {
-                about.AboutDialog.DialogTheme = BaseTheme.Dark;
+                applicationAboutDialog.AboutDialog.DialogTheme = BaseTheme.Dark;
             }
 
-            about.AboutDialog.IsOpen = true;
+            applicationAboutDialog.AboutDialog.IsOpen = true;
         }
 
         private static void OpenTwoPage()
