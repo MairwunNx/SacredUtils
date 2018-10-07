@@ -154,8 +154,8 @@
     <Compile Include="resources\dlg\change_log_dialog.xaml.cs">
       <DependentUpon>change_log_dialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\dlg\about_dialog.xaml.cs">
-      <DependentUpon>about_dialog.xaml</DependentUpon>
+    <Compile Include="resources\dlg\ApplicationAboutDialog.xaml.cs">
+      <DependentUpon>ApplicationAboutDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="resources\dlg\checking_components_dialog.xaml.cs">
       <DependentUpon>checking_components_dialog.xaml</DependentUpon>
@@ -193,8 +193,8 @@
     <Compile Include="resources\pgs\ApplicationSettingsOne.xaml.cs">
       <DependentUpon>ApplicationSettingsOne.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\application_settings_two.xaml.cs">
-      <DependentUpon>application_settings_two.xaml</DependentUpon>
+    <Compile Include="resources\pgs\ApplicationSettingsTwo.xaml.cs">
+      <DependentUpon>ApplicationSettingsTwo.xaml</DependentUpon>
     </Compile>
     <Compile Include="resources\pgs\chat_settings_one.xaml.cs">
       <DependentUpon>chat_settings_one.xaml</DependentUpon>
@@ -267,7 +267,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="resources\dlg\about_dialog.xaml">
+    <Page Include="resources\dlg\ApplicationAboutDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -319,7 +319,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\application_settings_two.xaml">
+    <Page Include="resources\pgs\ApplicationSettingsTwo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

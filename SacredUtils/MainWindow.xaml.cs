@@ -18,7 +18,7 @@ namespace SacredUtils
     public partial class MainWindow
     {
         public static readonly ApplicationSettingsOne AppStgOne = new ApplicationSettingsOne();
-        public static application_settings_two AppStgTwo = new application_settings_two();
+        public static readonly ApplicationSettingsTwo AppStgTwo = new ApplicationSettingsTwo();
         public static chat_settings_one ChatStgOne = new chat_settings_one();
         public static font_settings_one FontStgOne = new font_settings_one();
         public static gameplay_settings_one GameplayStgOne = new gameplay_settings_one();

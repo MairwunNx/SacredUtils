@@ -1,9 +1,7 @@
-﻿<!--  ReSharper disable once InconsistentNaming  -->
-<Page
-    x:Class="SacredUtils.resources.pgs.application_settings_two"
+﻿<Page
+    x:Class="SacredUtils.resources.pgs.ApplicationSettingsTwo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:SacredUtils="clr-namespace:SacredUtils"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:globalizer="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -33,8 +31,7 @@
                     x:Name="UpdateCheckTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
-                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=CheckAutoUpdate, Source={x:Static SacredUtils:AppSettings.ApplicationSettings}}" />
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
             </Grid>
         </Border>
 
@@ -59,8 +56,7 @@
                     x:Name="UpdateAlphaCheckTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
-                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=CheckAutoAlphaUpdate, Source={x:Static SacredUtils:AppSettings.ApplicationSettings}}" />
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
             </Grid>
         </Border>
 
@@ -85,8 +81,7 @@
                     x:Name="MakeBackupTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
-                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=MakeAutoBackupConfigs, Source={x:Static SacredUtils:AppSettings.ApplicationSettings}}" />
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
             </Grid>
         </Border>
 
@@ -111,8 +106,7 @@
                     x:Name="LicenseTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
-                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=AcceptLicense, Source={x:Static SacredUtils:AppSettings.ApplicationSettings}}" />
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
             </Grid>
         </Border>
 
