@@ -91,6 +91,8 @@ namespace SacredUtils
                     }
 
                     applicationChangeLogDialog.ChangeLogDialog.IsOpen = true;
+
+                    File.Delete("$SacredUtils\\temp\\updated.su");
                 }
             }
         }

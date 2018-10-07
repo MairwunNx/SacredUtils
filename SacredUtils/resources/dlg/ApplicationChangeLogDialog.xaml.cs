@@ -8,11 +8,6 @@
         {
             System.Diagnostics.Process.Start("https://github.com/MairwunNx/SacredUtils/blob/master/CHANGELOG.md");
 
-            if (System.IO.File.Exists("$SacredUtils\\temp\\updated.su"))
-            {
-                System.IO.File.Delete("$SacredUtils\\temp\\updated.su");
-            }
-
             ChangeLogDialog.IsOpen = false;
         }
     }
