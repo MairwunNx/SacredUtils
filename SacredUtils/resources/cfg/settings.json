@@ -5,6 +5,7 @@
   "ArchiveOldFileOnStartup": "true",
   "CheckAutoAlphaUpdate": "false",
   "CheckAutoUpdate": "true",
+  "ClosePageDialogAfterSelect": "true",
   "ColorTheme": "light",
   "ConfigFileCreate": "false",
   "DebugFileCreate": "false",

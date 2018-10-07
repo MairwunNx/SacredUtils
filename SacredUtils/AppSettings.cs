@@ -22,6 +22,9 @@ namespace SacredUtils
         [Option(Alias = "CheckAutoUpdate", DefaultValue = "true")]
         bool CheckAutoUpdate { get; set; }
 
+        [Option(Alias = "ClosePageDialogAfterSelect", DefaultValue = "true")]
+        bool ClosePageDialogAfterSelect { get; set; } 
+
         [Option(Alias = "ColorTheme", DefaultValue = "light")]
         string ColorTheme { get; set; }
 

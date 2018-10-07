@@ -9,6 +9,9 @@ using WPFSharp.Globalizer;
 
 namespace SacredUtils.resources.pgs
 {
+    // todo: вызов диалога с выбором страницы пожертвования.
+
+
     // ReSharper disable once InconsistentNaming
     public partial class application_settings_one
     {
@@ -21,9 +24,7 @@ namespace SacredUtils.resources.pgs
 
         private void GetSettings()
         {
-            CultureInfo currentCulture = CultureInfo.InstalledUICulture;
-
-            UiLanguageCmbBox.SelectedIndex = currentCulture.TwoLetterISOLanguageName == "ru" ? 0 : 1;
+            UiLanguageCmbBox.SelectedIndex = CultureInfo.InstalledUICulture.TwoLetterISOLanguageName == "ru" ? 0 : 1;
 
             GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
                 (UiLanguageCmbBox.SelectedIndex == 0 ? "ru-RU" : "en-US", true);
@@ -37,11 +38,13 @@ namespace SacredUtils.resources.pgs
             {
                 StartParamsCmbBox.SelectedIndex = 0;
             }
-            else if (AppSettings.ApplicationSettings.SacredStartArgs == "minimize")
+
+            if (AppSettings.ApplicationSettings.SacredStartArgs == "minimize")
             {
                 StartParamsCmbBox.SelectedIndex = 1;
             }
-            else if (AppSettings.ApplicationSettings.SacredStartArgs == "none")
+
+            if (AppSettings.ApplicationSettings.SacredStartArgs == "none")
             {
                 StartParamsCmbBox.SelectedIndex = 2;
             }
@@ -60,8 +63,7 @@ namespace SacredUtils.resources.pgs
 
             GitHubBtn.Click += (s, e) => OpenLink("https://github.com/MairwunNx/SacredUtils");
             DonateBtn.Click += (s, e) => OpenLink("https://money.yandex.ru/to/410015993365458");
-            CreatorBtn.Click += (s, e) => OpenLink("tg://resolve?domain=MairwunNx");
-            CreatorBtn.Click += (s, e) => OpenLink("mailto://MairwunNx@gmail.com");
+            CreatorBtn.Click += (s, e) => OpenPageSelectDialog();
             FeedbackBtn.Click += (s, e) => OpenLink("https://docs.google.com/forms/d/1Hx4EcS7VopBFG4bxq-zdsGUmqqD2nKy2NiwzRTiQMgA/edit?usp=sharing");
             AboutBtn.Click += (s, e) => OpenAboutDialog();
 
@@ -70,12 +72,22 @@ namespace SacredUtils.resources.pgs
 
         private void ChangeLanguage()
         {
-            AppSettings.ApplicationSettings.AppUiLanguage = UiLanguageCmbBox.SelectedIndex == 0 ? "ru" : "en";
+            if (UiLanguageCmbBox.SelectedIndex == 0)
+            {
+                AppSettings.ApplicationSettings.AppUiLanguage = "ru";
+
+                AppLogger.Log.Info("SacredUtils application language changed state to ru by user");
+            }
+
+            if (UiLanguageCmbBox.SelectedIndex == 1)
+            {
+                AppSettings.ApplicationSettings.AppUiLanguage = "en";
+
+                AppLogger.Log.Info("SacredUtils application language changed state to en by user");
+            }
 
             GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
                 (UiLanguageCmbBox.SelectedIndex == 0 ? "ru-RU" : "en-US", true);
-
-            AppLogger.Log.Info($"SacredUtils application language changed state to {UiLanguageCmbBox.Text} by user");
         }
 
         private void ChangeTheme()
@@ -95,19 +107,23 @@ namespace SacredUtils.resources.pgs
             if (StartParamsCmbBox.SelectedIndex == 0)
             {
                 AppSettings.ApplicationSettings.SacredStartArgs = "close";
+
+                AppLogger.Log.Info("Sacred game startup params changed to close by user");
             }
 
             if (StartParamsCmbBox.SelectedIndex == 1)
             {
                 AppSettings.ApplicationSettings.SacredStartArgs = "minimize";
+
+                AppLogger.Log.Info("Sacred game startup params changed to minimize by user");
             }
 
             if (StartParamsCmbBox.SelectedIndex == 2)
             {
                 AppSettings.ApplicationSettings.SacredStartArgs = "none";
-            }
 
-            AppLogger.Log.Info($"Sacred startup params changed state to {StartParamsCmbBox.Text} by user");
+                AppLogger.Log.Info("Sacred game startup params changed to none by user");
+            }
         }
 
         private void ChangeScale()
@@ -115,42 +131,49 @@ namespace SacredUtils.resources.pgs
             if (UiScaleCmbBox.SelectedIndex == 0)
             {
                 ChangeScale(1.0);
-                AppLogger.Log.Info("Ui scale changed state to 100% by user");
+                AppLogger.Log.Info("SacredUtils Ui scale changed state to 100% by user");
             }
-            else if (UiScaleCmbBox.SelectedIndex == 1)
+
+            if (UiScaleCmbBox.SelectedIndex == 1)
             {
                 ChangeScale(1.05);
-                AppLogger.Log.Info("Ui scale changed state to 105% by user");
+                AppLogger.Log.Info("SacredUtils Ui scale changed state to 105% by user");
             }
-            else if (UiScaleCmbBox.SelectedIndex == 2)
+
+            if (UiScaleCmbBox.SelectedIndex == 2)
             {
                 ChangeScale(1.10);
-                AppLogger.Log.Info("Ui scale changed state to 110% by user");
+                AppLogger.Log.Info("SacredUtils Ui scale changed state to 110% by user");
             }
-            else if (UiScaleCmbBox.SelectedIndex == 3)
+
+            if (UiScaleCmbBox.SelectedIndex == 3)
             {
                 ChangeScale(1.15);
-                AppLogger.Log.Info("Ui scale changed state to 115% by user");
+                AppLogger.Log.Info("SacredUtils Ui scale changed state to 115% by user");
             }
-            else if (UiScaleCmbBox.SelectedIndex == 4)
+
+            if (UiScaleCmbBox.SelectedIndex == 4)
             {
                 ChangeScale(1.25);
-                AppLogger.Log.Info("Ui scale changed state to 125% by user");
+                AppLogger.Log.Info("SacredUtils Ui scale changed state to 125% by user");
             }
-            else if (UiScaleCmbBox.SelectedIndex == 5)
+
+            if (UiScaleCmbBox.SelectedIndex == 5)
             {
                 ChangeScale(1.50);
-                AppLogger.Log.Info("Ui scale changed state to 150% by user");
+                AppLogger.Log.Info("SacredUtils Ui scale changed state to 150% by user");
             }
-            else if (UiScaleCmbBox.SelectedIndex == 6)
+
+            if (UiScaleCmbBox.SelectedIndex == 6)
             {
                 ChangeScale(1.75);
-                AppLogger.Log.Info("Ui scale changed state to 175% by user");
+                AppLogger.Log.Info("SacredUtils Ui scale changed state to 175% by user");
             }
-            else if (UiScaleCmbBox.SelectedIndex == 7)
+
+            if (UiScaleCmbBox.SelectedIndex == 7)
             {
                 ChangeScale(2.0);
-                AppLogger.Log.Info("Ui scale changed state to 200% by user");
+                AppLogger.Log.Info("SacredUtils Ui scale changed state to 200% by user");
             }
         }
 
@@ -171,7 +194,28 @@ namespace SacredUtils.resources.pgs
             Process.Start(link); AppLogger.Log.Info($"{link} link was opened by user");
         }
 
-        private void OpenAboutDialog()
+        private static void OpenPageSelectDialog()
+        {
+            ApplicationPageSelectDialog applicationPageSelectDialog = new ApplicationPageSelectDialog();
+
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(MainWindow))
+                {
+                    ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
+                    ((MainWindow)window).DialogFrame.Content = applicationPageSelectDialog;
+                }
+            }
+
+            if (AppSettings.ApplicationSettings.ColorTheme == "dark")
+            {
+                applicationPageSelectDialog.PageSelectDialog.DialogTheme = BaseTheme.Dark;
+            }
+
+            applicationPageSelectDialog.PageSelectDialog.IsOpen = true;
+        }
+
+        private static void OpenAboutDialog()
         {
             about_dialog about = new about_dialog();
 
@@ -192,7 +236,7 @@ namespace SacredUtils.resources.pgs
             about.AboutDialog.IsOpen = true;
         }
 
-        private void OpenTwoPage()
+        private static void OpenTwoPage()
         {
             foreach (Window window in Application.Current.Windows)
             {

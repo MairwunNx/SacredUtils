@@ -52,6 +52,7 @@ namespace SacredUtils
             MenuMdLabel.Click += (s, e) => SelectSettings(ModifyStgOne, ModifPanel);
             MenuStLabel.Click += (s, e) => SelectSettings(AppStgOne, SettingsPanel);
 
+            MemoryLbl.MouseDown += (s, e) => GC.Collect();
             HeaderPanel.MouseDown += DragWindow; CloseBtn.Click += (s, e) => Shutdown();
             MinimizeBtn.Click += (s, e) => WindowState = WindowState.Minimized;
 
@@ -225,11 +226,6 @@ namespace SacredUtils
             }
 
             license.LicenseDialog.IsOpen = true;
-        }
-
-        private void MemoryLbl_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            GC.Collect();
         }
     }
 }
