@@ -145,6 +145,9 @@
     <Compile Include="resources\bin\GetApplicationDownloadStatistic.cs" />
     <Compile Include="resources\bin\GetApplicationThemeValue.cs" />
     <Compile Include="resources\bin\PrintToLogBaseApplicationInfo.cs" />
+    <Compile Include="resources\dlg\ApplicationDonateSelectDialog.xaml.cs">
+      <DependentUpon>ApplicationDonateSelectDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="resources\dlg\ApplicationPageSelectDialog.xaml.cs">
       <DependentUpon>ApplicationPageSelectDialog.xaml</DependentUpon>
     </Compile>
@@ -251,6 +254,10 @@
     <Page Include="Properties\DesignTimeResources.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="resources\dlg\ApplicationDonateSelectDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="resources\dlg\ApplicationPageSelectDialog.xaml">
       <SubType>Designer</SubType>

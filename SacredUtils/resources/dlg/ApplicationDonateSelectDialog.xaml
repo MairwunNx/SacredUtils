@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="SacredUtils.resources.dlg.ApplicationPageSelectDialog"
+    x:Class="SacredUtils.resources.dlg.ApplicationDonateSelectDialog"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -10,20 +10,20 @@
     d:DesignWidth="323"
     mc:Ignorable="d">
     <materialDesign:DialogHost
-        x:Name="PageSelectDialog"
+        x:Name="DonateSelectDialog"
         CloseOnClickAway="True"
         IsOpen="False"
         Visibility="Visible">
         <materialDesign:DialogHost.DialogContent>
             <Grid
                 Width="329"
-                Height="196"
+                Height="152"
                 Background="{DynamicResource ResourceKey=BackgroundColorBrush}">
                 <Label
                     Height="30"
                     Margin="15,11,80,0"
                     VerticalAlignment="Top"
-                    Content="{globalizer:GlobalizedResource String0149}"
+                    Content="{globalizer:GlobalizedResource String0150}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                     FontSize="16"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -33,7 +33,7 @@
                     Margin="0,50,0,0"
                     VerticalAlignment="Top">
                     <Button
-                        x:Name="GmailButton"
+                        x:Name="QiwiButton"
                         Height="Auto"
                         ClipToBounds="True"
                         FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
@@ -52,12 +52,12 @@
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
                                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                                Kind="Gmail" />
+                                Kind="WalletGiftcard" />
 
                             <Label
                                 Margin="82,8,10,9"
                                 VerticalAlignment="Center"
-                                Content="Gmail (MairwunNx@gmail.com)"
+                                Content="Qiwi (@MairwunNx)"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -70,7 +70,7 @@
                     Margin="0,95,0,0"
                     VerticalAlignment="Top">
                     <Button
-                        x:Name="TelegramButton"
+                        x:Name="YandexButton"
                         Height="Auto"
                         ClipToBounds="True"
                         FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
@@ -89,49 +89,12 @@
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
                                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                                Kind="Telegram" />
+                                Kind="WalletGiftcard" />
 
                             <Label
                                 Margin="82,8,10,9"
                                 VerticalAlignment="Center"
-                                Content="Telegram (@MairwunNx)"
-                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                                FontSize="14"
-                                Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
-                        </Grid>
-                    </Button>
-                </Border>
-
-                <Border
-                    Height="45"
-                    Margin="0,140,0,0"
-                    VerticalAlignment="Top">
-                    <Button
-                        x:Name="VkontakteButton"
-                        Height="Auto"
-                        ClipToBounds="True"
-                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                        FontSize="14"
-                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                        Style="{StaticResource MaterialDesignToolForegroundButton}">
-                        <Grid
-                            Width="321"
-                            Height="45"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center">
-                            <materialDesign:PackIcon
-                                Width="25"
-                                Height="24"
-                                Margin="20,2,0,2"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Center"
-                                Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                                Kind="Vk" />
-
-                            <Label
-                                Margin="82,8,10,9"
-                                VerticalAlignment="Center"
-                                Content="Vkontakte (@MairwunNx)"
+                                Content="Yandex (410015993365458)"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />

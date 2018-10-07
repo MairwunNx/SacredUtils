@@ -9,9 +9,6 @@ using WPFSharp.Globalizer;
 
 namespace SacredUtils.resources.pgs
 {
-    // todo: вызов диалога с выбором страницы пожертвования.
-
-
     // ReSharper disable once InconsistentNaming
     public partial class application_settings_one
     {
@@ -62,7 +59,7 @@ namespace SacredUtils.resources.pgs
             UiScaleCmbBox.SelectionChanged += (s, e) => ChangeScale();
 
             GitHubBtn.Click += (s, e) => OpenLink("https://github.com/MairwunNx/SacredUtils");
-            DonateBtn.Click += (s, e) => OpenLink("https://money.yandex.ru/to/410015993365458");
+            DonateBtn.Click += (s, e) => OpenDonateSelectDialog();
             CreatorBtn.Click += (s, e) => OpenPageSelectDialog();
             FeedbackBtn.Click += (s, e) => OpenLink("https://docs.google.com/forms/d/1Hx4EcS7VopBFG4bxq-zdsGUmqqD2nKy2NiwzRTiQMgA/edit?usp=sharing");
             AboutBtn.Click += (s, e) => OpenAboutDialog();
@@ -213,6 +210,27 @@ namespace SacredUtils.resources.pgs
             }
 
             applicationPageSelectDialog.PageSelectDialog.IsOpen = true;
+        }
+
+        private static void OpenDonateSelectDialog()
+        {
+            ApplicationDonateSelectDialog applicationDonateSelectDialog = new ApplicationDonateSelectDialog();
+
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(MainWindow))
+                {
+                    ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
+                    ((MainWindow)window).DialogFrame.Content = applicationDonateSelectDialog;
+                }
+            }
+
+            if (AppSettings.ApplicationSettings.ColorTheme == "dark")
+            {
+                applicationDonateSelectDialog.DonateSelectDialog.DialogTheme = BaseTheme.Dark;
+            }
+
+            applicationDonateSelectDialog.DonateSelectDialog.IsOpen = true;
         }
 
         private static void OpenAboutDialog()

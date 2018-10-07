@@ -212,4 +212,7 @@
     <!--  Select page dialog  -->
     <sys:String x:Key="String0149">Выбор страницы</sys:String>
 
+    <!--  Select donate dialog  -->
+    <sys:String x:Key="String0150">Выбор кошелька</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>

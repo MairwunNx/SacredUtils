@@ -1,4 +1,5 @@
-﻿<Page
+﻿<!--  ReSharper disable once InconsistentNaming  -->
+<Page
     x:Class="SacredUtils.resources.pgs.application_settings_two"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
