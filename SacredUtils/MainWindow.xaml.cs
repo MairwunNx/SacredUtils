@@ -69,7 +69,30 @@ namespace SacredUtils
                 {
                     GetApplicationDownloadStatistic.Get(); CheckAvailabilityAlphaUpdates.GetPerm();
                 });
+
+                OpenChangeLogDialog();
             };
+        }
+
+        private void OpenChangeLogDialog()
+        {
+            if (File.Exists("$SacredUtils\\temp\\updated.su"))
+            {
+                if (AppSettings.ApplicationSettings.ShowChangeLog)
+                {
+                    ApplicationChangeLogDialog applicationChangeLogDialog = new ApplicationChangeLogDialog();
+
+                    DialogFrame.Visibility = Visibility.Visible;
+                    DialogFrame.Content = applicationChangeLogDialog;
+                    
+                    if (AppSettings.ApplicationSettings.ColorTheme == "dark")
+                    {
+                        applicationChangeLogDialog.ChangeLogDialog.DialogTheme = BaseTheme.Dark;
+                    }
+
+                    applicationChangeLogDialog.ChangeLogDialog.IsOpen = true;
+                }
+            }
         }
 
         private void GetCurrentUsedMemory()
@@ -191,6 +214,8 @@ namespace SacredUtils
         {
             try
             {
+                File.Create("$SacredUtils\\temp\\updated.su");
+
                 Process.Start("mnxupdater.exe", AppDomain.CurrentDomain.FriendlyName + " _newVersionSacredUtilsTemp.exe");
 
                 Shutdown();

@@ -151,8 +151,8 @@
     <Compile Include="resources\dlg\ApplicationPageSelectDialog.xaml.cs">
       <DependentUpon>ApplicationPageSelectDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\dlg\change_log_dialog.xaml.cs">
-      <DependentUpon>change_log_dialog.xaml</DependentUpon>
+    <Compile Include="resources\dlg\ApplicationChangeLogDialog.xaml.cs">
+      <DependentUpon>ApplicationChangeLogDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="resources\dlg\ApplicationAboutDialog.xaml.cs">
       <DependentUpon>ApplicationAboutDialog.xaml</DependentUpon>
@@ -263,7 +263,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\dlg\change_log_dialog.xaml">
+    <Page Include="resources\dlg\ApplicationChangeLogDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

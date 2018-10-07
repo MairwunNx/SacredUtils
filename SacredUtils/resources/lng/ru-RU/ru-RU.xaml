@@ -203,7 +203,7 @@
     <sys:String x:Key="String0145">Загрузка компонента</sys:String>
 
     <!--  Change log dialog  -->
-    <sys:String x:Key="String0146">Список изменений</sys:String>
+    <sys:String x:Key="String0146">Обновлено!</sys:String>
 
     <!--  Restart required dialog  -->
     <sys:String x:Key="String0147">Предупреждение</sys:String>
@@ -214,5 +214,9 @@
 
     <!--  Select donate dialog  -->
     <sys:String x:Key="String0150">Выбор кошелька</sys:String>
+
+    <!--  Change log 2 dialog  -->
+    <sys:String x:Key="String0151">Открыть список изменений?</sys:String>
+    <sys:String x:Key="String0152">Да</sys:String>
 
 </Globalization:GlobalizationResourceDictionary>

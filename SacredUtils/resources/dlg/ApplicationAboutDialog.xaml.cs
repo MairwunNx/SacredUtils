@@ -2,9 +2,6 @@
 {
     public partial class ApplicationAboutDialog
     {
-        public ApplicationAboutDialog()
-        {
-            InitializeComponent();
-        }
+        public ApplicationAboutDialog() => InitializeComponent();
     }
 }
