@@ -181,7 +181,7 @@
 
     <!--  Restoring components dialog  -->
     <sys:String x:Key="String0135">Восстановление компонентов</sys:String>
-    <sys:String x:Key="String0136">Восстановление компонентов</sys:String>
+    <sys:String x:Key="String0136">Восстановление компонентов игры ...</sys:String>
 
     <!--  Restoring success dialog  -->
     <sys:String x:Key="String0137">Восстановление компонентов</sys:String>
@@ -193,7 +193,7 @@
 
     <!--  Checking components dialog  -->
     <sys:String x:Key="String0141">Проверка компонентов игры</sys:String>
-    <sys:String x:Key="String0142">Проверка компонентов</sys:String>
+    <sys:String x:Key="String0142">Проверка компонентов на целостность ...</sys:String>
 
     <!--  Hotkey change dialog  -->
     <sys:String x:Key="String0143">Смена клавишь игры</sys:String>

@@ -1,0 +1,174 @@
+﻿<Page
+    x:Class="SacredUtils.resources.dlg.GameCheckingComponentsDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:globalizer="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="685"
+    d:DesignWidth="1076"
+    mc:Ignorable="d">
+    <Grid>
+        <materialDesign:DialogHost
+            x:Name="CheckComponentsDialog"
+            CloseOnClickAway="False"
+            IsOpen="False"
+            Visibility="Visible">
+            <materialDesign:DialogHost.DialogContent>
+                <Grid
+                    Width="450"
+                    Height="115"
+                    Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
+                    Row="1">
+                    <Label
+                        Height="30"
+                        Margin="15,11,190,0"
+                        VerticalAlignment="Top"
+                        Content="{globalizer:GlobalizedResource String0141}"
+                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                        FontSize="16"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
+
+                    <ProgressBar
+                        Width="25"
+                        Height="25"
+                        Margin="21,60,404,0"
+                        VerticalAlignment="Top"
+                        IsIndeterminate="True"
+                        Style="{DynamicResource MaterialDesignCircularProgressBar}" />
+
+                    <Label
+                        x:Name="CheckingComponentsLbl"
+                        Height="28"
+                        Margin="70,59,10,0"
+                        VerticalAlignment="Top"
+                        Content="{globalizer:GlobalizedResource String0142}"
+                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                        FontSize="14"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
+                </Grid>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+
+        <materialDesign:DialogHost
+            x:Name="RepairComponentsDialog"
+            CloseOnClickAway="False"
+            IsOpen="False"
+            Visibility="Visible">
+            <materialDesign:DialogHost.DialogContent>
+                <Grid
+                    Width="450"
+                    Height="115"
+                    Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
+                    Row="1">
+                    <Label
+                        Height="30"
+                        Margin="15,11,190,0"
+                        VerticalAlignment="Top"
+                        Content="{globalizer:GlobalizedResource String0135}"
+                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                        FontSize="16"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
+
+                    <ProgressBar
+                        Width="25"
+                        Height="25"
+                        Margin="21,60,404,0"
+                        VerticalAlignment="Top"
+                        IsIndeterminate="True"
+                        Style="{DynamicResource MaterialDesignCircularProgressBar}" />
+
+                    <Label
+                        Height="28"
+                        Margin="70,59,10,0"
+                        VerticalAlignment="Top"
+                        Content="{globalizer:GlobalizedResource String0136}"
+                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                        FontSize="14"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
+                </Grid>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+
+        <materialDesign:DialogHost
+            x:Name="RepairSuccessComponentsDialog"
+            CloseOnClickAway="False"
+            IsOpen="False"
+            Visibility="Visible">
+            <materialDesign:DialogHost.DialogContent>
+                <Grid
+                    Width="450"
+                    Height="115"
+                    Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
+                    Row="1">
+                    <Label
+                        Height="30"
+                        Margin="15,11,190,0"
+                        VerticalAlignment="Top"
+                        Content="{globalizer:GlobalizedResource String0135}"
+                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                        FontSize="16"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
+
+                    <materialDesign:PackIcon
+                        Width="25"
+                        Height="25"
+                        Margin="21,60,404,0"
+                        VerticalAlignment="Top"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                        Kind="Check" />
+
+                    <Label
+                        Height="28"
+                        Margin="70,59,10,0"
+                        VerticalAlignment="Top"
+                        Content="{globalizer:GlobalizedResource String0138}"
+                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                        FontSize="14"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
+                </Grid>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+
+        <materialDesign:DialogHost
+            x:Name="NotFoundComponentsDialog"
+            CloseOnClickAway="False"
+            IsOpen="False"
+            Visibility="Visible">
+            <materialDesign:DialogHost.DialogContent>
+                <Grid
+                    Width="450"
+                    Height="115"
+                    Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
+                    Row="1">
+                    <Label
+                        Height="30"
+                        Margin="15,11,190,0"
+                        VerticalAlignment="Top"
+                        Content="{globalizer:GlobalizedResource String0135}"
+                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                        FontSize="16"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
+
+                    <materialDesign:PackIcon
+                        Width="25"
+                        Height="25"
+                        Margin="21,60,404,0"
+                        VerticalAlignment="Top"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                        Kind="Check" />
+
+                    <Label
+                        Height="28"
+                        Margin="70,59,10,0"
+                        VerticalAlignment="Top"
+                        Content="{globalizer:GlobalizedResource String0140}"
+                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                        FontSize="14"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
+                </Grid>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+    </Grid>
+</Page>
