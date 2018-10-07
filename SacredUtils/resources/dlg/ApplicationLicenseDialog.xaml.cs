@@ -3,10 +3,9 @@ using System.Windows;
 
 namespace SacredUtils.resources.dlg
 {
-    // ReSharper disable once InconsistentNaming
-    public partial class license_dialog
+    public partial class ApplicationLicenseDialog
     {
-        public license_dialog()
+        public ApplicationLicenseDialog()
         {
             InitializeComponent();
         }
