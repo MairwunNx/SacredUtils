@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="SacredUtils.resources.pgs.application_settings_one"
+    x:Class="SacredUtils.resources.pgs.ApplicationSettingsOne"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -34,7 +34,8 @@
                     VerticalAlignment="Center"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}">
+                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
+                    UseLayoutRounding="False">
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0002}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0003}" />
                 </ComboBox>
@@ -210,7 +211,7 @@
                 x:Name="GitHubBtn"
                 Height="Auto"
                 ClipToBounds="True"
-                Content="GitHub"
+                Content="Sources"
                 Cursor="Hand"
                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                 FontSize="16"

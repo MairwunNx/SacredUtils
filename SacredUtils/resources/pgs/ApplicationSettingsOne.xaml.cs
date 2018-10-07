@@ -9,10 +9,9 @@ using WPFSharp.Globalizer;
 
 namespace SacredUtils.resources.pgs
 {
-    // ReSharper disable once InconsistentNaming
-    public partial class application_settings_one
+    public partial class ApplicationSettingsOne
     {
-        public application_settings_one()
+        public ApplicationSettingsOne()
         {
             InitializeComponent(); GetSettings();
 
@@ -21,30 +20,18 @@ namespace SacredUtils.resources.pgs
 
         private void GetSettings()
         {
-            UiLanguageCmbBox.SelectedIndex = CultureInfo.InstalledUICulture.TwoLetterISOLanguageName == "ru" ? 0 : 1;
-
-            GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
-                (UiLanguageCmbBox.SelectedIndex == 0 ? "ru-RU" : "en-US", true);
+            if (AppSettings.ApplicationSettings.AppUiLanguage == "based on system")
+            {
+                UiLanguageCmbBox.SelectedIndex = CultureInfo.InstalledUICulture.TwoLetterISOLanguageName == "ru" ? 0 : 1;
+            }
+            else
+            {
+                UiLanguageCmbBox.SelectedIndex = AppSettings.ApplicationSettings.AppUiLanguage == "ru" ? 0 : 1;
+            }
 
             UiThemeCmbBox.SelectedIndex = AppSettings.ApplicationSettings.ColorTheme == "light" ? 0 : 1;
 
-            GlobalizedApplication.Instance.StyleManager.SwitchStyle
-                (UiThemeCmbBox.SelectedIndex == 0 ? "Light.xaml" : "Dark.xaml");
-
-            if (AppSettings.ApplicationSettings.SacredStartArgs == "close")
-            {
-                StartParamsCmbBox.SelectedIndex = 0;
-            }
-
-            if (AppSettings.ApplicationSettings.SacredStartArgs == "minimize")
-            {
-                StartParamsCmbBox.SelectedIndex = 1;
-            }
-
-            if (AppSettings.ApplicationSettings.SacredStartArgs == "none")
-            {
-                StartParamsCmbBox.SelectedIndex = 2;
-            }
+            StartParamsCmbBox.SelectedIndex = AppSettings.ApplicationSettings.SacredStartArgs;
 
             UiScaleCmbBox.Text = $"{Convert.ToInt32(AppSettings.ApplicationSettings.SacredUtilsGuiScale * 100)}%";
 
@@ -101,26 +88,9 @@ namespace SacredUtils.resources.pgs
 
         private void ChangeStart()
         {
-            if (StartParamsCmbBox.SelectedIndex == 0)
-            {
-                AppSettings.ApplicationSettings.SacredStartArgs = "close";
+            AppSettings.ApplicationSettings.SacredStartArgs = StartParamsCmbBox.SelectedIndex;
 
-                AppLogger.Log.Info("Sacred game startup params changed to close by user");
-            }
-
-            if (StartParamsCmbBox.SelectedIndex == 1)
-            {
-                AppSettings.ApplicationSettings.SacredStartArgs = "minimize";
-
-                AppLogger.Log.Info("Sacred game startup params changed to minimize by user");
-            }
-
-            if (StartParamsCmbBox.SelectedIndex == 2)
-            {
-                AppSettings.ApplicationSettings.SacredStartArgs = "none";
-
-                AppLogger.Log.Info("Sacred game startup params changed to none by user");
-            }
+            AppLogger.Log.Info($"Sacred game startup params changed to {StartParamsCmbBox.SelectedIndex} by user");
         }
 
         private void ChangeScale()

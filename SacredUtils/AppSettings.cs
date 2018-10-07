@@ -100,8 +100,8 @@ namespace SacredUtils
         [Option(Alias = "RemoveTempContent", DefaultValue = "true")]
         bool RemoveTempContent { get; set; }
 
-        [Option(Alias = "SacredStartArgs", DefaultValue = "minimize")]
-        string SacredStartArgs { get; set; }
+        [Option(Alias = "SacredStartArgs", DefaultValue = 1)]
+        int SacredStartArgs { get; set; }
 
         [Option(Alias = "SacredUtilsGuiScale", DefaultValue = "1.0")]
         double SacredUtilsGuiScale { get; set; }

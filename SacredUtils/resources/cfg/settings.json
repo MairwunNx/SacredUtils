@@ -31,7 +31,7 @@
   "MaxGameBackupFiles": "10",
   "NLogConfigFileCreate": "false",
   "RemoveTempContent": "true",
-  "SacredStartArgs": "minimize",
+  "SacredStartArgs": "1",
   "SacredUtilsGuiScale": "1.0",
   "ShowChangeLog": "true",
   "ShowUsedMemory": "false",
