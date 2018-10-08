@@ -56,34 +56,20 @@ namespace SacredUtils
         {
             get
             {
+                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+
                 int index = 0;
 
-                for (int i = 0; i < File.ReadAllLines("Settings.cfg", Encoding.ASCII).Length; i++)
+                for (int i = 0; i < text.Length; i++)
                 {
-                    if (File.ReadAllLines("Settings.cfg", Encoding.ASCII)[i].Contains("LANGUAGE : RU"))
-                    {
-                        index = 0; break;
-                    }
 
-                    if (File.ReadAllLines("Settings.cfg", Encoding.ASCII)[i].Contains("LANGUAGE : US"))
-                    {
-                        index = 1; break;
-                    }
+                    if (text[i].Contains("LANGUAGE : US")) { index = 1; break; }
 
-                    if (File.ReadAllLines("Settings.cfg", Encoding.ASCII)[i].Contains("LANGUAGE : DE"))
-                    {
-                        index = 2; break;
-                    }
+                    if (text[i].Contains("LANGUAGE : DE")) { index = 2; break; }
 
-                    if (File.ReadAllLines("Settings.cfg", Encoding.ASCII)[i].Contains("LANGUAGE : SP"))
-                    {
-                        index = 3; break;
-                    }
+                    if (text[i].Contains("LANGUAGE : SP")) { index = 3; break; }
 
-                    if (File.ReadAllLines("Settings.cfg", Encoding.ASCII)[i].Contains("LANGUAGE : FR"))
-                    {
-                        index = 4; break;
-                    }
+                    if (text[i].Contains("LANGUAGE : FR")) { index = 4; break; }
                 }
 
                 return index;
