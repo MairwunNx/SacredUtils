@@ -7,12 +7,13 @@ using System.Text;
 
 namespace SacredUtils.resources.pgs
 {
-    // ReSharper disable once InconsistentNaming
-    public partial class font_settings_one
+    public partial class GameFontSettingsOne
     {
-        public font_settings_one()
+        public GameFontSettingsOne()
         {
             InitializeComponent(); GetSettings();
+
+            AppLogger.Log.Info("Initialization components for game font settings one done!");
         }
 
         private void GetSettings()

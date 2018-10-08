@@ -180,8 +180,8 @@
     <Compile Include="resources\pgs\GameChatSettingsOne.xaml.cs">
       <DependentUpon>GameChatSettingsOne.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\font_settings_one.xaml.cs">
-      <DependentUpon>font_settings_one.xaml</DependentUpon>
+    <Compile Include="resources\pgs\GameFontSettingsOne.xaml.cs">
+      <DependentUpon>GameFontSettingsOne.xaml</DependentUpon>
     </Compile>
     <Compile Include="resources\pgs\gameplay_settings_one.xaml.cs">
       <DependentUpon>gameplay_settings_one.xaml</DependentUpon>
@@ -280,7 +280,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\font_settings_one.xaml">
+    <Page Include="resources\pgs\GameFontSettingsOne.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

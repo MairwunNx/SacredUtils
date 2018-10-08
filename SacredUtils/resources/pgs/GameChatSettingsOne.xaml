@@ -6,6 +6,7 @@
     xmlns:globalizer="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sacredUtils="clr-namespace:SacredUtils"
     d:DesignHeight="685"
     d:DesignWidth="886"
     mc:Ignorable="d">
@@ -31,7 +32,9 @@
                     x:Name="RainbowChatTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
-                    Background="{DynamicResource ResourceKey=LabelForegroundBrush}" />
+                    d:DataContext="{d:DesignInstance sacredUtils:GameSettings}"
+                    Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    IsChecked="{Binding Path=UniqueColor}" />
             </Grid>
         </Border>
 
@@ -57,9 +60,11 @@
                     Height="27"
                     Margin="625,5,15,0"
                     VerticalAlignment="Top"
+                    d:DataContext="{d:DesignInstance sacredUtils:GameSettings}"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}">
+                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
+                    SelectedIndex="{Binding Path=Language}">
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0020}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0021}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0022}" />
@@ -92,11 +97,13 @@
                     Margin="618,-25,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    d:DataContext="{d:DesignInstance sacredUtils:GameSettings}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Maximum="25"
                     Minimum="1"
-                    Style="{StaticResource MaterialDesignDiscreteSlider}">
+                    Style="{StaticResource MaterialDesignDiscreteSlider}"
+                    Value="{Binding Path=ChatLines, Delay=6000}">
                     <Slider.Resources>
                         <!--  ReSharper disable once Xaml.RedundantResource  -->
                         <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="#FF535353" />
