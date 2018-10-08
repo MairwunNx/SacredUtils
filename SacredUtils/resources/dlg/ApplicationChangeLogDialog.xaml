@@ -21,7 +21,7 @@
                         Height="30"
                         Margin="15,11,190,0"
                         VerticalAlignment="Top"
-                        Content="{globalizer:GlobalizedResource String0146}"
+                        Content="{globalizer:GlobalizedResource String0139}"
                         FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                         FontSize="16"
                         Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -32,7 +32,7 @@
                         Margin="28,49,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        Content="{globalizer:GlobalizedResource String0151}"
+                        Content="{globalizer:GlobalizedResource String0140}"
                         FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                         FontSize="14"
                         Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -51,7 +51,7 @@
                             Height="Auto"
                             Click="OpenChangeLog_Click"
                             ClipToBounds="True"
-                            Content="{globalizer:GlobalizedResource String0152}"
+                            Content="{globalizer:GlobalizedResource String0141}"
                             Cursor="Hand"
                             FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"

@@ -24,7 +24,7 @@
                         Height="30"
                         Margin="15,11,190,0"
                         VerticalAlignment="Top"
-                        Content="{globalizer:GlobalizedResource String0143}"
+                        Content="{globalizer:GlobalizedResource String0135}"
                         FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                         FontSize="16"
                         Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />

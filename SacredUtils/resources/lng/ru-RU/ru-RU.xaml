@@ -164,59 +164,34 @@
     <sys:String x:Key="String0126">Принял условия</sys:String>
     <sys:String x:Key="String0127">Закрыть SacredUtils</sys:String>
 
-    <!--  Error oops ;) dialog  -->
-    <sys:String x:Key="String0128">Упс, ошибочка!</sys:String>
-    <sys:String x:Key="String0129">Критическая ошибка, код ошибки</sys:String>
-
     <!--  About SacredUtils dialog  -->
-    <sys:String x:Key="String0130">О SacredUtils</sys:String>
-    <sys:String x:Key="String0131">Версия 1.2.4.0.1609A1 (Официальная сборка)</sys:String>
+    <sys:String x:Key="String0128">О SacredUtils</sys:String>
+    <sys:String x:Key="String0129">Версия 1.2.4.0.051018.A1 (Официальная сборка)</sys:String>
 
-    <!--  AlmostSuccess check dialog  -->
-    <sys:String x:Key="String0132">Восстановление компонентов</sys:String>
-
-    <!--  Error finded check dialog  -->
-    <sys:String x:Key="String0133">Восстановление компонентов</sys:String>
-    <sys:String x:Key="String0134">Нажмите ENTER что бы восстановить компоненты в списке выше.</sys:String>
-
-    <!--  Restoring components dialog  -->
-    <sys:String x:Key="String0135">Восстановление компонентов</sys:String>
-    <sys:String x:Key="String0136">Восстановление компонентов игры ...</sys:String>
-
-    <!--  Restoring success dialog  -->
-    <sys:String x:Key="String0137">Восстановление компонентов</sys:String>
-    <sys:String x:Key="String0138">Восстановление компонентов завершено!</sys:String>
-
-    <!--  Not found errors dialog  -->
-    <sys:String x:Key="String0139">Проверка компонентов</sys:String>
-    <sys:String x:Key="String0140">Поврежденных компонентов не обнаружено!</sys:String>
-
-    <!--  Checking components dialog  -->
-    <sys:String x:Key="String0141">Проверка компонентов игры</sys:String>
-    <sys:String x:Key="String0142">Проверка компонентов на целостность ...</sys:String>
+    <!--  Checking \ repairing components dialog  -->
+    <sys:String x:Key="String0130">Восстановление компонентов</sys:String>
+    <sys:String x:Key="String0131">Проверка компонентов на целостность ...</sys:String>
+    <sys:String x:Key="String0132">Восстановление компонентов игры ...</sys:String>
+    <sys:String x:Key="String0133">Восстановление компонентов завершено!</sys:String>
+    <sys:String x:Key="String0134">Поврежденных компонентов не обнаружено!</sys:String>
 
     <!--  Hotkey change dialog  -->
-    <sys:String x:Key="String0143">Смена клавишь игры</sys:String>
+    <sys:String x:Key="String0135">Смена клавиш игры</sys:String>
 
-    <!--  Get components change dialog  -->
-    <sys:String x:Key="String0144">Установка компонентов</sys:String>
-    <sys:String x:Key="String0145">Загрузка компонента</sys:String>
+    <!--  Get components dialog  -->
+    <sys:String x:Key="String0136">Установка компонентов</sys:String>
+    <sys:String x:Key="String0137">Загрузка компонента</sys:String>
+    <sys:String x:Key="String0138">Распаковка компонента</sys:String>
 
     <!--  Change log dialog  -->
-    <sys:String x:Key="String0146">Обновлено!</sys:String>
-
-    <!--  Restart required dialog  -->
-    <sys:String x:Key="String0147">Предупреждение</sys:String>
-    <sys:String x:Key="String0148">Для изменения настроек нужна перезагрузка!</sys:String>
+    <sys:String x:Key="String0139">Утилита обновлена!</sys:String>
+    <sys:String x:Key="String0140">Открыть список изменений?</sys:String>
+    <sys:String x:Key="String0141">Да</sys:String>
 
     <!--  Select page dialog  -->
-    <sys:String x:Key="String0149">Выбор страницы</sys:String>
+    <sys:String x:Key="String0142">Выбор страницы</sys:String>
 
     <!--  Select donate dialog  -->
-    <sys:String x:Key="String0150">Выбор кошелька</sys:String>
-
-    <!--  Change log 2 dialog  -->
-    <sys:String x:Key="String0151">Открыть список изменений?</sys:String>
-    <sys:String x:Key="String0152">Да</sys:String>
+    <sys:String x:Key="String0143">Выбор кошелька</sys:String>
 
 </Globalization:GlobalizationResourceDictionary>

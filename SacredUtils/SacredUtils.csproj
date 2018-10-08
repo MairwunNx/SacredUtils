@@ -157,38 +157,17 @@
     <Compile Include="resources\dlg\ApplicationAboutDialog.xaml.cs">
       <DependentUpon>ApplicationAboutDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\dlg\checking_components_dialog.xaml.cs">
-      <DependentUpon>checking_components_dialog.xaml</DependentUpon>
+    <Compile Include="resources\dlg\GameCheckingComponentsDialog.xaml.cs">
+      <DependentUpon>GameCheckingComponentsDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\dlg\error_dialog.xaml.cs">
-      <DependentUpon>error_dialog.xaml</DependentUpon>
+    <Compile Include="resources\dlg\GameGettingComponentsDialog.xaml.cs">
+      <DependentUpon>GameGettingComponentsDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\dlg\error_finded_dialog.xaml.cs">
-      <DependentUpon>error_finded_dialog.xaml</DependentUpon>
+    <Compile Include="resources\dlg\ApplicationHotkeyChangeDialog.xaml.cs">
+      <DependentUpon>ApplicationHotkeyChangeDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\dlg\error_not_found_dialog.xaml.cs">
-      <DependentUpon>error_not_found_dialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="resources\dlg\get_components_dialog.xaml.cs">
-      <DependentUpon>get_components_dialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="resources\dlg\hotkey_dialog.xaml.cs">
-      <DependentUpon>hotkey_dialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="resources\dlg\license_dialog.xaml.cs">
-      <DependentUpon>license_dialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="resources\dlg\nearly_restored_dialog.xaml.cs">
-      <DependentUpon>nearly_restored_dialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="resources\dlg\restart_reqired.xaml.cs">
-      <DependentUpon>restart_reqired.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="resources\dlg\restoring_components_dialog.xaml.cs">
-      <DependentUpon>restoring_components_dialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="resources\dlg\restoring_success_dialog.xaml.cs">
-      <DependentUpon>restoring_success_dialog.xaml</DependentUpon>
+    <Compile Include="resources\dlg\ApplicationLicenseDialog.xaml.cs">
+      <DependentUpon>ApplicationLicenseDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="resources\pgs\ApplicationSettingsOne.xaml.cs">
       <DependentUpon>ApplicationSettingsOne.xaml</DependentUpon>
@@ -271,47 +250,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\dlg\checking_components_dialog.xaml">
+    <Page Include="resources\dlg\GameCheckingComponentsDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\dlg\error_dialog.xaml">
+    <Page Include="resources\dlg\GameGettingComponentsDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\dlg\error_finded_dialog.xaml">
+    <Page Include="resources\dlg\ApplicationHotkeyChangeDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\dlg\error_not_found_dialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="resources\dlg\get_components_dialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="resources\dlg\hotkey_dialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="resources\dlg\license_dialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="resources\dlg\nearly_restored_dialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="resources\dlg\restart_reqired.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="resources\dlg\restoring_components_dialog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="resources\dlg\restoring_success_dialog.xaml">
+    <Page Include="resources\dlg\ApplicationLicenseDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

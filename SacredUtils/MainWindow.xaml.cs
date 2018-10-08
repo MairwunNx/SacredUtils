@@ -242,17 +242,17 @@ namespace SacredUtils
 
         private void OpenLicenseDialog()
         {
-            license_dialog license = new license_dialog();
+            ApplicationLicenseDialog applicationLicenseDialog = new ApplicationLicenseDialog();
 
             DialogFrame.Visibility = Visibility.Visible;
-            DialogFrame.Content = license;
+            DialogFrame.Content = applicationLicenseDialog;
 
             if (AppSettings.ApplicationSettings.ColorTheme == "dark")
             {
-                license.LicenseDialog.DialogTheme = BaseTheme.Dark;
+                applicationLicenseDialog.LicenseDialog.DialogTheme = BaseTheme.Dark;
             }
 
-            license.LicenseDialog.IsOpen = true;
+            applicationLicenseDialog.LicenseDialog.IsOpen = true;
         }
     }
 }
