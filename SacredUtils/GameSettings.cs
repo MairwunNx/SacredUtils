@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 
 namespace SacredUtils
 {
@@ -9,26 +9,33 @@ namespace SacredUtils
     {
         private static void ChangeBooleanValue(string func, object value)
         {
-            if (!File.ReadAllText("Settings.cfg", Encoding.ASCII).Contains($"{func} : "))
+            try
             {
-                using (StreamWriter file = new StreamWriter("Settings.cfg", true, Encoding.ASCII))
+                if (!File.ReadAllText("Settings.cfg", Encoding.ASCII).Contains($"{func} : "))
                 {
-                    file.WriteLine($"{func} : {value}");
-                }
-            }
-            else
-            {
-                var text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
-
-                for (int i = 0; i < text.Length; i++)
-                {
-                    if (text[i].Contains($"{func} : "))
+                    using (StreamWriter file = new StreamWriter("Settings.cfg", true, Encoding.ASCII))
                     {
-                        text[i] = $"{func} : {value}";
-
-                        File.WriteAllLines("Settings.cfg", text);
+                        file.WriteLine($"{func} : {value}");
                     }
                 }
+                else
+                {
+                    string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+
+                    for (int i = 0; i < text.Length; i++)
+                    {
+                        if (text[i].Contains($"{func} : "))
+                        {
+                            text[i] = $"{func} : {value}";
+
+                            File.WriteAllLines("Settings.cfg", text);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
             }
         }
 
@@ -36,14 +43,13 @@ namespace SacredUtils
         {
             get
             {
+                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+
                 bool contains = false;
 
-                for (int i = 0; i < File.ReadAllLines("Settings.cfg", Encoding.ASCII).Length; i++)
+                for (int i = 0; i < text.Length; i++)
                 {
-                    if (File.ReadAllLines("Settings.cfg", Encoding.ASCII)[i].Contains("UNIQUE_COLOR : 1"))
-                    {
-                        contains = true; break;
-                    }
+                    if (text[i].Contains("UNIQUE_COLOR : 1")) { contains = true; break; }
                 }
 
                 return contains;
@@ -62,6 +68,7 @@ namespace SacredUtils
 
                 for (int i = 0; i < text.Length; i++)
                 {
+                    if (text[i].Contains("LANGUAGE : RU")) { index = 0; break; }
 
                     if (text[i].Contains("LANGUAGE : US")) { index = 1; break; }
 
@@ -92,13 +99,15 @@ namespace SacredUtils
         {
             get
             {
+                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+
                 int value = 0;
 
-                for (int i = 0; i < File.ReadAllLines("Settings.cfg", Encoding.ASCII).Length; i++)
+                for (int i = 0; i < text.Length; i++)
                 {
-                    if (File.ReadAllLines("Settings.cfg", Encoding.ASCII)[i].Contains("CHAT_DELAY : "))
+                    if (text[i].Contains("CHAT_LINES : "))
                     {
-                        value = int.Parse(File.ReadAllLines("Settings.cfg", Encoding.ASCII)[i].Substring(File.ReadAllLines("Settings.cfg", Encoding.ASCII)[i].IndexOf(": ", StringComparison.Ordinal) + 2));
+                        value = int.Parse(text[i].Substring(text[i].IndexOf(": ", StringComparison.Ordinal) + 2));
 
                         break;
                     }
