@@ -119,6 +119,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AppSettings.cs" />
+    <Compile Include="GameSettings.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -175,8 +176,8 @@
     <Compile Include="resources\pgs\ApplicationSettingsTwo.xaml.cs">
       <DependentUpon>ApplicationSettingsTwo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\chat_settings_one.xaml.cs">
-      <DependentUpon>chat_settings_one.xaml</DependentUpon>
+    <Compile Include="resources\pgs\GameChatSettingsOne.xaml.cs">
+      <DependentUpon>GameChatSettingsOne.xaml</DependentUpon>
     </Compile>
     <Compile Include="resources\pgs\font_settings_one.xaml.cs">
       <DependentUpon>font_settings_one.xaml</DependentUpon>
@@ -274,7 +275,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\chat_settings_one.xaml">
+    <Page Include="resources\pgs\GameChatSettingsOne.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

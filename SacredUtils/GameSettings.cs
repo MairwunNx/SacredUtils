@@ -157,6 +157,6 @@ namespace SacredUtils
     {
         public static readonly IGameSettings SacredGameSettings =
             new ConfigurationBuilder<IGameSettings>()
-                .UseIniFile("$SacredUtils\\temp\\~settings.ini").Build();
+                .UseIniFile("$SacredUtils\\temp\\~Settings.ini").Build();
     }
 }

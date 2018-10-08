@@ -13,7 +13,7 @@ namespace SacredUtils.resources.bin
             try
             {
                 File.WriteAllText("$SacredUtils\\temp\\~Settings.ini",
-                    "[BaseSettings]" + "\n" + File.ReadAllText("Settings.cfg").Replace(" : ", "="));
+                     File.ReadAllText("Settings.cfg").Replace(" : ", "="));
 
                 AppLogger.Log.Info("Re-formatting settings.cfg file to true cfg (ini) done!");
             }
@@ -30,7 +30,7 @@ namespace SacredUtils.resources.bin
                 Task.Run(() =>
                 {
                     File.WriteAllText("Settings.cfg",
-                        File.ReadAllText("$SacredUtils\\temp\\~Settings.ini").Replace("=", " : ").Remove(0, 15));
+                        File.ReadAllText("$SacredUtils\\temp\\~Settings.ini").Replace("=", " : "));
                 });
             }
             catch (Exception e)
