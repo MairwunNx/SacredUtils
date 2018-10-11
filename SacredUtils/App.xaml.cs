@@ -16,8 +16,6 @@ namespace SacredUtils
                 if (e.Args.Contains("-fast"))
                 {
                     AppLogger.Init(true);
-
-                    ConvertSacredGameSettings.ConvertToIni();
                 }
                 else
                 {
@@ -42,8 +40,6 @@ namespace SacredUtils
                     CreateBackupApplicationSettings.Create();
 
                     CreateBackupSacredGameSettings.Create();
-
-                    ConvertSacredGameSettings.ConvertToIni();
 
                     GetRequiredApplicationFiles.Get();
 

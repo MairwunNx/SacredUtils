@@ -37,6 +37,9 @@ namespace SacredUtils
         [Option(Alias = "DebugFileCreate", DefaultValue = "false")]
         bool DebugFileCreate { get; set; }
 
+        [Option(Alias = "DisableCachingGameComponents", DefaultValue = "false")]
+        bool DisableCachingGameComponents { get; set; }
+
         [Option(Alias = "DisableFootSteps", DefaultValue = "false")]
         bool DisableFootSteps { get; set; }
 

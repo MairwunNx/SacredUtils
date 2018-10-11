@@ -10,6 +10,7 @@
   "ColorTheme": "light",
   "ConfigFileCreate": "false",
   "DebugFileCreate": "false",
+  "DisableCachingGameComponents": "false",
   "DisableFootSteps": "false",
   "DisableLogging": "false",
   "DisableTelemetry": "false",

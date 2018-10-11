@@ -30,7 +30,7 @@ namespace SacredUtils.resources.bin
 
             AppLogger.Log.Info($"SacredUtils current domain assemblies count {AppDomain.CurrentDomain.GetAssemblies().Length}");
 
-            AppLogger.Log.Info("Involved dirs (7) : conf, logs, temp, back, themes, lang");
+            AppLogger.Log.Info("Involved dirs (6) : conf, logs, back, themes, lang");
 
             AppLogger.Log.Info("============================================================");
         }

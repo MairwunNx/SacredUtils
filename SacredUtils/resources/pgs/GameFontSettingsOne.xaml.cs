@@ -39,10 +39,5 @@ namespace SacredUtils.resources.pgs
                 }
             }
         }
-
-        private void EventSubscribe()
-        {
-            // todo: добавить возможность изменять значения настроек.
-        }
     }
 }
