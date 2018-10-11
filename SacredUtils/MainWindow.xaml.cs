@@ -23,9 +23,7 @@ namespace SacredUtils
         public static readonly GameFontSettingsOne FontStgOne = new GameFontSettingsOne();
         public static readonly GamePlaySettingsOne GamePlayStgOne = new GamePlaySettingsOne();
         public static readonly GamePlaySettingsTwo GamePlayStgTwo = new GamePlaySettingsTwo();
-
-        public static readonly gameplay_settings_three GamePlayStgThree = new gameplay_settings_three();
-
+        public static readonly GamePlaySettingsThree GamePlayStgThree = new GamePlaySettingsThree();
         public static graphics_settings_one GraphicsStgOne = new graphics_settings_one();
         public static modify_settings_one ModifyStgOne = new modify_settings_one();
         public static sound_settings_one SoundStgOne = new sound_settings_one();
