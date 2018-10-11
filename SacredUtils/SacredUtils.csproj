@@ -199,8 +199,8 @@
     <Compile Include="resources\pgs\GraphicsSettingsOne.xaml.cs">
       <DependentUpon>GraphicsSettingsOne.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\graphics_settings_three.xaml.cs">
-      <DependentUpon>graphics_settings_three.xaml</DependentUpon>
+    <Compile Include="resources\pgs\GraphicsSettingsThree.xaml.cs">
+      <DependentUpon>GraphicsSettingsThree.xaml</DependentUpon>
     </Compile>
     <Compile Include="resources\pgs\GraphicsSettingsTwo.xaml.cs">
       <DependentUpon>GraphicsSettingsTwo.xaml</DependentUpon>
@@ -219,6 +219,7 @@
     <Compile Include="resources\prp\GameChatSettingsOneProperty.cs" />
     <Compile Include="resources\prp\GameFontSettingsOneProperty.cs" />
     <Compile Include="resources\prp\GameGraphicsSettingsOneProperty.cs" />
+    <Compile Include="resources\prp\GameGraphicsSettingsThreeProperty.cs" />
     <Compile Include="resources\prp\GameGraphicsSettingsTwoProperty.cs" />
     <Compile Include="resources\prp\GamePlaySettingsOneProperty.cs" />
     <Compile Include="resources\prp\GamePlaySettingsThreeProperty.cs" />
@@ -315,7 +316,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\graphics_settings_three.xaml">
+    <Page Include="resources\pgs\GraphicsSettingsThree.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
