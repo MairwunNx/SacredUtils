@@ -184,8 +184,8 @@
     <Compile Include="resources\pgs\GameFontSettingsOne.xaml.cs">
       <DependentUpon>GameFontSettingsOne.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\gameplay_settings_one.xaml.cs">
-      <DependentUpon>gameplay_settings_one.xaml</DependentUpon>
+    <Compile Include="resources\pgs\GamePlaySettingsOne.xaml.cs">
+      <DependentUpon>GamePlaySettingsOne.xaml</DependentUpon>
     </Compile>
     <Compile Include="resources\pgs\gameplay_settings_three.xaml.cs">
       <DependentUpon>gameplay_settings_three.xaml</DependentUpon>
@@ -218,6 +218,7 @@
     <Compile Include="resources\prp\ApplicationSettingsTwoProperty.cs" />
     <Compile Include="resources\prp\GameChatSettingsOneProperty.cs" />
     <Compile Include="resources\prp\GameFontSettingsOneProperty.cs" />
+    <Compile Include="resources\prp\GamePlaySettingsOneProperty.cs" />
     <Resource Include="resources\cfg\splashes.txt" />
     <Content Include="resources\lib\WPFSharp.Globalizer.dll" />
     <Content Include="resources\lng\en-US\en-US.xaml">
@@ -290,7 +291,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\gameplay_settings_one.xaml">
+    <Page Include="resources\pgs\GamePlaySettingsOne.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
