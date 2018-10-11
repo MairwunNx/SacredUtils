@@ -12,7 +12,7 @@ namespace SacredUtils.resources.pgs
             AppLogger.Log.Info("Initialization components for game play settings one done!");
         }
 
-        private void ToTwoPageBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void ToTwoPageBtn_Click(object sender, RoutedEventArgs e)
         {
             foreach (Window window in Application.Current.Windows)
             {
