@@ -214,6 +214,7 @@
       <DependentUpon>unselected_settings_one.xaml</DependentUpon>
     </Compile>
     <Compile Include="resources\prp\ApplicationSettingsOneProperty.cs" />
+    <Compile Include="resources\prp\ApplicationSettingsTwoProperty.cs" />
     <Compile Include="resources\prp\GameChatSettingsOneProperty.cs" />
     <Content Include="resources\lib\WPFSharp.Globalizer.dll" />
     <Content Include="resources\lng\en-US\en-US.xaml">

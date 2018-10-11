@@ -6,6 +6,7 @@
     xmlns:globalizer="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prp="clr-namespace:SacredUtils.resources.prp"
     d:DesignHeight="685"
     d:DesignWidth="886"
     mc:Ignorable="d">
@@ -31,7 +32,9 @@
                     x:Name="UpdateCheckTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
-                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
+                    d:DataContext="{d:DesignInstance prp:ApplicationSettingsTwoProperty}"
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    IsChecked="{Binding Path=UpdateCheck}" />
             </Grid>
         </Border>
 
@@ -56,7 +59,9 @@
                     x:Name="UpdateAlphaCheckTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
-                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
+                    d:DataContext="{d:DesignInstance prp:ApplicationSettingsTwoProperty}"
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    IsChecked="{Binding Path=UpdateAlphaCheck}" />
             </Grid>
         </Border>
 
@@ -81,7 +86,9 @@
                     x:Name="MakeBackupTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
-                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
+                    d:DataContext="{d:DesignInstance prp:ApplicationSettingsTwoProperty}"
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    IsChecked="{Binding Path=MakeBackup}" />
             </Grid>
         </Border>
 
@@ -106,7 +113,9 @@
                     x:Name="LicenseTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
-                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
+                    d:DataContext="{d:DesignInstance prp:ApplicationSettingsTwoProperty}"
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    IsChecked="{Binding Path=License}" />
             </Grid>
         </Border>
 

@@ -1,5 +1,6 @@
 ﻿using MaterialDesignThemes.Wpf;
 using SacredUtils.resources.dlg;
+using SacredUtils.resources.prp;
 using System.Diagnostics;
 using System.Windows;
 
@@ -9,28 +10,13 @@ namespace SacredUtils.resources.pgs
     {
         public ApplicationSettingsTwo()
         {
-            InitializeComponent(); GetSettings();
+            InitializeComponent(); EventSubscribe(); DataContext = new ApplicationSettingsTwoProperty();
 
             AppLogger.Log.Info("Initialization components for application settings two done!");
         }
 
-        private void GetSettings()
-        {
-            UpdateCheckTglBtn.IsChecked = AppSettings.ApplicationSettings.CheckAutoUpdate;
-            UpdateAlphaCheckTglBtn.IsChecked = AppSettings.ApplicationSettings.CheckAutoAlphaUpdate;
-            MakeBackupTglBtn.IsChecked = AppSettings.ApplicationSettings.MakeAutoBackupConfigs;
-            LicenseTglBtn.IsChecked = AppSettings.ApplicationSettings.AcceptLicense;
-
-            EventSubscribe();
-        }
-
         private void EventSubscribe()
         {
-            UpdateCheckTglBtn.Click += (s, e) => ChangeUpdateCheck(false);
-            UpdateAlphaCheckTglBtn.Click += (s, e) => ChangeUpdateCheck(true);
-            MakeBackupTglBtn.Click += (s, e) => ChangeBackupMake();
-            LicenseTglBtn.Click += (s, e) => ChangeLicenseAgreement();
-
             GitHubBtn.Click += (s, e) => OpenLink("https://github.com/MairwunNx/SacredUtils");
             DonateBtn.Click += (s, e) => OpenDonateSelectDialog();
             CreatorBtn.Click += (s, e) => OpenPageSelectDialog();
@@ -38,36 +24,6 @@ namespace SacredUtils.resources.pgs
             AboutBtn.Click += (s, e) => OpenAboutDialog();
 
             ToOnePageBtn.Click += (s, e) => OpenOnePage();
-        }
-
-        private void ChangeUpdateCheck(bool alphaUpdate)
-        {
-            if (!alphaUpdate)
-            {
-                AppSettings.ApplicationSettings.CheckAutoUpdate = UpdateCheckTglBtn.IsChecked == true;
-
-                AppLogger.Log.Info($"Checking for updates changed state to {UpdateCheckTglBtn.IsChecked} by user");
-            }
-            else
-            {
-                AppSettings.ApplicationSettings.CheckAutoAlphaUpdate = UpdateAlphaCheckTglBtn.IsChecked == true;
-
-                AppLogger.Log.Info($"Checking for alpha updates changed state to {UpdateAlphaCheckTglBtn.IsChecked} by user");
-            }
-        }
-
-        private void ChangeBackupMake()
-        {
-            AppSettings.ApplicationSettings.MakeAutoBackupConfigs = MakeBackupTglBtn.IsChecked == true;
-
-            AppLogger.Log.Info($"Backup making settings changed state to {MakeBackupTglBtn.IsChecked} by user");
-        }
-
-        private void ChangeLicenseAgreement()
-        {
-            AppSettings.ApplicationSettings.AcceptLicense = LicenseTglBtn.IsChecked == true;
-
-            AppLogger.Log.Info($"Accept license changed state to {LicenseTglBtn.IsChecked} by user");
         }
 
         private static void OpenLink(string link)
