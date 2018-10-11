@@ -129,6 +129,7 @@
     <Compile Include="resources\bin\CreateApplicationNeededFolders.cs" />
     <Compile Include="resources\bin\CreateBackupApplicationSettings.cs" />
     <Compile Include="resources\bin\CreateBackupSacredGameSettings.cs" />
+    <Compile Include="resources\bin\GetApplicationRandomSplashes.cs" />
     <Compile Include="resources\bin\GetApplicationScaleValue.cs" />
     <Compile Include="resources\bin\CheckAvailabilityAlphaUpdates.cs" />
     <Compile Include="resources\bin\CheckAvailabilityGameSettings.cs" />
@@ -216,6 +217,8 @@
     <Compile Include="resources\prp\ApplicationSettingsOneProperty.cs" />
     <Compile Include="resources\prp\ApplicationSettingsTwoProperty.cs" />
     <Compile Include="resources\prp\GameChatSettingsOneProperty.cs" />
+    <Compile Include="resources\prp\GameFontSettingsOneProperty.cs" />
+    <Resource Include="resources\cfg\splashes.txt" />
     <Content Include="resources\lib\WPFSharp.Globalizer.dll" />
     <Content Include="resources\lng\en-US\en-US.xaml">
       <SubType>Designer</SubType>

@@ -19,8 +19,8 @@ namespace SacredUtils
     {
         public static readonly ApplicationSettingsOne AppStgOne = new ApplicationSettingsOne();
         public static readonly ApplicationSettingsTwo AppStgTwo = new ApplicationSettingsTwo();
-        public static GameChatSettingsOne ChatStgOne = new GameChatSettingsOne();
-        public static GameFontSettingsOne FontStgOne = new GameFontSettingsOne();
+        public static readonly GameChatSettingsOne ChatStgOne = new GameChatSettingsOne();
+        public static readonly GameFontSettingsOne FontStgOne = new GameFontSettingsOne();
         public static gameplay_settings_one GameplayStgOne = new gameplay_settings_one();
         public static graphics_settings_one GraphicsStgOne = new graphics_settings_one();
         public static modify_settings_one ModifyStgOne = new modify_settings_one();
@@ -70,8 +70,13 @@ namespace SacredUtils
                     GetApplicationDownloadStatistic.Get(); CheckAvailabilityAlphaUpdates.GetPerm();
                 });
 
-                OpenChangeLogDialog();
+                OpenChangeLogDialog(); SetRandomSplash();
             };
+        }
+
+        private void SetRandomSplash()
+        {
+            FontStgOne.ExampleTextBlock.Text = GetApplicationRandomSplashes.GetRandomSplash();
         }
 
         private void OpenChangeLogDialog()
@@ -151,6 +156,8 @@ namespace SacredUtils
                 } 
                 
                 panel.SetResourceReference(BackgroundProperty, "CategoryActiveColorBrush");
+
+                if (panel.Name == "FontsPanel") { SetRandomSplash(); }
             }
         }
 

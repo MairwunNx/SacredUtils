@@ -6,6 +6,7 @@
     xmlns:globalizer="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prp="clr-namespace:SacredUtils.resources.prp"
     d:DesignHeight="685"
     d:DesignWidth="886"
     mc:Ignorable="d">
@@ -53,9 +54,12 @@
                     Height="27"
                     Margin="625,5,15,0"
                     VerticalAlignment="Top"
+                    d:DataContext="{d:DesignInstance prp:GameFontSettingsOneProperty}"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}" />
+                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
+                    ItemsSource="{Binding Path=FontCollection}"
+                    SelectedValue="{Binding Path=SelectedFont}" />
             </Grid>
         </Border>
 
@@ -98,11 +102,12 @@
             BorderThickness="1,1,1,1"
             CornerRadius="3">
             <TextBlock
+                x:Name="ExampleTextBlock"
                 VerticalAlignment="Center"
                 FontFamily="{Binding Text, ElementName=FontNameCmbBox}"
                 FontSize="14"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                Text="{Binding Text, ElementName=FontExampleTxBox}"
+                Text="{Binding Text, ElementName=FontExampleTxBox, Mode=TwoWay}"
                 TextAlignment="Center"
                 TextWrapping="WrapWithOverflow" />
         </Border>

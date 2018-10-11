@@ -221,6 +221,30 @@ namespace SacredUtils.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на It seems ... We did not find recognition in Ancaria.
+        ///Lily...after all this time? - Always.
+        ///Take a horse? A Wood Elf steal a horse? You fool!
+        ///Famous last words: &quot;C++ Runtime Error&quot;
+        ///Format C: should not be taken literally
+        ///No one is missing me� *cry*
+        ///I will return these 500 rubles soon.
+        ///Sample Text
+        ///Size matters!
+        ///ScaredTits
+        ///Rule #1: it&apos;s never my fault
+        ///In honor of Annika, mistress of the birds.
+        ///Random splash!
+        ///Get it!
+        ///Please, turn on the track nin10doh.
+        ///Saints Flow&apos;s good, but Saints Flow with vod [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string splashes {
+            get {
+                return ResourceManager.GetString("splashes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
         public static byte[] WPFSharp_Globalizer {
