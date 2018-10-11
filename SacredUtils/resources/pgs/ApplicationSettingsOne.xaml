@@ -6,6 +6,7 @@
     xmlns:globalizer="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prp="clr-namespace:SacredUtils.resources.prp"
     d:DesignHeight="685"
     d:DesignWidth="886"
     mc:Ignorable="d">
@@ -32,9 +33,11 @@
                     Height="27"
                     Margin="625,0,15,0"
                     VerticalAlignment="Center"
+                    d:DataContext="{d:DesignInstance prp:ApplicationSettingsOneProperty}"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
+                    SelectedIndex="{Binding Path=Language}"
                     UseLayoutRounding="False">
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0002}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0003}" />
@@ -64,9 +67,11 @@
                     Height="27"
                     Margin="625,0,15,0"
                     VerticalAlignment="Center"
+                    d:DataContext="{d:DesignInstance prp:ApplicationSettingsOneProperty}"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}">
+                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
+                    SelectedIndex="{Binding Path=Theme}">
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0005}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0006}" />
                 </ComboBox>
@@ -95,9 +100,11 @@
                     Height="27"
                     Margin="625,0,15,0"
                     VerticalAlignment="Center"
+                    d:DataContext="{d:DesignInstance prp:ApplicationSettingsOneProperty}"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}">
+                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
+                    SelectedIndex="{Binding Path=StartParams}">
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0008}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0009}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0010}" />
@@ -127,9 +134,11 @@
                     Height="27"
                     Margin="625,0,15,0"
                     VerticalAlignment="Center"
+                    d:DataContext="{d:DesignInstance prp:ApplicationSettingsOneProperty}"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}">
+                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
+                    Text="{Binding Path=UiScale}">
                     <ComboBoxItem Content="100%" />
                     <ComboBoxItem Content="105%" />
                     <ComboBoxItem Content="110%" />
