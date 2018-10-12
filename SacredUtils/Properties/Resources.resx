@@ -172,4 +172,22 @@
   <data name="splashes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cfg\splashes.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="FOOTSTEPS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grs\FOOTSTEPS.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HEALTH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grs\HEALTH.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="OLD_SACRED" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grs\OLD SACRED.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="STATIC_BOG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grs\STATIC BOG.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="STATIC_LAVA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grs\STATIC LAVA.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="STATIC_WATER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grs\STATIC WATER.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

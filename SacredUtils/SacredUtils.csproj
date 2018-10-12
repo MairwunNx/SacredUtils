@@ -125,6 +125,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="resources\arr\ArraySacredGameFootStepsFiles.cs" />
+    <Compile Include="resources\arr\ArraySacredGameHealthFiles.cs" />
+    <Compile Include="resources\arr\ArraySacredGameLavaFilesA.cs" />
+    <Compile Include="resources\arr\ArraySacredGameLavaFilesB.cs" />
+    <Compile Include="resources\arr\ArraySacredGameLavaFilesC.cs" />
+    <Compile Include="resources\arr\ArraySacredGameLavaFilesD.cs" />
+    <Compile Include="resources\arr\ArraySacredGameLavaFilesE.cs" />
+    <Compile Include="resources\arr\ArraySacredGameOldTextureFiles.cs" />
+    <Compile Include="resources\arr\ArraySacredGameWaterFilesB.cs" />
+    <Compile Include="resources\arr\ArraySacredGameWaterFilesC.cs" />
+    <Compile Include="resources\arr\ArraySacredGameWaterFilesD.cs" />
+    <Compile Include="resources\arr\ArraySacredGameWaterFilesE.cs" />
+    <Compile Include="resources\arr\ArraySacredGameWaterFilesF.cs" />
+    <Compile Include="resources\arr\ArraySacredGameWaterFilesG.cs" />
     <Compile Include="resources\bin\ChangeSacredGameSettingsValue.cs" />
     <Compile Include="resources\bin\CreateApplicationNeededFolders.cs" />
     <Compile Include="resources\bin\CreateBackupApplicationSettings.cs" />
@@ -193,8 +207,8 @@
     <Compile Include="resources\pgs\GamePlaySettingsTwo.xaml.cs">
       <DependentUpon>GamePlaySettingsTwo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\graphics_settings_four.xaml.cs">
-      <DependentUpon>graphics_settings_four.xaml</DependentUpon>
+    <Compile Include="resources\pgs\GraphicsSettingsFour.xaml.cs">
+      <DependentUpon>GraphicsSettingsFour.xaml</DependentUpon>
     </Compile>
     <Compile Include="resources\pgs\GraphicsSettingsOne.xaml.cs">
       <DependentUpon>GraphicsSettingsOne.xaml</DependentUpon>
@@ -218,6 +232,7 @@
     <Compile Include="resources\prp\ApplicationSettingsTwoProperty.cs" />
     <Compile Include="resources\prp\GameChatSettingsOneProperty.cs" />
     <Compile Include="resources\prp\GameFontSettingsOneProperty.cs" />
+    <Compile Include="resources\prp\GameGraphicsSettingsFourProperty.cs" />
     <Compile Include="resources\prp\GameGraphicsSettingsOneProperty.cs" />
     <Compile Include="resources\prp\GameGraphicsSettingsThreeProperty.cs" />
     <Compile Include="resources\prp\GameGraphicsSettingsTwoProperty.cs" />
@@ -308,7 +323,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\graphics_settings_four.xaml">
+    <Page Include="resources\pgs\GraphicsSettingsFour.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -359,6 +374,12 @@
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="resources\grs\FOOTSTEPS.zip" />
+    <None Include="resources\grs\HEALTH.zip" />
+    <None Include="resources\grs\OLD SACRED.zip" />
+    <None Include="resources\grs\STATIC BOG.zip" />
+    <None Include="resources\grs\STATIC LAVA.zip" />
+    <None Include="resources\grs\STATIC WATER.zip" />
     <None Include="resources\opt\SacredBalanceDragonFix.bin" />
     <None Include="resources\opt\SacredBalanceVanilla.bin" />
     <None Include="resources\opt\SacredBalanceVeteran.bin" />

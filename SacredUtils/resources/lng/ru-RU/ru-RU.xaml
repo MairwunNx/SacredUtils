@@ -107,9 +107,9 @@
     <sys:String x:Key="String0079">Использовать статичное болото</sys:String>
     <sys:String x:Key="String0080">Использовать статичную воду</sys:String>
     <sys:String x:Key="String0081">Использовать статичную лаву</sys:String>
-    <sys:String x:Key="String0082">Использовать старые текстуры кнопок</sys:String>
-    <sys:String x:Key="String0083">Использовать старую окантовку слотов</sys:String>
-    <sys:String x:Key="String0084">Использовать старое Sacred меню</sys:String>
+    <sys:String x:Key="String0082">Использовать старый интерфейс Sacred</sys:String>
+    <sys:String x:Key="String0083">++ UNUSED ++</sys:String>
+    <sys:String x:Key="String0084">++ UNUSED ++</sys:String>
     <sys:String x:Key="String0085">Отключить следы игрока</sys:String>
     <sys:String x:Key="String0086">Отображать круги здоровья</sys:String>
     <sys:String x:Key="String0087">Страница 4 / 4</sys:String>

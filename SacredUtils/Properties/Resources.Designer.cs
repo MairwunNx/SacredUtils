@@ -93,9 +93,29 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        public static byte[] FOOTSTEPS {
+            get {
+                object obj = ResourceManager.GetObject("FOOTSTEPS", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         public static byte[] gamesettings {
             get {
                 object obj = ResourceManager.GetObject("gamesettings", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] HEALTH {
+            get {
+                object obj = ResourceManager.GetObject("HEALTH", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -116,6 +136,16 @@ namespace SacredUtils.Properties {
         public static byte[] mnxupdater {
             get {
                 object obj = ResourceManager.GetObject("mnxupdater", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] OLD_SACRED {
+            get {
+                object obj = ResourceManager.GetObject("OLD_SACRED", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -226,7 +256,7 @@ namespace SacredUtils.Properties {
         ///Take a horse? A Wood Elf steal a horse? You fool!
         ///Famous last words: &quot;C++ Runtime Error&quot;
         ///Format C: should not be taken literally
-        ///No one is missing me� *cry*
+        ///No one is missing me ... *cry*
         ///I will return these 500 rubles soon.
         ///Sample Text
         ///Size matters!
@@ -236,11 +266,41 @@ namespace SacredUtils.Properties {
         ///Random splash!
         ///Get it!
         ///Please, turn on the track nin10doh.
-        ///Saints Flow&apos;s good, but Saints Flow with vod [остаток строки не уместился]&quot;;.
+        ///Saints Flow&apos;s good, but Saints Flow with  [остаток строки не уместился]&quot;;.
         /// </summary>
         public static string splashes {
             get {
                 return ResourceManager.GetString("splashes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] STATIC_BOG {
+            get {
+                object obj = ResourceManager.GetObject("STATIC_BOG", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] STATIC_LAVA {
+            get {
+                object obj = ResourceManager.GetObject("STATIC_LAVA", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] STATIC_WATER {
+            get {
+                object obj = ResourceManager.GetObject("STATIC_WATER", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         

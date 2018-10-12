@@ -52,7 +52,7 @@ namespace SacredUtils
         [Option(Alias = "EnableArchiveFileCompression", DefaultValue = "true")]
         bool EnableArchiveFileCompression { get; set; }
 
-        [Option(Alias = "EnableHealthCircles", DefaultValue = "false")]
+        [Option(Alias = "EnableHealthCircles", DefaultValue = "true")]
         bool EnableHealthCircles { get; set; }
 
         [Option(Alias = "GameVoiceover", DefaultValue = "based on language")]
@@ -118,14 +118,8 @@ namespace SacredUtils
         [Option(Alias = "ShowUsedMemoryUpdateInterval", DefaultValue = "2")]
         int ShowUsedMemoryUpdateInterval { get; set; }
 
-        [Option(Alias = "UseOldButtonTextures", DefaultValue = "false")]
-        bool UseOldButtonTextures { get; set; }
-
-        [Option(Alias = "UseOldMenuTextures", DefaultValue = "false")]
-        bool UseOldMenuTextures { get; set; }
-
-        [Option(Alias = "UseOldSlotsTextures", DefaultValue = "false")]
-        bool UseOldSlotsTextures { get; set; }
+        [Option(Alias = "UseOldSacredTextures", DefaultValue = "false")]
+        bool UseOldSacredTextures { get; set; }
 
         [Option(Alias = "UseStaticBog", DefaultValue = "false")]
         bool UseStaticBog { get; set; }
