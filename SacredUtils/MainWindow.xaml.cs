@@ -28,16 +28,16 @@ namespace SacredUtils
         public static readonly GraphicsSettingsTwo GraphicsStgTwo = new GraphicsSettingsTwo();
         public static readonly GraphicsSettingsThree GraphicsStgThree = new GraphicsSettingsThree();
         public static readonly GraphicsSettingsFour GraphicsStgFour = new GraphicsSettingsFour();
+        public static readonly UnselectedSettingsPage UnselectedStg = new UnselectedSettingsPage();
         public static modify_settings_one ModifyStgOne = new modify_settings_one();
         public static sound_settings_one SoundStgOne = new sound_settings_one();
-        public static unselected_settings_one UnselectedStgOne = new unselected_settings_one();
         private readonly DispatcherTimer _timer = new DispatcherTimer();
 
         public MainWindow()
         {
             InitializeComponent(); EventSubscribe(); GetPermCheckingMemory();
 
-            SelectSettings(UnselectedStgOne, MenuGpLabel);
+            SelectSettings(UnselectedStg, MenuGpLabel);
 
             if (!CheckAvailabilityInternetConnection.Connect())
             {
@@ -178,7 +178,7 @@ namespace SacredUtils
              
             if (e.Key == toMain)
             {
-                SelectSettings(UnselectedStgOne, MenuGpLabel);
+                SelectSettings(UnselectedStg, MenuGpLabel);
 
                 foreach (StackPanel sp in SettingsGrid.Children.OfType<StackPanel>())
                 {
