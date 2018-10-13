@@ -222,11 +222,11 @@
     <Compile Include="resources\pgs\modify_settings_one.xaml.cs">
       <DependentUpon>modify_settings_one.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\sound_settings_one.xaml.cs">
-      <DependentUpon>sound_settings_one.xaml</DependentUpon>
+    <Compile Include="resources\pgs\SoundSettingsOne.xaml.cs">
+      <DependentUpon>SoundSettingsOne.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\unselected_settings_one.xaml.cs">
-      <DependentUpon>unselected_settings_one.xaml</DependentUpon>
+    <Compile Include="resources\pgs\UnselectedSettingsPage.xaml.cs">
+      <DependentUpon>UnselectedSettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="resources\prp\ApplicationSettingsOneProperty.cs" />
     <Compile Include="resources\prp\ApplicationSettingsTwoProperty.cs" />
@@ -239,6 +239,7 @@
     <Compile Include="resources\prp\GamePlaySettingsOneProperty.cs" />
     <Compile Include="resources\prp\GamePlaySettingsThreeProperty.cs" />
     <Compile Include="resources\prp\GamePlaySettingsTwoProperty.cs" />
+    <Compile Include="resources\prp\GameSoundSettingsOneProperty.cs" />
     <Resource Include="resources\cfg\splashes.txt" />
     <Content Include="resources\lib\WPFSharp.Globalizer.dll" />
     <Content Include="resources\lng\en-US\en-US.xaml">
@@ -343,11 +344,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\sound_settings_one.xaml">
+    <Page Include="resources\pgs\SoundSettingsOne.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\unselected_settings_one.xaml">
+    <Page Include="resources\pgs\UnselectedSettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

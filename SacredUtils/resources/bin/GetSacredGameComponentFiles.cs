@@ -54,7 +54,7 @@ namespace SacredUtils.resources.bin
 
                         wc.DownloadProgressChanged += (s, e) =>
                         {
-                            Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                            Application.Current.Dispatcher.Invoke(DispatcherPriority.Send, new ThreadStart(delegate
                             {
                                 _gameGettingComponentsDialog.GettingComponentLabel.Content = $"{defaultLabelText} {componentName} ({e.ProgressPercentage}%) ...";
                             }));
@@ -62,7 +62,7 @@ namespace SacredUtils.resources.bin
 
                         wc.DownloadFileCompleted += (s, e) =>
                         {
-                            Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                            Application.Current.Dispatcher.Invoke(DispatcherPriority.Send, new ThreadStart(delegate
                             {
                                 _gameGettingComponentsDialog.GettingComponentLabel.Visibility = Visibility.Hidden;
                                 _gameGettingComponentsDialog.UnpackingComponentLabel.Visibility = Visibility.Visible;
@@ -108,7 +108,7 @@ namespace SacredUtils.resources.bin
                     {
                         if (e.EventType == ZipProgressEventType.Extracting_EntryBytesWritten)
                         {
-                            Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                            Application.Current.Dispatcher.Invoke(DispatcherPriority.Send, new ThreadStart(delegate
                             {
                                 _gameGettingComponentsDialog.UnpackingComponentLabel.Content = $"{defaultLabelExtractText} {componentName} ({(int)((e.BytesTransferred * 100) / e.TotalBytesToTransfer)}%) ...";
                             }));
@@ -132,7 +132,7 @@ namespace SacredUtils.resources.bin
 
                 AppLogger.Log.Info($"Extracting sacred game component {componentName} successfully done!");
 
-                Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                Application.Current.Dispatcher.Invoke(DispatcherPriority.Send, new ThreadStart(delegate
                 {
                     _gameGettingComponentsDialog.GetComponentsDialog.IsOpen = false;
                     _gameGettingComponentsDialog.GettingComponentLabel.Content = defaultLabelTextArg;

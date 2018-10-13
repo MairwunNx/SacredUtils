@@ -30,8 +30,8 @@ namespace SacredUtils
         public static readonly GraphicsSettingsFour GraphicsStgFour = new GraphicsSettingsFour();
         public static readonly UnselectedSettingsPage UnselectedStg = new UnselectedSettingsPage();
         public static modify_settings_one ModifyStgOne = new modify_settings_one();
-        public static sound_settings_one SoundStgOne = new sound_settings_one();
-        private readonly DispatcherTimer _timer = new DispatcherTimer();
+        public static readonly SoundSettingsOne SoundStgOne = new SoundSettingsOne();
+        public static readonly DispatcherTimer Timer = new DispatcherTimer();
 
         public MainWindow()
         {
@@ -61,8 +61,8 @@ namespace SacredUtils
             HeaderPanel.MouseDown += DragWindow; CloseBtn.Click += (s, e) => Shutdown();
             MinimizeBtn.Click += (s, e) => WindowState = WindowState.Minimized;
 
-            _timer.Interval = new TimeSpan(0, 0, AppSettings.ApplicationSettings.ShowUsedMemoryUpdateInterval);
-            _timer.Tick += (s, e) => GetCurrentUsedMemory();
+            Timer.Interval = new TimeSpan(0, 0, AppSettings.ApplicationSettings.ShowUsedMemoryUpdateInterval);
+            Timer.Tick += (s, e) => GetCurrentUsedMemory();
 
             Loaded += (sender, args) =>
             {
@@ -118,11 +118,11 @@ namespace SacredUtils
 
             if (AppSettings.ApplicationSettings.ShowUsedMemory)
             {
-                MemoryLbl.Visibility = Visibility.Visible; _timer.Start();
+                MemoryLbl.Visibility = Visibility.Visible; Timer.Start();
             }
             else
             {
-                MemoryLbl.Visibility = Visibility.Hidden; _timer.Stop();
+                MemoryLbl.Visibility = Visibility.Hidden; Timer.Stop();
             }
         }
 

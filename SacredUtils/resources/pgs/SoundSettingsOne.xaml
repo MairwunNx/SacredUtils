@@ -1,11 +1,12 @@
 ﻿<Page
-    x:Class="SacredUtils.resources.pgs.sound_settings_one"
+    x:Class="SacredUtils.resources.pgs.SoundSettingsOne"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:globalizer="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prp="clr-namespace:SacredUtils.resources.prp"
     d:DesignHeight="685"
     d:DesignWidth="886"
     mc:Ignorable="d">
@@ -31,7 +32,9 @@
                     x:Name="SoundTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
-                    Background="{DynamicResource ResourceKey=LabelForegroundBrush}" />
+                    d:DataContext="{d:DesignInstance prp:GameSoundSettingsOneProperty}"
+                    Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    IsChecked="{Binding Path=Sound}" />
             </Grid>
         </Border>
 
@@ -57,9 +60,11 @@
                     Height="27"
                     Margin="625,5,15,0"
                     VerticalAlignment="Top"
+                    d:DataContext="{d:DesignInstance prp:GameSoundSettingsOneProperty}"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}">
+                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
+                    SelectedIndex="{Binding Path=SoundQuality}">
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0099}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0100}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0101}" />
@@ -89,9 +94,11 @@
                     Height="27"
                     Margin="625,5,15,0"
                     VerticalAlignment="Top"
+                    d:DataContext="{d:DesignInstance prp:GameSoundSettingsOneProperty}"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}">
+                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
+                    SelectedIndex="{Binding Path=GameVoiceover}">
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0103}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0104}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0105}" />
@@ -123,11 +130,13 @@
                     Margin="618,-25,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    d:DataContext="{d:DesignInstance prp:GameSoundSettingsOneProperty}"
                     BorderBrush="#00FF0000"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Maximum="128"
-                    Style="{StaticResource MaterialDesignDiscreteSlider}">
+                    Style="{StaticResource MaterialDesignDiscreteSlider}"
+                    Value="{Binding Path=MusicVolume}">
                     <Slider.Resources>
                         <!--  ReSharper disable once Xaml.RedundantResource  -->
                         <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="#FF535353" />
@@ -159,11 +168,13 @@
                     Margin="618,-25,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    d:DataContext="{d:DesignInstance prp:GameSoundSettingsOneProperty}"
                     BorderBrush="#00FF0000"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Maximum="128"
-                    Style="{StaticResource MaterialDesignDiscreteSlider}">
+                    Style="{StaticResource MaterialDesignDiscreteSlider}"
+                    Value="{Binding Path=SfxVolume}">
                     <Slider.Resources>
                         <!--  ReSharper disable once Xaml.RedundantResource  -->
                         <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="#FF535353" />
@@ -195,11 +206,13 @@
                     Margin="618,-25,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
+                    d:DataContext="{d:DesignInstance prp:GameSoundSettingsOneProperty}"
                     BorderBrush="#00FF0000"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Maximum="128"
-                    Style="{StaticResource MaterialDesignDiscreteSlider}">
+                    Style="{StaticResource MaterialDesignDiscreteSlider}"
+                    Value="{Binding Path=VoiceVolume}">
                     <Slider.Resources>
                         <!--  ReSharper disable once Xaml.RedundantResource  -->
                         <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="#FF535353" />

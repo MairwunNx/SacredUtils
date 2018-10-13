@@ -9,7 +9,7 @@ namespace SacredUtils.resources.pgs
         {
             InitializeComponent(); DataContext = new GameGraphicsSettingsTwoProperty();
 
-            AppLogger.Log.Info("Initialization components for graphics settings one done!");
+            AppLogger.Log.Info("Initialization components for graphics settings two done!");
         }
 
         private void ToOnePageBtn_Click(object sender, RoutedEventArgs e)
