@@ -103,11 +103,17 @@ namespace SacredUtils
         [Option(Alias = "RemoveTempContent", DefaultValue = "true")]
         bool RemoveTempContent { get; set; }
 
+        [Option(Alias = "Sacred229PatchInstalled", DefaultValue = "false")]
+        bool Sacred229PatchInstalled { get; set; }
+
         [Option(Alias = "SacredStartArgs", DefaultValue = 1)]
         int SacredStartArgs { get; set; }
 
         [Option(Alias = "SacredUtilsGuiScale", DefaultValue = "1.0")]
         double SacredUtilsGuiScale { get; set; }
+
+        [Option(Alias = "ServerMultiCoreFixInstalled", DefaultValue = "false")]
+        bool ServerMultiCoreFixInstalled { get; set; }
 
         [Option(Alias = "ShowChangeLog", DefaultValue = "true")]
         bool ShowChangeLog { get; set; }
@@ -129,6 +135,9 @@ namespace SacredUtils
 
         [Option(Alias = "UseStaticWater", DefaultValue = "false")]
         bool UseStaticWater { get; set; }
+
+        [Option(Alias = "VeteranModUfoInstalled", DefaultValue = "false")]
+        bool VeteranModUfoInstalled { get; set; }
 
         [Option(Alias = "WhatIsThisDoingHere", DefaultValue = "true")]
         bool WhatIsThisDoingHere { get; set; }

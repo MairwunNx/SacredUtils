@@ -29,7 +29,7 @@ namespace SacredUtils
         public static readonly GraphicsSettingsThree GraphicsStgThree = new GraphicsSettingsThree();
         public static readonly GraphicsSettingsFour GraphicsStgFour = new GraphicsSettingsFour();
         public static readonly UnselectedSettingsPage UnselectedStg = new UnselectedSettingsPage();
-        public static modify_settings_one ModifyStgOne = new modify_settings_one();
+        public static readonly ModifyPageSettingsOne ModifyStgOne = new ModifyPageSettingsOne();
         public static readonly SoundSettingsOne SoundStgOne = new SoundSettingsOne();
         public static readonly DispatcherTimer Timer = new DispatcherTimer();
 

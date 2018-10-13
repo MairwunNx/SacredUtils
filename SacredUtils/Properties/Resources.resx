@@ -124,17 +124,11 @@
   <data name="mnxupdater" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\opt\mnxupdater.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="SacredBalanceDragonFix" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\opt\SacredBalanceDragonFix.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="SacredBalanceVanilla" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\opt\SacredBalanceVanilla.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="SacredBalanceVeteran" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\opt\SacredBalanceVeteran.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="SacredCreatureDragonFix" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\opt\SacredCreatureDragonFix.pak;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="SacredCreatureVanilla" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\opt\SacredCreatureVanilla.pak;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -189,5 +183,23 @@
   </data>
   <data name="STATIC_WATER" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\grs\STATIC WATER.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="BalanceEditor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\mdf\BalanceEditor.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CreatureEditor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\mdf\CreatureEditor.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HeroEditor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\mdf\HeroEditor.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HeroResetter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\mdf\HeroResetter.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HotkeyEditor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\mdf\HotkeyEditor.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WeaponEditor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\mdf\WeaponEditor.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

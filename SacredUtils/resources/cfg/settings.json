@@ -32,8 +32,10 @@
   "MaxGameBackupFiles": "10",
   "NLogConfigFileCreate": "false",
   "RemoveTempContent": "true",
+  "Sacred229PatchInstalled": "false",
   "SacredStartArgs": "1",
   "SacredUtilsGuiScale": "1.0",
+  "ServerMultiCoreFixInstalled": "false",
   "ShowChangeLog": "true",
   "ShowUsedMemory": "false",
   "ShowUsedMemoryUpdateInterval": "2",
@@ -41,5 +43,6 @@
   "UseStaticBog": "false",
   "UseStaticLava": "false",
   "UseStaticWater": "false",
+  "VeteranModUfoInstalled": "false",
   "WhatIsThisDoingHere": "true"
 }

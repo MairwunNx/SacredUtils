@@ -115,14 +115,14 @@
     <sys:String x:Key="String0087">Страница 4 / 4</sys:String>
 
     <!--  Modify settings one  -->
-    <sys:String x:Key="String0088">Генератор ника с поддержкой цветов</sys:String>
-    <sys:String x:Key="String0089">Veteran-mod by UFO</sys:String>
-    <sys:String x:Key="String0090">Veteran-mod DragonFix by mnx</sys:String>
-    <sys:String x:Key="String0091">Обновление Sacred до 2.29.14</sys:String>
-    <sys:String x:Key="String0092">Изменить хоткеи игры</sys:String>
-    <sys:String x:Key="String0093">Декомпилировать global.res</sys:String>
-    <sys:String x:Key="String0094">Скомпилировать global.res</sys:String>
-    <sys:String x:Key="String0095">Проверить компоненты игры на целостность</sys:String>
+    <sys:String x:Key="String0088">Установить VeteranMod by Ufo</sys:String>
+    <sys:String x:Key="String0089">Удалить VeteranMod by Ufo</sys:String>
+    <sys:String x:Key="String0090">Установить 2.29.14 Sacred патч</sys:String>
+    <sys:String x:Key="String0091">Удалить 2.29.14 Sacred патч</sys:String>
+    <sys:String x:Key="String0092">Установить Server MultiCore Fix</sys:String>
+    <sys:String x:Key="String0093">Удалить Server MultiCore Fix</sys:String>
+    <sys:String x:Key="String0094">Распаковать global.res файл</sys:String>
+    <sys:String x:Key="String0095">Распаковать текстуры игры</sys:String>
     <sys:String x:Key="String0096">Страница 1 / 1</sys:String>
 
     <!--  Sound settings one  -->
@@ -193,5 +193,21 @@
 
     <!--  Select donate dialog  -->
     <sys:String x:Key="String0143">Выбор кошелька</sys:String>
+
+    <!--  Modify settings one (2)  -->
+    <sys:String x:Key="String0144">Упаковать global.res файл</sys:String>
+    <sys:String x:Key="String0145">Редактировать balance.bin (External)</sys:String>
+    <sys:String x:Key="String0146">Редактировать creature.pak (External)</sys:String>
+    <sys:String x:Key="String0147">Редактировать weapon.pak (External)</sys:String>
+    <sys:String x:Key="String0148">Запустить SacredHeroResetter</sys:String>
+    <sys:String x:Key="String0149">Запустить SacredHotkeyTweaker</sys:String>
+    <sys:String x:Key="String0150">Запустить SacredHeroEditor</sys:String>
+    <sys:String x:Key="String0151">Запустить проверку целостности компонентов игры</sys:String>
+    <sys:String x:Key="String0152">Запустить конвертер из HTML цветов в Sacred цвета</sys:String>
+
+    <!--  Convert colors dialog  -->
+    <sys:String x:Key="String0153">Создание цветного ника</sys:String>
+    <sys:String x:Key="String0154">Выбрать цвет</sys:String>
+    <sys:String x:Key="String0155">Скопировать ник</sys:String>
 
 </Globalization:GlobalizationResourceDictionary>

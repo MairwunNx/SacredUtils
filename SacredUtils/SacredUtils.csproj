@@ -97,6 +97,7 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -162,6 +163,9 @@
     <Compile Include="resources\bin\GetApplicationThemeValue.cs" />
     <Compile Include="resources\bin\GetSacredGameComponentFiles.cs" />
     <Compile Include="resources\bin\PrintToLogBaseApplicationInfo.cs" />
+    <Compile Include="resources\dlg\ApplicationConverHtmlToSacred.xaml.cs">
+      <DependentUpon>ApplicationConverHtmlToSacred.xaml</DependentUpon>
+    </Compile>
     <Compile Include="resources\dlg\ApplicationDonateSelectDialog.xaml.cs">
       <DependentUpon>ApplicationDonateSelectDialog.xaml</DependentUpon>
     </Compile>
@@ -219,8 +223,8 @@
     <Compile Include="resources\pgs\GraphicsSettingsTwo.xaml.cs">
       <DependentUpon>GraphicsSettingsTwo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\modify_settings_one.xaml.cs">
-      <DependentUpon>modify_settings_one.xaml</DependentUpon>
+    <Compile Include="resources\pgs\ModifyPageSettingsOne.xaml.cs">
+      <DependentUpon>ModifyPageSettingsOne.xaml</DependentUpon>
     </Compile>
     <Compile Include="resources\pgs\SoundSettingsOne.xaml.cs">
       <DependentUpon>SoundSettingsOne.xaml</DependentUpon>
@@ -263,6 +267,10 @@
     <Page Include="Properties\DesignTimeResources.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="resources\dlg\ApplicationConverHtmlToSacred.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="resources\dlg\ApplicationDonateSelectDialog.xaml">
       <SubType>Designer</SubType>
@@ -340,7 +348,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\modify_settings_one.xaml">
+    <Page Include="resources\pgs\ModifyPageSettingsOne.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -381,10 +389,14 @@
     <None Include="resources\grs\STATIC BOG.zip" />
     <None Include="resources\grs\STATIC LAVA.zip" />
     <None Include="resources\grs\STATIC WATER.zip" />
-    <None Include="resources\opt\SacredBalanceDragonFix.bin" />
+    <None Include="resources\mdf\BalanceEditor.zip" />
+    <None Include="resources\mdf\CreatureEditor.zip" />
+    <None Include="resources\mdf\HeroEditor.zip" />
+    <None Include="resources\mdf\HeroResetter.zip" />
+    <None Include="resources\mdf\HotkeyEditor.zip" />
+    <None Include="resources\mdf\WeaponEditor.zip" />
     <None Include="resources\opt\SacredBalanceVanilla.bin" />
     <None Include="resources\opt\SacredBalanceVeteran.bin" />
-    <None Include="resources\opt\SacredCreatureDragonFix.pak" />
     <None Include="resources\opt\SacredCreatureVanilla.pak" />
     <None Include="resources\opt\SacredCreatureVeteran.pak" />
     <Resource Include="AppLicense.txt" />

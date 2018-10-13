@@ -169,7 +169,6 @@
             CornerRadius="3">
             <Grid>
                 <TextBlock
-                    Margin="15,12,65,12"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"

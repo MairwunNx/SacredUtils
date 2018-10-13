@@ -73,6 +73,26 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        public static byte[] BalanceEditor {
+            get {
+                object obj = ResourceManager.GetObject("BalanceEditor", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] CreatureEditor {
+            get {
+                object obj = ResourceManager.GetObject("CreatureEditor", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         public static byte[] Dark {
             get {
                 object obj = ResourceManager.GetObject("Dark", resourceCulture);
@@ -123,6 +143,36 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        public static byte[] HeroEditor {
+            get {
+                object obj = ResourceManager.GetObject("HeroEditor", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] HeroResetter {
+            get {
+                object obj = ResourceManager.GetObject("HeroResetter", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] HotkeyEditor {
+            get {
+                object obj = ResourceManager.GetObject("HotkeyEditor", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         public static byte[] Light {
             get {
                 object obj = ResourceManager.GetObject("Light", resourceCulture);
@@ -163,16 +213,6 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        public static byte[] SacredBalanceDragonFix {
-            get {
-                object obj = ResourceManager.GetObject("SacredBalanceDragonFix", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
         public static byte[] SacredBalanceVanilla {
             get {
                 object obj = ResourceManager.GetObject("SacredBalanceVanilla", resourceCulture);
@@ -186,16 +226,6 @@ namespace SacredUtils.Properties {
         public static byte[] SacredBalanceVeteran {
             get {
                 object obj = ResourceManager.GetObject("SacredBalanceVeteran", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        public static byte[] SacredCreatureDragonFix {
-            get {
-                object obj = ResourceManager.GetObject("SacredCreatureDragonFix", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -300,6 +330,16 @@ namespace SacredUtils.Properties {
         public static byte[] STATIC_WATER {
             get {
                 object obj = ResourceManager.GetObject("STATIC_WATER", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] WeaponEditor {
+            get {
+                object obj = ResourceManager.GetObject("WeaponEditor", resourceCulture);
                 return ((byte[])(obj));
             }
         }
