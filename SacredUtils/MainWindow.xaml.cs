@@ -266,5 +266,10 @@ namespace SacredUtils
 
             applicationLicenseDialog.LicenseDialog.IsOpen = true;
         }
+
+        private void MenuPlLabel_Click(object sender, RoutedEventArgs e)
+        {
+            if (File.Exists("Sacred.exe")) { Process.Start("Sacred.exe"); }
+        }
     }
 }

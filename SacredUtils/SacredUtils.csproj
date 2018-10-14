@@ -126,6 +126,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="resources\arr\ArraySacredGameComponentFiles.cs" />
     <Compile Include="resources\arr\ArraySacredGameFootStepsFiles.cs" />
     <Compile Include="resources\arr\ArraySacredGameHealthFiles.cs" />
     <Compile Include="resources\arr\ArraySacredGameLavaFilesA.cs" />
@@ -245,6 +246,8 @@
     <Compile Include="resources\prp\GamePlaySettingsTwoProperty.cs" />
     <Compile Include="resources\prp\GameSoundSettingsOneProperty.cs" />
     <Resource Include="resources\cfg\splashes.txt" />
+    <Resource Include="resources\cfg\ch.files.txt" />
+    <Resource Include="resources\cfg\ch.hash.txt" />
     <Content Include="resources\lib\WPFSharp.Globalizer.dll" />
     <Content Include="resources\lng\en-US\en-US.xaml">
       <SubType>Designer</SubType>

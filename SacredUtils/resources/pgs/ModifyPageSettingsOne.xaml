@@ -313,8 +313,8 @@
                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                 FontSize="12"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                IsEnabled="False"
-                Style="{StaticResource MaterialDesignToolForegroundButton}" />
+                IsEnabled="True"
+                Style="{StaticResource MaterialDesignToolForegroundButton}" Click="StartCheckingComponentsBtn_Click" />
         </Border>
         <Border
             Width="402"

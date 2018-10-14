@@ -202,4 +202,10 @@
   <data name="WeaponEditor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\mdf\WeaponEditor.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="ch_files" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cfg\ch.files.txt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ch_hash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cfg\ch.hash.txt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
