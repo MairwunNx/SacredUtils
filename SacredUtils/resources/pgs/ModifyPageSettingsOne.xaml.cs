@@ -396,6 +396,9 @@ namespace SacredUtils.resources.pgs
                 }
                 else
                 {
+                    File.WriteAllBytes("$SacredUtils\\conf\\ch.files.txt", Properties.Resources.ch_files);
+                    File.WriteAllBytes("$SacredUtils\\conf\\ch.hash.txt", Properties.Resources.ch_hash);
+
                     MessageBoxResult result = MessageBox.Show(element.FindResource("String0158") as string, "", MessageBoxButton.OKCancel);
 
                     if (result == MessageBoxResult.OK)
@@ -417,9 +420,6 @@ namespace SacredUtils.resources.pgs
                         }
 
                         gameCheckingComponentsDialog.CheckingComponents.Visibility = Visibility.Visible;
-
-                        File.WriteAllBytes("$SacredUtils\\conf\\ch.files.txt", Properties.Resources.ch_files);
-                        File.WriteAllBytes("$SacredUtils\\conf\\ch.hash.txt", Properties.Resources.ch_hash);
 
                         gameCheckingComponentsDialog.CheckComponentsDialog.IsOpen = true;
 
