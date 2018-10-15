@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Security.Cryptography;
 using System.Threading;
@@ -18,7 +17,6 @@ namespace SacredUtils.resources.dlg
         public List<string> LinksFilesList = new List<string>();
         public List<string> DownloadNeedFilesList = new List<string>();
         public List<string> HashesFilesList = new List<string>();
-        public List<string> OriginalHashesList = new List<string>(File.ReadAllLines("$SacredUtils\\conf\\ch.hash.txt"));
         public List<string> BreakedFilesList = new List<string>();
         public List<string> RepairedFilesList = new List<string>();
         public List<string> WholeFilesList = new List<string>();
@@ -78,9 +76,15 @@ namespace SacredUtils.resources.dlg
 
                     AppLogger.Log.Info("===================== COMPARE MD5 FILES ====================");
 
+                    WebClient wc = new WebClient();
+
+                    string sw =
+                        wc.DownloadString(
+                            "https://drive.google.com/uc?export=download&id=1k1DUXNHcnRqh03IJGCYfQ4zP6EbgyPAh");
+
                     for (int i = 0; i < HashesFilesList.Count; i++)
                     {
-                        if (!OriginalHashesList.ToArray().Contains(HashesFilesList[i]))
+                        if (!sw.Substring(sw.IndexOf("\n", StringComparison.Ordinal)).Contains(HashesFilesList[i]))
                         {
                             AppLogger.Log.Warn($"Component {FindedFilesList.ToArray()[i]} has different md5 ({HashesFilesList[i]}) hash!");
 

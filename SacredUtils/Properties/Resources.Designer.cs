@@ -93,16 +93,6 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        public static byte[] ch_hash {
-            get {
-                object obj = ResourceManager.GetObject("ch_hash", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
         public static byte[] CreatureEditor {
             get {
                 object obj = ResourceManager.GetObject("CreatureEditor", resourceCulture);
