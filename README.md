@@ -1,7 +1,7 @@
 # SacredUtils
-A simple and beautiful configurator for Sacred and Sacred Underworld, with using the Material Design.
+A powerful and beautiful configurator for Sacred and Sacred Underworld, with using the Material Design.
 
-![Alt text](images/SacredUtils_HomeScreen.png "SacredUtils home screen.")
+![Alt text](images/SacredUtils_MainPage.png "SacredUtils main page.")
 
 # Features
 
@@ -15,17 +15,26 @@ A simple and beautiful configurator for Sacred and Sacred Underworld, with using
  * Installing voiceovers (ru, en, de, sp) and gui languages (ru, en, de, sp, fr), and gameserver multicore fix!
  * Installing veteran mod and veteran mod dragon fix (by UFO or thourium).
  * Installing 2.29.14 and 2.28.01 patches on Sacred Underworld!
+ * Running balance.bin and creature.pak and weapon.pak editors!
+ * Running Sacred Hero editor, Sacred Hotkey Tweaker, Sacred Hero Resetter!
+ * Possibility automatic creating colored nicknames! For one second!
  * Working with global.res files (e.g decompiling and compiling global.res).
  * Settings generation, auto generate settings.cfg if there is no file.
- * Is multilanguage! SacredUtils support: ru, en, de languages. (en and de semi-machine translation).
- * This is a power of attorney! Check the components of the Sacred Underworld (only 2.24 - 2.29.14) for integrity (Rv5).
+ * Is multilanguage! SacredUtils support: ru, en languages. (en semi-machine translation).
+ * Check the components of the Sacred Underworld (only 2.28 - 2.29.14) for integrity!
+ * Enabling or disabling func "Water animation" without set low graphics!
+ * Enabling or disabling func "bog animation", "lava animation", "player footprints".
+ * Restoring old Sacred interface, all likes a lot, I think so.
 
 # Downloads
 
- * Download the source and run the SacredUtils (compiling source requires VS2017+ and .NET 4.7.2+ and C# 7.2).
+ * Download the source and run the SacredUtils (compiling source requires VS2017+ and .NET 4.7.2+ and C# 7.3).
  * Download a pre-compiled SacredUtils from the [releases](https://github.com/MairwunNx/SacredUtils/releases) page.
  * Download latest version from google drive [Release](https://drive.google.com/file/d/1sDiiIYW0_JXMqh6IAHMOyf3IKPySCr4Q/view) type or [Alpha](https://drive.google.com/file/d/1xZzaj0v41S7nkSXkn4GWoDTkBtzeRc2Y/view) type.
- * Download latest [design-preview](https://drive.google.com/file/d/1HOQdDpvEDiESwlYc-gbNzPWhTs7ktrR-/view) version, only for design testers.
+ 
+# Change Log
+
+ * See SacredUtils change log [here](https://github.com/MairwunNx/SacredUtils/blob/master/CHANGELOG.md) (latest version above change log page).
 
 # Want to say thanks?
 
@@ -36,62 +45,32 @@ A simple and beautiful configurator for Sacred and Sacred Underworld, with using
 # Special thanks
 
  * Special thanks to Sha**no*us for testing for errors and bugs and design work test!
+ * Special thanks to Keboo for beautiful Material Design library and for help with code!
  * Special thanks to Resharper for the free student license! Use this wonderful product!
-
-# Tools
-
- * I use these awesome tools to build and develop SacredUtils.
-
- <div>
-   <a href="http://materialdesigninxaml.net/">
-     <img alt="Material Design In Xaml" width="128" heigth="128" src="./images/materialdesigninxaml.png">
-   </a>
-   <a href="https://www.jetbrains.com/resharper/">
-     <img alt="Resharper" width="128" heigth="128" hspace="40" src="./images/resharper.png">
-   </a>
- </div>
 
 # In future
 
- * New updated simple and fast and beautiful ui design with material design components. (In Rv5).
- * Enabling or disabling func "Water animation" without set low graphics. (In Rv5).
- * Enabling or disabling func "bog animation", "lava animation", "player footprints". (In Rv5).
  * Install hotkeys, change hotkeys, and complete management of the keys in Sacred and Sacred Underworld. (In Rv5).
- * Check the components of the Sacred Underworld (only 2.24 - 2.29.14) for integrity. (In Rv5).
  * Better printscreen func for Sacred and SacredUnderworld (Support .PNG and .JPG and 4k res). (In Rv5).
 
 # Screenshots
 
-![Alt text](images/SacredUtils_LoadingScreen.png "SacredUtils loading screen")
+![Alt text](images/SacredUtils_SampleScreen01.png)
 
-![Alt text](images/SacredUtils_Graphics01.png "SacredUtils graphics settings")
+![Alt text](images/SacredUtils_SampleScreen02.png)
 
-![Alt text](images/SacredUtils_Graphics02.png "SacredUtils graphics settings")
+![Alt text](images/SacredUtils_SampleScreen03.png)
 
-![Alt text](images/SacredUtils_Sound.png "SacredUtils sound settings")
+![Alt text](images/SacredUtils_SampleScreen04.png)
 
-![Alt text](images/SacredUtils_Network01.png "SacredUtils network settings")
+![Alt text](images/SacredUtils_SampleScreen05.png)
 
-![Alt text](images/SacredUtils_Network02.png "SacredUtils network settings")
+![Alt text](images/SacredUtils_SampleScreen06.png)
 
-![Alt text](images/SacredUtils_Chat.png "SacredUtils chat settings")
+![Alt text](images/SacredUtils_SampleScreen07.png)
 
-![Alt text](images/SacredUtils_Game01.png "SacredUtils game settings")
+![Alt text](images/SacredUtils_SampleScreen08.png)
 
-![Alt text](images/SacredUtils_Game02.png "SacredUtils game settings")
+![Alt text](images/SacredUtils_SampleScreen09.png)
 
-![Alt text](images/SacredUtils_Fonts.png "SacredUtils fonts settings")
-
-![Alt text](images/SacredUtils_Other.png "SacredUtils other settings")
-
-![Alt text](images/SacredUtils_Modding.png "SacredUtils modding screen")
-
-![Alt text](images/SacredUtils_Settings.png "SacredUtils settings screen")
-
-![Alt text](images/SacredUtils_About.png "SacredUtils about screen")
-
-![Alt text](images/SacredUtils_ColorPicker.png "SacredUtils colorpicker screen")
-
-![Alt text](images/SacredUtils_UpdateScreen.png "SacredUtils update screen")
-
-![Alt text](images/SacredUtils_Components.png "SacredUtils components install screen")
+![Alt text](images/SacredUtils_SampleScreen10.png)
