@@ -1,6 +1,5 @@
 {
   "AcceptLicense": "false",
-  "AllowExperimentalScale": "false",
   "AppUiLanguage": "based on system",
   "ArchiveOldFileOnStartup": "true",
   "CheckAutoAlphaUpdate": "false",
@@ -8,7 +7,6 @@
   "CloseDonateDialogAfterSelect": "true",
   "ClosePageDialogAfterSelect": "true",
   "ColorTheme": "light",
-  "ConfigFileCreate": "false",
   "DebugFileCreate": "false",
   "DisableCachingGameComponents": "false",
   "DisableFootSteps": "false",
@@ -30,7 +28,6 @@
   "MaxApplicationBackupFiles": "10",
   "MaxArchiveFiles": "10",
   "MaxGameBackupFiles": "10",
-  "NLogConfigFileCreate": "false",
   "RemoveTempContent": "true",
   "Sacred229PatchInstalled": "false",
   "SacredStartArgs": "1",

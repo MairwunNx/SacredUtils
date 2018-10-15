@@ -7,9 +7,6 @@ namespace SacredUtils
         [Option(Alias = "AcceptLicense", DefaultValue = "false")]
         bool AcceptLicense { get; set; }
 
-        [Option(Alias = "AllowExperimentalScale", DefaultValue = "false")]
-        bool AllowExperimentalScale { get; set; }
-
         [Option(Alias = "AppUiLanguage", DefaultValue = "based on system")]
         string AppUiLanguage { get; set; }
 
@@ -30,9 +27,6 @@ namespace SacredUtils
 
         [Option(Alias = "ColorTheme", DefaultValue = "light")]
         string ColorTheme { get; set; }
-
-        [Option(Alias = "ConfigFileCreate", DefaultValue = "false")]
-        bool ConfigFileCreate { get; set; }
 
         [Option(Alias = "DebugFileCreate", DefaultValue = "false")]
         bool DebugFileCreate { get; set; }
@@ -96,9 +90,6 @@ namespace SacredUtils
 
         [Option(Alias = "MaxGameBackupFiles", DefaultValue = "10")]
         int MaxGameBackupFiles { get; set; }
-
-        [Option(Alias = "NLogConfigFileCreate", DefaultValue = "false")]
-        bool NLogConfigFileCreate { get; set; }
 
         [Option(Alias = "RemoveTempContent", DefaultValue = "true")]
         bool RemoveTempContent { get; set; }

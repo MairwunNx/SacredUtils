@@ -155,6 +155,7 @@
     <Compile Include="AppSummary.cs" />
     <Compile Include="resources\bin\CreateApplicationLanguageFiles.cs" />
     <Compile Include="resources\bin\CreateApplicationThemeFiles.cs" />
+    <Compile Include="resources\bin\GetCurrentMachineHardwareID.cs" />
     <Compile Include="resources\bin\GetRequiredApplicationFiles.cs" />
     <Compile Include="resources\bin\GetApplicationGlobalizerLibrary.cs" />
     <Compile Include="resources\bin\GetApplicationLanguageValue.cs" />

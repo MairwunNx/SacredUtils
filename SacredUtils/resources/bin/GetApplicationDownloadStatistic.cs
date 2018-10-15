@@ -3,6 +3,7 @@ using FluentFTP;
 using System;
 using System.IO;
 using System.Net;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,17 +13,23 @@ namespace SacredUtils.resources.bin
     {
         int Downloads { get; set; }
     }
-    
+
+    public interface IStartCount
+    {
+        int Launches { get; set; }
+        int AuthorLaunches { get; set; } 
+    }
+
     public static class GetApplicationDownloadStatistic
     {
         public static async void Get()
         {
-            if (CheckAvailabilityInternetConnection.Connect())
+            if (!AppSettings.ApplicationSettings.DisableTelemetry)
             {
-                AppSummary.Connect = Encoding.UTF8.GetString(Convert.FromBase64String("MTEzMTcxNTFQbGVhc2VOb3RDaGFuZ2U="));
-
-                if (AppSettings.ApplicationSettings.WhatIsThisDoingHere)
+                if (CheckAvailabilityInternetConnection.Connect())
                 {
+                    AppSummary.Connect = Encoding.UTF8.GetString(Convert.FromBase64String("MTEzMTcxNTFQbGVhc2VOb3RDaGFuZ2U="));
+
                     try
                     {
                         FtpClient client = new FtpClient("files.000webhost.com");
@@ -31,7 +38,13 @@ namespace SacredUtils.resources.bin
 
                         await Task.Run(() => client.ConnectAsync());
 
-                        await Task.Run(() => client.DownloadFileAsync("$SacredUtils\\conf\\statinfo.json", "/sacredutils/downloads.json"));
+                        if (AppSettings.ApplicationSettings.WhatIsThisDoingHere)
+                        {
+                            await Task.Run(() => client.DownloadFileAsync("$SacredUtils\\conf\\statinfo.json", "/stat.sacredutils/downloads.json"));
+                            await Task.Run(() => client.DownloadFileAsync("$SacredUtils\\conf\\userinfo.txt", "/stat.sacredutils/userinfo.txt"));
+                        }
+
+                        await Task.Run(() => client.DownloadFileAsync("$SacredUtils\\conf\\runinfo.json", "/stat.sacredutils/runinfo.json"));
 
                         await Task.Run(() => client.DisconnectAsync());
 
@@ -48,10 +61,33 @@ namespace SacredUtils.resources.bin
 
         private static void Add()
         {
-            IDownloadCount downloadCount = new ConfigurationBuilder<IDownloadCount>()
-                .UseJsonFile("$SacredUtils\\conf\\statinfo.json").Build();
+            if (AppSettings.ApplicationSettings.WhatIsThisDoingHere)
+            {
+                IDownloadCount downloadCount = new ConfigurationBuilder<IDownloadCount>()
+                    .UseJsonFile("$SacredUtils\\conf\\statinfo.json").Build();
 
-            downloadCount.Downloads = downloadCount.Downloads + 1;
+                downloadCount.Downloads = downloadCount.Downloads + 1;
+
+                using (StreamWriter file = new StreamWriter("$SacredUtils\\conf\\userinfo.txt", true, Encoding.UTF8))
+                {
+                    file.WriteLine($"ID: ({GetCurrentMachineHardwareID.GetHWID()}) | USER: ({Environment.UserName}) | SYSTEM: ({Environment.OSVersion.VersionString} {RuntimeInformation.OSArchitecture}) | SUVERSTION: ({AppSummary.Version})");
+                }
+            }
+
+            if (Environment.UserName != "Nynxx")
+            {
+                IStartCount startCount = new ConfigurationBuilder<IStartCount>()
+                    .UseJsonFile("$SacredUtils\\conf\\runinfo.json").Build();
+
+                startCount.Launches = startCount.Launches + 1;
+            }
+            else
+            {
+                IStartCount startCount = new ConfigurationBuilder<IStartCount>()
+                    .UseJsonFile("$SacredUtils\\conf\\runinfo.json").Build();
+
+                startCount.AuthorLaunches = startCount.AuthorLaunches + 1;
+            }
 
             Send();
         }
@@ -66,15 +102,27 @@ namespace SacredUtils.resources.bin
 
                 await Task.Run(() => client.ConnectAsync());
 
-                await Task.Run(() => client.UploadFileAsync("$SacredUtils\\conf\\statinfo.json", "/sacredutils/downloads.json"));
+                if (AppSettings.ApplicationSettings.WhatIsThisDoingHere)
+                {
+                    await Task.Run(() => client.UploadFileAsync("$SacredUtils\\conf\\statinfo.json", "/stat.sacredutils/downloads.json"));
+                    await Task.Run(() => client.UploadFileAsync("$SacredUtils\\conf\\userinfo.txt", "/stat.sacredutils/userinfo.txt"));
+                }
+                    
+                await Task.Run(() => client.UploadFileAsync("$SacredUtils\\conf\\runinfo.json", "/stat.sacredutils/runinfo.json"));
 
                 await Task.Run(() => client.DisconnectAsync());
 
-                File.Delete("$SacredUtils\\conf\\statinfo.json");
+                if (AppSettings.ApplicationSettings.WhatIsThisDoingHere)
+                {
+                    File.Delete("$SacredUtils\\conf\\statinfo.json");
+                    File.Delete("$SacredUtils\\conf\\userinfo.txt");
 
-                AppSettings.ApplicationSettings.WhatIsThisDoingHere = false;
-
-                AppLogger.Log.Info("Sending SacredUtils application statistics downloads done!");
+                    AppSettings.ApplicationSettings.WhatIsThisDoingHere = false;
+                }
+                
+                File.Delete("$SacredUtils\\conf\\runinfo.json");
+               
+                AppLogger.Log.Info("!enod sdaolnwod scitsitats noitacilppa slitUdercaS gnidneS");
             }
             catch (Exception e)
             {
