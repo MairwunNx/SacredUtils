@@ -235,12 +235,13 @@
                                 Height="40"
                                 HorizontalContentAlignment="Left"
                                 VerticalContentAlignment="Center"
+                                Click="MenuPlLabel_Click"
                                 ClipToBounds="True"
                                 Content="{globalizer:GlobalizedResource String0119}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}"
-                                Style="{StaticResource MaterialDesignToolForegroundButton}" Click="MenuPlLabel_Click" />
+                                Style="{StaticResource MaterialDesignToolForegroundButton}" />
                         </StackPanel>
 
                         <StackPanel

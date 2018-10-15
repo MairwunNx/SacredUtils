@@ -215,4 +215,12 @@
     <sys:String x:Key="String0157">Невозможно получить данные о версии игры! Скорее всего в папке нет файла Sacred.exe.</sys:String>
     <sys:String x:Key="String0158">После нажатия на ок, будет выполнятся проверка компонентов, она может занять значительное время, если будут найдены поврежденные компоненты. Целостность вычисляется по md5 хеш-сумме.</sys:String>
 
+    <!--  Sacred start params dialog  -->
+    <sys:String x:Key="String0159">Параметры запуска Sacred</sys:String>
+    <sys:String x:Key="String0160">Выберите нужные параметры и запустите игру</sys:String>
+    <sys:String x:Key="String0161">Запустить Sacred с аргументом CHEATS=1</sys:String>
+    <sys:String x:Key="String0162">Сменить язык раскладки на английский (en-US)</sys:String>
+    <sys:String x:Key="String0163">Запустить игру</sys:String>
+    <sys:String x:Key="String0164">Отменить запуск</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>

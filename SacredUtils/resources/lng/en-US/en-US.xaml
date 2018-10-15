@@ -215,4 +215,12 @@
     <sys:String x:Key="String0157">Unable to get game version data! Most likely there is no file in the folder Sacred.exe.</sys:String>
     <sys:String x:Key="String0158">After selecting on ok, components will be checked, it may take a long time if damaged components are found. Integrity is calculated from the md5 hash sum.</sys:String>
 
+    <!--  Sacred start params dialog  -->
+    <sys:String x:Key="String0159">Sacred start params</sys:String>
+    <sys:String x:Key="String0160">Select the desired options and run the game</sys:String>
+    <sys:String x:Key="String0161">Launch sacred with argument CHEATS=1</sys:String>
+    <sys:String x:Key="String0162">Change the keyboard language to English (for russia)</sys:String>
+    <sys:String x:Key="String0163">Launch game</sys:String>
+    <sys:String x:Key="String0164">Cancel launch</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>

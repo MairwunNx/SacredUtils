@@ -76,6 +76,8 @@ namespace SacredUtils
                 });
 
                 OpenChangeLogDialog(); SetRandomSplash();
+
+                if (!CheckAvailabilityInternetConnection.Connect()) { NoConnectImage.Visibility = Visibility.Visible; }
             };
         }
 
@@ -269,7 +271,17 @@ namespace SacredUtils
 
         private void MenuPlLabel_Click(object sender, RoutedEventArgs e)
         {
-            if (File.Exists("Sacred.exe")) { Process.Start("Sacred.exe"); }
+            ApplicationRunSacredDialog applicationRunSacredDialog = new ApplicationRunSacredDialog();
+
+            DialogFrame.Visibility = Visibility.Visible;
+            DialogFrame.Content = applicationRunSacredDialog;
+
+            if (AppSettings.ApplicationSettings.ColorTheme == "dark")
+            {
+                applicationRunSacredDialog.AboutDialog.DialogTheme = BaseTheme.Dark;
+            }
+
+            applicationRunSacredDialog.AboutDialog.IsOpen = true;
         }
     }
 }

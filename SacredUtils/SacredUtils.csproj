@@ -180,6 +180,9 @@
     <Compile Include="resources\dlg\ApplicationAboutDialog.xaml.cs">
       <DependentUpon>ApplicationAboutDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="resources\dlg\ApplicationRunSacredDialog.xaml.cs">
+      <DependentUpon>ApplicationRunSacredDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="resources\dlg\GameCheckingComponentsDialog.xaml.cs">
       <DependentUpon>GameCheckingComponentsDialog.xaml</DependentUpon>
     </Compile>
@@ -288,6 +291,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="resources\dlg\ApplicationAboutDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\dlg\ApplicationRunSacredDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
