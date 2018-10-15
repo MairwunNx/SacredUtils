@@ -1,5 +1,5 @@
  # Changes for SacredUtils Rv5
- ###### Changes included in SacredUtils-1.2.4.0-151018-release-1-official (1.2.4.0.151018.A1)
+ ###### Changes included in SacredUtils-1.2.4.0-151018-release-1-official (1.2.4.0.151018.R1)
 
 > - Created new changelog file for SacredUtils project
 > - Completely rewritten SacredUtils project code from scratch
