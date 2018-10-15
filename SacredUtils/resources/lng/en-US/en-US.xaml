@@ -6,24 +6,213 @@
     Name="en-US">
 
     <!--  Application settings one  -->
+    <sys:String x:Key="String0001">Interface language</sys:String>
+    <sys:String x:Key="String0002">Russia</sys:String>
+    <sys:String x:Key="String0003">English</sys:String>
+    <sys:String x:Key="String0004">Application theme</sys:String>
+    <sys:String x:Key="String0005">Light</sys:String>
+    <sys:String x:Key="String0006">Dark</sys:String>
+    <sys:String x:Key="String0007">Game start params</sys:String>
+    <sys:String x:Key="String0008">Close app before game</sys:String>
+    <sys:String x:Key="String0009">Minimize app before game</sys:String>
+    <sys:String x:Key="String0010">Nothing to do</sys:String>
+    <sys:String x:Key="String0011">Scaling interface</sys:String>
+    <sys:String x:Key="String0012">Page 1 / 2</sys:String>
 
+    <!--  Application settings two  -->
+    <sys:String x:Key="String0013">Automatically check for updates</sys:String>
+    <sys:String x:Key="String0014">Automatically check for alpha updates</sys:String>
+    <sys:String x:Key="String0015">Create backup configurations</sys:String>
+    <sys:String x:Key="String0016">I have accepted the terms of use of SacredUtils</sys:String>
+    <sys:String x:Key="String0017">Page 2 / 2</sys:String>
 
-    <!--  Menu strings  -->
-    <sys:String x:Key="Menu_File">_File</sys:String>
-    <sys:String x:Key="Menu_File_Exit">_Exit</sys:String>
-    <sys:String x:Key="Menu_Language">_Language</sys:String>
-    <sys:String x:Key="Menu_Language_English">_English</sys:String>
-    <sys:String x:Key="Menu_Language_Spanish">_Spanish</sys:String>
-    <sys:String x:Key="Menu_Language_Hebrew">_Hebrew</sys:String>
+    <!--  Chat settings one  -->
+    <sys:String x:Key="String0018">Multicolored chat</sys:String>
+    <sys:String x:Key="String0019">Game interface language</sys:String>
+    <sys:String x:Key="String0020">Russia</sys:String>
+    <sys:String x:Key="String0021">English</sys:String>
+    <sys:String x:Key="String0022">Deutsch</sys:String>
+    <sys:String x:Key="String0023">Spanish</sys:String>
+    <sys:String x:Key="String0024">French</sys:String>
+    <sys:String x:Key="String0025">Chat lines</sys:String>
+    <sys:String x:Key="String0026">Chat delay</sys:String>
+    <sys:String x:Key="String0027">Chat transparency</sys:String>
+    <sys:String x:Key="String0028">Page 1 / 1</sys:String>
 
-    <sys:String x:Key="LanguageSelectionLabel">_Language</sys:String>
+    <!--  Font settings one  -->
+    <sys:String x:Key="String0029">Auto-selection font size is used, with non-standard fonts there may be problems!</sys:String>
+    <sys:String x:Key="String0030">Font name</sys:String>
+    <sys:String x:Key="String0031">Example text</sys:String>
+    <sys:String x:Key="String0032">Page 1 / 1</sys:String>
 
+    <!--  GamePlay settings one  -->
+    <sys:String x:Key="String0033">Auto pickup mode</sys:String>
+    <sys:String x:Key="String0034">Only gold</sys:String>
+    <sys:String x:Key="String0035">Gold and items</sys:String>
+    <sys:String x:Key="String0036">Everything</sys:String>
+    <sys:String x:Key="String0037">Internet connection type</sys:String>
+    <sys:String x:Key="String0038">Bitmap on startup game</sys:String>
+    <sys:String x:Key="String0039">Bitmap on load \ save game</sys:String>
+    <sys:String x:Key="String0040">Red flash level</sys:String>
+    <sys:String x:Key="String0041">Page 1 / 3</sys:String>
 
-    <!--  Form strings  -->
-    <!--  The following line is commented out on purpose in this example in order to demonstrate the FallbackValue  -->
-    <!--<sys:String x:Key="Form_FirstName">First Name</sys:String>-->
-    <sys:String x:Key="Form_LastName">Last Name</sys:String>
-    <sys:String x:Key="Form_Age">Age</sys:String>
-    <sys:String x:Key="Form_Button_Clear">Clear</sys:String>
+    <!--  GamePlay settings two  -->
+    <sys:String x:Key="String0042">Auto Focus on the enemy</sys:String>
+    <sys:String x:Key="String0043">Auto save on done levels</sys:String>
+    <sys:String x:Key="String0044">Default skill selection</sys:String>
+    <sys:String x:Key="String0045">Enable debug-log</sys:String>
+    <sys:String x:Key="String0046">Damage Type Badges</sys:String>
+    <sys:String x:Key="String0047">Game potions visibility</sys:String>
+    <sys:String x:Key="String0048">Player info</sys:String>
+    <sys:String x:Key="String0049">Enemy info</sys:String>
+    <sys:String x:Key="String0050">Page 2 / 3</sys:String>
+
+    <!--  GamePlay settings three  -->
+    <sys:String x:Key="String0051">Combine slots</sys:String>
+    <sys:String x:Key="String0052">Accept license</sys:String>
+    <sys:String x:Key="String0053">First login</sys:String>
+    <sys:String x:Key="String0054">Earthquake effect</sys:String>
+    <sys:String x:Key="String0055">Page 3 / 3</sys:String>
+
+    <!--  Graphics settings one  -->
+    <sys:String x:Key="String0056">Graphics quality</sys:String>
+    <sys:String x:Key="String0057">Low</sys:String>
+    <sys:String x:Key="String0058">Middle</sys:String>
+    <sys:String x:Key="String0059">High</sys:String>
+    <sys:String x:Key="String0060">Waitretrace (VSync)</sys:String>
+    <sys:String x:Key="String0061">Map transparency</sys:String>
+    <sys:String x:Key="String0062">Night darkness</sys:String>
+    <sys:String x:Key="String0063">Page 1 / 4</sys:String>
+
+    <!--  Graphics settings two  -->
+    <sys:String x:Key="String0064">128mbit video memory</sys:String>
+    <sys:String x:Key="String0065">32bit color depth</sys:String>
+    <sys:String x:Key="String0066">Pickup animation</sys:String>
+    <sys:String x:Key="String0067">Violence</sys:String>
+    <sys:String x:Key="String0068">Fullscreen mode</sys:String>
+    <sys:String x:Key="String0069">Fullscreen Anti-Aliasing</sys:String>
+    <sys:String x:Key="String0070">Show game movies</sys:String>
+    <sys:String x:Key="String0071">Show game final movie</sys:String>
+    <sys:String x:Key="String0072">Page 2 / 4</sys:String>
+
+    <!--  Graphics settings three  -->
+    <sys:String x:Key="String0073">Forge black shadows</sys:String>
+    <sys:String x:Key="String0074">Video compatibility mode</sys:String>
+    <sys:String x:Key="String0075">Font smoothing</sys:String>
+    <sys:String x:Key="String0076">Fullscreen image smoothing</sys:String>
+    <sys:String x:Key="String0077">Font filtering</sys:String>
+    <sys:String x:Key="String0078">Page 3 / 4</sys:String>
+
+    <!--  Graphics settings four  -->
+    <sys:String x:Key="String0079">Use static bog</sys:String>
+    <sys:String x:Key="String0080">Use static water</sys:String>
+    <sys:String x:Key="String0081">Use static lava</sys:String>
+    <sys:String x:Key="String0082">Use old interface Sacred</sys:String>
+    <sys:String x:Key="String0083">++ UNUSED ++</sys:String>
+    <sys:String x:Key="String0084">++ UNUSED ++</sys:String>
+    <sys:String x:Key="String0085">Disable player footsteps</sys:String>
+    <sys:String x:Key="String0086">Display health circles</sys:String>
+    <sys:String x:Key="String0087">Page 4 / 4</sys:String>
+
+    <!--  Modify settings one  -->
+    <sys:String x:Key="String0088">Install VeteranMod by Ufo</sys:String>
+    <sys:String x:Key="String0089">Uninstall VeteranMod by Ufo</sys:String>
+    <sys:String x:Key="String0090">Install 2.29.14 Sacred patch</sys:String>
+    <sys:String x:Key="String0091">Uninstall 2.29.14 Sacred patch</sys:String>
+    <sys:String x:Key="String0092">Install Server MultiCore Fix</sys:String>
+    <sys:String x:Key="String0093">Uninstall Server MultiCore Fix</sys:String>
+    <sys:String x:Key="String0094">Unpack global.res file</sys:String>
+    <sys:String x:Key="String0095">Pack game textures</sys:String>
+    <sys:String x:Key="String0096">Page 1 / 1</sys:String>
+
+    <!--  Sound settings one  -->
+    <sys:String x:Key="String0097">Enable sound in game</sys:String>
+    <sys:String x:Key="String0098">Sound quality</sys:String>
+    <sys:String x:Key="String0099">Low</sys:String>
+    <sys:String x:Key="String0100">Middle</sys:String>
+    <sys:String x:Key="String0101">High</sys:String>
+    <sys:String x:Key="String0102">Voiceover language</sys:String>
+    <sys:String x:Key="String0103">Russia</sys:String>
+    <sys:String x:Key="String0104">English</sys:String>
+    <sys:String x:Key="String0105">Deutsch</sys:String>
+    <sys:String x:Key="String0106">Spanish</sys:String>
+    <sys:String x:Key="String0107">Music volume</sys:String>
+    <sys:String x:Key="String0108">Sfx volume</sys:String>
+    <sys:String x:Key="String0109">Voice volume</sys:String>
+    <sys:String x:Key="String0110">Page 1 / 1</sys:String>
+
+    <!--  Unselected settings one  -->
+    <sys:String x:Key="String0111">Choose: what would you like to customize.</sys:String>
+
+    <!--  MainWindow settings one  -->
+    <sys:String x:Key="String0112">UPDATE UTILITY</sys:String>
+    <sys:String x:Key="String0113">⠀⠀GRAPHICS</sys:String>
+    <sys:String x:Key="String0114">⠀⠀SOUND AND VOICE</sys:String>
+    <sys:String x:Key="String0115">⠀⠀GAMEPLAY</sys:String>
+    <sys:String x:Key="String0116">⠀⠀CHAT AND LANG</sys:String>
+    <sys:String x:Key="String0117">⠀⠀FONTS</sys:String>
+    <sys:String x:Key="String0118">⠀⠀GAME MODIFY</sys:String>
+    <sys:String x:Key="String0119">⠀⠀LAUNCH GAME</sys:String>
+    <sys:String x:Key="String0120">⠀⠀SU SETTINGS</sys:String>
+
+    <!--  License dialog  -->
+    <sys:String x:Key="String0121">Read license agreement</sys:String>
+    <sys:String x:Key="String0122">License agreement</sys:String>
+    <sys:String x:Key="String0123">Please review the license agreement and terms of use of SacredUtils, prior to the agreement!</sys:String>
+    <sys:String x:Key="String0124">++ UNUSED ++</sys:String>
+    <sys:String x:Key="String0125">++ UNUSED ++</sys:String>
+    <sys:String x:Key="String0126">Accept the conditions</sys:String>
+    <sys:String x:Key="String0127">Close SacredUtils</sys:String>
+
+    <!--  About SacredUtils dialog  -->
+    <sys:String x:Key="String0128">About SacredUtils</sys:String>
+    <sys:String x:Key="String0129">Version 1.2.4.0.151018.R1 (Official build)</sys:String>
+
+    <!--  Checking \ repairing components dialog  -->
+    <sys:String x:Key="String0130">Component Recovery</sys:String>
+    <sys:String x:Key="String0131">Component integrity check ...</sys:String>
+    <sys:String x:Key="String0132">Restore game components ...</sys:String>
+    <sys:String x:Key="String0133">Component recovery complete!</sys:String>
+    <sys:String x:Key="String0134">No damaged components detected!</sys:String>
+
+    <!--  Hotkey change dialog  -->
+    <sys:String x:Key="String0135">Change game keys</sys:String>
+
+    <!--  Get components dialog  -->
+    <sys:String x:Key="String0136">Component installation</sys:String>
+    <sys:String x:Key="String0137">Component downloading</sys:String>
+    <sys:String x:Key="String0138">Component unpacking</sys:String>
+
+    <!--  Change log dialog  -->
+    <sys:String x:Key="String0139">Utility updated!</sys:String>
+    <sys:String x:Key="String0140">View list of changes?</sys:String>
+    <sys:String x:Key="String0141">Yes</sys:String>
+
+    <!--  Select page dialog  -->
+    <sys:String x:Key="String0142">Select page</sys:String>
+
+    <!--  Select donate dialog  -->
+    <sys:String x:Key="String0143">Select wallet</sys:String>
+
+    <!--  Modify settings one (2)  -->
+    <sys:String x:Key="String0144">Pack global.res file</sys:String>
+    <sys:String x:Key="String0145">Edit balance.bin (External)</sys:String>
+    <sys:String x:Key="String0146">Edit creature.pak (External)</sys:String>
+    <sys:String x:Key="String0147">Edit weapon.pak (External)</sys:String>
+    <sys:String x:Key="String0148">Run SacredHeroResetter</sys:String>
+    <sys:String x:Key="String0149">Run SacredHotkeyTweaker</sys:String>
+    <sys:String x:Key="String0150">Run SacredHeroEditor</sys:String>
+    <sys:String x:Key="String0151">Run integrity check of game components</sys:String>
+    <sys:String x:Key="String0152">Start generator of colored nicks</sys:String>
+
+    <!--  Convert colors dialog  -->
+    <sys:String x:Key="String0153">Creating nickname</sys:String>
+    <sys:String x:Key="String0154">Select color</sys:String>
+    <sys:String x:Key="String0155">Copy nickname</sys:String>
+
+    <!--  Version error dialog  -->
+    <sys:String x:Key="String0156">Unable to validate game components! The game version must be at least 2.0.2.8 or 2.29.13.0! If I was wrong, or did not include some version, write me a mail.</sys:String>
+    <sys:String x:Key="String0157">Unable to get game version data! Most likely there is no file in the folder Sacred.exe.</sys:String>
+    <sys:String x:Key="String0158">After selecting on ok, components will be checked, it may take a long time if damaged components are found. Integrity is calculated from the md5 hash sum.</sys:String>
 
 </Globalization:GlobalizationResourceDictionary>

@@ -13,16 +13,16 @@
         <materialDesign:DialogHost
             x:Name="LicenseDialog"
             CloseOnClickAway="False"
-            IsOpen="False"
+            IsOpen="True"
             Visibility="Visible">
             <materialDesign:DialogHost.DialogContent>
                 <Grid
                     Width="450"
-                    Height="300"
+                    Height="205"
                     Background="{DynamicResource ResourceKey=BackgroundColorBrush}">
                     <Border
                         Height="36"
-                        Margin="18,202,18,0"
+                        Margin="18,105,18,0"
                         VerticalAlignment="Top"
                         BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
                         BorderThickness="1,1,1,1"
@@ -59,30 +59,10 @@
                         Text="{globalizer:GlobalizedResource String0123}"
                         TextWrapping="Wrap" />
 
-                    <TextBlock
-                        Height="66"
-                        Margin="18,94,34,0"
-                        VerticalAlignment="Top"
-                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                        FontSize="12"
-                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                        Text="{globalizer:GlobalizedResource String0124}"
-                        TextWrapping="Wrap" />
-
-                    <TextBlock
-                        Height="37"
-                        Margin="18,160,34,0"
-                        VerticalAlignment="Top"
-                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
-                        FontSize="12"
-                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                        Text="{globalizer:GlobalizedResource String0125}"
-                        TextWrapping="Wrap" />
-
                     <Border
                         Width="200"
                         Height="36"
-                        Margin="232,246,18,0"
+                        Margin="232,150,18,0"
                         VerticalAlignment="Top"
                         BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
                         BorderThickness="1,1,1,1"
@@ -103,7 +83,7 @@
                     <Border
                         Width="200"
                         Height="36"
-                        Margin="18,246,232,0"
+                        Margin="18,150,232,0"
                         VerticalAlignment="Top"
                         BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
                         BorderThickness="1,1,1,1"

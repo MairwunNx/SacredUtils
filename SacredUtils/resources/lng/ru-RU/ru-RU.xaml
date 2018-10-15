@@ -203,7 +203,7 @@
     <sys:String x:Key="String0149">Запустить SacredHotkeyTweaker</sys:String>
     <sys:String x:Key="String0150">Запустить SacredHeroEditor</sys:String>
     <sys:String x:Key="String0151">Запустить проверку целостности компонентов игры</sys:String>
-    <sys:String x:Key="String0152">Запустить конвертер из HTML цветов в Sacred цвета</sys:String>
+    <sys:String x:Key="String0152">Запустить генератор цветных ников</sys:String>
 
     <!--  Convert colors dialog  -->
     <sys:String x:Key="String0153">Создание цветного ника</sys:String>
