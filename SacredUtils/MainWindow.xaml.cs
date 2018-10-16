@@ -1,12 +1,6 @@
-﻿using MaterialDesignThemes.Wpf;
-using SacredUtils.resources.bin;
-using SacredUtils.resources.dlg;
+﻿using SacredUtils.resources.bin;
 using SacredUtils.resources.pgs;
 using System;
-using System.Diagnostics;
-using System.IO;
-using System.Runtime.InteropServices;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -40,7 +34,9 @@ namespace SacredUtils
 
             GetApplicationLanguageValue.Get(); GetApplicationThemeValue.Get();
 
-            GetApplicationScaleValue.Get(); GetPermCheckingMemory();
+            GetApplicationScaleValue.Get(); GetPermissionsOnGettingMemory.Get();
+
+            GetApplicationLicenseState.GetLicenseState();
         }
 
         private void EventSubscribe()
@@ -52,82 +48,32 @@ namespace SacredUtils
             MenuFtLabel.Click += (s, e) => ChangeApplicationSelectionSettings.SelectSettings(FontStgOne, FontsPanel);
             MenuMdLabel.Click += (s, e) => ChangeApplicationSelectionSettings.SelectSettings(ModifyStgOne, ModifPanel);
             MenuStLabel.Click += (s, e) => ChangeApplicationSelectionSettings.SelectSettings(AppStgOne, SettingsPanel);
-
-            MemoryLbl.MouseDown += (s, e) => GC.Collect();
+            MenuPlLabel.Click += (s, e) => ApplicationStartSacredGameFile.StartDialog();
+            
+            UpdateLbl.MouseDown += (s, e) => ApplicationStartUtilityUpdate.Start();
+            BaseWindow.PreviewKeyDown += (s, e) => ApplicationBaseWindowHotkeys.KeyDown(s, e);
             HeaderPanel.MouseDown += DragWindow; CloseBtn.Click += (s, e) => Shutdown();
             MinimizeBtn.Click += (s, e) => WindowState = WindowState.Minimized;
+            MemoryLbl.MouseDown += (s, e) => GC.Collect();
 
             Timer.Interval = new TimeSpan(0, 0, AppSettings.ApplicationSettings.ShowUsedMemoryUpdateInterval);
-            Timer.Tick += (s, e) => GetCurrentUsedMemory();
+            Timer.Tick += (s, e) => GetApplicationCurrentUsedMemory.Get();
 
             Loaded += (sender, args) =>
             {
-                GetLicenseState(); AppSummary.Sw.Stop();
+                AppSummary.Sw.Stop(); // Make Yourself ^_^
 
                 AppLogger.Log.Info($"Loading SacredUtils application done ({AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
 
-                Task.Run(() =>
-                {
-                    GetApplicationDownloadStatistic.Get(); CheckAvailabilityAlphaUpdates.GetPerm();
-
-                    if (!CheckAvailabilityInternetConnection.Connect())
-                    {
-                        Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
-                        {
-                            NoConnectImage.Visibility = Visibility.Visible;
-                        }));
-                    }
-                });
-
-                OpenChangeLogDialog();
+                Task.Run(() => { CheckAvailabilityAlphaUpdates.GetPerm(); GetNoInternetIconVisibility.Get(); });
 
                 if (!CheckAvailabilityInternetConnection.Connect()) { NoConnectImage.Visibility = Visibility.Visible; }
+
+                if (AppSettings.ApplicationSettings.AcceptLicense) { GetChangeLogDialogVisibility.Get(); }
             };
         }
 
-        private void OpenChangeLogDialog()
-        {
-            if (File.Exists("$SacredUtils\\temp\\updated.su"))
-            {
-                if (AppSettings.ApplicationSettings.ShowChangeLog)
-                {
-                    ApplicationChangeLogDialog applicationChangeLogDialog = new ApplicationChangeLogDialog();
-
-                    DialogFrame.Visibility = Visibility.Visible;
-                    DialogFrame.Content = applicationChangeLogDialog;
-                    
-                    if (AppSettings.ApplicationSettings.ColorTheme == "dark")
-                    {
-                        applicationChangeLogDialog.ChangeLogDialog.DialogTheme = BaseTheme.Dark;
-                    }
-
-                    applicationChangeLogDialog.ChangeLogDialog.IsOpen = true;
-
-                    File.Delete("$SacredUtils\\temp\\updated.su");
-                }
-            }
-        }
-
-        private void GetCurrentUsedMemory()
-        {
-            MemoryLbl.Content = $"[{RuntimeInformation.FrameworkDescription.ToUpper()}] [{Process.GetCurrentProcess().Id} / {Process.GetCurrentProcess().PriorityClass.ToString().ToUpper()}] USED MEMORY {GC.GetTotalMemory(false) / 1024} KB OF {Environment.WorkingSet / 1024} KB";
-        }
-
-        private void GetPermCheckingMemory()
-        {
-            // Isabella ... Sorry please ...
-
-            if (AppSettings.ApplicationSettings.ShowUsedMemory)
-            {
-                MemoryLbl.Visibility = Visibility.Visible; Timer.Start();
-            }
-            else
-            {
-                MemoryLbl.Visibility = Visibility.Hidden; Timer.Stop();
-            }
-        }
-
-        private static void Shutdown()
+        public static void Shutdown()
         {
             AppLogger.Log.Info("============================================================");
             AppLogger.Log.Info("*** Thanks for using SacredUtils! Created by MairwunNx");
@@ -146,117 +92,6 @@ namespace SacredUtils
         private void DragWindow(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left) { DragMove(); }
-        }
-
-        private void BaseWindow_PreviewKeyDown(object sender, KeyEventArgs e)
-        {
-            Enum.TryParse(AppSettings.ApplicationSettings.KeyGotoMainMenu, out Key toMain);
-            Enum.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredUtilsLogs, out Key openLogs);
-            Enum.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredUtilsSettings, out Key openSettings);
-            Enum.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredUtilsDirectory, out Key openDirectory);
-            Enum.TryParse(AppSettings.ApplicationSettings.KeyReloadSacredUtils, out Key reloadSacredUtils);
-            Enum.TryParse(AppSettings.ApplicationSettings.KeyShutdownSacredUtils, out Key shutdownSacredUtils);
-            Enum.TryParse(AppSettings.ApplicationSettings.KeyReloadFastSacredUtils, out Key fastReloadSacredUtils);
-             
-            if (e.Key == toMain)
-            {
-                ChangeApplicationSelectionSettings.UnSelectSettings(UnselectedStg);
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == openLogs)
-            {
-                if (File.Exists("$SacredUtils\\logs\\latest.log"))
-                {
-                    Process.Start("notepad", "$SacredUtils\\logs\\latest.log");
-                }
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == openSettings)
-            {
-                if (File.Exists("$SacredUtils\\conf\\settings.json"))
-                {
-                    Process.Start("notepad", "$SacredUtils\\conf\\settings.json");
-                }
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == openDirectory)
-            {
-                // ReSharper disable once AssignNullToNotNullAttribute
-                Process.Start(Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName));
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == reloadSacredUtils)
-            {
-                Process.Start(AppSummary.AppPatch); Environment.Exit(0);
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == shutdownSacredUtils)
-            {
-                Shutdown();
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == fastReloadSacredUtils)
-            {
-                Process.Start(AppSummary.AppPatch, " -fast"); Environment.Exit(0);
-            }
-        }
-
-        private void UpdateLbl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            try
-            {
-                File.Create("$SacredUtils\\temp\\updated.su");
-
-                Process.Start("mnxupdater.exe", AppDomain.CurrentDomain.FriendlyName + " _newVersionSacredUtilsTemp.exe");
-
-                Shutdown();
-            }
-            catch (Exception ex)
-            {
-                AppLogger.Log.Info(ex.ToString);
-            }
-        }
-
-        private void GetLicenseState()
-        {
-            if (!AppSettings.ApplicationSettings.AcceptLicense || !File.Exists("License.txt"))
-            {
-                File.WriteAllBytes("License.txt", Properties.Resources.AppLicense);
-
-                UpdateLbl.IsEnabled = false; MinimizeBtn.IsEnabled = false;
-
-                OpenLicenseDialog();
-            }
-        }
-
-        private void OpenLicenseDialog()
-        {
-            ApplicationLicenseDialog applicationLicenseDialog = new ApplicationLicenseDialog();
-
-            DialogFrame.Visibility = Visibility.Visible;
-            DialogFrame.Content = applicationLicenseDialog;
-
-            if (AppSettings.ApplicationSettings.ColorTheme == "dark")
-            {
-                applicationLicenseDialog.LicenseDialog.DialogTheme = BaseTheme.Dark;
-            }
-
-            applicationLicenseDialog.LicenseDialog.IsOpen = true;
-        }
-
-        private void MenuPlLabel_Click(object sender, RoutedEventArgs e)
-        {
-            ApplicationRunSacredDialog applicationRunSacredDialog = new ApplicationRunSacredDialog();
-
-            DialogFrame.Visibility = Visibility.Visible;
-            DialogFrame.Content = applicationRunSacredDialog;
-
-            if (AppSettings.ApplicationSettings.ColorTheme == "dark")
-            {
-                applicationRunSacredDialog.AboutDialog.DialogTheme = BaseTheme.Dark;
-            }
-
-            applicationRunSacredDialog.AboutDialog.IsOpen = true;
         }
     }
 }

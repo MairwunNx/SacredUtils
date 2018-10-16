@@ -141,11 +141,16 @@
     <Compile Include="resources\arr\ArraySacredGameWaterFilesE.cs" />
     <Compile Include="resources\arr\ArraySacredGameWaterFilesF.cs" />
     <Compile Include="resources\arr\ArraySacredGameWaterFilesG.cs" />
+    <Compile Include="resources\bin\ApplicationBaseWindowHotkeys.cs" />
+    <Compile Include="resources\bin\ApplicationStartSacredGameFile.cs" />
+    <Compile Include="resources\bin\ApplicationStartUtilityUpdate.cs" />
     <Compile Include="resources\bin\ChangeApplicationSelectionSettings.cs" />
     <Compile Include="resources\bin\ChangeSacredGameSettingsValue.cs" />
     <Compile Include="resources\bin\CreateApplicationNeededFolders.cs" />
     <Compile Include="resources\bin\CreateBackupApplicationSettings.cs" />
     <Compile Include="resources\bin\CreateBackupSacredGameSettings.cs" />
+    <Compile Include="resources\bin\GetApplicationCurrentUsedMemory.cs" />
+    <Compile Include="resources\bin\GetApplicationLicenseState.cs" />
     <Compile Include="resources\bin\GetApplicationRandomSplashes.cs" />
     <Compile Include="resources\bin\GetApplicationScaleValue.cs" />
     <Compile Include="resources\bin\CheckAvailabilityAlphaUpdates.cs" />
@@ -156,6 +161,9 @@
     <Compile Include="AppSummary.cs" />
     <Compile Include="resources\bin\CreateApplicationLanguageFiles.cs" />
     <Compile Include="resources\bin\CreateApplicationThemeFiles.cs" />
+    <Compile Include="resources\bin\GetChangeLogDialogVisibility.cs" />
+    <Compile Include="resources\bin\GetNoInternetIconVisibility.cs" />
+    <Compile Include="resources\bin\GetPermissionsOnGettingMemory.cs" />
     <Compile Include="resources\bin\GetRequiredApplicationFiles.cs" />
     <Compile Include="resources\bin\GetApplicationGlobalizerLibrary.cs" />
     <Compile Include="resources\bin\GetApplicationLanguageValue.cs" />

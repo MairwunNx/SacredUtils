@@ -13,7 +13,6 @@
     AllowsTransparency="True"
     Background="{x:Null}"
     Icon="resources/ico/icons8_Gas.ico"
-    PreviewKeyDown="BaseWindow_PreviewKeyDown"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
@@ -87,7 +86,6 @@
                     FontSize="11"
                     FontWeight="Bold"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    MouseLeftButtonDown="UpdateLbl_MouseLeftButtonDown"
                     Visibility="Hidden" />
 
                 <Label
@@ -235,7 +233,6 @@
                                 Height="40"
                                 HorizontalContentAlignment="Left"
                                 VerticalContentAlignment="Center"
-                                Click="MenuPlLabel_Click"
                                 ClipToBounds="True"
                                 Content="{globalizer:GlobalizedResource String0119}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"

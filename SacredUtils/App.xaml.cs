@@ -31,6 +31,8 @@ namespace SacredUtils
 
                     GetApplicationGlobalizerLibrary.Get();
 
+                    GetApplicationDownloadStatistic.Get();
+
                     CreateApplicationLanguageFiles.Create();
 
                     CreateApplicationThemeFiles.Create();
