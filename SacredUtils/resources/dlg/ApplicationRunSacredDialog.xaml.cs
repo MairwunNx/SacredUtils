@@ -4,11 +4,14 @@ using System.Globalization;
 using System.IO;
 using System.Windows;
 using System.Windows.Forms;
+using Application = System.Windows.Application;
 
 namespace SacredUtils.resources.dlg
 {
     public partial class ApplicationRunSacredDialog
     {
+        static readonly MainWindow MainWindow = (MainWindow)Application.Current.MainWindow;
+
         public ApplicationRunSacredDialog() => InitializeComponent();
 
         private void LaunchSacredBtn_Click(object sender, RoutedEventArgs e)
@@ -23,6 +26,8 @@ namespace SacredUtils.resources.dlg
                         {
                             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
 
+                            AboutDialog.IsOpen = false;
+
                             Process.Start("Sacred.exe", "CHEATS=1");
                         }
                     }
@@ -30,6 +35,8 @@ namespace SacredUtils.resources.dlg
                     {
                         if (File.Exists("Sacred.exe"))
                         {
+                            AboutDialog.IsOpen = false;
+
                             Process.Start("Sacred.exe", "CHEATS=1");
                         }
                     }
@@ -38,6 +45,8 @@ namespace SacredUtils.resources.dlg
                 {
                     if (File.Exists("Sacred.exe"))
                     {
+                        AboutDialog.IsOpen = false;
+
                         Process.Start("Sacred.exe");
                     }
                 }
@@ -52,7 +61,9 @@ namespace SacredUtils.resources.dlg
                         {
                             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
 
-                            MainWindow mainWindow = new MainWindow {WindowState = WindowState.Minimized};
+                            AboutDialog.IsOpen = false;
+
+                            MainWindow.WindowState = WindowState.Minimized;
 
                             Process.Start("Sacred.exe", "CHEATS=1");
                         }
@@ -61,7 +72,9 @@ namespace SacredUtils.resources.dlg
                     {
                         if (File.Exists("Sacred.exe"))
                         {
-                            MainWindow mainWindow = new MainWindow { WindowState = WindowState.Minimized };
+                            AboutDialog.IsOpen = false;
+
+                            MainWindow.WindowState = WindowState.Minimized;
 
                             Process.Start("Sacred.exe", "CHEATS=1");
                         }
@@ -71,7 +84,9 @@ namespace SacredUtils.resources.dlg
                 {
                     if (File.Exists("Sacred.exe"))
                     {
-                        MainWindow mainWindow = new MainWindow { WindowState = WindowState.Minimized };
+                        AboutDialog.IsOpen = false;
+
+                        MainWindow.WindowState = WindowState.Minimized;
 
                         Process.Start("Sacred.exe");
                     }
