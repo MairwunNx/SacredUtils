@@ -30,7 +30,7 @@
 
             <!--#region Content for application header.-->
 
-            <StackPanel
+            <Grid
                 x:Name="HeaderPanel"
                 Grid.Row="0"
                 Background="{DynamicResource ResourceKey=BackgroundColorBrush}"
@@ -47,18 +47,15 @@
                     <materialDesign:PackIcon
                         Width="10"
                         Height="10"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
                         Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                         Kind="Circle" />
                 </Button>
-
 
                 <Button
                     x:Name="MinimizeBtn"
                     Width="25"
                     Height="25"
-                    Margin="25,-25,0,0"
+                    Margin="25,0,0,0"
                     HorizontalAlignment="Left"
                     materialDesign:RippleAssist.IsCentered="True"
                     materialDesign:RippleAssist.RippleSizeMultiplier="0.7"
@@ -66,17 +63,14 @@
                     <materialDesign:PackIcon
                         Width="10"
                         Height="10"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
                         Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                         Kind="Circle" />
                 </Button>
 
                 <Label
                     x:Name="UpdateLbl"
-                    Width="168"
                     Height="25"
-                    Margin="0,-25.3,5,0"
+                    Margin="0,0,5,0"
                     HorizontalAlignment="Right"
                     HorizontalContentAlignment="Right"
                     VerticalContentAlignment="Center"
@@ -91,9 +85,7 @@
                 <Label
                     x:Name="MemoryLbl"
                     Height="25"
-                    Margin="0,-25.3,5,0"
                     HorizontalAlignment="Center"
-                    HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"
                     Cursor="Hand"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
@@ -101,7 +93,7 @@
                     FontWeight="Bold"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Visibility="Visible" />
-            </StackPanel>
+            </Grid>
 
             <!--#endregion-->
 
@@ -113,7 +105,7 @@
                 HorizontalAlignment="Left"
                 BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
                 BorderThickness="0,1,1,0">
-                <StackPanel HorizontalAlignment="Left">
+                <StackPanel>
                     <Grid x:Name="SettingsGrid">
                         <StackPanel
                             x:Name="GraphicsPanel"
@@ -124,7 +116,6 @@
                                 x:Name="MenuGrLabel"
                                 Height="40"
                                 HorizontalContentAlignment="Left"
-                                VerticalContentAlignment="Center"
                                 ClipToBounds="True"
                                 Content="{globalizer:GlobalizedResource String0113}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
@@ -142,7 +133,6 @@
                                 x:Name="MenuSnLabel"
                                 Height="40"
                                 HorizontalContentAlignment="Left"
-                                VerticalContentAlignment="Center"
                                 ClipToBounds="True"
                                 Content="{globalizer:GlobalizedResource String0114}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
@@ -160,7 +150,6 @@
                                 x:Name="MenuGpLabel"
                                 Height="40"
                                 HorizontalContentAlignment="Left"
-                                VerticalContentAlignment="Center"
                                 ClipToBounds="True"
                                 Content="{globalizer:GlobalizedResource String0115}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
@@ -178,7 +167,6 @@
                                 x:Name="MenuCtLabel"
                                 Height="40"
                                 HorizontalContentAlignment="Left"
-                                VerticalContentAlignment="Center"
                                 ClipToBounds="True"
                                 Content="{globalizer:GlobalizedResource String0116}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
@@ -196,7 +184,6 @@
                                 x:Name="MenuFtLabel"
                                 Height="40"
                                 HorizontalContentAlignment="Left"
-                                VerticalContentAlignment="Center"
                                 ClipToBounds="True"
                                 Content="{globalizer:GlobalizedResource String0117}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
@@ -214,7 +201,6 @@
                                 x:Name="MenuMdLabel"
                                 Height="40"
                                 HorizontalContentAlignment="Left"
-                                VerticalContentAlignment="Center"
                                 ClipToBounds="True"
                                 Content="{globalizer:GlobalizedResource String0118}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
@@ -232,7 +218,6 @@
                                 x:Name="MenuPlLabel"
                                 Height="40"
                                 HorizontalContentAlignment="Left"
-                                VerticalContentAlignment="Center"
                                 ClipToBounds="True"
                                 Content="{globalizer:GlobalizedResource String0119}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
@@ -250,7 +235,6 @@
                                 x:Name="MenuStLabel"
                                 Height="40"
                                 HorizontalContentAlignment="Left"
-                                VerticalContentAlignment="Center"
                                 ClipToBounds="True"
                                 Content="{globalizer:GlobalizedResource String0120}"
                                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
@@ -261,9 +245,8 @@
                             <materialDesign:PackIcon
                                 Width="16"
                                 Height="16"
-                                Margin="0,-40,23,0"
+                                Margin="0,-28,23,0"
                                 HorizontalAlignment="Right"
-                                VerticalAlignment="Center"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}"
                                 Kind="Settings" />
                         </StackPanel>
@@ -272,19 +255,14 @@
                             Width="127"
                             Height="127"
                             Margin="84,618,-21,-25"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            Fill="{DynamicResource ResourceKey=SmallBallColorBrush}"
-                            StrokeThickness="0" />
+                            Fill="{DynamicResource ResourceKey=SmallBallColorBrush}" />
 
                         <Ellipse
                             Width="167"
                             Height="167"
                             Margin="-47,589,0,-36"
                             HorizontalAlignment="Left"
-                            VerticalAlignment="Top"
-                            Fill="{DynamicResource ResourceKey=BigBallColorBrush}"
-                            StrokeThickness="0" />
+                            Fill="{DynamicResource ResourceKey=BigBallColorBrush}" />
                     </Grid>
                 </StackPanel>
             </Border>
@@ -295,7 +273,7 @@
 
             <Border
                 Grid.Row="1"
-                Margin="190,0,-1,0"
+                Margin="190,0,0,0"
                 BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
                 BorderThickness="0,1,0,0">
                 <Frame
