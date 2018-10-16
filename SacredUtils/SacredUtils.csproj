@@ -58,10 +58,10 @@
       <HintPath>..\packages\Castle.Core.4.3.1\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="Config.Net, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d836a57afd299520, processorArchitecture=MSIL">
-      <HintPath>..\packages\Config.Net.4.10.1\lib\net452\Config.Net.dll</HintPath>
+      <HintPath>..\packages\Config.Net.4.11.0\lib\net452\Config.Net.dll</HintPath>
     </Reference>
     <Reference Include="Config.Net.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=d836a57afd299520, processorArchitecture=MSIL">
-      <HintPath>..\packages\Config.Net.Json.4.10.1\lib\net452\Config.Net.Json.dll</HintPath>
+      <HintPath>..\packages\Config.Net.Json.4.11.0\lib\net452\Config.Net.Json.dll</HintPath>
     </Reference>
     <Reference Include="Costura, Version=3.1.4.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.3.1.4\lib\net46\Costura.dll</HintPath>
@@ -75,8 +75,8 @@
     <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
-    <Reference Include="MaterialDesignThemes.Wpf, Version=2.5.0.1201, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MaterialDesignThemes.2.5.0-ci1201\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.5.0.1195, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.5.0-ci1195\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -141,6 +141,7 @@
     <Compile Include="resources\arr\ArraySacredGameWaterFilesE.cs" />
     <Compile Include="resources\arr\ArraySacredGameWaterFilesF.cs" />
     <Compile Include="resources\arr\ArraySacredGameWaterFilesG.cs" />
+    <Compile Include="resources\bin\ChangeApplicationSelectionSettings.cs" />
     <Compile Include="resources\bin\ChangeSacredGameSettingsValue.cs" />
     <Compile Include="resources\bin\CreateApplicationNeededFolders.cs" />
     <Compile Include="resources\bin\CreateBackupApplicationSettings.cs" />

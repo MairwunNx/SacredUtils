@@ -5,11 +5,10 @@ using SacredUtils.resources.pgs;
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Threading;
 
@@ -35,27 +34,24 @@ namespace SacredUtils
 
         public MainWindow()
         {
-            InitializeComponent(); EventSubscribe(); GetPermCheckingMemory();
+            InitializeComponent(); EventSubscribe();
 
-            SelectSettings(UnselectedStg, MenuGpLabel);
+            ChangeApplicationSelectionSettings.UnSelectSettings(UnselectedStg);
 
-            if (!CheckAvailabilityInternetConnection.Connect())
-            {
-                NoConnectImage.Visibility = Visibility.Visible;
-            }
+            GetApplicationLanguageValue.Get(); GetApplicationThemeValue.Get();
 
-            GetApplicationLanguageValue.Get(); GetApplicationThemeValue.Get(); GetApplicationScaleValue.Get();
+            GetApplicationScaleValue.Get(); GetPermCheckingMemory();
         }
 
         private void EventSubscribe()
         {
-            MenuGrLabel.Click += (s, e) => SelectSettings(GraphicsStgOne, GraphicsPanel);
-            MenuSnLabel.Click += (s, e) => SelectSettings(SoundStgOne, SoundPanel);
-            MenuGpLabel.Click += (s, e) => SelectSettings(GamePlayStgOne, GameplayPanel);
-            MenuCtLabel.Click += (s, e) => SelectSettings(ChatStgOne, ChatPanel);
-            MenuFtLabel.Click += (s, e) => SelectSettings(FontStgOne, FontsPanel);
-            MenuMdLabel.Click += (s, e) => SelectSettings(ModifyStgOne, ModifPanel);
-            MenuStLabel.Click += (s, e) => SelectSettings(AppStgOne, SettingsPanel);
+            MenuGrLabel.Click += (s, e) => ChangeApplicationSelectionSettings.SelectSettings(GraphicsStgOne, GraphicsPanel);
+            MenuSnLabel.Click += (s, e) => ChangeApplicationSelectionSettings.SelectSettings(SoundStgOne, SoundPanel);
+            MenuGpLabel.Click += (s, e) => ChangeApplicationSelectionSettings.SelectSettings(GamePlayStgOne, GameplayPanel);
+            MenuCtLabel.Click += (s, e) => ChangeApplicationSelectionSettings.SelectSettings(ChatStgOne, ChatPanel);
+            MenuFtLabel.Click += (s, e) => ChangeApplicationSelectionSettings.SelectSettings(FontStgOne, FontsPanel);
+            MenuMdLabel.Click += (s, e) => ChangeApplicationSelectionSettings.SelectSettings(ModifyStgOne, ModifPanel);
+            MenuStLabel.Click += (s, e) => ChangeApplicationSelectionSettings.SelectSettings(AppStgOne, SettingsPanel);
 
             MemoryLbl.MouseDown += (s, e) => GC.Collect();
             HeaderPanel.MouseDown += DragWindow; CloseBtn.Click += (s, e) => Shutdown();
@@ -73,17 +69,20 @@ namespace SacredUtils
                 Task.Run(() =>
                 {
                     GetApplicationDownloadStatistic.Get(); CheckAvailabilityAlphaUpdates.GetPerm();
+
+                    if (!CheckAvailabilityInternetConnection.Connect())
+                    {
+                        Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                        {
+                            NoConnectImage.Visibility = Visibility.Visible;
+                        }));
+                    }
                 });
 
-                OpenChangeLogDialog(); SetRandomSplash();
+                OpenChangeLogDialog();
 
                 if (!CheckAvailabilityInternetConnection.Connect()) { NoConnectImage.Visibility = Visibility.Visible; }
             };
-        }
-
-        private void SetRandomSplash()
-        {
-            FontStgOne.ExampleTextBlock.Text = GetApplicationRandomSplashes.GetRandomSplash();
         }
 
         private void OpenChangeLogDialog()
@@ -149,25 +148,6 @@ namespace SacredUtils
             if (e.ChangedButton == MouseButton.Left) { DragMove(); }
         }
 
-        private void SelectSettings(UIElement element, object sender)
-        {
-            SettingsFrame.Content = element;
-
-            if (sender.Equals(sender as StackPanel) && sender is StackPanel panel)
-            {
-                AppLogger.Log.Info($"Selected SacredUtils settings category {panel.Name} by user");
-
-                foreach (StackPanel sp in SettingsGrid.Children.OfType<StackPanel>())
-                {
-                    sp.SetResourceReference(BackgroundProperty, "CategoryNotActiveColorBrush");
-                } 
-                
-                panel.SetResourceReference(BackgroundProperty, "CategoryActiveColorBrush");
-
-                if (panel.Name == "FontsPanel") { SetRandomSplash(); }
-            }
-        }
-
         private void BaseWindow_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             Enum.TryParse(AppSettings.ApplicationSettings.KeyGotoMainMenu, out Key toMain);
@@ -180,12 +160,7 @@ namespace SacredUtils
              
             if (e.Key == toMain)
             {
-                SelectSettings(UnselectedStg, MenuGpLabel);
-
-                foreach (StackPanel sp in SettingsGrid.Children.OfType<StackPanel>())
-                {
-                    sp.SetResourceReference(BackgroundProperty, "CategoryNotActiveColorBrush");
-                }
+                ChangeApplicationSelectionSettings.UnSelectSettings(UnselectedStg);
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == openLogs)
