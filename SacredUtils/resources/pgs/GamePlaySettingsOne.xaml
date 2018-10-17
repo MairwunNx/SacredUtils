@@ -29,7 +29,6 @@
                     Text="{globalizer:GlobalizedResource String0033}" />
 
                 <ComboBox
-                    x:Name="PickupModeCmbBox"
                     Height="27"
                     Margin="625,5,15,0"
                     VerticalAlignment="Top"
@@ -64,7 +63,6 @@
                     Text="{globalizer:GlobalizedResource String0037}" />
 
                 <ComboBox
-                    x:Name="ConnectModeCmbBox"
                     Height="27"
                     Margin="625,5,15,0"
                     VerticalAlignment="Top"
@@ -97,7 +95,6 @@
                     Text="{globalizer:GlobalizedResource String0038}" />
 
                 <TextBox
-                    x:Name="ImgStartUpTxBox"
                     Height="27"
                     Margin="625,5,15,0"
                     VerticalAlignment="Top"
@@ -128,7 +125,6 @@
                     Text="{globalizer:GlobalizedResource String0039}" />
 
                 <TextBox
-                    x:Name="ImgLoadSaveTxBox"
                     Height="27"
                     Margin="625,5,15,0"
                     VerticalAlignment="Top"
@@ -159,7 +155,6 @@
                     Text="{globalizer:GlobalizedResource String0040}" />
 
                 <Slider
-                    x:Name="WarningFlashSlider"
                     Width="183"
                     Margin="618,-25,0,0"
                     HorizontalAlignment="Left"
@@ -198,7 +193,6 @@
                     Text="{globalizer:GlobalizedResource String0041}" />
 
                 <Button
-                    x:Name="ToTwoPageBtn"
                     Width="38"
                     Margin="765,4,5,4"
                     materialDesign:RippleAssist.IsCentered="True"

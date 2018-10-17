@@ -11,7 +11,7 @@ namespace SacredUtils
         string AppUiLanguage { get; set; }
 
         [Option(Alias = "ArchiveOldFileOnStartup", DefaultValue = "true")]
-        bool ArchiveOldFileOnStartup { get; set; }
+        bool ArchiveOldFileOnStartup { get; }
 
         [Option(Alias = "CheckAutoAlphaUpdate", DefaultValue = "false")]
         bool CheckAutoAlphaUpdate { get; set; }
@@ -20,31 +20,31 @@ namespace SacredUtils
         bool CheckAutoUpdate { get; set; }
 
         [Option(Alias = "CloseDonateDialogAfterSelect", DefaultValue = "true")]
-        bool CloseDonateDialogAfterSelect { get; set; }
+        bool CloseDonateDialogAfterSelect { get; }
 
         [Option(Alias = "ClosePageDialogAfterSelect", DefaultValue = "true")]
-        bool ClosePageDialogAfterSelect { get; set; } 
+        bool ClosePageDialogAfterSelect { get; } 
 
         [Option(Alias = "ColorTheme", DefaultValue = "light")]
         string ColorTheme { get; set; }
 
         [Option(Alias = "DebugFileCreate", DefaultValue = "false")]
-        bool DebugFileCreate { get; set; }
+        bool DebugFileCreate { get; }
 
         [Option(Alias = "DisableCachingGameComponents", DefaultValue = "false")]
-        bool DisableCachingGameComponents { get; set; }
+        bool DisableCachingGameComponents { get; }
 
         [Option(Alias = "DisableFootSteps", DefaultValue = "false")]
         bool DisableFootSteps { get; set; }
 
         [Option(Alias = "DisableLogging", DefaultValue = "false")]
-        bool DisableLogging { get; set; }
+        bool DisableLogging { get; }
 
         [Option(Alias = "DisableTelemetry", DefaultValue = "false")]
-        bool DisableTelemetry { get; set; }
+        bool DisableTelemetry { get; }
 
         [Option(Alias = "EnableArchiveFileCompression", DefaultValue = "true")]
-        bool EnableArchiveFileCompression { get; set; }
+        bool EnableArchiveFileCompression { get; }
 
         [Option(Alias = "EnableHealthCircles", DefaultValue = "true")]
         bool EnableHealthCircles { get; set; }
@@ -53,46 +53,46 @@ namespace SacredUtils
         string GameVoiceover { get; set; }
 
         [Option(Alias = "KeyGotoMainMenu", DefaultValue = "Escape")]
-        string KeyGotoMainMenu { get; set; }
+        string KeyGotoMainMenu { get; }
 
         [Option(Alias = "KeyOpenSacredUtilsDirectory", DefaultValue = "F3")]
-        string KeyOpenSacredUtilsDirectory { get; set; }
+        string KeyOpenSacredUtilsDirectory { get; }
 
         [Option(Alias = "KeyOpenSacredUtilsLogs", DefaultValue = "F1")]
-        string KeyOpenSacredUtilsLogs { get; set; }
+        string KeyOpenSacredUtilsLogs { get; }
 
         [Option(Alias = "KeyOpenSacredUtilsSettings", DefaultValue = "F2")]
-        string KeyOpenSacredUtilsSettings { get; set; }
+        string KeyOpenSacredUtilsSettings { get; }
 
         [Option(Alias = "KeyReloadFastSacredUtils", DefaultValue = "F6")]
-        string KeyReloadFastSacredUtils { get; set; }
+        string KeyReloadFastSacredUtils { get; }
 
         [Option(Alias = "KeyReloadSacredUtils", DefaultValue = "F4")]
-        string KeyReloadSacredUtils { get; set; }
+        string KeyReloadSacredUtils { get; }
 
         [Option(Alias = "KeyShutdownSacredUtils", DefaultValue = "F5")]
-        string KeyShutdownSacredUtils { get; set; }
+        string KeyShutdownSacredUtils { get; }
 
         [Option(Alias = "LicenseFileCreate", DefaultValue = "true")]
-        bool LicenseFileCreate { get; set; }
+        bool LicenseFileCreate { get; }
 
         [Option(Alias = "LoggingMethodName", DefaultValue = "false")]
-        bool LoggingMethodName { get; set; }
+        bool LoggingMethodName { get; }
 
         [Option(Alias = "MakeAutoBackupConfigs", DefaultValue = "true")]
         bool MakeAutoBackupConfigs { get; set; }
 
         [Option(Alias = "MaxApplicationBackupFiles", DefaultValue = "10")]
-        int MaxApplicationBackupFiles { get; set; }
+        int MaxApplicationBackupFiles { get; }
 
         [Option(Alias = "MaxArchiveFiles", DefaultValue = "10")]
-        int MaxArchiveFiles { get; set; }
+        int MaxArchiveFiles { get; }
 
         [Option(Alias = "MaxGameBackupFiles", DefaultValue = "10")]
-        int MaxGameBackupFiles { get; set; }
+        int MaxGameBackupFiles { get; }
 
         [Option(Alias = "RemoveTempContent", DefaultValue = "true")]
-        bool RemoveTempContent { get; set; }
+        bool RemoveTempContent { get; }
 
         [Option(Alias = "Sacred229PatchInstalled", DefaultValue = "false")]
         bool Sacred229PatchInstalled { get; set; }
@@ -107,13 +107,13 @@ namespace SacredUtils
         bool ServerMultiCoreFixInstalled { get; set; }
 
         [Option(Alias = "ShowChangeLog", DefaultValue = "true")]
-        bool ShowChangeLog { get; set; }
+        bool ShowChangeLog { get; }
 
         [Option(Alias = "ShowUsedMemory", DefaultValue = "false")]
-        bool ShowUsedMemory { get; set; }
+        bool ShowUsedMemory { get; }
 
         [Option(Alias = "ShowUsedMemoryUpdateInterval", DefaultValue = "2")]
-        int ShowUsedMemoryUpdateInterval { get; set; }
+        int ShowUsedMemoryUpdateInterval { get; }
 
         [Option(Alias = "UseOldSacredTextures", DefaultValue = "false")]
         bool UseOldSacredTextures { get; set; }

@@ -29,7 +29,6 @@
                     Text="{globalizer:GlobalizedResource String0056}" />
 
                 <ComboBox
-                    x:Name="GraphicsQualityCmbBox"
                     Height="27"
                     Margin="625,5,15,0"
                     VerticalAlignment="Top"
@@ -63,7 +62,6 @@
                     Text="{globalizer:GlobalizedResource String0060}" />
 
                 <Slider
-                    x:Name="WaitReTraceSlider"
                     Width="183"
                     Margin="618,-25,0,0"
                     HorizontalAlignment="Left"
@@ -100,7 +98,6 @@
                     Text="{globalizer:GlobalizedResource String0061}" />
 
                 <Slider
-                    x:Name="MapTransparentLSlider"
                     Width="183"
                     Margin="618,-25,0,0"
                     HorizontalAlignment="Left"
@@ -138,7 +135,6 @@
                     Text="{globalizer:GlobalizedResource String0062}" />
 
                 <Slider
-                    x:Name="NightBrightnessSlider"
                     Width="183"
                     Margin="618,-25,0,0"
                     HorizontalAlignment="Left"
@@ -176,7 +172,6 @@
                     Text="{globalizer:GlobalizedResource String0063}" />
 
                 <Button
-                    x:Name="ToTwoPageBtn"
                     Width="38"
                     Margin="765,4,5,4"
                     materialDesign:RippleAssist.IsCentered="True"

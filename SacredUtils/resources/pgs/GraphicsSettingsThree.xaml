@@ -29,7 +29,6 @@
                     Text="{globalizer:GlobalizedResource String0073}" />
 
                 <ToggleButton
-                    x:Name="BlackShadowsTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsThreeProperty}"
@@ -56,7 +55,6 @@
                     Text="{globalizer:GlobalizedResource String0074}" />
 
                 <ToggleButton
-                    x:Name="CompatVideoTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsThreeProperty}"
@@ -83,7 +81,6 @@
                     Text="{globalizer:GlobalizedResource String0075}" />
 
                 <ToggleButton
-                    x:Name="FontAaTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsThreeProperty}"
@@ -110,7 +107,6 @@
                     Text="{globalizer:GlobalizedResource String0076}" />
 
                 <ToggleButton
-                    x:Name="FullScreenAaTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsThreeProperty}"
@@ -137,7 +133,6 @@
                     Text="{globalizer:GlobalizedResource String0077}" />
 
                 <ToggleButton
-                    x:Name="FontFilterTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsThreeProperty}"
@@ -164,7 +159,6 @@
                     Text="{globalizer:GlobalizedResource String0078}" />
 
                 <Button
-                    x:Name="ToFourPageBtn"
                     Width="38"
                     Margin="765,4,5,4"
                     materialDesign:RippleAssist.IsCentered="True"
@@ -181,7 +175,6 @@
                 </Button>
 
                 <Button
-                    x:Name="ToTwoPageBtn"
                     Width="38"
                     Margin="5,4,765,4"
                     materialDesign:RippleAssist.IsCentered="True"

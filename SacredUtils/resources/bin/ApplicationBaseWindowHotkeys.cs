@@ -51,7 +51,7 @@ namespace SacredUtils.resources.bin
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == shutdownSacredUtils)
             {
-                MainWindow.Shutdown();
+                ApplicationBaseWindowShutdown.Shutdown();
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == fastReloadSacredUtils)

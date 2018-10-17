@@ -135,7 +135,6 @@
             BorderThickness="1,1,1,1"
             CornerRadius="3">
             <Button
-                x:Name="UnpackGlobalResBtn"
                 Height="Auto"
                 Margin="0"
                 Click="UnpackGlobalResBtn_Click"
@@ -158,7 +157,6 @@
             BorderThickness="1,1,1,1"
             CornerRadius="3">
             <Button
-                x:Name="PackGlobalResBtn"
                 Height="Auto"
                 Click="PackGlobalResBtn_Click"
                 ClipToBounds="True"
@@ -179,7 +177,6 @@
             BorderThickness="1,1,1,1"
             CornerRadius="3">
             <Button
-                x:Name="EditBalanceBtn"
                 Height="Auto"
                 Click="EditBalanceBtn_Click"
                 ClipToBounds="True"
@@ -200,7 +197,6 @@
             BorderThickness="1,1,1,1"
             CornerRadius="3">
             <Button
-                x:Name="EditCreatureBtn"
                 Height="Auto"
                 Click="EditCreatureBtn_Click"
                 ClipToBounds="True"
@@ -221,7 +217,6 @@
             BorderThickness="1,1,1,1"
             CornerRadius="3">
             <Button
-                x:Name="EditWeaponBtn"
                 Height="Auto"
                 Click="EditWeaponBtn_Click"
                 ClipToBounds="True"
@@ -242,7 +237,6 @@
             BorderThickness="1,1,1,1"
             CornerRadius="3">
             <Button
-                x:Name="RunSacredHeroResetterBtn"
                 Height="Auto"
                 Click="RunSacredHeroResetterBtn_Click"
                 ClipToBounds="True"
@@ -263,7 +257,6 @@
             BorderThickness="1,1,1,1"
             CornerRadius="3">
             <Button
-                x:Name="RunSacredHotkeyTweakerBtn"
                 Height="Auto"
                 Click="RunSacredHotkeyTweakerBtn_Click"
                 ClipToBounds="True"
@@ -284,7 +277,6 @@
             BorderThickness="1,1,1,1"
             CornerRadius="3">
             <Button
-                x:Name="RunCharModifBtn"
                 Height="Auto"
                 Click="RunCharModifBtn_Click"
                 ClipToBounds="True"
@@ -305,8 +297,8 @@
             BorderThickness="1,1,1,1"
             CornerRadius="3">
             <Button
-                x:Name="StartCheckingComponentsBtn"
                 Height="Auto"
+                Click="StartCheckingComponentsBtn_Click"
                 ClipToBounds="True"
                 Content="{globalizer:GlobalizedResource String0151}"
                 Cursor="Hand"
@@ -314,7 +306,7 @@
                 FontSize="12"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 IsEnabled="True"
-                Style="{StaticResource MaterialDesignToolForegroundButton}" Click="StartCheckingComponentsBtn_Click" />
+                Style="{StaticResource MaterialDesignToolForegroundButton}" />
         </Border>
         <Border
             Width="402"
@@ -326,7 +318,6 @@
             BorderThickness="1,1,1,1"
             CornerRadius="3">
             <Button
-                x:Name="RunConvertColors"
                 Height="Auto"
                 Click="RunConvertColors_Click"
                 ClipToBounds="True"

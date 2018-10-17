@@ -12,7 +12,7 @@ namespace SacredUtils.resources.bin
 
         private static bool Get()
         {
-            var parameterDate = DateTime.ParseExact("10/17", "MM/dd", CultureInfo.InvariantCulture);
+            var parameterDate = DateTime.ParseExact("10/15", "MM/dd", CultureInfo.InvariantCulture);
             var todaysDate = DateTime.Today;
 
             return parameterDate == todaysDate;

@@ -13,7 +13,7 @@
         <materialDesign:DialogHost
             x:Name="LicenseDialog"
             CloseOnClickAway="False"
-            IsOpen="True"
+            IsOpen="False"
             Visibility="Visible">
             <materialDesign:DialogHost.DialogContent>
                 <Grid
@@ -29,7 +29,6 @@
                         CornerRadius="3">
 
                         <Button
-                            x:Name="ReadLicenseBtn"
                             Height="Auto"
                             Click="ReadLicenseBtn_Click"
                             ClipToBounds="True"
@@ -68,7 +67,6 @@
                         BorderThickness="1,1,1,1"
                         CornerRadius="3">
                         <Button
-                            x:Name="AcceptLicenseBtn"
                             Height="Auto"
                             Click="AcceptLicenseBtn_Click"
                             ClipToBounds="True"
@@ -89,7 +87,6 @@
                         BorderThickness="1,1,1,1"
                         CornerRadius="3">
                         <Button
-                            x:Name="CloseSacredUtilsBtn"
                             Height="Auto"
                             Click="CloseSacredUtilsBtn_Click"
                             ClipToBounds="True"

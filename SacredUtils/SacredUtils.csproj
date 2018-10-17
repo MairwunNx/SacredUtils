@@ -142,6 +142,7 @@
     <Compile Include="resources\arr\ArraySacredGameWaterFilesF.cs" />
     <Compile Include="resources\arr\ArraySacredGameWaterFilesG.cs" />
     <Compile Include="resources\bin\ApplicationBaseWindowHotkeys.cs" />
+    <Compile Include="resources\bin\ApplicationBaseWindowShutdown.cs" />
     <Compile Include="resources\bin\ApplicationStartSacredGameFile.cs" />
     <Compile Include="resources\bin\ApplicationStartUtilityUpdate.cs" />
     <Compile Include="resources\bin\ChangeApplicationSelectionSettings.cs" />

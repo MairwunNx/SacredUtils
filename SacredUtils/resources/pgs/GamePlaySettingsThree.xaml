@@ -29,7 +29,6 @@
                     Text="{globalizer:GlobalizedResource String0051}" />
 
                 <ToggleButton
-                    x:Name="CombineSlotsTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsThreeProperty}"
@@ -56,7 +55,6 @@
                     Text="{globalizer:GlobalizedResource String0052}" />
 
                 <ToggleButton
-                    x:Name="LicenseTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsThreeProperty}"
@@ -83,7 +81,6 @@
                     Text="{globalizer:GlobalizedResource String0053}" />
 
                 <ToggleButton
-                    x:Name="FirstTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsThreeProperty}"
@@ -110,7 +107,6 @@
                     Text="{globalizer:GlobalizedResource String0054}" />
 
                 <ToggleButton
-                    x:Name="EarthQuakeTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsThreeProperty}"
@@ -153,7 +149,6 @@
                 </Button>
 
                 <Button
-                    x:Name="ToTwoPageBtn"
                     Width="38"
                     Margin="5,4,765,4"
                     materialDesign:RippleAssist.IsCentered="True"

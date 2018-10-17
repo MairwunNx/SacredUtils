@@ -77,7 +77,6 @@
                         CornerRadius="3"
                         Cursor="Hand">
                         <Button
-                            x:Name="LaunchSacredBtn"
                             Height="Auto"
                             Click="LaunchSacredBtn_Click"
                             ClipToBounds="True"
@@ -97,7 +96,6 @@
                         CornerRadius="3"
                         Cursor="Hand">
                         <Button
-                            x:Name="CancelLaunchBtn"
                             Height="Auto"
                             Click="CancelLaunchBtn_Click"
                             ClipToBounds="True"

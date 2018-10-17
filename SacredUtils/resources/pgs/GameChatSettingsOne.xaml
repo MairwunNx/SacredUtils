@@ -29,7 +29,6 @@
                     Text="{globalizer:GlobalizedResource String0018}" />
 
                 <ToggleButton
-                    x:Name="RainbowChatTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameChatSettingsOneProperty}"
@@ -96,7 +95,6 @@
                     Text="{globalizer:GlobalizedResource String0025}" />
 
                 <Slider
-                    x:Name="CountChatLinesSlider"
                     Width="183"
                     Margin="618,-25,0,0"
                     HorizontalAlignment="Left"
@@ -136,7 +134,6 @@
                     Text="{globalizer:GlobalizedResource String0026}" />
 
                 <Slider
-                    x:Name="ChatTextDelaySlider"
                     Width="183"
                     Margin="618,-25,0,0"
                     HorizontalAlignment="Left"
@@ -176,7 +173,6 @@
                     Text="{globalizer:GlobalizedResource String0027}" />
 
                 <Slider
-                    x:Name="ChatTransparentSlider"
                     Width="183"
                     Margin="618,-25,0,0"
                     HorizontalAlignment="Left"

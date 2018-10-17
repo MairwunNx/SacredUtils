@@ -29,7 +29,6 @@
                     Text="{globalizer:GlobalizedResource String0064}" />
 
                 <ToggleButton
-                    x:Name="MbitVideoTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsTwoProperty}"
@@ -55,7 +54,6 @@
                     Text="{globalizer:GlobalizedResource String0065}" />
 
                 <ToggleButton
-                    x:Name="BitColorTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsTwoProperty}"
@@ -82,7 +80,6 @@
                     Text="{globalizer:GlobalizedResource String0066}" />
 
                 <ToggleButton
-                    x:Name="PickupAnimTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsTwoProperty}"
@@ -109,7 +106,6 @@
                     Text="{globalizer:GlobalizedResource String0067}" />
 
                 <ToggleButton
-                    x:Name="ViolenceTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsTwoProperty}"
@@ -136,7 +132,6 @@
                     Text="{globalizer:GlobalizedResource String0068}" />
 
                 <ToggleButton
-                    x:Name="FullScreenTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsTwoProperty}"
@@ -163,7 +158,6 @@
                     Text="{globalizer:GlobalizedResource String0069}" />
 
                 <ToggleButton
-                    x:Name="FullScreenAaTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsTwoProperty}"
@@ -190,7 +184,6 @@
                     Text="{globalizer:GlobalizedResource String0070}" />
 
                 <ToggleButton
-                    x:Name="MoviesTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsTwoProperty}"
@@ -217,7 +210,6 @@
                     Text="{globalizer:GlobalizedResource String0071}" />
 
                 <ToggleButton
-                    x:Name="FinalMovieTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsTwoProperty}"
@@ -244,7 +236,6 @@
                     Text="{globalizer:GlobalizedResource String0072}" />
 
                 <Button
-                    x:Name="ToThreePageBtn"
                     Width="38"
                     Margin="765,4,5,4"
                     materialDesign:RippleAssist.IsCentered="True"
@@ -261,7 +252,6 @@
                 </Button>
 
                 <Button
-                    x:Name="ToOnePageBtn"
                     Width="38"
                     Margin="5,4,765,4"
                     materialDesign:RippleAssist.IsCentered="True"

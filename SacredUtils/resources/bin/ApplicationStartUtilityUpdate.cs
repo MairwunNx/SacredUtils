@@ -14,7 +14,7 @@ namespace SacredUtils.resources.bin
 
                 Process.Start("mnxupdater.exe", AppDomain.CurrentDomain.FriendlyName + " _newVersionSacredUtilsTemp.exe");
 
-                MainWindow.Shutdown();
+                ApplicationBaseWindowShutdown.Shutdown();
             }
             catch (Exception ex)
             {

@@ -29,7 +29,6 @@
                     Text="{globalizer:GlobalizedResource String0042}" />
 
                 <ToggleButton
-                    x:Name="AutoAiTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
@@ -56,7 +55,6 @@
                     Text="{globalizer:GlobalizedResource String0043}" />
 
                 <ToggleButton
-                    x:Name="AutoSaveTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
@@ -83,7 +81,6 @@
                     Text="{globalizer:GlobalizedResource String0044}" />
 
                 <ToggleButton
-                    x:Name="DefaultSkillsTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
@@ -110,7 +107,6 @@
                     Text="{globalizer:GlobalizedResource String0045}" />
 
                 <ToggleButton
-                    x:Name="LogTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
@@ -137,7 +133,6 @@
                     Text="{globalizer:GlobalizedResource String0046}" />
 
                 <ToggleButton
-                    x:Name="IconsTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
@@ -164,7 +159,6 @@
                     Text="{globalizer:GlobalizedResource String0047}" />
 
                 <ToggleButton
-                    x:Name="DopingBarTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
@@ -191,7 +185,6 @@
                     Text="{globalizer:GlobalizedResource String0048}" />
 
                 <ToggleButton
-                    x:Name="HeroInfoTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
@@ -218,7 +211,6 @@
                     Text="{globalizer:GlobalizedResource String0049}" />
 
                 <ToggleButton
-                    x:Name="EnemyInfoTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
@@ -245,7 +237,6 @@
                     Text="{globalizer:GlobalizedResource String0050}" />
 
                 <Button
-                    x:Name="ToThreePageBtn"
                     Width="38"
                     Margin="765,4,5,4"
                     materialDesign:RippleAssist.IsCentered="True"
@@ -262,7 +253,6 @@
                 </Button>
 
                 <Button
-                    x:Name="ToOnePageBtn"
                     Width="38"
                     Margin="5,4,765,4"
                     materialDesign:RippleAssist.IsCentered="True"

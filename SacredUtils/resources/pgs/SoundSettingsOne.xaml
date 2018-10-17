@@ -29,7 +29,6 @@
                     Text="{globalizer:GlobalizedResource String0097}" />
 
                 <ToggleButton
-                    x:Name="SoundTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameSoundSettingsOneProperty}"
@@ -56,7 +55,6 @@
                     Text="{globalizer:GlobalizedResource String0098}" />
 
                 <ComboBox
-                    x:Name="SoundQualityCmbBox"
                     Height="27"
                     Margin="625,5,15,0"
                     VerticalAlignment="Top"
@@ -90,7 +88,6 @@
                     Text="{globalizer:GlobalizedResource String0102}" />
 
                 <ComboBox
-                    x:Name="VoiceoverLangCmbBox"
                     Height="27"
                     Margin="625,5,15,0"
                     VerticalAlignment="Top"
@@ -125,7 +122,6 @@
                     Text="{globalizer:GlobalizedResource String0107}" />
 
                 <Slider
-                    x:Name="MusicVolumeSlider"
                     Width="183"
                     Margin="618,-25,0,0"
                     HorizontalAlignment="Left"
@@ -163,7 +159,6 @@
                     Text="{globalizer:GlobalizedResource String0108}" />
 
                 <Slider
-                    x:Name="SfxVolumeSlider"
                     Width="183"
                     Margin="618,-25,0,0"
                     HorizontalAlignment="Left"
@@ -201,7 +196,6 @@
                     Text="{globalizer:GlobalizedResource String0109}" />
 
                 <Slider
-                    x:Name="VoiceVolumeSlider"
                     Width="183"
                     Margin="618,-25,0,0"
                     HorizontalAlignment="Left"

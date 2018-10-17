@@ -29,7 +29,6 @@
                     Text="{globalizer:GlobalizedResource String0001}" />
 
                 <ComboBox
-                    x:Name="UiLanguageCmbBox"
                     Height="27"
                     Margin="625,0,15,0"
                     VerticalAlignment="Center"
@@ -63,7 +62,6 @@
                     Text="{globalizer:GlobalizedResource String0004}" />
 
                 <ComboBox
-                    x:Name="UiThemeCmbBox"
                     Height="27"
                     Margin="625,0,15,0"
                     VerticalAlignment="Center"
@@ -96,7 +94,6 @@
                     Text="{globalizer:GlobalizedResource String0007}" />
 
                 <ComboBox
-                    x:Name="StartParamsCmbBox"
                     Height="27"
                     Margin="625,0,15,0"
                     VerticalAlignment="Center"
@@ -130,7 +127,6 @@
                     Text="{globalizer:GlobalizedResource String0011}" />
 
                 <ComboBox
-                    x:Name="UiScaleCmbBox"
                     Height="27"
                     Margin="625,0,15,0"
                     VerticalAlignment="Center"

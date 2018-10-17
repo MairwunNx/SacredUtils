@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 
+// ReSharper disable EmptyGeneralCatchClause
 namespace SacredUtils.resources.bin
 {
     public static class GetApplicationDownloadStatistic
@@ -20,7 +21,7 @@ namespace SacredUtils.resources.bin
 
                         AppSettings.ApplicationSettings.WhatIsThisDoingHere = false;
                     }
-                    catch (Exception e) { }
+                    catch { }
                 }
             }
         }

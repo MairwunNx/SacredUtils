@@ -210,7 +210,6 @@
                         </StackPanel>
 
                         <StackPanel
-                            x:Name="PlayPanel"
                             Height="40"
                             Margin="0,380,0,300"
                             Cursor="Hand">

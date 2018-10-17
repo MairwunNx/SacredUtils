@@ -29,7 +29,6 @@
                     Text="{globalizer:GlobalizedResource String0013}" />
 
                 <ToggleButton
-                    x:Name="UpdateCheckTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:ApplicationSettingsTwoProperty}"
@@ -56,7 +55,6 @@
                     Text="{globalizer:GlobalizedResource String0014}" />
 
                 <ToggleButton
-                    x:Name="UpdateAlphaCheckTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:ApplicationSettingsTwoProperty}"
@@ -83,7 +81,6 @@
                     Text="{globalizer:GlobalizedResource String0015}" />
 
                 <ToggleButton
-                    x:Name="MakeBackupTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:ApplicationSettingsTwoProperty}"
@@ -110,7 +107,6 @@
                     Text="{globalizer:GlobalizedResource String0016}" />
 
                 <ToggleButton
-                    x:Name="LicenseTglBtn"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:ApplicationSettingsTwoProperty}"
@@ -144,7 +140,6 @@
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     IsEnabled="False"
                     Style="{StaticResource MaterialDesignToolForegroundButton}">
-
                     <materialDesign:PackIcon
                         Width="28"
                         Height="28"
@@ -162,7 +157,6 @@
                     materialDesign:RippleAssist.RippleSizeMultiplier="0.5"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Style="{StaticResource MaterialDesignToolForegroundButton}">
-
                     <materialDesign:PackIcon
                         Width="28"
                         Height="28"

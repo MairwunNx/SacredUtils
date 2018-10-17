@@ -41,7 +41,6 @@
                             Style="{DynamicResource MaterialDesignCircularProgressBar}" />
 
                         <Label
-                            x:Name="CheckingComponentsLbl"
                             Height="28"
                             Margin="70,59,10,0"
                             VerticalAlignment="Top"

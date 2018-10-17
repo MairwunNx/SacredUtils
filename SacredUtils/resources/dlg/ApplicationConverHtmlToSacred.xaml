@@ -52,7 +52,6 @@
                         BorderThickness="1,1,1,1"
                         CornerRadius="3">
                         <Button
-                            x:Name="SelectColorBtn"
                             Height="Auto"
                             Click="SelectColorBtn_Click"
                             ClipToBounds="True"
@@ -74,7 +73,6 @@
                         BorderThickness="1,1,1,1"
                         CornerRadius="3">
                         <Button
-                            x:Name="CopyNickBtn"
                             Height="Auto"
                             Click="CopyNickBtn_Click"
                             ClipToBounds="True"

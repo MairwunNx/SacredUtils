@@ -47,7 +47,6 @@
                         CornerRadius="3"
                         Cursor="Hand">
                         <Button
-                            x:Name="OpenChangeLog"
                             Height="Auto"
                             Click="OpenChangeLog_Click"
                             ClipToBounds="True"

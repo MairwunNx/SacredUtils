@@ -1,6 +1,7 @@
 using SacredUtils.resources.bin;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace SacredUtils
@@ -31,8 +32,6 @@ namespace SacredUtils
 
                     GetApplicationGlobalizerLibrary.Get();
 
-                    GetApplicationDownloadStatistic.Get();
-
                     CreateApplicationLanguageFiles.Create();
 
                     CreateApplicationThemeFiles.Create();
@@ -49,6 +48,8 @@ namespace SacredUtils
                 }
 
                 base.OnStartup(e);
+
+                Task.Run(() => { GetApplicationDownloadStatistic.Get(); });
             }
             catch (Exception exception)
             {
