@@ -293,6 +293,15 @@
                 Source="{StaticResource ResourceKey=NoInternetConnection}"
                 Visibility="Collapsed" />
 
+            <Image
+                x:Name="BirthdayImage"
+                Grid.Row="1"
+                Width="400"
+                Height="400"
+                Opacity="0.05"
+                Source="{StaticResource ResourceKey=Birthday}"
+                Visibility="Collapsed" />
+
             <!--#region Content for page dialogs.-->
 
             <Border Grid.Row="1">

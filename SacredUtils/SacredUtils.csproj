@@ -172,6 +172,7 @@
     <Compile Include="resources\bin\GetApplicationDownloadStatistic.cs" />
     <Compile Include="resources\bin\GetApplicationThemeValue.cs" />
     <Compile Include="resources\bin\GetSacredGameComponentFiles.cs" />
+    <Compile Include="resources\bin\GetSacredUtilsProjectBirthday.cs" />
     <Compile Include="resources\bin\PrintToLogBaseApplicationInfo.cs" />
     <Compile Include="resources\dlg\ApplicationConverHtmlToSacred.xaml.cs">
       <DependentUpon>ApplicationConverHtmlToSacred.xaml</DependentUpon>

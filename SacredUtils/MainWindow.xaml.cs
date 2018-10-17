@@ -65,7 +65,7 @@ namespace SacredUtils
 
                 AppLogger.Log.Info($"Loading SacredUtils application done ({AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
 
-                Task.Run(() => { CheckAvailabilityAlphaUpdates.GetPerm(); GetNoInternetIconVisibility.Get(); });
+                Task.Run(() => { CheckAvailabilityAlphaUpdates.GetPerm(); GetNoInternetIconVisibility.Get(); GetSacredUtilsProjectBirthday.Set(); });
 
                 if (!CheckAvailabilityInternetConnection.Connect()) { NoConnectImage.Visibility = Visibility.Visible; }
 
