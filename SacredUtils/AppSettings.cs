@@ -31,6 +31,9 @@ namespace SacredUtils
         [Option(Alias = "DebugFileCreate", DefaultValue = "false")]
         bool DebugFileCreate { get; }
 
+        [Option(Alias = "DesiredFrameRateProperty", DefaultValue = "60")]
+        int DesiredFrameRateProperty { get; }
+
         [Option(Alias = "DisableCachingGameComponents", DefaultValue = "false")]
         bool DisableCachingGameComponents { get; }
 

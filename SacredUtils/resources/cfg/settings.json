@@ -8,6 +8,7 @@
   "ClosePageDialogAfterSelect": "true",
   "ColorTheme": "light",
   "DebugFileCreate": "false",
+  "DesiredFrameRateProperty": "60",
   "DisableCachingGameComponents": "false",
   "DisableFootSteps": "false",
   "DisableLogging": "false",

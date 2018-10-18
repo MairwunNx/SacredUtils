@@ -4,6 +4,7 @@ using System;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media.Animation;
 using System.Windows.Threading;
 
 namespace SacredUtils
@@ -49,6 +50,8 @@ namespace SacredUtils
             MenuMdLabel.Click += (s, e) => ChangeApplicationSelectionSettings.SelectSettings(ModifyStgOne, ModifPanel);
             MenuStLabel.Click += (s, e) => ChangeApplicationSelectionSettings.SelectSettings(AppStgOne, SettingsPanel);
             MenuPlLabel.Click += (s, e) => ApplicationStartSacredGameFile.StartDialog();
+
+            Timeline.DesiredFrameRateProperty.OverrideMetadata(typeof(Timeline), new FrameworkPropertyMetadata { DefaultValue = AppSettings.ApplicationSettings.DesiredFrameRateProperty });
 
             CloseBtn.Click += (s, e) => ApplicationBaseWindowShutdown.Shutdown();
             UpdateLbl.MouseDown += (s, e) => ApplicationStartUtilityUpdate.Start();
