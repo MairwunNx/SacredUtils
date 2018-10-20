@@ -12,6 +12,12 @@ namespace SacredUtils.resources.bin
         {
             ApplicationRunSacredDialog applicationRunSacredDialog = new ApplicationRunSacredDialog();
 
+            if (MainWindow.AppStgOne.StartParamsGameCmbBox.SelectedIndex == 0)
+            {
+                applicationRunSacredDialog.RunWithEngLangCmbBox.IsEnabled = false;
+                applicationRunSacredDialog.RunWithScreenCmbBox.IsEnabled = false;
+            }
+
             MainWindow.DialogFrame.Visibility = Visibility.Visible;
             MainWindow.DialogFrame.Content = applicationRunSacredDialog;
 

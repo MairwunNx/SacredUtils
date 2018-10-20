@@ -219,8 +219,9 @@
     <sys:String x:Key="String0159">Параметры запуска Sacred</sys:String>
     <sys:String x:Key="String0160">Выберите нужные параметры и запустите игру</sys:String>
     <sys:String x:Key="String0161">Запустить Sacred с аргументом CHEATS=1</sys:String>
-    <sys:String x:Key="String0162">Сменить язык раскладки на английский (en-US)</sys:String>
+    <sys:String x:Key="String0162">Принудительно разрешить смену раскладки в игре</sys:String>
     <sys:String x:Key="String0163">Запустить игру</sys:String>
     <sys:String x:Key="String0164">Отменить запуск</sys:String>
+    <sys:String x:Key="String0165">Растягивать скриншот до разрешения экрана</sys:String>
 
 </Globalization:GlobalizationResourceDictionary>

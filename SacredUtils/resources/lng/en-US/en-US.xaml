@@ -219,8 +219,9 @@
     <sys:String x:Key="String0159">Sacred start params</sys:String>
     <sys:String x:Key="String0160">Select the desired options and run the game</sys:String>
     <sys:String x:Key="String0161">Launch sacred with argument CHEATS=1</sys:String>
-    <sys:String x:Key="String0162">Change the keyboard language to English (for russia)</sys:String>
+    <sys:String x:Key="String0162">Force allow change language layout in game</sys:String>
     <sys:String x:Key="String0163">Launch game</sys:String>
     <sys:String x:Key="String0164">Cancel launch</sys:String>
+    <sys:String x:Key="String0165">Stretch screenshot to screen resolution</sys:String>
 
 </Globalization:GlobalizationResourceDictionary>

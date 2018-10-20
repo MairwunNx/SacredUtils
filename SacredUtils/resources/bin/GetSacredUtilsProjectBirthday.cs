@@ -26,7 +26,7 @@ namespace SacredUtils.resources.bin
 
                 Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
                 {
-                    MainWindow.BirthdayImage.Visibility = Visibility.Visible;
+                    if (MainWindow.NoConnectImage.Visibility != 0) { MainWindow.BirthdayImage.Visibility = 0; }
                 }));
             }
         }

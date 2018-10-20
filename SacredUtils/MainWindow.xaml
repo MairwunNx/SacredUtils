@@ -13,6 +13,7 @@
     AllowsTransparency="True"
     Background="{x:Null}"
     Icon="resources/ico/icons8_Gas.ico"
+    IsTabStop="True"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"

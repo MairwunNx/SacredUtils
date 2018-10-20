@@ -183,6 +183,26 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        public static byte[] HotKeyReg {
+            get {
+                object obj = ResourceManager.GetObject("HotKeyReg", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] keyla {
+            get {
+                object obj = ResourceManager.GetObject("keyla", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         public static byte[] Light {
             get {
                 object obj = ResourceManager.GetObject("Light", resourceCulture);

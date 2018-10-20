@@ -1,9 +1,8 @@
-﻿using System;
+﻿using SacredUtils.resources.bin;
+using System;
 using System.Diagnostics;
-using System.Globalization;
 using System.IO;
 using System.Windows;
-using System.Windows.Forms;
 using Application = System.Windows.Application;
 
 namespace SacredUtils.resources.dlg
@@ -20,25 +19,15 @@ namespace SacredUtils.resources.dlg
             {
                 if (RunWithCheatsCmbBox.IsChecked == true)
                 {
-                    if (RunWithEngLangCmbBox.IsChecked == true)
+                    if (File.Exists("Sacred.exe"))
                     {
-                        if (File.Exists("Sacred.exe"))
-                        {
-                            InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
+                        AboutDialog.IsOpen = false;
 
-                            AboutDialog.IsOpen = false;
+                        Process.Start("Sacred.exe", "CHEATS=1");
 
-                            Process.Start("Sacred.exe", "CHEATS=1");
-                        }
-                    }
-                    else
-                    {
-                        if (File.Exists("Sacred.exe"))
-                        {
-                            AboutDialog.IsOpen = false;
+                        EnableSwitchingLanguage();
 
-                            Process.Start("Sacred.exe", "CHEATS=1");
-                        }
+                        EnableStretchingScreenshot();
                     }
                 }
                 else
@@ -47,7 +36,11 @@ namespace SacredUtils.resources.dlg
                     {
                         AboutDialog.IsOpen = false;
 
-                        Process.Start("Sacred.exe");
+                        Process.Start("Sacred.exe", "CHEATS=1");
+
+                        EnableSwitchingLanguage();
+
+                        EnableStretchingScreenshot();
                     }
                 }
             }
@@ -55,29 +48,17 @@ namespace SacredUtils.resources.dlg
             {
                 if (RunWithCheatsCmbBox.IsChecked == true)
                 {
-                    if (RunWithEngLangCmbBox.IsChecked == true)
+                    if (File.Exists("Sacred.exe"))
                     {
-                        if (File.Exists("Sacred.exe"))
-                        {
-                            InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
+                        AboutDialog.IsOpen = false;
 
-                            AboutDialog.IsOpen = false;
+                        MainWindow.WindowState = WindowState.Minimized;
 
-                            MainWindow.WindowState = WindowState.Minimized;
+                        Process.Start("Sacred.exe", "CHEATS=1");
 
-                            Process.Start("Sacred.exe", "CHEATS=1");
-                        }
-                    }
-                    else
-                    {
-                        if (File.Exists("Sacred.exe"))
-                        {
-                            AboutDialog.IsOpen = false;
+                        EnableSwitchingLanguage();
 
-                            MainWindow.WindowState = WindowState.Minimized;
-
-                            Process.Start("Sacred.exe", "CHEATS=1");
-                        }
+                        EnableStretchingScreenshot();
                     }
                 }
                 else
@@ -88,34 +69,25 @@ namespace SacredUtils.resources.dlg
 
                         MainWindow.WindowState = WindowState.Minimized;
 
-                        Process.Start("Sacred.exe");
+                        Process.Start("Sacred.exe", "CHEATS=1");
+
+                        EnableSwitchingLanguage();
+
+                        EnableStretchingScreenshot();
                     }
                 }
             }
-
             else if (AppSettings.ApplicationSettings.SacredStartArgs == 0)
             {
+                //MessageBox.Show("Notification: The mode \"Close SU before launching the game\" does not allow to emulate hot keys, screenshots and language changes.");
+
                 if (RunWithCheatsCmbBox.IsChecked == true)
                 {
-                    if (RunWithEngLangCmbBox.IsChecked == true)
+                    if (File.Exists("Sacred.exe"))
                     {
-                        if (File.Exists("Sacred.exe"))
-                        {
-                            InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
-                            
-                            Process.Start("Sacred.exe", "CHEATS=1");
+                        Process.Start("Sacred.exe", "CHEATS=1");
 
-                            Environment.Exit(0);
-                        }
-                    }
-                    else
-                    {
-                        if (File.Exists("Sacred.exe"))
-                        {
-                            Process.Start("Sacred.exe", "CHEATS=1");
-
-                            Environment.Exit(0);
-                        }
+                        Environment.Exit(0);
                     }
                 }
                 else
@@ -127,6 +99,22 @@ namespace SacredUtils.resources.dlg
                         Environment.Exit(0);
                     }
                 }
+            }
+        }
+
+        private void EnableSwitchingLanguage()
+        {
+            if (RunWithEngLangCmbBox.IsChecked == true)
+            {
+                ForceSwitchKeyboardLanguageInGame.RegisterApplication();
+            }
+        }
+
+        private void EnableStretchingScreenshot()
+        { 
+            if (RunWithScreenCmbBox.IsChecked == true)
+            {
+                ForceStretchSacredGameScreenshot.RegisterKey();
             }
         }
 

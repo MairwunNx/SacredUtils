@@ -208,4 +208,10 @@
   <data name="SacredUtilsStatistics" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\opt\SacredUtilsStatistics.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="HotKeyReg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\etc\HotKeyReg.reg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="keyla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\etc\keyla.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
