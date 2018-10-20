@@ -114,6 +114,8 @@ namespace SacredUtils.resources.dlg
         { 
             if (RunWithScreenCmbBox.IsChecked == true)
             {
+                AppLogger.Log.Info($"Sacred Underworld starting with {MainWindow.ScreenWidthDevice}x{MainWindow.ScreenHeightDevice} resolution ...");
+
                 ForceStretchSacredGameScreenshot.RegisterKey();
             }
         }

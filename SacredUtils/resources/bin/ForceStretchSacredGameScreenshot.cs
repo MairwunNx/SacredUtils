@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -16,18 +15,6 @@ namespace SacredUtils.resources.bin
 {
     public static class ForceStretchSacredGameScreenshot
     {
-        [DllImport("User32.dll")]
-        static extern IntPtr GetDC(IntPtr hwnd);
-
-        [DllImport("gdi32.dll")]
-        static extern int GetDeviceCaps(IntPtr hdc, int nIndex);
-
-        static IntPtr primary = GetDC(IntPtr.Zero);
-        static int DESKTOPVERTRES = 117;
-        static int DESKTOPHORZRES = 118;
-        static int actualPixelsX = GetDeviceCaps(primary, DESKTOPHORZRES);
-        static int actualPixelsY = GetDeviceCaps(primary, DESKTOPVERTRES);
-
         public static void RegisterKey()
         {
             try
@@ -74,24 +61,27 @@ namespace SacredUtils.resources.bin
         {
             try
             {
-                double screenLeft = SystemParameters.VirtualScreenLeft;
-                double screenTop = SystemParameters.VirtualScreenTop;
-                double screenWidth = SystemParameters.VirtualScreenWidth;
-                double screenHeight = SystemParameters.VirtualScreenHeight;
-
-                using (Bitmap bmp = new Bitmap((int)screenWidth, (int)screenHeight))
+                Task.Run(() =>
                 {
-                    using (Graphics g = Graphics.FromImage(bmp))
+                    double screenLeft = SystemParameters.VirtualScreenLeft;
+                    double screenTop = SystemParameters.VirtualScreenTop;
+                    double screenWidth = SystemParameters.VirtualScreenWidth;
+                    double screenHeight = SystemParameters.VirtualScreenHeight;
+
+                    using (Bitmap bmp = new Bitmap((int)screenWidth, (int)screenHeight))
                     {
-                        string filename = "shoot-" + DateTime.Now.ToString("ddMMyyyy-hhmmss") + ".png";
+                        using (Graphics g = Graphics.FromImage(bmp))
+                        {
+                            string filename = "screen-" + DateTime.Now.ToString("ddMMyyyy-hhmmss") + ".png";
 
-                        g.CopyFromScreen((int)screenLeft, (int)screenTop, 0, 0, bmp.Size);
-                        
-                        Directory.CreateDirectory("Capture");
+                            g.CopyFromScreen((int)screenLeft, (int)screenTop, 0, 0, bmp.Size);
 
-                        Stretch(bmp, actualPixelsX, actualPixelsY, filename);
+                            Directory.CreateDirectory("Capture");
+
+                            Stretch(bmp, MainWindow.ScreenWidthDevice, MainWindow.ScreenHeightDevice, filename);
+                        }
                     }
-                }
+                });
             }
             catch (Exception exception)
             {
@@ -133,7 +123,23 @@ namespace SacredUtils.resources.bin
 
         private static void Save(Bitmap capture, string fileName)
         {
+            string[] jpgScreen = Directory.GetFiles("Capture\\", "*.jpg");
+            string[] tgaScreen = Directory.GetFiles("Capture\\", "*.tga");
+
+            try
+            {
+                foreach (string file in jpgScreen) { File.Delete(file); }
+
+                foreach (string file in tgaScreen) { File.Delete(file); }
+            }
+            catch (Exception e)
+            {
+                AppLogger.Log.Error(e.ToString);
+            }
+
             capture.Save("Capture\\" + fileName); Dispose();
+
+            AppLogger.Log.Info($"Screenshot saved {fileName} to Capture folder.");
         }
 
         private static void Dispose() => GC.Collect();
