@@ -153,6 +153,7 @@
     <Compile Include="resources\arr\ArraySacredGameWaterFilesG.cs" />
     <Compile Include="resources\bin\ApplicationBaseWindowHotkeys.cs" />
     <Compile Include="resources\bin\ApplicationBaseWindowShutdown.cs" />
+    <Compile Include="resources\bin\ApplicationRunSacredGameWithArgs.cs" />
     <Compile Include="resources\bin\ApplicationStartSacredGameFile.cs" />
     <Compile Include="resources\bin\ApplicationStartUtilityUpdate.cs" />
     <Compile Include="resources\bin\ChangeApplicationSelectionSettings.cs" />
@@ -249,6 +250,9 @@
     </Compile>
     <Compile Include="resources\pgs\GraphicsSettingsTwo.xaml.cs">
       <DependentUpon>GraphicsSettingsTwo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="resources\pgs\InvisibilityWindowForGame.xaml.cs">
+      <DependentUpon>InvisibilityWindowForGame.xaml</DependentUpon>
     </Compile>
     <Compile Include="resources\pgs\ModifyPageSettingsOne.xaml.cs">
       <DependentUpon>ModifyPageSettingsOne.xaml</DependentUpon>
@@ -377,6 +381,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="resources\pgs\GraphicsSettingsTwo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\pgs\InvisibilityWindowForGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

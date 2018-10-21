@@ -3,27 +3,28 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Media.Animation;
+using System.Windows.Forms;
 
 namespace SacredUtils
 {
     public partial class App
     {
+        public static int ScreenWidthDevice = Screen.PrimaryScreen.Bounds.Width;
+        public static int ScreenHeightDevice = Screen.PrimaryScreen.Bounds.Height;
+
         protected override void OnStartup(StartupEventArgs e)
         {
             AppSummary.Sw.Start();
 
             try
             {
-                if (e.Args.Contains("-fast"))
+                if (e.Args.Contains("-runGame"))
                 {
-                    AppLogger.Init(true);
-                }
-                else
-                {
-                    AppLogger.Init(false);
+                    AppLogger.Log.Info($"Screenshoting enable with {ScreenWidthDevice}x{ScreenHeightDevice} resolution");
 
-                    PrintToLogBaseApplicationInfo.Print();
+                    ApplicationRunSacredGameWithArgs.Run(e.Args);
+
+                    Current.StartupUri = new Uri("resources/pgs/InvisibilityWindowForGame.xaml", UriKind.Relative);
 
                     CheckAvailabilityInternetConnection.GetConnect();
 
@@ -31,26 +32,49 @@ namespace SacredUtils
 
                     GetApplicationSettingsValue.Get();
 
-                    GetApplicationGlobalizerLibrary.Get();
-
-                    CreateApplicationLanguageFiles.Create();
-
-                    CreateApplicationThemeFiles.Create();
-
-                    CheckAvailabilityGameSettings.Get();
-
-                    CreateBackupApplicationSettings.Create();
-
-                    CreateBackupSacredGameSettings.Create();
-
                     GetRequiredApplicationFiles.Get();
 
-                    CheckAvailabilityUpdateTemp.Get();
+                    GetApplicationDownloadStatistic.Get();
                 }
+                else
+                {
+                    if (e.Args.Contains("-fast"))
+                    {
+                        AppLogger.Init(true);
+                    }
+                    else
+                    {
+                        AppLogger.Init(false);
 
-                base.OnStartup(e);
+                        PrintToLogBaseApplicationInfo.Print();
 
-                Task.Run(() => { GetApplicationDownloadStatistic.Get(); });
+                        CheckAvailabilityInternetConnection.GetConnect();
+
+                        CreateApplicationNeededFolders.Create();
+
+                        GetApplicationSettingsValue.Get();
+
+                        GetApplicationGlobalizerLibrary.Get();
+
+                        CreateApplicationLanguageFiles.Create();
+
+                        CreateApplicationThemeFiles.Create();
+
+                        CheckAvailabilityGameSettings.Get();
+
+                        CreateBackupApplicationSettings.Create();
+
+                        CreateBackupSacredGameSettings.Create();
+
+                        GetRequiredApplicationFiles.Get();
+
+                        CheckAvailabilityUpdateTemp.Get();
+                    }
+
+                    base.OnStartup(e);
+
+                    Task.Run(() => { GetApplicationDownloadStatistic.Get(); });
+                }
             }
             catch (Exception exception)
             {

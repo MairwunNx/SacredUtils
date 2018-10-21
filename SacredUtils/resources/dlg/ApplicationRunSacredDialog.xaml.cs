@@ -116,7 +116,7 @@ namespace SacredUtils.resources.dlg
             {
                 AppLogger.Log.Info($"Sacred Underworld starting with {MainWindow.ScreenWidthDevice}x{MainWindow.ScreenHeightDevice} resolution ...");
 
-                ForceStretchSacredGameScreenshot.RegisterKey();
+                ForceStretchSacredGameScreenshot.RegisterKey(false);
             }
         }
 

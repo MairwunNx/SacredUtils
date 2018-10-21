@@ -15,8 +15,12 @@ namespace SacredUtils.resources.bin
 {
     public static class ForceStretchSacredGameScreenshot
     {
-        public static void RegisterKey()
+        public static bool ArgRun;
+
+        public static void RegisterKey(bool argRun)
         {
+            ArgRun = argRun;
+
             try
             {
                 HotkeyManager.Current.AddOrReplace("PrintScreen", Key.PrintScreen, ModifierKeys.None, Get);
@@ -61,7 +65,7 @@ namespace SacredUtils.resources.bin
         {
             try
             {
-                Task.Run(() =>
+                if (ArgRun)
                 {
                     double screenLeft = SystemParameters.VirtualScreenLeft;
                     double screenTop = SystemParameters.VirtualScreenTop;
@@ -78,10 +82,34 @@ namespace SacredUtils.resources.bin
 
                             Directory.CreateDirectory(AppSettings.ApplicationSettings.ScreenShotSaveDirectory);
 
-                            Stretch(bmp, MainWindow.ScreenWidthDevice, MainWindow.ScreenHeightDevice, filename);
+                            Stretch(bmp, App.ScreenWidthDevice, App.ScreenHeightDevice, filename);
                         }
                     }
-                });
+                }
+                else
+                {
+                    Task.Run(() =>
+                    {
+                        double screenLeft = SystemParameters.VirtualScreenLeft;
+                        double screenTop = SystemParameters.VirtualScreenTop;
+                        double screenWidth = SystemParameters.VirtualScreenWidth;
+                        double screenHeight = SystemParameters.VirtualScreenHeight;
+
+                        using (Bitmap bmp = new Bitmap((int)screenWidth, (int)screenHeight))
+                        {
+                            using (Graphics g = Graphics.FromImage(bmp))
+                            {
+                                string filename = AppSettings.ApplicationSettings.ScreenShotSaveFilePrefix + DateTime.Now.ToString(AppSettings.ApplicationSettings.ScreenShotSaveFilePattern) + ".png";
+
+                                g.CopyFromScreen((int)screenLeft, (int)screenTop, 0, 0, bmp.Size);
+
+                                Directory.CreateDirectory(AppSettings.ApplicationSettings.ScreenShotSaveDirectory);
+
+                                Stretch(bmp, MainWindow.ScreenWidthDevice, MainWindow.ScreenHeightDevice, filename);
+                            }
+                        }
+                    });
+                }
             }
             catch (Exception exception)
             {
@@ -123,6 +151,8 @@ namespace SacredUtils.resources.bin
 
         private static void Save(Bitmap capture, string fileName)
         {
+            Directory.CreateDirectory(AppSettings.ApplicationSettings.ScreenShotSaveDirectory);
+
             capture.Save($"{AppSettings.ApplicationSettings.ScreenShotSaveDirectory}\\{fileName}"); 
 
             AppLogger.Log.Info($"Screenshot saved {fileName} to Capture folder.");
