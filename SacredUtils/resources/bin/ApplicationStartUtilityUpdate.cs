@@ -10,6 +10,8 @@ namespace SacredUtils.resources.bin
         {
             try
             {
+                Directory.CreateDirectory("$SacredUtils\\temp");
+
                 File.Create("$SacredUtils\\temp\\updated.su");
 
                 Process.Start("mnxupdater.exe", AppDomain.CurrentDomain.FriendlyName + " _newVersionSacredUtilsTemp.exe");

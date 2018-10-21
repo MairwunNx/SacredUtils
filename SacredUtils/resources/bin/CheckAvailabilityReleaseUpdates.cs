@@ -68,7 +68,7 @@ namespace SacredUtils.resources.bin
                     File.Delete("_newVersionSacredUtilsTemp.exe");
                 }
 
-                Wc.DownloadFileTaskAsync(new Uri(release), "_newVersionSacredUtilsTemp.exe");
+                Wc.DownloadFileTaskAsync(new Uri(release), "_newVersionSacredUtilsTemp.exe").Wait();
 
                 AppLogger.Log.Info("Downloading new SacredUtils application update successfully done!");
 

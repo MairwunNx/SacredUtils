@@ -18,6 +18,7 @@
 > - Added more controlled game screenshot settings
 > - Added reloading sacred game settings on F5 key
 > - Added quick sacred game launch mode with args
+> - Fixed errors on updating and update exceptions
 
  ###### Changes included in SacredUtils-1.2.4.0-151018-release-1-official (1.2.4.0.151018.R1)
 
