@@ -1,4 +1,5 @@
-﻿using SacredUtils.resources.prp;
+﻿using System.Windows;
+using SacredUtils.resources.prp;
 
 namespace SacredUtils.resources.pgs
 {

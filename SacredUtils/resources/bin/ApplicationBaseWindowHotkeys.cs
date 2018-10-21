@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SacredUtils.resources.prp;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Input;
@@ -58,6 +59,45 @@ namespace SacredUtils.resources.bin
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == fastReloadSacredUtils)
             {
                 Process.Start(AppSummary.AppPatch, " -fast"); Environment.Exit(0);
+            }
+
+            if (e.Key == Key.F5)
+            {
+                try
+                {
+                    MainWindow.ChatStgOne.DataContext = null;
+                    MainWindow.ChatStgOne.DataContext = new GameChatSettingsOneProperty();
+
+                    MainWindow.FontStgOne.DataContext = null;
+                    MainWindow.FontStgOne.DataContext = new GameFontSettingsOneProperty();
+
+                    MainWindow.GamePlayStgOne.DataContext = null;
+                    MainWindow.GamePlayStgOne.DataContext = new GamePlaySettingsOneProperty();
+
+                    MainWindow.GamePlayStgTwo.DataContext = null;
+                    MainWindow.GamePlayStgTwo.DataContext = new GamePlaySettingsTwoProperty();
+
+                    MainWindow.GamePlayStgThree.DataContext = null;
+                    MainWindow.GamePlayStgThree.DataContext = new GamePlaySettingsThreeProperty();
+
+                    MainWindow.GraphicsStgOne.DataContext = null;
+                    MainWindow.GraphicsStgOne.DataContext = new GameGraphicsSettingsOneProperty();
+
+                    MainWindow.GraphicsStgTwo.DataContext = null;
+                    MainWindow.GraphicsStgTwo.DataContext = new GameGraphicsSettingsTwoProperty();
+
+                    MainWindow.GraphicsStgThree.DataContext = null;
+                    MainWindow.GraphicsStgThree.DataContext = new GameGraphicsSettingsThreeProperty();
+
+                    MainWindow.SoundStgOne.DataContext = null;
+                    MainWindow.SoundStgOne.DataContext = new GameSoundSettingsOneProperty();
+
+                    AppLogger.Log.Info("Sacred game settings successfully reloaded!");
+                }
+                catch (Exception ex)
+                {
+                    AppLogger.Log.Error(ex.ToString);
+                }
             }
         }
     }
