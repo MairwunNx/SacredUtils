@@ -1,4 +1,24 @@
  # Changes for SacredUtils Rv5
+ ###### Changes included in SacredUtils-1.2.4.1-211018-alpha-1-official (1.2.4.1.211018.A1)
+
+> - Improved project code fixed many logic bugs
+> - Updated Costura.Fody and MaterialDesignInXaml packages
+> - Improved SacredUtils MainWindows.xaml.cs code
+> - Fixed problem with minimizing window before launch game
+> - Improved SacredUtils MainWindow XAML markup code
+> - Added checking date on SacredUtils project birthday
+> - Improved and cleanup markup and behind SacredUtils code
+> - Added opportunity to change language in game
+> - Added opportunity to screen to fullscreen game
+> - Added disability checkboxes in start game menu
+> - Fixed logic errors in start menu sacred game
+> - Fixed incorrent saving screenshot resolution in game
+> - Fixed not-deleted tga and jpg files while screening
+> - Also fixed some text strings, thanks @Keboo
+> - Added more controlled game screenshot settings
+> - Added reloading sacred game settings on F5 key
+> - Added quick sacred game launch mode with args
+
  ###### Changes included in SacredUtils-1.2.4.0-151018-release-1-official (1.2.4.0.151018.R1)
 
 > - Created new changelog file for SacredUtils project
