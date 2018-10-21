@@ -31,6 +31,9 @@ namespace SacredUtils
         [Option(Alias = "DebugFileCreate", DefaultValue = "false")]
         bool DebugFileCreate { get; }
 
+        [Option(Alias = "DelayCheckingSacredProcess", DefaultValue = "1")]
+        int DelayCheckingSacredProcess { get; }
+
         [Option(Alias = "DesiredFrameRateProperty", DefaultValue = "60")]
         int DesiredFrameRateProperty { get; }
 
@@ -105,6 +108,18 @@ namespace SacredUtils
 
         [Option(Alias = "SacredUtilsGuiScale", DefaultValue = "1.0")]
         double SacredUtilsGuiScale { get; set; }
+
+        [Option(Alias = "ScreenShotRemoveTgaAndJpgFiles", DefaultValue = "true")]
+        bool ScreenShotRemoveTgaAndJpgFiles { get; set; }
+
+        [Option(Alias = "ScreenShotSaveDirectory", DefaultValue = "Capture")]
+        string ScreenShotSaveDirectory { get; set; }
+
+        [Option(Alias = "ScreenShotSaveFilePattern", DefaultValue = "ddMMyyyy-hh-mm-ss-fff")]
+        string ScreenShotSaveFilePattern { get; set; }
+        
+        [Option(Alias = "ScreenShotSaveFilePrefix", DefaultValue = "screen-")]
+        string ScreenShotSaveFilePrefix { get; set; }
 
         [Option(Alias = "ServerMultiCoreFixInstalled", DefaultValue = "false")]
         bool ServerMultiCoreFixInstalled { get; set; }

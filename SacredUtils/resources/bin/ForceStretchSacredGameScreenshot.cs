@@ -33,7 +33,7 @@ namespace SacredUtils.resources.bin
         {
             DispatcherTimer timer = new DispatcherTimer();
 
-            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Interval = new TimeSpan(0, 0, AppSettings.ApplicationSettings.DelayCheckingSacredProcess);
 
             timer.Tick += (s, e) =>
             {
@@ -72,11 +72,11 @@ namespace SacredUtils.resources.bin
                     {
                         using (Graphics g = Graphics.FromImage(bmp))
                         {
-                            string filename = "screen-" + DateTime.Now.ToString("ddMMyyyy-hh-mm-ss-fff") + ".png";
+                            string filename = AppSettings.ApplicationSettings.ScreenShotSaveFilePrefix + DateTime.Now.ToString(AppSettings.ApplicationSettings.ScreenShotSaveFilePattern) + ".png";
 
                             g.CopyFromScreen((int)screenLeft, (int)screenTop, 0, 0, bmp.Size);
 
-                            Directory.CreateDirectory("Capture");
+                            Directory.CreateDirectory(AppSettings.ApplicationSettings.ScreenShotSaveDirectory);
 
                             Stretch(bmp, MainWindow.ScreenWidthDevice, MainWindow.ScreenHeightDevice, filename);
                         }
@@ -123,7 +123,7 @@ namespace SacredUtils.resources.bin
 
         private static void Save(Bitmap capture, string fileName)
         {
-            capture.Save("Capture\\" + fileName); 
+            capture.Save($"{AppSettings.ApplicationSettings.ScreenShotSaveDirectory}\\{fileName}"); 
 
             AppLogger.Log.Info($"Screenshot saved {fileName} to Capture folder.");
 
@@ -132,18 +132,21 @@ namespace SacredUtils.resources.bin
 
         private static void RemoveTgaScreenshots()
         {
-            string[] jpgScreen = Directory.GetFiles("Capture\\", "*.jpg");
-            string[] tgaScreen = Directory.GetFiles("Capture\\", "*.tga");
-
-            try
+            if (AppSettings.ApplicationSettings.ScreenShotRemoveTgaAndJpgFiles)
             {
-                foreach (string file in jpgScreen) { File.Delete(file); }
+                string[] jpgScreen = Directory.GetFiles("Capture\\", "*.jpg");
+                string[] tgaScreen = Directory.GetFiles("Capture\\", "*.tga");
 
-                foreach (string file in tgaScreen) { File.Delete(file); }
-            }
-            catch (Exception e)
-            {
-                AppLogger.Log.Error(e.ToString);
+                try
+                {
+                    foreach (string file in jpgScreen) { File.Delete(file); }
+
+                    foreach (string file in tgaScreen) { File.Delete(file); }
+                }
+                catch (Exception e)
+                {
+                    AppLogger.Log.Error(e.ToString);
+                }
             }
 
             Dispose();

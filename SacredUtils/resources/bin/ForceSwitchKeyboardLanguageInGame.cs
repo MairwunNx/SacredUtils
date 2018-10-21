@@ -34,7 +34,7 @@ namespace SacredUtils.resources.bin
         {
             DispatcherTimer timer = new DispatcherTimer();
 
-            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Interval = new TimeSpan(0, 0, AppSettings.ApplicationSettings.DelayCheckingSacredProcess);
 
             timer.Tick += (s, e) =>
             {
