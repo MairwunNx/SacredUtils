@@ -72,7 +72,7 @@ namespace SacredUtils.resources.bin
                     {
                         using (Graphics g = Graphics.FromImage(bmp))
                         {
-                            string filename = "screen-" + DateTime.Now.ToString("ddMMyyyy-hhmmss") + ".png";
+                            string filename = "screen-" + DateTime.Now.ToString("ddMMyyyy-hh-mm-ss-fff") + ".png";
 
                             g.CopyFromScreen((int)screenLeft, (int)screenTop, 0, 0, bmp.Size);
 
@@ -123,6 +123,15 @@ namespace SacredUtils.resources.bin
 
         private static void Save(Bitmap capture, string fileName)
         {
+            capture.Save("Capture\\" + fileName); 
+
+            AppLogger.Log.Info($"Screenshot saved {fileName} to Capture folder.");
+
+            RemoveTgaScreenshots(); 
+        }
+
+        private static void RemoveTgaScreenshots()
+        {
             string[] jpgScreen = Directory.GetFiles("Capture\\", "*.jpg");
             string[] tgaScreen = Directory.GetFiles("Capture\\", "*.tga");
 
@@ -137,9 +146,7 @@ namespace SacredUtils.resources.bin
                 AppLogger.Log.Error(e.ToString);
             }
 
-            capture.Save("Capture\\" + fileName); Dispose();
-
-            AppLogger.Log.Info($"Screenshot saved {fileName} to Capture folder.");
+            Dispose();
         }
 
         private static void Dispose() => GC.Collect();

@@ -61,7 +61,7 @@
     <sys:String x:Key="String0043">Auto save on done levels</sys:String>
     <sys:String x:Key="String0044">Default skill selection</sys:String>
     <sys:String x:Key="String0045">Enable debug-log</sys:String>
-    <sys:String x:Key="String0046">Damage Type Badges</sys:String>
+    <sys:String x:Key="String0046">Damage type badges</sys:String>
     <sys:String x:Key="String0047">Game potions visibility</sys:String>
     <sys:String x:Key="String0048">Player info</sys:String>
     <sys:String x:Key="String0049">Enemy info</sys:String>
@@ -89,8 +89,8 @@
     <sys:String x:Key="String0065">32bit color depth</sys:String>
     <sys:String x:Key="String0066">Pickup animation</sys:String>
     <sys:String x:Key="String0067">Violence</sys:String>
-    <sys:String x:Key="String0068">Fullscreen mode</sys:String>
-    <sys:String x:Key="String0069">Fullscreen Anti-Aliasing</sys:String>
+    <sys:String x:Key="String0068">Full screen mode</sys:String>
+    <sys:String x:Key="String0069">Full screen anti-aliasing</sys:String>
     <sys:String x:Key="String0070">Show game movies</sys:String>
     <sys:String x:Key="String0071">Show game final movie</sys:String>
     <sys:String x:Key="String0072">Page 2 / 4</sys:String>
@@ -151,7 +151,7 @@
     <sys:String x:Key="String0115">⠀⠀GAMEPLAY</sys:String>
     <sys:String x:Key="String0116">⠀⠀CHAT AND LANG</sys:String>
     <sys:String x:Key="String0117">⠀⠀FONTS</sys:String>
-    <sys:String x:Key="String0118">⠀⠀GAME MODIFY</sys:String>
+    <sys:String x:Key="String0118">⠀⠀MODIFY GAME</sys:String>
     <sys:String x:Key="String0119">⠀⠀LAUNCH GAME</sys:String>
     <sys:String x:Key="String0120">⠀⠀SU SETTINGS</sys:String>
 
@@ -166,7 +166,7 @@
 
     <!--  About SacredUtils dialog  -->
     <sys:String x:Key="String0128">About SacredUtils</sys:String>
-    <sys:String x:Key="String0129">Version 1.2.4.0.151018.R1 (Official build)</sys:String>
+    <sys:String x:Key="String0129">Version 1.2.4.1.231018.R1 (Official build)</sys:String>
 
     <!--  Checking \ repairing components dialog  -->
     <sys:String x:Key="String0130">Component Recovery</sys:String>
