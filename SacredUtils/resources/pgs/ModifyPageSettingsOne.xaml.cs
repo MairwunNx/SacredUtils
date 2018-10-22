@@ -6,6 +6,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -194,7 +195,9 @@ namespace SacredUtils.resources.pgs
                 {
                     Directory.CreateDirectory("bin\\TYPE_ADDED_UTILITY\\Balance");
 
-                    File.WriteAllBytes("bin\\TYPE_ADDED_UTILITY\\Balance\\BalanceEditor.zip", Properties.Resources.BalanceEditor);
+                    WebClient wc = new WebClient();
+
+                    wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1IJ_UJwL6V6oB-KCrXIGj_59lLZGhiZcJ", "bin\\TYPE_ADDED_UTILITY\\Balance\\BalanceEditor.zip").Wait();
 
                     using (ZipFile zip = ZipFile.Read("bin\\TYPE_ADDED_UTILITY\\Balance\\BalanceEditor.zip"))
                     {
@@ -223,7 +226,9 @@ namespace SacredUtils.resources.pgs
                 {
                     Directory.CreateDirectory("bin\\TYPE_ADDED_UTILITY\\HotkeyTweaker");
 
-                    File.WriteAllBytes("bin\\TYPE_ADDED_UTILITY\\HotkeyTweaker\\HotkeyTweaker.zip", Properties.Resources.HotkeyEditor);
+                    WebClient wc = new WebClient();
+
+                    wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1wENyKxMEjxybNuLJsVFAxiHSFw9dUuRu", "bin\\TYPE_ADDED_UTILITY\\HotkeyTweaker\\HotkeyTweaker.zip").Wait();
 
                     using (ZipFile zip = ZipFile.Read("bin\\TYPE_ADDED_UTILITY\\HotkeyTweaker\\HotkeyTweaker.zip"))
                     {
@@ -252,7 +257,9 @@ namespace SacredUtils.resources.pgs
                 {
                     Directory.CreateDirectory("bin\\TYPE_ADDED_UTILITY\\Creature");
 
-                    File.WriteAllBytes("bin\\TYPE_ADDED_UTILITY\\Creature\\CreatureEditor.zip", Properties.Resources.CreatureEditor);
+                    WebClient wc = new WebClient();
+
+                    wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1o6kHQYJErUFnfbrO0rmXCoHmFe_dGdWI", "bin\\TYPE_ADDED_UTILITY\\Creature\\CreatureEditor.zip").Wait();
 
                     using (ZipFile zip = ZipFile.Read("bin\\TYPE_ADDED_UTILITY\\Creature\\CreatureEditor.zip"))
                     {
@@ -281,7 +288,9 @@ namespace SacredUtils.resources.pgs
                 {
                     Directory.CreateDirectory("bin\\TYPE_ADDED_UTILITY\\Weapon");
 
-                    File.WriteAllBytes("bin\\TYPE_ADDED_UTILITY\\Weapon\\WeaponEditor.zip", Properties.Resources.WeaponEditor);
+                    WebClient wc = new WebClient();
+
+                    wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1KqM53E5eeqV96voOISamHk39e__dgsoE", "bin\\TYPE_ADDED_UTILITY\\Weapon\\WeaponEditor.zip").Wait();
 
                     using (ZipFile zip = ZipFile.Read("bin\\TYPE_ADDED_UTILITY\\Weapon\\WeaponEditor.zip"))
                     {
@@ -310,7 +319,9 @@ namespace SacredUtils.resources.pgs
                 {
                     Directory.CreateDirectory("bin\\TYPE_ADDED_UTILITY\\HeroResetter");
 
-                    File.WriteAllBytes("bin\\TYPE_ADDED_UTILITY\\HeroResetter\\HeroResetter.zip", Properties.Resources.HeroResetter);
+                    WebClient wc = new WebClient();
+
+                    wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1tJ6dPj0dXJqGPs8pNbDJ1DkQCGV_VADt", "bin\\TYPE_ADDED_UTILITY\\HeroResetter\\HeroResetter.zip").Wait();
 
                     using (ZipFile zip = ZipFile.Read("bin\\TYPE_ADDED_UTILITY\\HeroResetter\\HeroResetter.zip"))
                     {
@@ -339,7 +350,9 @@ namespace SacredUtils.resources.pgs
                 {
                     Directory.CreateDirectory("bin\\TYPE_ADDED_UTILITY\\HeroEditor");
 
-                    File.WriteAllBytes("bin\\TYPE_ADDED_UTILITY\\HeroEditor\\HeroEditor.zip", Properties.Resources.HeroEditor);
+                    WebClient wc = new WebClient();
+
+                    wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1fOvBcZlk1dY-IIsRgkuOHiJAsyWdmiUp", "bin\\TYPE_ADDED_UTILITY\\HeroEditor\\HeroEditor.zip").Wait();
 
                     using (ZipFile zip = ZipFile.Read("bin\\TYPE_ADDED_UTILITY\\HeroEditor\\HeroEditor.zip"))
                     {

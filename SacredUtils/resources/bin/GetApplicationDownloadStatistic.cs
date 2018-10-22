@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
-using System.IO;
+using System.Net;
 
-// ReSharper disable EmptyGeneralCatchClause
 namespace SacredUtils.resources.bin
 {
     public static class GetApplicationDownloadStatistic
@@ -15,13 +14,21 @@ namespace SacredUtils.resources.bin
                 {
                     try
                     {
-                        File.WriteAllBytes($"{Environment.ExpandEnvironmentVariables("%tmp%")}\\sustat.exe", Properties.Resources.SacredUtilsStatistics);
+                        WebClient wc = new WebClient();
 
-                        Process.Start($"{Environment.ExpandEnvironmentVariables("%tmp%")}\\sustat.exe", $"{AppSummary.Version} {AppSettings.ApplicationSettings.DisableTelemetry.ToString().ToLower()} {AppSettings.ApplicationSettings.WhatIsThisDoingHere.ToString().ToLower()}");
+                        wc.DownloadFileTaskAsync(
+                            "https://drive.google.com/uc?export=download&id=1zgsMglsGJNptUdLCyfZ_znAygF0waT4b",
+                            $"{Environment.ExpandEnvironmentVariables("%tmp%")}\\sustat.exe").Wait();
+
+                        Process.Start($"{Environment.ExpandEnvironmentVariables("%tmp%")}\\sustat.exe",
+                            $"{AppSummary.Version} {AppSettings.ApplicationSettings.DisableTelemetry.ToString().ToLower()} {AppSettings.ApplicationSettings.WhatIsThisDoingHere.ToString().ToLower()}");
 
                         AppSettings.ApplicationSettings.WhatIsThisDoingHere = false;
                     }
-                    catch { }
+                    catch (Exception ex)
+                    {
+                        AppLogger.Log.Error(ex.ToString);
+                    }
                 }
             }
         }

@@ -73,29 +73,9 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        public static byte[] BalanceEditor {
-            get {
-                object obj = ResourceManager.GetObject("BalanceEditor", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
         public static byte[] ch_files {
             get {
                 object obj = ResourceManager.GetObject("ch_files", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        public static byte[] CreatureEditor {
-            get {
-                object obj = ResourceManager.GetObject("CreatureEditor", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -123,16 +103,6 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        public static byte[] FOOTSTEPS {
-            get {
-                object obj = ResourceManager.GetObject("FOOTSTEPS", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
         public static byte[] gamesettings {
             get {
                 object obj = ResourceManager.GetObject("gamesettings", resourceCulture);
@@ -143,89 +113,9 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        public static byte[] HEALTH {
-            get {
-                object obj = ResourceManager.GetObject("HEALTH", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        public static byte[] HeroEditor {
-            get {
-                object obj = ResourceManager.GetObject("HeroEditor", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        public static byte[] HeroResetter {
-            get {
-                object obj = ResourceManager.GetObject("HeroResetter", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        public static byte[] HotkeyEditor {
-            get {
-                object obj = ResourceManager.GetObject("HotkeyEditor", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        public static byte[] HotKeyReg {
-            get {
-                object obj = ResourceManager.GetObject("HotKeyReg", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        public static byte[] keyla {
-            get {
-                object obj = ResourceManager.GetObject("keyla", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
         public static byte[] Light {
             get {
                 object obj = ResourceManager.GetObject("Light", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        public static byte[] mnxupdater {
-            get {
-                object obj = ResourceManager.GetObject("mnxupdater", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        public static byte[] OLD_SACRED {
-            get {
-                object obj = ResourceManager.GetObject("OLD_SACRED", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -293,16 +183,6 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        public static byte[] SacredUtilsStatistics {
-            get {
-                object obj = ResourceManager.GetObject("SacredUtilsStatistics", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
         public static byte[] settings {
             get {
                 object obj = ResourceManager.GetObject("settings", resourceCulture);
@@ -331,46 +211,6 @@ namespace SacredUtils.Properties {
         public static string splashes {
             get {
                 return ResourceManager.GetString("splashes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        public static byte[] STATIC_BOG {
-            get {
-                object obj = ResourceManager.GetObject("STATIC_BOG", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        public static byte[] STATIC_LAVA {
-            get {
-                object obj = ResourceManager.GetObject("STATIC_LAVA", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        public static byte[] STATIC_WATER {
-            get {
-                object obj = ResourceManager.GetObject("STATIC_WATER", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        public static byte[] WeaponEditor {
-            get {
-                object obj = ResourceManager.GetObject("WeaponEditor", resourceCulture);
-                return ((byte[])(obj));
             }
         }
         

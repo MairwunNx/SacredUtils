@@ -85,7 +85,9 @@ namespace SacredUtils.resources.bin
 
         private static void GetUpdateTool()
         {
-            File.WriteAllBytes("mnxupdater.exe", Properties.Resources.mnxupdater);
+            WebClient wc = new WebClient();
+
+            wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1Q2syd-44j_VAWDPHnoujdkNl6vRnNADw", "mnxupdater.exe").Wait();
 
             try
             {

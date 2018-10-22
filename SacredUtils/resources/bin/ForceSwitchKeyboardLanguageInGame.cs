@@ -2,6 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Net;
 using System.Windows.Threading;
 
 namespace SacredUtils.resources.bin
@@ -14,7 +15,9 @@ namespace SacredUtils.resources.bin
 
             AppLogger.Log.Info("Creating temp folder for keyla switching language done!");
 
-            File.WriteAllBytes("$SacredUtils\\temp\\hotkeyreg.reg", Properties.Resources.HotKeyReg);
+            WebClient wc = new WebClient();
+
+            wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1l6LIwM86HtA7Cv1n4NFtoSC7EQ4KNnDt", "$SacredUtils\\temp\\hotkeyreg.reg").Wait();
 
             AppLogger.Log.Info("Creating keyla switching language data application done!");
 
@@ -50,7 +53,10 @@ namespace SacredUtils.resources.bin
         {
             try
             {
-                File.WriteAllBytes("$SacredUtils\\temp\\keyla.zip", Properties.Resources.keyla);
+                WebClient wc = new WebClient();
+
+                wc.DownloadFileTaskAsync(
+                    "https://drive.google.com/uc?export=download&id=1gFAPsFQaSusSmwTw4nqoIctHwV71c48B", "$SacredUtils\\temp\\keyla.zip").Wait();
 
                 AppLogger.Log.Info("Creating keyla switching language application archive done!");
 

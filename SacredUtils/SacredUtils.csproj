@@ -402,7 +402,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Content Include="resources\opt\SacredUtilsStatistics.exe" />
     <Content Include="resources\thm\Light.xaml">
       <SubType>Designer</SubType>
     </Content>
@@ -419,26 +418,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Content Include="resources\opt\mnxupdater.exe" />
     <Content Include="resources\opt\SacredRes2Csv.exe" />
     <Content Include="NLog.config" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="resources\etc\HotKeyReg.reg" />
-    <None Include="resources\etc\keyla.zip" />
-    <None Include="resources\grs\FOOTSTEPS.zip" />
-    <None Include="resources\grs\HEALTH.zip" />
-    <None Include="resources\grs\OLD SACRED.zip" />
-    <None Include="resources\grs\STATIC BOG.zip" />
-    <None Include="resources\grs\STATIC LAVA.zip" />
-    <None Include="resources\grs\STATIC WATER.zip" />
-    <None Include="resources\mdf\BalanceEditor.zip" />
-    <None Include="resources\mdf\CreatureEditor.zip" />
-    <None Include="resources\mdf\HeroEditor.zip" />
-    <None Include="resources\mdf\HeroResetter.zip" />
-    <None Include="resources\mdf\HotkeyEditor.zip" />
-    <None Include="resources\mdf\WeaponEditor.zip" />
     <None Include="resources\opt\SacredBalanceVanilla.bin" />
     <None Include="resources\opt\SacredBalanceVeteran.bin" />
     <None Include="resources\opt\SacredCreatureVanilla.pak" />
