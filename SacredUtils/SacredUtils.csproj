@@ -30,13 +30,15 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
+    <DebugType>full</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>true</UseVSHostingProcess>
+    <LangVersion>7.3</LangVersion>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -417,7 +419,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Content Include="resources\etc\SacredUtils.pdb" />
     <Content Include="resources\opt\mnxupdater.exe" />
     <Content Include="resources\opt\SacredRes2Csv.exe" />
     <Content Include="NLog.config" />
@@ -472,7 +473,7 @@
     <Resource Include="resources\fnt\GoogleSans-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <EmbeddedResource Include="App.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

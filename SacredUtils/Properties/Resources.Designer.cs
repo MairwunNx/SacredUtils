@@ -293,16 +293,6 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        public static byte[] SacredUtils {
-            get {
-                object obj = ResourceManager.GetObject("SacredUtils", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
         public static byte[] SacredUtilsStatistics {
             get {
                 object obj = ResourceManager.GetObject("SacredUtilsStatistics", resourceCulture);

@@ -28,9 +28,6 @@ namespace SacredUtils
         [Option(Alias = "ColorTheme", DefaultValue = "light")]
         string ColorTheme { get; set; }
 
-        [Option(Alias = "DebugFileCreate", DefaultValue = "false")]
-        bool DebugFileCreate { get; }
-
         [Option(Alias = "DelayCheckingSacredProcess", DefaultValue = "1")]
         int DelayCheckingSacredProcess { get; }
 

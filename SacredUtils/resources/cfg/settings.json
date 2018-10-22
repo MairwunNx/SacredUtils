@@ -7,7 +7,6 @@
   "CloseDonateDialogAfterSelect": "true",
   "ClosePageDialogAfterSelect": "true",
   "ColorTheme": "light",
-  "DebugFileCreate": "false",
   "DelayCheckingSacredProcess": "1",
   "DesiredFrameRateProperty": "60",
   "DisableCachingGameComponents": "false",

@@ -139,9 +139,6 @@
   <data name="SacredRes2Csv" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\opt\SacredRes2Csv.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="SacredUtils" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\etc\SacredUtils.pdb;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="WPFSharp_Globalizer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\lib\WPFSharp.Globalizer.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
