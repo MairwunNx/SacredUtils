@@ -34,7 +34,7 @@ namespace SacredUtils
 
                     GetRequiredApplicationFiles.Get();
 
-                    GetApplicationDownloadStatistic.Get();
+                    Task.Run(() => { GetApplicationDownloadStatistic.Get(); });
                 }
                 else
                 {
