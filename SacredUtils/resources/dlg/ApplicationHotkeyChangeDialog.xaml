@@ -1,5 +1,4 @@
-﻿<!--  ReSharper disable once UnusedMember.Global  -->
-<Page
+﻿<Page
     x:Class="SacredUtils.resources.dlg.ApplicationHotkeyChangeDialog"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -11,7 +10,6 @@
     d:DesignWidth="1076"
     mc:Ignorable="d">
     <Grid>
-        <!--  ReSharper disable once UnusedMember.Global  -->
         <materialDesign:DialogHost
             x:Name="HotkeyEditDialog"
             CloseOnClickAway="True"
@@ -32,17 +30,15 @@
                         Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                     <ComboBox
+                        x:Name="NewHotkeyCmbBox"
                         Width="187"
                         Height="26"
-                        Margin="241,63,0,0"
+                        Margin="20,63,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                         FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                        Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}">
-                        <ComboBoxItem Content="E" />
-                        <ComboBoxItem Content="R" />
-                    </ComboBox>
+                        Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}" />
 
                     <Label
                         Height="28"
@@ -54,17 +50,15 @@
                         Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                     <ComboBox
+                        x:Name="OriginalHotkey"
                         Width="187"
                         Height="26"
-                        Margin="20,63,0,0"
+                        Margin="241,63,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                         FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
-                        Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}">
-                        <ComboBoxItem Content="F1" />
-                        <ComboBoxItem Content="F2" />
-                    </ComboBox>
+                        Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}" />
                 </Grid>
             </materialDesign:DialogHost.DialogContent>
         </materialDesign:DialogHost>

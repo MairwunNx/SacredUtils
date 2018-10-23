@@ -113,9 +113,39 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        public static byte[] hk_keyb {
+            get {
+                object obj = ResourceManager.GetObject("hk_keyb", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] hk_orig {
+            get {
+                object obj = ResourceManager.GetObject("hk_orig", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         public static byte[] HotKeyReg {
             get {
                 object obj = ResourceManager.GetObject("HotKeyReg", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] hotkeys {
+            get {
+                object obj = ResourceManager.GetObject("hotkeys", resourceCulture);
                 return ((byte[])(obj));
             }
         }

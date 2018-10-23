@@ -18,7 +18,7 @@
             <materialDesign:DialogHost.DialogContent>
                 <Grid
                     Width="450"
-                    Height="218"
+                    Height="241"
                     Background="{DynamicResource ResourceKey=BackgroundColorBrush}">
                     <Label
                         Height="30"
@@ -79,9 +79,20 @@
                         FontSize="12"
                         Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
+                    <CheckBox
+                        x:Name="RunWithHotkeysCmbBox"
+                        Width="419"
+                        Margin="21,168,10,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Content="{globalizer:GlobalizedResource String0166}"
+                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                        FontSize="12"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
+
                     <Border
                         Height="28"
-                        Margin="21,176,230,0"
+                        Margin="21,199,230,0"
                         VerticalAlignment="Top"
                         BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
                         BorderThickness="1,1,1,1"
@@ -100,7 +111,7 @@
 
                     <Border
                         Height="28"
-                        Margin="230,176,21,0"
+                        Margin="230,199,21,0"
                         VerticalAlignment="Top"
                         BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
                         BorderThickness="1,1,1,1"

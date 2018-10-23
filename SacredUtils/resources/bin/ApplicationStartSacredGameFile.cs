@@ -16,6 +16,7 @@ namespace SacredUtils.resources.bin
             {
                 applicationRunSacredDialog.RunWithEngLangCmbBox.IsEnabled = false;
                 applicationRunSacredDialog.RunWithScreenCmbBox.IsEnabled = false;
+                applicationRunSacredDialog.RunWithHotkeysCmbBox.IsEnabled = false;
             }
 
             MainWindow.DialogFrame.Visibility = Visibility.Visible;

@@ -223,5 +223,6 @@
     <sys:String x:Key="String0163">Launch game</sys:String>
     <sys:String x:Key="String0164">Cancel launch</sys:String>
     <sys:String x:Key="String0165">Stretch screenshot to screen resolution</sys:String>
+    <sys:String x:Key="String0166">Enable hotkey mode (emulation)</sys:String>
 
 </Globalization:GlobalizationResourceDictionary>

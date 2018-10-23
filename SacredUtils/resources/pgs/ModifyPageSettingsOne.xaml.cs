@@ -220,33 +220,23 @@ namespace SacredUtils.resources.pgs
 
         private void RunSacredHotkeyTweakerBtn_Click(object sender, RoutedEventArgs e)
         {
-            Task.Run(() =>
+            ApplicationHotkeyChangeDialog applicationHotkey = new ApplicationHotkeyChangeDialog();
+
+            foreach (Window window in Application.Current.Windows)
             {
-                try
+                if (window.GetType() == typeof(MainWindow))
                 {
-                    Directory.CreateDirectory("bin\\TYPE_ADDED_UTILITY\\HotkeyTweaker");
-
-                    WebClient wc = new WebClient();
-
-                    wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1wENyKxMEjxybNuLJsVFAxiHSFw9dUuRu", "bin\\TYPE_ADDED_UTILITY\\HotkeyTweaker\\HotkeyTweaker.zip").Wait();
-
-                    using (ZipFile zip = ZipFile.Read("bin\\TYPE_ADDED_UTILITY\\HotkeyTweaker\\HotkeyTweaker.zip"))
-                    {
-                        foreach (ZipEntry file in zip)
-                        {
-                            file.Extract("bin\\TYPE_ADDED_UTILITY\\HotkeyTweaker", ExtractExistingFileAction.OverwriteSilently);
-                        }
-
-                        zip.Dispose();
-                    }
-
-                    Process.Start("bin\\TYPE_ADDED_UTILITY\\HotkeyTweaker\\SacredHotkeysTweaker.exe");
+                    ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
+                    ((MainWindow)window).DialogFrame.Content = applicationHotkey;
                 }
-                catch (Exception exception)
-                {
-                    AppLogger.Log.Error(exception.ToString());
-                }
-            });
+            }
+
+            if (AppSettings.ApplicationSettings.ColorTheme == "dark")
+            {
+                applicationHotkey.HotkeyEditDialog.DialogTheme = BaseTheme.Dark;
+            }
+
+            applicationHotkey.HotkeyEditDialog.IsOpen = true;
         }
 
         private void EditCreatureBtn_Click(object sender, RoutedEventArgs e)

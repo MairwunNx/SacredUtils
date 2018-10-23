@@ -223,5 +223,6 @@
     <sys:String x:Key="String0163">Запустить игру</sys:String>
     <sys:String x:Key="String0164">Отменить запуск</sys:String>
     <sys:String x:Key="String0165">Растягивать скриншот до разрешения экрана</sys:String>
+    <sys:String x:Key="String0166">Включить режим хоткеев (эмуляция)</sys:String>
 
 </Globalization:GlobalizationResourceDictionary>

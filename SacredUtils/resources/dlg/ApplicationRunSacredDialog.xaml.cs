@@ -28,6 +28,8 @@ namespace SacredUtils.resources.dlg
                         EnableSwitchingLanguage();
 
                         EnableStretchingScreenshot();
+
+                        EnableEmulateHotkeys();
                     }
                 }
                 else
@@ -41,6 +43,8 @@ namespace SacredUtils.resources.dlg
                         EnableSwitchingLanguage();
 
                         EnableStretchingScreenshot();
+
+                        EnableEmulateHotkeys();
                     }
                 }
             }
@@ -59,6 +63,8 @@ namespace SacredUtils.resources.dlg
                         EnableSwitchingLanguage();
 
                         EnableStretchingScreenshot();
+
+                        EnableEmulateHotkeys();
                     }
                 }
                 else
@@ -74,6 +80,8 @@ namespace SacredUtils.resources.dlg
                         EnableSwitchingLanguage();
 
                         EnableStretchingScreenshot();
+
+                        EnableEmulateHotkeys();
                     }
                 }
             }
@@ -119,10 +127,20 @@ namespace SacredUtils.resources.dlg
                 ForceStretchSacredGameScreenshot.RegisterKey(false);
             }
         }
+        
+        private void EnableEmulateHotkeys()
+        {
+            if (RunWithHotkeysCmbBox.IsChecked == true)
+            {
+                ApplicationStartEmulateHotkeys.RegisterMainHotkeys();
+            }
+        }
 
         private void CancelLaunchBtn_Click(object sender, RoutedEventArgs e)
         {
             AboutDialog.IsOpen = false;
         }
+
+        // ApplicationStartEmulateHotkeys.RegisterMainHotkeys();
     }
 }

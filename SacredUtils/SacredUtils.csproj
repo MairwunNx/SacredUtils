@@ -133,6 +133,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AppSettings.cs" />
+    <Compile Include="HotkeySettings.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -156,6 +157,7 @@
     <Compile Include="resources\bin\ApplicationBaseWindowHotkeys.cs" />
     <Compile Include="resources\bin\ApplicationBaseWindowShutdown.cs" />
     <Compile Include="resources\bin\ApplicationRunSacredGameWithArgs.cs" />
+    <Compile Include="resources\bin\ApplicationStartEmulateHotkeys.cs" />
     <Compile Include="resources\bin\ApplicationStartSacredGameFile.cs" />
     <Compile Include="resources\bin\ApplicationStartUtilityUpdate.cs" />
     <Compile Include="resources\bin\ChangeApplicationSelectionSettings.cs" />
@@ -279,6 +281,8 @@
     <Compile Include="resources\prp\GameSoundSettingsOneProperty.cs" />
     <Resource Include="resources\cfg\splashes.txt" />
     <Resource Include="resources\cfg\ch.files.txt" />
+    <Resource Include="resources\cfg\hk.keyb.txt" />
+    <Resource Include="resources\cfg\hk.orig.txt" />
     <Content Include="resources\lib\WPFSharp.Globalizer.dll" />
     <Content Include="resources\lng\en-US\en-US.xaml">
       <SubType>Designer</SubType>
@@ -423,6 +427,7 @@
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="resources\cfg\hotkeys.json" />
     <None Include="resources\opt\HotKeyReg.reg" />
     <None Include="resources\opt\keyla.zip" />
     <None Include="resources\opt\SacredBalanceVanilla.bin" />

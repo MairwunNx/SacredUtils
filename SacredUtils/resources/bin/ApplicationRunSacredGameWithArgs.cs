@@ -45,7 +45,7 @@ namespace SacredUtils.resources.bin
         { 
             if (args.Contains("-emulateHotkeys"))
             {
-                // calling emulating hotkeys ...
+                ApplicationStartEmulateHotkeys.RegisterMainHotkeys();
             }
         }
     }

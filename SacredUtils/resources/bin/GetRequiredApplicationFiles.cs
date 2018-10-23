@@ -12,6 +12,21 @@ namespace SacredUtils.resources.bin
 
                 AppLogger.Log.Info("SacredUtils License file was successfully re-created!");
             }
+
+            if (!File.Exists("$SacredUtils\\conf\\hotkeys.json"))
+            {
+                File.WriteAllBytes("$SacredUtils\\conf\\hotkeys.json", Properties.Resources.hotkeys);
+            }
+
+            if (!File.Exists("$SacredUtils\\conf\\hk.keyb.txt"))
+            {
+                File.WriteAllBytes("$SacredUtils\\conf\\hk.keyb.txt", Properties.Resources.hk_keyb);
+            }
+
+            if (!File.Exists("$SacredUtils\\conf\\hk.orig.txt"))
+            {
+                File.WriteAllBytes("$SacredUtils\\conf\\hk.orig.txt", Properties.Resources.hk_orig);
+            }
         }
     }
 }
