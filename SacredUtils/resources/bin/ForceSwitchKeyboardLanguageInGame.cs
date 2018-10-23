@@ -2,8 +2,6 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Net;
-using System.Threading.Tasks;
 using System.Windows.Threading;
 
 namespace SacredUtils.resources.bin
