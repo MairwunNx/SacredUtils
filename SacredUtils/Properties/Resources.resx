@@ -163,4 +163,10 @@
   <data name="ch_files" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cfg\ch.files.txt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="HotKeyReg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\opt\HotKeyReg.reg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="keyla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\opt\keyla.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

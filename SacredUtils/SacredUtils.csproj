@@ -423,6 +423,8 @@
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="resources\opt\HotKeyReg.reg" />
+    <None Include="resources\opt\keyla.zip" />
     <None Include="resources\opt\SacredBalanceVanilla.bin" />
     <None Include="resources\opt\SacredBalanceVeteran.bin" />
     <None Include="resources\opt\SacredCreatureVanilla.pak" />
