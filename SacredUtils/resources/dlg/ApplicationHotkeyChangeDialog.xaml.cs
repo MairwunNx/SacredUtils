@@ -17,64 +17,59 @@ namespace SacredUtils.resources.dlg
 
         private void SetHotkeyValue(object sender, SelectionChangedEventArgs e)
         {
-            if (NewHotkeyCmbBox.SelectedValue.ToString() == "F1")
+            if (NewHotkeyCmbBox.SelectedValue.ToString() == "{F1}")
             {
                 HotkeySettings.GameHotkeySettings.KeyF1 = OriginalHotkey.SelectedValue.ToString();
             }
 
-            if (NewHotkeyCmbBox.SelectedValue.ToString() == "F2")
+            if (NewHotkeyCmbBox.SelectedValue.ToString() == "{F2}")
             {
                 HotkeySettings.GameHotkeySettings.KeyF2 = OriginalHotkey.SelectedValue.ToString();
             }
 
-            if (NewHotkeyCmbBox.SelectedValue.ToString() == "F3")
+            if (NewHotkeyCmbBox.SelectedValue.ToString() == "{F3}")
             {
                 HotkeySettings.GameHotkeySettings.KeyF3 = OriginalHotkey.SelectedValue.ToString();
             }
 
-            if (NewHotkeyCmbBox.SelectedValue.ToString() == "F4")
+            if (NewHotkeyCmbBox.SelectedValue.ToString() == "{F4}")
             {
                 HotkeySettings.GameHotkeySettings.KeyF4 = OriginalHotkey.SelectedValue.ToString();
             }
 
-            if (NewHotkeyCmbBox.SelectedValue.ToString() == "F5")
+            if (NewHotkeyCmbBox.SelectedValue.ToString() == "{F5}")
             {
                 HotkeySettings.GameHotkeySettings.KeyF5 = OriginalHotkey.SelectedValue.ToString();
             }
 
-            if (NewHotkeyCmbBox.SelectedValue.ToString() == "F6")
+            if (NewHotkeyCmbBox.SelectedValue.ToString() == "{F6}")
             {
                 HotkeySettings.GameHotkeySettings.KeyF6 = OriginalHotkey.SelectedValue.ToString();
             }
 
-            if (NewHotkeyCmbBox.SelectedValue.ToString() == "F7")
+            if (NewHotkeyCmbBox.SelectedValue.ToString() == "{F7}")
             {
                 HotkeySettings.GameHotkeySettings.KeyF7 = OriginalHotkey.SelectedValue.ToString();
             }
 
-            if (NewHotkeyCmbBox.SelectedValue.ToString() == "F8")
+            if (NewHotkeyCmbBox.SelectedValue.ToString() == "{F8}")
             {
                 HotkeySettings.GameHotkeySettings.KeyF8 = OriginalHotkey.SelectedValue.ToString();
             }
 
-            if (NewHotkeyCmbBox.SelectedValue.ToString() == "F9")
+            if (NewHotkeyCmbBox.SelectedValue.ToString() == "{F9}")
             {
                 HotkeySettings.GameHotkeySettings.KeyF9 = OriginalHotkey.SelectedValue.ToString();
             }
 
-            if (NewHotkeyCmbBox.SelectedValue.ToString() == "F10")
+            if (NewHotkeyCmbBox.SelectedValue.ToString() == "{F10}")
             {
                 HotkeySettings.GameHotkeySettings.KeyF10 = OriginalHotkey.SelectedValue.ToString();
             }
 
-            if (NewHotkeyCmbBox.SelectedValue.ToString() == "F11")
+            if (NewHotkeyCmbBox.SelectedValue.ToString() == "{F11}")
             {
                 HotkeySettings.GameHotkeySettings.KeyF11 = OriginalHotkey.SelectedValue.ToString();
-            }
-
-            if (NewHotkeyCmbBox.SelectedValue.ToString() == "F12")
-            {
-                HotkeySettings.GameHotkeySettings.KeyF12 = OriginalHotkey.SelectedValue.ToString();
             }
 
             if (NewHotkeyCmbBox.SelectedValue.ToString() == "Q")
@@ -217,64 +212,59 @@ namespace SacredUtils.resources.dlg
         {
             switch (NewHotkeyCmbBox.SelectedItem)
             {
-                case "F1":
+                case "{F1}":
                     OriginalHotkey.SelectionChanged -= SetHotkeyValue;
                     OriginalHotkey.SelectedItem = HotkeySettings.GameHotkeySettings.KeyF1;
                     OriginalHotkey.SelectionChanged += SetHotkeyValue;
                     break;
-                case "F2":
+                case "{F2}":
                     OriginalHotkey.SelectionChanged -= SetHotkeyValue;
                     OriginalHotkey.SelectedItem = HotkeySettings.GameHotkeySettings.KeyF2;
                     OriginalHotkey.SelectionChanged += SetHotkeyValue;
                     break;
-                case "F3":
+                case "{F3}":
                     OriginalHotkey.SelectionChanged -= SetHotkeyValue;
                     OriginalHotkey.SelectedItem = HotkeySettings.GameHotkeySettings.KeyF3;
                     OriginalHotkey.SelectionChanged += SetHotkeyValue;
                     break;
-                case "F4":
+                case "{F4}":
                     OriginalHotkey.SelectionChanged -= SetHotkeyValue;
                     OriginalHotkey.SelectedItem = HotkeySettings.GameHotkeySettings.KeyF4;
                     OriginalHotkey.SelectionChanged += SetHotkeyValue;
                     break;
-                case "F5":
+                case "{F5}":
                     OriginalHotkey.SelectionChanged -= SetHotkeyValue;
                     OriginalHotkey.SelectedItem = HotkeySettings.GameHotkeySettings.KeyF5;
                     OriginalHotkey.SelectionChanged += SetHotkeyValue;
                     break;
-                case "F6":
+                case "{F6}":
                     OriginalHotkey.SelectionChanged -= SetHotkeyValue;
                     OriginalHotkey.SelectedItem = HotkeySettings.GameHotkeySettings.KeyF6;
                     OriginalHotkey.SelectionChanged += SetHotkeyValue;
                     break;
-                case "F7":
+                case "{F7}":
                     OriginalHotkey.SelectionChanged -= SetHotkeyValue;
                     OriginalHotkey.SelectedItem = HotkeySettings.GameHotkeySettings.KeyF7;
                     OriginalHotkey.SelectionChanged += SetHotkeyValue;
                     break;
-                case "F8":
+                case "{F8}":
                     OriginalHotkey.SelectionChanged -= SetHotkeyValue;
                     OriginalHotkey.SelectedItem = HotkeySettings.GameHotkeySettings.KeyF8;
                     OriginalHotkey.SelectionChanged += SetHotkeyValue;
                     break;
-                case "F9":
+                case "{F9}":
                     OriginalHotkey.SelectionChanged -= SetHotkeyValue;
                     OriginalHotkey.SelectedItem = HotkeySettings.GameHotkeySettings.KeyF9;
                     OriginalHotkey.SelectionChanged += SetHotkeyValue;
                     break;
-                case "F10":
+                case "{F10}":
                     OriginalHotkey.SelectionChanged -= SetHotkeyValue;
                     OriginalHotkey.SelectedItem = HotkeySettings.GameHotkeySettings.KeyF10;
                     OriginalHotkey.SelectionChanged += SetHotkeyValue;
                     break;
-                case "F11":
+                case "{F11}":
                     OriginalHotkey.SelectionChanged -= SetHotkeyValue;
                     OriginalHotkey.SelectedItem = HotkeySettings.GameHotkeySettings.KeyF11;
-                    OriginalHotkey.SelectionChanged += SetHotkeyValue;
-                    break;
-                case "F12":
-                    OriginalHotkey.SelectionChanged -= SetHotkeyValue;
-                    OriginalHotkey.SelectedItem = HotkeySettings.GameHotkeySettings.KeyF12;
                     OriginalHotkey.SelectionChanged += SetHotkeyValue;
                     break;
                 case "Q":
