@@ -128,487 +128,496 @@ namespace SacredUtils.resources.bin
 
         private static void HandleHotKeys(object sender, HotkeyEventArgs e)
         {
-            if (e.Name == "F1")
+            try
             {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                AppLogger.Log.Info($"Waiting key {e.Name} to sending in Sacred.exe window");
 
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF1);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF1} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "F2")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF2);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF2} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "F3")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF3);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF3} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "F4")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF4);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF4} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "F5")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF5);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF5} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "F6")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF6);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF6} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "F7")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF7);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF7} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "F8")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF8);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF8} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "F9")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF9);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF9} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "F10")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF10);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF10} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "F11")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF11);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF11} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "Q")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyQ);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyQ} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "W")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyW);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyW} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "E")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyE);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyE} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "R")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyR);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyR} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "T")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyT);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyT} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "Y")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyY);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyY} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "U")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyU);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyU} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "I")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyI);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyI} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "O")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyO);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyO} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "P")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyP);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyP} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "A")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyA);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyA} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "S")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyS);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyS} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "D")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyD);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyD} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "F")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "G")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyG);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyG} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "H")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyH);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyH} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "J")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyJ);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyJ} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "K")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyK);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyK} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "L")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyL);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyL} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "Z")
-            {
-                try
+                if (e.Name == "F1")
                 {
                     IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
 
                     SetForegroundWindow(sacredhandle);
 
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyZ);
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF1);
 
-                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyZ} successfully sended to Sacred.exe window");
-                }
-                catch (Exception exception)
-                {
-                    AppLogger.Log.Fatal(exception.ToString);
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF1} successfully sended to Sacred.exe window");
+
+                    e.Handled = true;
                 }
 
-                e.Handled = false;
-            }
-
-            if (e.Name == "X")
-            {
-                try
+                if (e.Name == "F2")
                 {
                     IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
 
                     SetForegroundWindow(sacredhandle);
 
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyX);
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF2);
 
-                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyX} successfully sended to Sacred.exe window");
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF2} successfully sended to Sacred.exe window");
+
+                    e.Handled = true;
+                }
+
+                if (e.Name == "F3")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF3);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF3} successfully sended to Sacred.exe window");
+
+                    e.Handled = true;
+                }
+
+                if (e.Name == "F4")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF4);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF4} successfully sended to Sacred.exe window");
+
+                    e.Handled = true;
+                }
+
+                if (e.Name == "F5")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF5);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF5} successfully sended to Sacred.exe window");
+
+                    e.Handled = true;
+                }
+
+                if (e.Name == "F6")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF6);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF6} successfully sended to Sacred.exe window");
+
+                    e.Handled = true;
+                }
+
+                if (e.Name == "F7")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF7);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF7} successfully sended to Sacred.exe window");
+
+                    e.Handled = true;
+                }
+
+                if (e.Name == "F8")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF8);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF8} successfully sended to Sacred.exe window");
+
+                    e.Handled = true;
+                }
+
+                if (e.Name == "F9")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF9);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF9} successfully sended to Sacred.exe window");
+
+                    e.Handled = true;
+                }
+
+                if (e.Name == "F10")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF10);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF10} successfully sended to Sacred.exe window");
+
+                    e.Handled = true;
+                }
+
+                if (e.Name == "F11")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF11);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF11} successfully sended to Sacred.exe window");
+
+                    e.Handled = true;
+                }
+
+                if (e.Name == "Q")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyQ);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyQ} successfully sended to Sacred.exe window");
 
                     e.Handled = false;
                 }
-                catch (Exception exception)
+
+                if (e.Name == "W")
                 {
-                    AppLogger.Log.Error(exception.ToString);
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyW);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyW} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
                 }
 
+                if (e.Name == "E")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyE);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyE} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "R")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyR);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyR} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "T")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyT);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyT} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "Y")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyY);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyY} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "U")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyU);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyU} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "I")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyI);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyI} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "O")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyO);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyO} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "P")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyP);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyP} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "A")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyA);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyA} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "S")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyS);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyS} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "D")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyD);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyD} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "F")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "G")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyG);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyG} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "H")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyH);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyH} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "J")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyJ);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyJ} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "K")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyK);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyK} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "L")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyL);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyL} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "Z")
+                {
+                    try
+                    {
+                        IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                        SetForegroundWindow(sacredhandle);
+
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyZ);
+
+                        AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyZ} successfully sended to Sacred.exe window");
+                    }
+                    catch (Exception exception)
+                    {
+                        AppLogger.Log.Fatal(exception.ToString);
+                    }
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "X")
+                {
+                    try
+                    {
+                        IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                        SetForegroundWindow(sacredhandle);
+
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyX);
+
+                        AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyX} successfully sended to Sacred.exe window");
+
+                        e.Handled = false;
+                    }
+                    catch (Exception exception)
+                    {
+                        AppLogger.Log.Error(exception.ToString);
+                    }
+
+                }
+
+                if (e.Name == "C")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyC);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyC} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "V")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyV);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyV} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "B")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyN);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyN} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
+
+                if (e.Name == "M")
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+
+                    SetForegroundWindow(sacredhandle);
+
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyM);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyM} successfully sended to Sacred.exe window");
+
+                    e.Handled = false;
+                }
             }
-
-            if (e.Name == "C")
+            catch (Exception exception)
             {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyC);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyC} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "V")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyV);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyV} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "B")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyN);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyN} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "M")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyM);
-
-                AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyM} successfully sended to Sacred.exe window");
-
-                e.Handled = false;
+                AppLogger.Log.Error(exception.ToString);
             }
         }
 
