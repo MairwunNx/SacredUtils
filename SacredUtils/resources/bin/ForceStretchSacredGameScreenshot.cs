@@ -26,9 +26,13 @@ namespace SacredUtils.resources.bin
                 HotkeyManager.Current.AddOrReplace("PrintScreen", Key.PrintScreen, ModifierKeys.None, Get);
 
                 CheckAvailabilityProcess();
+
+                AppLogger.Log.Info("Register global PrintScreen hotkey successfully done!");
             }
             catch (Exception e)
             {
+                AppLogger.Log.Error("Register global PrintScreen hotkey not ability (Close app used PrintScreen button)!");
+
                 AppLogger.Log.Error(e.ToString);
             }
         }
@@ -54,6 +58,8 @@ namespace SacredUtils.resources.bin
             try
             {
                 HotkeyManager.Current.Remove("PrintScreen");
+
+                AppLogger.Log.Info("Caused by close Sacred: Shutting down global PrintScreen hotkey done!");
             }
             catch (Exception e)
             {

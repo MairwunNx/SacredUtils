@@ -23,7 +23,7 @@ namespace SacredUtils.resources.dlg
                     {
                         AboutDialog.IsOpen = false;
 
-                        AppLogger.Log.Error("Starting Sacred.exe game file with arg CHEATS=1 ...");
+                        AppLogger.Log.Info("Starting Sacred.exe game file with arg CHEATS=1 ...");
 
                         Process.Start("Sacred.exe", "CHEATS=1");
 
@@ -44,7 +44,7 @@ namespace SacredUtils.resources.dlg
                     {
                         AboutDialog.IsOpen = false;
 
-                        AppLogger.Log.Error("Starting Sacred.exe game file ...");
+                        AppLogger.Log.Info("Starting Sacred.exe game file ...");
 
                         Process.Start("Sacred.exe");
 
@@ -68,11 +68,11 @@ namespace SacredUtils.resources.dlg
                     {
                         AboutDialog.IsOpen = false;
 
-                        AppLogger.Log.Error("Param selected: Minimizing SacredUtils application ...");
+                        AppLogger.Log.Info("Param selected: Minimizing SacredUtils application ...");
 
                         MainWindow.WindowState = WindowState.Minimized;
 
-                        AppLogger.Log.Error("Starting Sacred.exe game file with arg CHEATS=1 ...");
+                        AppLogger.Log.Info("Starting Sacred.exe game file with arg CHEATS=1 ...");
 
                         Process.Start("Sacred.exe", "CHEATS=1");
 
@@ -93,11 +93,11 @@ namespace SacredUtils.resources.dlg
                     {
                         AboutDialog.IsOpen = false;
 
-                        AppLogger.Log.Error("Param selected: Minimizing SacredUtils application ...");
+                        AppLogger.Log.Info("Param selected: Minimizing SacredUtils application ...");
 
                         MainWindow.WindowState = WindowState.Minimized;
 
-                        AppLogger.Log.Error("Starting Sacred.exe game file ...");
+                        AppLogger.Log.Info("Starting Sacred.exe game file ...");
 
                         Process.Start("Sacred.exe");
 
@@ -115,15 +115,15 @@ namespace SacredUtils.resources.dlg
             }
             else if (AppSettings.ApplicationSettings.SacredStartArgs == 0)
             {
-                //MessageBox.Show("Notification: The mode \"Close SU before launching the game\" does not allow to emulate hot keys, screenshots and language changes.");
-
                 if (RunWithCheatsCmbBox.IsChecked == true)
                 {
                     if (File.Exists("Sacred.exe"))
                     {
-                        AppLogger.Log.Error("Starting Sacred.exe game file with arg CHEATS=1 ...");
+                        AppLogger.Log.Info("Starting Sacred.exe game file with arg CHEATS=1 ...");
 
                         Process.Start("Sacred.exe", "CHEATS=1");
+
+                        AppLogger.Log.Info("Param selected: Force shutting down SacredUtils ...");
 
                         Environment.Exit(0);
                     }
@@ -136,9 +136,11 @@ namespace SacredUtils.resources.dlg
                 {
                     if (File.Exists("Sacred.exe"))
                     {
-                        AppLogger.Log.Error("Starting Sacred.exe game file ...");
+                        AppLogger.Log.Info("Starting Sacred.exe game file ...");
 
                         Process.Start("Sacred.exe");
+
+                        AppLogger.Log.Info("Param selected: Force shutting down SacredUtils ...");
 
                         Environment.Exit(0);
                     }
