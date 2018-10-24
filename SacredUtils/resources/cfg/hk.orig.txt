@@ -31,11 +31,9 @@ K
 L
 Z
 X
-{BACKSPACE}
 C
 V
 B
 N
 M
- 
-TAB
+{BACKSPACE}

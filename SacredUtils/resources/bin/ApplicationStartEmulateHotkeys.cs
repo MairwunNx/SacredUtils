@@ -40,7 +40,6 @@ namespace SacredUtils.resources.bin
                 HotkeyManager.Current.AddOrReplace("F9", Key.F9, ModifierKeys.None, HandleHotKeys);
                 HotkeyManager.Current.AddOrReplace("F10", Key.F10, ModifierKeys.None, HandleHotKeys);
                 HotkeyManager.Current.AddOrReplace("F11", Key.F11, ModifierKeys.None, HandleHotKeys);
-                HotkeyManager.Current.AddOrReplace("TAB", Key.Tab, ModifierKeys.None, HandleHotKeys);
                 HotkeyManager.Current.AddOrReplace("Q", Key.Q, ModifierKeys.None, HandleHotKeys);
                 HotkeyManager.Current.AddOrReplace("W", Key.W, ModifierKeys.None, HandleHotKeys);
                 HotkeyManager.Current.AddOrReplace("E", Key.E, ModifierKeys.None, HandleHotKeys);
@@ -67,7 +66,6 @@ namespace SacredUtils.resources.bin
                 HotkeyManager.Current.AddOrReplace("B", Key.B, ModifierKeys.None, HandleHotKeys);
                 HotkeyManager.Current.AddOrReplace("N", Key.N, ModifierKeys.None, HandleHotKeys);
                 HotkeyManager.Current.AddOrReplace("M", Key.M, ModifierKeys.None, HandleHotKeys);
-                HotkeyManager.Current.AddOrReplace("Space", Key.Space, ModifierKeys.None, HandleHotKeys);
 
                 CheckAvailabilityProcess();
             }
@@ -206,17 +204,6 @@ namespace SacredUtils.resources.bin
                 SetForegroundWindow(sacredhandle);
 
                 SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF11);
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "F12")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF12);
 
                 e.Handled = false;
             }
@@ -439,24 +426,32 @@ namespace SacredUtils.resources.bin
                     SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyZ);
-
-                    e.Handled = false;
                 }
                 catch (Exception exception)
                 {
                     AppLogger.Log.Fatal(exception.ToString);
                 }
+
+                e.Handled = false;
             }
 
             if (e.Name == "X")
             {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                try
+                {
+                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
 
-                SetForegroundWindow(sacredhandle);
+                    SetForegroundWindow(sacredhandle);
 
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyX);
+                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyX);
 
-                e.Handled = false;
+                    e.Handled = false;
+                }
+                catch (Exception exception)
+                {
+                    AppLogger.Log.Error(exception.ToString);
+                }
+
             }
 
             if (e.Name == "C")
@@ -502,28 +497,6 @@ namespace SacredUtils.resources.bin
 
                 e.Handled = false;
             }
-
-            if (e.Name == "TAB")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyTab);
-
-                e.Handled = false;
-            }
-
-            if (e.Name == "Space")
-            {
-                IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
-
-                SetForegroundWindow(sacredhandle);
-
-                SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeySpace);
-
-                e.Handled = false;
-            }
         }
 
         private static void CheckAvailabilityProcess()
@@ -557,8 +530,6 @@ namespace SacredUtils.resources.bin
                 HotkeyManager.Current.Remove("F9");
                 HotkeyManager.Current.Remove("F10");
                 HotkeyManager.Current.Remove("F11");
-                HotkeyManager.Current.Remove("F12");
-                HotkeyManager.Current.Remove("TAB");
                 HotkeyManager.Current.Remove("Q");
                 HotkeyManager.Current.Remove("W");
                 HotkeyManager.Current.Remove("E");
@@ -585,7 +556,6 @@ namespace SacredUtils.resources.bin
                 HotkeyManager.Current.Remove("B");
                 HotkeyManager.Current.Remove("N");
                 HotkeyManager.Current.Remove("M");
-                HotkeyManager.Current.Remove("Space");
             }
             catch (Exception e)
             {

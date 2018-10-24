@@ -97,14 +97,8 @@ namespace SacredUtils
         [Option(Alias = "S", DefaultValue = "S")]
         string KeyS { get; set; }
 
-        [Option(Alias = "Space", DefaultValue = " ")]
-        string KeySpace { get; set; }
-
         [Option(Alias = "T", DefaultValue = "T")]
         string KeyT { get; set; }
-
-        [Option(Alias = "Tab", DefaultValue = "Tab")]
-        string KeyTab { get; set; }
 
         [Option(Alias = "U", DefaultValue = "U")]
         string KeyU { get; set; }

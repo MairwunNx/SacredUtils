@@ -207,16 +207,6 @@ namespace SacredUtils.resources.dlg
                 HotkeySettings.GameHotkeySettings.KeyM = OriginalHotkey.SelectedValue.ToString();
             }
 
-            if (NewHotkeyCmbBox.SelectedValue.ToString() == "Space")
-            {
-                HotkeySettings.GameHotkeySettings.KeySpace = OriginalHotkey.SelectedValue.ToString();
-            }
-
-            if (NewHotkeyCmbBox.SelectedValue.ToString() == "TAB")
-            {
-                HotkeySettings.GameHotkeySettings.KeyTab = OriginalHotkey.SelectedValue.ToString();
-            }
-
             if (NewHotkeyCmbBox.SelectedValue.ToString() == "L")
             {
                 HotkeySettings.GameHotkeySettings.KeyL = OriginalHotkey.SelectedValue.ToString();
@@ -415,16 +405,6 @@ namespace SacredUtils.resources.dlg
                 case "M":
                     OriginalHotkey.SelectionChanged -= SetHotkeyValue;
                     OriginalHotkey.SelectedItem = HotkeySettings.GameHotkeySettings.KeyM;
-                    OriginalHotkey.SelectionChanged += SetHotkeyValue;
-                    break;
-                case "Space":
-                    OriginalHotkey.SelectionChanged -= SetHotkeyValue;
-                    OriginalHotkey.SelectedItem = HotkeySettings.GameHotkeySettings.KeySpace;
-                    OriginalHotkey.SelectionChanged += SetHotkeyValue;
-                    break;
-                case "TAB":
-                    OriginalHotkey.SelectionChanged -= SetHotkeyValue;
-                    OriginalHotkey.SelectedItem = HotkeySettings.GameHotkeySettings.KeyTab;
                     OriginalHotkey.SelectionChanged += SetHotkeyValue;
                     break;
                 default:
