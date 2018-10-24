@@ -23,6 +23,8 @@ namespace SacredUtils.resources.dlg
                     {
                         AboutDialog.IsOpen = false;
 
+                        AppLogger.Log.Error("Starting Sacred.exe game file with arg CHEATS=1 ...");
+
                         Process.Start("Sacred.exe", "CHEATS=1");
 
                         EnableSwitchingLanguage();
@@ -31,6 +33,10 @@ namespace SacredUtils.resources.dlg
 
                         EnableEmulateHotkeys();
                     }
+                    else
+                    {
+                        AppLogger.Log.Error("Sacred.exe file not found! Move application to game directory!");
+                    }
                 }
                 else
                 {
@@ -38,13 +44,19 @@ namespace SacredUtils.resources.dlg
                     {
                         AboutDialog.IsOpen = false;
 
-                        Process.Start("Sacred.exe", "CHEATS=1");
+                        AppLogger.Log.Error("Starting Sacred.exe game file ...");
+
+                        Process.Start("Sacred.exe");
 
                         EnableSwitchingLanguage();
 
                         EnableStretchingScreenshot();
 
                         EnableEmulateHotkeys();
+                    }
+                    else
+                    {
+                        AppLogger.Log.Error("Sacred.exe file not found! Move application to game directory!");
                     }
                 }
             }
@@ -56,7 +68,11 @@ namespace SacredUtils.resources.dlg
                     {
                         AboutDialog.IsOpen = false;
 
+                        AppLogger.Log.Error("Param selected: Minimizing SacredUtils application ...");
+
                         MainWindow.WindowState = WindowState.Minimized;
+
+                        AppLogger.Log.Error("Starting Sacred.exe game file with arg CHEATS=1 ...");
 
                         Process.Start("Sacred.exe", "CHEATS=1");
 
@@ -66,6 +82,10 @@ namespace SacredUtils.resources.dlg
 
                         EnableEmulateHotkeys();
                     }
+                    else
+                    {
+                        AppLogger.Log.Error("Sacred.exe file not found! Move application to game directory!");
+                    }
                 }
                 else
                 {
@@ -73,15 +93,23 @@ namespace SacredUtils.resources.dlg
                     {
                         AboutDialog.IsOpen = false;
 
+                        AppLogger.Log.Error("Param selected: Minimizing SacredUtils application ...");
+
                         MainWindow.WindowState = WindowState.Minimized;
 
-                        Process.Start("Sacred.exe", "CHEATS=1");
+                        AppLogger.Log.Error("Starting Sacred.exe game file ...");
+
+                        Process.Start("Sacred.exe");
 
                         EnableSwitchingLanguage();
 
                         EnableStretchingScreenshot();
 
                         EnableEmulateHotkeys();
+                    }
+                    else
+                    {
+                        AppLogger.Log.Error("Sacred.exe file not found! Move application to game directory!");
                     }
                 }
             }
@@ -93,18 +121,30 @@ namespace SacredUtils.resources.dlg
                 {
                     if (File.Exists("Sacred.exe"))
                     {
+                        AppLogger.Log.Error("Starting Sacred.exe game file with arg CHEATS=1 ...");
+
                         Process.Start("Sacred.exe", "CHEATS=1");
 
                         Environment.Exit(0);
+                    }
+                    else
+                    {
+                        AppLogger.Log.Error("Sacred.exe file not found! Move application to game directory!");
                     }
                 }
                 else
                 {
                     if (File.Exists("Sacred.exe"))
                     {
+                        AppLogger.Log.Error("Starting Sacred.exe game file ...");
+
                         Process.Start("Sacred.exe");
 
                         Environment.Exit(0);
+                    }
+                    else
+                    {
+                        AppLogger.Log.Error("Sacred.exe file not found! Move application to game directory!");
                     }
                 }
             }
@@ -114,6 +154,8 @@ namespace SacredUtils.resources.dlg
         {
             if (RunWithEngLangCmbBox.IsChecked == true)
             {
+                AppLogger.Log.Info("Sacred starting with enabled force switching language ...");
+
                 ForceSwitchKeyboardLanguageInGame.RegisterApplication();
             }
         }
@@ -122,7 +164,7 @@ namespace SacredUtils.resources.dlg
         { 
             if (RunWithScreenCmbBox.IsChecked == true)
             {
-                AppLogger.Log.Info($"Sacred Underworld starting with {MainWindow.ScreenWidthDevice}x{MainWindow.ScreenHeightDevice} resolution ...");
+                AppLogger.Log.Info($"Sacred Screenshots starting with {MainWindow.ScreenWidthDevice}x{MainWindow.ScreenHeightDevice} resolution ...");
 
                 ForceStretchSacredGameScreenshot.RegisterKey(false);
             }
@@ -132,6 +174,8 @@ namespace SacredUtils.resources.dlg
         {
             if (RunWithHotkeysCmbBox.IsChecked == true)
             {
+                AppLogger.Log.Info("Sacred starting with enabled hotkeys emulation ...");
+
                 ApplicationStartEmulateHotkeys.RegisterMainHotkeys();
             }
         }
@@ -139,6 +183,8 @@ namespace SacredUtils.resources.dlg
         private void CancelLaunchBtn_Click(object sender, RoutedEventArgs e)
         {
             AboutDialog.IsOpen = false;
+
+            AppLogger.Log.Info("Sacred starting canceled by user");
         }
 
         // ApplicationStartEmulateHotkeys.RegisterMainHotkeys();
