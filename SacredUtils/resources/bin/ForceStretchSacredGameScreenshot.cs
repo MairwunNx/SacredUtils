@@ -47,7 +47,7 @@ namespace SacredUtils.resources.bin
             {
                 Process[] pname = Process.GetProcessesByName("Sacred");
 
-                if (pname.Length == 0) { DisableScreenShotStretching(); }
+                if (pname.Length == 0) { DisableScreenShotStretching(); timer.Stop(); }
             };
 
             timer.Start();

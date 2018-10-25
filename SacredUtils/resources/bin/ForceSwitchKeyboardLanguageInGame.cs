@@ -40,7 +40,7 @@ namespace SacredUtils.resources.bin
             {
                 Process[] pname = Process.GetProcessesByName("Sacred");
 
-                if (pname.Length == 0) { RemoveApplication(); }
+                if (pname.Length == 0) { RemoveApplication(); timer.Stop(); }
             };
 
             timer.Start();

@@ -11,12 +11,6 @@ namespace SacredUtils.resources.bin
 {
     public static class ApplicationStartEmulateHotkeys
     {
-        [DllImport("USER32.DLL", CharSet = CharSet.Unicode)]
-        private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
-
-        [DllImport("USER32.DLL")]
-        private static extern bool SetForegroundWindow(IntPtr hWnd);
-
         public static void RegisterMainHotkeys()
         {
             HotkeyManager.Current.AddOrReplace("EnableHandling", Key.E, ModifierKeys.Shift | ModifierKeys.Control, EnableHotkeys);
@@ -134,9 +128,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "F1")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF1);
 
@@ -147,9 +141,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "F2")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF2);
 
@@ -160,9 +154,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "F3")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF3);
 
@@ -173,9 +167,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "F4")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF4);
 
@@ -186,9 +180,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "F5")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF5);
 
@@ -199,9 +193,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "F6")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF6);
 
@@ -212,9 +206,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "F7")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF7);
 
@@ -225,9 +219,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "F8")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF8);
 
@@ -238,11 +232,19 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "F9")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    const int WM_KEYDOWN = 0x0100;
 
-                    SetForegroundWindow(sacredhandle);
+                    IntPtr hWndNotepad = NativeMethods.FindWindow("Sacred", null);
 
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF9);
+                    NativeMethods.PostMessage(hWndNotepad, WM_KEYDOWN, Keys.I, IntPtr.Zero);
+
+                    // WORKED!!!
+
+//                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+//
+//                    NativeMethods.SetForegroundWindow(sacredhandle);
+//
+//                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF9);
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF9} successfully sended to Sacred.exe window");
 
@@ -251,9 +253,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "F10")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF10);
 
@@ -264,9 +266,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "F11")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF11);
 
@@ -277,9 +279,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "Q")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyQ);
 
@@ -290,9 +292,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "W")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyW);
 
@@ -303,22 +305,28 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "E")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    const int WM_KEYDOWN = 0x0100;
 
-                    SetForegroundWindow(sacredhandle);
+                    IntPtr hWndNotepad = NativeMethods.FindWindow("Sacred", null);
 
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyE);
+                    NativeMethods.PostMessage(hWndNotepad, WM_KEYDOWN, Keys.None, IntPtr.Zero);
+
+//                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+//
+//                    NativeMethods.SetForegroundWindow(sacredhandle);
+//
+//                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyE);
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyE} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                    e.Handled = true;
                 }
 
                 if (e.Name == "R")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyR);
 
@@ -329,9 +337,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "T")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyT);
 
@@ -342,9 +350,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "Y")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyY);
 
@@ -355,9 +363,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "U")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyU);
 
@@ -368,9 +376,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "I")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyI);
 
@@ -381,9 +389,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "O")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyO);
 
@@ -394,9 +402,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "P")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyP);
 
@@ -407,9 +415,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "A")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyA);
 
@@ -420,9 +428,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "S")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyS);
 
@@ -433,9 +441,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "D")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyD);
 
@@ -446,9 +454,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "F")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF);
 
@@ -459,9 +467,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "G")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyG);
 
@@ -472,9 +480,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "H")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyH);
 
@@ -485,9 +493,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "J")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyJ);
 
@@ -498,9 +506,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "K")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyK);
 
@@ -511,9 +519,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "L")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyL);
 
@@ -526,9 +534,9 @@ namespace SacredUtils.resources.bin
                 {
                     try
                     {
-                        IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                        IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                        SetForegroundWindow(sacredhandle);
+                        NativeMethods.SetForegroundWindow(sacredhandle);
 
                         SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyZ);
 
@@ -546,9 +554,9 @@ namespace SacredUtils.resources.bin
                 {
                     try
                     {
-                        IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                        IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                        SetForegroundWindow(sacredhandle);
+                        NativeMethods.SetForegroundWindow(sacredhandle);
 
                         SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyX);
 
@@ -565,9 +573,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "C")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyC);
 
@@ -578,9 +586,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "V")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyV);
 
@@ -591,9 +599,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "B")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyN);
 
@@ -604,9 +612,9 @@ namespace SacredUtils.resources.bin
 
                 if (e.Name == "M")
                 {
-                    IntPtr sacredhandle = FindWindow("Sacred", "Sacred");
+                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
 
-                    SetForegroundWindow(sacredhandle);
+                    NativeMethods.SetForegroundWindow(sacredhandle);
 
                     SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyM);
 
@@ -631,7 +639,7 @@ namespace SacredUtils.resources.bin
             {
                 Process[] pname = Process.GetProcessesByName("Sacred");
 
-                if (pname.Length == 0) { DisableHotkeyHandle(); }
+                if (pname.Length == 0) { DisableHotkeyHandle(); timer.Stop(); }
             };
 
             timer.Start();
