@@ -5,7 +5,7 @@ A powerful and beautiful configurator for Sacred and Sacred Underworld, with usi
 
 # Features
 
- * Material Design style application. Thanks [Material Design In Xaml](http://materialdesigninxaml.net/).
+ * Material Design style application. Thanks [Material Design In Xaml](https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit).
  * Many useful and very useful settings for the game Sacred and Sacred Underworld.
  * Flexibility in customization, you can change a lot in SacredUtils!
  * Constant support and updates, bug fixes, help with the game.
@@ -25,6 +25,8 @@ A powerful and beautiful configurator for Sacred and Sacred Underworld, with usi
  * Enabling or disabling func "Water animation" without set low graphics!
  * Enabling or disabling func "bog animation", "lava animation", "player footprints".
  * Restoring old Sacred interface, all likes a lot, I think so.
+ * Ability changing keyboard language layout simple in game! (Shift + Alt)
+ * Ability running Sacred with CHEATS=1 argument, easy, lol, with fun cheaters.
  * Ability create screenshots in FullHD resolution and high (over 4k) :D
  * Cool, very fast and cool x2 change hotkey function, use our hotkeys :DD
 
