@@ -25,6 +25,8 @@ A powerful and beautiful configurator for Sacred and Sacred Underworld, with usi
  * Enabling or disabling func "Water animation" without set low graphics!
  * Enabling or disabling func "bog animation", "lava animation", "player footprints".
  * Restoring old Sacred interface, all likes a lot, I think so.
+ * Ability create screenshots in FullHD resolution and high (over 4k) :D
+ * Cool, very fast and cool x2 change hotkey function, use our hotkeys :DD
 
 # Downloads
 
@@ -50,8 +52,7 @@ A powerful and beautiful configurator for Sacred and Sacred Underworld, with usi
 
 # In future
 
- * Install hotkeys, change hotkeys, and complete management of the keys in Sacred and Sacred Underworld. (In Rv5).
- * Better printscreen func for Sacred and SacredUnderworld (Support .PNG and .JPG and 4k res). (In Rv5).
+ * All tasks for the future are made! If you have idea, open Issue or send it on email me.
 
 # Screenshots
 
@@ -74,3 +75,5 @@ A powerful and beautiful configurator for Sacred and Sacred Underworld, with usi
 ![Alt text](images/SacredUtils_SampleScreen09.png)
 
 ![Alt text](images/SacredUtils_SampleScreen10.png)
+
+![Alt text](images/SacredUtils_SampleScreen11.png)
