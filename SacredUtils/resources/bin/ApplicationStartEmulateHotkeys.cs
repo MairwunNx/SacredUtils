@@ -2,15 +2,19 @@
 using NHotkey.Wpf;
 using System;
 using System.Diagnostics;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Threading;
 
+// ReSharper disable InconsistentNaming
 namespace SacredUtils.resources.bin
 {
     public static class ApplicationStartEmulateHotkeys
     {
+        private const int WM_KEYUP = 0x0101;
+
+        private static readonly IntPtr hWndSacred = NativeMethods.FindWindow(AppSettings.ApplicationSettings.hWndSacred, null);
+
         public static void RegisterMainHotkeys()
         {
             HotkeyManager.Current.AddOrReplace("EnableHandling", Key.E, ModifierKeys.Shift | ModifierKeys.Control, EnableHotkeys);
@@ -21,32 +25,10 @@ namespace SacredUtils.resources.bin
             RegisterHotkeys();
         }
 
-        public static void RegisterHotkeys()
+        private static void RegisterHotkeys()
         {
             try
             {
-                HotkeyManager.Current.AddOrReplace("F1", Key.F1, ModifierKeys.None, HandleHotKeys);
-                AppLogger.Log.Info("Register global game F1 hotkey successfully done!");
-                HotkeyManager.Current.AddOrReplace("F2", Key.F2, ModifierKeys.None, HandleHotKeys);
-                AppLogger.Log.Info("Register global game F2 hotkey successfully done!");
-                HotkeyManager.Current.AddOrReplace("F3", Key.F3, ModifierKeys.None, HandleHotKeys);
-                AppLogger.Log.Info("Register global game F3 hotkey successfully done!");
-                HotkeyManager.Current.AddOrReplace("F4", Key.F4, ModifierKeys.None, HandleHotKeys);
-                AppLogger.Log.Info("Register global game F4 hotkey successfully done!");
-                HotkeyManager.Current.AddOrReplace("F5", Key.F5, ModifierKeys.None, HandleHotKeys);
-                AppLogger.Log.Info("Register global game F5 hotkey successfully done!");
-                HotkeyManager.Current.AddOrReplace("F6", Key.F6, ModifierKeys.None, HandleHotKeys);
-                AppLogger.Log.Info("Register global game F6 hotkey successfully done!");
-                HotkeyManager.Current.AddOrReplace("F7", Key.F7, ModifierKeys.None, HandleHotKeys);
-                AppLogger.Log.Info("Register global game F7 hotkey successfully done!");
-                HotkeyManager.Current.AddOrReplace("F8", Key.F8, ModifierKeys.None, HandleHotKeys);
-                AppLogger.Log.Info("Register global game F8 hotkey successfully done!");
-                HotkeyManager.Current.AddOrReplace("F9", Key.F9, ModifierKeys.None, HandleHotKeys);
-                AppLogger.Log.Info("Register global game F9 hotkey successfully done!");
-                HotkeyManager.Current.AddOrReplace("F10", Key.F10, ModifierKeys.None, HandleHotKeys);
-                AppLogger.Log.Info("Register global game F10 hotkey successfully done!");
-                HotkeyManager.Current.AddOrReplace("F11", Key.F11, ModifierKeys.None, HandleHotKeys);
-                AppLogger.Log.Info("Register global game F11 hotkey successfully done!");
                 HotkeyManager.Current.AddOrReplace("Q", Key.Q, ModifierKeys.None, HandleHotKeys);
                 AppLogger.Log.Info("Register global game Q hotkey successfully done!");
                 HotkeyManager.Current.AddOrReplace("W", Key.W, ModifierKeys.None, HandleHotKeys);
@@ -99,6 +81,8 @@ namespace SacredUtils.resources.bin
                 AppLogger.Log.Info("Register global game N hotkey successfully done!");
                 HotkeyManager.Current.AddOrReplace("M", Key.M, ModifierKeys.None, HandleHotKeys);
                 AppLogger.Log.Info("Register global game M hotkey successfully done!");
+                HotkeyManager.Current.AddOrReplace("SPACE", Key.Space, ModifierKeys.None, HandleHotKeys);
+                AppLogger.Log.Info("Register global game Space hotkey successfully done!");
 
                 AppLogger.Log.Info("Register all global game hotkeys successfully done!");
 
@@ -124,503 +108,390 @@ namespace SacredUtils.resources.bin
         {
             try
             {
-                AppLogger.Log.Info($"Waiting key {e.Name} to sending in Sacred.exe window");
-
-                if (e.Name == "F1")
-                {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
-
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF1);
-
-                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF1} successfully sended to Sacred.exe window");
-
-                    e.Handled = true;
-                }
-
-                if (e.Name == "F2")
-                {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
-
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF2);
-
-                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF2} successfully sended to Sacred.exe window");
-
-                    e.Handled = true;
-                }
-
-                if (e.Name == "F3")
-                {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
-
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF3);
-
-                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF3} successfully sended to Sacred.exe window");
-
-                    e.Handled = true;
-                }
-
-                if (e.Name == "F4")
-                {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
-
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF4);
-
-                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF4} successfully sended to Sacred.exe window");
-
-                    e.Handled = true;
-                }
-
-                if (e.Name == "F5")
-                {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
-
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF5);
-
-                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF5} successfully sended to Sacred.exe window");
-
-                    e.Handled = true;
-                }
-
-                if (e.Name == "F6")
-                {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
-
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF6);
-
-                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF6} successfully sended to Sacred.exe window");
-
-                    e.Handled = true;
-                }
-
-                if (e.Name == "F7")
-                {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
-
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF7);
-
-                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF7} successfully sended to Sacred.exe window");
-
-                    e.Handled = true;
-                }
-
-                if (e.Name == "F8")
-                {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
-
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF8);
-
-                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF8} successfully sended to Sacred.exe window");
-
-                    e.Handled = true;
-                }
-
-                if (e.Name == "F9")
-                {
-                    const int WM_KEYDOWN = 0x0100;
-
-                    IntPtr hWndNotepad = NativeMethods.FindWindow("Sacred", null);
-
-                    NativeMethods.PostMessage(hWndNotepad, WM_KEYDOWN, Keys.I, IntPtr.Zero);
-
-                    // WORKED!!!
-
-//                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
-//
-//                    NativeMethods.SetForegroundWindow(sacredhandle);
-//
-//                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF9);
-
-                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF9} successfully sended to Sacred.exe window");
-
-                    e.Handled = true;
-                }
-
-                if (e.Name == "F10")
-                {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
-
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF10);
-
-                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF10} successfully sended to Sacred.exe window");
-
-                    e.Handled = true;
-                }
-
-                if (e.Name == "F11")
-                {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
-
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF11);
-
-                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF11} successfully sended to Sacred.exe window");
-
-                    e.Handled = true;
-                }
-
                 if (e.Name == "Q")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyQ, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyQ);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyQ} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "W")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyW, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyW);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyW} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "E")
                 {
-                    const int WM_KEYDOWN = 0x0100;
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyE, out Keys key);
 
-                    IntPtr hWndNotepad = NativeMethods.FindWindow("Sacred", null);
-
-                    NativeMethods.PostMessage(hWndNotepad, WM_KEYDOWN, Keys.None, IntPtr.Zero);
-
-//                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
-//
-//                    NativeMethods.SetForegroundWindow(sacredhandle);
-//
-//                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyE);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyE} successfully sended to Sacred.exe window");
 
-                    e.Handled = true;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "R")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyR, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyR);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyR} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "T")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyT, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyT);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyT} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "Y")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyY, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyY);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyY} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "U")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyU, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyU);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyU} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "I")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyI, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyI);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyI} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "O")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyO, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyO);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyO} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "P")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyP, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyP);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyP} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "A")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyA, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyA);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyA} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "S")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyS, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyS);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyS} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "D")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyD, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyD);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyD} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "F")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyF, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "G")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyG, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyG);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyG} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "H")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyH, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyH);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyH} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "J")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyJ, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyJ);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyJ} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "K")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyK, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyK);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyK} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "L")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyL, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyL);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyL} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "Z")
                 {
-                    try
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyZ, out Keys key);
+
+                    switch (key)
                     {
-                        IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
-
-                        NativeMethods.SetForegroundWindow(sacredhandle);
-
-                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyZ);
-
-                        AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyZ} successfully sended to Sacred.exe window");
-                    }
-                    catch (Exception exception)
-                    {
-                        AppLogger.Log.Fatal(exception.ToString);
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
                     }
 
-                    e.Handled = false;
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyZ} successfully sended to Sacred.exe window");
+
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "X")
                 {
-                    try
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyX, out Keys key);
+
+                    switch (key)
                     {
-                        IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
-
-                        NativeMethods.SetForegroundWindow(sacredhandle);
-
-                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyX);
-
-                        AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyX} successfully sended to Sacred.exe window");
-
-                        e.Handled = false;
-                    }
-                    catch (Exception exception)
-                    {
-                        AppLogger.Log.Error(exception.ToString);
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
                     }
 
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyX} successfully sended to Sacred.exe window");
+
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "C")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyC, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyC);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyC} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "V")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyV, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyV);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyV} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "B")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyB, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyN);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyN} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
 
                 if (e.Name == "M")
                 {
-                    IntPtr sacredhandle = NativeMethods.FindWindow("Sacred", "Sacred");
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeyM, out Keys key);
 
-                    NativeMethods.SetForegroundWindow(sacredhandle);
-
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyM);
+                    switch (key)
+                    {
+                        case Keys.Space: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, Keys.Space, IntPtr.Zero); break;
+                        default: NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero); break;
+                    }
 
                     AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyM} successfully sended to Sacred.exe window");
 
-                    e.Handled = false;
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                }
+
+                if (e.Name == "SPACE")
+                {
+                    Enum.TryParse(HotkeySettings.GameHotkeySettings.KeySpace, out Keys key);
+
+                    NativeMethods.PostMessage(hWndSacred, WM_KEYUP, key, IntPtr.Zero);
+
+                    AppLogger.Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeySpace} successfully sended to Sacred.exe window");
+
+                     e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
                 }
             }
             catch (Exception exception)
@@ -649,17 +520,6 @@ namespace SacredUtils.resources.bin
         {
             try
             {
-                HotkeyManager.Current.Remove("F1");
-                HotkeyManager.Current.Remove("F2");
-                HotkeyManager.Current.Remove("F3");
-                HotkeyManager.Current.Remove("F4");
-                HotkeyManager.Current.Remove("F5");
-                HotkeyManager.Current.Remove("F6");
-                HotkeyManager.Current.Remove("F7");
-                HotkeyManager.Current.Remove("F8");
-                HotkeyManager.Current.Remove("F9");
-                HotkeyManager.Current.Remove("F10");
-                HotkeyManager.Current.Remove("F11");
                 HotkeyManager.Current.Remove("Q");
                 HotkeyManager.Current.Remove("W");
                 HotkeyManager.Current.Remove("E");
@@ -686,6 +546,7 @@ namespace SacredUtils.resources.bin
                 HotkeyManager.Current.Remove("B");
                 HotkeyManager.Current.Remove("N");
                 HotkeyManager.Current.Remove("M");
+                HotkeyManager.Current.Remove("SPACE");
 
                 AppLogger.Log.Info("Shutting down all global game hotkeys done!");
             }

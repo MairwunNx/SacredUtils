@@ -200,7 +200,7 @@
     <sys:String x:Key="String0146">Редактировать creature.pak (External)</sys:String>
     <sys:String x:Key="String0147">Редактировать weapon.pak (External)</sys:String>
     <sys:String x:Key="String0148">Запустить SacredHeroResetter</sys:String>
-    <sys:String x:Key="String0149">Запустить SacredHotkeyTweaker</sys:String>
+    <sys:String x:Key="String0149">Изменить горячие клавиши игры</sys:String>
     <sys:String x:Key="String0150">Запустить SacredHeroEditor</sys:String>
     <sys:String x:Key="String0151">Запустить проверку целостности компонентов игры</sys:String>
     <sys:String x:Key="String0152">Запустить генератор цветных ников</sys:String>

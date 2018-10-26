@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
+// ReSharper disable InconsistentNaming
 namespace SacredUtils
 {
     internal static class NativeMethods

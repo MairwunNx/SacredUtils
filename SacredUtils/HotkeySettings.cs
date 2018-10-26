@@ -22,39 +22,6 @@ namespace SacredUtils
         [Option(Alias = "F", DefaultValue = "F")]
         string KeyF { get; set; }
 
-        [Option(Alias = "F1", DefaultValue = "{F1}")]
-        string KeyF1 { get; set; }
-
-        [Option(Alias = "F10", DefaultValue = "{F10}")]
-        string KeyF10 { get; set; }
-
-        [Option(Alias = "F11", DefaultValue = "{F11}")]
-        string KeyF11 { get; set; }
-
-        [Option(Alias = "F2", DefaultValue = "{F2}")]
-        string KeyF2 { get; set; }
-
-        [Option(Alias = "F3", DefaultValue = "{F3}")]
-        string KeyF3 { get; set; }
-
-        [Option(Alias = "F4", DefaultValue = "{F4}")]
-        string KeyF4 { get; set; }
-
-        [Option(Alias = "F5", DefaultValue = "{F5}")]
-        string KeyF5 { get; set; }
-
-        [Option(Alias = "F6", DefaultValue = "{F6}")]
-        string KeyF6 { get; set; }
-
-        [Option(Alias = "F7", DefaultValue = "{F7}")]
-        string KeyF7 { get; set; }
-
-        [Option(Alias = "F8", DefaultValue = "{F8}")]
-        string KeyF8 { get; set; }
-
-        [Option(Alias = "F9", DefaultValue = "{F9}")]
-        string KeyF9 { get; set; }
-
         [Option(Alias = "G", DefaultValue = "G")]
         string KeyG { get; set; }
 
@@ -114,6 +81,9 @@ namespace SacredUtils
 
         [Option(Alias = "Z", DefaultValue = "Z")]
         string KeyZ { get; set; }
+
+        [Option(Alias = "Space", DefaultValue = "Space")]
+        string KeySpace { get; set; }
     }
 
     public static class HotkeySettings

@@ -1,4 +1,5 @@
 ﻿using Config.Net;
+// ReSharper disable InconsistentNaming
 
 namespace SacredUtils
 {
@@ -54,6 +55,15 @@ namespace SacredUtils
 
         [Option(Alias = "GameVoiceover", DefaultValue = "based on language")]
         string GameVoiceover { get; set; }
+
+        [Option(Alias = "HotKeyEventArgsHandled", DefaultValue = "true")]
+        bool HotKeyEventArgsHandled { get; set; }
+
+        [Option(Alias = "HotKeyKeyPressMode", DefaultValue = "0x0101")]
+        int HotKeyKeyPressMode { get; set; }
+
+        [Option(Alias = "hWndSacred", DefaultValue = "Sacred")]
+        string hWndSacred { get; set; }
 
         [Option(Alias = "KeyGotoMainMenu", DefaultValue = "Escape")]
         string KeyGotoMainMenu { get; }

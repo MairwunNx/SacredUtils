@@ -200,7 +200,7 @@
     <sys:String x:Key="String0146">Edit creature.pak (External)</sys:String>
     <sys:String x:Key="String0147">Edit weapon.pak (External)</sys:String>
     <sys:String x:Key="String0148">Run SacredHeroResetter</sys:String>
-    <sys:String x:Key="String0149">Run SacredHotkeyTweaker</sys:String>
+    <sys:String x:Key="String0149">Change Sacred Hotkeys</sys:String>
     <sys:String x:Key="String0150">Run SacredHeroEditor</sys:String>
     <sys:String x:Key="String0151">Run integrity check of game components</sys:String>
     <sys:String x:Key="String0152">Start generator of colored nicks</sys:String>
