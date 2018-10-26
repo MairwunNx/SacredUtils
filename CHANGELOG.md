@@ -1,4 +1,14 @@
  # Changes for SacredUtils Rv5
+ ###### Changes included in SacredUtils-1.2.4.1-261018-alpha-2-official (1.2.4.1.261018.A2)
+
+> - Added ability changing and adding game HotKeys
+> - Fixed always starting Sacred with argument CHEATS=1
+> - Optimized SacredUtils file size, moved on GoogleDrive
+> - Removed application settings for creating pdb file
+> - Updated Costura.Fody and Fody and MDIX packages
+> - Added and Enabled dpiAware function (for dpi scaling)
+> - Removed Sacred Hotkey Tweaker from resources. My hotkeys better.
+
  ###### Changes included in SacredUtils-1.2.4.1-211018-alpha-1-official (1.2.4.1.211018.A1)
 
 > - Improved project code fixed many logic bugs
