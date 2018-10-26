@@ -24,5 +24,4 @@ V
 B
 N
 M
-Space
 None

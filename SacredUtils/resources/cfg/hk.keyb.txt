@@ -24,4 +24,3 @@ V
 B
 N
 M
-Space
