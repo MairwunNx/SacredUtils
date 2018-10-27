@@ -12,8 +12,6 @@ namespace SacredUtils.resources.bin
                 try
                 {
                     File.WriteAllBytes("$SacredUtils\\conf\\settings.json", Properties.Resources.settings);
-
-                    AppLogger.Log.Info("Creating SacredUtils settings file (settings.json) done!");
                 }
                 catch (Exception exception)
                 {

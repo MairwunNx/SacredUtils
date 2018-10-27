@@ -13,8 +13,7 @@ namespace SacredUtils
         {
             if (!fast)
             {
-                if (!AppSettings.ApplicationSettings.DisableLogging &&
-                    AppSettings.ApplicationSettings.LoggingMethodName)
+                if (!AppSettings.ApplicationSettings.DisableLogging && AppSettings.ApplicationSettings.LoggingMethodName)
                 {
                     LoggingConfiguration config = new LoggingConfiguration();
 

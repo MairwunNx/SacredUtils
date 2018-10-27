@@ -44,15 +44,15 @@ namespace SacredUtils
                     }
                     else
                     {
+                        CreateApplicationNeededFolders.Create();
+
+                        GetApplicationSettingsValue.Get();
+
                         AppLogger.Init(false);
 
                         PrintToLogBaseApplicationInfo.Print();
 
                         CheckAvailabilityInternetConnection.GetConnect();
-
-                        CreateApplicationNeededFolders.Create();
-
-                        GetApplicationSettingsValue.Get();
 
                         GetApplicationGlobalizerLibrary.Get();
 

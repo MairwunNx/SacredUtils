@@ -32,8 +32,6 @@ namespace SacredUtils
 
         public MainWindow()
         {
-            AppLogger.Log.Info($"SacredUtils application License argeement state : {AppSettings.ApplicationSettings.AcceptLicense}");
-
             InitializeComponent(); EventSubscribe();
 
             ChangeApplicationSelectionSettings.UnSelectSettings(UnselectedStg);
