@@ -15,5 +15,12 @@
     <SolidColorBrush x:Key="CategoryForegroundColorBrush" Color="#FF737373" />
     <SolidColorBrush x:Key="CategoryNotActiveColorBrush" Color="#FFFFFFFF" />
     <SolidColorBrush x:Key="CategoryActiveColorBrush" Color="#E6E6E6" />
+    <SolidColorBrush x:Key="s" Color="#FFD46868" />
+    <Color
+        x:Key="SliderLineColorBrush"
+        A="255"
+        B="203"
+        G="203"
+        R="203" />
 
 </Globalization:StyleResourceDictionary>
