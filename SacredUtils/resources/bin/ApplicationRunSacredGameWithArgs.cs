@@ -9,7 +9,7 @@ namespace SacredUtils.resources.bin
         {
             if (args.Contains("-cheats"))
             {
-                Process.Start("Sacred.exe", "CHEATS=1");
+                Process.Start(AppSettings.ApplicationSettings.SacredFileName, AppSettings.ApplicationSettings.SacredCheatsEnableArgument);
 
                 EnableSwitchingLanguage(args);
                 EnableStretchingScreenshot(args);
@@ -17,7 +17,7 @@ namespace SacredUtils.resources.bin
             }
             else
             {
-                Process.Start("Sacred.exe");
+                Process.Start(AppSettings.ApplicationSettings.SacredFileName);
 
                 EnableSwitchingLanguage(args);
                 EnableStretchingScreenshot(args);

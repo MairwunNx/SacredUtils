@@ -19,13 +19,13 @@ namespace SacredUtils.resources.dlg
             {
                 if (RunWithCheatsCmbBox.IsChecked == true)
                 {
-                    if (File.Exists("Sacred.exe"))
+                    if (File.Exists(AppSettings.ApplicationSettings.SacredFileName))
                     {
                         AboutDialog.IsOpen = false;
 
-                        AppLogger.Log.Info("Starting Sacred.exe game file with arg CHEATS=1 ...");
+                        AppLogger.Log.Info($"Starting {AppSettings.ApplicationSettings.SacredFileName} game file with arg CHEATS=1 ...");
 
-                        Process.Start("Sacred.exe", "CHEATS=1");
+                        Process.Start(AppSettings.ApplicationSettings.SacredFileName, "CHEATS=1");
 
                         EnableSwitchingLanguage();
 
@@ -35,18 +35,18 @@ namespace SacredUtils.resources.dlg
                     }
                     else
                     {
-                        AppLogger.Log.Error("Sacred.exe file not found! Move application to game directory!");
+                        AppLogger.Log.Error($"{AppSettings.ApplicationSettings.SacredFileName} file not found! Move application to game directory!");
                     }
                 }
                 else
                 {
-                    if (File.Exists("Sacred.exe"))
+                    if (File.Exists(AppSettings.ApplicationSettings.SacredFileName))
                     {
                         AboutDialog.IsOpen = false;
 
-                        AppLogger.Log.Info("Starting Sacred.exe game file ...");
+                        AppLogger.Log.Info($"Starting {AppSettings.ApplicationSettings.SacredFileName} game file ...");
 
-                        Process.Start("Sacred.exe");
+                        Process.Start(AppSettings.ApplicationSettings.SacredFileName);
 
                         EnableSwitchingLanguage();
 
@@ -56,7 +56,7 @@ namespace SacredUtils.resources.dlg
                     }
                     else
                     {
-                        AppLogger.Log.Error("Sacred.exe file not found! Move application to game directory!");
+                        AppLogger.Log.Error($"{AppSettings.ApplicationSettings.SacredFileName} file not found! Move application to game directory!");
                     }
                 }
             }
@@ -64,7 +64,7 @@ namespace SacredUtils.resources.dlg
             {
                 if (RunWithCheatsCmbBox.IsChecked == true)
                 {
-                    if (File.Exists("Sacred.exe"))
+                    if (File.Exists(AppSettings.ApplicationSettings.SacredFileName))
                     {
                         AboutDialog.IsOpen = false;
 
@@ -72,9 +72,9 @@ namespace SacredUtils.resources.dlg
 
                         MainWindow.WindowState = WindowState.Minimized;
 
-                        AppLogger.Log.Info("Starting Sacred.exe game file with arg CHEATS=1 ...");
+                        AppLogger.Log.Info($"Starting {AppSettings.ApplicationSettings.SacredFileName} game file with arg CHEATS=1 ...");
 
-                        Process.Start("Sacred.exe", "CHEATS=1");
+                        Process.Start(AppSettings.ApplicationSettings.SacredFileName, "CHEATS=1");
 
                         EnableSwitchingLanguage();
 
@@ -84,12 +84,12 @@ namespace SacredUtils.resources.dlg
                     }
                     else
                     {
-                        AppLogger.Log.Error("Sacred.exe file not found! Move application to game directory!");
+                        AppLogger.Log.Error($"{AppSettings.ApplicationSettings.SacredFileName} file not found! Move application to game directory!");
                     }
                 }
                 else
                 {
-                    if (File.Exists("Sacred.exe"))
+                    if (File.Exists(AppSettings.ApplicationSettings.SacredFileName))
                     {
                         AboutDialog.IsOpen = false;
 
@@ -97,9 +97,9 @@ namespace SacredUtils.resources.dlg
 
                         MainWindow.WindowState = WindowState.Minimized;
 
-                        AppLogger.Log.Info("Starting Sacred.exe game file ...");
+                        AppLogger.Log.Info($"Starting {AppSettings.ApplicationSettings.SacredFileName} game file ...");
 
-                        Process.Start("Sacred.exe");
+                        Process.Start(AppSettings.ApplicationSettings.SacredFileName);
 
                         EnableSwitchingLanguage();
 
@@ -109,7 +109,7 @@ namespace SacredUtils.resources.dlg
                     }
                     else
                     {
-                        AppLogger.Log.Error("Sacred.exe file not found! Move application to game directory!");
+                        AppLogger.Log.Error($"{AppSettings.ApplicationSettings.SacredFileName} file not found! Move application to game directory!");
                     }
                 }
             }
@@ -117,11 +117,11 @@ namespace SacredUtils.resources.dlg
             {
                 if (RunWithCheatsCmbBox.IsChecked == true)
                 {
-                    if (File.Exists("Sacred.exe"))
+                    if (File.Exists(AppSettings.ApplicationSettings.SacredFileName))
                     {
-                        AppLogger.Log.Info("Starting Sacred.exe game file with arg CHEATS=1 ...");
+                        AppLogger.Log.Info($"Starting {AppSettings.ApplicationSettings.SacredFileName} game file with arg CHEATS=1 ...");
 
-                        Process.Start("Sacred.exe", "CHEATS=1");
+                        Process.Start(AppSettings.ApplicationSettings.SacredFileName, "CHEATS=1");
 
                         AppLogger.Log.Info("Param selected: Force shutting down SacredUtils ...");
 
@@ -129,16 +129,16 @@ namespace SacredUtils.resources.dlg
                     }
                     else
                     {
-                        AppLogger.Log.Error("Sacred.exe file not found! Move application to game directory!");
+                        AppLogger.Log.Error($"{AppSettings.ApplicationSettings.SacredFileName} file not found! Move application to game directory!");
                     }
                 }
                 else
                 {
-                    if (File.Exists("Sacred.exe"))
+                    if (File.Exists(AppSettings.ApplicationSettings.SacredFileName))
                     {
-                        AppLogger.Log.Info("Starting Sacred.exe game file ...");
+                        AppLogger.Log.Info($"Starting {AppSettings.ApplicationSettings.SacredFileName} game file ...");
 
-                        Process.Start("Sacred.exe");
+                        Process.Start(AppSettings.ApplicationSettings.SacredFileName);
 
                         AppLogger.Log.Info("Param selected: Force shutting down SacredUtils ...");
 
@@ -146,7 +146,7 @@ namespace SacredUtils.resources.dlg
                     }
                     else
                     {
-                        AppLogger.Log.Error("Sacred.exe file not found! Move application to game directory!");
+                        AppLogger.Log.Error($"{AppSettings.ApplicationSettings.SacredFileName} file not found! Move application to game directory!");
                     }
                 }
             }

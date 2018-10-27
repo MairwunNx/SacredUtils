@@ -67,7 +67,7 @@ namespace SacredUtils.resources.pgs
                     new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/QRe3uOT73XgkeR"),
                     Environment.ExpandEnvironmentVariables("%tmp%"),
                     "SacredPatched228.zip", Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName),
-                    "2.28.01 Patch", "SacredPatched228.exe", "Sacred.exe");
+                    "2.28.01 Patch", "SacredPatched228.exe", AppSettings.ApplicationSettings.SacredFileName);
 
                 string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
 
@@ -97,7 +97,7 @@ namespace SacredUtils.resources.pgs
                     new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/P-gzohuQ3XgkfQ"),
                     Environment.ExpandEnvironmentVariables("%tmp%"),
                     "SacredPatched22914.zip", Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName),
-                    "2.29.14 Patch", "SacredPatched22914.exe", "Sacred.exe");
+                    "2.29.14 Patch", "SacredPatched22914.exe", AppSettings.ApplicationSettings.SacredFileName);
 
                 string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
 
@@ -384,9 +384,9 @@ namespace SacredUtils.resources.pgs
 
         private void StartCheckingComponentsBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (File.Exists("Sacred.exe"))
+            if (File.Exists(AppSettings.ApplicationSettings.SacredFileName))
             {
-                var versionInfo = FileVersionInfo.GetVersionInfo("Sacred.exe");
+                var versionInfo = FileVersionInfo.GetVersionInfo(AppSettings.ApplicationSettings.SacredFileName);
 
                 string fileVersion =
                     $"{versionInfo.FileMajorPart}.{versionInfo.FileMinorPart}.{versionInfo.FileBuildPart}.{versionInfo.FilePrivatePart}";

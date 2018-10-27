@@ -110,6 +110,12 @@ namespace SacredUtils
         [Option(Alias = "Sacred229PatchInstalled", DefaultValue = "false")]
         bool Sacred229PatchInstalled { get; set; }
 
+        [Option(Alias = "SacredCheatsEnableArgument", DefaultValue = "CHEATS=1")]
+        string SacredCheatsEnableArgument { get; set; }
+
+        [Option(Alias = "SacredFileName", DefaultValue = "Sacred.exe")]
+        string SacredFileName { get; set; }
+
         [Option(Alias = "SacredStartArgs", DefaultValue = 1)]
         int SacredStartArgs { get; set; }
 
