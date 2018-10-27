@@ -11,11 +11,11 @@ namespace SacredUtils.resources.bin
             {
                 try
                 {
-                    AppLogger.Log.Warn("Sacred game configuration file (settings.cfg) not found!");
+                    AppLogger.Log.Warn($"Sacred game configuration file ({AppSettings.ApplicationSettings.SacredConfigurationFile}) not found!");
 
                     File.WriteAllBytes(AppSettings.ApplicationSettings.SacredConfigurationFile, Properties.Resources.gamesettings);
 
-                    AppLogger.Log.Info("Creating sacred game configuration file (settings.cfg) done!");
+                    AppLogger.Log.Info($"Creating sacred game configuration file ({AppSettings.ApplicationSettings.SacredConfigurationFile}) done!");
                 }
                 catch (Exception e)
                 {
@@ -29,7 +29,7 @@ namespace SacredUtils.resources.bin
             }
             else
             {
-                AppLogger.Log.Info("Sacred game configuration file (settings.cfg) was found!");
+                AppLogger.Log.Info($"Sacred game configuration file ({AppSettings.ApplicationSettings.SacredConfigurationFile}) was found!");
             }
         }
     }

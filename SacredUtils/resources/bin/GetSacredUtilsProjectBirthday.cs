@@ -10,24 +10,108 @@ namespace SacredUtils.resources.bin
     {
         static readonly MainWindow MainWindow = (MainWindow)Application.Current.MainWindow;
 
-        private static bool Get()
+        public static void Set(string day) 
         {
-            var parameterDate = DateTime.ParseExact("10/15", "MM/dd", CultureInfo.InvariantCulture);
-            var todaysDate = DateTime.Today;
-
-            return parameterDate == todaysDate;
-        }
-
-        public static void Set()
-        {
-            if (Get())
+            if (day == "AuthorBirthDay")
             {
-                AppLogger.Log.Info("!!! *** HAPPY BIRTHDAY TO ME, HAPPY BIRTHDAY TO ME, HAPPY BIRTHDAY TO ME *** !!!");
+                var parameterDate = DateTime.ParseExact("02/27", "MM/dd", CultureInfo.InvariantCulture);
+                var todaysDate = DateTime.Today;
 
-                Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                if (parameterDate == todaysDate)
                 {
-                    if (MainWindow.NoConnectImage.Visibility != 0) { MainWindow.BirthdayImage.Visibility = 0; }
-                }));
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                    {
+                        if (MainWindow.NoConnectImage.Visibility != 0) { MainWindow.MyBirthdayImage.Visibility = 0; }
+                    }));
+                }
+            }
+
+            if (day == "ProjectBirthDay")
+            {
+                var parameterDate = DateTime.ParseExact("10/15", "MM/dd", CultureInfo.InvariantCulture);
+                var todaysDate = DateTime.Today;
+
+                if (parameterDate == todaysDate)
+                {
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                    {
+                        if (MainWindow.NoConnectImage.Visibility != 0) { MainWindow.BirthdayImage.Visibility = 0; }
+                    }));
+                }
+            }
+
+            if (day == "NewYear")
+            {
+                var parameterDate = DateTime.ParseExact("01/01", "MM/dd", CultureInfo.InvariantCulture);
+                var todaysDate = DateTime.Today;
+
+                if (parameterDate == todaysDate)
+                {
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                    {
+                        if (MainWindow.NoConnectImage.Visibility != 0)
+                        {
+                            MainWindow.NewYearImage.Visibility = 0; 
+                            MainWindow.NewYear2Image.Visibility = 0; 
+                        }
+                    }));
+                }
+            }
+
+            if (day == "Bar")
+            {
+                var parameterDate = DateTime.ParseExact("02/06", "MM/dd", CultureInfo.InvariantCulture);
+                var todaysDate = DateTime.Today;
+
+                if (parameterDate == todaysDate)
+                {
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                    {
+                        if (MainWindow.NoConnectImage.Visibility != 0) { MainWindow.BarImage.Visibility = 0; }
+                    }));
+                }
+            }
+
+            if (day == "Ireland")
+            {
+                var parameterDate = DateTime.ParseExact("03/17", "MM/dd", CultureInfo.InvariantCulture);
+                var todaysDate = DateTime.Today;
+
+                if (parameterDate == todaysDate)
+                {
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                    {
+                        if (MainWindow.NoConnectImage.Visibility != 0) { MainWindow.IrelandImage.Visibility = 0; }
+                    }));
+                }
+            }
+
+            if (day == "Earth")
+            {
+                var parameterDate = DateTime.ParseExact("03/20", "MM/dd", CultureInfo.InvariantCulture);
+                var todaysDate = DateTime.Today;
+
+                if (parameterDate == todaysDate)
+                {
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                    {
+                        if (MainWindow.NoConnectImage.Visibility != 0) { MainWindow.EarthImage.Visibility = 0; }
+                    }));
+                }
+            }
+
+            if (day == "WindDay")
+            {
+                var parameterDate = DateTime.ParseExact("15/06", "MM/dd", CultureInfo.InvariantCulture);
+                var todaysDate = DateTime.Today;
+
+                if (parameterDate == todaysDate)
+                {
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                    {
+                        if (MainWindow.NoConnectImage.Visibility != 0) { MainWindow.WindDayImage.Visibility = 0; }
+                    }));
+                }
             }
         }
     }

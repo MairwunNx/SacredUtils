@@ -72,7 +72,12 @@ namespace SacredUtils
 
                 AppLogger.Log.Info($"Loading SacredUtils application done ({AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
 
-                Task.Run(() => { CheckAvailabilityAlphaUpdates.GetPerm(); GetNoInternetIconVisibility.Get(); GetSacredUtilsProjectBirthday.Set(); });
+                Task.Run(() =>
+                {
+                    CheckAvailabilityAlphaUpdates.GetPerm(); GetNoInternetIconVisibility.Get(); GetSacredUtilsProjectBirthday.Set("ProjectBirthDay");
+                    GetSacredUtilsProjectBirthday.Set("AuthorBirthDay"); GetSacredUtilsProjectBirthday.Set("NewYear"); GetSacredUtilsProjectBirthday.Set("Bar");
+                    GetSacredUtilsProjectBirthday.Set("Ireland"); GetSacredUtilsProjectBirthday.Set("Earth"); GetSacredUtilsProjectBirthday.Set("WindDay");
+                });
 
                 if (!CheckAvailabilityInternetConnection.Connect()) { NoConnectImage.Visibility = Visibility.Visible; }
 
