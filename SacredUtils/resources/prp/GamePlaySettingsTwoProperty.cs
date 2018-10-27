@@ -11,7 +11,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "AUTOTRACKENEMY : ";
 
@@ -27,7 +27,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "AUTOSAVE : ";
 
@@ -43,7 +43,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "DEFAULT_SKILLS : ";
 
@@ -59,7 +59,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "LOGGING : ";
 
@@ -75,7 +75,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "TASKBAR_ICONS : ";
 
@@ -91,7 +91,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "SHOWPOTIONS : ";
 
@@ -107,7 +107,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "SHOW_HEROINFO : ";
 
@@ -123,7 +123,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "SHOW_ENEMYINFO : ";
 

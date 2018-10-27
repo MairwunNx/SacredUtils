@@ -14,7 +14,7 @@ namespace SacredUtils.resources.prp
             {
                 int value = 0;
 
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "DETAILLEVEL : ";
 
@@ -34,7 +34,7 @@ namespace SacredUtils.resources.prp
             {
                 int value = 0;
 
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "WAITRETRACE : ";
 
@@ -54,7 +54,7 @@ namespace SacredUtils.resources.prp
             {
                 int value = 0;
 
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "MINIMAP_ALPHA : ";
 
@@ -74,7 +74,7 @@ namespace SacredUtils.resources.prp
             {
                 int value = 0;
 
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "NIGHT_DARKNESS : ";
 

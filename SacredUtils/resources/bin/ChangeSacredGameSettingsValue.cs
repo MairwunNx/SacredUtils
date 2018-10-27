@@ -10,16 +10,16 @@ namespace SacredUtils.resources.bin
         {
             try
             {
-                if (!File.ReadAllText("Settings.cfg", Encoding.ASCII).Contains($"{func} : "))
+                if (!File.ReadAllText(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII).Contains($"{func} : "))
                 {
-                    using (StreamWriter file = new StreamWriter("Settings.cfg", true, Encoding.ASCII))
+                    using (StreamWriter file = new StreamWriter(AppSettings.ApplicationSettings.SacredConfigurationFile, true, Encoding.ASCII))
                     {
                         file.WriteLine($"{func} : {value}");
                     }
                 }
                 else
                 {
-                    string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                    string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                     for (int i = 0; i < text.Length; i++)
                     {
@@ -27,7 +27,7 @@ namespace SacredUtils.resources.bin
                         {
                             text[i] = $"{func} : {value}";
 
-                            File.WriteAllLines("Settings.cfg", text);
+                            File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text);
                         }
                     }
                 }
@@ -43,142 +43,142 @@ namespace SacredUtils.resources.bin
         {
             try
             {
-                if (!File.ReadAllText("Settings.cfg", Encoding.ASCII).Contains("FONT : 1, \""))
+                if (!File.ReadAllText(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII).Contains("FONT : 1, \""))
                 {
-                    using (StreamWriter file = new StreamWriter("Settings.cfg", true, Encoding.ASCII))
+                    using (StreamWriter file = new StreamWriter(AppSettings.ApplicationSettings.SacredConfigurationFile, true, Encoding.ASCII))
                     {
                         file.WriteLine($"FONT : 1, \"{font}\", 10");
                     }
                 }
                 else
                 {
-                    string[] text1 = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                    string[] text1 = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                     for (int i = 0; i < text1.Length; i++)
                     {
                         if (text1[i].Contains("FONT : 1, \""))
                         {
-                            text1[i] = $"FONT : 1, \"{font}\", 10"; File.WriteAllLines("Settings.cfg", text1);
+                            text1[i] = $"FONT : 1, \"{font}\", 10"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
                         }
                     }
                 }
 
-                if (!File.ReadAllText("Settings.cfg", Encoding.ASCII).Contains("FONT : 2, \""))
+                if (!File.ReadAllText(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII).Contains("FONT : 2, \""))
                 {
-                    using (StreamWriter file = new StreamWriter("Settings.cfg", true, Encoding.ASCII))
+                    using (StreamWriter file = new StreamWriter(AppSettings.ApplicationSettings.SacredConfigurationFile, true, Encoding.ASCII))
                     {
                         file.WriteLine($"FONT : 2, \"{font}\", 10");
                     }
                 }
                 else
                 {
-                    string[] text1 = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                    string[] text1 = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                     for (int i = 0; i < text1.Length; i++)
                     {
                         if (text1[i].Contains("FONT : 2, \""))
                         {
-                            text1[i] = $"FONT : 2, \"{font}\", 10"; File.WriteAllLines("Settings.cfg", text1);
+                            text1[i] = $"FONT : 2, \"{font}\", 10"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
                         }
                     }
                 }
 
-                if (!File.ReadAllText("Settings.cfg", Encoding.ASCII).Contains("FONT : 3, \""))
+                if (!File.ReadAllText(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII).Contains("FONT : 3, \""))
                 {
-                    using (StreamWriter file = new StreamWriter("Settings.cfg", true, Encoding.ASCII))
+                    using (StreamWriter file = new StreamWriter(AppSettings.ApplicationSettings.SacredConfigurationFile, true, Encoding.ASCII))
                     {
                         file.WriteLine($"FONT : 3, \"{font}\", 12");
                     }
                 }
                 else
                 {
-                    string[] text1 = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                    string[] text1 = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                     for (int i = 0; i < text1.Length; i++)
                     {
                         if (text1[i].Contains("FONT : 3, \""))
                         {
-                            text1[i] = $"FONT : 3, \"{font}\", 12"; File.WriteAllLines("Settings.cfg", text1);
+                            text1[i] = $"FONT : 3, \"{font}\", 12"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
                         }
                     }
                 }
 
-                if (!File.ReadAllText("Settings.cfg", Encoding.ASCII).Contains("FONT : 4, \""))
+                if (!File.ReadAllText(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII).Contains("FONT : 4, \""))
                 {
-                    using (StreamWriter file = new StreamWriter("Settings.cfg", true, Encoding.ASCII))
+                    using (StreamWriter file = new StreamWriter(AppSettings.ApplicationSettings.SacredConfigurationFile, true, Encoding.ASCII))
                     {
                         file.WriteLine($"FONT : 4, \"{font}\", 15");
                     }
                 }
                 else
                 {
-                    string[] text1 = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                    string[] text1 = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                     for (int i = 0; i < text1.Length; i++)
                     {
                         if (text1[i].Contains("FONT : 4, \""))
                         {
-                            text1[i] = $"FONT : 4, \"{font}\", 15"; File.WriteAllLines("Settings.cfg", text1);
+                            text1[i] = $"FONT : 4, \"{font}\", 15"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
                         }
                     }
                 }
 
-                if (!File.ReadAllText("Settings.cfg", Encoding.ASCII).Contains("FONT : 5, \""))
+                if (!File.ReadAllText(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII).Contains("FONT : 5, \""))
                 {
-                    using (StreamWriter file = new StreamWriter("Settings.cfg", true, Encoding.ASCII))
+                    using (StreamWriter file = new StreamWriter(AppSettings.ApplicationSettings.SacredConfigurationFile, true, Encoding.ASCII))
                     {
                         file.WriteLine($"FONT : 5, \"{font}\", 12");
                     }
                 }
                 else
                 {
-                    string[] text1 = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                    string[] text1 = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                     for (int i = 0; i < text1.Length; i++)
                     {
                         if (text1[i].Contains("FONT : 5, \""))
                         {
-                            text1[i] = $"FONT : 5, \"{font}\", 12"; File.WriteAllLines("Settings.cfg", text1);
+                            text1[i] = $"FONT : 5, \"{font}\", 12"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
                         }
                     }
                 }
 
-                if (!File.ReadAllText("Settings.cfg", Encoding.ASCII).Contains("FONT : 6, \""))
+                if (!File.ReadAllText(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII).Contains("FONT : 6, \""))
                 {
-                    using (StreamWriter file = new StreamWriter("Settings.cfg", true, Encoding.ASCII))
+                    using (StreamWriter file = new StreamWriter(AppSettings.ApplicationSettings.SacredConfigurationFile, true, Encoding.ASCII))
                     {
                         file.WriteLine($"FONT : 6, \"{font}\", 12");
                     }
                 }
                 else
                 {
-                    string[] text1 = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                    string[] text1 = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                     for (int i = 0; i < text1.Length; i++)
                     {
                         if (text1[i].Contains("FONT : 6, \""))
                         {
-                            text1[i] = $"FONT : 6, \"{font}\", 12"; File.WriteAllLines("Settings.cfg", text1);
+                            text1[i] = $"FONT : 6, \"{font}\", 12"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
                         }
                     }
                 }
 
-                if (!File.ReadAllText("Settings.cfg", Encoding.ASCII).Contains("FONT : 7, \""))
+                if (!File.ReadAllText(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII).Contains("FONT : 7, \""))
                 {
-                    using (StreamWriter file = new StreamWriter("Settings.cfg", true, Encoding.ASCII))
+                    using (StreamWriter file = new StreamWriter(AppSettings.ApplicationSettings.SacredConfigurationFile, true, Encoding.ASCII))
                     {
                         file.WriteLine($"FONT : 7, \"{font}\", 8");
                     }
                 }
                 else
                 {
-                    string[] text1 = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                    string[] text1 = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                     for (int i = 0; i < text1.Length; i++)
                     {
                         if (text1[i].Contains("FONT : 7, \""))
                         {
-                            text1[i] = $"FONT : 7, \"{font}\", 8"; File.WriteAllLines("Settings.cfg", text1);
+                            text1[i] = $"FONT : 7, \"{font}\", 8"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
                         }
                     }
                 }

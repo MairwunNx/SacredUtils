@@ -7,13 +7,13 @@ namespace SacredUtils.resources.bin
     {
         public static void Get()
         {
-            if (!File.Exists("Settings.cfg"))
+            if (!File.Exists(AppSettings.ApplicationSettings.SacredConfigurationFile))
             {
                 try
                 {
                     AppLogger.Log.Warn("Sacred game configuration file (settings.cfg) not found!");
 
-                    File.WriteAllBytes("Settings.cfg", Properties.Resources.gamesettings);
+                    File.WriteAllBytes(AppSettings.ApplicationSettings.SacredConfigurationFile, Properties.Resources.gamesettings);
 
                     AppLogger.Log.Info("Creating sacred game configuration file (settings.cfg) done!");
                 }

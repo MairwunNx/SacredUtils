@@ -11,7 +11,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "GFX_LIMIT128 : ";
 
@@ -27,7 +27,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "GFX32 : ";
 
@@ -43,7 +43,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "PICKUPANIM : ";
 
@@ -59,7 +59,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "VIOLENCE : ";
 
@@ -75,7 +75,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "FULLSCREEN : ";
 
@@ -91,7 +91,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "FSAA_FILTER : ";
 
@@ -107,7 +107,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "SHOWMOVIE : ";
 
@@ -123,7 +123,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "SHOWEXTRO : ";
 

@@ -69,7 +69,7 @@ namespace SacredUtils.resources.pgs
                     "SacredPatched228.zip", Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName),
                     "2.28.01 Patch", "SacredPatched228.exe", AppSettings.ApplicationSettings.SacredFileName);
 
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "LANGUAGE : ";
 
@@ -99,7 +99,7 @@ namespace SacredUtils.resources.pgs
                     "SacredPatched22914.zip", Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName),
                     "2.29.14 Patch", "SacredPatched22914.exe", AppSettings.ApplicationSettings.SacredFileName);
 
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "LANGUAGE : ";
 

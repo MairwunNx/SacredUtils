@@ -25,7 +25,7 @@ namespace SacredUtils.resources.prp
             {
                 string selectedFont = "";
 
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "FONT : 1, \"";
 

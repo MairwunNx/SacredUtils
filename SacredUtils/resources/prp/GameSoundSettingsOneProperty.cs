@@ -12,7 +12,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "SOUND : ";
 
@@ -30,7 +30,7 @@ namespace SacredUtils.resources.prp
             {
                 int value = 0;
 
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "SOUNDQUALITY : ";
 
@@ -52,7 +52,7 @@ namespace SacredUtils.resources.prp
 
                 if (AppSettings.ApplicationSettings.GameVoiceover == "based on language")
                 {
-                    string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                    string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                     string prefix = "LANGUAGE : ";
 
@@ -125,7 +125,7 @@ namespace SacredUtils.resources.prp
             {
                 int value = 0;
 
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "MUSICVOLUME : ";
 
@@ -145,7 +145,7 @@ namespace SacredUtils.resources.prp
             {
                 int value = 0;
 
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "SFXVOLUME : ";
 
@@ -165,7 +165,7 @@ namespace SacredUtils.resources.prp
             {
                 int value = 0;
 
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "VOICEVOLUME : ";
 

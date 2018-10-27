@@ -14,7 +14,7 @@ namespace SacredUtils.resources.prp
             {
                 int index = 0;
 
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "PICKUPAUTO : ";
 
@@ -37,7 +37,7 @@ namespace SacredUtils.resources.prp
             {
                 int index = 0;
 
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "NETWORK_SPEEDSETTINGS : ";
 
@@ -60,7 +60,7 @@ namespace SacredUtils.resources.prp
             {
                 string content = "";
 
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "GFXSTARTUP : ";
 
@@ -80,7 +80,7 @@ namespace SacredUtils.resources.prp
             {
                 string content = "";
 
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "GFXLOADING : ";
 
@@ -100,7 +100,7 @@ namespace SacredUtils.resources.prp
             {
                 int value = 0;
 
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "WARNING_LEVEL : ";
 

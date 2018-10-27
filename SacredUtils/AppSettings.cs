@@ -113,6 +113,9 @@ namespace SacredUtils
         [Option(Alias = "SacredCheatsEnableArgument", DefaultValue = "CHEATS=1")]
         string SacredCheatsEnableArgument { get; set; }
 
+        [Option(Alias = "SacredConfigurationFile", DefaultValue = "Settings.cfg")]
+        string SacredConfigurationFile { get; set; }
+
         [Option(Alias = "SacredFileName", DefaultValue = "Sacred.exe")]
         string SacredFileName { get; set; }
 

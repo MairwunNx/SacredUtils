@@ -11,7 +11,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "FORCE_BLACK_SHADOW : ";
 
@@ -27,7 +27,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "COMPAT_VIDEO : ";
 
@@ -43,7 +43,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "FONTAA : ";
 
@@ -59,7 +59,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "FSAA_FILTER : ";
 
@@ -75,7 +75,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "FONTFILTER : ";
 

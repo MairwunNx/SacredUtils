@@ -11,7 +11,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "COMBINE_SLOTS : ";
 
@@ -27,7 +27,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "ACCEPT_LICENSE : ";
 
@@ -43,7 +43,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "FIRST_LOGIN : ";
 
@@ -59,7 +59,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "SCREEN_QUAKE : ";
 

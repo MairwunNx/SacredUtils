@@ -13,7 +13,7 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "UNIQUE_COLOR : ";
 
@@ -31,7 +31,7 @@ namespace SacredUtils.resources.prp
             {
                 int index = 5;
 
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "LANGUAGE : ";
 
@@ -142,7 +142,7 @@ namespace SacredUtils.resources.prp
             {
                 int value = 0;
 
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "CHAT_LINES : ";
 
@@ -162,7 +162,7 @@ namespace SacredUtils.resources.prp
             {
                 int value = 0;
 
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "CHAT_DELAY : ";
 
@@ -182,7 +182,7 @@ namespace SacredUtils.resources.prp
             {
                 int value = 0;
 
-                string[] text = File.ReadAllLines("Settings.cfg", Encoding.ASCII);
+                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "CHAT_ALPHA : ";
 
