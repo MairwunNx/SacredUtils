@@ -4,7 +4,7 @@
     xmlns:Globalization="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
     Name="Dark">
 
-    <SolidColorBrush x:Key="BorderBorderBrush" Color="#FF383838" />
+    <SolidColorBrush x:Key="BorderBorderBrush" Color="#323232" />
     <SolidColorBrush x:Key="LabelForegroundBrush" Color="#FF4285F4" />
     <SolidColorBrush x:Key="ComboBoxBorderBrush" Color="#5EFFFFFF" />
     <SolidColorBrush x:Key="ComboBoxForegroundBrush" Color="#FFB4B4B4" />
@@ -14,6 +14,6 @@
     <SolidColorBrush x:Key="SmallBallColorBrush" Color="#3C3B3D" />
     <SolidColorBrush x:Key="CategoryForegroundColorBrush" Color="#FF737373" />
     <SolidColorBrush x:Key="CategoryNotActiveColorBrush" Color="#212121" />
-    <SolidColorBrush x:Key="CategoryActiveColorBrush" Color="#4C7A7A7A" />
+    <SolidColorBrush x:Key="CategoryActiveColorBrush" Color="#323232" />
 
 </Globalization:StyleResourceDictionary>

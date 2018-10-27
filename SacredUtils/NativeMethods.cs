@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-// ReSharper disable InconsistentNaming
 namespace SacredUtils
 {
     internal static class NativeMethods
