@@ -154,9 +154,6 @@ namespace SacredUtils
 
         [Option(Alias = "VeteranModUfoInstalled", DefaultValue = "false")]
         bool VeteranModUfoInstalled { get; set; }
-
-        [Option(Alias = "WhatIsThisDoingHere", DefaultValue = "true")]
-        bool WhatIsThisDoingHere { get; set; }
     }
 
     public static class AppSettings
