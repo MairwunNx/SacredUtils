@@ -74,7 +74,7 @@
                     Value="{Binding Path=WaitRetrace}">
                     <Slider.Resources>
                         <!--  ReSharper disable once Xaml.RedundantResource  -->
-                        <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="#FF535353" />
+                        <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="{DynamicResource ResourceKey=SliderLineColorBrush}" />
                     </Slider.Resources>
                 </Slider>
             </Grid>
@@ -111,7 +111,7 @@
                     Value="{Binding Path=MapTransparent}">
                     <Slider.Resources>
                         <!--  ReSharper disable once Xaml.RedundantResource  -->
-                        <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="#FF535353" />
+                        <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="{DynamicResource ResourceKey=SliderLineColorBrush}" />
                     </Slider.Resources>
                 </Slider>
             </Grid>
@@ -148,7 +148,7 @@
                     Value="{Binding Path=NightDarkness}">
                     <Slider.Resources>
                         <!--  ReSharper disable once Xaml.RedundantResource  -->
-                        <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="#FF535353" />
+                        <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="{DynamicResource ResourceKey=SliderLineColorBrush}" />
                     </Slider.Resources>
                 </Slider>
             </Grid>

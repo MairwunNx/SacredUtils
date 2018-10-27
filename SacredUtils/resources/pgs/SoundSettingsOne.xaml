@@ -135,7 +135,7 @@
                     Value="{Binding Path=MusicVolume}">
                     <Slider.Resources>
                         <!--  ReSharper disable once Xaml.RedundantResource  -->
-                        <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="#FF535353" />
+                        <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="{DynamicResource ResourceKey=SliderLineColorBrush}" />
                     </Slider.Resources>
                 </Slider>
             </Grid>
@@ -172,7 +172,7 @@
                     Value="{Binding Path=SfxVolume}">
                     <Slider.Resources>
                         <!--  ReSharper disable once Xaml.RedundantResource  -->
-                        <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="#FF535353" />
+                        <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="{DynamicResource ResourceKey=SliderLineColorBrush}" />
                     </Slider.Resources>
                 </Slider>
             </Grid>
@@ -209,7 +209,7 @@
                     Value="{Binding Path=VoiceVolume}">
                     <Slider.Resources>
                         <!--  ReSharper disable once Xaml.RedundantResource  -->
-                        <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="#FF535353" />
+                        <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="{DynamicResource ResourceKey=SliderLineColorBrush}" />
                     </Slider.Resources>
                 </Slider>
             </Grid>

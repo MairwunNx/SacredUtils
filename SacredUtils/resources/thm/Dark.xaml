@@ -6,7 +6,7 @@
 
     <SolidColorBrush x:Key="BorderBorderBrush" Color="#323232" />
     <SolidColorBrush x:Key="LabelForegroundBrush" Color="#FF4285F4" />
-    <SolidColorBrush x:Key="ComboBoxBorderBrush" Color="#5EFFFFFF" />
+    <SolidColorBrush x:Key="ComboBoxBorderBrush" Color="#535353" />
     <SolidColorBrush x:Key="ComboBoxForegroundBrush" Color="#FFB4B4B4" />
     <SolidColorBrush x:Key="LabelWarningForegroundBrush" Color="#FFF44242" />
     <SolidColorBrush x:Key="BackgroundColorBrush" Color="#212121" />
@@ -18,8 +18,8 @@
     <Color
         x:Key="SliderLineColorBrush"
         A="255"
-        B="50"
-        G="50"
-        R="50" />
+        B="83"
+        G="83"
+        R="83" />
 
 </Globalization:StyleResourceDictionary>
