@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using MaterialDesignThemes.Wpf;
 using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
@@ -25,6 +26,11 @@ namespace SacredUtils.resources.bin
                     {
                         bt.SetResourceReference(Control.ForegroundProperty, "CategoryForegroundColorBrush");
                     }
+
+                    foreach (PackIcon pi in sp.Children.OfType<PackIcon>())
+                    {
+                        pi.SetResourceReference(Control.ForegroundProperty, "CategoryForegroundColorBrush");
+                    }
                 }
                 
                 panel.SetResourceReference(Control.BackgroundProperty, "CategoryActiveColorBrush");
@@ -32,6 +38,14 @@ namespace SacredUtils.resources.bin
                 foreach (Button bt in panel.Children.OfType<Button>())
                 {
                     bt.SetResourceReference(Control.ForegroundProperty, "CategoryForegroundActiveColorBrush");
+                }
+
+                if (panel.Name == "SettingsPanel")
+                {
+                    foreach (PackIcon pi in panel.Children.OfType<PackIcon>())
+                    {
+                        pi.SetResourceReference(Control.ForegroundProperty, "CategoryForegroundActiveColorBrush");
+                    }
                 }
 
                 if (panel.Name == "FontsPanel") { MainWindow.FontStgOne.ExampleTextBlock.Text = GetApplicationRandomSplashes.GetRandomSplash(); }
@@ -49,6 +63,11 @@ namespace SacredUtils.resources.bin
                 foreach (Button bt in sp.Children.OfType<Button>())
                 {
                     bt.SetResourceReference(Control.ForegroundProperty, "CategoryForegroundColorBrush");
+                }
+
+                foreach (PackIcon pi in sp.Children.OfType<PackIcon>())
+                {
+                    pi.SetResourceReference(Control.ForegroundProperty, "CategoryForegroundColorBrush");
                 }
             }
         }

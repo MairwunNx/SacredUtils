@@ -243,6 +243,7 @@
                                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
 
                             <materialDesign:PackIcon
+                                x:Name="StgIcon"
                                 Width="16"
                                 Height="16"
                                 Margin="0,-28,23,0"
