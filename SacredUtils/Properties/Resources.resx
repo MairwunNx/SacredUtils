@@ -178,4 +178,7 @@
   <data name="hk_orig" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cfg\hk.orig.txt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="SacredUtils" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\etc\SacredUtils.pdb;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

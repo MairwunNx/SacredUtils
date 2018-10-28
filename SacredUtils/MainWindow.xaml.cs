@@ -1,15 +1,19 @@
 ﻿using SacredUtils.resources.bin;
 using SacredUtils.resources.pgs;
 using System;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
+using MessageBox = System.Windows.MessageBox;
 
 namespace SacredUtils
 {
+    // todo: Move license settings to appdata user settings.
+
     public partial class MainWindow
     {
         public static int ScreenWidthDevice = Screen.PrimaryScreen.Bounds.Width;

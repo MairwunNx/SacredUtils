@@ -50,6 +50,9 @@ namespace SacredUtils
         [Option(Alias = "EnableArchiveFileCompression", DefaultValue = "true")]
         bool EnableArchiveFileCompression { get; }
 
+        [Option(Alias = "EnableGlobalExceptionCatching", DefaultValue = "false")]
+        bool EnableGlobalExceptionCatching { get; }
+
         [Option(Alias = "EnableHealthCircles", DefaultValue = "true")]
         bool EnableHealthCircles { get; set; }
 
@@ -57,13 +60,13 @@ namespace SacredUtils
         string GameVoiceover { get; set; }
 
         [Option(Alias = "HotKeyEventArgsHandled", DefaultValue = "true")]
-        bool HotKeyEventArgsHandled { get; set; }
+        bool HotKeyEventArgsHandled { get; }
 
         [Option(Alias = "HotKeyKeyPressMode", DefaultValue = "0x0101")]
         int HotKeyKeyPressMode { get; set; }
 
         [Option(Alias = "hWndSacred", DefaultValue = "Sacred")]
-        string hWndSacred { get; set; }
+        string hWndSacred { get; }
 
         [Option(Alias = "KeyGotoMainMenu", DefaultValue = "Escape")]
         string KeyGotoMainMenu { get; }
@@ -111,13 +114,13 @@ namespace SacredUtils
         bool Sacred229PatchInstalled { get; set; }
 
         [Option(Alias = "SacredCheatsEnableArgument", DefaultValue = "CHEATS=1")]
-        string SacredCheatsEnableArgument { get; set; }
+        string SacredCheatsEnableArgument { get; }
 
         [Option(Alias = "SacredConfigurationFile", DefaultValue = "Settings.cfg")]
-        string SacredConfigurationFile { get; set; }
+        string SacredConfigurationFile { get; }
 
         [Option(Alias = "SacredFileName", DefaultValue = "Sacred.exe")]
-        string SacredFileName { get; set; }
+        string SacredFileName { get; }
 
         [Option(Alias = "SacredStartArgs", DefaultValue = 1)]
         int SacredStartArgs { get; set; }
@@ -126,16 +129,16 @@ namespace SacredUtils
         double SacredUtilsGuiScale { get; set; }
 
         [Option(Alias = "ScreenShotRemoveTgaAndJpgFiles", DefaultValue = "true")]
-        bool ScreenShotRemoveTgaAndJpgFiles { get; set; }
+        bool ScreenShotRemoveTgaAndJpgFiles { get; }
 
         [Option(Alias = "ScreenShotSaveDirectory", DefaultValue = "Capture")]
-        string ScreenShotSaveDirectory { get; set; }
+        string ScreenShotSaveDirectory { get; }
 
         [Option(Alias = "ScreenShotSaveFilePattern", DefaultValue = "ddMMyyyy-hh-mm-ss-fff")]
-        string ScreenShotSaveFilePattern { get; set; }
+        string ScreenShotSaveFilePattern { get; }
         
         [Option(Alias = "ScreenShotSaveFilePrefix", DefaultValue = "screen-")]
-        string ScreenShotSaveFilePrefix { get; set; }
+        string ScreenShotSaveFilePrefix { get; }
 
         [Option(Alias = "ServerMultiCoreFixInstalled", DefaultValue = "false")]
         bool ServerMultiCoreFixInstalled { get; set; }

@@ -50,6 +50,8 @@ namespace SacredUtils
 
                         AppLogger.Init(false);
 
+                        GetStateGlobalExceptionCatching.Get();
+
                         PrintToLogBaseApplicationInfo.Print();
 
                         CheckAvailabilityInternetConnection.GetConnect();
