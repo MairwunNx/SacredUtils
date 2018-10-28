@@ -8,12 +8,9 @@ using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
-using MessageBox = System.Windows.MessageBox;
 
 namespace SacredUtils
 {
-    // todo: Move license settings to appdata user settings.
-
     public partial class MainWindow
     {
         public static int ScreenWidthDevice = Screen.PrimaryScreen.Bounds.Width;
@@ -85,7 +82,7 @@ namespace SacredUtils
 
                 if (!CheckAvailabilityInternetConnection.Connect()) { NoConnectImage.Visibility = Visibility.Visible; }
 
-                if (AppSettings.ApplicationSettings.AcceptLicense) { GetChangeLogDialogVisibility.Get(); }
+                if (File.ReadAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\LicenseAgreement.su").Contains("true")) { GetChangeLogDialogVisibility.Get(); }
             };
         }
 

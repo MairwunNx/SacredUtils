@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
+using System.IO;
 using System.Windows;
 
 namespace SacredUtils.resources.dlg
@@ -19,7 +21,7 @@ namespace SacredUtils.resources.dlg
         {
             LicenseDialog.IsOpen = false;
 
-            AppSettings.ApplicationSettings.AcceptLicense = true;
+            File.WriteAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\LicenseAgreement.su", "true");
 
             foreach (Window window in Application.Current.Windows)
             {

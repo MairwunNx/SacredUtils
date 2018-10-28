@@ -1,4 +1,7 @@
-﻿namespace SacredUtils.resources.prp
+﻿using System;
+using System.IO;
+
+namespace SacredUtils.resources.prp
 {
     public class ApplicationSettingsTwoProperty
     {
@@ -40,11 +43,11 @@
 
         public bool License
         {
-            get => AppSettings.ApplicationSettings.AcceptLicense;
+            get => File.Exists($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\LicenseAgreement.su") && File.Exists("License.txt") && File.ReadAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\LicenseAgreement.su").Contains("true");
 
             set
             {
-                AppSettings.ApplicationSettings.AcceptLicense = value;
+                File.WriteAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\LicenseAgreement.su", value.ToString().ToLower());
 
                 AppLogger.Log.Info($"Accept license changed state to {value} by user");
             }

@@ -5,9 +5,6 @@ namespace SacredUtils
 {
     public interface IAppSettings
     {
-        [Option(Alias = "AcceptLicense", DefaultValue = "false")]
-        bool AcceptLicense { get; set; }
-
         [Option(Alias = "AppUiLanguage", DefaultValue = "based on system")]
         string AppUiLanguage { get; set; }
 
@@ -61,9 +58,6 @@ namespace SacredUtils
 
         [Option(Alias = "HotKeyEventArgsHandled", DefaultValue = "true")]
         bool HotKeyEventArgsHandled { get; }
-
-        [Option(Alias = "HotKeyKeyPressMode", DefaultValue = "0x0101")]
-        int HotKeyKeyPressMode { get; set; }
 
         [Option(Alias = "hWndSacred", DefaultValue = "Sacred")]
         string hWndSacred { get; }
