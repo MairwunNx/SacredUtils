@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using WPFSharp.Globalizer;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
 {
@@ -9,7 +10,7 @@ namespace SacredUtils.resources.bin
         {
             if (AppSettings.ApplicationSettings.AppUiLanguage == "based on system")
             {
-                AppLogger.Log.Info("Getting default system language settings for SacredUtils ...");
+                Log.Info("Getting default system language settings for SacredUtils ...");
 
                 CultureInfo currentCulture = CultureInfo.InstalledUICulture;
 
@@ -21,13 +22,13 @@ namespace SacredUtils.resources.bin
                 {
                     GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage("ru-RU", true);
 
-                    AppLogger.Log.Info($"SacredUtils application starting with system ({currentCulture.Name}) language!");
+                    Log.Info($"SacredUtils application starting with system ({currentCulture.Name}) language!");
                 }
                 else
                 {
                     GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage("en-US", true);
 
-                    AppLogger.Log.Info($"SacredUtils application starting with system ({currentCulture.Name}) language!");
+                    Log.Info($"SacredUtils application starting with system ({currentCulture.Name}) language!");
                 }
             }
             else
@@ -35,7 +36,7 @@ namespace SacredUtils.resources.bin
                 GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage
                     (AppSettings.ApplicationSettings.AppUiLanguage == "ru" ? "ru-RU" : "en-US", true);
 
-                AppLogger.Log.Info($"SacredUtils application starting with ({AppSettings.ApplicationSettings.AppUiLanguage}) language!");
+                Log.Info($"SacredUtils application starting with ({AppSettings.ApplicationSettings.AppUiLanguage}) language!");
             }
         }
     }

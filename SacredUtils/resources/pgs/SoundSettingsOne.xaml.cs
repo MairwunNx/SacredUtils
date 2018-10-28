@@ -1,4 +1,5 @@
 ﻿using SacredUtils.resources.prp;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.pgs
 {
@@ -8,7 +9,7 @@ namespace SacredUtils.resources.pgs
         {
             InitializeComponent(); DataContext = new GameSoundSettingsOneProperty();
 
-            AppLogger.Log.Info("Initialization components for game sound settings one done!");
+            Log.Info("Initialization components for game sound settings one done!");
         }
     }
 }

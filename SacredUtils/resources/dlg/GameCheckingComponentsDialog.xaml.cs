@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.dlg
 {
@@ -27,14 +28,14 @@ namespace SacredUtils.resources.dlg
         {
             Task.Run(() =>
             {
-                AppLogger.Log.Info("=============== LOADED VERIFIABLE COMPONENTS ===============");
+                Log.Info("=============== LOADED VERIFIABLE COMPONENTS ===============");
 
                 foreach (string s in ArraySacredGameComponentFiles.Files)
                 {
-                    AppLogger.Log.Info($"Component name \\ patch: {s.Remove(s.IndexOf(' '))}");
+                    Log.Info($"Component name \\ patch: {s.Remove(s.IndexOf(' '))}");
                 }
 
-                AppLogger.Log.Info("=================== LOADED CHECKING FILES ==================");
+                Log.Info("=================== LOADED CHECKING FILES ==================");
 
                 foreach (string s in ArraySacredGameComponentFiles.Files)
                 {
@@ -42,20 +43,20 @@ namespace SacredUtils.resources.dlg
                     {
                         string[] link = s.Split('|');
 
-                        AppLogger.Log.Info($"Component found \\ exists: {s.Remove(s.IndexOf(' '))}");
+                        Log.Info($"Component found \\ exists: {s.Remove(s.IndexOf(' '))}");
 
                         FindedFilesList.Add(s.Remove(s.IndexOf(' ')));
                         LinksFilesList.Add(link[1].Replace(" ", ""));
                     }
                     else
                     {
-                        AppLogger.Log.Info($"Component not found: {s.Remove(s.IndexOf(' '))}");
+                        Log.Info($"Component not found: {s.Remove(s.IndexOf(' '))}");
                     }
                 }
 
                 if (FindedFilesList.Count != 0)
                 {
-                    AppLogger.Log.Info("=================== CALCULATING MD5 FILES ==================");
+                    Log.Info("=================== CALCULATING MD5 FILES ==================");
 
                     foreach (string s in FindedFilesList.ToArray())
                     {
@@ -67,14 +68,14 @@ namespace SacredUtils.resources.dlg
 
                                 string md5Hash = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
 
-                                AppLogger.Log.Info($"Component name \\ md5: {s} \\ {md5Hash}");
+                                Log.Info($"Component name \\ md5: {s} \\ {md5Hash}");
 
                                 HashesFilesList.Add(md5Hash);
                             }
                         }
                     }
 
-                    AppLogger.Log.Info("===================== COMPARE MD5 FILES ====================");
+                    Log.Info("===================== COMPARE MD5 FILES ====================");
 
                     WebClient wc = new WebClient();
 
@@ -86,7 +87,7 @@ namespace SacredUtils.resources.dlg
                     {
                         if (!sw.Substring(sw.IndexOf("\n", StringComparison.Ordinal)).Contains(HashesFilesList[i]))
                         {
-                            AppLogger.Log.Warn($"Component {FindedFilesList.ToArray()[i]} has different md5 ({HashesFilesList[i]}) hash!");
+                            Log.Warn($"Component {FindedFilesList.ToArray()[i]} has different md5 ({HashesFilesList[i]}) hash!");
 
                             BreakedFilesList.Add(FindedFilesList.ToArray()[i]);
 
@@ -94,7 +95,7 @@ namespace SacredUtils.resources.dlg
                         }
                         else
                         {
-                            AppLogger.Log.Info($"Component {FindedFilesList.ToArray()[i]} has normal md5 hash!");
+                            Log.Info($"Component {FindedFilesList.ToArray()[i]} has normal md5 hash!");
 
                             WholeFilesList.Add(FindedFilesList.ToArray()[i]);
                         }
@@ -103,21 +104,21 @@ namespace SacredUtils.resources.dlg
 
                 if (BreakedFilesList.Count != 0)
                 {
-                    AppLogger.Log.Info("=================== GETTED BREAKED FILES ===================");
+                    Log.Info("=================== GETTED BREAKED FILES ===================");
 
                     foreach (string component in BreakedFilesList.ToArray())
                     {
-                        AppLogger.Log.Info($"Breaked component: {component}");
+                        Log.Info($"Breaked component: {component}");
                     }
                 }
 
                 if (WholeFilesList.Count != 0)
                 {
-                    AppLogger.Log.Info("==================== GETTED NORMAL FILES ===================");
+                    Log.Info("==================== GETTED NORMAL FILES ===================");
 
                     foreach (string component in WholeFilesList.ToArray())
                     {
-                        AppLogger.Log.Info($"Not breaked component: {component}");
+                        Log.Info($"Not breaked component: {component}");
                     }
                 }
 
@@ -145,7 +146,7 @@ namespace SacredUtils.resources.dlg
 
                     foreach (string ss in BreakedFilesList)
                     {
-                        AppLogger.Log.Info($"Downloading file {ss} from {DownloadNeedFilesList[num]} ...");
+                        Log.Info($"Downloading file {ss} from {DownloadNeedFilesList[num]} ...");
 
                         wc.DownloadFileTaskAsync(DownloadNeedFilesList[num], ss).Wait();
 
@@ -163,14 +164,14 @@ namespace SacredUtils.resources.dlg
                     }));
                 }
 
-                AppLogger.Log.Info("======================= REPAIRED FILES =====================");
+                Log.Info("======================= REPAIRED FILES =====================");
 
                 foreach (string s in RepairedFilesList)
                 {
-                    AppLogger.Log.Info($"Repaired component: {s}");
+                    Log.Info($"Repaired component: {s}");
                 }
 
-                AppLogger.Log.Info("=================== REPAIR COMPONENTS DONE =================");
+                Log.Info("=================== REPAIR COMPONENTS DONE =================");
             });
         }
     }

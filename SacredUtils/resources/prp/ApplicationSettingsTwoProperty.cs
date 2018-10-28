@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.prp
 {
@@ -13,7 +14,7 @@ namespace SacredUtils.resources.prp
             {
                 AppSettings.ApplicationSettings.CheckAutoUpdate = value;
 
-                AppLogger.Log.Info($"Checking for updates changed state to {value} by user");
+                Log.Info($"Checking for updates changed state to {value} by user");
             }
         }
 
@@ -25,7 +26,7 @@ namespace SacredUtils.resources.prp
             {
                 AppSettings.ApplicationSettings.CheckAutoAlphaUpdate = value;
 
-                AppLogger.Log.Info($"Checking for alpha updates changed state to {value} by user");
+                Log.Info($"Checking for alpha updates changed state to {value} by user");
             }
         }
 
@@ -37,7 +38,7 @@ namespace SacredUtils.resources.prp
             {
                 AppSettings.ApplicationSettings.MakeAutoBackupConfigs = value;
 
-                AppLogger.Log.Info($"Backup making settings changed state to {value} by user");
+                Log.Info($"Backup making settings changed state to {value} by user");
             }
         }
 
@@ -49,7 +50,7 @@ namespace SacredUtils.resources.prp
             {
                 File.WriteAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\LicenseAgreement.su", value.ToString().ToLower());
 
-                AppLogger.Log.Info($"Accept license changed state to {value} by user");
+                Log.Info($"Accept license changed state to {value} by user");
             }
         }
     }

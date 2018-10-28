@@ -4,6 +4,7 @@ using System.Net;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
 {
@@ -15,47 +16,41 @@ namespace SacredUtils.resources.bin
         {
             if (CheckAvailabilityInternetConnection.Connect())
             {
-                AppLogger.Log.Info("Checking permission for checking alpha SacredUtils updates ...");
+                Log.Info("Checking permission for checking alpha SacredUtils updates ...");
 
-                if (AppSettings.ApplicationSettings.CheckAutoAlphaUpdate)
-                {
-                    Get();
-                }
-                else
-                {
-                    CheckAvailabilityReleaseUpdates.GetPerm();
-                }
+                if (AppSettings.ApplicationSettings.CheckAutoAlphaUpdate) { Get(); }
+                else { CheckAvailabilityReleaseUpdates.GetPerm(); }
             }
         }
 
         private static void Get()
         {
-            AppLogger.Log.Info("Checking for alpha SacredUtils application updates ...");
+            Log.Info("Checking for alpha SacredUtils application updates ...");
 
             try
             {
                 string appAlphaVersion = Wc.DownloadString("https://drive.google.com/uc?export=download&id=1Fc0QIxzUn7-ellW5e4_W1Wv05-V1hsJ8");
 
-                AppLogger.Log.Info($"The last received SacredUtils alpha version {appAlphaVersion}");
+                Log.Info($"The last received SacredUtils alpha version {appAlphaVersion}");
 
                 if (!appAlphaVersion.Contains(AppSummary.AVersion))
                 {
-                    AppLogger.Log.Warn($"SacredUtils application {AppSummary.AVersion} is outdated!");
-                    AppLogger.Log.Info($"Downloading SacredUtils application {appAlphaVersion} update ...");
+                    Log.Warn($"SacredUtils application {AppSummary.AVersion} is outdated!");
+                    Log.Info($"Downloading SacredUtils application {appAlphaVersion} update ...");
 
                     GetUpdate();
                 }
                 else
                 {
-                    AppLogger.Log.Info("SacredUtils application no need to alpha update!");
+                    Log.Info("SacredUtils application no need to alpha update!");
 
                     CheckAvailabilityReleaseUpdates.GetPerm();
                 }
             }
             catch (Exception e)
             {
-                AppLogger.Log.Info("Checking SacredUtils alpha updates done with error!");
-                AppLogger.Log.Info(e.ToString);
+                Log.Info("Checking SacredUtils alpha updates done with error!");
+                Log.Info(e.ToString);
             }
         }
 
@@ -72,14 +67,14 @@ namespace SacredUtils.resources.bin
 
                 Wc.DownloadFileTaskAsync(new Uri(release), "_newVersionSacredUtilsTemp.exe").Wait();
 
-                AppLogger.Log.Info("Downloading new SacredUtils alpha update successfully done!");
+                Log.Info("Downloading new SacredUtils alpha update successfully done!");
 
                 GetUpdateTool();
             }
             catch (Exception e)
             {
-                AppLogger.Log.Error("An error occurred while getting SacredUtils alpha updates!");
-                AppLogger.Log.Error(e.ToString);
+                Log.Error("An error occurred while getting SacredUtils alpha updates!");
+                Log.Error(e.ToString);
             }
         }
 
@@ -101,7 +96,7 @@ namespace SacredUtils.resources.bin
             }
             catch (Exception e)
             {
-                AppLogger.Log.Error(e.ToString);
+                Log.Error(e.ToString);
             }
         }
     }

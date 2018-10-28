@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
 {
@@ -70,7 +71,7 @@ namespace SacredUtils.resources.bin
 
                             Task.Run(() => UnpackDownloadedFile(downloadPath, downloadFileName, extractFolder, defaultLabelText, oldFileName, newFileName, componentName));
 
-                            AppLogger.Log.Info($"Loading sacred game component {componentName} successfully done!");
+                            Log.Info($"Loading sacred game component {componentName} successfully done!");
 
                             wc.Dispose();
                         };
@@ -92,7 +93,7 @@ namespace SacredUtils.resources.bin
             }
             catch (Exception e)
             {
-                AppLogger.Log.Error(e.ToString());
+                Log.Error(e.ToString());
             }
         }
 
@@ -130,7 +131,7 @@ namespace SacredUtils.resources.bin
                     File.Delete($"{downloadPath}\\{downloadFileName}");
                 }
 
-                AppLogger.Log.Info($"Extracting sacred game component {componentName} successfully done!");
+                Log.Info($"Extracting sacred game component {componentName} successfully done!");
 
                 Application.Current.Dispatcher.Invoke(DispatcherPriority.Send, new ThreadStart(delegate
                 {
@@ -141,7 +142,7 @@ namespace SacredUtils.resources.bin
             }
             catch (Exception exception)
             {
-                AppLogger.Log.Error(exception.ToString());
+                Log.Error(exception.ToString());
             }
         }
     }

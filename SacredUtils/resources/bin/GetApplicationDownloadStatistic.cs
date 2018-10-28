@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Threading;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
 {
@@ -52,7 +53,7 @@ namespace SacredUtils.resources.bin
                     }
                     catch (Exception ex)
                     {
-                        AppLogger.Log.Error(ex.ToString);
+                        Log.Error(ex.ToString);
                     }
                 }
             }

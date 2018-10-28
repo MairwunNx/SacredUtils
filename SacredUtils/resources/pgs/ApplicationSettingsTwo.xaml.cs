@@ -3,6 +3,7 @@ using SacredUtils.resources.dlg;
 using SacredUtils.resources.prp;
 using System.Diagnostics;
 using System.Windows;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.pgs
 {
@@ -12,7 +13,7 @@ namespace SacredUtils.resources.pgs
         {
             InitializeComponent(); EventSubscribe(); DataContext = new ApplicationSettingsTwoProperty();
 
-            AppLogger.Log.Info("Initialization components for application settings two done!");
+            Log.Info("Initialization components for application settings two done!");
         }
 
         private void EventSubscribe()
@@ -28,7 +29,7 @@ namespace SacredUtils.resources.pgs
 
         private static void OpenLink(string link)
         {
-            Process.Start(link); AppLogger.Log.Info($"{link} link was opened by user");
+            Process.Start(link); Log.Info($"{link} link was opened by user");
         }
 
         private static void OpenDonateSelectDialog()
@@ -100,7 +101,7 @@ namespace SacredUtils.resources.pgs
             {
                 ((MainWindow)window).SettingsFrame.Content = MainWindow.AppStgOne;
 
-                AppLogger.Log.Info("Application settings one page was opened by user");
+                Log.Info("Application settings one page was opened by user");
             }
         }
     }

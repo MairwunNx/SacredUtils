@@ -1,5 +1,6 @@
 ﻿using SacredUtils.resources.prp;
 using System.Windows;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.pgs
 {
@@ -9,7 +10,7 @@ namespace SacredUtils.resources.pgs
         {
             InitializeComponent(); DataContext = new GamePlaySettingsOneProperty();
 
-            AppLogger.Log.Info("Initialization components for game play settings one done!");
+            Log.Info("Initialization components for game play settings one done!");
         }
 
         private void ToTwoPageBtn_Click(object sender, RoutedEventArgs e)
@@ -18,7 +19,7 @@ namespace SacredUtils.resources.pgs
             {
                 ((MainWindow)window).SettingsFrame.Content = MainWindow.GamePlayStgTwo;
 
-                AppLogger.Log.Info("Game play settings two page was opened by user");
+                Log.Info("Game play settings two page was opened by user");
             }
         }
     }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Reflection;
 
 namespace SacredUtils
@@ -11,7 +10,6 @@ namespace SacredUtils
         public static string AVersion        = "1.2.4.1.261018.A2";
         public static string Type            = "Alpha";
         public static string AppPatch        = Assembly.GetExecutingAssembly().Location;
-        public static string AppPatchExeName = AppDomain.CurrentDomain.FriendlyName;
         public static Stopwatch Sw           = new Stopwatch();
     }
 }

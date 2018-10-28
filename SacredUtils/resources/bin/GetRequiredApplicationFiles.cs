@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
 {
@@ -10,7 +11,7 @@ namespace SacredUtils.resources.bin
             {
                 File.WriteAllBytes("License.txt", Properties.Resources.AppLicense);
 
-                AppLogger.Log.Info("SacredUtils License file was successfully re-created!");
+                Log.Info("SacredUtils License file was successfully re-created!");
             }
 
             if (!File.Exists("$SacredUtils\\conf\\hotkeys.json"))

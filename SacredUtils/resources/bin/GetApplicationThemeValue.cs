@@ -1,4 +1,5 @@
 ﻿using WPFSharp.Globalizer;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
 {
@@ -9,7 +10,7 @@ namespace SacredUtils.resources.bin
             GlobalizedApplication.Instance.StyleManager.SwitchStyle
                 (AppSettings.ApplicationSettings.ColorTheme == "dark" ? "Dark.xaml" : "Light.xaml");
 
-            AppLogger.Log.Info($"SacredUtils application starting with ({AppSettings.ApplicationSettings.ColorTheme}) theme!");
+            Log.Info($"SacredUtils application starting with ({AppSettings.ApplicationSettings.ColorTheme}) theme!");
         }
     }
 }

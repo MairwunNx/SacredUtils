@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Input;
+using static SacredUtils.AppLogger;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 
 namespace SacredUtils.resources.bin
@@ -92,11 +93,11 @@ namespace SacredUtils.resources.bin
                     MainWindow.SoundStgOne.DataContext = null;
                     MainWindow.SoundStgOne.DataContext = new GameSoundSettingsOneProperty();
 
-                    AppLogger.Log.Info("Sacred game settings successfully reloaded!");
+                    Log.Info("Sacred game settings successfully reloaded!");
                 }
                 catch (Exception ex)
                 {
-                    AppLogger.Log.Error(ex.ToString);
+                    Log.Error(ex.ToString);
                 }
             }
         }

@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
 {
@@ -14,7 +15,7 @@ namespace SacredUtils.resources.bin
 
             if (sender.Equals(sender as StackPanel) && sender is StackPanel panel)
             {
-                AppLogger.Log.Info($"Selected SacredUtils settings category {panel.Name} by user");
+                Log.Info($"Selected SacredUtils settings category {panel.Name} by user");
 
                 foreach (StackPanel sp in MainWindow.SettingsGrid.Children.OfType<StackPanel>())
                 {

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
 {
@@ -27,13 +28,13 @@ namespace SacredUtils.resources.bin
 
                 CheckAvailabilityProcess();
 
-                AppLogger.Log.Info("Register global PrintScreen hotkey successfully done!");
+                Log.Info("Register global PrintScreen hotkey successfully done!");
             }
             catch (Exception e)
             {
-                AppLogger.Log.Error("Register global PrintScreen hotkey not ability (Close app used PrintScreen button)!");
+                Log.Error("Register global PrintScreen hotkey not ability (Close app used PrintScreen button)!");
 
-                AppLogger.Log.Error(e.ToString);
+                Log.Error(e.ToString);
             }
         }
 
@@ -59,11 +60,11 @@ namespace SacredUtils.resources.bin
             {
                 HotkeyManager.Current.Remove("PrintScreen");
 
-                AppLogger.Log.Info("Caused by close Sacred: Shutting down global PrintScreen hotkey done!");
+                Log.Info("Caused by close Sacred: Shutting down global PrintScreen hotkey done!");
             }
             catch (Exception e)
             {
-                AppLogger.Log.Error(e.ToString);
+                Log.Error(e.ToString);
             }
         }
 
@@ -119,7 +120,7 @@ namespace SacredUtils.resources.bin
             }
             catch (Exception exception)
             {
-                AppLogger.Log.Error(exception.ToString);
+                Log.Error(exception.ToString);
             }
         }
 
@@ -151,7 +152,7 @@ namespace SacredUtils.resources.bin
             }
             catch (Exception e)
             {
-                AppLogger.Log.Error(e.ToString);
+                Log.Error(e.ToString);
             }
         }
 
@@ -161,7 +162,7 @@ namespace SacredUtils.resources.bin
 
             capture.Save($"{AppSettings.ApplicationSettings.ScreenShotSaveDirectory}\\{fileName}"); 
 
-            AppLogger.Log.Info($"Screenshot saved {fileName} to Capture folder.");
+            Log.Info($"Screenshot saved {fileName} to Capture folder.");
 
             RemoveTgaScreenshots(); 
         }
@@ -181,7 +182,7 @@ namespace SacredUtils.resources.bin
                 }
                 catch (Exception e)
                 {
-                    AppLogger.Log.Error(e.ToString);
+                    Log.Error(e.ToString);
                 }
             }
 

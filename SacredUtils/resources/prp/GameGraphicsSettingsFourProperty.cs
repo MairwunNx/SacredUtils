@@ -3,6 +3,7 @@ using SacredUtils.resources.arr;
 using System;
 using System.IO;
 using System.Net;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.prp
 {
@@ -269,7 +270,7 @@ namespace SacredUtils.resources.prp
             }
             catch (Exception exception)
             {
-                AppLogger.Log.Error(exception.ToString());
+                Log.Error(exception.ToString());
             }
         }
     }

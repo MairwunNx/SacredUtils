@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
 {
@@ -10,13 +11,13 @@ namespace SacredUtils.resources.bin
         {
             if (!File.Exists("WPFSharp.Globalizer.dll"))
             {
-                AppLogger.Log.Warn("WPFSharp.Globalizer.dll library file not found!");
+                Log.Warn("WPFSharp.Globalizer.dll library file not found!");
 
                 Create();
             }
             else
             {
-                AppLogger.Log.Info("WPFSharp.Globalizer.dll library file was found!");
+                Log.Info("WPFSharp.Globalizer.dll library file was found!");
             }
         }
 
@@ -24,23 +25,23 @@ namespace SacredUtils.resources.bin
         {
             try
             {
-                AppLogger.Log.Info("Creating WPFSharp.Globalizer.dll lirary file ...");
+                Log.Info("Creating WPFSharp.Globalizer.dll lirary file ...");
 
                 File.WriteAllBytes("WPFSharp.Globalizer.dll", Properties.Resources.WPFSharp_Globalizer);
 
-                AppLogger.Log.Info("Creating WPFSharp.Globalizer.dll library file done!");
+                Log.Info("Creating WPFSharp.Globalizer.dll library file done!");
 
-                AppLogger.Log.Info("Reloading SacredUtils configurator ...");
+                Log.Info("Reloading SacredUtils configurator ...");
 
                 Process.Start(AppSummary.AppPatch); Environment.Exit(0);
             }
             catch (Exception exception)
             {
-                AppLogger.Log.Fatal("Creating WPFSharp.Globalizer.dll library done with fatal level error!");
+                Log.Fatal("Creating WPFSharp.Globalizer.dll library done with fatal level error!");
 
-                AppLogger.Log.Fatal(exception.ToString);
+                Log.Fatal(exception.ToString);
 
-                AppLogger.Log.Info("Shutting down SacredUtils configurator ...");
+                Log.Info("Shutting down SacredUtils configurator ...");
 
                 Environment.Exit(0);
             }

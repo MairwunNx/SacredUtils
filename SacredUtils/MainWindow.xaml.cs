@@ -8,11 +8,10 @@ using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils
 {
-    // todo: Make balls on MainWindow clickable.
-
     public partial class MainWindow
     {
         public static int ScreenWidthDevice = Screen.PrimaryScreen.Bounds.Width;
@@ -73,7 +72,7 @@ namespace SacredUtils
             {
                 AppSummary.Sw.Stop(); // Make Yourself ^_^
 
-                AppLogger.Log.Info($"Loading SacredUtils application done ({AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
+                Log.Info($"Loading SacredUtils application done ({AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
 
                 Task.Run(() =>
                 {

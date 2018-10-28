@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Media;
 using WPFSharp.Globalizer;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.prp
 {
@@ -28,7 +29,7 @@ namespace SacredUtils.resources.prp
 
                     GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage("ru-RU", true);
 
-                    AppLogger.Log.Info("SacredUtils application language changed state to ru by user");
+                    Log.Info("SacredUtils application language changed state to ru by user");
                 }
 
                 if (value == 1)
@@ -37,7 +38,7 @@ namespace SacredUtils.resources.prp
 
                     GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage("en-US", true);
 
-                    AppLogger.Log.Info("SacredUtils application language changed state to en by user");
+                    Log.Info("SacredUtils application language changed state to en by user");
                 }
             }
         }
@@ -54,7 +55,7 @@ namespace SacredUtils.resources.prp
 
                     GlobalizedApplication.Instance.StyleManager.SwitchStyle("Light.xaml");
 
-                    AppLogger.Log.Info("SacredUtils application theme changed state to light by user");
+                    Log.Info("SacredUtils application theme changed state to light by user");
                 }
 
                 if (value == 1)
@@ -63,7 +64,7 @@ namespace SacredUtils.resources.prp
 
                     GlobalizedApplication.Instance.StyleManager.SwitchStyle("Dark.xaml");
 
-                    AppLogger.Log.Info("SacredUtils application theme changed state to dark by user");
+                    Log.Info("SacredUtils application theme changed state to dark by user");
                 }
             }
         }
@@ -76,7 +77,7 @@ namespace SacredUtils.resources.prp
             {
                 AppSettings.ApplicationSettings.SacredStartArgs = value;
 
-                AppLogger.Log.Info($"Sacred game startup params changed to {value} by user");
+                Log.Info($"Sacred game startup params changed to {value} by user");
             }
         }
 
@@ -88,42 +89,42 @@ namespace SacredUtils.resources.prp
             {
                 if (value == "100%")
                 {
-                    ChangeScale(1.0); AppLogger.Log.Info("SacredUtils Ui scale changed state to 100% by user");
+                    ChangeScale(1.0); Log.Info("SacredUtils Ui scale changed state to 100% by user");
                 }
 
                 if (value == "105%")
                 {
-                    ChangeScale(1.05); AppLogger.Log.Info("SacredUtils Ui scale changed state to 105% by user");
+                    ChangeScale(1.05); Log.Info("SacredUtils Ui scale changed state to 105% by user");
                 }
 
                 if (value == "110%")
                 {
-                    ChangeScale(1.10); AppLogger.Log.Info("SacredUtils Ui scale changed state to 110% by user");
+                    ChangeScale(1.10); Log.Info("SacredUtils Ui scale changed state to 110% by user");
                 }
 
                 if (value == "115%")
                 {
-                    ChangeScale(1.15); AppLogger.Log.Info("SacredUtils Ui scale changed state to 115% by user");
+                    ChangeScale(1.15); Log.Info("SacredUtils Ui scale changed state to 115% by user");
                 }
 
                 if (value == "125%")
                 {
-                    ChangeScale(1.25); AppLogger.Log.Info("SacredUtils Ui scale changed state to 125% by user");
+                    ChangeScale(1.25); Log.Info("SacredUtils Ui scale changed state to 125% by user");
                 }
 
                 if (value == "150%")
                 {
-                    ChangeScale(1.50); AppLogger.Log.Info("SacredUtils Ui scale changed state to 150% by user");
+                    ChangeScale(1.50); Log.Info("SacredUtils Ui scale changed state to 150% by user");
                 }
 
                 if (value == "175%")
                 {
-                    ChangeScale(1.75); AppLogger.Log.Info("SacredUtils Ui scale changed state to 175% by user");
+                    ChangeScale(1.75); Log.Info("SacredUtils Ui scale changed state to 175% by user");
                 }
 
                 if (value == "200%")
                 {
-                    ChangeScale(2.0); AppLogger.Log.Info("SacredUtils Ui scale changed state to 200% by user");
+                    ChangeScale(2.0); Log.Info("SacredUtils Ui scale changed state to 200% by user");
                 }
             }
         }

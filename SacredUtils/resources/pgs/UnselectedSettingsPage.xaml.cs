@@ -2,9 +2,6 @@
 {
     public partial class UnselectedSettingsPage
     {
-        public UnselectedSettingsPage()
-        {
-            InitializeComponent();
-        }
+        public UnselectedSettingsPage() => InitializeComponent();
     }
 }

@@ -4,6 +4,7 @@ using System.Net;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
 {
@@ -15,45 +16,39 @@ namespace SacredUtils.resources.bin
         {
             if (CheckAvailabilityInternetConnection.Connect())
             {
-                AppLogger.Log.Info("Checking premission for checking release SacredUtils updates ...");
+                Log.Info("Checking premission for checking release SacredUtils updates ...");
 
-                if (AppSettings.ApplicationSettings.CheckAutoUpdate)
-                {
-                    Get();
-                }
-                else
-                {
-                    AppLogger.Log.Warn("SacredUtils is running with disabled checking updates!");
-                }
+                if (AppSettings.ApplicationSettings.CheckAutoUpdate) { Get(); }
+                else { Log.Warn("SacredUtils is running with disabled checking updates!"); }
             }
         }
 
         private static void Get()
         {
-            AppLogger.Log.Info("Checking for release SacredUtils application updates ...");
+            Log.Info("Checking for release SacredUtils application updates ...");
 
             try
             {
                 string appReleaseVersion = Wc.DownloadString("https://drive.google.com/uc?export=download&id=13N9ZfalxDfTAIdYxFuGBr8QPMW9OODc_");
 
-                AppLogger.Log.Info($"The last received SacredUtils release version {appReleaseVersion}");
+                Log.Info($"The last received SacredUtils release version {appReleaseVersion}");
 
                 if (!appReleaseVersion.Contains(AppSummary.Version))
                 {
-                    AppLogger.Log.Warn($"SacredUtils application {AppSummary.Version} is outdated!");
-                    AppLogger.Log.Info($"Downloading SacredUtils application {appReleaseVersion} update ...");
+                    Log.Warn($"SacredUtils application {AppSummary.Version} is outdated!");
+                    Log.Info($"Downloading SacredUtils application {appReleaseVersion} update ...");
 
                     GetUpdate();
                 }
                 else
                 {
-                    AppLogger.Log.Info("SacredUtils application no need to release update!");
+                    Log.Info("SacredUtils application no need to release update!");
                 }
             }
             catch (Exception e)
             {
-                AppLogger.Log.Info("Checking SacredUtils release updates done with error!");
-                AppLogger.Log.Info(e.ToString);
+                Log.Info("Checking SacredUtils release updates done with error!");
+                Log.Info(e.ToString);
             }
         }
 
@@ -70,14 +65,14 @@ namespace SacredUtils.resources.bin
 
                 Wc.DownloadFileTaskAsync(new Uri(release), "_newVersionSacredUtilsTemp.exe").Wait();
 
-                AppLogger.Log.Info("Downloading new SacredUtils application update successfully done!");
+                Log.Info("Downloading new SacredUtils application update successfully done!");
 
                 GetUpdateTool();
             }
             catch (Exception e)
             {
-                AppLogger.Log.Error("An error occurred while getting SacredUtils updates!");
-                AppLogger.Log.Error(e.ToString);
+                Log.Error("An error occurred while getting SacredUtils updates!");
+                Log.Error(e.ToString);
             }
         }
 
@@ -99,7 +94,7 @@ namespace SacredUtils.resources.bin
             }
             catch (Exception e)
             {
-                AppLogger.Log.Error(e.ToString);
+                Log.Error(e.ToString);
             }
         }
     }

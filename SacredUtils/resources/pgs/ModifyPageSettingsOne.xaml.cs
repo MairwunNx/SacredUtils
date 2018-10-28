@@ -10,6 +10,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.pgs
 {
@@ -30,7 +31,7 @@ namespace SacredUtils.resources.pgs
             ServerCoreFixBtn.SetResourceReference(ContentProperty,
                 !AppSettings.ApplicationSettings.ServerMultiCoreFixInstalled ? "String0092" : "String0093");
 
-            AppLogger.Log.Info("Initialization components for app modify page one done!");
+            Log.Info("Initialization components for app modify page one done!");
         }
 
         private void VeteranModBtn_Click(object sender, RoutedEventArgs e)
@@ -213,7 +214,7 @@ namespace SacredUtils.resources.pgs
                 }
                 catch (Exception exception)
                 {
-                    AppLogger.Log.Error(exception.ToString());
+                    Log.Error(exception.ToString());
                 }
             });
         }
@@ -265,7 +266,7 @@ namespace SacredUtils.resources.pgs
                 }
                 catch (Exception exception)
                 {
-                    AppLogger.Log.Error(exception.ToString());
+                    Log.Error(exception.ToString());
                 }
             });
         }
@@ -296,7 +297,7 @@ namespace SacredUtils.resources.pgs
                 }
                 catch (Exception exception)
                 {
-                    AppLogger.Log.Error(exception.ToString());
+                    Log.Error(exception.ToString());
                 }
             });
         }
@@ -327,7 +328,7 @@ namespace SacredUtils.resources.pgs
                 }
                 catch (Exception exception)
                 {
-                    AppLogger.Log.Error(exception.ToString());
+                    Log.Error(exception.ToString());
                 }
             });
         }
@@ -358,7 +359,7 @@ namespace SacredUtils.resources.pgs
                 }
                 catch (Exception exception)
                 {
-                    AppLogger.Log.Error(exception.ToString());
+                    Log.Error(exception.ToString());
                 }
             });
         }

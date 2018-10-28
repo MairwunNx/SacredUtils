@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
 {
@@ -24,7 +25,7 @@ namespace SacredUtils.resources.bin
         {
             Exception e = (Exception)args.ExceptionObject;
 
-            AppLogger.Log.Fatal("\n\n    There was a critical error that provoked the forced termination of the program.\n    Crash-report-log was created in $SacredUtils\\crash-reports, send it crash-report-log to MairwunNx\n");
+            Log.Fatal("\n\n    There was a critical error that provoked the forced termination of the program.\n    Crash-report-log was created in $SacredUtils\\crash-reports, send it crash-report-log to MairwunNx\n");
 
             DateTime now = DateTime.Now;
 
@@ -59,7 +60,7 @@ namespace SacredUtils.resources.bin
             }
             catch (Exception exc)
             {
-                AppLogger.Log.Error(exc.ToString);
+                Log.Error(exc.ToString);
             }
             
             Environment.Exit(0);

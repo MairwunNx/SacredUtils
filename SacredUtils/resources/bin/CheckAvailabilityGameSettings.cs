@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
 {
@@ -11,25 +12,25 @@ namespace SacredUtils.resources.bin
             {
                 try
                 {
-                    AppLogger.Log.Warn($"Sacred game configuration file ({AppSettings.ApplicationSettings.SacredConfigurationFile}) not found!");
+                    Log.Warn($"Sacred game configuration file ({AppSettings.ApplicationSettings.SacredConfigurationFile}) not found!");
 
                     File.WriteAllBytes(AppSettings.ApplicationSettings.SacredConfigurationFile, Properties.Resources.gamesettings);
 
-                    AppLogger.Log.Info($"Creating sacred game configuration file ({AppSettings.ApplicationSettings.SacredConfigurationFile}) done!");
+                    Log.Info($"Creating sacred game configuration file ({AppSettings.ApplicationSettings.SacredConfigurationFile}) done!");
                 }
                 catch (Exception e)
                 {
-                    AppLogger.Log.Fatal("A critical error has occurred while creating game configuration file!");
-                    AppLogger.Log.Fatal(e.ToString);
+                    Log.Fatal("A critical error has occurred while creating game configuration file!");
+                    Log.Fatal(e.ToString);
 
-                    AppLogger.Log.Info("Shutting down SacredUtils configurator ...");
+                    Log.Info("Shutting down SacredUtils configurator ...");
 
                     Environment.Exit(0); // Please, return to me, Isabella, please ...
                 }
             }
             else
             {
-                AppLogger.Log.Info($"Sacred game configuration file ({AppSettings.ApplicationSettings.SacredConfigurationFile}) was found!");
+                Log.Info($"Sacred game configuration file ({AppSettings.ApplicationSettings.SacredConfigurationFile}) was found!");
             }
         }
     }

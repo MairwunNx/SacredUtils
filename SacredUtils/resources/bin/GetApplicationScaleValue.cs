@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Media;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
 {
@@ -15,7 +16,7 @@ namespace SacredUtils.resources.bin
                 ((MainWindow)window).BaseCard.LayoutTransform = new ScaleTransform(AppSettings.ApplicationSettings.SacredUtilsGuiScale, AppSettings.ApplicationSettings.SacredUtilsGuiScale);
             }
 
-            AppLogger.Log.Info($"SacredUtils application starting with ({AppSettings.ApplicationSettings.SacredUtilsGuiScale}) gui scale!");
+            Log.Info($"SacredUtils application starting with ({AppSettings.ApplicationSettings.SacredUtilsGuiScale}) gui scale!");
         }
     }
 }

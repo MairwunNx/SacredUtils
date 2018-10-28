@@ -1,5 +1,6 @@
 ﻿using SacredUtils.resources.prp;
 using System.Windows;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.pgs
 {
@@ -9,7 +10,7 @@ namespace SacredUtils.resources.pgs
         {
             InitializeComponent(); DataContext = new GameGraphicsSettingsFourProperty();
 
-            AppLogger.Log.Info("Initialization components for graphics settings four done!");
+            Log.Info("Initialization components for graphics settings four done!");
         }
 
         private void ToThreePageBtn_Click(object sender, RoutedEventArgs e)
@@ -18,7 +19,7 @@ namespace SacredUtils.resources.pgs
             {
                 ((MainWindow)window).SettingsFrame.Content = MainWindow.GraphicsStgThree;
 
-                AppLogger.Log.Info("Game graphics settings three page was opened by user");
+                Log.Info("Game graphics settings three page was opened by user");
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
 {
@@ -20,7 +21,7 @@ namespace SacredUtils.resources.bin
             }
             catch (Exception ex)
             {
-                AppLogger.Log.Info(ex.ToString);
+                Log.Info(ex.ToString);
             }
         }
     }

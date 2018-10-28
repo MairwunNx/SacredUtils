@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
 {
@@ -34,8 +35,8 @@ namespace SacredUtils.resources.bin
             }
             catch (Exception e)
             {
-                AppLogger.Log.Error("Unable to apply the setting due to an unknown error.");
-                AppLogger.Log.Error(e.ToString);
+                Log.Error("Unable to apply the setting due to an unknown error.");
+                Log.Error(e.ToString);
             }
         }
 
@@ -185,8 +186,8 @@ namespace SacredUtils.resources.bin
             }
             catch (Exception e)
             {
-                AppLogger.Log.Error("Unable to apply the setting due to an unknown error.");
-                AppLogger.Log.Error(e.ToString);
+                Log.Error("Unable to apply the setting due to an unknown error.");
+                Log.Error(e.ToString);
             }
         }
     }
