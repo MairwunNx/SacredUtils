@@ -19,9 +19,19 @@ namespace SacredUtils.resources.bin
                 foreach (StackPanel sp in MainWindow.SettingsGrid.Children.OfType<StackPanel>())
                 {
                     sp.SetResourceReference(Control.BackgroundProperty, "CategoryNotActiveColorBrush");
+
+                    foreach (Button bt in sp.Children.OfType<Button>())
+                    {
+                        bt.SetResourceReference(Control.ForegroundProperty, "CategoryForegroundColorBrush");
+                    }
                 }
                 
                 panel.SetResourceReference(Control.BackgroundProperty, "CategoryActiveColorBrush");
+
+                foreach (Button bt in panel.Children.OfType<Button>())
+                {
+                    bt.SetResourceReference(Control.ForegroundProperty, "CategoryForegroundActiveColorBrush");
+                }
 
                 if (panel.Name == "FontsPanel") { MainWindow.FontStgOne.ExampleTextBlock.Text = GetApplicationRandomSplashes.GetRandomSplash(); }
             }
@@ -34,6 +44,11 @@ namespace SacredUtils.resources.bin
             foreach (StackPanel sp in MainWindow.SettingsGrid.Children.OfType<StackPanel>())
             {
                 sp.SetResourceReference(Control.BackgroundProperty, "CategoryNotActiveColorBrush");
+
+                foreach (Button bt in sp.Children.OfType<Button>())
+                {
+                    bt.SetResourceReference(Control.ForegroundProperty, "CategoryForegroundColorBrush");
+                }
             }
         }
     }
