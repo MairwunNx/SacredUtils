@@ -79,9 +79,7 @@ namespace SacredUtils
 
                 Task.Run(() =>
                 {
-                    CheckAvailabilityAlphaUpdates.GetPerm(); GetNoInternetIconVisibility.Get(); GetSacredUtilsProjectBirthday.Set("ProjectBirthDay");
-                    GetSacredUtilsProjectBirthday.Set("AuthorBirthDay"); GetSacredUtilsProjectBirthday.Set("NewYear"); GetSacredUtilsProjectBirthday.Set("Bar");
-                    GetSacredUtilsProjectBirthday.Set("Ireland"); GetSacredUtilsProjectBirthday.Set("Earth"); GetSacredUtilsProjectBirthday.Set("WindDay");
+                    CheckAvailabilityAlphaUpdates.GetPerm(); GetNoInternetIconVisibility.Get(); GetSacredUtilsProjectBirthday.Call();
                 });
 
                 if (!CheckAvailabilityInternetConnection.Connect()) { NoConnectImage.Visibility = Visibility.Visible; }

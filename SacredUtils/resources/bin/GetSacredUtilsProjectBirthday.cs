@@ -10,7 +10,14 @@ namespace SacredUtils.resources.bin
     {
         static readonly MainWindow MainWindow = (MainWindow)Application.Current.MainWindow;
 
-        public static void Set(string day) 
+        public static void Call()
+        {
+            Set("ProjectBirthDay"); Set("NewYear");
+            Set("AuthorBirthDay"); Set("Bar");
+            Set("Ireland"); Set("WindDay"); Set("Earth");
+        }
+
+        private static void Set(string day) 
         {
             if (day == "AuthorBirthDay")
             {

@@ -13,7 +13,7 @@
   "DisableLogging": "false",
   "DisableTelemetry": "false",
   "EnableArchiveFileCompression": "true",
-  "EnableGlobalExceptionCatching": "false",
+  "EnableGlobalExceptionCatching": "true",
   "EnableHealthCircles": "false",
   "GameVoiceover": "false",
   "HotKeyEventArgsHandled": "true",

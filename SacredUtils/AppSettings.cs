@@ -47,7 +47,7 @@ namespace SacredUtils
         [Option(Alias = "EnableArchiveFileCompression", DefaultValue = "true")]
         bool EnableArchiveFileCompression { get; }
 
-        [Option(Alias = "EnableGlobalExceptionCatching", DefaultValue = "false")]
+        [Option(Alias = "EnableGlobalExceptionCatching", DefaultValue = "true")]
         bool EnableGlobalExceptionCatching { get; }
 
         [Option(Alias = "EnableHealthCircles", DefaultValue = "true")]
