@@ -109,7 +109,7 @@ namespace SacredUtils.resources.bin
 
             if (day == "WindDay")
             {
-                var parameterDate = DateTime.ParseExact("15/06", "MM/dd", CultureInfo.InvariantCulture);
+                var parameterDate = DateTime.ParseExact("06/15", "MM/dd", CultureInfo.InvariantCulture);
                 var todaysDate = DateTime.Today;
 
                 if (parameterDate == todaysDate)
