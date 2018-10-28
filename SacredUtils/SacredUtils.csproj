@@ -286,7 +286,6 @@
     <Resource Include="resources\cfg\ch.files.txt" />
     <Resource Include="resources\cfg\hk.keyb.txt" />
     <Resource Include="resources\cfg\hk.orig.txt" />
-    <Content Include="resources\etc\SacredUtils.pdb" />
     <Content Include="resources\lib\WPFSharp.Globalizer.dll" />
     <Content Include="resources\lng\en-US\en-US.xaml">
       <SubType>Designer</SubType>

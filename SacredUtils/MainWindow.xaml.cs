@@ -11,6 +11,10 @@ using System.Windows.Threading;
 
 namespace SacredUtils
 {
+    // todo: Move array files to conf folder.
+    // todo: Improve light and dark theme.
+    // todo: Make balls on MainWindow clickable.
+
     public partial class MainWindow
     {
         public static int ScreenWidthDevice = Screen.PrimaryScreen.Bounds.Width;
