@@ -60,6 +60,8 @@ namespace SacredUtils.resources.bin
                         {
                             MainWindow.NewYearImage.Visibility = 0; 
                             MainWindow.NewYear2Image.Visibility = 0; 
+                            MainWindow.NewYear3Image.Visibility = 0; 
+                            MainWindow.NewYear4Image.Visibility = 0; 
                         }
                     }));
                 }

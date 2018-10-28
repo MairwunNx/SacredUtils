@@ -289,6 +289,7 @@
                 Grid.Row="1"
                 Width="400"
                 Height="400"
+                IsHitTestVisible="False"
                 Opacity="0.25"
                 Source="{StaticResource ResourceKey=NoInternetConnection}"
                 Visibility="Collapsed" />
@@ -298,6 +299,7 @@
                 Grid.Row="1"
                 Width="400"
                 Height="400"
+                IsHitTestVisible="False"
                 Opacity="0.25"
                 Source="{StaticResource ResourceKey=Birthday}"
                 Visibility="Collapsed" />
@@ -307,6 +309,7 @@
                 Grid.Row="1"
                 Width="400"
                 Height="400"
+                IsHitTestVisible="False"
                 Opacity="0.25"
                 Source="{StaticResource ResourceKey=MairwunNxBithday}"
                 Visibility="Collapsed" />
@@ -316,6 +319,7 @@
                 Grid.Row="1"
                 Width="400"
                 Height="400"
+                IsHitTestVisible="False"
                 Opacity="0.25"
                 Source="{StaticResource ResourceKey=NewYear}"
                 Visibility="Collapsed" />
@@ -326,6 +330,7 @@
                 Width="400"
                 Height="400"
                 Margin="782,428,-106,-143"
+                IsHitTestVisible="False"
                 Opacity="0.25"
                 RenderTransformOrigin="0.5,0.5"
                 Source="{StaticResource ResourceKey=ChristmasBall}"
@@ -341,10 +346,35 @@
             </Image>
 
             <Image
+                x:Name="NewYear3Image"
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Width="400"
+                Height="400"
+                Margin="-193,-116,869,426"
+                IsHitTestVisible="False"
+                Opacity="0.25"
+                Source="{StaticResource ResourceKey=NewYear}"
+                Visibility="Collapsed" />
+
+            <Image
+                x:Name="NewYear4Image"
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Width="400"
+                Height="400"
+                Margin="866,-237,-190,547"
+                IsHitTestVisible="False"
+                Opacity="0.25"
+                Source="{StaticResource ResourceKey=NewYear}"
+                Visibility="Collapsed" />
+
+            <Image
                 x:Name="BarImage"
                 Grid.Row="1"
                 Width="400"
                 Height="400"
+                IsHitTestVisible="False"
                 Opacity="0.25"
                 Source="{StaticResource ResourceKey=BarImage}"
                 Visibility="Collapsed" />
@@ -354,6 +384,7 @@
                 Grid.Row="1"
                 Width="400"
                 Height="400"
+                IsHitTestVisible="False"
                 Opacity="0.25"
                 Source="{StaticResource ResourceKey=Ireland}"
                 Visibility="Collapsed" />
@@ -363,6 +394,7 @@
                 Grid.Row="1"
                 Width="400"
                 Height="400"
+                IsHitTestVisible="False"
                 Opacity="0.25"
                 Source="{StaticResource ResourceKey=EarthPlanet}"
                 Visibility="Collapsed" />
@@ -372,6 +404,7 @@
                 Grid.Row="1"
                 Width="400"
                 Height="400"
+                IsHitTestVisible="False"
                 Opacity="0.25"
                 Source="{StaticResource ResourceKey=WindyWeather}"
                 Visibility="Collapsed" />
