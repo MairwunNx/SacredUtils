@@ -67,32 +67,7 @@ namespace SacredUtils.resources.bin
             {
                 try
                 {
-                    MainWindow.ChatStgOne.DataContext = null;
-                    MainWindow.ChatStgOne.DataContext = new GameChatSettingsOneProperty();
-
-                    MainWindow.FontStgOne.DataContext = null;
-                    MainWindow.FontStgOne.DataContext = new GameFontSettingsOneProperty();
-
-                    MainWindow.GamePlayStgOne.DataContext = null;
-                    MainWindow.GamePlayStgOne.DataContext = new GamePlaySettingsOneProperty();
-
-                    MainWindow.GamePlayStgTwo.DataContext = null;
-                    MainWindow.GamePlayStgTwo.DataContext = new GamePlaySettingsTwoProperty();
-
-                    MainWindow.GamePlayStgThree.DataContext = null;
-                    MainWindow.GamePlayStgThree.DataContext = new GamePlaySettingsThreeProperty();
-
-                    MainWindow.GraphicsStgOne.DataContext = null;
-                    MainWindow.GraphicsStgOne.DataContext = new GameGraphicsSettingsOneProperty();
-
-                    MainWindow.GraphicsStgTwo.DataContext = null;
-                    MainWindow.GraphicsStgTwo.DataContext = new GameGraphicsSettingsTwoProperty();
-
-                    MainWindow.GraphicsStgThree.DataContext = null;
-                    MainWindow.GraphicsStgThree.DataContext = new GameGraphicsSettingsThreeProperty();
-
-                    MainWindow.SoundStgOne.DataContext = null;
-                    MainWindow.SoundStgOne.DataContext = new GameSoundSettingsOneProperty();
+                    RefreshSettings();
 
                     Log.Info("Sacred game settings successfully reloaded!");
                 }
@@ -101,6 +76,29 @@ namespace SacredUtils.resources.bin
                     Log.Error(ex.ToString);
                 }
             }
+        }
+
+        public static void RefreshSettings()
+        {
+            MainWindow.ChatStgOne.DataContext = null;
+            MainWindow.FontStgOne.DataContext = null;
+            MainWindow.GamePlayStgOne.DataContext = null;
+            MainWindow.GamePlayStgTwo.DataContext = null;
+            MainWindow.GamePlayStgThree.DataContext = null;
+            MainWindow.GraphicsStgOne.DataContext = null;
+            MainWindow.GraphicsStgTwo.DataContext = null;
+            MainWindow.GraphicsStgThree.DataContext = null;
+            MainWindow.SoundStgOne.DataContext = null;
+
+            MainWindow.ChatStgOne.DataContext = new GameChatSettingsOneProperty();
+            MainWindow.FontStgOne.DataContext = new GameFontSettingsOneProperty();
+            MainWindow.GamePlayStgOne.DataContext = new GamePlaySettingsOneProperty();
+            MainWindow.GamePlayStgTwo.DataContext = new GamePlaySettingsTwoProperty();
+            MainWindow.GamePlayStgThree.DataContext = new GamePlaySettingsThreeProperty();
+            MainWindow.GraphicsStgOne.DataContext = new GameGraphicsSettingsOneProperty();
+            MainWindow.GraphicsStgTwo.DataContext = new GameGraphicsSettingsTwoProperty();
+            MainWindow.GraphicsStgThree.DataContext = new GameGraphicsSettingsThreeProperty();
+            MainWindow.SoundStgOne.DataContext = new GameSoundSettingsOneProperty();
         }
     }
 }

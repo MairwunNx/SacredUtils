@@ -18,6 +18,8 @@ namespace SacredUtils.resources.bin
             else
             {
                 Log.Info("WPFSharp.Globalizer.dll library file was found!");
+
+                // check on md5
             }
         }
 
