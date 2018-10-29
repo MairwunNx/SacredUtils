@@ -44,11 +44,13 @@ namespace SacredUtils.resources.bin
         {
             try
             {
+                string[] sizes = AppSettings.ApplicationSettings.SacredFontSizeArray.Split('|');
+
                 if (!File.ReadAllText(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII).Contains("FONT : 1, \""))
                 {
                     using (StreamWriter file = new StreamWriter(AppSettings.ApplicationSettings.SacredConfigurationFile, true, Encoding.ASCII))
                     {
-                        file.WriteLine($"FONT : 1, \"{font}\", 10");
+                        file.WriteLine($"FONT : 1, \"{font}\", {sizes[0]}");
                     }
                 }
                 else
@@ -59,7 +61,7 @@ namespace SacredUtils.resources.bin
                     {
                         if (text1[i].Contains("FONT : 1, \""))
                         {
-                            text1[i] = $"FONT : 1, \"{font}\", 10"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
+                            text1[i] = $"FONT : 1, \"{font}\", {sizes[0]}"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
                         }
                     }
                 }
@@ -68,7 +70,7 @@ namespace SacredUtils.resources.bin
                 {
                     using (StreamWriter file = new StreamWriter(AppSettings.ApplicationSettings.SacredConfigurationFile, true, Encoding.ASCII))
                     {
-                        file.WriteLine($"FONT : 2, \"{font}\", 10");
+                        file.WriteLine($"FONT : 2, \"{font}\", {sizes[1]}");
                     }
                 }
                 else
@@ -79,7 +81,7 @@ namespace SacredUtils.resources.bin
                     {
                         if (text1[i].Contains("FONT : 2, \""))
                         {
-                            text1[i] = $"FONT : 2, \"{font}\", 10"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
+                            text1[i] = $"FONT : 2, \"{font}\", {sizes[1]}"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
                         }
                     }
                 }
@@ -88,7 +90,7 @@ namespace SacredUtils.resources.bin
                 {
                     using (StreamWriter file = new StreamWriter(AppSettings.ApplicationSettings.SacredConfigurationFile, true, Encoding.ASCII))
                     {
-                        file.WriteLine($"FONT : 3, \"{font}\", 12");
+                        file.WriteLine($"FONT : 3, \"{font}\", {sizes[2]}");
                     }
                 }
                 else
@@ -99,7 +101,7 @@ namespace SacredUtils.resources.bin
                     {
                         if (text1[i].Contains("FONT : 3, \""))
                         {
-                            text1[i] = $"FONT : 3, \"{font}\", 12"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
+                            text1[i] = $"FONT : 3, \"{font}\", {sizes[2]}"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
                         }
                     }
                 }
@@ -108,7 +110,7 @@ namespace SacredUtils.resources.bin
                 {
                     using (StreamWriter file = new StreamWriter(AppSettings.ApplicationSettings.SacredConfigurationFile, true, Encoding.ASCII))
                     {
-                        file.WriteLine($"FONT : 4, \"{font}\", 15");
+                        file.WriteLine($"FONT : 4, \"{font}\", {sizes[3]}");
                     }
                 }
                 else
@@ -119,7 +121,7 @@ namespace SacredUtils.resources.bin
                     {
                         if (text1[i].Contains("FONT : 4, \""))
                         {
-                            text1[i] = $"FONT : 4, \"{font}\", 15"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
+                            text1[i] = $"FONT : 4, \"{font}\", {sizes[3]}"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
                         }
                     }
                 }
@@ -128,7 +130,7 @@ namespace SacredUtils.resources.bin
                 {
                     using (StreamWriter file = new StreamWriter(AppSettings.ApplicationSettings.SacredConfigurationFile, true, Encoding.ASCII))
                     {
-                        file.WriteLine($"FONT : 5, \"{font}\", 12");
+                        file.WriteLine($"FONT : 5, \"{font}\", {sizes[4]}");
                     }
                 }
                 else
@@ -139,7 +141,7 @@ namespace SacredUtils.resources.bin
                     {
                         if (text1[i].Contains("FONT : 5, \""))
                         {
-                            text1[i] = $"FONT : 5, \"{font}\", 12"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
+                            text1[i] = $"FONT : 5, \"{font}\", {sizes[4]}"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
                         }
                     }
                 }
@@ -148,7 +150,7 @@ namespace SacredUtils.resources.bin
                 {
                     using (StreamWriter file = new StreamWriter(AppSettings.ApplicationSettings.SacredConfigurationFile, true, Encoding.ASCII))
                     {
-                        file.WriteLine($"FONT : 6, \"{font}\", 12");
+                        file.WriteLine($"FONT : 6, \"{font}\", {sizes[5]}");
                     }
                 }
                 else
@@ -159,7 +161,7 @@ namespace SacredUtils.resources.bin
                     {
                         if (text1[i].Contains("FONT : 6, \""))
                         {
-                            text1[i] = $"FONT : 6, \"{font}\", 12"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
+                            text1[i] = $"FONT : 6, \"{font}\", {sizes[5]}"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
                         }
                     }
                 }
@@ -168,7 +170,7 @@ namespace SacredUtils.resources.bin
                 {
                     using (StreamWriter file = new StreamWriter(AppSettings.ApplicationSettings.SacredConfigurationFile, true, Encoding.ASCII))
                     {
-                        file.WriteLine($"FONT : 7, \"{font}\", 8");
+                        file.WriteLine($"FONT : 7, \"{font}\", {sizes[6]}");
                     }
                 }
                 else
@@ -179,7 +181,7 @@ namespace SacredUtils.resources.bin
                     {
                         if (text1[i].Contains("FONT : 7, \""))
                         {
-                            text1[i] = $"FONT : 7, \"{font}\", 8"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
+                            text1[i] = $"FONT : 7, \"{font}\", {sizes[6]}"; File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
                         }
                     }
                 }

@@ -26,6 +26,9 @@ namespace SacredUtils
         [Option(Alias = "ColorTheme", DefaultValue = "light")]
         string ColorTheme { get; set; }
 
+        [Option(Alias = "DefaultOpenLogFileProgram", DefaultValue = "notepad")]
+        string DefaultOpenLogFileProgram { get; }
+
         [Option(Alias = "DelayCheckingSacredProcess", DefaultValue = "1")]
         int DelayCheckingSacredProcess { get; }
 
@@ -53,11 +56,17 @@ namespace SacredUtils
         [Option(Alias = "EnableHealthCircles", DefaultValue = "true")]
         bool EnableHealthCircles { get; set; }
 
+        [Option(Alias = "ForceEnableFullScreenMode", DefaultValue = "true")]
+        bool ForceEnableFullScreenMode { get; }
+
         [Option(Alias = "GameVoiceover", DefaultValue = "based on language")]
         string GameVoiceover { get; set; }
 
         [Option(Alias = "HotKeyEventArgsHandled", DefaultValue = "true")]
         bool HotKeyEventArgsHandled { get; }
+
+        [Option(Alias = "HotKeyRegisterDelay", DefaultValue = "1000")]
+        int HotKeyRegisterDelay { get; }
 
         [Option(Alias = "hWndSacred", DefaultValue = "Sacred")]
         string hWndSacred { get; }
@@ -116,6 +125,9 @@ namespace SacredUtils
         [Option(Alias = "SacredFileName", DefaultValue = "Sacred.exe")]
         string SacredFileName { get; }
 
+        [Option(Alias = "SacredFontSizeArray", DefaultValue = "10|10|12|15|12|12|8")]
+        string SacredFontSizeArray { get; }
+
         [Option(Alias = "SacredStartArgs", DefaultValue = 1)]
         int SacredStartArgs { get; set; }
 
@@ -139,12 +151,18 @@ namespace SacredUtils
 
         [Option(Alias = "ShowChangeLog", DefaultValue = "true")]
         bool ShowChangeLog { get; }
+        
+        [Option(Alias = "ShowNoConnectionIcon", DefaultValue = "true")]
+        bool ShowNoConnectionIcon { get; }
 
         [Option(Alias = "ShowUsedMemory", DefaultValue = "false")]
         bool ShowUsedMemory { get; }
 
         [Option(Alias = "ShowUsedMemoryUpdateInterval", DefaultValue = "2")]
         int ShowUsedMemoryUpdateInterval { get; }
+
+        [Option(Alias = "UseAsyncLoadFontCollection", DefaultValue = "false")]
+        bool UseAsyncLoadFontCollection { get; }
 
         [Option(Alias = "UseOldSacredTextures", DefaultValue = "false")]
         bool UseOldSacredTextures { get; set; }

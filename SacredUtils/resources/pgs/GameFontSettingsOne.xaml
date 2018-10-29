@@ -56,6 +56,7 @@
                     VerticalAlignment="Top"
                     d:DataContext="{d:DesignInstance prp:GameFontSettingsOneProperty}"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
+                    DropDownClosed="FontNameCmbBox_DropDownClosed"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
                     ItemsSource="{Binding Path=FontCollection}"

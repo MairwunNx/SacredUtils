@@ -1,4 +1,5 @@
 ﻿using SacredUtils.resources.prp;
+using System;
 using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.pgs
@@ -11,5 +12,7 @@ namespace SacredUtils.resources.pgs
 
             Log.Info("Initialization components for game font settings one done!");
         }
+
+        private void FontNameCmbBox_DropDownClosed(object sender, EventArgs e) => GC.Collect();
     }
 }

@@ -22,7 +22,7 @@ namespace SacredUtils.resources.bin
 
             Log.Info("Register global application MainHotkey successfully done!");
 
-            Thread.Sleep(1000);
+            Thread.Sleep(AppSettings.ApplicationSettings.HotKeyRegisterDelay);
 
             RegisterHotkeys();
         }

@@ -4,6 +4,7 @@ using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace SacredUtils.resources.prp
 {
@@ -13,9 +14,25 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                List<string> fonts = new InstalledFontCollection().Families.Select(font => font.Name).ToList();
+                List<string> fontss = new List<string>();
 
-                fonts.Remove(""); return fonts;
+                if (AppSettings.ApplicationSettings.UseAsyncLoadFontCollection)
+                {
+                    Task.Run(() =>
+                    {
+                        List<string> fonts = new InstalledFontCollection().Families.Select(font => font.Name).ToList();
+
+                        fonts.Remove(""); fontss = fonts;
+                    }).Wait();
+                }
+                else
+                {
+                    List<string> fonts = new InstalledFontCollection().Families.Select(font => font.Name).ToList();
+
+                    fonts.Remove(""); fontss = fonts;
+                }
+
+                return fontss;
             }
         }
 

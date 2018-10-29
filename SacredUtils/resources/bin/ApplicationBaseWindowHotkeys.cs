@@ -30,7 +30,7 @@ namespace SacredUtils.resources.bin
             {
                 if (File.Exists("$SacredUtils\\logs\\latest.log"))
                 {
-                    Process.Start("notepad", "$SacredUtils\\logs\\latest.log");
+                    Process.Start(AppSettings.ApplicationSettings.DefaultOpenLogFileProgram, "$SacredUtils\\logs\\latest.log");
                 }
             }
 
@@ -38,7 +38,7 @@ namespace SacredUtils.resources.bin
             {
                 if (File.Exists("$SacredUtils\\conf\\settings.json"))
                 {
-                    Process.Start("notepad", "$SacredUtils\\conf\\settings.json");
+                    Process.Start(AppSettings.ApplicationSettings.DefaultOpenLogFileProgram, "$SacredUtils\\conf\\settings.json");
                 }
             }
 

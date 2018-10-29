@@ -25,7 +25,7 @@ namespace SacredUtils.resources.dlg
                         AboutDialog.IsOpen = false;
 
                         Log.Info($"Starting {AppSettings.ApplicationSettings.SacredFileName} game file with arg CHEATS=1 ...");
-
+                        
                         Process.Start(AppSettings.ApplicationSettings.SacredFileName, "CHEATS=1");
 
                         EnableSwitchingLanguage();
@@ -167,6 +167,11 @@ namespace SacredUtils.resources.dlg
         { 
             if (RunWithScreenCmbBox.IsChecked == true)
             {
+                if (AppSettings.ApplicationSettings.ForceEnableFullScreenMode)
+                {
+                    MainWindow.GraphicsStgTwo.FullScreenMode.IsChecked = true;
+                }
+
                 Log.Info($"Sacred Screenshots starting with {MainWindow.ScreenWidthDevice}x{MainWindow.ScreenHeightDevice} resolution ...");
 
                 ForceStretchSacredGameScreenshot.RegisterKey(false);

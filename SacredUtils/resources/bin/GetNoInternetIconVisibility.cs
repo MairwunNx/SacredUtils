@@ -10,12 +10,15 @@ namespace SacredUtils.resources.bin
 
         public static void Get()
         {
-            if (!CheckAvailabilityInternetConnection.Connect())
+            if (AppSettings.ApplicationSettings.ShowNoConnectionIcon)
             {
-                Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                if (!CheckAvailabilityInternetConnection.Connect())
                 {
-                    MainWindow.NoConnectImage.Visibility = Visibility.Visible;
-                }));
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                    {
+                        MainWindow.NoConnectImage.Visibility = Visibility.Visible;
+                    }));
+                }
             }
         }
     }

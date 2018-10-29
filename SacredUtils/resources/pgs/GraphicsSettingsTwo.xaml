@@ -132,6 +132,7 @@
                     Text="{globalizer:GlobalizedResource String0068}" />
 
                 <ToggleButton
+                    x:Name="FullScreenMode"
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsTwoProperty}"

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils
 {
@@ -20,7 +21,7 @@ namespace SacredUtils
             {
                 if (e.Args.Contains("-runGame"))
                 {
-                    AppLogger.Log.Info($"Screenshoting enable with {ScreenWidthDevice}x{ScreenHeightDevice} resolution");
+                    Log.Info($"Screenshoting enable with {ScreenWidthDevice}x{ScreenHeightDevice} resolution");
 
                     ApplicationRunSacredGameWithArgs.Run(e.Args);
 
@@ -80,11 +81,11 @@ namespace SacredUtils
             }
             catch (Exception exception)
             {
-                AppLogger.Log.Fatal("\n\n    There was a critical error of the program, sorry please, if the program could not start \n    Please contact MairwunNx, MairwunNx@gmail.com. May be it our problem. Sorry. );\n\n    In extreme cases, write in the VK (rus) or telegram (eng) (telegram \\ vk (@MairwunNx))\n");
+                Log.Fatal("\n\n    There was a critical error of the program, sorry please, if the program could not start \n    Please contact MairwunNx, MairwunNx@gmail.com. May be it our problem. Sorry. );\n\n    In extreme cases, write in the VK (rus) or telegram (eng) (telegram \\ vk (@MairwunNx))\n");
 
-                AppLogger.Log.Fatal(exception.ToString);
+                Log.Fatal(exception.ToString);
 
-                AppLogger.Log.Info("Shutting down SacredUtils configurator ...");
+                Log.Info("Shutting down SacredUtils configurator ...");
 
                 Environment.Exit(0);
             }

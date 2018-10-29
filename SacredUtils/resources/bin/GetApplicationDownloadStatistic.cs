@@ -17,8 +17,6 @@ namespace SacredUtils.resources.bin
                 {
                     try
                     {
-                        Thread.Sleep(1000);
-
                         Directory.CreateDirectory($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils");
 
                         if (File.Exists($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\WhatIsThisDoingHere.su"))
