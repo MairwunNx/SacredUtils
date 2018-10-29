@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Text;
 using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
@@ -28,6 +29,8 @@ namespace SacredUtils.resources.bin
             {
                 File.WriteAllBytes("$SacredUtils\\conf\\hk.orig.txt", Properties.Resources.hk_orig);
             }
+
+            File.WriteAllText("$SacredUtils\\conf\\splashes.txt", Properties.Resources.splashes, Encoding.UTF8);
         }
     }
 }

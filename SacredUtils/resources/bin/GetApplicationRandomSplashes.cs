@@ -6,15 +6,12 @@ namespace SacredUtils.resources.bin
 {
     public static class GetApplicationRandomSplashes
     {
+        static readonly Random Random = new Random();
+        static readonly string[] Splashes = File.ReadAllLines("$SacredUtils\\conf\\splashes.txt", Encoding.UTF8);
+
         public static string GetRandomSplash()
         {
-            File.WriteAllText("$SacredUtils\\conf\\splashes.txt", Properties.Resources.splashes, Encoding.UTF8);
-
-            string[] splashes = File.ReadAllLines("$SacredUtils\\conf\\splashes.txt", Encoding.UTF8);
-
-            Random random = new Random();
-
-            return splashes[random.Next(0, splashes.Length)];
+            return Splashes[Random.Next(0, Splashes.Length)];
         }
     }
 }
