@@ -53,7 +53,7 @@ namespace SacredUtils.resources.prp
                 {
                     AppSettings.ApplicationSettings.ColorTheme = "light";
 
-                    GlobalizedApplication.Instance.StyleManager.SwitchStyle("Light.xaml");
+                    GlobalizedApplication.Instance.StyleManager.SwitchStyle("light.xaml");
 
                     Log.Info("SacredUtils application theme changed state to light by user");
                 }
@@ -62,7 +62,7 @@ namespace SacredUtils.resources.prp
                 {
                     AppSettings.ApplicationSettings.ColorTheme = "dark";
 
-                    GlobalizedApplication.Instance.StyleManager.SwitchStyle("Dark.xaml");
+                    GlobalizedApplication.Instance.StyleManager.SwitchStyle("dark.xaml");
 
                     Log.Info("SacredUtils application theme changed state to dark by user");
                 }
