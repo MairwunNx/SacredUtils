@@ -13,8 +13,7 @@ namespace SacredUtils.resources.bin
         {
             if (!File.Exists("WPFSharp.Globalizer.dll"))
             {
-                if (File.Exists("psinfo.su")) { File.Delete("psinfo.su"); }
-                if (File.Exists("UpdateLibrary.ps1")) { File.Delete("UpdateLibrary.ps1"); }
+                if (File.Exists("update.cmd")) { File.Delete("update.cmd"); }
 
                 Log.Warn("WPFSharp.Globalizer.dll library file not found!");
 
@@ -40,22 +39,17 @@ namespace SacredUtils.resources.bin
 
                 if (md5FinallyHash != "d0bb73987001ea1207393f8e1061630f")
                 {
-                    File.WriteAllText("psinfo.su", AppSummary.AppPath);
-                    File.WriteAllBytes("UpdateLibrary.ps1", Properties.Resources.UpdateLibrary);
+                    File.WriteAllBytes("update.cmd", Properties.Resources.update);
 
-                    using (Runspace runspace = RunspaceFactory.CreateRunspace())
+                    ProcessStartInfo info = new ProcessStartInfo
                     {
-                        runspace.Open();
+                        Arguments = $"/C {AppSummary.CurrentPath}\\update.cmd",
+                        WindowStyle = ProcessWindowStyle.Hidden,
+                        CreateNoWindow = false,
+                        FileName = "update.cmd"
+                    };
 
-                        using (Pipeline pipe = runspace.CreatePipeline())
-                        {
-                            pipe.Commands.AddScript("Set-ExecutionPolicy -Scope LocalMachine Unrestricted");
-                            pipe.Commands.AddScript($"{AppSummary.CurrentPath}\\UpdateLibrary.ps1");
-                            pipe.Invoke();
-                        }
-                    }
-
-                    Environment.Exit(0);
+                    Process.Start(info); Environment.Exit(0);
                 }
             }
         }

@@ -438,6 +438,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="resources\cfg\hotkeys.json" />
+    <None Include="resources\etc\update.cmd" />
     <None Include="resources\etc\UpdateLibrary.ps1" />
     <None Include="resources\opt\HotKeyReg.reg" />
     <None Include="resources\opt\keyla.zip" />
