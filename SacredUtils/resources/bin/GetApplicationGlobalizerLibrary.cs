@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using System.Management.Automation.Runspaces;
 using System.Security.Cryptography;
 using static SacredUtils.AppLogger;
 
