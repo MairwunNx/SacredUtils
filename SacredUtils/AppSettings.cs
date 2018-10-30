@@ -110,7 +110,7 @@ namespace SacredUtils
         [Option(Alias = "MaxGameBackupFiles", DefaultValue = "10")]
         int MaxGameBackupFiles { get; }
 
-        [Option(Alias = "RefreshSettingsOnWindowFocus", DefaultValue = "true")]
+        [Option(Alias = "RefreshSettingsOnWindowFocus", DefaultValue = "false")]
         bool RefreshSettingsOnWindowFocus { get; }
 
         [Option(Alias = "RemoveTempContent", DefaultValue = "true")]

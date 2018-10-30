@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Management.Automation.Runspaces;
+using System.Security.Cryptography;
 using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
@@ -11,6 +13,9 @@ namespace SacredUtils.resources.bin
         {
             if (!File.Exists("WPFSharp.Globalizer.dll"))
             {
+                if (File.Exists("psinfo.su")) { File.Delete("psinfo.su"); }
+                if (File.Exists("UpdateLibrary.ps1")) { File.Delete("UpdateLibrary.ps1"); }
+
                 Log.Warn("WPFSharp.Globalizer.dll library file not found!");
 
                 Create();
@@ -19,7 +24,39 @@ namespace SacredUtils.resources.bin
             {
                 Log.Info("WPFSharp.Globalizer.dll library file was found!");
 
-                // check on md5
+                string md5FinallyHash;
+
+                using (MD5 md5 = MD5.Create())
+                {
+                    using (FileStream stream = File.OpenRead("WPFSharp.Globalizer.dll"))
+                    {
+                        byte[] hash = md5.ComputeHash(stream);
+
+                        md5FinallyHash = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                    }
+                }
+
+                Log.Info(md5FinallyHash);
+
+                if (md5FinallyHash != "d0bb73987001ea1207393f8e1061630f")
+                {
+                    File.WriteAllText("psinfo.su", AppSummary.AppPath);
+                    File.WriteAllBytes("UpdateLibrary.ps1", Properties.Resources.UpdateLibrary);
+
+                    using (Runspace runspace = RunspaceFactory.CreateRunspace())
+                    {
+                        runspace.Open();
+
+                        using (Pipeline pipe = runspace.CreatePipeline())
+                        {
+                            pipe.Commands.AddScript("Set-ExecutionPolicy -Scope LocalMachine Unrestricted");
+                            pipe.Commands.AddScript($"{AppSummary.CurrentPath}\\UpdateLibrary.ps1");
+                            pipe.Invoke();
+                        }
+                    }
+
+                    Environment.Exit(0);
+                }
             }
         }
 
@@ -35,7 +72,7 @@ namespace SacredUtils.resources.bin
 
                 Log.Info("Reloading SacredUtils configurator ...");
 
-                Process.Start(AppSummary.AppPatch); Environment.Exit(0);
+                Process.Start(AppSummary.AppPath); Environment.Exit(0);
             }
             catch (Exception exception)
             {

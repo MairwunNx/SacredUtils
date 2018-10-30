@@ -45,12 +45,12 @@ namespace SacredUtils.resources.bin
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == openDirectory)
             {
                 // ReSharper disable once AssignNullToNotNullAttribute
-                Process.Start(Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName));
+                Process.Start(AppSummary.CurrentPath);
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == reloadSacredUtils)
             {
-                Process.Start(AppSummary.AppPatch); Environment.Exit(0);
+                Process.Start(AppSummary.AppPath); Environment.Exit(0);
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == shutdownSacredUtils)
@@ -60,7 +60,7 @@ namespace SacredUtils.resources.bin
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == fastReloadSacredUtils)
             {
-                Process.Start(AppSummary.AppPatch, " -fast"); Environment.Exit(0);
+                Process.Start(AppSummary.AppPath, " -fast"); Environment.Exit(0);
             }
 
             if (e.Key == Key.F5)

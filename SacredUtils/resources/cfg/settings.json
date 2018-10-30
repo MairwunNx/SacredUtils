@@ -34,7 +34,7 @@
   "MaxApplicationBackupFiles": "10",
   "MaxArchiveFiles": "10",
   "MaxGameBackupFiles": "10",
-  "RefreshSettingsOnWindowFocus": "true",
+  "RefreshSettingsOnWindowFocus": "false",
   "RemoveTempContent": "true",
   "Sacred229PatchInstalled": "false",
   "SacredCheatsEnableArgument": "CHEATS=1",
