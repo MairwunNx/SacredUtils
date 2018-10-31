@@ -1,5 +1,4 @@
 ﻿using EnumsNET;
-using SacredUtils.resources.prp;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -11,11 +10,14 @@ namespace SacredUtils.resources.bin
 {
     public static class ApplicationBaseWindowHotkeys
     {
+        private static int _keyPresses;
+        
         public static void KeyDown(object sender, KeyEventArgs e)
         {
             Enums.TryParse(AppSettings.ApplicationSettings.KeyGotoMainMenu, out Key toMain);
             Enums.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredUtilsLogs, out Key openLogs);
             Enums.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredUtilsSettings, out Key openSettings);
+            Enums.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredGameSettings, out Key openGameSettings);
             Enums.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredUtilsDirectory, out Key openDirectory);
             Enums.TryParse(AppSettings.ApplicationSettings.KeyReloadSacredUtils, out Key reloadSacredUtils);
             Enums.TryParse(AppSettings.ApplicationSettings.KeyShutdownSacredUtils, out Key shutdownSacredUtils);
@@ -42,6 +44,14 @@ namespace SacredUtils.resources.bin
                 }
             }
 
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == openGameSettings)
+            {
+                if (File.Exists(AppSettings.ApplicationSettings.SacredConfigurationFile))
+                {
+                    Process.Start(AppSettings.ApplicationSettings.DefaultOpenLogFileProgram, AppSettings.ApplicationSettings.SacredConfigurationFile);
+                }
+            }
+
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == openDirectory)
             {
                 Process.Start(AppSummary.CurrentPath);
@@ -64,16 +74,7 @@ namespace SacredUtils.resources.bin
 
             if (e.Key == Key.F5)
             {
-                try
-                {
-                    RefreshSettings();
-
-                    Log.Info("Sacred game settings successfully reloaded!");
-                }
-                catch (Exception ex)
-                {
-                    Log.Error(ex.ToString);
-                }
+                RefreshApplicationSettings.Refresh(); Log.Info("Sacred game settings successfully reloaded!");
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.PageDown)
@@ -81,31 +82,10 @@ namespace SacredUtils.resources.bin
                 // force crash for testing crash-report code.
                 // ReSharper disable once ReturnValueOfPureMethodIsNotUsed
 
-                Convert.ToBoolean("1");
+                if (_keyPresses == 1) { Convert.ToBoolean("1"); _keyPresses = 0; }
+
+                if (_keyPresses == 0) { _keyPresses = 1; }
             }
-        }
-
-        public static void RefreshSettings()
-        {
-            MainWindow.ChatStgOne.DataContext = null;
-            MainWindow.FontStgOne.DataContext = null;
-            MainWindow.GamePlayStgOne.DataContext = null;
-            MainWindow.GamePlayStgTwo.DataContext = null;
-            MainWindow.GamePlayStgThree.DataContext = null;
-            MainWindow.GraphicsStgOne.DataContext = null;
-            MainWindow.GraphicsStgTwo.DataContext = null;
-            MainWindow.GraphicsStgThree.DataContext = null;
-            MainWindow.SoundStgOne.DataContext = null;
-
-            MainWindow.ChatStgOne.DataContext = new GameChatSettingsOneProperty();
-            MainWindow.FontStgOne.DataContext = new GameFontSettingsOneProperty();
-            MainWindow.GamePlayStgOne.DataContext = new GamePlaySettingsOneProperty();
-            MainWindow.GamePlayStgTwo.DataContext = new GamePlaySettingsTwoProperty();
-            MainWindow.GamePlayStgThree.DataContext = new GamePlaySettingsThreeProperty();
-            MainWindow.GraphicsStgOne.DataContext = new GameGraphicsSettingsOneProperty();
-            MainWindow.GraphicsStgTwo.DataContext = new GameGraphicsSettingsTwoProperty();
-            MainWindow.GraphicsStgThree.DataContext = new GameGraphicsSettingsThreeProperty();
-            MainWindow.SoundStgOne.DataContext = new GameSoundSettingsOneProperty();
         }
     }
 }

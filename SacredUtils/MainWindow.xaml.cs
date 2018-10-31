@@ -56,7 +56,7 @@ namespace SacredUtils
             MenuStLabel.Click += (s, e) => ChangeApplicationSelectionSettings.SelectSettings(AppStgOne, SettingsPanel);
             MenuPlLabel.Click += (s, e) => ApplicationStartSacredGameFile.StartDialog();
 
-            if (AppSettings.ApplicationSettings.RefreshSettingsOnWindowFocus) { Activated += (s, e) => ApplicationBaseWindowHotkeys.RefreshSettings(); }
+            if (AppSettings.ApplicationSettings.RefreshSettingsOnWindowFocus) { Activated += (s, e) => RefreshApplicationSettings.Refresh(); }
 
             Timeline.DesiredFrameRateProperty.OverrideMetadata(typeof(Timeline), new FrameworkPropertyMetadata { DefaultValue = AppSettings.ApplicationSettings.DesiredFrameRateProperty });
 
