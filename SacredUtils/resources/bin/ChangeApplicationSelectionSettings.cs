@@ -1,7 +1,7 @@
-﻿using System.Linq;
+﻿using MaterialDesignThemes.Wpf;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using MaterialDesignThemes.Wpf;
 using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
