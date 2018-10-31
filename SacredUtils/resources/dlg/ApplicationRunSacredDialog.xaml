@@ -91,6 +91,7 @@
                         Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
                     <Border
+                        x:Name="LaunchSacredButton"
                         Height="28"
                         Margin="21,199,230,0"
                         VerticalAlignment="Top"

@@ -1,5 +1,6 @@
 ﻿using MaterialDesignThemes.Wpf;
 using SacredUtils.resources.dlg;
+using System.IO;
 using System.Windows;
 
 namespace SacredUtils.resources.bin
@@ -12,8 +13,19 @@ namespace SacredUtils.resources.bin
         {
             ApplicationRunSacredDialog applicationRunSacredDialog = new ApplicationRunSacredDialog();
 
-            if (MainWindow.AppStgOne.StartParamsGameCmbBox.SelectedIndex == 0)
+            if (File.Exists(AppSettings.ApplicationSettings.SacredFileName))
             {
+                if (MainWindow.AppStgOne.StartParamsGameCmbBox.SelectedIndex == 0)
+                {
+                    applicationRunSacredDialog.RunWithEngLangCmbBox.IsEnabled = false;
+                    applicationRunSacredDialog.RunWithScreenCmbBox.IsEnabled = false;
+                    applicationRunSacredDialog.RunWithHotkeysCmbBox.IsEnabled = false;
+                }
+            }
+            else
+            {
+                applicationRunSacredDialog.RunWithCheatsCmbBox.IsEnabled = false;
+                applicationRunSacredDialog.LaunchSacredButton.IsEnabled = false;
                 applicationRunSacredDialog.RunWithEngLangCmbBox.IsEnabled = false;
                 applicationRunSacredDialog.RunWithScreenCmbBox.IsEnabled = false;
                 applicationRunSacredDialog.RunWithHotkeysCmbBox.IsEnabled = false;
