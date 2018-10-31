@@ -27,28 +27,20 @@ namespace SacredUtils.resources.bin
         {
             Log.Info("Checking for release SacredUtils application updates ...");
 
-            try
+            string appReleaseVersion = Wc.DownloadString("https://drive.google.com/uc?export=download&id=13N9ZfalxDfTAIdYxFuGBr8QPMW9OODc_");
+
+            Log.Info($"The last received SacredUtils release version {appReleaseVersion}");
+
+            if (!appReleaseVersion.Contains(AppSummary.Version))
             {
-                string appReleaseVersion = Wc.DownloadString("https://drive.google.com/uc?export=download&id=13N9ZfalxDfTAIdYxFuGBr8QPMW9OODc_");
+                Log.Warn($"SacredUtils application {AppSummary.Version} is outdated!");
+                Log.Info($"Downloading SacredUtils application {appReleaseVersion} update ...");
 
-                Log.Info($"The last received SacredUtils release version {appReleaseVersion}");
-
-                if (!appReleaseVersion.Contains(AppSummary.Version))
-                {
-                    Log.Warn($"SacredUtils application {AppSummary.Version} is outdated!");
-                    Log.Info($"Downloading SacredUtils application {appReleaseVersion} update ...");
-
-                    GetUpdate();
-                }
-                else
-                {
-                    Log.Info("SacredUtils application no need to release update!");
-                }
+                GetUpdate();
             }
-            catch (Exception e)
+            else
             {
-                Log.Info("Checking SacredUtils release updates done with error!");
-                Log.Info(e.ToString);
+                Log.Info("SacredUtils application no need to release update!");
             }
         }
 
@@ -56,46 +48,28 @@ namespace SacredUtils.resources.bin
         {
             const string release = @"https://drive.google.com/uc?export=download&id=1sDiiIYW0_JXMqh6IAHMOyf3IKPySCr4Q";
 
-            try
-            {
-                if (File.Exists("_newVersionSacredUtilsTemp.exe"))
-                {
-                    File.Delete("_newVersionSacredUtilsTemp.exe");
-                }
+            if (File.Exists("_newVersionSacredUtilsTemp.exe")) { File.Delete("_newVersionSacredUtilsTemp.exe"); }
 
-                Wc.DownloadFileTaskAsync(new Uri(release), "_newVersionSacredUtilsTemp.exe").Wait();
+            Wc.DownloadFileTaskAsync(new Uri(release), "_newVersionSacredUtilsTemp.exe").Wait();
 
-                Log.Info("Downloading new SacredUtils application update successfully done!");
+            Log.Info("Downloading new SacredUtils application update successfully done!");
 
-                GetUpdateTool();
-            }
-            catch (Exception e)
-            {
-                Log.Error("An error occurred while getting SacredUtils updates!");
-                Log.Error(e.ToString);
-            }
+            GetUpdateTool();
         }
 
         private static void GetUpdateTool()
         {
-            WebClient wc = new WebClient();
+            Wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1Q2syd-44j_VAWDPHnoujdkNl6vRnNADw", "mnxupdater.exe").Wait();
 
-            wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1Q2syd-44j_VAWDPHnoujdkNl6vRnNADw", "mnxupdater.exe").Wait();
-
-            try
+            Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
             {
-                Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                foreach (Window window in Application.Current.Windows)
                 {
-                    foreach (Window window in Application.Current.Windows)
-                    {
-                        ((MainWindow)window).UpdateLbl.Visibility = Visibility.Visible;
-                    }
-                }));
-            }
-            catch (Exception e)
-            {
-                Log.Error(e.ToString);
-            }
+                    ((MainWindow)window).UpdateLbl.Visibility = Visibility.Visible;
+                }
+            }));
+
+            Wc.Dispose();
         }
     }
 }
