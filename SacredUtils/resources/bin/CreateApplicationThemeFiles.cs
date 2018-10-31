@@ -7,10 +7,13 @@ namespace SacredUtils.resources.bin
     {
         public static void Create()
         {
-            File.WriteAllBytes("$SacredUtils\\thms\\light.xaml", Properties.Resources.Light);
-            File.WriteAllBytes("$SacredUtils\\thms\\dark.xaml", Properties.Resources.Dark);
+            if (!AppSettings.ApplicationSettings.DisableReCreatingThemeFiles)
+            {
+                File.WriteAllBytes("$SacredUtils\\thms\\light.xaml", Properties.Resources.Light);
+                File.WriteAllBytes("$SacredUtils\\thms\\dark.xaml", Properties.Resources.Dark);
 
-            Log.Info("SacredUtils theme files was successfully re-created!");
+                Log.Info("SacredUtils theme files was successfully re-created!");
+            }
         }
     }
 }

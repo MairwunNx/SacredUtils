@@ -7,10 +7,13 @@ namespace SacredUtils.resources.bin
     {
         public static void Create()
         {
-            File.WriteAllBytes("$SacredUtils\\lang\\ru-RU\\ru-RU.xaml", Properties.Resources.ru_RU);
-            File.WriteAllBytes("$SacredUtils\\lang\\en-US\\en-US.xaml", Properties.Resources.en_US);
+            if (!AppSettings.ApplicationSettings.DisableReCreatingLangFiles)
+            {
+                File.WriteAllBytes("$SacredUtils\\lang\\ru-RU\\ru-RU.xaml", Properties.Resources.ru_RU);
+                File.WriteAllBytes("$SacredUtils\\lang\\en-US\\en-US.xaml", Properties.Resources.en_US);
 
-            Log.Info("SacredUtils language files was successfully re-created!");
+                Log.Info("SacredUtils language files was successfully re-created!");
+            }
         }
     }
 }

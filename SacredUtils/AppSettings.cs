@@ -38,11 +38,20 @@ namespace SacredUtils
         [Option(Alias = "DisableCachingGameComponents", DefaultValue = "false")]
         bool DisableCachingGameComponents { get; }
 
+        [Option(Alias = "DisableFoolFunnyDay", DefaultValue = "false")]
+        bool DisableFoolFunnyDay { get; }
+
         [Option(Alias = "DisableFootSteps", DefaultValue = "false")]
         bool DisableFootSteps { get; set; }
 
         [Option(Alias = "DisableLogging", DefaultValue = "false")]
         bool DisableLogging { get; }
+
+        [Option(Alias = "DisableReCreatingLangFiles", DefaultValue = "false")]
+        bool DisableReCreatingLangFiles { get; }
+        
+        [Option(Alias = "DisableReCreatingThemeFiles", DefaultValue = "false")]
+        bool DisableReCreatingThemeFiles { get; }
 
         [Option(Alias = "DisableTelemetry", DefaultValue = "false")]
         bool DisableTelemetry { get; }
@@ -115,6 +124,9 @@ namespace SacredUtils
 
         [Option(Alias = "RefreshSettingsOnWindowFocus", DefaultValue = "false")]
         bool RefreshSettingsOnWindowFocus { get; }
+
+        [Option(Alias = "RemoveBackupFilesOnOverflow", DefaultValue = "true")]
+        bool RemoveBackupFilesOnOverflow { get; }
 
         [Option(Alias = "RemoveTempContent", DefaultValue = "true")]
         bool RemoveTempContent { get; }

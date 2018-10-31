@@ -23,7 +23,7 @@
         Margin="5,5,5,5"
         VerticalAlignment="Stretch"
         Background="{DynamicResource ResourceKey=BackgroundColorBrush}">
-        <Grid Background="{DynamicResource ResourceKey=BackgroundColorBrush}">
+        <Grid x:Name="BaseGrid" Background="{DynamicResource ResourceKey=BackgroundColorBrush}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="25" />
                 <RowDefinition Height="*" />
@@ -284,15 +284,7 @@
 
             <!--#endregion-->
 
-            <Image
-                x:Name="NoConnectImage"
-                Grid.Row="1"
-                Width="400"
-                Height="400"
-                IsHitTestVisible="False"
-                Opacity="0.25"
-                Source="{StaticResource ResourceKey=NoInternetConnection}"
-                Visibility="Collapsed" />
+            <!--#region Celebration Content.-->
 
             <Image
                 x:Name="BirthdayImage"
@@ -415,9 +407,9 @@
                 Width="400"
                 Height="400"
                 IsHitTestVisible="False"
-                Opacity="0.45"
+                Opacity="0.25"
                 Source="{StaticResource ResourceKey=GhostDrawingImage}"
-                Visibility="Visible" />
+                Visibility="Collapsed" />
 
             <Image
                 x:Name="JeckLampImage"
@@ -429,7 +421,7 @@
                 Opacity="0.25"
                 RenderTransformOrigin="0.5,0.5"
                 Source="{StaticResource ResourceKey=LanternDrawingImage}"
-                Visibility="Visible">
+                Visibility="Collapsed">
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform />
@@ -439,6 +431,22 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
+
+            <!--#endregion-->
+
+            <!--#region No Connect Image.-->
+
+            <Image
+                x:Name="NoConnectImage"
+                Grid.Row="1"
+                Width="400"
+                Height="400"
+                IsHitTestVisible="False"
+                Opacity="0.25"
+                Source="{StaticResource ResourceKey=NoInternetConnection}"
+                Visibility="Collapsed" />
+
+            <!--#endregion-->
 
             <!--#region Content for page dialogs.-->
 

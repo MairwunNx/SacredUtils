@@ -387,7 +387,7 @@ namespace SacredUtils.resources.pgs
         {
             if (File.Exists(AppSettings.ApplicationSettings.SacredFileName))
             {
-                var versionInfo = FileVersionInfo.GetVersionInfo(AppSettings.ApplicationSettings.SacredFileName);
+                FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(AppSettings.ApplicationSettings.SacredFileName);
 
                 string fileVersion =
                     $"{versionInfo.FileMajorPart}.{versionInfo.FileMinorPart}.{versionInfo.FileBuildPart}.{versionInfo.FilePrivatePart}";

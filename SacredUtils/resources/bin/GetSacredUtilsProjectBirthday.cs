@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Threading;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Threading;
 
 namespace SacredUtils.resources.bin
@@ -15,15 +16,15 @@ namespace SacredUtils.resources.bin
             Set("ProjectBirthDay"); Set("NewYear");
             Set("AuthorBirthDay"); Set("Bar");
             Set("Ireland"); Set("WindDay"); Set("Earth");
-            Set("Halloween");
+            Set("Halloween"); Set("Fun");
         }
 
         private static void Set(string day) 
         {
             if (day == "AuthorBirthDay")
             {
-                var parameterDate = DateTime.ParseExact("02/27", "MM/dd", CultureInfo.InvariantCulture);
-                var todaysDate = DateTime.Today;
+                DateTime parameterDate = DateTime.ParseExact("02/27", "MM/dd", CultureInfo.InvariantCulture);
+                DateTime todaysDate = DateTime.Today;
 
                 if (parameterDate == todaysDate)
                 {
@@ -36,8 +37,8 @@ namespace SacredUtils.resources.bin
 
             if (day == "ProjectBirthDay")
             {
-                var parameterDate = DateTime.ParseExact("10/15", "MM/dd", CultureInfo.InvariantCulture);
-                var todaysDate = DateTime.Today;
+                DateTime parameterDate = DateTime.ParseExact("10/15", "MM/dd", CultureInfo.InvariantCulture);
+                DateTime todaysDate = DateTime.Today;
 
                 if (parameterDate == todaysDate)
                 {
@@ -50,8 +51,8 @@ namespace SacredUtils.resources.bin
 
             if (day == "NewYear")
             {
-                var parameterDate = DateTime.ParseExact("01/01", "MM/dd", CultureInfo.InvariantCulture);
-                var todaysDate = DateTime.Today;
+                DateTime parameterDate = DateTime.ParseExact("01/01", "MM/dd", CultureInfo.InvariantCulture);
+                DateTime todaysDate = DateTime.Today;
 
                 if (parameterDate == todaysDate)
                 {
@@ -70,8 +71,8 @@ namespace SacredUtils.resources.bin
 
             if (day == "Bar")
             {
-                var parameterDate = DateTime.ParseExact("02/06", "MM/dd", CultureInfo.InvariantCulture);
-                var todaysDate = DateTime.Today;
+                DateTime parameterDate = DateTime.ParseExact("02/06", "MM/dd", CultureInfo.InvariantCulture);
+                DateTime todaysDate = DateTime.Today;
 
                 if (parameterDate == todaysDate)
                 {
@@ -84,8 +85,8 @@ namespace SacredUtils.resources.bin
 
             if (day == "Ireland")
             {
-                var parameterDate = DateTime.ParseExact("03/17", "MM/dd", CultureInfo.InvariantCulture);
-                var todaysDate = DateTime.Today;
+                DateTime parameterDate = DateTime.ParseExact("03/17", "MM/dd", CultureInfo.InvariantCulture);
+                DateTime todaysDate = DateTime.Today;
 
                 if (parameterDate == todaysDate)
                 {
@@ -98,8 +99,8 @@ namespace SacredUtils.resources.bin
 
             if (day == "Earth")
             {
-                var parameterDate = DateTime.ParseExact("03/20", "MM/dd", CultureInfo.InvariantCulture);
-                var todaysDate = DateTime.Today;
+                DateTime parameterDate = DateTime.ParseExact("03/20", "MM/dd", CultureInfo.InvariantCulture);
+                DateTime todaysDate = DateTime.Today;
 
                 if (parameterDate == todaysDate)
                 {
@@ -112,8 +113,8 @@ namespace SacredUtils.resources.bin
 
             if (day == "WindDay")
             {
-                var parameterDate = DateTime.ParseExact("06/15", "MM/dd", CultureInfo.InvariantCulture);
-                var todaysDate = DateTime.Today;
+                DateTime parameterDate = DateTime.ParseExact("06/15", "MM/dd", CultureInfo.InvariantCulture);
+                DateTime todaysDate = DateTime.Today;
 
                 if (parameterDate == todaysDate)
                 {
@@ -126,8 +127,8 @@ namespace SacredUtils.resources.bin
 
             if (day == "Halloween")
             {
-                var parameterDate = DateTime.ParseExact("10/31", "MM/dd", CultureInfo.InvariantCulture);
-                var todaysDate = DateTime.Today;
+                DateTime parameterDate = DateTime.ParseExact("10/31", "MM/dd", CultureInfo.InvariantCulture);
+                DateTime todaysDate = DateTime.Today;
 
                 if (parameterDate == todaysDate)
                 {
@@ -139,6 +140,29 @@ namespace SacredUtils.resources.bin
                             MainWindow.GhostImage.Visibility = 0;
                         }
                     }));
+                }
+            }
+
+            if (day == "Fun")
+            {
+                DateTime parameterDate = DateTime.ParseExact("04/01", "MM/dd", CultureInfo.InvariantCulture);
+                DateTime todaysDate = DateTime.Today;
+
+                if (parameterDate == todaysDate)
+                {
+                    if (AppSettings.ApplicationSettings.DisableFoolFunnyDay)
+                    {
+                        Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                        {
+                            RotateTransform myRotateTransform = new RotateTransform { Angle = 180 };
+
+                            TransformGroup myTransformGroup = new TransformGroup();
+                            myTransformGroup.Children.Add(myRotateTransform);
+
+                            MainWindow.BaseGrid.RenderTransformOrigin = new Point(0.5, 0.5);
+                            MainWindow.BaseGrid.RenderTransform = myTransformGroup;
+                        }));
+                    }
                 }
             }
         }

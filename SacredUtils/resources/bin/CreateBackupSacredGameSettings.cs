@@ -7,11 +7,14 @@ namespace SacredUtils.resources.bin
     {
         public static void Create()
         {
-            if (Directory.GetFiles("$SacredUtils\\back\\cfg-game\\").Length > AppSettings.ApplicationSettings.MaxGameBackupFiles)
+            if (AppSettings.ApplicationSettings.RemoveBackupFilesOnOverflow)
             {
-                foreach (FileInfo dir in new DirectoryInfo("$SacredUtils\\back\\cfg-game\\").EnumerateFiles())
+                if (Directory.GetFiles("$SacredUtils\\back\\cfg-game\\").Length > AppSettings.ApplicationSettings.MaxGameBackupFiles)
                 {
-                    dir.Delete();
+                    foreach (FileInfo dir in new DirectoryInfo("$SacredUtils\\back\\cfg-game\\").EnumerateFiles())
+                    {
+                        dir.Delete();
+                    }
                 }
             }
 
