@@ -343,9 +343,10 @@ namespace SacredUtils.resources.bin
 
         private static void CheckAvailabilityProcess()
         {
-            DispatcherTimer timer = new DispatcherTimer();
-
-            timer.Interval = new TimeSpan(0, 0, AppSettings.ApplicationSettings.DelayCheckingSacredProcess);
+            DispatcherTimer timer = new DispatcherTimer
+            {
+                Interval = new TimeSpan(0, 0, AppSettings.ApplicationSettings.DelayCheckingSacredProcess)
+            };
 
             timer.Tick += (s, e) =>
             {

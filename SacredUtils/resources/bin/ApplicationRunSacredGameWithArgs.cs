@@ -5,11 +5,14 @@ namespace SacredUtils.resources.bin
 {
     public static class ApplicationRunSacredGameWithArgs
     {
+        private static readonly string SacredFileName = AppSettings.ApplicationSettings.SacredFileName;
+        private static readonly string SacredCheatArg = AppSettings.ApplicationSettings.SacredCheatsEnableArgument;
+        
         public static void Run(string[] args)
         {
             if (args.Contains("-cheats"))
             {
-                Process.Start(AppSettings.ApplicationSettings.SacredFileName, AppSettings.ApplicationSettings.SacredCheatsEnableArgument);
+                Process.Start(SacredFileName, SacredCheatArg);
 
                 EnableSwitchingLanguage(args);
                 EnableStretchingScreenshot(args);
@@ -17,7 +20,7 @@ namespace SacredUtils.resources.bin
             }
             else
             {
-                Process.Start(AppSettings.ApplicationSettings.SacredFileName);
+                Process.Start(SacredFileName);
 
                 EnableSwitchingLanguage(args);
                 EnableStretchingScreenshot(args);
