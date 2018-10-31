@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using System.IO;
 using System.Net;
-using System.Threading;
 using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin

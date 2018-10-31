@@ -34,8 +34,6 @@ namespace SacredUtils.resources.bin
                     }
                 }
 
-                Log.Info(md5FinallyHash);
-
                 if (md5FinallyHash != "d0bb73987001ea1207393f8e1061630f")
                 {
                     File.WriteAllBytes("update.cmd", Properties.Resources.update);

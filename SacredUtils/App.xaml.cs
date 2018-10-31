@@ -17,77 +17,64 @@ namespace SacredUtils
         {
             AppSummary.Sw.Start();
 
-            try
+            if (e.Args.Contains("-runGame"))
             {
-                if (e.Args.Contains("-runGame"))
+                Log.Info($"Screenshoting enable with {ScreenWidthDevice}x{ScreenHeightDevice} resolution");
+
+                ApplicationRunSacredGameWithArgs.Run(e.Args);
+
+                Current.StartupUri = new Uri("resources/pgs/InvisibilityWindowForGame.xaml", UriKind.Relative);
+
+                CheckAvailabilityInternetConnection.GetConnect();
+
+                CreateApplicationNeededFolders.Create();
+
+                GetApplicationSettingsValue.Get();
+
+                GetRequiredApplicationFiles.Get();
+
+                Task.Run(() => { GetApplicationDownloadStatistic.Get(); });
+            }
+            else
+            {
+                if (e.Args.Contains("-fast"))
                 {
-                    Log.Info($"Screenshoting enable with {ScreenWidthDevice}x{ScreenHeightDevice} resolution");
-
-                    ApplicationRunSacredGameWithArgs.Run(e.Args);
-
-                    Current.StartupUri = new Uri("resources/pgs/InvisibilityWindowForGame.xaml", UriKind.Relative);
-
-                    CheckAvailabilityInternetConnection.GetConnect();
-
+                    AppLogger.Init(true);
+                }
+                else
+                {
                     CreateApplicationNeededFolders.Create();
 
                     GetApplicationSettingsValue.Get();
 
+                    AppLogger.Init(false);
+
+                    GetStateGlobalExceptionCatching.Get();
+
+                    PrintToLogBaseApplicationInfo.Print();
+
+                    CheckAvailabilityInternetConnection.GetConnect();
+
+                    GetApplicationGlobalizerLibrary.Get();
+
+                    CreateApplicationLanguageFiles.Create();
+
+                    CreateApplicationThemeFiles.Create();
+
+                    CheckAvailabilityGameSettings.Get();
+
+                    CreateBackupApplicationSettings.Create();
+
+                    CreateBackupSacredGameSettings.Create();
+
                     GetRequiredApplicationFiles.Get();
 
-                    Task.Run(() => { GetApplicationDownloadStatistic.Get(); });
+                    CheckAvailabilityUpdateTemp.Get();
                 }
-                else
-                {
-                    if (e.Args.Contains("-fast"))
-                    {
-                        AppLogger.Init(true);
-                    }
-                    else
-                    {
-                        CreateApplicationNeededFolders.Create();
 
-                        GetApplicationSettingsValue.Get();
+                base.OnStartup(e);
 
-                        AppLogger.Init(false);
-
-                        GetStateGlobalExceptionCatching.Get();
-
-                        PrintToLogBaseApplicationInfo.Print();
-
-                        CheckAvailabilityInternetConnection.GetConnect();
-
-                        GetApplicationGlobalizerLibrary.Get();
-
-                        CreateApplicationLanguageFiles.Create();
-
-                        CreateApplicationThemeFiles.Create();
-
-                        CheckAvailabilityGameSettings.Get();
-
-                        CreateBackupApplicationSettings.Create();
-
-                        CreateBackupSacredGameSettings.Create();
-
-                        GetRequiredApplicationFiles.Get();
-
-                        CheckAvailabilityUpdateTemp.Get();
-                    }
-
-                    base.OnStartup(e);
-
-                    Task.Run(() => { GetApplicationDownloadStatistic.Get(); });
-                }
-            }
-            catch (Exception exception)
-            {
-                Log.Fatal("\n\n    There was a critical error of the program, sorry please, if the program could not start \n    Please contact MairwunNx, MairwunNx@gmail.com. May be it our problem. Sorry. );\n\n    In extreme cases, write in the VK (rus) or telegram (eng) (telegram \\ vk (@MairwunNx))\n");
-
-                Log.Fatal(exception.ToString);
-
-                Log.Info("Shutting down SacredUtils configurator ...");
-
-                Environment.Exit(0);
+                Task.Run(() => { GetApplicationDownloadStatistic.Get(); });
             }
         }
     }

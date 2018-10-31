@@ -44,7 +44,6 @@ namespace SacredUtils.resources.bin
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == openDirectory)
             {
-                // ReSharper disable once AssignNullToNotNullAttribute
                 Process.Start(AppSummary.CurrentPath);
             }
 
@@ -75,6 +74,14 @@ namespace SacredUtils.resources.bin
                 {
                     Log.Error(ex.ToString);
                 }
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.PageDown)
+            {
+                // force crash for testing crash-report code.
+                // ReSharper disable once ReturnValueOfPureMethodIsNotUsed
+
+                Convert.ToBoolean("1");
             }
         }
 
