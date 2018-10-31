@@ -14,86 +14,79 @@ namespace SacredUtils.resources.bin
 {
     public static class GetSacredGameComponentFiles
     {
-        static GameGettingComponentsDialog _gameGettingComponentsDialog = new GameGettingComponentsDialog();
-        static string defaultLabelText = _gameGettingComponentsDialog.GettingComponentLabel.Content.ToString();
-        static string defaultLabelExtractText = _gameGettingComponentsDialog.UnpackingComponentLabel.Content.ToString();
+        static readonly GameGettingComponentsDialog GameGettingComponentsDialog = new GameGettingComponentsDialog();
+        static readonly string DefaultLabelText = GameGettingComponentsDialog.GettingComponentLabel.Content.ToString();
+        static readonly string DefaultLabelExtractText = GameGettingComponentsDialog.UnpackingComponentLabel.Content.ToString();
 
         public static void GetComponent(Uri address, string downloadPath, string downloadFileName, string extractFolder, string componentName, string oldFileName, string newFileName)
         {
-            try
+            if (CheckAvailabilityInternetConnection.Connect())
             {
-                if (CheckAvailabilityInternetConnection.Connect())
+                foreach (Window window in Application.Current.Windows)
                 {
-                    foreach (Window window in Application.Current.Windows)
+                    ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
+                    ((MainWindow)window).DialogFrame.Content = GameGettingComponentsDialog;
+                }
+
+                if (AppSettings.ApplicationSettings.ColorTheme == "dark")
+                {
+                    GameGettingComponentsDialog.GetComponentsDialog.DialogTheme = BaseTheme.Dark;
+                }
+
+                if (File.Exists($"{downloadPath}\\{downloadFileName}"))
+                {
+                    GameGettingComponentsDialog.GettingComponentLabel.Visibility = Visibility.Hidden;
+                    GameGettingComponentsDialog.UnpackingComponentLabel.Visibility = Visibility.Visible;
+
+                    GameGettingComponentsDialog.UnpackingComponentLabel.Content = $"{DefaultLabelExtractText} {componentName} (0%) ...";
+
+                    GameGettingComponentsDialog.GetComponentsDialog.IsOpen = true;
+
+                    Task.Run(() =>
                     {
-                        ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
-                        ((MainWindow)window).DialogFrame.Content = _gameGettingComponentsDialog;
-                    }
-
-                    if (AppSettings.ApplicationSettings.ColorTheme == "dark")
-                    {
-                        _gameGettingComponentsDialog.GetComponentsDialog.DialogTheme = BaseTheme.Dark;
-                    }
-
-                    if (File.Exists($"{downloadPath}\\{downloadFileName}"))
-                    {
-                        _gameGettingComponentsDialog.GettingComponentLabel.Visibility = Visibility.Hidden;
-                        _gameGettingComponentsDialog.UnpackingComponentLabel.Visibility = Visibility.Visible;
-
-                        _gameGettingComponentsDialog.UnpackingComponentLabel.Content = $"{defaultLabelExtractText} {componentName} (0%) ...";
-
-                        _gameGettingComponentsDialog.GetComponentsDialog.IsOpen = true;
-
-                        Task.Run(() =>
-                        {
-                            UnpackDownloadedFile(downloadPath, downloadFileName, extractFolder, defaultLabelText, oldFileName, newFileName, componentName);
-                        });
-                    }
-                    else
-                    {
-                        WebClient wc = new WebClient();
-
-                        wc.DownloadProgressChanged += (s, e) =>
-                        {
-                            Application.Current.Dispatcher.Invoke(DispatcherPriority.Send, new ThreadStart(delegate
-                            {
-                                _gameGettingComponentsDialog.GettingComponentLabel.Content = $"{defaultLabelText} {componentName} ({e.ProgressPercentage}%) ...";
-                            }));
-                        };
-
-                        wc.DownloadFileCompleted += (s, e) =>
-                        {
-                            Application.Current.Dispatcher.Invoke(DispatcherPriority.Send, new ThreadStart(delegate
-                            {
-                                _gameGettingComponentsDialog.GettingComponentLabel.Visibility = Visibility.Hidden;
-                                _gameGettingComponentsDialog.UnpackingComponentLabel.Visibility = Visibility.Visible;
-                            }));
-
-                            Task.Run(() => UnpackDownloadedFile(downloadPath, downloadFileName, extractFolder, defaultLabelText, oldFileName, newFileName, componentName));
-
-                            Log.Info($"Loading sacred game component {componentName} successfully done!");
-
-                            wc.Dispose();
-                        };
-
-                        _gameGettingComponentsDialog.GettingComponentLabel.Visibility = Visibility.Visible;
-                        _gameGettingComponentsDialog.UnpackingComponentLabel.Visibility = Visibility.Hidden;
-
-                        _gameGettingComponentsDialog.GettingComponentLabel.Content = $"{defaultLabelText} {componentName} (0%) ...";
-
-                        _gameGettingComponentsDialog.GetComponentsDialog.IsOpen = true;
-
-                        wc.DownloadFileTaskAsync(address, $"{downloadPath}\\{downloadFileName}");
-                    }
+                        UnpackDownloadedFile(downloadPath, downloadFileName, extractFolder, DefaultLabelText, oldFileName, newFileName, componentName);
+                    });
                 }
                 else
                 {
-                    MessageBox.Show("Нет соединения с интернетом \\ No internet connection");
+                    WebClient wc = new WebClient();
+
+                    wc.DownloadProgressChanged += (s, e) =>
+                    {
+                        Application.Current.Dispatcher.Invoke(DispatcherPriority.Send, new ThreadStart(delegate
+                        {
+                            GameGettingComponentsDialog.GettingComponentLabel.Content = $"{DefaultLabelText} {componentName} ({e.ProgressPercentage}%) ...";
+                        }));
+                    };
+
+                    wc.DownloadFileCompleted += (s, e) =>
+                    {
+                        Application.Current.Dispatcher.Invoke(DispatcherPriority.Send, new ThreadStart(delegate
+                        {
+                            GameGettingComponentsDialog.GettingComponentLabel.Visibility = Visibility.Hidden;
+                            GameGettingComponentsDialog.UnpackingComponentLabel.Visibility = Visibility.Visible;
+                        }));
+
+                        Task.Run(() => UnpackDownloadedFile(downloadPath, downloadFileName, extractFolder, DefaultLabelText, oldFileName, newFileName, componentName));
+
+                        Log.Info($"Loading sacred game component {componentName} successfully done!");
+
+                        wc.Dispose();
+                    };
+
+                    GameGettingComponentsDialog.GettingComponentLabel.Visibility = Visibility.Visible;
+                    GameGettingComponentsDialog.UnpackingComponentLabel.Visibility = Visibility.Hidden;
+
+                    GameGettingComponentsDialog.GettingComponentLabel.Content = $"{DefaultLabelText} {componentName} (0%) ...";
+
+                    GameGettingComponentsDialog.GetComponentsDialog.IsOpen = true;
+
+                    wc.DownloadFileTaskAsync(address, $"{downloadPath}\\{downloadFileName}");
                 }
             }
-            catch (Exception e)
+            else
             {
-                Log.Error(e.ToString());
+                MessageBox.Show("Нет соединения с интернетом \\ No internet connection");
             }
         }
 
@@ -111,7 +104,7 @@ namespace SacredUtils.resources.bin
                         {
                             Application.Current.Dispatcher.Invoke(DispatcherPriority.Send, new ThreadStart(delegate
                             {
-                                _gameGettingComponentsDialog.UnpackingComponentLabel.Content = $"{defaultLabelExtractText} {componentName} ({(int)((e.BytesTransferred * 100) / e.TotalBytesToTransfer)}%) ...";
+                                GameGettingComponentsDialog.UnpackingComponentLabel.Content = $"{DefaultLabelExtractText} {componentName} ({(int)((e.BytesTransferred * 100) / e.TotalBytesToTransfer)}%) ...";
                             }));
                         }
                     };
@@ -135,9 +128,9 @@ namespace SacredUtils.resources.bin
 
                 Application.Current.Dispatcher.Invoke(DispatcherPriority.Send, new ThreadStart(delegate
                 {
-                    _gameGettingComponentsDialog.GetComponentsDialog.IsOpen = false;
-                    _gameGettingComponentsDialog.GettingComponentLabel.Content = defaultLabelTextArg;
-                    _gameGettingComponentsDialog.UnpackingComponentLabel.Content = defaultLabelExtractText;
+                    GameGettingComponentsDialog.GetComponentsDialog.IsOpen = false;
+                    GameGettingComponentsDialog.GettingComponentLabel.Content = defaultLabelTextArg;
+                    GameGettingComponentsDialog.UnpackingComponentLabel.Content = DefaultLabelExtractText;
                 }));
             }
             catch (Exception exception)

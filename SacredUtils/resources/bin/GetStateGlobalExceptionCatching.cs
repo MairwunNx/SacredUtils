@@ -39,23 +39,24 @@ namespace SacredUtils.resources.bin
             {
                 if (CheckAvailabilityInternetConnection.Connect())
                 {
-                    MailMessage mail = new MailMessage();
-                    SmtpClient smtpServer = new SmtpClient("smtp.mail.ru");
+                    using (MailMessage mail = new MailMessage())
+                    {
+                        SmtpClient smtpServer = new SmtpClient("smtp.mail.ru");
 
-                    mail.From = new MailAddress("crashviolator@mail.ru");
-                    mail.To.Add("MairwunNx@gmail.com");
-                    mail.Subject = "SacredUtils Crash-Report";
-                    mail.Body = $"SacredUtils Crash-Report from user {Environment.UserName}.";
+                        mail.From = new MailAddress("crashviolator@mail.ru");
+                        mail.To.Add("MairwunNx@gmail.com");
+                        mail.Subject = "SacredUtils Crash-Report";
+                        mail.Body = $"SacredUtils Crash-Report from user {Environment.UserName}.";
 
-                    Attachment attachment;
-                    attachment = new Attachment($"$SacredUtils\\crash-reports\\crash-{now.ToString(AppSettings.ApplicationSettings.ScreenShotSaveFilePattern)}-su.txt");
-                    mail.Attachments.Add(attachment);
+                        Attachment attachment = new Attachment($"$SacredUtils\\crash-reports\\crash-{now.ToString(AppSettings.ApplicationSettings.ScreenShotSaveFilePattern)}-su.txt");
+                        mail.Attachments.Add(attachment);
 
-                    smtpServer.Port = 587;
-                    smtpServer.Credentials = new NetworkCredential("crashviolator@mail.ru", "trAVypLMf2DkCv2");
-                    smtpServer.EnableSsl = true;
+                        smtpServer.Port = 587;
+                        smtpServer.Credentials = new NetworkCredential("crashviolator@mail.ru", "trAVypLMf2DkCv2");
+                        smtpServer.EnableSsl = true;
 
-                    smtpServer.Send(mail);
+                        smtpServer.Send(mail);
+                    }
                 }
             }
             catch (Exception exc)

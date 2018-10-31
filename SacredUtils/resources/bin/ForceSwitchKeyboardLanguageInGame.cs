@@ -33,9 +33,10 @@ namespace SacredUtils.resources.bin
 
         private static void CheckAvailabilityProcess()
         {
-            DispatcherTimer timer = new DispatcherTimer();
-
-            timer.Interval = new TimeSpan(0, 0, AppSettings.ApplicationSettings.DelayCheckingSacredProcess);
+            DispatcherTimer timer = new DispatcherTimer
+            {
+                Interval = new TimeSpan(0, 0, AppSettings.ApplicationSettings.DelayCheckingSacredProcess)
+            };
 
             timer.Tick += (s, e) =>
             {
@@ -49,66 +50,52 @@ namespace SacredUtils.resources.bin
 
         private static void CreateApplication()
         {
-            try
+            File.WriteAllBytes("$SacredUtils\\temp\\keyla.zip", Properties.Resources.keyla);
+
+            Log.Info("Creating keyla switching language application archive done!");
+
+            Directory.CreateDirectory("$SacredUtils\\temp\\keyla\\data");
+
+            Log.Info("Creating keyla switching language application data folder done!");
+
+            using (ZipFile zip = ZipFile.Read("$SacredUtils\\temp\\keyla.zip"))
             {
-                File.WriteAllBytes("$SacredUtils\\temp\\keyla.zip", Properties.Resources.keyla);
-
-                Log.Info("Creating keyla switching language application archive done!");
-
-                Directory.CreateDirectory("$SacredUtils\\temp\\keyla\\data");
-
-                Log.Info("Creating keyla switching language application data folder done!");
-
-                using (ZipFile zip = ZipFile.Read("$SacredUtils\\temp\\keyla.zip"))
+                foreach (ZipEntry e in zip)
                 {
-                    foreach (ZipEntry e in zip)
+                    try
                     {
-                        try
-                        {
-                            e.Extract("$SacredUtils\\temp\\keyla\\data", ExtractExistingFileAction.OverwriteSilently);
-                        }
-                        catch (Exception exception)
-                        {
-                            Log.Error(exception.ToString);
-                        }
+                        e.Extract("$SacredUtils\\temp\\keyla\\data", ExtractExistingFileAction.OverwriteSilently);
                     }
-
-                    zip.Dispose();
+                    catch (Exception exception)
+                    {
+                        Log.Error(exception.ToString);
+                    }
                 }
 
-                Log.Info("Creating keyla switching language application done!");
-
-                File.Delete("$SacredUtils\\temp\\keyla.zip");
-
-                Log.Info("Remove keyla switching language application archive done!");
-
-                Log.Info("Runing keyla switching language application ...");
-
-                Process.Start("$SacredUtils\\temp\\keyla\\data\\keyla.exe");
-
-                CheckAvailabilityProcess();
+                zip.Dispose();
             }
-            catch (Exception e)
-            {
-                Log.Error(e.ToString);
-            }
+
+            Log.Info("Creating keyla switching language application done!");
+
+            File.Delete("$SacredUtils\\temp\\keyla.zip");
+
+            Log.Info("Remove keyla switching language application archive done!");
+
+            Log.Info("Runing keyla switching language application ...");
+
+            Process.Start("$SacredUtils\\temp\\keyla\\data\\keyla.exe");
+
+            CheckAvailabilityProcess();
         }
 
         private static void RemoveApplication()
         {
             foreach (Process process in Process.GetProcessesByName("keyla")) { process.Kill(); }
-            foreach (Process process in Process.GetProcessesByName("ctfmon")) { process.Kill(); }
 
             Log.Info("Shutting down keyla switching language application done!");
 
-            try
-            {
-                Directory.Delete("$SacredUtils\\temp", true);
-            }
-            catch (Exception e)
-            {
-                Log.Error(e.ToString);
-            }
+            try { Directory.Delete("$SacredUtils\\temp", true); }
+            catch (Exception e) { Log.Error(e.ToString); }
         }
     }
 }

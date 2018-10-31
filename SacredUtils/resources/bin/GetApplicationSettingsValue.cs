@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using static SacredUtils.AppLogger;
+﻿using System.IO;
 
 namespace SacredUtils.resources.bin
 {
@@ -10,14 +8,7 @@ namespace SacredUtils.resources.bin
         {
             if (!File.Exists("$SacredUtils\\conf\\settings.json"))
             {
-                try
-                {
-                    File.WriteAllBytes("$SacredUtils\\conf\\settings.json", Properties.Resources.settings);
-                }
-                catch (Exception exception)
-                {
-                    Log.Error(exception.ToString());
-                }
+                File.WriteAllBytes("$SacredUtils\\conf\\settings.json", Properties.Resources.settings);
             }
         }
     }

@@ -6,8 +6,8 @@ namespace SacredUtils.resources.bin
 {
     public static class GetApplicationRandomSplashes
     {
-        static readonly Random Random = new Random();
-        static readonly string[] Splashes = File.ReadAllLines("$SacredUtils\\conf\\splashes.txt", Encoding.UTF8);
+        private static readonly Random Random = new Random();
+        private static readonly string[] Splashes = File.ReadAllLines("$SacredUtils\\conf\\splashes.txt", Encoding.UTF8);
 
         public static string GetRandomSplash()
         {
