@@ -16,11 +16,11 @@ namespace SacredUtils.resources.bin
 {
     public static class ForceStretchSacredGameScreenshot
     {
-        public static bool ArgRun;
+        private static bool _argRun;
 
         public static void RegisterKey(bool argRun)
         {
-            ArgRun = argRun;
+            _argRun = argRun;
 
             try
             {
@@ -40,9 +40,10 @@ namespace SacredUtils.resources.bin
 
         private static void CheckAvailabilityProcess()
         {
-            DispatcherTimer timer = new DispatcherTimer();
-
-            timer.Interval = new TimeSpan(0, 0, AppSettings.ApplicationSettings.DelayCheckingSacredProcess);
+            DispatcherTimer timer = new DispatcherTimer
+            {
+                Interval = new TimeSpan(0, 0, AppSettings.ApplicationSettings.DelayCheckingSacredProcess)
+            };
 
             timer.Tick += (s, e) =>
             {
@@ -70,90 +71,88 @@ namespace SacredUtils.resources.bin
 
         private static void Get(object sender, HotkeyEventArgs e)
         {
-            try
+            if (_argRun)
             {
-                if (ArgRun)
+                if (AppSettings.ApplicationSettings.UseAsyncCreatingScreenshots) { CreateScreenShotAsync(); }
+                else { CreateScreenShot(); }
+            }
+            else
+            {
+                if (AppSettings.ApplicationSettings.UseAsyncCreatingScreenshots) { CreateScreenShotAsync(); }
+                else { CreateScreenShot(); }
+            }
+        }
+
+        private static void CreateScreenShotAsync()
+        {
+            Task.Run(() =>
+            {
+                double screenLeft = SystemParameters.VirtualScreenLeft;
+                double screenTop = SystemParameters.VirtualScreenTop;
+                double screenWidth = SystemParameters.VirtualScreenWidth;
+                double screenHeight = SystemParameters.VirtualScreenHeight;
+
+                using (Bitmap bmp = new Bitmap((int)screenWidth, (int)screenHeight))
                 {
-                    double screenLeft = SystemParameters.VirtualScreenLeft;
-                    double screenTop = SystemParameters.VirtualScreenTop;
-                    double screenWidth = SystemParameters.VirtualScreenWidth;
-                    double screenHeight = SystemParameters.VirtualScreenHeight;
-
-                    using (Bitmap bmp = new Bitmap((int)screenWidth, (int)screenHeight))
+                    using (Graphics g = Graphics.FromImage(bmp))
                     {
-                        using (Graphics g = Graphics.FromImage(bmp))
-                        {
-                            string filename = AppSettings.ApplicationSettings.ScreenShotSaveFilePrefix + DateTime.Now.ToString(AppSettings.ApplicationSettings.ScreenShotSaveFilePattern) + ".png";
+                        string filename = AppSettings.ApplicationSettings.ScreenShotSaveFilePrefix + DateTime.Now.ToString(AppSettings.ApplicationSettings.ScreenShotSaveFilePattern) + ".png";
 
-                            g.CopyFromScreen((int)screenLeft, (int)screenTop, 0, 0, bmp.Size);
+                        g.CopyFromScreen((int)screenLeft, (int)screenTop, 0, 0, bmp.Size);
 
-                            Directory.CreateDirectory(AppSettings.ApplicationSettings.ScreenShotSaveDirectory);
+                        Directory.CreateDirectory(AppSettings.ApplicationSettings.ScreenShotSaveDirectory);
 
-                            Stretch(bmp, App.ScreenWidthDevice, App.ScreenHeightDevice, filename);
-                        }
+                        Stretch(bmp, MainWindow.ScreenWidthDevice, MainWindow.ScreenHeightDevice, filename);
                     }
                 }
-                else
-                {
-                    Task.Run(() =>
-                    {
-                        double screenLeft = SystemParameters.VirtualScreenLeft;
-                        double screenTop = SystemParameters.VirtualScreenTop;
-                        double screenWidth = SystemParameters.VirtualScreenWidth;
-                        double screenHeight = SystemParameters.VirtualScreenHeight;
+            });
+        }
 
-                        using (Bitmap bmp = new Bitmap((int)screenWidth, (int)screenHeight))
-                        {
-                            using (Graphics g = Graphics.FromImage(bmp))
-                            {
-                                string filename = AppSettings.ApplicationSettings.ScreenShotSaveFilePrefix + DateTime.Now.ToString(AppSettings.ApplicationSettings.ScreenShotSaveFilePattern) + ".png";
+        private static void CreateScreenShot()
+        {
+            double screenLeft = SystemParameters.VirtualScreenLeft;
+            double screenTop = SystemParameters.VirtualScreenTop;
+            double screenWidth = SystemParameters.VirtualScreenWidth;
+            double screenHeight = SystemParameters.VirtualScreenHeight;
 
-                                g.CopyFromScreen((int)screenLeft, (int)screenTop, 0, 0, bmp.Size);
-
-                                Directory.CreateDirectory(AppSettings.ApplicationSettings.ScreenShotSaveDirectory);
-
-                                Stretch(bmp, MainWindow.ScreenWidthDevice, MainWindow.ScreenHeightDevice, filename);
-                            }
-                        }
-                    });
-                }
-            }
-            catch (Exception exception)
+            using (Bitmap bmp = new Bitmap((int)screenWidth, (int)screenHeight))
             {
-                Log.Error(exception.ToString);
+                using (Graphics g = Graphics.FromImage(bmp))
+                {
+                    string filename = AppSettings.ApplicationSettings.ScreenShotSaveFilePrefix + DateTime.Now.ToString(AppSettings.ApplicationSettings.ScreenShotSaveFilePattern) + ".png";
+
+                    g.CopyFromScreen((int)screenLeft, (int)screenTop, 0, 0, bmp.Size);
+
+                    Directory.CreateDirectory(AppSettings.ApplicationSettings.ScreenShotSaveDirectory);
+
+                    Stretch(bmp, MainWindow.ScreenWidthDevice, MainWindow.ScreenHeightDevice, filename);
+                }
             }
         }
 
         private static void Stretch(Image image, int width, int height, string fileName)
         {
-            try
+            var destRect = new Rectangle(0, 0, width, height);
+            var destImage = new Bitmap(width, height);
+
+            destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+
+            using (var graphics = Graphics.FromImage(destImage))
             {
-                var destRect = new Rectangle(0, 0, width, height);
-                var destImage = new Bitmap(width, height);
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = SmoothingMode.HighQuality;
+                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
 
-                destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
-
-                using (var graphics = Graphics.FromImage(destImage))
+                using (var wrapMode = new ImageAttributes())
                 {
-                    graphics.CompositingMode = CompositingMode.SourceCopy;
-                    graphics.CompositingQuality = CompositingQuality.HighQuality;
-                    graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                    graphics.SmoothingMode = SmoothingMode.HighQuality;
-                    graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-
-                    using (var wrapMode = new ImageAttributes())
-                    {
-                        wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-                        graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
-                    }
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
                 }
+            }
 
-                Save(destImage, fileName);
-            }
-            catch (Exception e)
-            {
-                Log.Error(e.ToString);
-            }
+            Save(destImage, fileName);
         }
 
         private static void Save(Bitmap capture, string fileName)

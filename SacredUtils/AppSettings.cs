@@ -167,6 +167,9 @@ namespace SacredUtils
         [Option(Alias = "ShowUsedMemoryUpdateInterval", DefaultValue = "2")]
         int ShowUsedMemoryUpdateInterval { get; }
 
+        [Option(Alias = "UseAsyncCreatingScreenshots", DefaultValue = "false")]
+        bool UseAsyncCreatingScreenshots { get; }
+
         [Option(Alias = "UseAsyncLoadFontCollection", DefaultValue = "false")]
         bool UseAsyncLoadFontCollection { get; }
 

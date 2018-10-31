@@ -53,6 +53,7 @@
   "ShowNoConnectionIcon": "true",
   "ShowUsedMemory": "false",
   "ShowUsedMemoryUpdateInterval": "2",
+  "UseAsyncCreatingScreenshots": "false",
   "UseAsyncLoadFontCollection": "false",
   "UseOldSacredTextures": "false",
   "UseStaticBog": "false",
