@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
 namespace SacredUtils.resources.bin
 {
@@ -9,7 +8,7 @@ namespace SacredUtils.resources.bin
         {
             if (AppSettings.ApplicationSettings.RemoveBackupFilesOnOverflow)
             {
-                if (Directory.GetFiles("$SacredUtils\\back\\cfg-game\\").Length > AppSettings.ApplicationSettings.MaxGameBackupFiles)
+                if (Directory.GetFiles("$SacredUtils\\back\\cfg-game\\").Length >= AppSettings.ApplicationSettings.MaxGameBackupFiles)
                 {
                     foreach (FileInfo dir in new DirectoryInfo("$SacredUtils\\back\\cfg-game\\").EnumerateFiles())
                     {
@@ -20,7 +19,7 @@ namespace SacredUtils.resources.bin
 
             if (AppSettings.ApplicationSettings.MakeAutoBackupConfigs)
             {
-                File.Copy(AppSettings.ApplicationSettings.SacredConfigurationFile, $"$SacredUtils\\back\\cfg-game\\config_game_id_{new Random().Next(0, int.MaxValue)}.cfg", true);
+                File.Copy(AppSettings.ApplicationSettings.SacredConfigurationFile, $"$SacredUtils\\back\\cfg-game\\config_game_id_{AppSummary.RandomSession}.cfg", true);
             }
             else
             {

@@ -13,9 +13,10 @@ namespace SacredUtils.resources.pgs
 
         private static void CheckAvailabilityProcess()
         {
-            DispatcherTimer timer = new DispatcherTimer();
-
-            timer.Interval = new TimeSpan(0, 0, 5);
+            DispatcherTimer timer = new DispatcherTimer
+            {
+                Interval = new TimeSpan(0, 0, 5)
+            };
 
             timer.Tick += (s, e) =>
             {
@@ -27,9 +28,6 @@ namespace SacredUtils.resources.pgs
             timer.Start();
         }
 
-        private static void SelfKill()
-        {
-            Environment.Exit(0);
-        }
+        private static void SelfKill() => Environment.Exit(0);
     }
 }

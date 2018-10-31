@@ -16,10 +16,7 @@ namespace SacredUtils.resources.bin
             if (AppSettings.ApplicationSettings.EnableGlobalExceptionCatching) { Subscribe(); }
         }
 
-        private static void Subscribe()
-        {
-            AppDomain.CurrentDomain.UnhandledException += Catch;
-        }
+        private static void Subscribe() => AppDomain.CurrentDomain.UnhandledException += Catch;
 
         private static void Catch(object sender, UnhandledExceptionEventArgs args)
         {

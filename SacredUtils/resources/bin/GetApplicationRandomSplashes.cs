@@ -9,9 +9,6 @@ namespace SacredUtils.resources.bin
         private static readonly Random Random = new Random();
         private static readonly string[] Splashes = File.ReadAllLines("$SacredUtils\\conf\\splashes.txt", Encoding.UTF8);
 
-        public static string GetRandomSplash()
-        {
-            return Splashes[Random.Next(0, Splashes.Length)];
-        }
+        public static string GetRandomSplash() => Splashes[Random.Next(0, Splashes.Length)];
     }
 }

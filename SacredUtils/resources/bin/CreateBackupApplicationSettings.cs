@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
 namespace SacredUtils.resources.bin
 {
@@ -9,7 +8,7 @@ namespace SacredUtils.resources.bin
         {
             if (AppSettings.ApplicationSettings.RemoveBackupFilesOnOverflow)
             {
-                if (Directory.GetFiles("$SacredUtils\\back\\cfg-app").Length > AppSettings.ApplicationSettings.MaxApplicationBackupFiles)
+                if (Directory.GetFiles("$SacredUtils\\back\\cfg-app").Length >= AppSettings.ApplicationSettings.MaxApplicationBackupFiles)
                 {
                     foreach (FileInfo dir in new DirectoryInfo("$SacredUtils\\back\\cfg-app").EnumerateFiles())
                     {
@@ -20,7 +19,7 @@ namespace SacredUtils.resources.bin
 
             if (AppSettings.ApplicationSettings.MakeAutoBackupConfigs)
             {
-                File.Copy("$SacredUtils\\conf\\settings.json", $"$SacredUtils\\back\\cfg-app\\config_app_id_{new Random().Next(0, int.MaxValue)}.cfg", true);
+                File.Copy("$SacredUtils\\conf\\settings.json", $"$SacredUtils\\back\\cfg-app\\config_app_id_{AppSummary.RandomSession}.cfg", true);
             }
             else
             {

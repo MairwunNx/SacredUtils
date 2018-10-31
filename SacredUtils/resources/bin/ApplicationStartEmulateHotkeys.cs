@@ -94,16 +94,6 @@ namespace SacredUtils.resources.bin
             }
         }
 
-        private static void DisableHotkeys(object sender, HotkeyEventArgs e)
-        {
-            DisableHotkeyHandle();
-        }
-
-        private static void EnableHotkeys(object sender, HotkeyEventArgs e)
-        {
-            RegisterHotkeys();
-        }
-
         private static void HandleHotKeys(object sender, HotkeyEventArgs e)
         {
             try
@@ -396,5 +386,9 @@ namespace SacredUtils.resources.bin
                 Log.Error(e.ToString);
             }
         }
+
+        private static void DisableHotkeys(object sender, HotkeyEventArgs e) => DisableHotkeyHandle();
+
+        private static void EnableHotkeys(object sender, HotkeyEventArgs e) => RegisterHotkeys();
     }
 }

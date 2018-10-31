@@ -8,10 +8,7 @@ namespace SacredUtils.resources.dlg
     {
         public ApplicationConverHtmlToSacred() => InitializeComponent();
 
-        private void CopyNickBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Clipboard.SetText(NickTextBox.Text);
-        }
+        private void CopyNickBtn_Click(object sender, RoutedEventArgs e) => Clipboard.SetText(NickTextBox.Text);
 
         private void SelectColorBtn_Click(object sender, RoutedEventArgs e)
         {

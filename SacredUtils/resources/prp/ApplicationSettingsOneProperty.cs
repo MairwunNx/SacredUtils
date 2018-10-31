@@ -87,45 +87,8 @@ namespace SacredUtils.resources.prp
 
             set
             {
-                if (value == "100%")
-                {
-                    ChangeScale(1.0); Log.Info("SacredUtils Ui scale changed state to 100% by user");
-                }
-
-                if (value == "105%")
-                {
-                    ChangeScale(1.05); Log.Info("SacredUtils Ui scale changed state to 105% by user");
-                }
-
-                if (value == "110%")
-                {
-                    ChangeScale(1.10); Log.Info("SacredUtils Ui scale changed state to 110% by user");
-                }
-
-                if (value == "115%")
-                {
-                    ChangeScale(1.15); Log.Info("SacredUtils Ui scale changed state to 115% by user");
-                }
-
-                if (value == "125%")
-                {
-                    ChangeScale(1.25); Log.Info("SacredUtils Ui scale changed state to 125% by user");
-                }
-
-                if (value == "150%")
-                {
-                    ChangeScale(1.50); Log.Info("SacredUtils Ui scale changed state to 150% by user");
-                }
-
-                if (value == "175%")
-                {
-                    ChangeScale(1.75); Log.Info("SacredUtils Ui scale changed state to 175% by user");
-                }
-
-                if (value == "200%")
-                {
-                    ChangeScale(2.0); Log.Info("SacredUtils Ui scale changed state to 200% by user");
-                }
+                ChangeScale(Convert.ToDouble(value.Replace("%", "")) / 100D);
+                Log.Info($"SacredUtils Ui scale changed state to {value} by user");
             }
         }
 

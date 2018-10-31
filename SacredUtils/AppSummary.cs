@@ -14,6 +14,7 @@ namespace SacredUtils
         public static string AppPath     = Assembly.GetExecutingAssembly().Location;
         public static string CurrentPath = Environment.CurrentDirectory;
         public static string CurrentExe  = AppDomain.CurrentDomain.FriendlyName;
+        public static int RandomSession  = new Random().Next(0, int.MaxValue);
         public static Stopwatch Sw       = new Stopwatch();
     }
 }
