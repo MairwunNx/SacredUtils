@@ -27,30 +27,22 @@ namespace SacredUtils.resources.bin
         {
             Log.Info("Checking for alpha SacredUtils application updates ...");
 
-            try
+            string appAlphaVersion = Wc.DownloadString("https://drive.google.com/uc?export=download&id=1Fc0QIxzUn7-ellW5e4_W1Wv05-V1hsJ8");
+
+            Log.Info($"The last received SacredUtils alpha version {appAlphaVersion}");
+
+            if (!appAlphaVersion.Contains(AppSummary.AVersion))
             {
-                string appAlphaVersion = Wc.DownloadString("https://drive.google.com/uc?export=download&id=1Fc0QIxzUn7-ellW5e4_W1Wv05-V1hsJ8");
+                Log.Warn($"SacredUtils application {AppSummary.AVersion} is outdated!");
+                Log.Info($"Downloading SacredUtils application {appAlphaVersion} update ...");
 
-                Log.Info($"The last received SacredUtils alpha version {appAlphaVersion}");
-
-                if (!appAlphaVersion.Contains(AppSummary.AVersion))
-                {
-                    Log.Warn($"SacredUtils application {AppSummary.AVersion} is outdated!");
-                    Log.Info($"Downloading SacredUtils application {appAlphaVersion} update ...");
-
-                    GetUpdate();
-                }
-                else
-                {
-                    Log.Info("SacredUtils application no need to alpha update!");
-
-                    CheckAvailabilityReleaseUpdates.GetPerm();
-                }
+                GetUpdate();
             }
-            catch (Exception e)
+            else
             {
-                Log.Info("Checking SacredUtils alpha updates done with error!");
-                Log.Info(e.ToString);
+                Log.Info("SacredUtils application no need to alpha update!");
+
+                CheckAvailabilityReleaseUpdates.GetPerm();
             }
         }
 
@@ -58,46 +50,28 @@ namespace SacredUtils.resources.bin
         {
             const string release = @"https://drive.google.com/uc?export=download&id=1xZzaj0v41S7nkSXkn4GWoDTkBtzeRc2Y";
 
-            try
-            {
-                if (File.Exists("_newVersionSacredUtilsTemp.exe"))
-                {
-                    File.Delete("_newVersionSacredUtilsTemp.exe");
-                }
+            if (File.Exists("_newVersionSacredUtilsTemp.exe")) { File.Delete("_newVersionSacredUtilsTemp.exe"); }
 
-                Wc.DownloadFileTaskAsync(new Uri(release), "_newVersionSacredUtilsTemp.exe").Wait();
+            Wc.DownloadFileTaskAsync(new Uri(release), "_newVersionSacredUtilsTemp.exe").Wait();
 
-                Log.Info("Downloading new SacredUtils alpha update successfully done!");
+            Log.Info("Downloading new SacredUtils alpha update successfully done!");
 
-                GetUpdateTool();
-            }
-            catch (Exception e)
-            {
-                Log.Error("An error occurred while getting SacredUtils alpha updates!");
-                Log.Error(e.ToString);
-            }
+            GetUpdateTool();
         }
 
         private static void GetUpdateTool()
         {
-            WebClient wc = new WebClient();
+            Wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1Q2syd-44j_VAWDPHnoujdkNl6vRnNADw", "mnxupdater.exe").Wait();
 
-            wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1Q2syd-44j_VAWDPHnoujdkNl6vRnNADw", "mnxupdater.exe").Wait();
-
-            try
+            Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
             {
-                Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                foreach (Window window in Application.Current.Windows)
                 {
-                    foreach (Window window in Application.Current.Windows)
-                    {
-                        ((MainWindow) window).UpdateLbl.Visibility = Visibility.Visible;
-                    }
-                }));
-            }
-            catch (Exception e)
-            {
-                Log.Error(e.ToString);
-            }
+                    ((MainWindow)window).UpdateLbl.Visibility = Visibility.Visible;
+                }
+            }));
+
+            Wc.Dispose();
         }
     }
 }
