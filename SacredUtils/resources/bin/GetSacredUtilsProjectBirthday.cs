@@ -15,6 +15,7 @@ namespace SacredUtils.resources.bin
             Set("ProjectBirthDay"); Set("NewYear");
             Set("AuthorBirthDay"); Set("Bar");
             Set("Ireland"); Set("WindDay"); Set("Earth");
+            Set("Halloween");
         }
 
         private static void Set(string day) 
@@ -119,6 +120,24 @@ namespace SacredUtils.resources.bin
                     Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
                     {
                         if (MainWindow.NoConnectImage.Visibility != 0) { MainWindow.WindDayImage.Visibility = 0; }
+                    }));
+                }
+            }
+
+            if (day == "Halloween")
+            {
+                var parameterDate = DateTime.ParseExact("10/31", "MM/dd", CultureInfo.InvariantCulture);
+                var todaysDate = DateTime.Today;
+
+                if (parameterDate == todaysDate)
+                {
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                    {
+                        if (MainWindow.NoConnectImage.Visibility != 0)
+                        {
+                            MainWindow.JeckLampImage.Visibility = 0; 
+                            MainWindow.GhostImage.Visibility = 0;
+                        }
                     }));
                 }
             }
