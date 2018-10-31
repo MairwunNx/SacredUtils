@@ -218,6 +218,9 @@
     <Compile Include="resources\dlg\ApplicationRunSacredDialog.xaml.cs">
       <DependentUpon>ApplicationRunSacredDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="resources\dlg\ApplicationUnpackModifyDialog.xaml.cs">
+      <DependentUpon>ApplicationUnpackModifyDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="resources\dlg\GameCheckingComponentsDialog.xaml.cs">
       <DependentUpon>GameCheckingComponentsDialog.xaml</DependentUpon>
     </Compile>
@@ -335,6 +338,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="resources\dlg\ApplicationRunSacredDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\dlg\ApplicationUnpackModifyDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

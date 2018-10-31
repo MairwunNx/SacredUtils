@@ -1,20 +1,59 @@
 ﻿using Ionic.Zip;
+using MaterialDesignThemes.Wpf;
 using SacredUtils.resources.arr;
+using SacredUtils.resources.dlg;
 using System;
 using System.IO;
 using System.Net;
+using System.Threading;
+using System.Windows;
+using System.Windows.Threading;
 using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.prp
 {
     public class GameGraphicsSettingsFourProperty
     {
+        public static ApplicationUnpackModifyDialog applicationUnpackModifyDialog = new ApplicationUnpackModifyDialog();
+
+        private static void OpenDialog()
+        {
+            Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+            {
+                foreach (Window window in Application.Current.Windows)
+                {
+                    if (window.GetType() == typeof(MainWindow))
+                    {
+                        ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
+                        ((MainWindow)window).DialogFrame.Content = applicationUnpackModifyDialog;
+                    }
+                }
+
+                if (AppSettings.ApplicationSettings.ColorTheme == "dark")
+                {
+                    applicationUnpackModifyDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
+                }
+
+                applicationUnpackModifyDialog.BaseDialog.IsOpen = true;
+            }));
+        }
+
+        private static void CloseDialog()
+        {
+            Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+            {
+                applicationUnpackModifyDialog.BaseDialog.IsOpen = false;
+            }));
+        }
+
         public bool StaticBog
         {
             get => AppSettings.ApplicationSettings.UseStaticBog;
 
             set
             {
+                OpenDialog();
+
                 if (value)
                 {
                     WebClient wc = new WebClient();
@@ -37,6 +76,10 @@ namespace SacredUtils.resources.prp
 
                     AppSettings.ApplicationSettings.UseStaticBog = false;
                 }
+
+                Thread.Sleep(1000);
+
+                CloseDialog();
             }
         }
 
@@ -46,6 +89,8 @@ namespace SacredUtils.resources.prp
 
             set
             {
+                OpenDialog();
+
                 if (value)
                 {
                     WebClient wc = new WebClient();
@@ -78,6 +123,10 @@ namespace SacredUtils.resources.prp
 
                     AppSettings.ApplicationSettings.UseStaticWater = false;
                 }
+
+                Thread.Sleep(1000);
+
+                CloseDialog();
             }
         }
 
@@ -87,6 +136,8 @@ namespace SacredUtils.resources.prp
 
             set
             {
+                OpenDialog();
+
                 if (value)
                 {
                     WebClient wc = new WebClient();
@@ -124,6 +175,10 @@ namespace SacredUtils.resources.prp
 
                     AppSettings.ApplicationSettings.UseStaticLava = false;
                 }
+
+                Thread.Sleep(1000);
+
+                CloseDialog();
             }
         }
 
@@ -133,6 +188,8 @@ namespace SacredUtils.resources.prp
 
             set
             {
+                OpenDialog();
+
                 if (value)
                 {
                     WebClient wc = new WebClient();
@@ -150,6 +207,10 @@ namespace SacredUtils.resources.prp
 
                     AppSettings.ApplicationSettings.UseOldSacredTextures = false;
                 }
+
+                Thread.Sleep(1000);
+
+                CloseDialog();
             }
         }
 
@@ -159,6 +220,8 @@ namespace SacredUtils.resources.prp
 
             set
             {
+                OpenDialog();
+
                 if (value)
                 {
                     WebClient wc = new WebClient();
@@ -176,6 +239,10 @@ namespace SacredUtils.resources.prp
 
                     AppSettings.ApplicationSettings.DisableFootSteps = false;
                 }
+
+                Thread.Sleep(1000);
+
+                CloseDialog();
             }
         }
 
@@ -185,6 +252,8 @@ namespace SacredUtils.resources.prp
 
             set
             {
+                OpenDialog();
+
                 if (value)
                 {
                     foreach (string file in ArraySacredGameHealthFiles.Files)
@@ -202,6 +271,10 @@ namespace SacredUtils.resources.prp
 
                     UnpackResource("HEALTH.zip", "HEALTH");
                 }
+
+                Thread.Sleep(1000);
+
+                CloseDialog();
             }
         }
 

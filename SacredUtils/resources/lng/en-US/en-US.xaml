@@ -225,4 +225,8 @@
     <sys:String x:Key="String0165">Stretch screenshot to screen resolution</sys:String>
     <sys:String x:Key="String0166">Enable hotkey mode (emulation)</sys:String>
 
+    <!--  Get graphics page 4 content dialog  -->
+    <sys:String x:Key="String0167">Graphics settings</sys:String>
+    <sys:String x:Key="String0168">Applying graphics settings (NaN%) ...</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>
