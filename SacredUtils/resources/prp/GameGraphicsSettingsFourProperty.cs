@@ -14,7 +14,7 @@ namespace SacredUtils.resources.prp
 {
     public class GameGraphicsSettingsFourProperty
     {
-        public static ApplicationUnpackModifyDialog applicationUnpackModifyDialog = new ApplicationUnpackModifyDialog();
+        public static ApplicationUnpackModifyDialog ApplicationUnpackModifyDialog = new ApplicationUnpackModifyDialog();
 
         private static void OpenDialog()
         {
@@ -25,16 +25,16 @@ namespace SacredUtils.resources.prp
                     if (window.GetType() == typeof(MainWindow))
                     {
                         ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
-                        ((MainWindow)window).DialogFrame.Content = applicationUnpackModifyDialog;
+                        ((MainWindow)window).DialogFrame.Content = ApplicationUnpackModifyDialog;
                     }
                 }
 
                 if (AppSettings.ApplicationSettings.ColorTheme == "dark")
                 {
-                    applicationUnpackModifyDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
+                    ApplicationUnpackModifyDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
                 }
 
-                applicationUnpackModifyDialog.BaseDialog.IsOpen = true;
+                ApplicationUnpackModifyDialog.BaseDialog.IsOpen = true;
             }));
         }
 
@@ -42,7 +42,7 @@ namespace SacredUtils.resources.prp
         {
             Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
             {
-                applicationUnpackModifyDialog.BaseDialog.IsOpen = false;
+                ApplicationUnpackModifyDialog.BaseDialog.IsOpen = false;
             }));
         }
 

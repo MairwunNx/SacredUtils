@@ -12,7 +12,7 @@ namespace SacredUtils.resources.bin
 
             Log.Info($"Starting {AppSummary.Name} configurator version {AppSummary.Version}");
             Log.Info($"You have launched an official {AppSummary.Type} build");
-            Log.Info($"Current launched SacredUtils app name {AppDomain.CurrentDomain.FriendlyName}");
+            Log.Info($"Current launched SacredUtils app name {AppSummary.CurrentExe}");
 
             Log.Info(AppDomain.CurrentDomain.IsFullyTrusted // I LOVE PUTIN ❤❤❤❤
                 ? "Current launched SacredUtils application is fully trusted"
@@ -31,7 +31,7 @@ namespace SacredUtils.resources.bin
 
             Log.Info($"SacredUtils current domain assemblies count {AppDomain.CurrentDomain.GetAssemblies().Length}");
 
-            Log.Info("Involved dirs (6) : conf, logs, back, themes, lang");
+            Log.Info("Involved dirs (6) : conf, logs, back, thms, lang");
 
             Log.Info("============================================================");
         }
