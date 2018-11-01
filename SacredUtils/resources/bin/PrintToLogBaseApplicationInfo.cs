@@ -10,7 +10,10 @@ namespace SacredUtils.resources.bin
         {
             Log.Info("============================================================");
 
-            Log.Info($"Starting {AppSummary.Name} configurator version {AppSummary.Version}");
+            Log.Info(AppSummary.Type == "Alpha"
+                ? $"Starting {AppSummary.Name} configurator version {AppSummary.AVersion}"
+                : $"Starting {AppSummary.Name} configurator version {AppSummary.Version}");
+
             Log.Info($"You have launched an official {AppSummary.Type} build");
             Log.Info($"Current launched SacredUtils app name {AppSummary.CurrentExe}");
 
