@@ -113,6 +113,16 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        public static byte[] hk_kesf {
+            get {
+                object obj = ResourceManager.GetObject("hk_kesf", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         public static byte[] hk_keyb {
             get {
                 object obj = ResourceManager.GetObject("hk_keyb", resourceCulture);
@@ -126,6 +136,16 @@ namespace SacredUtils.Properties {
         public static byte[] hk_orig {
             get {
                 object obj = ResourceManager.GetObject("hk_orig", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] hk_orsf {
+            get {
+                object obj = ResourceManager.GetObject("hk_orsf", resourceCulture);
                 return ((byte[])(obj));
             }
         }

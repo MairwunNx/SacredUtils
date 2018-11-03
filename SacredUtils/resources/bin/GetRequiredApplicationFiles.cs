@@ -30,6 +30,16 @@ namespace SacredUtils.resources.bin
                 File.WriteAllBytes("$SacredUtils\\conf\\hk.orig.txt", Properties.Resources.hk_orig);
             }
 
+            if (!File.Exists("$SacredUtils\\conf\\hk.orsf.txt"))
+            {
+                File.WriteAllBytes("$SacredUtils\\conf\\hk.orsf.txt", Properties.Resources.hk_orsf);
+            }
+
+            if (!File.Exists("$SacredUtils\\conf\\hk.kesf.txt"))
+            {
+                File.WriteAllBytes("$SacredUtils\\conf\\hk.kesf.txt", Properties.Resources.hk_kesf);
+            }
+
             File.WriteAllText("$SacredUtils\\conf\\splashes.txt", Properties.Resources.splashes, Encoding.UTF8);
         }
     }

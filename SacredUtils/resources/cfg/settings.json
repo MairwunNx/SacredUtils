@@ -60,6 +60,7 @@
   "UseAsyncCreatingScreenshots": "false",
   "UseAsyncLoadFontCollection": "false",
   "UseOldSacredTextures": "false",
+  "UseSimplifiedHotKeySettings": "true",
   "UseStaticBog": "false",
   "UseStaticLava": "false",
   "UseStaticWater": "false",

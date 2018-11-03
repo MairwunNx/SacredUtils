@@ -41,6 +41,7 @@
                         Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}" />
 
                     <Label
+                        x:Name="BaseLabel"
                         Height="28"
                         Margin="212,63,214,0"
                         VerticalAlignment="Top"

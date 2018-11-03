@@ -188,6 +188,9 @@ namespace SacredUtils
         [Option(Alias = "UseOldSacredTextures", DefaultValue = "false")]
         bool UseOldSacredTextures { get; set; }
 
+        [Option(Alias = "UseSimplifiedHotKeySettings", DefaultValue = "true")]
+        bool UseSimplifiedHotKeySettings { get; }
+
         [Option(Alias = "UseStaticBog", DefaultValue = "false")]
         bool UseStaticBog { get; set; }
 
