@@ -98,6 +98,8 @@ namespace SacredUtils.resources.bin
         {
             if (AppSettings.ApplicationSettings.UseSimplifiedHotKeySettings)
             {
+                NativeMethods.SetForegroundWindow(hWndSacred);
+
                 switch (e.Name)
                 {
                     case "Q": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = Q")); break;
