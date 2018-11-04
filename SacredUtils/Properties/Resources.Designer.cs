@@ -153,6 +153,16 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        public static byte[] hk_setg {
+            get {
+                object obj = ResourceManager.GetObject("hk_setg", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         public static byte[] HotKeyReg {
             get {
                 object obj = ResourceManager.GetObject("HotKeyReg", resourceCulture);

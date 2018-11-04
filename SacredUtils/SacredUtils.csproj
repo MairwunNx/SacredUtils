@@ -184,6 +184,7 @@
     <Compile Include="resources\bin\ApplicationStartUtilityUpdate.cs" />
     <Compile Include="resources\bin\ChangeApplicationSelectionSettings.cs" />
     <Compile Include="resources\bin\ChangeSacredGameSettingsValue.cs" />
+    <Compile Include="resources\bin\ConvertKeyValue.cs" />
     <Compile Include="resources\bin\CreateApplicationNeededFolders.cs" />
     <Compile Include="resources\bin\CreateBackupApplicationSettings.cs" />
     <Compile Include="resources\bin\CreateBackupSacredGameSettings.cs" />
@@ -214,6 +215,7 @@
     <Compile Include="resources\bin\GetSacredGameComponentFiles.cs" />
     <Compile Include="resources\bin\GetSacredUtilsProjectBirthday.cs" />
     <Compile Include="resources\bin\GetStateGlobalExceptionCatching.cs" />
+    <Compile Include="resources\bin\GetSystemKeyValue.cs" />
     <Compile Include="resources\bin\PrintToLogBaseApplicationInfo.cs" />
     <Compile Include="resources\bin\RefreshApplicationSettings.cs" />
     <Compile Include="resources\dlg\ApplicationConverHtmlToSacred.xaml.cs">
@@ -312,6 +314,7 @@
     <Resource Include="resources\cfg\hk.orig.txt" />
     <Resource Include="resources\cfg\hk.orsf.txt" />
     <None Include="resources\cfg\hk.kesf.txt" />
+    <Resource Include="resources\cfg\hk.setg.txt" />
     <Content Include="resources\lib\WPFSharp.Globalizer.dll" />
     <Content Include="resources\lng\en-US\en-US.xaml">
       <SubType>Designer</SubType>

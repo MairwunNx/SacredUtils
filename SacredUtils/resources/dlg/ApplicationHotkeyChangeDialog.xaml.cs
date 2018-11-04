@@ -1,19 +1,114 @@
 ﻿using System.IO;
+using System.Linq;
+using System.Text;
+using System.Windows;
 using System.Windows.Controls;
 
+// ReSharper disable PrivateFieldCanBeConvertedToLocalVariable
 namespace SacredUtils.resources.dlg
 {
     public partial class ApplicationHotkeyChangeDialog
     {
+        private static string[] _gameKeys;
+        private static string[] _systemKeys;
+        private static string[] _hotkeyKeys;
+        private static string _oldSystemText;
+
         public ApplicationHotkeyChangeDialog()
         {
             InitializeComponent();
 
-            OriginalHotkey.ItemsSource = File.ReadAllLines("$SacredUtils\\conf\\hk.orig.txt");
-            NewHotkeyCmbBox.ItemsSource = File.ReadAllLines("$SacredUtils\\conf\\hk.keyb.txt");
+            if (AppSettings.ApplicationSettings.UseSimplifiedHotKeySettings)
+            {
+                NewHotkeyCmbBox.IsEnabled = false;
 
-            NewHotkeyCmbBox.SelectionChanged += (s, e) => GetSelection();
+                NewHotkeyCmbBox.Margin = new Thickness(241, 63, 0, 0);
+                OriginalHotkey.Margin = new Thickness(20, 63, 0, 0);
+
+                _gameKeys = File.ReadAllLines("$SacredUtils\\conf\\hk.orsf.txt");
+                _systemKeys = File.ReadAllLines("$SacredUtils\\conf\\hk.kesf.txt");
+                _hotkeyKeys = File.ReadAllLines("$SacredUtils\\conf\\hk.setg.txt", Encoding.UTF8);
+
+                OriginalHotkey.ItemsSource = _gameKeys;
+                NewHotkeyCmbBox.ItemsSource = _systemKeys;
+
+                BaseLabel.Content = "=";
+
+                OriginalHotkey.SelectionChanged += GetHotKeySetting;
+
+                NewHotkeyCmbBox.SelectionChanged += SaveHotKey;
+            }
+            else
+            {
+                OriginalHotkey.ItemsSource = File.ReadAllLines("$SacredUtils\\conf\\hk.orig.txt");
+                NewHotkeyCmbBox.ItemsSource = File.ReadAllLines("$SacredUtils\\conf\\hk.keyb.txt");
+
+                NewHotkeyCmbBox.SelectionChanged += (s, e) => GetSelection();
+            }
         }
+
+        #region SimplifiedHotKeySettingsCode 
+
+        private void GetHotKeySetting(object sender, SelectionChangedEventArgs e)
+        {
+            NewHotkeyCmbBox.IsEnabled = true;
+
+            string key = (sender as ComboBox)?.SelectedItem as string;
+
+            string prefix = $"{key} = ";
+
+            string line = _hotkeyKeys.FirstOrDefault(x => x.StartsWith(prefix))?.Substring(prefix.Length);
+
+            NewHotkeyCmbBox.Text = line;
+        }
+
+        private void SaveHotKey(object sender, SelectionChangedEventArgs e)
+        {
+            _oldSystemText = NewHotkeyCmbBox.Text;
+
+            if (OriginalHotkey.Text != "")
+            {
+                //string[] text = File.ReadAllLines("$SacredUtils\\conf\\hk.setg.txt", Encoding.UTF8);
+
+                string hotKey = OriginalHotkey.SelectedItem as string;
+
+                string key = (sender as ComboBox)?.SelectedItem as string;
+
+                bool exists = false;
+
+                for (int i = 0; i < _hotkeyKeys.Length; i++)
+                {
+                    if (_hotkeyKeys[i].Contains($" = {key}"))
+                    {
+                        if (hotKey != null && !_hotkeyKeys[i].Contains(hotKey))
+                        {
+                            exists = true;
+
+                            NewHotkeyCmbBox.SelectedItem = _oldSystemText;
+                        }
+                    }
+                }
+
+                for (int i = 0; i < _hotkeyKeys.Length; i++)
+                {
+                    if (exists == false)
+                    {
+                        if (_hotkeyKeys[i].Contains($"{hotKey} = "))
+                        {
+                            _hotkeyKeys[i] = $"{hotKey} = {key}";
+
+                            File.WriteAllLines("$SacredUtils\\conf\\hk.setg.txt", _hotkeyKeys);
+
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        #endregion
+
+        #region DefaultHotKeySettingsCode
 
         private void SetHotkeyValue(object sender, SelectionChangedEventArgs e)
         {
@@ -307,5 +402,7 @@ namespace SacredUtils.resources.dlg
                     break;
             }
         }
+
+        #endregion
     }
 }

@@ -2,7 +2,7 @@ Undead Death Potion
 Mentor Potion
 Viper’s Antidote Potion
 Concentration Potion
-Open Invetory
+Open Inventory
 Open Options
 Game Pause
 Pickup Items

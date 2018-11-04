@@ -40,6 +40,11 @@ namespace SacredUtils.resources.bin
                 File.WriteAllBytes("$SacredUtils\\conf\\hk.kesf.txt", Properties.Resources.hk_kesf);
             }
 
+            if (!File.Exists("$SacredUtils\\conf\\hk.setg.txt"))
+            {
+                File.WriteAllBytes("$SacredUtils\\conf\\hk.setg.txt", Properties.Resources.hk_setg);
+            }
+
             File.WriteAllText("$SacredUtils\\conf\\splashes.txt", Properties.Resources.splashes, Encoding.UTF8);
         }
     }

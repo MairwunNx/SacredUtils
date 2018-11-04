@@ -96,238 +96,275 @@ namespace SacredUtils.resources.bin
 
         private static void HandleHotKeys(object sender, HotkeyEventArgs e)
         {
-            try
+            if (AppSettings.ApplicationSettings.UseSimplifiedHotKeySettings)
             {
-                NativeMethods.SetForegroundWindow(hWndSacred);
-
-                if (e.Name == "Q")
+                switch (e.Name)
                 {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyQ == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyQ);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyQ} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    case "Q": SendKeys.SendWait(GetSystemKeyValue.Get(" = Q")); break;
+                    case "W": SendKeys.SendWait(GetSystemKeyValue.Get(" = W")); break;
+                    case "E": SendKeys.SendWait(GetSystemKeyValue.Get(" = E")); break;
+                    case "R": SendKeys.SendWait(GetSystemKeyValue.Get(" = R")); break;
+                    case "T": SendKeys.SendWait(GetSystemKeyValue.Get(" = T")); break;
+                    case "Y": SendKeys.SendWait(GetSystemKeyValue.Get(" = Y")); break;
+                    case "U": SendKeys.SendWait(GetSystemKeyValue.Get(" = U")); break;
+                    case "I": SendKeys.SendWait(GetSystemKeyValue.Get(" = I")); break;
+                    case "O": SendKeys.SendWait(GetSystemKeyValue.Get(" = O")); break;
+                    case "P": SendKeys.SendWait(GetSystemKeyValue.Get(" = P")); break;
+                    case "A": SendKeys.SendWait(GetSystemKeyValue.Get(" = A")); break;
+                    case "S": SendKeys.SendWait(GetSystemKeyValue.Get(" = S")); break;
+                    case "D": SendKeys.SendWait(GetSystemKeyValue.Get(" = D")); break;
+                    case "F": SendKeys.SendWait(GetSystemKeyValue.Get(" = F")); break;
+                    case "G": SendKeys.SendWait(GetSystemKeyValue.Get(" = G")); break;
+                    case "H": SendKeys.SendWait(GetSystemKeyValue.Get(" = H")); break;
+                    case "J": SendKeys.SendWait(GetSystemKeyValue.Get(" = J")); break;
+                    case "K": SendKeys.SendWait(GetSystemKeyValue.Get(" = K")); break;
+                    case "L": SendKeys.SendWait(GetSystemKeyValue.Get(" = L")); break;
+                    case "Z": SendKeys.SendWait(GetSystemKeyValue.Get(" = Z")); break;
+                    case "X": SendKeys.SendWait(GetSystemKeyValue.Get(" = X")); break;
+                    case "C": SendKeys.SendWait(GetSystemKeyValue.Get(" = C")); break;
+                    case "V": SendKeys.SendWait(GetSystemKeyValue.Get(" = V")); break;
+                    case "B": SendKeys.SendWait(GetSystemKeyValue.Get(" = B")); break;
+                    case "N": SendKeys.SendWait(GetSystemKeyValue.Get(" = N")); break;
+                    case "M": SendKeys.SendWait(GetSystemKeyValue.Get(" = M")); break;
                 }
 
-                if (e.Name == "W")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyW == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyW);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyW} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "E")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyE == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyE);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyE} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "R")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyR == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyR);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyR} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "T")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyT == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyT);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyT} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "Y")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyY == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyY);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyY} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "U")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyU == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyU);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyU} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "I")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyI == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyI);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyI} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "O")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyO == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyO);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyO} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "P")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyP == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyP);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyP} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "A")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyA == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyA);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyA} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "S")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyS == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyS);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyS} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "D")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyD == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyD);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyD} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "F")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyF);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "G")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyG == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyG);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyG} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "H")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyH == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyH);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyH} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "J")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyJ == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyJ);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyJ} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "K")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyK == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyK);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyK} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "L")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyL == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyL);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyL} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "Z")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyZ == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyZ);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyZ} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "X")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyX == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyX);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyX} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "C")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyC == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyC);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyC} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "V")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyV == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyV);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyV} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "B")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyB == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyB);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyN} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
-
-                if (e.Name == "M")
-                {
-                    SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyM == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyM);
-
-                    Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyM} successfully sended to Sacred.exe window");
-
-                    e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
-                }
+                e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
             }
-            catch (Exception exception)
+            else
             {
-                Log.Error(exception.ToString);
+                try
+                {
+                    NativeMethods.SetForegroundWindow(hWndSacred);
+
+                    if (e.Name == "Q")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyQ == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyQ);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyQ} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "W")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyW == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyW);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyW} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "E")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyE == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyE);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyE} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "R")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyR == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyR);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyR} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "T")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyT == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyT);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyT} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "Y")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyY == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyY);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyY} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "U")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyU == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyU);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyU} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "I")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyI == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyI);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyI} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "O")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyO == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyO);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyO} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "P")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyP == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyP);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyP} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "A")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyA == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyA);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyA} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "S")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyS == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyS);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyS} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "D")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyD == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyD);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyD} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "F")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyF == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyF);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyF} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "G")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyG == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyG);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyG} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "H")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyH == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyH);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyH} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "J")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyJ == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyJ);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyJ} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "K")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyK == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyK);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyK} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "L")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyL == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyL);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyL} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "Z")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyZ == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyZ);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyZ} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "X")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyX == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyX);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyX} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "C")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyC == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyC);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyC} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "V")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyV == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyV);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyV} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "B")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyB == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyB);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyN} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+
+                    if (e.Name == "M")
+                    {
+                        SendKeys.SendWait(HotkeySettings.GameHotkeySettings.KeyM == "None" ? "" : HotkeySettings.GameHotkeySettings.KeyM);
+
+                        Log.Info($"Key {HotkeySettings.GameHotkeySettings.KeyM} successfully sended to Sacred.exe window");
+
+                        e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Log.Error(exception.ToString);
+                }
             }
         }
 
