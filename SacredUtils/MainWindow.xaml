@@ -44,7 +44,8 @@
                     HorizontalAlignment="Left"
                     materialDesign:RippleAssist.IsCentered="True"
                     materialDesign:RippleAssist.RippleSizeMultiplier="0.7"
-                    Style="{StaticResource MaterialDesignToolForegroundButton}">
+                    Style="{StaticResource MaterialDesignToolForegroundButton}"
+                    ToolTip="{globalizer:GlobalizedResource String0169}">
                     <materialDesign:PackIcon
                         Width="10"
                         Height="10"
@@ -60,7 +61,8 @@
                     HorizontalAlignment="Left"
                     materialDesign:RippleAssist.IsCentered="True"
                     materialDesign:RippleAssist.RippleSizeMultiplier="0.7"
-                    Style="{StaticResource MaterialDesignToolForegroundButton}">
+                    Style="{StaticResource MaterialDesignToolForegroundButton}"
+                    ToolTip="{globalizer:GlobalizedResource String0170}">
                     <materialDesign:PackIcon
                         Width="10"
                         Height="10"

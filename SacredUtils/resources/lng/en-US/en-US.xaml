@@ -229,4 +229,8 @@
     <sys:String x:Key="String0167">Graphics settings</sys:String>
     <sys:String x:Key="String0168">Applying graphics settings (NaN%) ...</sys:String>
 
+    <!--  Tool tips  -->
+    <sys:String x:Key="String0169">Close</sys:String>
+    <sys:String x:Key="String0170">Minimize</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>

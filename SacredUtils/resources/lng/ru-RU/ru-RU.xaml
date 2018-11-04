@@ -229,4 +229,8 @@
     <sys:String x:Key="String0167">Настройки графики</sys:String>
     <sys:String x:Key="String0168">Применение настроек графики (NaN%) ...</sys:String>
 
+    <!--  Tool tips  -->
+    <sys:String x:Key="String0169">Закрыть</sys:String>
+    <sys:String x:Key="String0170">Свернуть</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>
