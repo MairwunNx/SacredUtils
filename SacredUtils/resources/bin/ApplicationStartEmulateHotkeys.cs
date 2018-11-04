@@ -100,32 +100,32 @@ namespace SacredUtils.resources.bin
             {
                 switch (e.Name)
                 {
-                    case "Q": SendKeys.SendWait(GetSystemKeyValue.Get(" = Q")); break;
-                    case "W": SendKeys.SendWait(GetSystemKeyValue.Get(" = W")); break;
-                    case "E": SendKeys.SendWait(GetSystemKeyValue.Get(" = E")); break;
-                    case "R": SendKeys.SendWait(GetSystemKeyValue.Get(" = R")); break;
-                    case "T": SendKeys.SendWait(GetSystemKeyValue.Get(" = T")); break;
-                    case "Y": SendKeys.SendWait(GetSystemKeyValue.Get(" = Y")); break;
-                    case "U": SendKeys.SendWait(GetSystemKeyValue.Get(" = U")); break;
-                    case "I": SendKeys.SendWait(GetSystemKeyValue.Get(" = I")); break;
-                    case "O": SendKeys.SendWait(GetSystemKeyValue.Get(" = O")); break;
-                    case "P": SendKeys.SendWait(GetSystemKeyValue.Get(" = P")); break;
-                    case "A": SendKeys.SendWait(GetSystemKeyValue.Get(" = A")); break;
-                    case "S": SendKeys.SendWait(GetSystemKeyValue.Get(" = S")); break;
-                    case "D": SendKeys.SendWait(GetSystemKeyValue.Get(" = D")); break;
-                    case "F": SendKeys.SendWait(GetSystemKeyValue.Get(" = F")); break;
-                    case "G": SendKeys.SendWait(GetSystemKeyValue.Get(" = G")); break;
-                    case "H": SendKeys.SendWait(GetSystemKeyValue.Get(" = H")); break;
-                    case "J": SendKeys.SendWait(GetSystemKeyValue.Get(" = J")); break;
-                    case "K": SendKeys.SendWait(GetSystemKeyValue.Get(" = K")); break;
-                    case "L": SendKeys.SendWait(GetSystemKeyValue.Get(" = L")); break;
-                    case "Z": SendKeys.SendWait(GetSystemKeyValue.Get(" = Z")); break;
-                    case "X": SendKeys.SendWait(GetSystemKeyValue.Get(" = X")); break;
-                    case "C": SendKeys.SendWait(GetSystemKeyValue.Get(" = C")); break;
-                    case "V": SendKeys.SendWait(GetSystemKeyValue.Get(" = V")); break;
-                    case "B": SendKeys.SendWait(GetSystemKeyValue.Get(" = B")); break;
-                    case "N": SendKeys.SendWait(GetSystemKeyValue.Get(" = N")); break;
-                    case "M": SendKeys.SendWait(GetSystemKeyValue.Get(" = M")); break;
+                    case "Q": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = Q")); break;
+                    case "W": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = W")); break;
+                    case "E": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = E")); break;
+                    case "R": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = R")); break;
+                    case "T": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = T")); break;
+                    case "Y": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = Y")); break;
+                    case "U": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = U")); break;
+                    case "I": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = I")); break;
+                    case "O": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = O")); break;
+                    case "P": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = P")); break;
+                    case "A": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = A")); break;
+                    case "S": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = S")); break;
+                    case "D": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = D")); break;
+                    case "F": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = F")); break;
+                    case "G": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = G")); break;
+                    case "H": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = H")); break;
+                    case "J": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = J")); break;
+                    case "K": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = K")); break;
+                    case "L": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = L")); break;
+                    case "Z": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = Z")); break;
+                    case "X": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = X")); break;
+                    case "C": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = C")); break;
+                    case "V": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = V")); break;
+                    case "B": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = B")); break;
+                    case "N": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = N")); break;
+                    case "M": SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get(" = M")); break;
                 }
 
                 e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;

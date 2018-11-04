@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SacredUtils.resources.bin
 {
-    public static class GetSystemKeyValue
+    public static class ApplicationHotKeyGetSystemKeyValue
     {
         public static string Get(string value)
         {
@@ -19,7 +19,7 @@ namespace SacredUtils.resources.bin
 
                     string valueKey = Reverse(key.Replace(" = ", "=").Substring(key.IndexOf('=')));
 
-                    keyValue = ConvertKeyValue.Convert(valueKey);
+                    keyValue = ApplicationHotKeyConvertKeyValue.Convert(valueKey);
                 }
             }
 
