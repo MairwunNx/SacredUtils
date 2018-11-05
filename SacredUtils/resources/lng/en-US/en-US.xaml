@@ -233,4 +233,7 @@
     <sys:String x:Key="String0169">Close</sys:String>
     <sys:String x:Key="String0170">Minimize</sys:String>
 
+    <!--  Font sizes menu  -->
+    <sys:String x:Key="String0171">Font sizes</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>

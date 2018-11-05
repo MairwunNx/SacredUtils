@@ -59,6 +59,7 @@
   "ShowUsedMemoryUpdateInterval": "2",
   "UseAsyncCreatingScreenshots": "false",
   "UseAsyncLoadFontCollection": "false",
+  "UseCustomFontSizeValue": "false",
   "UseOldSacredTextures": "false",
   "UseSimplifiedHotKeySettings": "true",
   "UseStaticBog": "false",

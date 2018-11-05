@@ -144,7 +144,7 @@ namespace SacredUtils
         string SacredFileName { get; }
 
         [Option(Alias = "SacredFontSizeArray", DefaultValue = "10|10|12|15|12|12|8")]
-        string SacredFontSizeArray { get; }
+        string SacredFontSizeArray { get; set; }
 
         [Option(Alias = "SacredStartArgs", DefaultValue = 1)]
         int SacredStartArgs { get; set; }
@@ -184,6 +184,9 @@ namespace SacredUtils
 
         [Option(Alias = "UseAsyncLoadFontCollection", DefaultValue = "false")]
         bool UseAsyncLoadFontCollection { get; }
+
+        [Option(Alias = "UseCustomFontSizeValue", DefaultValue = "false")]
+        bool UseCustomFontSizeValue { get; }
 
         [Option(Alias = "UseOldSacredTextures", DefaultValue = "false")]
         bool UseOldSacredTextures { get; set; }

@@ -63,7 +63,9 @@ namespace SacredUtils.resources.bin
                     {
                         if (text1[i].Contains("FONT : 1, \""))
                         {
-                            text1[i] = $"FONT : 1, \"{font}\", {sizes[0]}"; File.WriteAllLines(SacredConfigFile, text1);
+                            text1[i] = $"FONT : 1, \"{font}\", {sizes[0]}";
+
+                            File.WriteAllLines(SacredConfigFile, text1);
                         }
                     }
                 }
@@ -83,7 +85,9 @@ namespace SacredUtils.resources.bin
                     {
                         if (text1[i].Contains("FONT : 2, \""))
                         {
-                            text1[i] = $"FONT : 2, \"{font}\", {sizes[1]}"; File.WriteAllLines(SacredConfigFile, text1);
+                            text1[i] = $"FONT : 2, \"{font}\", {sizes[1]}";
+
+                            File.WriteAllLines(SacredConfigFile, text1);
                         }
                     }
                 }
@@ -103,7 +107,9 @@ namespace SacredUtils.resources.bin
                     {
                         if (text1[i].Contains("FONT : 3, \""))
                         {
-                            text1[i] = $"FONT : 3, \"{font}\", {sizes[2]}"; File.WriteAllLines(SacredConfigFile, text1);
+                            text1[i] = $"FONT : 3, \"{font}\", {sizes[2]}";
+
+                            File.WriteAllLines(SacredConfigFile, text1);
                         }
                     }
                 }
@@ -123,7 +129,9 @@ namespace SacredUtils.resources.bin
                     {
                         if (text1[i].Contains("FONT : 4, \""))
                         {
-                            text1[i] = $"FONT : 4, \"{font}\", {sizes[3]}"; File.WriteAllLines(SacredConfigFile, text1);
+                            text1[i] = $"FONT : 4, \"{font}\", {sizes[3]}";
+
+                            File.WriteAllLines(SacredConfigFile, text1);
                         }
                     }
                 }
@@ -143,7 +151,9 @@ namespace SacredUtils.resources.bin
                     {
                         if (text1[i].Contains("FONT : 5, \""))
                         {
-                            text1[i] = $"FONT : 5, \"{font}\", {sizes[4]}"; File.WriteAllLines(SacredConfigFile, text1);
+                            text1[i] = $"FONT : 5, \"{font}\", {sizes[4]}";
+
+                            File.WriteAllLines(SacredConfigFile, text1);
                         }
                     }
                 }
@@ -163,7 +173,9 @@ namespace SacredUtils.resources.bin
                     {
                         if (text1[i].Contains("FONT : 6, \""))
                         {
-                            text1[i] = $"FONT : 6, \"{font}\", {sizes[5]}"; File.WriteAllLines(SacredConfigFile, text1);
+                            text1[i] = $"FONT : 6, \"{font}\", {sizes[5]}";
+
+                            File.WriteAllLines(SacredConfigFile, text1);
                         }
                     }
                 }
@@ -183,7 +195,9 @@ namespace SacredUtils.resources.bin
                     {
                         if (text1[i].Contains("FONT : 7, \""))
                         {
-                            text1[i] = $"FONT : 7, \"{font}\", {sizes[6]}"; File.WriteAllLines(SacredConfigFile, text1);
+                            text1[i] = $"FONT : 7, \"{font}\", {sizes[6]}";
+
+                            File.WriteAllLines(SacredConfigFile, text1);
                         }
                     }
                 }

@@ -12,9 +12,10 @@
     mc:Ignorable="d">
     <Grid>
         <Border
+            x:Name="Border1"
             Width="810"
             Height="41"
-            Margin="0,195,0,0"
+            Margin="0,169,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
@@ -33,9 +34,10 @@
         </Border>
 
         <Border
+            x:Name="Border2"
             Width="810"
             Height="41"
-            Margin="0,246,0,0"
+            Margin="0,220,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
@@ -65,9 +67,10 @@
         </Border>
 
         <Border
+            x:Name="Border3"
             Width="810"
             Height="41"
-            Margin="0,297,0,0"
+            Margin="0,271,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
@@ -94,9 +97,40 @@
         </Border>
 
         <Border
+            x:Name="Border4"
+            Width="810"
+            Height="41"
+            Margin="0,322,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3">
+            <Grid>
+                <TextBlock
+                    Margin="15,12,195,12"
+                    VerticalAlignment="Center"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0171}" />
+
+                <TextBox
+                    x:Name="FontSizesTxBox"
+                    Height="27"
+                    Margin="625,5,15,0"
+                    VerticalAlignment="Top"
+                    BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
+                    MaxLength="20" />
+            </Grid>
+        </Border>
+
+        <Border
+            x:Name="Border5"
             Width="810"
             Height="92"
-            Margin="0,348,0,0"
+            Margin="0,373,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
