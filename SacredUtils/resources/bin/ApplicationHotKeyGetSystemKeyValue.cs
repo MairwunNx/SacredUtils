@@ -9,7 +9,7 @@ namespace SacredUtils.resources.bin
         public static string Get(string value)
         {
             string[] text = File.ReadAllLines("$SacredUtils\\conf\\hk.setg.txt", Encoding.UTF8);
-            string keyValue = "null";
+            string keyValue = "";
 
             for (int i = 0; i < text.Length; i++)
             {
