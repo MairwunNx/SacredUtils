@@ -12,3 +12,5 @@ Open Help Menu
 Open Journal
 Party Information
 Open World Map
+Heal Companion
+Open Combo Menu

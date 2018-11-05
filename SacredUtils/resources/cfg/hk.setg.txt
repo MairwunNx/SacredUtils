@@ -12,3 +12,5 @@ Open Help Menu = H
 Open Journal = L
 Party Information = N
 Open World Map = M
+Heal Companion = B
+Open Combo Menu = C

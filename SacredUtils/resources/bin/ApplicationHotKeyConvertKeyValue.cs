@@ -22,6 +22,8 @@
                 case "Open Journal"            : returnValue = "L"; break;
                 case "Party Information"       : returnValue = "N"; break;
                 case "Open World Map"          : returnValue = "M"; break;
+                case "Heal Companion"          : returnValue = "B"; break;
+                case "Open Combo Menu"         : returnValue = "C"; break;
             }
 
             return returnValue;
