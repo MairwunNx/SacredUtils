@@ -45,6 +45,11 @@ namespace SacredUtils.resources.bin
                 File.WriteAllBytes("$SacredUtils\\conf\\hk.setg.txt", Properties.Resources.hk_setg);
             }
 
+            if (!File.Exists("$SacredUtils\\conf\\hk.regr.txt"))
+            {
+                File.WriteAllBytes("$SacredUtils\\conf\\hk.regr.txt", Properties.Resources.hk_regr);
+            }
+
             File.WriteAllText("$SacredUtils\\conf\\splashes.txt", Properties.Resources.splashes, Encoding.UTF8);
         }
     }
