@@ -113,7 +113,7 @@
       <HintPath>..\packages\NHotkey.Wpf.1.2.1\lib\net35\NHotkey.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.5.10\lib\net45\NLog.dll</HintPath>
+      <HintPath>..\packages\NLog.4.5.11\lib\net45\NLog.dll</HintPath>
     </Reference>
     <Reference Include="SharpConfig, Version=3.2.8.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\sharpconfig.3.2.8\lib\net20\SharpConfig.dll</HintPath>
@@ -313,6 +313,10 @@
     <Resource Include="resources\cfg\hk.keyb.txt" />
     <Resource Include="resources\cfg\hk.orig.txt" />
     <Resource Include="resources\cfg\hk.orsf.txt" />
+    <Content Include="NLog.config" />
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="resources\cfg\hk.kesf.txt" />
     <Resource Include="resources\cfg\hk.setg.txt" />
     <Resource Include="resources\cfg\hk.regr.txt" />
@@ -460,10 +464,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Content Include="resources\opt\SacredRes2Csv.exe" />
-    <Content Include="NLog.config" />
-    <None Include="NLog.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="resources\cfg\hotkeys.json" />
     <None Include="resources\etc\update.cmd" />
     <None Include="resources\etc\UpdateLibrary.ps1" />
