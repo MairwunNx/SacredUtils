@@ -22,14 +22,14 @@ namespace SacredUtils.resources.prp
                     {
                         List<string> fonts = new InstalledFontCollection().Families.Select(font => font.Name).ToList();
 
-                        fonts.Remove(""); fontss = fonts;
+                        fonts.Remove(""); return fonts;
                     }).Wait();
                 }
                 else
                 {
                     List<string> fonts = new InstalledFontCollection().Families.Select(font => font.Name).ToList();
 
-                    fonts.Remove(""); fontss = fonts;
+                    fonts.Remove(""); return fonts;
                 }
 
                 return fontss;
