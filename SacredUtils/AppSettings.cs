@@ -65,6 +65,9 @@ namespace SacredUtils
         [Option(Alias = "EnableHealthCircles", DefaultValue = "true")]
         bool EnableHealthCircles { get; set; }
 
+        [Option(Alias = "EnableLoggingLoadedSettings", DefaultValue = "false")]
+        bool EnableLoggingLoadedSettings { get; set; }
+
         [Option(Alias = "ForceEnableFullScreenMode", DefaultValue = "true")]
         bool ForceEnableFullScreenMode { get; }
 

@@ -19,6 +19,7 @@
   "EnableArchiveFileCompression": "true",
   "EnableGlobalExceptionCatching": "true",
   "EnableHealthCircles": "false",
+  "EnableLoggingLoadedSettings": "false", 
   "ForceEnableFullScreenMode": "true",
   "GameVoiceover": "false",
   "HotKeyEventArgsHandled": "true",
