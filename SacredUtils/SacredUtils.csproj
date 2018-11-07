@@ -214,8 +214,10 @@
     <Compile Include="resources\bin\GetApplicationThemeValue.cs" />
     <Compile Include="resources\bin\GetSacredGameComponentFiles.cs" />
     <Compile Include="resources\bin\GetSacredGameInstalledLang.cs" />
+    <Compile Include="resources\bin\GetSacredGameInstalledVoiceover.cs" />
     <Compile Include="resources\bin\GetSacredGameLanguageUi.cs" />
     <Compile Include="resources\bin\GetSacredGameSettingValue.cs" />
+    <Compile Include="resources\bin\GetSacredGameVoiceoverLanguage.cs" />
     <Compile Include="resources\bin\GetSacredUtilsProjectBirthday.cs" />
     <Compile Include="resources\bin\GetStateGlobalExceptionCatching.cs" />
     <Compile Include="resources\bin\ApplicationHotKeyGetSystemKeyValue.cs" />
