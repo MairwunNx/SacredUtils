@@ -12,6 +12,7 @@ namespace SacredUtils.resources.bin
     public static class ApplicationBaseWindowHotkeys
     {
         private static int _keyPresses;
+        private static int _keyPressesStat;
         
         public static void KeyDown(object sender, KeyEventArgs e)
         {
@@ -83,27 +84,28 @@ namespace SacredUtils.resources.bin
                 // force crash for testing crash-report code.
                 // ReSharper disable once ReturnValueOfPureMethodIsNotUsed
 
-                if (_keyPresses == 1) { Convert.ToBoolean("1"); _keyPresses = 0; }
-
-                if (_keyPresses == 0) { _keyPresses = 1; }
+                if (_keyPresses == 1) { _keyPresses = 0; Convert.ToBoolean("1"); }
+                else { _keyPresses = 1; }
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.L)
             {
                 // it code get download statistic from SacredUtils stat server.
 
-                if (_keyPresses == 1)
+                if (_keyPressesStat == 1)
                 {
+                    _keyPressesStat = 0;
+
                     string downloadCount = ApplicationGetDownloadStatistics.Get();
 
                     string[] count = downloadCount.Split('{', '}');
 
                     MessageBox.Show(count[1].Replace("\"", "").Replace("SacredUtilsDownloads", "SacredUtils Downloads Count"));
-
-                    _keyPresses = 0; 
                 }
-
-                if (_keyPresses == 0) { _keyPresses = 1; }
+                else
+                {
+                    _keyPressesStat = 1;
+                }
             }
         }
     }
