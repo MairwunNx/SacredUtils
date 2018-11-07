@@ -2,6 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Windows;
 using System.Windows.Input;
 using static SacredUtils.AppLogger;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
@@ -83,6 +84,24 @@ namespace SacredUtils.resources.bin
                 // ReSharper disable once ReturnValueOfPureMethodIsNotUsed
 
                 if (_keyPresses == 1) { Convert.ToBoolean("1"); _keyPresses = 0; }
+
+                if (_keyPresses == 0) { _keyPresses = 1; }
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.L)
+            {
+                // it code get download statistic from SacredUtils stat server.
+
+                if (_keyPresses == 1)
+                {
+                    string downloadCount = ApplicationGetDownloadStatistics.Get();
+
+                    string[] count = downloadCount.Split('{', '}');
+
+                    MessageBox.Show(count[1].Replace("\"", "").Replace("SacredUtilsDownloads", "SacredUtils Downloads Count"));
+
+                    _keyPresses = 0; 
+                }
 
                 if (_keyPresses == 0) { _keyPresses = 1; }
             }
