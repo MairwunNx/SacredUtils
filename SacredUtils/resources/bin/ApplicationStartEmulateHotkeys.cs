@@ -16,7 +16,7 @@ namespace SacredUtils.resources.bin
 {
     public static class ApplicationStartEmulateHotkeys
     {
-        private static readonly IntPtr hWndSacred = NativeMethods.FindWindow(AppSettings.ApplicationSettings.hWndSacred, null);
+        private static readonly IntPtr hWndSacred = NativeMethods.FindWindow(AppSettings.ApplicationSettings.HWndSacredWindowClassId, null);
         private static readonly string[] registerHotKeyList = File.ReadAllLines("$SacredUtils\\conf\\hk.regr.txt");
 
         public static void RegisterMainHotkeys()
@@ -26,7 +26,7 @@ namespace SacredUtils.resources.bin
 
             Log.Info("Register global application MainHotkey successfully done!");
 
-            Thread.Sleep(AppSettings.ApplicationSettings.HotKeyRegisterDelay);
+            Thread.Sleep(AppSettings.ApplicationSettings.HotKeyRegisterGameDelay);
 
             RegisterHotkeys();
         }
@@ -61,7 +61,7 @@ namespace SacredUtils.resources.bin
             {
                 SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get($" = {e.Name}"));
 
-                e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsGameHandled;
             }
             else
             {
@@ -76,7 +76,7 @@ namespace SacredUtils.resources.bin
                     SendKeys.SendWait((string)propertyInfo?.GetValue(HotkeySettings.GameHotkeySettings)); 
                 }
 
-                e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsHandled;
+                e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsGameHandled;
             }
         }
 

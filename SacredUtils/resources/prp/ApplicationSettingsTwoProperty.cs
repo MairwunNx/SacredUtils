@@ -8,11 +8,11 @@ namespace SacredUtils.resources.prp
     {
         public bool UpdateCheck
         {
-            get => AppSettings.ApplicationSettings.CheckAutoUpdate;
+            get => AppSettings.ApplicationSettings.CheckApplicationUpdates;
 
             set
             {
-                AppSettings.ApplicationSettings.CheckAutoUpdate = value;
+                AppSettings.ApplicationSettings.CheckApplicationUpdates = value;
 
                 Log.Info($"Checking for updates changed state to {value} by user");
             }
@@ -32,11 +32,11 @@ namespace SacredUtils.resources.prp
 
         public bool MakeBackup
         {
-            get => AppSettings.ApplicationSettings.MakeAutoBackupConfigs;
+            get => AppSettings.ApplicationSettings.MakeAutoBackupAppGameConfigs;
 
             set
             {
-                AppSettings.ApplicationSettings.MakeAutoBackupConfigs = value;
+                AppSettings.ApplicationSettings.MakeAutoBackupAppGameConfigs = value;
 
                 Log.Info($"Backup making settings changed state to {value} by user");
             }

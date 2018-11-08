@@ -45,7 +45,7 @@ namespace SacredUtils.resources.pgs
                 }
             }
 
-            if (AppSettings.ApplicationSettings.ColorTheme == "dark")
+            if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {
                 applicationPageSelectDialog.PageSelectDialog.DialogTheme = BaseTheme.Dark;
             }
@@ -66,7 +66,7 @@ namespace SacredUtils.resources.pgs
                 }
             }
 
-            if (AppSettings.ApplicationSettings.ColorTheme == "dark")
+            if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {
                 applicationDonateSelectDialog.DonateSelectDialog.DialogTheme = BaseTheme.Dark;
             }
@@ -87,7 +87,7 @@ namespace SacredUtils.resources.pgs
                 }
             }
 
-            if (AppSettings.ApplicationSettings.ColorTheme == "dark")
+            if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {
                 applicationAboutDialog.AboutDialog.DialogTheme = BaseTheme.Dark;
             }

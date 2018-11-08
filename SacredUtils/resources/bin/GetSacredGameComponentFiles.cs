@@ -28,7 +28,7 @@ namespace SacredUtils.resources.bin
                     ((MainWindow)window).DialogFrame.Content = GameGettingComponentsDialog;
                 }
 
-                if (AppSettings.ApplicationSettings.ColorTheme == "dark")
+                if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
                 {
                     GameGettingComponentsDialog.GetComponentsDialog.DialogTheme = BaseTheme.Dark;
                 }

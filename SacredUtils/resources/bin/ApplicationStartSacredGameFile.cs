@@ -13,7 +13,7 @@ namespace SacredUtils.resources.bin
         {
             ApplicationRunSacredDialog applicationRunSacredDialog = new ApplicationRunSacredDialog();
 
-            if (File.Exists(AppSettings.ApplicationSettings.SacredFileName))
+            if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
             {
                 if (MainWindow.AppStgOne.StartParamsGameCmbBox.SelectedIndex == 0)
                 {
@@ -34,7 +34,7 @@ namespace SacredUtils.resources.bin
             MainWindow.DialogFrame.Visibility = Visibility.Visible;
             MainWindow.DialogFrame.Content = applicationRunSacredDialog;
 
-            if (AppSettings.ApplicationSettings.ColorTheme == "dark")
+            if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {
                 applicationRunSacredDialog.AboutDialog.DialogTheme = BaseTheme.Dark;
             }

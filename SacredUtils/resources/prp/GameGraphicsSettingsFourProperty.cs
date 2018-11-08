@@ -29,7 +29,7 @@ namespace SacredUtils.resources.prp
                     }
                 }
 
-                if (AppSettings.ApplicationSettings.ColorTheme == "dark")
+                if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
                 {
                     ApplicationUnpackModifyDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
                 }

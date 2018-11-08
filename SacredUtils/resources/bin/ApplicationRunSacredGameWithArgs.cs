@@ -5,7 +5,7 @@ namespace SacredUtils.resources.bin
 {
     public static class ApplicationRunSacredGameWithArgs
     {
-        private static readonly string SacredFileName = AppSettings.ApplicationSettings.SacredFileName;
+        private static readonly string SacredFileName = AppSettings.ApplicationSettings.SacredExecutableFileName;
         private static readonly string SacredCheatArg = AppSettings.ApplicationSettings.SacredCheatsEnableArgument;
         
         public static void Run(string[] args)

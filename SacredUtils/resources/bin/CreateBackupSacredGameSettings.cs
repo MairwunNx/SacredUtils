@@ -8,7 +8,7 @@ namespace SacredUtils.resources.bin
         {
             if (AppSettings.ApplicationSettings.RemoveBackupFilesOnOverflow)
             {
-                if (Directory.GetFiles("$SacredUtils\\back\\cfg-game\\").Length >= AppSettings.ApplicationSettings.MaxGameBackupFiles)
+                if (Directory.GetFiles("$SacredUtils\\back\\cfg-game\\").Length >= AppSettings.ApplicationSettings.MaxSacredGameBackupFiles)
                 {
                     foreach (FileInfo dir in new DirectoryInfo("$SacredUtils\\back\\cfg-game\\").EnumerateFiles())
                     {
@@ -17,7 +17,7 @@ namespace SacredUtils.resources.bin
                 }
             }
 
-            if (AppSettings.ApplicationSettings.MakeAutoBackupConfigs)
+            if (AppSettings.ApplicationSettings.MakeAutoBackupAppGameConfigs)
             {
                 File.Copy(AppSettings.ApplicationSettings.SacredConfigurationFile, $"$SacredUtils\\back\\cfg-game\\config_game_id_{AppSummary.RandomSession}.cfg", true);
             }

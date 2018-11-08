@@ -20,13 +20,13 @@ namespace SacredUtils.resources.dlg
             {
                 if (RunWithCheatsCmbBox.IsChecked == true)
                 {
-                    if (File.Exists(AppSettings.ApplicationSettings.SacredFileName))
+                    if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
                     {
                         AboutDialog.IsOpen = false;
 
-                        Log.Info($"Starting {AppSettings.ApplicationSettings.SacredFileName} game file with arg CHEATS=1 ...");
+                        Log.Info($"Starting {AppSettings.ApplicationSettings.SacredExecutableFileName} game file with arg CHEATS=1 ...");
                         
-                        Process.Start(AppSettings.ApplicationSettings.SacredFileName, "CHEATS=1");
+                        Process.Start(AppSettings.ApplicationSettings.SacredExecutableFileName, "CHEATS=1");
 
                         EnableSwitchingLanguage();
 
@@ -36,18 +36,18 @@ namespace SacredUtils.resources.dlg
                     }
                     else
                     {
-                        Log.Error($"{AppSettings.ApplicationSettings.SacredFileName} file not found! Move application to game directory!");
+                        Log.Error($"{AppSettings.ApplicationSettings.SacredExecutableFileName} file not found! Move application to game directory!");
                     }
                 }
                 else
                 {
-                    if (File.Exists(AppSettings.ApplicationSettings.SacredFileName))
+                    if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
                     {
                         AboutDialog.IsOpen = false;
 
-                        Log.Info($"Starting {AppSettings.ApplicationSettings.SacredFileName} game file ...");
+                        Log.Info($"Starting {AppSettings.ApplicationSettings.SacredExecutableFileName} game file ...");
 
-                        Process.Start(AppSettings.ApplicationSettings.SacredFileName);
+                        Process.Start(AppSettings.ApplicationSettings.SacredExecutableFileName);
 
                         EnableSwitchingLanguage();
 
@@ -57,7 +57,7 @@ namespace SacredUtils.resources.dlg
                     }
                     else
                     {
-                        Log.Error($"{AppSettings.ApplicationSettings.SacredFileName} file not found! Move application to game directory!");
+                        Log.Error($"{AppSettings.ApplicationSettings.SacredExecutableFileName} file not found! Move application to game directory!");
                     }
                 }
             }
@@ -65,7 +65,7 @@ namespace SacredUtils.resources.dlg
             {
                 if (RunWithCheatsCmbBox.IsChecked == true)
                 {
-                    if (File.Exists(AppSettings.ApplicationSettings.SacredFileName))
+                    if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
                     {
                         AboutDialog.IsOpen = false;
 
@@ -73,9 +73,9 @@ namespace SacredUtils.resources.dlg
 
                         MainWindow.WindowState = WindowState.Minimized;
 
-                        Log.Info($"Starting {AppSettings.ApplicationSettings.SacredFileName} game file with arg CHEATS=1 ...");
+                        Log.Info($"Starting {AppSettings.ApplicationSettings.SacredExecutableFileName} game file with arg CHEATS=1 ...");
 
-                        Process.Start(AppSettings.ApplicationSettings.SacredFileName, "CHEATS=1");
+                        Process.Start(AppSettings.ApplicationSettings.SacredExecutableFileName, "CHEATS=1");
 
                         EnableSwitchingLanguage();
 
@@ -85,12 +85,12 @@ namespace SacredUtils.resources.dlg
                     }
                     else
                     {
-                        Log.Error($"{AppSettings.ApplicationSettings.SacredFileName} file not found! Move application to game directory!");
+                        Log.Error($"{AppSettings.ApplicationSettings.SacredExecutableFileName} file not found! Move application to game directory!");
                     }
                 }
                 else
                 {
-                    if (File.Exists(AppSettings.ApplicationSettings.SacredFileName))
+                    if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
                     {
                         AboutDialog.IsOpen = false;
 
@@ -98,9 +98,9 @@ namespace SacredUtils.resources.dlg
 
                         MainWindow.WindowState = WindowState.Minimized;
 
-                        Log.Info($"Starting {AppSettings.ApplicationSettings.SacredFileName} game file ...");
+                        Log.Info($"Starting {AppSettings.ApplicationSettings.SacredExecutableFileName} game file ...");
 
-                        Process.Start(AppSettings.ApplicationSettings.SacredFileName);
+                        Process.Start(AppSettings.ApplicationSettings.SacredExecutableFileName);
 
                         EnableSwitchingLanguage();
 
@@ -110,7 +110,7 @@ namespace SacredUtils.resources.dlg
                     }
                     else
                     {
-                        Log.Error($"{AppSettings.ApplicationSettings.SacredFileName} file not found! Move application to game directory!");
+                        Log.Error($"{AppSettings.ApplicationSettings.SacredExecutableFileName} file not found! Move application to game directory!");
                     }
                 }
             }
@@ -118,11 +118,11 @@ namespace SacredUtils.resources.dlg
             {
                 if (RunWithCheatsCmbBox.IsChecked == true)
                 {
-                    if (File.Exists(AppSettings.ApplicationSettings.SacredFileName))
+                    if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
                     {
-                        Log.Info($"Starting {AppSettings.ApplicationSettings.SacredFileName} game file with arg CHEATS=1 ...");
+                        Log.Info($"Starting {AppSettings.ApplicationSettings.SacredExecutableFileName} game file with arg CHEATS=1 ...");
 
-                        Process.Start(AppSettings.ApplicationSettings.SacredFileName, "CHEATS=1");
+                        Process.Start(AppSettings.ApplicationSettings.SacredExecutableFileName, "CHEATS=1");
 
                         Log.Info("Param selected: Force shutting down SacredUtils ...");
 
@@ -130,16 +130,16 @@ namespace SacredUtils.resources.dlg
                     }
                     else
                     {
-                        Log.Error($"{AppSettings.ApplicationSettings.SacredFileName} file not found! Move application to game directory!");
+                        Log.Error($"{AppSettings.ApplicationSettings.SacredExecutableFileName} file not found! Move application to game directory!");
                     }
                 }
                 else
                 {
-                    if (File.Exists(AppSettings.ApplicationSettings.SacredFileName))
+                    if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
                     {
-                        Log.Info($"Starting {AppSettings.ApplicationSettings.SacredFileName} game file ...");
+                        Log.Info($"Starting {AppSettings.ApplicationSettings.SacredExecutableFileName} game file ...");
 
-                        Process.Start(AppSettings.ApplicationSettings.SacredFileName);
+                        Process.Start(AppSettings.ApplicationSettings.SacredExecutableFileName);
 
                         Log.Info("Param selected: Force shutting down SacredUtils ...");
 
@@ -147,7 +147,7 @@ namespace SacredUtils.resources.dlg
                     }
                     else
                     {
-                        Log.Error($"{AppSettings.ApplicationSettings.SacredFileName} file not found! Move application to game directory!");
+                        Log.Error($"{AppSettings.ApplicationSettings.SacredExecutableFileName} file not found! Move application to game directory!");
                     }
                 }
             }

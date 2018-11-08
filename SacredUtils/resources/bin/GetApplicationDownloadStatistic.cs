@@ -10,7 +10,7 @@ namespace SacredUtils.resources.bin
     {
         public static void Get()
         {
-            if (!AppSettings.ApplicationSettings.DisableTelemetry)
+            if (!AppSettings.ApplicationSettings.DisableApplicationTelemetry)
             {
                 if (CheckAvailabilityInternetConnection.Connect())
                 {

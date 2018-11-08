@@ -41,7 +41,7 @@ namespace SacredUtils.resources.bin
             MainWindow.DialogFrame.Visibility = Visibility.Visible;
             MainWindow.DialogFrame.Content = applicationLicenseDialog;
 
-            if (AppSettings.ApplicationSettings.ColorTheme == "dark")
+            if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {
                 applicationLicenseDialog.LicenseDialog.DialogTheme = BaseTheme.Dark;
             }

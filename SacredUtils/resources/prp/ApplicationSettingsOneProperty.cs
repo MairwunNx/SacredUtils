@@ -13,19 +13,19 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                if (AppSettings.ApplicationSettings.AppUiLanguage == "based on system")
+                if (AppSettings.ApplicationSettings.ApplicationUiLanguage == "based on system")
                 {
                     return CultureInfo.InstalledUICulture.TwoLetterISOLanguageName == "ru" ? 0 : 1;
                 }
 
-                return AppSettings.ApplicationSettings.AppUiLanguage == "ru" ? 0 : 1;
+                return AppSettings.ApplicationSettings.ApplicationUiLanguage == "ru" ? 0 : 1;
             }
 
             set
             {
                 if (value == 0)
                 {
-                    AppSettings.ApplicationSettings.AppUiLanguage = "ru";
+                    AppSettings.ApplicationSettings.ApplicationUiLanguage = "ru";
 
                     GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage("ru-RU", true);
 
@@ -34,7 +34,7 @@ namespace SacredUtils.resources.prp
 
                 if (value == 1)
                 {
-                    AppSettings.ApplicationSettings.AppUiLanguage = "en";
+                    AppSettings.ApplicationSettings.ApplicationUiLanguage = "en";
 
                     GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage("en-US", true);
 
@@ -45,13 +45,13 @@ namespace SacredUtils.resources.prp
         
         public int Theme
         {
-            get => AppSettings.ApplicationSettings.ColorTheme == "light" ? 0 : 1;
+            get => AppSettings.ApplicationSettings.ApplicationUiColorTheme == "light" ? 0 : 1;
 
             set
             {
                 if (value == 0)
                 {
-                    AppSettings.ApplicationSettings.ColorTheme = "light";
+                    AppSettings.ApplicationSettings.ApplicationUiColorTheme = "light";
 
                     GlobalizedApplication.Instance.StyleManager.SwitchStyle("light.xaml");
 
@@ -60,7 +60,7 @@ namespace SacredUtils.resources.prp
 
                 if (value == 1)
                 {
-                    AppSettings.ApplicationSettings.ColorTheme = "dark";
+                    AppSettings.ApplicationSettings.ApplicationUiColorTheme = "dark";
 
                     GlobalizedApplication.Instance.StyleManager.SwitchStyle("dark.xaml");
 

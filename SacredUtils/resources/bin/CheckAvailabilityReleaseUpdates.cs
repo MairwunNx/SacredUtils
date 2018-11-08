@@ -18,7 +18,7 @@ namespace SacredUtils.resources.bin
             {
                 Log.Info("Checking premission for checking release SacredUtils updates ...");
 
-                if (AppSettings.ApplicationSettings.CheckAutoUpdate) { Get(); }
+                if (AppSettings.ApplicationSettings.CheckApplicationUpdates) { Get(); }
                 else { Log.Warn("SacredUtils is running with disabled checking updates!"); }
             }
         }

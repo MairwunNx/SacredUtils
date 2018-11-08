@@ -12,6 +12,8 @@ using static SacredUtils.AppLogger;
 
 namespace SacredUtils
 {
+    // todo: Добавить возможность из утилиты очистить кеш утилиты.
+
     public partial class MainWindow
     {
         public static int ScreenWidthDevice = Screen.PrimaryScreen.Bounds.Width;

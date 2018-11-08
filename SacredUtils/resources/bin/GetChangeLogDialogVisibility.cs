@@ -13,14 +13,14 @@ namespace SacredUtils.resources.bin
         {
             if (File.Exists("$SacredUtils\\temp\\updated.su"))
             {
-                if (AppSettings.ApplicationSettings.ShowChangeLog)
+                if (AppSettings.ApplicationSettings.ApplicationShowChangeLog)
                 {
                     ApplicationChangeLogDialog applicationChangeLogDialog = new ApplicationChangeLogDialog();
 
                     MainWindow.DialogFrame.Visibility = Visibility.Visible;
                     MainWindow.DialogFrame.Content = applicationChangeLogDialog;
 
-                    if (AppSettings.ApplicationSettings.ColorTheme == "dark")
+                    if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
                     {
                         applicationChangeLogDialog.ChangeLogDialog.DialogTheme = BaseTheme.Dark;
                     }

@@ -150,7 +150,7 @@ namespace SacredUtils.resources.bin
 
                 if (parameterDate == todaysDate)
                 {
-                    if (AppSettings.ApplicationSettings.DisableFoolFunnyDay)
+                    if (AppSettings.ApplicationSettings.DisableCelebrationFunnyDay)
                     {
                         Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
                         {

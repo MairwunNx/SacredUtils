@@ -8,7 +8,7 @@ namespace SacredUtils.resources.bin
 
         public static void Get()
         {
-            if (AppSettings.ApplicationSettings.ShowUsedMemory)
+            if (AppSettings.ApplicationSettings.ApplicationShowUsedMemory)
             {
                 MainWindow.MemoryLbl.Visibility = Visibility.Visible; MainWindow.Timer.Start();
             }

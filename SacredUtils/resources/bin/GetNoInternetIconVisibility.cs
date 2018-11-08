@@ -10,7 +10,7 @@ namespace SacredUtils.resources.bin
 
         public static void Get()
         {
-            if (AppSettings.ApplicationSettings.ShowNoConnectionIcon)
+            if (AppSettings.ApplicationSettings.VisibleNoConnectionImage)
             {
                 if (!CheckAvailabilityInternetConnection.Connect())
                 {

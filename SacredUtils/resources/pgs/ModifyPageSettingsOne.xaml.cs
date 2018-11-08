@@ -68,7 +68,7 @@ namespace SacredUtils.resources.pgs
                     new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/QRe3uOT73XgkeR"),
                     Environment.ExpandEnvironmentVariables("%tmp%"),
                     "SacredPatched228.zip", Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName),
-                    "2.28.01 Patch", "SacredPatched228.exe", AppSettings.ApplicationSettings.SacredFileName);
+                    "2.28.01 Patch", "SacredPatched228.exe", AppSettings.ApplicationSettings.SacredExecutableFileName);
 
                 string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
@@ -98,7 +98,7 @@ namespace SacredUtils.resources.pgs
                     new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/P-gzohuQ3XgkfQ"),
                     Environment.ExpandEnvironmentVariables("%tmp%"),
                     "SacredPatched22914.zip", Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName),
-                    "2.29.14 Patch", "SacredPatched22914.exe", AppSettings.ApplicationSettings.SacredFileName);
+                    "2.29.14 Patch", "SacredPatched22914.exe", AppSettings.ApplicationSettings.SacredExecutableFileName);
 
                 string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
@@ -232,7 +232,7 @@ namespace SacredUtils.resources.pgs
                 }
             }
 
-            if (AppSettings.ApplicationSettings.ColorTheme == "dark")
+            if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {
                 applicationHotkey.HotkeyEditDialog.DialogTheme = BaseTheme.Dark;
             }
@@ -375,7 +375,7 @@ namespace SacredUtils.resources.pgs
                 }
             }
 
-            if (AppSettings.ApplicationSettings.ColorTheme == "dark")
+            if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {
                 applicationConverHtmlToSacred.ConvertColorsDialog.DialogTheme = BaseTheme.Dark;
             }
@@ -385,9 +385,9 @@ namespace SacredUtils.resources.pgs
 
         private void StartCheckingComponentsBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (File.Exists(AppSettings.ApplicationSettings.SacredFileName))
+            if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
             {
-                FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(AppSettings.ApplicationSettings.SacredFileName);
+                FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(AppSettings.ApplicationSettings.SacredExecutableFileName);
 
                 string fileVersion =
                     $"{versionInfo.FileMajorPart}.{versionInfo.FileMinorPart}.{versionInfo.FileBuildPart}.{versionInfo.FilePrivatePart}";
@@ -417,7 +417,7 @@ namespace SacredUtils.resources.pgs
                             }
                         }
 
-                        if (AppSettings.ApplicationSettings.ColorTheme == "dark")
+                        if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
                         {
                             gameCheckingComponentsDialog.CheckComponentsDialog.DialogTheme = BaseTheme.Dark;
                         }

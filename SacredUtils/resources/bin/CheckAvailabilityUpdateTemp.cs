@@ -6,7 +6,7 @@ namespace SacredUtils.resources.bin
     {
         public static void Get()
         {
-            if (AppSettings.ApplicationSettings.RemoveTempContent)
+            if (AppSettings.ApplicationSettings.RemoveApplicationTempContent)
             {
                 if (File.Exists("mnxupdater.exe")) { File.Delete("mnxupdater.exe"); }
 

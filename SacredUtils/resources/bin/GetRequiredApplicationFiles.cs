@@ -8,7 +8,7 @@ namespace SacredUtils.resources.bin
     {
         public static void Get()
         {
-            if (AppSettings.ApplicationSettings.LicenseFileCreate)
+            if (AppSettings.ApplicationSettings.ApplicationLicenseFileCreate)
             {
                 File.WriteAllBytes("License.txt", Properties.Resources.AppLicense);
 

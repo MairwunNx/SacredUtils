@@ -13,7 +13,7 @@ namespace SacredUtils
         {
             if (!fast)
             {
-                if (!AppSettings.ApplicationSettings.DisableLogging && AppSettings.ApplicationSettings.LoggingMethodName)
+                if (!AppSettings.ApplicationSettings.DisableApplicationLogging && AppSettings.ApplicationSettings.ApplicationLoggingMethodName)
                 {
                     LoggingConfiguration config = new LoggingConfiguration();
 
@@ -25,14 +25,14 @@ namespace SacredUtils
                         ArchiveOldFileOnStartup = AppSettings.ApplicationSettings.ArchiveOldFileOnStartup,
                         EnableArchiveFileCompression = AppSettings.ApplicationSettings.EnableArchiveFileCompression,
                         Encoding = Encoding.UTF8,
-                        MaxArchiveFiles = AppSettings.ApplicationSettings.MaxArchiveFiles
+                        MaxArchiveFiles = AppSettings.ApplicationSettings.MaxApplicationArchiveFiles
                     };
 
                     config.AddRule(LogLevel.Info, LogLevel.Fatal, logfile);
 
                     LogManager.Configuration = config;
                 }
-                else if (!AppSettings.ApplicationSettings.DisableLogging)
+                else if (!AppSettings.ApplicationSettings.DisableApplicationLogging)
                 {
                     LoggingConfiguration config = new LoggingConfiguration();
 
@@ -44,7 +44,7 @@ namespace SacredUtils
                         ArchiveOldFileOnStartup = AppSettings.ApplicationSettings.ArchiveOldFileOnStartup,
                         EnableArchiveFileCompression = AppSettings.ApplicationSettings.EnableArchiveFileCompression,
                         Encoding = Encoding.UTF8,
-                        MaxArchiveFiles = AppSettings.ApplicationSettings.MaxArchiveFiles
+                        MaxArchiveFiles = AppSettings.ApplicationSettings.MaxApplicationArchiveFiles
                     };
 
                     config.AddRule(LogLevel.Info, LogLevel.Fatal, logfile);
