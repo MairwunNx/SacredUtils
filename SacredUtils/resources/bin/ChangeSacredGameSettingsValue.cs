@@ -48,19 +48,19 @@ namespace SacredUtils.resources.bin
             {
                 string[] sizes = AppSettings.ApplicationSettings.SacredFontSizeArray.Split('|');
 
-                for (var ii = 0; ii < 8; ii++)
+                for (var i = 0; i < 8; i++)
                 {
-                    int fontSettings = ii + 1;
+                    int fontSettings = i + 1;
 
                     if (File.ReadAllText(SacredConfigFile, Encoding.ASCII).Contains($"FONT : {fontSettings}, \""))
                     {
                         string[] text1 = File.ReadAllLines(SacredConfigFile, Encoding.ASCII);
 
-                        for (int i = 0; i < text1.Length; i++)
+                        for (int j = 0; j < text1.Length; j++)
                         {
-                            if (text1[i].Contains($"FONT : {fontSettings}, \""))
+                            if (text1[j].Contains($"FONT : {fontSettings}, \""))
                             {
-                                text1[i] = $"FONT : {fontSettings}, \"{font}\", {sizes[ii]}";
+                                text1[j] = $"FONT : {fontSettings}, \"{font}\", {sizes[i]}";
 
                                 File.WriteAllLines(SacredConfigFile, text1);
                             }
@@ -70,7 +70,7 @@ namespace SacredUtils.resources.bin
                     {
                         using (StreamWriter file = new StreamWriter(SacredConfigFile, true, Encoding.ASCII))
                         {
-                            file.WriteLine($"FONT : {fontSettings}, \"{font}\", {sizes[ii]}");
+                            file.WriteLine($"FONT : {fontSettings}, \"{font}\", {sizes[i]}");
                         }
                     }
                 }
