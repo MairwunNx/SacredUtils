@@ -53,6 +53,7 @@
   "SacredFontSizeArray": "10|10|12|15|12|12|8",
   "SacredStartArgs": "1",
   "SacredUtilsGuiScale": "1.0",
+  "ScreenShotCreateKey": "PrintScreen",
   "ScreenShotRemoveTgaAndJpgFiles": "true",
   "ScreenShotSaveDirectory": "Capture",
   "ScreenShotSaveFilePattern": "ddMMyyyy-hh-mm-ss-fff",

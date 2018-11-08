@@ -78,7 +78,7 @@ namespace SacredUtils
         bool EnableHealthCircles { get; set; }
 
         [Option(Alias = "EnableLoggingLoadedSettings", DefaultValue = "false")]
-        bool EnableLoggingLoadedSettings { get; set; }
+        bool EnableLoggingLoadedSettings { get; }
 
         [Option(Alias = "ForceEnableFullScreenMode", DefaultValue = "true")]
         bool ForceEnableFullScreenMode { get; }
@@ -166,6 +166,9 @@ namespace SacredUtils
 
         [Option(Alias = "SacredUtilsGuiScale", DefaultValue = "1.0")]
         double SacredUtilsGuiScale { get; set; }
+
+        [Option(Alias = "ScreenShotCreateKey", DefaultValue = "PrintScreen")]
+        string ScreenShotCreateKey { get; }
 
         [Option(Alias = "ScreenShotRemoveTgaAndJpgFiles", DefaultValue = "true")]
         bool ScreenShotRemoveTgaAndJpgFiles { get; }

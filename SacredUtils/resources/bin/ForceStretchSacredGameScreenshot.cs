@@ -1,4 +1,5 @@
-﻿using NHotkey;
+﻿using EnumsNET;
+using NHotkey;
 using NHotkey.Wpf;
 using System;
 using System.Diagnostics;
@@ -24,7 +25,9 @@ namespace SacredUtils.resources.bin
 
             try
             {
-                HotkeyManager.Current.AddOrReplace("PrintScreen", Key.PrintScreen, ModifierKeys.None, Get);
+                Enums.TryParse(AppSettings.ApplicationSettings.ScreenShotCreateKey, out Key screenKey);
+
+                HotkeyManager.Current.AddOrReplace("PrintScreen", screenKey, ModifierKeys.None, Get);
 
                 CheckAvailabilityProcess();
 
