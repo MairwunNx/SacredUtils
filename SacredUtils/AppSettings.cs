@@ -38,6 +38,15 @@ namespace SacredUtils
         [Option(Alias = "DisableCachingGameComponents", DefaultValue = "false")]
         bool DisableCachingGameComponents { get; }
 
+        [Option(Alias = "DisableCheckingGlobLibrary", DefaultValue = "false")]
+        bool DisableCheckingGlobLibrary { get; }
+
+        [Option(Alias = "DisableCheckInternetConnection", DefaultValue = "false")]
+        bool DisableCheckInternetConnection { get; }
+        
+        [Option(Alias = "DisableCreatingRequiredFiles", DefaultValue = "false")]
+        bool DisableCreatingRequiredFiles { get; }
+
         [Option(Alias = "DisableFoolFunnyDay", DefaultValue = "false")]
         bool DisableFoolFunnyDay { get; }
 
@@ -46,6 +55,9 @@ namespace SacredUtils
 
         [Option(Alias = "DisableLogging", DefaultValue = "false")]
         bool DisableLogging { get; }
+
+        [Option(Alias = "DisablePrintBaseInfoToLog", DefaultValue = "false")]
+        bool DisablePrintBaseInfoToLog { get; }
 
         [Option(Alias = "DisableReCreatingLangFiles", DefaultValue = "false")]
         bool DisableReCreatingLangFiles { get; }

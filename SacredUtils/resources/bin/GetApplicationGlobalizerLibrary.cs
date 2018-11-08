@@ -10,43 +10,46 @@ namespace SacredUtils.resources.bin
     {
         public static void Get()
         {
-            if (!File.Exists("WPFSharp.Globalizer.dll"))
+            if (!AppSettings.ApplicationSettings.DisableCheckingGlobLibrary)
             {
-                if (File.Exists("update.cmd")) { File.Delete("update.cmd"); }
-
-                Log.Warn("WPFSharp.Globalizer.dll library file not found!");
-
-                Create();
-            }
-            else
-            {
-                Log.Info("WPFSharp.Globalizer.dll library file was found!");
-
-                string md5FinallyHash;
-
-                using (MD5 md5 = MD5.Create())
+                if (!File.Exists("WPFSharp.Globalizer.dll"))
                 {
-                    using (FileStream stream = File.OpenRead("WPFSharp.Globalizer.dll"))
-                    {
-                        byte[] hash = md5.ComputeHash(stream);
+                    if (File.Exists("update.cmd")) { File.Delete("update.cmd"); }
 
-                        md5FinallyHash = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
-                    }
+                    Log.Warn("WPFSharp.Globalizer.dll library file not found!");
+
+                    Create();
                 }
-
-                if (md5FinallyHash != "d0bb73987001ea1207393f8e1061630f")
+                else
                 {
-                    File.WriteAllBytes("update.cmd", Properties.Resources.update);
+                    Log.Info("WPFSharp.Globalizer.dll library file was found!");
 
-                    ProcessStartInfo info = new ProcessStartInfo
+                    string md5FinallyHash;
+
+                    using (MD5 md5 = MD5.Create())
                     {
-                        Arguments = $"/C {AppSummary.CurrentPath}\\update.cmd",
-                        WindowStyle = ProcessWindowStyle.Hidden,
-                        CreateNoWindow = false,
-                        FileName = "update.cmd"
-                    };
+                        using (FileStream stream = File.OpenRead("WPFSharp.Globalizer.dll"))
+                        {
+                            byte[] hash = md5.ComputeHash(stream);
 
-                    Process.Start(info); Environment.Exit(0);
+                            md5FinallyHash = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                        }
+                    }
+
+                    if (md5FinallyHash != "d0bb73987001ea1207393f8e1061630f")
+                    {
+                        File.WriteAllBytes("update.cmd", Properties.Resources.update);
+
+                        ProcessStartInfo info = new ProcessStartInfo
+                        {
+                            Arguments = $"/C {AppSummary.CurrentPath}\\update.cmd",
+                            WindowStyle = ProcessWindowStyle.Hidden,
+                            CreateNoWindow = false,
+                            FileName = "update.cmd"
+                        };
+
+                        Process.Start(info); Environment.Exit(0);
+                    }
                 }
             }
         }

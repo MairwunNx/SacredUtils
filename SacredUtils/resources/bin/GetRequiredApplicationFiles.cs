@@ -15,42 +15,45 @@ namespace SacredUtils.resources.bin
                 Log.Info("SacredUtils License file was successfully re-created!");
             }
 
-            if (!File.Exists("$SacredUtils\\conf\\hotkeys.json"))
+            if (!AppSettings.ApplicationSettings.DisableCreatingRequiredFiles)
             {
-                File.WriteAllBytes("$SacredUtils\\conf\\hotkeys.json", Properties.Resources.hotkeys);
-            }
+                if (!File.Exists("$SacredUtils\\conf\\hotkeys.json"))
+                {
+                    File.WriteAllBytes("$SacredUtils\\conf\\hotkeys.json", Properties.Resources.hotkeys);
+                }
 
-            if (!File.Exists("$SacredUtils\\conf\\hk.keyb.txt"))
-            {
-                File.WriteAllBytes("$SacredUtils\\conf\\hk.keyb.txt", Properties.Resources.hk_keyb);
-            }
+                if (!File.Exists("$SacredUtils\\conf\\hk.keyb.txt"))
+                {
+                    File.WriteAllBytes("$SacredUtils\\conf\\hk.keyb.txt", Properties.Resources.hk_keyb);
+                }
 
-            if (!File.Exists("$SacredUtils\\conf\\hk.orig.txt"))
-            {
-                File.WriteAllBytes("$SacredUtils\\conf\\hk.orig.txt", Properties.Resources.hk_orig);
-            }
+                if (!File.Exists("$SacredUtils\\conf\\hk.orig.txt"))
+                {
+                    File.WriteAllBytes("$SacredUtils\\conf\\hk.orig.txt", Properties.Resources.hk_orig);
+                }
 
-            if (!File.Exists("$SacredUtils\\conf\\hk.orsf.txt"))
-            {
-                File.WriteAllBytes("$SacredUtils\\conf\\hk.orsf.txt", Properties.Resources.hk_orsf);
-            }
+                if (!File.Exists("$SacredUtils\\conf\\hk.orsf.txt"))
+                {
+                    File.WriteAllBytes("$SacredUtils\\conf\\hk.orsf.txt", Properties.Resources.hk_orsf);
+                }
 
-            if (!File.Exists("$SacredUtils\\conf\\hk.kesf.txt"))
-            {
-                File.WriteAllBytes("$SacredUtils\\conf\\hk.kesf.txt", Properties.Resources.hk_kesf);
-            }
+                if (!File.Exists("$SacredUtils\\conf\\hk.kesf.txt"))
+                {
+                    File.WriteAllBytes("$SacredUtils\\conf\\hk.kesf.txt", Properties.Resources.hk_kesf);
+                }
 
-            if (!File.Exists("$SacredUtils\\conf\\hk.setg.txt"))
-            {
-                File.WriteAllBytes("$SacredUtils\\conf\\hk.setg.txt", Properties.Resources.hk_setg);
-            }
+                if (!File.Exists("$SacredUtils\\conf\\hk.setg.txt"))
+                {
+                    File.WriteAllBytes("$SacredUtils\\conf\\hk.setg.txt", Properties.Resources.hk_setg);
+                }
 
-            if (!File.Exists("$SacredUtils\\conf\\hk.regr.txt"))
-            {
-                File.WriteAllBytes("$SacredUtils\\conf\\hk.regr.txt", Properties.Resources.hk_regr);
-            }
+                if (!File.Exists("$SacredUtils\\conf\\hk.regr.txt"))
+                {
+                    File.WriteAllBytes("$SacredUtils\\conf\\hk.regr.txt", Properties.Resources.hk_regr);
+                }
 
-            File.WriteAllText("$SacredUtils\\conf\\splashes.txt", Properties.Resources.splashes, Encoding.UTF8);
+                File.WriteAllText("$SacredUtils\\conf\\splashes.txt", Properties.Resources.splashes, Encoding.UTF8);
+            }
         }
     }
 }
