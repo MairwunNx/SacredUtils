@@ -23,20 +23,20 @@ namespace SacredUtils.resources.pgs
             InitializeComponent();
 
             VeteranModBtn.SetResourceReference(ContentProperty,
-                !AppSettings.ApplicationSettings.VeteranModUfoInstalled ? "String0088" : "String0089");
+                !ModifySettings.ModificationSettings.VeteranModUfoInstalled ? "String0088" : "String0089");
 
             Sacred229PathBtn.SetResourceReference(ContentProperty,
-                !AppSettings.ApplicationSettings.Sacred229PatchInstalled ? "String0090" : "String0091");
+                !ModifySettings.ModificationSettings.SacredUnofficialPatchInstalled ? "String0090" : "String0091");
 
             ServerCoreFixBtn.SetResourceReference(ContentProperty,
-                !AppSettings.ApplicationSettings.ServerMultiCoreFixInstalled ? "String0092" : "String0093");
+                !ModifySettings.ModificationSettings.ServerMultiCoreFixInstalled ? "String0092" : "String0093");
 
             Log.Info("Initialization components for app modify page one done!");
         }
 
         private void VeteranModBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (AppSettings.ApplicationSettings.VeteranModUfoInstalled)
+            if (ModifySettings.ModificationSettings.VeteranModUfoInstalled)
             {
                 Directory.CreateDirectory("bin"); Directory.CreateDirectory("pak");
 
@@ -45,7 +45,7 @@ namespace SacredUtils.resources.pgs
 
                 VeteranModBtn.SetResourceReference(ContentProperty, "String0088");
 
-                AppSettings.ApplicationSettings.VeteranModUfoInstalled = false;
+                ModifySettings.ModificationSettings.VeteranModUfoInstalled = false;
             }
             else
             {
@@ -56,13 +56,13 @@ namespace SacredUtils.resources.pgs
 
                 VeteranModBtn.SetResourceReference(ContentProperty, "String0089");
 
-                AppSettings.ApplicationSettings.VeteranModUfoInstalled = true;
+                ModifySettings.ModificationSettings.VeteranModUfoInstalled = true;
             }
         }
 
         private void Sacred229PathBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (AppSettings.ApplicationSettings.Sacred229PatchInstalled)
+            if (ModifySettings.ModificationSettings.SacredUnofficialPatchInstalled)
             {
                 GetSacredGameComponentFiles.GetComponent(
                     new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/QRe3uOT73XgkeR"),
@@ -90,7 +90,7 @@ namespace SacredUtils.resources.pgs
 
                 Sacred229PathBtn.SetResourceReference(ContentProperty, "String0090");
 
-                AppSettings.ApplicationSettings.Sacred229PatchInstalled = false;
+                ModifySettings.ModificationSettings.SacredUnofficialPatchInstalled = false;
             }
             else
             {
@@ -120,13 +120,13 @@ namespace SacredUtils.resources.pgs
 
                 Sacred229PathBtn.SetResourceReference(ContentProperty, "String0091");
 
-                AppSettings.ApplicationSettings.Sacred229PatchInstalled = true;
+                ModifySettings.ModificationSettings.SacredUnofficialPatchInstalled = true;
             }
         }
 
         private void ServerCoreFixBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (AppSettings.ApplicationSettings.ServerMultiCoreFixInstalled)
+            if (ModifySettings.ModificationSettings.ServerMultiCoreFixInstalled)
             {
                 GetSacredGameComponentFiles.GetComponent(
                     new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/Mkw_Odf63XgkeF"),
@@ -136,7 +136,7 @@ namespace SacredUtils.resources.pgs
 
                 ServerCoreFixBtn.SetResourceReference(ContentProperty, "String0092");
 
-                AppSettings.ApplicationSettings.ServerMultiCoreFixInstalled = false;
+                ModifySettings.ModificationSettings.ServerMultiCoreFixInstalled = false;
             }
             else
             {
@@ -148,7 +148,7 @@ namespace SacredUtils.resources.pgs
 
                 ServerCoreFixBtn.SetResourceReference(ContentProperty, "String0093");
 
-                AppSettings.ApplicationSettings.ServerMultiCoreFixInstalled = true;
+                ModifySettings.ModificationSettings.ServerMultiCoreFixInstalled = true;
             }
         }
 

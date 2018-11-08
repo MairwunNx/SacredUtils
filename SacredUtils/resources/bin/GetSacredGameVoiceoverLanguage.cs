@@ -8,7 +8,7 @@ namespace SacredUtils.resources.bin
         {
             if (value == 0)
             {
-                AppSettings.ApplicationSettings.GameVoiceover = "RU";
+                ModifySettings.ModificationSettings.SacredVoiceoverLanguage = "RU";
 
                 GetSacredGameComponentFiles.GetComponent(
                     new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/MHPKgQql3Xg8Ek"),
@@ -18,7 +18,7 @@ namespace SacredUtils.resources.bin
             }
             else if (value == 1)
             {
-                AppSettings.ApplicationSettings.GameVoiceover = "US";
+                ModifySettings.ModificationSettings.SacredVoiceoverLanguage = "US";
 
                 GetSacredGameComponentFiles.GetComponent(
                     new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/cZRhldb-3Xg9fw"),
@@ -28,7 +28,7 @@ namespace SacredUtils.resources.bin
             }
             else if (value == 2)
             {
-                AppSettings.ApplicationSettings.GameVoiceover = "DE";
+                ModifySettings.ModificationSettings.SacredVoiceoverLanguage = "DE";
 
                 GetSacredGameComponentFiles.GetComponent(
                     new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/pneWkQ1b3Xg6mG"),
@@ -38,7 +38,7 @@ namespace SacredUtils.resources.bin
             }
             else if (value == 3)
             {
-                AppSettings.ApplicationSettings.GameVoiceover = "SP";
+                ModifySettings.ModificationSettings.SacredVoiceoverLanguage = "SP";
 
                 GetSacredGameComponentFiles.GetComponent(
                     new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/maW7dmcv3Xg8cY"),

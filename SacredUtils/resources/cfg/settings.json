@@ -22,10 +22,8 @@
   "DisableTelemetry": "false",
   "EnableArchiveFileCompression": "true",
   "EnableGlobalExceptionCatching": "true",
-  "EnableHealthCircles": "false",
   "EnableLoggingLoadedSettings": "false",
   "ForceEnableFullScreenMode": "true",
-  "GameVoiceover": "false",
   "HotKeyEventArgsHandled": "true",
   "HotKeyRegisterDelay": "1000",
   "hWndSacred": "Sacred",
@@ -46,7 +44,6 @@
   "RefreshSettingsOnWindowFocus": "false",
   "RemoveBackupFilesOnOverflow": "true",
   "RemoveTempContent": "true",
-  "Sacred229PatchInstalled": "false",
   "SacredCheatsEnableArgument": "CHEATS=1",
   "SacredConfigurationFile": "Settings.cfg",
   "SacredFileName": "Sacred.exe",
@@ -58,7 +55,6 @@
   "ScreenShotSaveDirectory": "Capture",
   "ScreenShotSaveFilePattern": "ddMMyyyy-hh-mm-ss-fff",
   "ScreenShotSaveFilePrefix": "screen-",
-  "ServerMultiCoreFixInstalled": "false",
   "ShowChangeLog": "true",
   "ShowNoConnectionIcon": "true",
   "ShowUsedMemory": "false",
@@ -66,10 +62,5 @@
   "UseAsyncCreatingScreenshots": "false",
   "UseAsyncLoadFontCollection": "false",
   "UseCustomFontSizeValue": "false",
-  "UseOldSacredTextures": "false",
-  "UseSimplifiedHotKeySettings": "true",
-  "UseStaticBog": "false",
-  "UseStaticLava": "false",
-  "UseStaticWater": "false",
-  "VeteranModUfoInstalled": "false"
+  "UseSimplifiedHotKeySettings": "true"
 }

@@ -213,6 +213,16 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        public static byte[] mk_setg {
+            get {
+                object obj = ResourceManager.GetObject("mk_setg", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         public static byte[] ru_RU {
             get {
                 object obj = ResourceManager.GetObject("ru_RU", resourceCulture);

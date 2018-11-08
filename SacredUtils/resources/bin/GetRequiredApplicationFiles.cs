@@ -15,6 +15,11 @@ namespace SacredUtils.resources.bin
                 Log.Info("SacredUtils License file was successfully re-created!");
             }
 
+            if (!File.Exists("$SacredUtils\\conf\\mk.setg.json"))
+            {
+                File.WriteAllBytes("$SacredUtils\\conf\\mk.setg.json", Properties.Resources.mk_setg);
+            }
+
             if (!AppSettings.ApplicationSettings.DisableCreatingRequiredFiles)
             {
                 if (!File.Exists("$SacredUtils\\conf\\hotkeys.json"))

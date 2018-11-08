@@ -152,6 +152,7 @@
     </ApplicationDefinition>
     <Compile Include="AppSettings.cs" />
     <Compile Include="HotkeySettings.cs" />
+    <Compile Include="ModifySettings.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -468,6 +469,7 @@
     </Compile>
     <Content Include="resources\opt\SacredRes2Csv.exe" />
     <None Include="resources\cfg\hotkeys.json" />
+    <None Include="resources\cfg\mk.setg.json" />
     <None Include="resources\etc\update.cmd" />
     <None Include="resources\etc\UpdateLibrary.ps1" />
     <None Include="resources\opt\HotKeyReg.reg" />

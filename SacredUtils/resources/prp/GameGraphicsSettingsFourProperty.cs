@@ -48,7 +48,7 @@ namespace SacredUtils.resources.prp
 
         public bool StaticBog
         {
-            get => AppSettings.ApplicationSettings.UseStaticBog;
+            get => ModifySettings.ModificationSettings.UseSacredStaticBogTexture;
 
             set
             {
@@ -74,7 +74,7 @@ namespace SacredUtils.resources.prp
                         if (File.Exists($"PAK\\{file}")) { File.Delete($"PAK\\{file}"); }
                     }
 
-                    AppSettings.ApplicationSettings.UseStaticBog = false;
+                    ModifySettings.ModificationSettings.UseSacredStaticBogTexture = false;
                 }
 
                 Thread.Sleep(1000);
@@ -85,7 +85,7 @@ namespace SacredUtils.resources.prp
 
         public bool StaticWater
         {
-            get => AppSettings.ApplicationSettings.UseStaticWater;
+            get => ModifySettings.ModificationSettings.UseSacredStaticWaterTexture;
 
             set
             {
@@ -121,7 +121,7 @@ namespace SacredUtils.resources.prp
                         if (File.Exists($"PAK\\{file}")) { File.Delete($"PAK\\{file}"); }
                     }
 
-                    AppSettings.ApplicationSettings.UseStaticWater = false;
+                    ModifySettings.ModificationSettings.UseSacredStaticWaterTexture = false;
                 }
 
                 Thread.Sleep(1000);
@@ -132,7 +132,7 @@ namespace SacredUtils.resources.prp
 
         public bool StaticLava
         {
-            get => AppSettings.ApplicationSettings.UseStaticLava;
+            get => ModifySettings.ModificationSettings.UseSacredStaticLavaTexture;
 
             set
             {
@@ -173,7 +173,7 @@ namespace SacredUtils.resources.prp
                         if (File.Exists($"PAK\\{file}")) { File.Delete($"PAK\\{file}"); }
                     }
 
-                    AppSettings.ApplicationSettings.UseStaticLava = false;
+                    ModifySettings.ModificationSettings.UseSacredStaticLavaTexture = false;
                 }
 
                 Thread.Sleep(1000);
@@ -184,7 +184,7 @@ namespace SacredUtils.resources.prp
 
         public bool OldSacred
         {
-            get => AppSettings.ApplicationSettings.UseOldSacredTextures;
+            get => ModifySettings.ModificationSettings.UseSacredOldTextures;
 
             set
             {
@@ -205,7 +205,7 @@ namespace SacredUtils.resources.prp
                         if (File.Exists($"PAK\\{file}")) { File.Delete($"PAK\\{file}"); }
                     }
 
-                    AppSettings.ApplicationSettings.UseOldSacredTextures = false;
+                    ModifySettings.ModificationSettings.UseSacredOldTextures = false;
                 }
 
                 Thread.Sleep(1000);
@@ -248,7 +248,7 @@ namespace SacredUtils.resources.prp
 
         public bool HealthCircles
         {
-            get => AppSettings.ApplicationSettings.EnableHealthCircles;
+            get => ModifySettings.ModificationSettings.EnableVisibilityHealthCircles;
 
             set
             {
@@ -261,7 +261,7 @@ namespace SacredUtils.resources.prp
                         if (File.Exists($"PAK\\{file}")) { File.Delete($"PAK\\{file}"); }
                     }
 
-                    AppSettings.ApplicationSettings.EnableHealthCircles = true;
+                    ModifySettings.ModificationSettings.EnableVisibilityHealthCircles = true;
                 }
                 else
                 {
@@ -302,7 +302,7 @@ namespace SacredUtils.resources.prp
                         File.Copy("PAK\\E_WATER00.tga", i < 10 ? $"PAK\\E_WATER0{i}.tga" : $"PAK\\E_WATER{i}.tga", true);
                     }
 
-                    AppSettings.ApplicationSettings.UseStaticBog = true;
+                    ModifySettings.ModificationSettings.UseSacredStaticBogTexture = true;
                 }
 
                 if (resourceName == "WATER")
@@ -315,7 +315,7 @@ namespace SacredUtils.resources.prp
                         File.Copy("PAK\\G_WATER00.tga", i < 10 ? $"PAK\\G_WATER0{i}.tga" : $"PAK\\G_WATER{i}.tga", true);
                     }
 
-                    AppSettings.ApplicationSettings.UseStaticWater = true;
+                    ModifySettings.ModificationSettings.UseSacredStaticWaterTexture = true;
                 }
 
                 if (resourceName == "LAVA")
@@ -329,14 +329,14 @@ namespace SacredUtils.resources.prp
                         File.Copy("PAK\\E_LAVA00.tga", i < 10 ? $"PAK\\E_LAVA0{i}.tga" : $"PAK\\E_LAVA{i}.tga", true);
                     }
 
-                    AppSettings.ApplicationSettings.UseStaticLava = true;
+                    ModifySettings.ModificationSettings.UseSacredStaticLavaTexture = true;
                 }
 
                 switch (resourceName)
                 {
-                    case "OLD_SACRED": AppSettings.ApplicationSettings.UseOldSacredTextures = true; break;
+                    case "OLD_SACRED": ModifySettings.ModificationSettings.UseSacredOldTextures = true; break;
                     case "FOOTSTEPS": AppSettings.ApplicationSettings.DisableFootSteps = true; break;
-                    case "HEALTH": AppSettings.ApplicationSettings.EnableHealthCircles = false; break;
+                    case "HEALTH": ModifySettings.ModificationSettings.EnableVisibilityHealthCircles = false; break;
                 }
 
                 File.Delete(fileName);

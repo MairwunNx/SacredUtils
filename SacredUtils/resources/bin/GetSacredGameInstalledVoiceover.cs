@@ -10,7 +10,7 @@ namespace SacredUtils.resources.bin
         {
             int value = 1;
 
-            if (AppSettings.ApplicationSettings.GameVoiceover == "based on language")
+            if (ModifySettings.ModificationSettings.SacredVoiceoverLanguage == "based on language")
             {
                 string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
 
@@ -25,10 +25,10 @@ namespace SacredUtils.resources.bin
             }
             else
             {
-                if (AppSettings.ApplicationSettings.GameVoiceover == "RU") { value = 0; }
-                if (AppSettings.ApplicationSettings.GameVoiceover == "US") { value = 1; }
-                if (AppSettings.ApplicationSettings.GameVoiceover == "DE") { value = 2; }
-                if (AppSettings.ApplicationSettings.GameVoiceover == "SP") { value = 3; }
+                if (ModifySettings.ModificationSettings.SacredVoiceoverLanguage == "RU") { value = 0; }
+                if (ModifySettings.ModificationSettings.SacredVoiceoverLanguage == "US") { value = 1; }
+                if (ModifySettings.ModificationSettings.SacredVoiceoverLanguage == "DE") { value = 2; }
+                if (ModifySettings.ModificationSettings.SacredVoiceoverLanguage == "SP") { value = 3; }
             }
 
             return value;

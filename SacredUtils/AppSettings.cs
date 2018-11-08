@@ -74,17 +74,11 @@ namespace SacredUtils
         [Option(Alias = "EnableGlobalExceptionCatching", DefaultValue = "true")]
         bool EnableGlobalExceptionCatching { get; }
 
-        [Option(Alias = "EnableHealthCircles", DefaultValue = "true")]
-        bool EnableHealthCircles { get; set; }
-
         [Option(Alias = "EnableLoggingLoadedSettings", DefaultValue = "false")]
         bool EnableLoggingLoadedSettings { get; }
 
         [Option(Alias = "ForceEnableFullScreenMode", DefaultValue = "true")]
         bool ForceEnableFullScreenMode { get; }
-
-        [Option(Alias = "GameVoiceover", DefaultValue = "based on language")]
-        string GameVoiceover { get; set; }
 
         [Option(Alias = "HotKeyEventArgsHandled", DefaultValue = "true")]
         bool HotKeyEventArgsHandled { get; }
@@ -146,9 +140,6 @@ namespace SacredUtils
         [Option(Alias = "RemoveTempContent", DefaultValue = "true")]
         bool RemoveTempContent { get; }
 
-        [Option(Alias = "Sacred229PatchInstalled", DefaultValue = "false")]
-        bool Sacred229PatchInstalled { get; set; }
-
         [Option(Alias = "SacredCheatsEnableArgument", DefaultValue = "CHEATS=1")]
         string SacredCheatsEnableArgument { get; }
 
@@ -182,9 +173,6 @@ namespace SacredUtils
         [Option(Alias = "ScreenShotSaveFilePrefix", DefaultValue = "screen-")]
         string ScreenShotSaveFilePrefix { get; }
 
-        [Option(Alias = "ServerMultiCoreFixInstalled", DefaultValue = "false")]
-        bool ServerMultiCoreFixInstalled { get; set; }
-
         [Option(Alias = "ShowChangeLog", DefaultValue = "true")]
         bool ShowChangeLog { get; }
         
@@ -206,23 +194,8 @@ namespace SacredUtils
         [Option(Alias = "UseCustomFontSizeValue", DefaultValue = "false")]
         bool UseCustomFontSizeValue { get; }
 
-        [Option(Alias = "UseOldSacredTextures", DefaultValue = "false")]
-        bool UseOldSacredTextures { get; set; }
-
         [Option(Alias = "UseSimplifiedHotKeySettings", DefaultValue = "true")]
         bool UseSimplifiedHotKeySettings { get; }
-
-        [Option(Alias = "UseStaticBog", DefaultValue = "false")]
-        bool UseStaticBog { get; set; }
-
-        [Option(Alias = "UseStaticLava", DefaultValue = "false")]
-        bool UseStaticLava { get; set; }
-
-        [Option(Alias = "UseStaticWater", DefaultValue = "false")]
-        bool UseStaticWater { get; set; }
-
-        [Option(Alias = "VeteranModUfoInstalled", DefaultValue = "false")]
-        bool VeteranModUfoInstalled { get; set; }
     }
 
     public static class AppSettings
