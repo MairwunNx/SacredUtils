@@ -216,7 +216,7 @@ namespace SacredUtils.resources.prp
 
         public bool FootSteps
         {
-            get => AppSettings.ApplicationSettings.DisableFootSteps;
+            get => ModifySettings.ModificationSettings.SacredRemovePlayerFootSteps;
 
             set
             {
@@ -237,7 +237,7 @@ namespace SacredUtils.resources.prp
                         if (File.Exists($"PAK\\{file}")) { File.Delete($"PAK\\{file}"); }
                     }
 
-                    AppSettings.ApplicationSettings.DisableFootSteps = false;
+                    ModifySettings.ModificationSettings.SacredRemovePlayerFootSteps = false;
                 }
 
                 Thread.Sleep(1000);
@@ -335,7 +335,7 @@ namespace SacredUtils.resources.prp
                 switch (resourceName)
                 {
                     case "OLD_SACRED": ModifySettings.ModificationSettings.UseSacredOldTextures = true; break;
-                    case "FOOTSTEPS": AppSettings.ApplicationSettings.DisableFootSteps = true; break;
+                    case "FOOTSTEPS": ModifySettings.ModificationSettings.SacredRemovePlayerFootSteps = true; break;
                     case "HEALTH": ModifySettings.ModificationSettings.EnableVisibilityHealthCircles = false; break;
                 }
 

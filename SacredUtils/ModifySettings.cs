@@ -7,6 +7,9 @@ namespace SacredUtils
         [Option(Alias = "EnableVisibilityHealthCircles", DefaultValue = "false")]
         bool EnableVisibilityHealthCircles { get; set; }
 
+        [Option(Alias = "SacredRemovePlayerFootSteps", DefaultValue = "false")]
+        bool SacredRemovePlayerFootSteps { get; set; }
+
         [Option(Alias = "SacredUnofficialPatchInstalled", DefaultValue = "false")]
         bool SacredUnofficialPatchInstalled { get; set; }
 

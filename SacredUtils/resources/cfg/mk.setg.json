@@ -1,5 +1,6 @@
 {
   "EnableVisibilityHealthCircles": "false",
+  "SacredRemovePlayerFootSteps": "false",
   "SacredUnofficialPatchInstalled": "false",
   "SacredVoiceoverLanguage": "based on language",
   "ServerMultiCoreFixInstalled": "false",

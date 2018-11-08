@@ -50,9 +50,6 @@ namespace SacredUtils
         [Option(Alias = "DisableFoolFunnyDay", DefaultValue = "false")]
         bool DisableFoolFunnyDay { get; }
 
-        [Option(Alias = "DisableFootSteps", DefaultValue = "false")]
-        bool DisableFootSteps { get; set; }
-
         [Option(Alias = "DisableLogging", DefaultValue = "false")]
         bool DisableLogging { get; }
 
