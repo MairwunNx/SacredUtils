@@ -19,6 +19,13 @@
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
     mc:Ignorable="d">
+    <Window.Resources>
+        <Style BasedOn="{StaticResource {x:Type ToolTip}}" TargetType="{x:Type ToolTip}">
+            <Setter Property="OverridesDefaultStyle" Value="true" />
+            <Setter Property="FontFamily" Value="/SacredUtils;component/resources/fnt/#Google Sans" />
+            <Setter Property="FontSize" Value="13" />
+        </Style>
+    </Window.Resources>
     <materialDesign:Card
         x:Name="BaseCard"
         Margin="5,5,5,5"
