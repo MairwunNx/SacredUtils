@@ -107,6 +107,22 @@ namespace SacredUtils.resources.bin
                     _keyPressesStat = 1;
                 }
             }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.I)
+            {
+                // it code open clear cache dialog host, for fixing some bugs. 
+
+                if (_keyPressesStat == 1)
+                {
+                    _keyPressesStat = 0;
+
+                    ApplicationClearComponentCache.SearchCacheFiles();
+                }
+                else
+                {
+                    _keyPressesStat = 1;
+                }
+            }
         }
     }
 }

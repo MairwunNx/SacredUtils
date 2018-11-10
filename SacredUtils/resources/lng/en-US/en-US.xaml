@@ -79,7 +79,7 @@
     <sys:String x:Key="String0057">Low</sys:String>
     <sys:String x:Key="String0058">Middle</sys:String>
     <sys:String x:Key="String0059">High</sys:String>
-    <sys:String x:Key="String0060">Waitretrace (VSync)</sys:String>
+    <sys:String x:Key="String0060">Wait-retrace (VSync)</sys:String>
     <sys:String x:Key="String0061">Map transparency</sys:String>
     <sys:String x:Key="String0062">Night darkness</sys:String>
     <sys:String x:Key="String0063">Page 1 / 4</sys:String>
@@ -148,7 +148,7 @@
     <sys:String x:Key="String0112">UPDATE UTILITY</sys:String>
     <sys:String x:Key="String0113">⠀⠀GRAPHICS</sys:String>
     <sys:String x:Key="String0114">⠀⠀SOUND AND VOICE</sys:String>
-    <sys:String x:Key="String0115">⠀⠀GAMEPLAY</sys:String>
+    <sys:String x:Key="String0115">⠀⠀GAME-PLAY</sys:String>
     <sys:String x:Key="String0116">⠀⠀CHAT AND LANG</sys:String>
     <sys:String x:Key="String0117">⠀⠀FONTS</sys:String>
     <sys:String x:Key="String0118">⠀⠀MODIFY GAME</sys:String>
@@ -199,8 +199,8 @@
     <sys:String x:Key="String0145">Edit balance.bin (External)</sys:String>
     <sys:String x:Key="String0146">Edit creature.pak (External)</sys:String>
     <sys:String x:Key="String0147">Edit weapon.pak (External)</sys:String>
-    <sys:String x:Key="String0148">Run SacredHeroResetter</sys:String>
-    <sys:String x:Key="String0149">Change Sacred Hotkeys</sys:String>
+    <sys:String x:Key="String0148">Run SacredHeroRe-setter</sys:String>
+    <sys:String x:Key="String0149">Change Sacred Hot-keys</sys:String>
     <sys:String x:Key="String0150">Run SacredHeroEditor</sys:String>
     <sys:String x:Key="String0151">Run integrity check of game components</sys:String>
     <sys:String x:Key="String0152">Start generator of colored nicks</sys:String>
@@ -222,8 +222,8 @@
     <sys:String x:Key="String0162">Force allow change language layout in game</sys:String>
     <sys:String x:Key="String0163">Launch game</sys:String>
     <sys:String x:Key="String0164">Cancel launch</sys:String>
-    <sys:String x:Key="String0165">Stretch screenshot to screen resolution</sys:String>
-    <sys:String x:Key="String0166">Enable hotkey mode (emulation)</sys:String>
+    <sys:String x:Key="String0165">Stretch screen shot to screen resolution</sys:String>
+    <sys:String x:Key="String0166">Enable hot-key mode (emulation)</sys:String>
 
     <!--  Get graphics page 4 content dialog  -->
     <sys:String x:Key="String0167">Graphics settings</sys:String>
@@ -235,5 +235,10 @@
 
     <!--  Font sizes menu  -->
     <sys:String x:Key="String0171">Font sizes</sys:String>
+
+    <!--  Application clear cache dialog  -->
+    <sys:String x:Key="String0172">Cache clear</sys:String>
+    <sys:String x:Key="String0173">Cleaning utility components cache ...</sys:String>
+    <sys:String x:Key="String0174">Component cache clearing completed!</sys:String>
 
 </Globalization:GlobalizationResourceDictionary>

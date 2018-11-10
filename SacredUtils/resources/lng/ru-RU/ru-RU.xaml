@@ -236,4 +236,9 @@
     <!--  Font sizes menu  -->
     <sys:String x:Key="String0171">Размеры шрифтов</sys:String>
 
+    <!--  Application clear cache dialog  -->
+    <sys:String x:Key="String0172">Очистка кеша</sys:String>
+    <sys:String x:Key="String0173">Очистка кеша компонентов утилиты ...</sys:String>
+    <sys:String x:Key="String0174">Очистка кеша компонентов завершена!</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>

@@ -174,8 +174,10 @@
     <Compile Include="resources\arr\ArraySacredGameWaterFilesE.cs" />
     <Compile Include="resources\arr\ArraySacredGameWaterFilesF.cs" />
     <Compile Include="resources\arr\ArraySacredGameWaterFilesG.cs" />
+    <Compile Include="resources\arr\ArraySacredUtilsCacheFiles.cs" />
     <Compile Include="resources\bin\ApplicationBaseWindowHotkeys.cs" />
     <Compile Include="resources\bin\ApplicationBaseWindowShutdown.cs" />
+    <Compile Include="resources\bin\ApplicationClearComponentCache.cs" />
     <Compile Include="resources\bin\ApplicationGetDownloadStatistics.cs" />
     <Compile Include="resources\bin\ApplicationRunSacredGameWithArgs.cs" />
     <Compile Include="resources\bin\ApplicationStartEmulateHotkeys.cs" />
@@ -222,6 +224,9 @@
     <Compile Include="resources\bin\ApplicationHotKeyGetSystemKeyValue.cs" />
     <Compile Include="resources\bin\PrintToLogBaseApplicationInfo.cs" />
     <Compile Include="resources\bin\RefreshApplicationSettings.cs" />
+    <Compile Include="resources\dlg\ApplicationClearCacheDialog.xaml.cs">
+      <DependentUpon>ApplicationClearCacheDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="resources\dlg\ApplicationConverHtmlToSacred.xaml.cs">
       <DependentUpon>ApplicationConverHtmlToSacred.xaml</DependentUpon>
     </Compile>
@@ -346,6 +351,10 @@
     <Page Include="Properties\DesignTimeResources.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="resources\dlg\ApplicationClearCacheDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="resources\dlg\ApplicationConverHtmlToSacred.xaml">
       <SubType>Designer</SubType>
