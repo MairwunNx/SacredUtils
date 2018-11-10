@@ -46,6 +46,7 @@
                         Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
                         Click="BaseButtonYes_Click"
                         Content="{globalizer:GlobalizedResource String0140}"
+                        FocusVisualStyle="{x:Null}"
                         Foreground="{DynamicResource ResourceKey=BackgroundColorBrush}"
                         IsDefault="True" />
 
@@ -58,6 +59,7 @@
                         Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
                         Click="BaseButtonNo_Click"
                         Content="{globalizer:GlobalizedResource String0141}"
+                        FocusVisualStyle="{x:Null}"
                         Foreground="{DynamicResource ResourceKey=BackgroundColorBrush}" />
                 </Grid>
             </materialDesign:DialogHost.DialogContent>

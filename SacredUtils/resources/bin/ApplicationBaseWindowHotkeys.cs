@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Input;
+using MaterialDesignThemes.Wpf;
+using SacredUtils.resources.dlg;
 using static SacredUtils.AppLogger;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 
@@ -13,6 +15,7 @@ namespace SacredUtils.resources.bin
     {
         private static int _keyPresses;
         private static int _keyPressesStat;
+        private static int _keyPressesChangeLog;
         
         public static void KeyDown(object sender, KeyEventArgs e)
         {
@@ -121,6 +124,39 @@ namespace SacredUtils.resources.bin
                 else
                 {
                     _keyPressesStat = 1;
+                }
+            }
+
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.G)
+            {
+                // it code open SacredUtils project changelog. 
+
+                if (_keyPressesChangeLog == 1)
+                {
+                    _keyPressesChangeLog = 0;
+
+                    if (AppSettings.ApplicationSettings.ApplicationShowChangeLog)
+                    {
+                        MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+                        ApplicationChangeLogDialog applicationChangeLogDialog = new ApplicationChangeLogDialog();
+
+                        if (mainWindow != null)
+                        {
+                            mainWindow.DialogFrame.Visibility = Visibility.Visible;
+                            mainWindow.DialogFrame.Content = applicationChangeLogDialog;
+                        }
+
+                        if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
+                        {
+                            applicationChangeLogDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
+                        }
+
+                        applicationChangeLogDialog.BaseDialog.IsOpen = true;
+                    }
+                }
+                else
+                {
+                    _keyPressesChangeLog = 1;
                 }
             }
         }
