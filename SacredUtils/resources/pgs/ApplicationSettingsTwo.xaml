@@ -267,7 +267,7 @@
                 x:Name="DonateBtn"
                 Height="Auto"
                 ClipToBounds="True"
-                Content="DONATE"
+                Content="LET'S DONATE"
                 Cursor="Hand"
                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                 FontSize="16"
