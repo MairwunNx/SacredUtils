@@ -184,9 +184,10 @@
     <sys:String x:Key="String0138">Распаковка компонента</sys:String>
 
     <!--  Change log dialog  -->
-    <sys:String x:Key="String0139">Утилита обновлена!</sys:String>
-    <sys:String x:Key="String0140">Открыть список изменений?</sys:String>
-    <sys:String x:Key="String0141">Да</sys:String>
+    <sys:String x:Key="String0139">Хотите посмотреть</sys:String>
+    <sys:String x:Key="String01391">лог изменений?</sys:String>
+    <sys:String x:Key="String0140">Да, конечно!</sys:String>
+    <sys:String x:Key="String0141">Нет</sys:String>
 
     <!--  Select page dialog  -->
     <sys:String x:Key="String0142">Выбор страницы</sys:String>

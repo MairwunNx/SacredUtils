@@ -22,10 +22,10 @@ namespace SacredUtils.resources.bin
 
                     if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
                     {
-                        applicationChangeLogDialog.ChangeLogDialog.DialogTheme = BaseTheme.Dark;
+                        applicationChangeLogDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
                     }
 
-                    applicationChangeLogDialog.ChangeLogDialog.IsOpen = true;
+                    applicationChangeLogDialog.BaseDialog.IsOpen = true;
 
                     File.Delete("$SacredUtils\\temp\\updated.su");
                 }

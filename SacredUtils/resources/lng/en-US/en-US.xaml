@@ -184,9 +184,10 @@
     <sys:String x:Key="String0138">Component unpacking</sys:String>
 
     <!--  Change log dialog  -->
-    <sys:String x:Key="String0139">Utility updated!</sys:String>
-    <sys:String x:Key="String0140">View list of changes?</sys:String>
-    <sys:String x:Key="String0141">Yes</sys:String>
+    <sys:String x:Key="String0139">Want to see the</sys:String>
+    <sys:String x:Key="String01391">change log?</sys:String>
+    <sys:String x:Key="String0140">Yes, of course!</sys:String>
+    <sys:String x:Key="String0141">No</sys:String>
 
     <!--  Select page dialog  -->
     <sys:String x:Key="String0142">Select page</sys:String>
