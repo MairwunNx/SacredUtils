@@ -47,6 +47,7 @@
                         Click="BaseButtonYes_Click"
                         Content="{globalizer:GlobalizedResource String0140}"
                         FocusVisualStyle="{x:Null}"
+                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                         Foreground="{DynamicResource ResourceKey=BackgroundColorBrush}"
                         IsDefault="True" />
 
@@ -60,6 +61,7 @@
                         Click="BaseButtonNo_Click"
                         Content="{globalizer:GlobalizedResource String0141}"
                         FocusVisualStyle="{x:Null}"
+                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                         Foreground="{DynamicResource ResourceKey=BackgroundColorBrush}" />
                 </Grid>
             </materialDesign:DialogHost.DialogContent>
