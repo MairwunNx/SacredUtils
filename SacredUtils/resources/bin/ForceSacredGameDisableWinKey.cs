@@ -1,17 +1,25 @@
-﻿using Microsoft.Win32;
+﻿using MouseKeyboardActivityMonitor;
+using MouseKeyboardActivityMonitor.WinApi;
 using NHotkey;
 using NHotkey.Wpf;
 using System;
 using System.Diagnostics;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Threading;
-using static SacredUtils.AppLogger;
+using KeyEventArgs = System.Windows.Forms.KeyEventArgs;
 
+// ReSharper disable InconsistentNaming
+#pragma warning disable 414
 namespace SacredUtils.resources.bin
 {
     public static class ForceSacredGameDisableWinKey
     {
         private static DispatcherTimer _timer = new DispatcherTimer();
+        private static KeyboardHookListener m_KeyboardHookManager;
+
+        private static bool m_leftwin;
+        private static bool m_rightwin;
 
         public static void RegisterKeys()
         {
@@ -20,92 +28,36 @@ namespace SacredUtils.resources.bin
                 HotkeyManager.Current.AddOrReplace("DisableWinKey", Key.U, ModifierKeys.Control, Disable);
                 HotkeyManager.Current.AddOrReplace("EnableWinKey", Key.I, ModifierKeys.Control, Enable);
             }
+
+            m_KeyboardHookManager = new KeyboardHookListener(new GlobalHooker());
+            m_KeyboardHookManager.KeyDown += hookManager_keyDown;
         }
 
-        private static void Enable(object sender, HotkeyEventArgs e) => Enable();
+        private static void hookManager_keyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.LWin) e.Handled = true;
+            if (e.KeyCode == Keys.RWin) e.Handled = true;
+
+            if (e.KeyCode == Keys.LWin) m_leftwin = true;
+            if (e.KeyCode == Keys.RWin) m_rightwin = true;
+        }
+
+        private static void Enable(object sender, HotkeyEventArgs e) => Enable(true);
 
         private static void Disable(object sender, HotkeyEventArgs e) => Disable();
 
-        public static void Disable()
+        public static void Disable() { m_KeyboardHookManager.Enabled = true; CheckAvailabilityProcess(); }
+
+        private static void Enable(bool force)
         {
-            RegistryKey key = null;
-            RegistryKey key1 = null;
-            RegistryKey key2 = null;
-            RegistryKey key3 = null;
-
-            byte[] binary = 
+            if (force)
             {
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x03,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x5B,
-                0xE0,
-                0x00,
-                0x00,
-                0x5C,
-                0xE0,
-                0x00,
-                0x00,
-                0x00,
-                0x00
-            };
-
-            try
-            {
-                key = Registry.LocalMachine.OpenSubKey("System\\CurrentControlSet\\Control\\Keyboard Layout", true);
-                key1 = Registry.LocalMachine.OpenSubKey("System\\CurrentControlSet\\Control\\Keyboard Layouts", true);
-                key2 = Registry.LocalMachine.OpenSubKey("System\\Keyboard Layout", true);
-
-                key.SetValue("Scancode Map", binary, RegistryValueKind.Binary);
-                key1.SetValue("Scancode Map", binary, RegistryValueKind.Binary);
-                key2.SetValue("Scancode Map", binary, RegistryValueKind.Binary);
+                m_KeyboardHookManager.Enabled = false;
             }
-            catch (Exception ex)
+            else
             {
-                Log.Error(ex.ToString);
-            }
-            finally
-            {
-                key.Close();
-
-                CheckAvailabilityProcess();
-            }
-        }
-
-        private static void Enable()
-        {
-            RegistryKey key = null;
-            RegistryKey key1 = null;
-            RegistryKey key2 = null;
-
-            try
-            {
-                key = Registry.LocalMachine.OpenSubKey("System\\CurrentControlSet\\Control\\Keyboard Layout", true);
-                key1 = Registry.LocalMachine.OpenSubKey("System\\CurrentControlSet\\Control\\Keyboard Layouts", true);
-                key2 = Registry.LocalMachine.OpenSubKey("System\\Keyboard Layout", true);
-
-                key.DeleteValue("Scancode Map", true);
-                key1.DeleteValue("Scancode Map", true);
-                key2.DeleteValue("Scancode Map", true);
-            }
-            catch (Exception ex)
-            {
-                Log.Error(ex.ToString);
-            }
-            finally
-            {
-                key.Close();
+                m_KeyboardHookManager.Enabled = false;
+                m_KeyboardHookManager.Dispose();
             }
         }
 
@@ -117,7 +69,7 @@ namespace SacredUtils.resources.bin
             {
                 Process[] pname = Process.GetProcessesByName("Sacred");
 
-                if (pname.Length == 0) { Enable(); _timer.Stop(); }
+                if (pname.Length == 0) { Enable(false); _timer.Stop(); }
             };
 
             _timer.Start();
