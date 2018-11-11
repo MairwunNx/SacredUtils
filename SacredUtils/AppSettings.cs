@@ -25,6 +25,9 @@ namespace SacredUtils
         [Option(Alias = "ArchiveOldFileOnStartup", DefaultValue = "true")]
         bool ArchiveOldFileOnStartup { get; }
 
+        [Option(Alias = "AutoRegisterHotKeyForWinKey", DefaultValue = "true")]
+        bool AutoRegisterHotKeyForWinKey { get; }
+
         [Option(Alias = "CheckApplicationUpdates", DefaultValue = "true")]
         bool CheckApplicationUpdates { get; set; }
 

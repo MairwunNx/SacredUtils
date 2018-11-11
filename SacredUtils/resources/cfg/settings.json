@@ -6,6 +6,7 @@
   "ApplicationUiColorTheme": "light",
   "ApplicationUiLanguage": "based on system",
   "ArchiveOldFileOnStartup": "true",
+  "AutoRegisterHotKeyForWinKey": "true",
   "CheckApplicationUpdates": "true",
   "CheckAutoAlphaUpdate": "false",
   "CloseDonateDialogAfterSelect": "true",

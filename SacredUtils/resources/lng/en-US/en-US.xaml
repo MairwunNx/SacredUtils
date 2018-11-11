@@ -225,6 +225,7 @@
     <sys:String x:Key="String0164">Cancel launch</sys:String>
     <sys:String x:Key="String0165">Stretch screen shot to screen resolution</sys:String>
     <sys:String x:Key="String0166">Enable hot-key mode (emulation)</sys:String>
+    <sys:String x:Key="String01661">Force disable button (key) Windows</sys:String>
 
     <!--  Get graphics page 4 content dialog  -->
     <sys:String x:Key="String0167">Graphics settings</sys:String>

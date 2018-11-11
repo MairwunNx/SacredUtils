@@ -33,6 +33,8 @@ namespace SacredUtils.resources.dlg
                         EnableStretchingScreenshot();
 
                         EnableEmulateHotkeys();
+
+                        EnableDisablingWinKey();
                     }
                     else
                     {
@@ -54,6 +56,8 @@ namespace SacredUtils.resources.dlg
                         EnableStretchingScreenshot();
 
                         EnableEmulateHotkeys();
+
+                        EnableDisablingWinKey();
                     }
                     else
                     {
@@ -82,6 +86,8 @@ namespace SacredUtils.resources.dlg
                         EnableStretchingScreenshot();
 
                         EnableEmulateHotkeys();
+
+                        EnableDisablingWinKey();
                     }
                     else
                     {
@@ -107,6 +113,8 @@ namespace SacredUtils.resources.dlg
                         EnableStretchingScreenshot();
 
                         EnableEmulateHotkeys();
+
+                        EnableDisablingWinKey();
                     }
                     else
                     {
@@ -185,6 +193,18 @@ namespace SacredUtils.resources.dlg
                 Log.Info("Sacred starting with enabled hotkeys emulation ...");
 
                 ApplicationStartEmulateHotkeys.RegisterMainHotkeys();
+            }
+        }
+
+        private void EnableDisablingWinKey()
+        {
+            if (RunWithDisabledWinKeyCmbBox.IsChecked == true)
+            {
+                Log.Info("Sacred starting with disabled win key ...");
+
+                ForceSacredGameDisableWinKey.RegisterKeys();
+
+                ForceSacredGameDisableWinKey.Disable();
             }
         }
 
