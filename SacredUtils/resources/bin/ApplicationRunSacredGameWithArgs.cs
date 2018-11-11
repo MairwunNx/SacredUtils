@@ -10,13 +10,14 @@ namespace SacredUtils.resources.bin
         
         public static void Run(string[] args)
         {
-            if (args.Contains("-cheats"))
+            if (args.Contains("-cheatsEnable"))
             {
                 Process.Start(SacredFileName, SacredCheatArg);
 
                 EnableSwitchingLanguage(args);
                 EnableStretchingScreenshot(args);
-                EnableEmulateHotkeys(args);
+                EnableEmulateHotKeys(args);
+                EnableDisableWinKey(args);
             }
             else
             {
@@ -24,7 +25,8 @@ namespace SacredUtils.resources.bin
 
                 EnableSwitchingLanguage(args);
                 EnableStretchingScreenshot(args);
-                EnableEmulateHotkeys(args);
+                EnableEmulateHotKeys(args);
+                EnableDisableWinKey(args);
             }
         }
 
@@ -44,11 +46,21 @@ namespace SacredUtils.resources.bin
             }
         }
 
-        private static void EnableEmulateHotkeys(string[] args)
+        private static void EnableEmulateHotKeys(string[] args)
         { 
-            if (args.Contains("-emulateHotkeys"))
+            if (args.Contains("-emulateHotKeys"))
             {
                 ApplicationStartEmulateHotkeys.RegisterMainHotkeys();
+            }
+        }
+
+        private static void EnableDisableWinKey(string[] args)
+        {
+            if (args.Contains("-disableWinKey"))
+            {
+                ForceSacredGameDisableWinKey.RegisterKeys();
+
+                ForceSacredGameDisableWinKey.Disable();
             }
         }
     }
