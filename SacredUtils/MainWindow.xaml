@@ -26,6 +26,7 @@
             <Setter Property="FontSize" Value="13" />
         </Style>
     </Window.Resources>
+
     <materialDesign:Card
         x:Name="BaseCard"
         Margin="5,5,5,5"

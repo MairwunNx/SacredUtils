@@ -49,6 +49,9 @@ namespace SacredUtils
         [Option(Alias = "DisableApplicationLogging", DefaultValue = "false")]
         bool DisableApplicationLogging { get; }
 
+        [Option(Alias = "DisableApplicationTabKeyButton", DefaultValue = "true")]
+        bool DisableApplicationTabKeyButton { get; }
+
         [Option(Alias = "DisableApplicationTelemetry", DefaultValue = "false")]
         bool DisableApplicationTelemetry { get; }
 

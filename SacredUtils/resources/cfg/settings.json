@@ -14,6 +14,7 @@
   "DelayCheckingSacredProcess": "1",
   "DesiredFrameRateProperty": "60",
   "DisableApplicationLogging": "false",
+  "DisableApplicationTabKeyButton": "true",
   "DisableApplicationTelemetry": "false",
   "DisableCachingGameComponents": "false",
   "DisableCelebrationFunnyDay": "False",

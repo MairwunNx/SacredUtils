@@ -1,11 +1,11 @@
 ﻿using EnumsNET;
+using MaterialDesignThemes.Wpf;
+using SacredUtils.resources.dlg;
 using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Input;
-using MaterialDesignThemes.Wpf;
-using SacredUtils.resources.dlg;
 using static SacredUtils.AppLogger;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 
@@ -157,6 +157,14 @@ namespace SacredUtils.resources.bin
                 else
                 {
                     _keyPressesChangeLog = 1;
+                }
+            }
+
+            if (e.Key == Key.Tab)
+            {
+                if (AppSettings.ApplicationSettings.DisableApplicationTabKeyButton)
+                {
+                    e.Handled = true;
                 }
             }
         }
