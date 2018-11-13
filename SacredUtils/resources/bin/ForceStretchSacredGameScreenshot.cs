@@ -105,7 +105,7 @@ namespace SacredUtils.resources.bin
 
                         Directory.CreateDirectory(AppSettings.ApplicationSettings.ScreenShotSaveDirectory);
 
-                        Stretch(bmp, MainWindow.ScreenWidthDevice, MainWindow.ScreenHeightDevice, filename);
+                        Stretch(bmp, ScreenResolution.ScreenX, ScreenResolution.ScreenY, filename);
                     }
                 }
             });
@@ -128,7 +128,7 @@ namespace SacredUtils.resources.bin
 
                     Directory.CreateDirectory(AppSettings.ApplicationSettings.ScreenShotSaveDirectory);
 
-                    Stretch(bmp, MainWindow.ScreenWidthDevice, MainWindow.ScreenHeightDevice, filename);
+                    Stretch(bmp, ScreenResolution.ScreenX, ScreenResolution.ScreenY, filename);
                 }
             }
         }

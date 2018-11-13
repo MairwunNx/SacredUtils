@@ -321,6 +321,7 @@
     <Compile Include="resources\prp\GamePlaySettingsThreeProperty.cs" />
     <Compile Include="resources\prp\GamePlaySettingsTwoProperty.cs" />
     <Compile Include="resources\prp\GameSoundSettingsOneProperty.cs" />
+    <Compile Include="ScreenResolution.cs" />
     <Resource Include="resources\cfg\splashes.txt" />
     <Resource Include="resources\cfg\ch.files.txt" />
     <Resource Include="resources\cfg\hk.keyb.txt" />

@@ -180,7 +180,7 @@ namespace SacredUtils.resources.dlg
                     MainWindow.GraphicsStgTwo.FullScreenMode.IsChecked = true;
                 }
 
-                Log.Info($"Sacred Screenshots starting with {MainWindow.ScreenWidthDevice}x{MainWindow.ScreenHeightDevice} resolution ...");
+                Log.Info($"Sacred Screenshots starting with {ScreenResolution.ScreenX}x{ScreenResolution.ScreenY} resolution ...");
 
                 ForceStretchSacredGameScreenshot.RegisterKey(false);
             }

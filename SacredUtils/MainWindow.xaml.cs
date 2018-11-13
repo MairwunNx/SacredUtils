@@ -4,7 +4,6 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
@@ -14,8 +13,6 @@ namespace SacredUtils
 {
     public partial class MainWindow
     {
-        public static int ScreenWidthDevice = Screen.PrimaryScreen.Bounds.Width;
-        public static int ScreenHeightDevice = Screen.PrimaryScreen.Bounds.Height;
         public static readonly ApplicationSettingsOne AppStgOne = new ApplicationSettingsOne();
         public static readonly ApplicationSettingsTwo AppStgTwo = new ApplicationSettingsTwo();
         public static readonly GameChatSettingsOne ChatStgOne = new GameChatSettingsOne();

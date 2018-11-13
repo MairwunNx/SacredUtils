@@ -28,6 +28,8 @@ namespace SacredUtils.resources.bin
 
                 Log.Info($"OS version {Environment.OSVersion.VersionString} {RuntimeInformation.OSArchitecture} bit");
 
+                Log.Info($"Current monitor resolution is {ScreenResolution.ScreenX}x{ScreenResolution.ScreenY} (Primary Screen)");
+
                 Log.Info($"Bitness of the current SacredUtils process {RuntimeInformation.ProcessArchitecture} bit");
 
                 Log.Info($"Allocated memory for SacredUtils {Environment.WorkingSet / 1024 / 1024} MB or {Environment.WorkingSet / 1024} KB");
