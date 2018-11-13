@@ -187,18 +187,21 @@ namespace SacredUtils.resources.bin
         {
             if (AppSettings.ApplicationSettings.ScreenShotRemoveTgaAndJpgFiles)
             {
-                string[] jpgScreen = Directory.GetFiles("Capture\\", "*.jpg");
-                string[] tgaScreen = Directory.GetFiles("Capture\\", "*.tga");
-
-                try
+                if (Directory.Exists("Capture"))
                 {
-                    foreach (string file in jpgScreen) { File.Delete(file); }
+                    string[] jpgScreen = Directory.GetFiles("Capture\\", "*.jpg");
+                    string[] tgaScreen = Directory.GetFiles("Capture\\", "*.tga");
 
-                    foreach (string file in tgaScreen) { File.Delete(file); }
-                }
-                catch (Exception e)
-                {
-                    Log.Error(e.ToString);
+                    try
+                    {
+                        foreach (string file in jpgScreen) { File.Delete(file); }
+
+                        foreach (string file in tgaScreen) { File.Delete(file); }
+                    }
+                    catch (Exception e)
+                    {
+                        Log.Error(e.ToString);
+                    }
                 }
             }
 
