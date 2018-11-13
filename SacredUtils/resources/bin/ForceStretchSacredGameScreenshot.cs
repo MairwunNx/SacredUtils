@@ -105,7 +105,14 @@ namespace SacredUtils.resources.bin
 
                         Directory.CreateDirectory(AppSettings.ApplicationSettings.ScreenShotSaveDirectory);
 
-                        Stretch(bmp, ScreenResolution.ScreenX, ScreenResolution.ScreenY, filename);
+                        if (AppSettings.ApplicationSettings.AllowCustomScreenShotResolution)
+                        {
+                            Stretch(bmp, AppSettings.ApplicationSettings.CustomScreenShotResolutionWidth, AppSettings.ApplicationSettings.CustomScreenShotResolutionHeight, filename);
+                        }
+                        else
+                        {
+                            Stretch(bmp, ScreenResolution.ScreenX, ScreenResolution.ScreenY, filename);
+                        }
                     }
                 }
             });
@@ -128,7 +135,14 @@ namespace SacredUtils.resources.bin
 
                     Directory.CreateDirectory(AppSettings.ApplicationSettings.ScreenShotSaveDirectory);
 
-                    Stretch(bmp, ScreenResolution.ScreenX, ScreenResolution.ScreenY, filename);
+                    if (AppSettings.ApplicationSettings.AllowCustomScreenShotResolution)
+                    {
+                        Stretch(bmp, AppSettings.ApplicationSettings.CustomScreenShotResolutionWidth, AppSettings.ApplicationSettings.CustomScreenShotResolutionHeight, filename);
+                    }
+                    else
+                    {
+                        Stretch(bmp, ScreenResolution.ScreenX, ScreenResolution.ScreenY, filename);
+                    }
                 }
             }
         }

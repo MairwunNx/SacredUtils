@@ -4,6 +4,9 @@ namespace SacredUtils
 {
     public interface IAppSettings
     {
+        [Option(Alias = "AllowCustomScreenShotResolution", DefaultValue = "false")]
+        bool AllowCustomScreenShotResolution { get; }
+
         [Option(Alias = "ApplicationLicenseFileCreate", DefaultValue = "true")]
         bool ApplicationLicenseFileCreate { get; }
 
@@ -38,7 +41,13 @@ namespace SacredUtils
         bool CloseDonateDialogAfterSelect { get; }
 
         [Option(Alias = "ClosePageDialogAfterSelect", DefaultValue = "true")]
-        bool ClosePageDialogAfterSelect { get; } 
+        bool ClosePageDialogAfterSelect { get; }
+
+        [Option(Alias = "CustomScreenShotResolutionHeight", DefaultValue = "1080")]
+        int CustomScreenShotResolutionHeight { get; }
+
+        [Option(Alias = "CustomScreenShotResolutionWidth", DefaultValue = "1920")]
+        int CustomScreenShotResolutionWidth { get; }
 
         [Option(Alias = "DefaultOpenLogFileProgram", DefaultValue = "notepad")]
         string DefaultOpenLogFileProgram { get; }

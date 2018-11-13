@@ -1,4 +1,5 @@
 {
+  "AllowCustomScreenShotResolution": "false",
   "ApplicationLicenseFileCreate": "true",
   "ApplicationLoggingMethodName": "false",
   "ApplicationShowChangeLog": "true",
@@ -11,6 +12,8 @@
   "CheckAutoAlphaUpdate": "false",
   "CloseDonateDialogAfterSelect": "true",
   "ClosePageDialogAfterSelect": "true",
+  "CustomScreenShotResolutionHeight": "1080",
+  "CustomScreenShotResolutionWidth": "1920",
   "DefaultOpenLogFileProgram": "notepad",
   "DelayCheckingSacredProcess": "1",
   "DesiredFrameRateProperty": "60",
