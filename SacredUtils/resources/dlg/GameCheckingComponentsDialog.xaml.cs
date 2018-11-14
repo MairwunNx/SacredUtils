@@ -129,7 +129,7 @@ namespace SacredUtils.resources.dlg
                         CheckingComponents.Visibility = Visibility.Hidden;
                         NotFoundErrors.Visibility = Visibility.Visible;
 
-                        CheckComponentsDialog.CloseOnClickAway = true;
+                        BaseDialog.CloseOnClickAway = true;
                     }));
                 }
                 else
@@ -160,7 +160,7 @@ namespace SacredUtils.resources.dlg
                         RestoringComponents.Visibility = Visibility.Hidden;
                         RepairSuccess.Visibility = Visibility.Visible;
 
-                        CheckComponentsDialog.CloseOnClickAway = true;
+                        BaseDialog.CloseOnClickAway = true;
                     }));
                 }
 

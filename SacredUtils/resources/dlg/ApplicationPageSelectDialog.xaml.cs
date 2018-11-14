@@ -23,7 +23,7 @@ namespace SacredUtils.resources.dlg
 
             if (AppSettings.ApplicationSettings.ClosePageDialogAfterSelect)
             {
-                PageSelectDialog.IsOpen = false;
+                BaseDialog.IsOpen = false;
             }
         }
     }

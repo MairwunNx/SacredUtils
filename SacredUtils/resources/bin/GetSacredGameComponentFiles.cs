@@ -30,7 +30,7 @@ namespace SacredUtils.resources.bin
 
                 if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
                 {
-                    GameGettingComponentsDialog.GetComponentsDialog.DialogTheme = BaseTheme.Dark;
+                    GameGettingComponentsDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
                 }
 
                 if (File.Exists($"{downloadPath}\\{downloadFileName}"))
@@ -40,7 +40,7 @@ namespace SacredUtils.resources.bin
 
                     GameGettingComponentsDialog.UnpackingComponentLabel.Content = $"{DefaultLabelExtractText} {componentName} (0%) ...";
 
-                    GameGettingComponentsDialog.GetComponentsDialog.IsOpen = true;
+                    GameGettingComponentsDialog.BaseDialog.IsOpen = true;
 
                     Task.Run(() =>
                     {
@@ -79,7 +79,7 @@ namespace SacredUtils.resources.bin
 
                     GameGettingComponentsDialog.GettingComponentLabel.Content = $"{DefaultLabelText} {componentName} (0%) ...";
 
-                    GameGettingComponentsDialog.GetComponentsDialog.IsOpen = true;
+                    GameGettingComponentsDialog.BaseDialog.IsOpen = true;
 
                     wc.DownloadFileTaskAsync(address, $"{downloadPath}\\{downloadFileName}");
                 }
@@ -128,7 +128,7 @@ namespace SacredUtils.resources.bin
 
                 Application.Current.Dispatcher.Invoke(DispatcherPriority.Send, new ThreadStart(delegate
                 {
-                    GameGettingComponentsDialog.GetComponentsDialog.IsOpen = false;
+                    GameGettingComponentsDialog.BaseDialog.IsOpen = false;
                     GameGettingComponentsDialog.GettingComponentLabel.Content = defaultLabelTextArg;
                     GameGettingComponentsDialog.UnpackingComponentLabel.Content = DefaultLabelExtractText;
                 }));

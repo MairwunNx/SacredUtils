@@ -38,10 +38,10 @@ namespace SacredUtils.resources.bin
 
             if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {
-                applicationRunSacredDialog.AboutDialog.DialogTheme = BaseTheme.Dark;
+                applicationRunSacredDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
             }
 
-            applicationRunSacredDialog.AboutDialog.IsOpen = true;
+            applicationRunSacredDialog.BaseDialog.IsOpen = true;
         }
     }
 }

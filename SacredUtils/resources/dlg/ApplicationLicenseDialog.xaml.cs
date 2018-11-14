@@ -15,7 +15,7 @@ namespace SacredUtils.resources.dlg
 
         private void AcceptLicenseBtn_Click(object sender, RoutedEventArgs e)
         {
-            LicenseDialog.IsOpen = false;
+            BaseDialog.IsOpen = false;
 
             File.WriteAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\LicenseAgreement.su", "true");
 

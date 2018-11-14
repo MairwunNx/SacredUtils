@@ -43,10 +43,10 @@ namespace SacredUtils.resources.bin
 
             if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {
-                applicationLicenseDialog.LicenseDialog.DialogTheme = BaseTheme.Dark;
+                applicationLicenseDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
             }
 
-            applicationLicenseDialog.LicenseDialog.IsOpen = true;
+            applicationLicenseDialog.BaseDialog.IsOpen = true;
         }
     }
 }

@@ -22,7 +22,7 @@ namespace SacredUtils.resources.dlg
                 {
                     if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
                     {
-                        AboutDialog.IsOpen = false;
+                        BaseDialog.IsOpen = false;
 
                         Log.Info($"Starting {AppSettings.ApplicationSettings.SacredExecutableFileName} game file with arg CHEATS=1 ...");
                         
@@ -45,7 +45,7 @@ namespace SacredUtils.resources.dlg
                 {
                     if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
                     {
-                        AboutDialog.IsOpen = false;
+                        BaseDialog.IsOpen = false;
 
                         Log.Info($"Starting {AppSettings.ApplicationSettings.SacredExecutableFileName} game file ...");
 
@@ -71,7 +71,7 @@ namespace SacredUtils.resources.dlg
                 {
                     if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
                     {
-                        AboutDialog.IsOpen = false;
+                        BaseDialog.IsOpen = false;
 
                         Log.Info("Param selected: Minimizing SacredUtils application ...");
 
@@ -98,7 +98,7 @@ namespace SacredUtils.resources.dlg
                 {
                     if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
                     {
-                        AboutDialog.IsOpen = false;
+                        BaseDialog.IsOpen = false;
 
                         Log.Info("Param selected: Minimizing SacredUtils application ...");
 
@@ -210,7 +210,7 @@ namespace SacredUtils.resources.dlg
 
         private void CancelLaunchBtn_Click(object sender, RoutedEventArgs e)
         {
-            AboutDialog.IsOpen = false;
+            BaseDialog.IsOpen = false;
 
             Log.Info("Sacred starting canceled by user");
         }

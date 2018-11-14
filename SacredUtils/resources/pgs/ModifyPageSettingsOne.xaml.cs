@@ -419,12 +419,12 @@ namespace SacredUtils.resources.pgs
 
                         if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
                         {
-                            gameCheckingComponentsDialog.CheckComponentsDialog.DialogTheme = BaseTheme.Dark;
+                            gameCheckingComponentsDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
                         }
 
                         gameCheckingComponentsDialog.CheckingComponents.Visibility = Visibility.Visible;
 
-                        gameCheckingComponentsDialog.CheckComponentsDialog.IsOpen = true;
+                        gameCheckingComponentsDialog.BaseDialog.IsOpen = true;
 
                         gameCheckingComponentsDialog.CheckComponents();
                     }

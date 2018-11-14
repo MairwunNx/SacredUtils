@@ -11,7 +11,7 @@
     mc:Ignorable="d">
     <Grid>
         <materialDesign:DialogHost
-            x:Name="GetComponentsDialog"
+            x:Name="BaseDialog"
             CloseOnClickAway="False"
             IsOpen="False"
             Visibility="Visible">
