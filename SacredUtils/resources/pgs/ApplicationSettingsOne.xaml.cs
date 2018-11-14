@@ -89,10 +89,10 @@ namespace SacredUtils.resources.pgs
 
             if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {
-                applicationAboutDialog.AboutDialog.DialogTheme = BaseTheme.Dark;
+                applicationAboutDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
             }
 
-            applicationAboutDialog.AboutDialog.IsOpen = true;
+            applicationAboutDialog.BaseDialog.IsOpen = true;
         }
 
         private static void OpenTwoPage()
