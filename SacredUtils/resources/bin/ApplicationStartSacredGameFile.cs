@@ -20,6 +20,7 @@ namespace SacredUtils.resources.bin
                     applicationRunSacredDialog.RunWithEngLangCmbBox.IsEnabled = false;
                     applicationRunSacredDialog.RunWithScreenCmbBox.IsEnabled = false;
                     applicationRunSacredDialog.RunWithHotkeysCmbBox.IsEnabled = false;
+                    applicationRunSacredDialog.RunWithDisabledWinKeyCmbBox.IsEnabled = false;
                 }
             }
             else
@@ -29,6 +30,7 @@ namespace SacredUtils.resources.bin
                 applicationRunSacredDialog.RunWithEngLangCmbBox.IsEnabled = false;
                 applicationRunSacredDialog.RunWithScreenCmbBox.IsEnabled = false;
                 applicationRunSacredDialog.RunWithHotkeysCmbBox.IsEnabled = false;
+                applicationRunSacredDialog.RunWithDisabledWinKeyCmbBox.IsEnabled = false;
             }
 
             MainWindow.DialogFrame.Visibility = Visibility.Visible;
