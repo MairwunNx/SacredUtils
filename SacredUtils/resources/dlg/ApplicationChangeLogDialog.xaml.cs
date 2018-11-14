@@ -6,7 +6,6 @@ namespace SacredUtils.resources.dlg
     {
         public ApplicationChangeLogDialog() => InitializeComponent();
 
-
         private void BaseButtonYes_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             Process.Start("https://github.com/MairwunNx/SacredUtils/blob/master/CHANGELOG.md");

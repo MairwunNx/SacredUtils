@@ -4,10 +4,10 @@ using Clipboard = System.Windows.Clipboard;
 
 namespace SacredUtils.resources.dlg
 {
-    public partial class ApplicationConverHtmlToSacred
+    public partial class ApplicationConvertHtmlToSacred
     {
-        public ApplicationConverHtmlToSacred() => InitializeComponent();
-
+        public ApplicationConvertHtmlToSacred() => InitializeComponent();
+        
         private void CopyNickBtn_Click(object sender, RoutedEventArgs e) => Clipboard.SetText(NickTextBox.Text);
 
         private void SelectColorBtn_Click(object sender, RoutedEventArgs e)

@@ -16,7 +16,7 @@ namespace SacredUtils.resources.pgs
 {
     public partial class ModifyPageSettingsOne
     {
-        ApplicationConverHtmlToSacred applicationConverHtmlToSacred = new ApplicationConverHtmlToSacred();
+        ApplicationConvertHtmlToSacred applicationConvertHtmlToSacred = new ApplicationConvertHtmlToSacred();
 
         public ModifyPageSettingsOne()
         {
@@ -371,16 +371,16 @@ namespace SacredUtils.resources.pgs
                 if (window.GetType() == typeof(MainWindow))
                 {
                     ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
-                    ((MainWindow)window).DialogFrame.Content = applicationConverHtmlToSacred;
+                    ((MainWindow)window).DialogFrame.Content = applicationConvertHtmlToSacred;
                 }
             }
 
             if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {
-                applicationConverHtmlToSacred.ConvertColorsDialog.DialogTheme = BaseTheme.Dark;
+                applicationConvertHtmlToSacred.ConvertColorsDialog.DialogTheme = BaseTheme.Dark;
             }
 
-            applicationConverHtmlToSacred.ConvertColorsDialog.IsOpen = true;
+            applicationConvertHtmlToSacred.ConvertColorsDialog.IsOpen = true;
         }
 
         private void StartCheckingComponentsBtn_Click(object sender, RoutedEventArgs e)
