@@ -377,10 +377,10 @@ namespace SacredUtils.resources.pgs
 
             if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {
-                applicationConvertHtmlToSacred.ConvertColorsDialog.DialogTheme = BaseTheme.Dark;
+                applicationConvertHtmlToSacred.BaseDialog.DialogTheme = BaseTheme.Dark;
             }
 
-            applicationConvertHtmlToSacred.ConvertColorsDialog.IsOpen = true;
+            applicationConvertHtmlToSacred.BaseDialog.IsOpen = true;
         }
 
         private void StartCheckingComponentsBtn_Click(object sender, RoutedEventArgs e)
