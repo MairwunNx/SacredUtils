@@ -20,6 +20,8 @@ namespace SacredUtils.resources.bin
                 File.WriteAllBytes("$SacredUtils\\conf\\mk.setg.json", Properties.Resources.mk_setg);
             }
 
+            File.WriteAllText("$SacredUtils\\conf\\splashes.txt", Properties.Resources.splashes, Encoding.UTF8);
+
             if (!AppSettings.ApplicationSettings.DisableCreatingRequiredFiles)
             {
                 if (!File.Exists("$SacredUtils\\conf\\hotkeys.json"))
@@ -56,8 +58,6 @@ namespace SacredUtils.resources.bin
                 {
                     File.WriteAllBytes("$SacredUtils\\conf\\hk.regr.txt", Properties.Resources.hk_regr);
                 }
-
-                File.WriteAllText("$SacredUtils\\conf\\splashes.txt", Properties.Resources.splashes, Encoding.UTF8);
             }
         }
     }
