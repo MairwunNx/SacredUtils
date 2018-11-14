@@ -6,11 +6,11 @@
     xmlns:globalizer="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="200"
-    d:DesignWidth="323"
+    d:DesignHeight="685"
+    d:DesignWidth="1076"
     mc:Ignorable="d">
     <materialDesign:DialogHost
-        x:Name="DonateSelectDialog"
+        x:Name="BaseDialog"
         CloseOnClickAway="True"
         IsOpen="False"
         Visibility="Visible">

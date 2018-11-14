@@ -22,7 +22,7 @@ namespace SacredUtils.resources.dlg
 
             if (AppSettings.ApplicationSettings.CloseDonateDialogAfterSelect)
             {
-                DonateSelectDialog.IsOpen = false;
+                BaseDialog.IsOpen = false;
             }
         }
     }

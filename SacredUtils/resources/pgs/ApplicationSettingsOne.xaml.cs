@@ -68,10 +68,10 @@ namespace SacredUtils.resources.pgs
 
             if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {
-                applicationDonateSelectDialog.DonateSelectDialog.DialogTheme = BaseTheme.Dark;
+                applicationDonateSelectDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
             }
 
-            applicationDonateSelectDialog.DonateSelectDialog.IsOpen = true;
+            applicationDonateSelectDialog.BaseDialog.IsOpen = true;
         }
 
         private static void OpenAboutDialog()

@@ -231,8 +231,8 @@
     <Compile Include="resources\dlg\ApplicationClearCacheDialog.xaml.cs">
       <DependentUpon>ApplicationClearCacheDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\dlg\ApplicationConverHtmlToSacred.xaml.cs">
-      <DependentUpon>ApplicationConverHtmlToSacred.xaml</DependentUpon>
+    <Compile Include="resources\dlg\ApplicationConvertHtmlToSacred.xaml.cs">
+      <DependentUpon>ApplicationConvertHtmlToSacred.xaml</DependentUpon>
     </Compile>
     <Compile Include="resources\dlg\ApplicationDonateSelectDialog.xaml.cs">
       <DependentUpon>ApplicationDonateSelectDialog.xaml</DependentUpon>
@@ -361,7 +361,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\dlg\ApplicationConverHtmlToSacred.xaml">
+    <Page Include="resources\dlg\ApplicationConvertHtmlToSacred.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
