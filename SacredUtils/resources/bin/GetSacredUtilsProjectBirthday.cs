@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Net;
 using System.Threading;
 using System.Windows;
 using System.Windows.Media;
@@ -16,7 +17,7 @@ namespace SacredUtils.resources.bin
             Set("ProjectBirthDay"); Set("NewYear");
             Set("AuthorBirthDay"); Set("Bar");
             Set("Ireland"); Set("WindDay"); Set("Earth");
-            Set("Halloween"); Set("Fun");
+            Set("Halloween"); Set("Fun"); Set("RandomLabel");
         }
 
         private static void Set(string day) 
@@ -150,21 +151,58 @@ namespace SacredUtils.resources.bin
 
                 if (parameterDate == todaysDate)
                 {
-                    if (AppSettings.ApplicationSettings.DisableCelebrationFunnyDay)
+                    if (!AppSettings.ApplicationSettings.DisableCelebrationFunnyDay)
                     {
-                        Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                        Random rnd = new Random();
+
+                        int randomInt = rnd.Next(0, 2);
+
+                        if (randomInt == 2)
                         {
-                            RotateTransform myRotateTransform = new RotateTransform { Angle = 180 };
+                            Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                            {
+                                RotateTransform myRotateTransform = new RotateTransform { Angle = 180 };
 
-                            TransformGroup myTransformGroup = new TransformGroup();
-                            myTransformGroup.Children.Add(myRotateTransform);
+                                TransformGroup myTransformGroup = new TransformGroup();
+                                myTransformGroup.Children.Add(myRotateTransform);
 
-                            MainWindow.BaseGrid.RenderTransformOrigin = new Point(0.5, 0.5);
-                            MainWindow.BaseGrid.RenderTransform = myTransformGroup;
-                        }));
+                                MainWindow.BaseGrid.RenderTransformOrigin = new Point(0.5, 0.5);
+                                MainWindow.BaseGrid.RenderTransform = myTransformGroup;
+                            }));
+                        }
                     }
                 }
             }
+
+            if (day == "RandomLabel")
+            {
+                Random rnd = new Random();
+
+                int randomInt = rnd.Next(0, 400);
+
+                if (randomInt == 168)
+                {
+                    int fontSize = Convert.ToInt32(GetDataFromGoogleDisk("https://drive.google.com/uc?export=download&id=1DzUjXAXsdXb--aAS-gmyCYQUrzEN3Dzx"));
+                    string labelContent = GetDataFromGoogleDisk("https://drive.google.com/uc?export=download&id=1T9VJX7Bu8Bo6JVs_GdHWV6gP8NDnYykX");
+
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                    {
+                        if (MainWindow.NoConnectImage.Visibility != 0)
+                        {
+                            MainWindow.SimpleLabel.FontSize = fontSize;
+                            MainWindow.SimpleLabel.Content = labelContent;
+                            MainWindow.SimpleLabel.Visibility = 0;
+                        }
+                    }));
+                }
+            }
+        }
+
+        private static string GetDataFromGoogleDisk(string uri)
+        {
+            string data = new WebClient().DownloadStringTaskAsync(new Uri(uri)).Result;
+
+            return data;
         }
     }
 }

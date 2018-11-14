@@ -457,6 +457,19 @@
                 Source="{StaticResource ResourceKey=NoInternetConnection}"
                 Visibility="Collapsed" />
 
+            <Label
+                x:Name="SimpleLabel"
+                Grid.Row="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Content="Inadequate"
+                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontSize="160"
+                Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                IsHitTestVisible="False"
+                Opacity="0.4"
+                Visibility="Collapsed" />
+
             <!--#endregion-->
 
             <!--#region Content for page dialogs.-->
