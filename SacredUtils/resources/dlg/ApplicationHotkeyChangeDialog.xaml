@@ -11,7 +11,7 @@
     mc:Ignorable="d">
     <Grid>
         <materialDesign:DialogHost
-            x:Name="HotkeyEditDialog"
+            x:Name="BaseDialog"
             CloseOnClickAway="True"
             IsOpen="False"
             Visibility="Visible">

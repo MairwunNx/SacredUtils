@@ -234,10 +234,10 @@ namespace SacredUtils.resources.pgs
 
             if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {
-                applicationHotkey.HotkeyEditDialog.DialogTheme = BaseTheme.Dark;
+                applicationHotkey.BaseDialog.DialogTheme = BaseTheme.Dark;
             }
 
-            applicationHotkey.HotkeyEditDialog.IsOpen = true;
+            applicationHotkey.BaseDialog.IsOpen = true;
         }
 
         private void EditCreatureBtn_Click(object sender, RoutedEventArgs e)
