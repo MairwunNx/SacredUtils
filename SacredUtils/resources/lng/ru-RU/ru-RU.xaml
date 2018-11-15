@@ -159,8 +159,8 @@
     <sys:String x:Key="String0121">Прочитать лиц. соглашение</sys:String>
     <sys:String x:Key="String0122">Лицензионное соглашение</sys:String>
     <sys:String x:Key="String0123">Пожалуйста, рассмотрите лицензионное соглашение и условия использования SacredUtils, до соглашения!</sys:String>
-    <sys:String x:Key="String0124">Использование нелицензионного программного обеспечения является нарушением авторских и смежных прав и влечет за собой административную (ст. 7.12. КоАП РФ), уголовную (ст. 146 УК РФ) и гражданско-правовую ответственность.</sys:String>
-    <sys:String x:Key="String0125">Пожалуйста и не забывайте про ГК РФ Статья 1252. Защита исключительных прав</sys:String>
+    <sys:String x:Key="String0124">++ UNUSED ++</sys:String>
+    <sys:String x:Key="String0125">++ UNUSED ++</sys:String>
     <sys:String x:Key="String0126">Принял условия</sys:String>
     <sys:String x:Key="String0127">Закрыть SacredUtils</sys:String>
 
