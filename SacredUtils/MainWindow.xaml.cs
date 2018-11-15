@@ -59,7 +59,7 @@ namespace SacredUtils
 
             CloseBtn.Click += (s, e) => ApplicationBaseWindowShutdown.Shutdown();
             UpdateLbl.MouseDown += (s, e) => ApplicationStartUtilityUpdate.Start();
-            BaseWindow.PreviewKeyDown += (s, e) => ApplicationBaseWindowHotkeys.KeyDown(s, e);
+            BaseWindow.PreviewKeyDown += ApplicationBaseWindowHotkeys.KeyDown;
             MinimizeBtn.Click += (s, e) => WindowState = WindowState.Minimized;
             MemoryLbl.MouseDown += (s, e) => GC.Collect();
             HeaderPanel.MouseDown += DragWindow;

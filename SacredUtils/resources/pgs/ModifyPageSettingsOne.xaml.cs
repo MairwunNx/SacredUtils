@@ -206,8 +206,6 @@ namespace SacredUtils.resources.pgs
                         {
                             file.Extract("bin\\TYPE_ADDED_UTILITY\\Balance", ExtractExistingFileAction.OverwriteSilently);
                         }
-
-                        zip.Dispose();
                     }
 
                     Process.Start("bin\\TYPE_ADDED_UTILITY\\Balance\\BalanceEditor.exe");
@@ -258,8 +256,6 @@ namespace SacredUtils.resources.pgs
                         {
                             file.Extract("bin\\TYPE_ADDED_UTILITY\\Creature", ExtractExistingFileAction.OverwriteSilently);
                         }
-
-                        zip.Dispose();
                     }
 
                     Process.Start("bin\\TYPE_ADDED_UTILITY\\Creature\\CreatureEditor.exe");
@@ -289,8 +285,6 @@ namespace SacredUtils.resources.pgs
                         {
                             file.Extract("bin\\TYPE_ADDED_UTILITY\\Weapon", ExtractExistingFileAction.OverwriteSilently);
                         }
-
-                        zip.Dispose();
                     }
 
                     Process.Start("bin\\TYPE_ADDED_UTILITY\\Weapon\\WeaponEditor.exe");
@@ -320,8 +314,6 @@ namespace SacredUtils.resources.pgs
                         {
                             file.Extract("bin\\TYPE_ADDED_UTILITY\\HeroResetter", ExtractExistingFileAction.OverwriteSilently);
                         }
-
-                        zip.Dispose();
                     }
 
                     Process.Start("bin\\TYPE_ADDED_UTILITY\\HeroResetter\\SHR.exe");
@@ -351,8 +343,6 @@ namespace SacredUtils.resources.pgs
                         {
                             file.Extract("bin\\TYPE_ADDED_UTILITY\\HeroEditor", ExtractExistingFileAction.OverwriteSilently);
                         }
-
-                        zip.Dispose();
                     }
 
                     Process.Start("bin\\TYPE_ADDED_UTILITY\\HeroEditor\\she.exe");

@@ -71,8 +71,6 @@ namespace SacredUtils.resources.bin
                         Log.Error(exception.ToString);
                     }
                 }
-
-                zip.Dispose();
             }
 
             Log.Info("Creating keyla switching language application done!");

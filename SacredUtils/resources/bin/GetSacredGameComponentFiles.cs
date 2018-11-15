@@ -113,8 +113,6 @@ namespace SacredUtils.resources.bin
                     {
                         e.Extract(extractFolder, ExtractExistingFileAction.OverwriteSilently);
                     }
-
-                    zip.Dispose();
                 }
 
                 File.Delete(newFileName); File.Move(oldFileName, newFileName); Thread.Sleep(1000);

@@ -290,8 +290,6 @@ namespace SacredUtils.resources.prp
                     {
                         e.Extract("PAK", ExtractExistingFileAction.OverwriteSilently);
                     }
-
-                    zip.Dispose();
                 }
 
                 if (resourceName == "BOG")
