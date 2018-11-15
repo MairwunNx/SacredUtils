@@ -296,47 +296,27 @@ namespace SacredUtils.resources.pgs
         {
             if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
             {
-                FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(AppSettings.ApplicationSettings.SacredExecutableFileName);
-
-                string fileVersion =
-                    $"{versionInfo.FileMajorPart}.{versionInfo.FileMinorPart}.{versionInfo.FileBuildPart}.{versionInfo.FilePrivatePart}";
-
                 FrameworkElement element = new FrameworkElement();
 
-                if (fileVersion != "2.0.2.8" && fileVersion != "2.29.13.0" && fileVersion != "2.0.2.118")
+                if (!AppSettings.ApplicationSettings.DisableCheckingSacredVersion)
                 {
-                    MessageBox.Show(element.FindResource("String0156") as string);
+                    FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(AppSettings.ApplicationSettings.SacredExecutableFileName);
+
+                    string fileVersion =
+                        $"{versionInfo.FileMajorPart}.{versionInfo.FileMinorPart}.{versionInfo.FileBuildPart}.{versionInfo.FilePrivatePart}";
+                    
+                    if (fileVersion != "2.0.2.8" && fileVersion != "2.29.13.0" && fileVersion != "2.0.2.118")
+                    {
+                        MessageBox.Show(element.FindResource("String0156") as string);
+                    }
+                    else
+                    {
+                        StartCheckingComponents(element);
+                    }
                 }
                 else
                 {
-                    File.WriteAllBytes("$SacredUtils\\conf\\ch.files.txt", Properties.Resources.ch_files);
-
-                    MessageBoxResult result = MessageBox.Show(element.FindResource("String0158") as string, "", MessageBoxButton.OKCancel);
-
-                    if (result == MessageBoxResult.OK)
-                    {
-                        GameCheckingComponentsDialog gameCheckingComponentsDialog = new GameCheckingComponentsDialog();
-
-                        foreach (Window window in Application.Current.Windows)
-                        {
-                            if (window.GetType() == typeof(MainWindow))
-                            {
-                                ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
-                                ((MainWindow)window).DialogFrame.Content = gameCheckingComponentsDialog;
-                            }
-                        }
-
-                        if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
-                        {
-                            gameCheckingComponentsDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
-                        }
-
-                        gameCheckingComponentsDialog.CheckingComponents.Visibility = Visibility.Visible;
-
-                        gameCheckingComponentsDialog.BaseDialog.IsOpen = true;
-
-                        gameCheckingComponentsDialog.CheckComponents();
-                    }
+                    StartCheckingComponents(element);
                 }
             }
             else
@@ -344,6 +324,38 @@ namespace SacredUtils.resources.pgs
                 FrameworkElement element = new FrameworkElement();
 
                 MessageBox.Show(element.FindResource("String0157") as string);
+            }
+        }
+
+        private void StartCheckingComponents(FrameworkElement element)
+        {
+            File.WriteAllBytes("$SacredUtils\\conf\\ch.files.txt", Properties.Resources.ch_files);
+
+            MessageBoxResult result = MessageBox.Show(element.FindResource("String0158") as string, "", MessageBoxButton.OKCancel);
+
+            if (result == MessageBoxResult.OK)
+            {
+                GameCheckingComponentsDialog gameCheckingComponentsDialog = new GameCheckingComponentsDialog();
+
+                foreach (Window window in Application.Current.Windows)
+                {
+                    if (window.GetType() == typeof(MainWindow))
+                    {
+                        ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
+                        ((MainWindow)window).DialogFrame.Content = gameCheckingComponentsDialog;
+                    }
+                }
+
+                if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
+                {
+                    gameCheckingComponentsDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
+                }
+
+                gameCheckingComponentsDialog.CheckingComponents.Visibility = Visibility.Visible;
+
+                gameCheckingComponentsDialog.BaseDialog.IsOpen = true;
+
+                gameCheckingComponentsDialog.CheckComponents();
             }
         }
     }

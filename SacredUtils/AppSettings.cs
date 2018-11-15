@@ -76,6 +76,9 @@ namespace SacredUtils
         [Option(Alias = "DisableCheckingGlobLibrary", DefaultValue = "false")]
         bool DisableCheckingGlobLibrary { get; }
 
+        [Option(Alias = "DisableCheckingSacredVersion", DefaultValue = "false")]
+        bool DisableCheckingSacredVersion { get; }
+
         [Option(Alias = "DisableCheckInternetConnection", DefaultValue = "false")]
         bool DisableCheckInternetConnection { get; }
         

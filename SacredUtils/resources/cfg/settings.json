@@ -23,6 +23,7 @@
   "DisableCachingGameComponents": "false",
   "DisableCelebrationFunnyDay": "false",
   "DisableCheckingGlobLibrary": "false",
+  "DisableCheckingSacredVersion": "false",
   "DisableCheckInternetConnection": "false",
   "DisableCreatingRequiredFiles": "false",
   "DisablePrintBaseInfoToLog": "false",
