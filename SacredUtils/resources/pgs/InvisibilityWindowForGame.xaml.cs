@@ -22,12 +22,10 @@ namespace SacredUtils.resources.pgs
             {
                 Process[] pname = Process.GetProcessesByName("Sacred");
 
-                if (pname.Length == 0) { SelfKill(); }
+                if (pname.Length == 0) { Environment.Exit(0); }
             };
 
             timer.Start();
         }
-
-        private static void SelfKill() => Environment.Exit(0);
     }
 }
