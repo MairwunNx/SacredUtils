@@ -20,7 +20,7 @@ namespace SacredUtils.resources.arr
             $"{Environment.ExpandEnvironmentVariables("%tmp%")}\\SacredPatched228.zip",
             $"{Environment.ExpandEnvironmentVariables("%tmp%")}\\SacredPatched22914.zip",
             $"{Environment.ExpandEnvironmentVariables("%tmp%")}\\ServerPatched228.zip",
-            $"{Environment.ExpandEnvironmentVariables("%tmp%")}\\ServerPatched229.zip",
+            $"{Environment.ExpandEnvironmentVariables("%tmp%")}\\ServerPatched229.zip"
         };
     }
 }
