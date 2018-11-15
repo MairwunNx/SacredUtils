@@ -190,25 +190,32 @@ namespace SacredUtils.resources.pgs
 
         private void EditBalanceBtn_Click(object sender, RoutedEventArgs e)
         {
+            GetExternalUtilities("https://drive.google.com/uc?export=download&id=1IJ_UJwL6V6oB-KCrXIGj_59lLZGhiZcJ",
+                "bin\\TYPE_ADDED_UTILITY\\Balance", "bin\\TYPE_ADDED_UTILITY\\Balance\\BalanceEditor.zip",
+                "bin\\TYPE_ADDED_UTILITY\\Balance\\BalanceEditor.exe");
+        }
+
+        private void GetExternalUtilities(string link, string directory, string fileName, string startFile)
+        {
             Task.Run(() =>
             {
                 try
                 {
-                    Directory.CreateDirectory("bin\\TYPE_ADDED_UTILITY\\Balance");
+                    Directory.CreateDirectory(directory);
 
                     WebClient wc = new WebClient();
 
-                    wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1IJ_UJwL6V6oB-KCrXIGj_59lLZGhiZcJ", "bin\\TYPE_ADDED_UTILITY\\Balance\\BalanceEditor.zip").Wait();
+                    wc.DownloadFileTaskAsync(link, fileName).Wait();
 
-                    using (ZipFile zip = ZipFile.Read("bin\\TYPE_ADDED_UTILITY\\Balance\\BalanceEditor.zip"))
+                    using (ZipFile zip = ZipFile.Read(fileName))
                     {
                         foreach (ZipEntry file in zip)
                         {
-                            file.Extract("bin\\TYPE_ADDED_UTILITY\\Balance", ExtractExistingFileAction.OverwriteSilently);
+                            file.Extract(directory, ExtractExistingFileAction.OverwriteSilently);
                         }
                     }
 
-                    Process.Start("bin\\TYPE_ADDED_UTILITY\\Balance\\BalanceEditor.exe");
+                    Process.Start(startFile);
                 }
                 catch (Exception exception)
                 {
@@ -240,118 +247,30 @@ namespace SacredUtils.resources.pgs
 
         private void EditCreatureBtn_Click(object sender, RoutedEventArgs e)
         {
-            Task.Run(() =>
-            {
-                try
-                {
-                    Directory.CreateDirectory("bin\\TYPE_ADDED_UTILITY\\Creature");
-
-                    WebClient wc = new WebClient();
-
-                    wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1o6kHQYJErUFnfbrO0rmXCoHmFe_dGdWI", "bin\\TYPE_ADDED_UTILITY\\Creature\\CreatureEditor.zip").Wait();
-
-                    using (ZipFile zip = ZipFile.Read("bin\\TYPE_ADDED_UTILITY\\Creature\\CreatureEditor.zip"))
-                    {
-                        foreach (ZipEntry file in zip)
-                        {
-                            file.Extract("bin\\TYPE_ADDED_UTILITY\\Creature", ExtractExistingFileAction.OverwriteSilently);
-                        }
-                    }
-
-                    Process.Start("bin\\TYPE_ADDED_UTILITY\\Creature\\CreatureEditor.exe");
-                }
-                catch (Exception exception)
-                {
-                    Log.Error(exception.ToString());
-                }
-            });
+            GetExternalUtilities("https://drive.google.com/uc?export=download&id=1o6kHQYJErUFnfbrO0rmXCoHmFe_dGdWI",
+                "bin\\TYPE_ADDED_UTILITY\\Creature", "bin\\TYPE_ADDED_UTILITY\\Creature\\CreatureEditor.zip",
+                "bin\\TYPE_ADDED_UTILITY\\Creature\\CreatureEditor.exe");
         }
 
         private void EditWeaponBtn_Click(object sender, RoutedEventArgs e)
         {
-            Task.Run(() =>
-            {
-                try
-                {
-                    Directory.CreateDirectory("bin\\TYPE_ADDED_UTILITY\\Weapon");
-
-                    WebClient wc = new WebClient();
-
-                    wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1KqM53E5eeqV96voOISamHk39e__dgsoE", "bin\\TYPE_ADDED_UTILITY\\Weapon\\WeaponEditor.zip").Wait();
-
-                    using (ZipFile zip = ZipFile.Read("bin\\TYPE_ADDED_UTILITY\\Weapon\\WeaponEditor.zip"))
-                    {
-                        foreach (ZipEntry file in zip)
-                        {
-                            file.Extract("bin\\TYPE_ADDED_UTILITY\\Weapon", ExtractExistingFileAction.OverwriteSilently);
-                        }
-                    }
-
-                    Process.Start("bin\\TYPE_ADDED_UTILITY\\Weapon\\WeaponEditor.exe");
-                }
-                catch (Exception exception)
-                {
-                    Log.Error(exception.ToString());
-                }
-            });
+            GetExternalUtilities("https://drive.google.com/uc?export=download&id=1KqM53E5eeqV96voOISamHk39e__dgsoE",
+                "bin\\TYPE_ADDED_UTILITY\\Weapon", "bin\\TYPE_ADDED_UTILITY\\Weapon\\WeaponEditor.zip",
+                "bin\\TYPE_ADDED_UTILITY\\Weapon\\WeaponEditor.exe");
         }
 
         private void RunSacredHeroResetterBtn_Click(object sender, RoutedEventArgs e)
         {
-            Task.Run(() =>
-            {
-                try
-                {
-                    Directory.CreateDirectory("bin\\TYPE_ADDED_UTILITY\\HeroResetter");
-
-                    WebClient wc = new WebClient();
-
-                    wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1tJ6dPj0dXJqGPs8pNbDJ1DkQCGV_VADt", "bin\\TYPE_ADDED_UTILITY\\HeroResetter\\HeroResetter.zip").Wait();
-
-                    using (ZipFile zip = ZipFile.Read("bin\\TYPE_ADDED_UTILITY\\HeroResetter\\HeroResetter.zip"))
-                    {
-                        foreach (ZipEntry file in zip)
-                        {
-                            file.Extract("bin\\TYPE_ADDED_UTILITY\\HeroResetter", ExtractExistingFileAction.OverwriteSilently);
-                        }
-                    }
-
-                    Process.Start("bin\\TYPE_ADDED_UTILITY\\HeroResetter\\SHR.exe");
-                }
-                catch (Exception exception)
-                {
-                    Log.Error(exception.ToString());
-                }
-            });
+            GetExternalUtilities("https://drive.google.com/uc?export=download&id=1tJ6dPj0dXJqGPs8pNbDJ1DkQCGV_VADt",
+                "bin\\TYPE_ADDED_UTILITY\\HeroResetter", "bin\\TYPE_ADDED_UTILITY\\HeroResetter\\HeroResetter.zip",
+                "bin\\TYPE_ADDED_UTILITY\\HeroResetter\\SHR.exe");
         }
 
         private void RunCharModifBtn_Click(object sender, RoutedEventArgs e)
         {
-            Task.Run(() =>
-            {
-                try
-                {
-                    Directory.CreateDirectory("bin\\TYPE_ADDED_UTILITY\\HeroEditor");
-
-                    WebClient wc = new WebClient();
-
-                    wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1fOvBcZlk1dY-IIsRgkuOHiJAsyWdmiUp", "bin\\TYPE_ADDED_UTILITY\\HeroEditor\\HeroEditor.zip").Wait();
-
-                    using (ZipFile zip = ZipFile.Read("bin\\TYPE_ADDED_UTILITY\\HeroEditor\\HeroEditor.zip"))
-                    {
-                        foreach (ZipEntry file in zip)
-                        {
-                            file.Extract("bin\\TYPE_ADDED_UTILITY\\HeroEditor", ExtractExistingFileAction.OverwriteSilently);
-                        }
-                    }
-
-                    Process.Start("bin\\TYPE_ADDED_UTILITY\\HeroEditor\\she.exe");
-                }
-                catch (Exception exception)
-                {
-                    Log.Error(exception.ToString());
-                }
-            });
+            GetExternalUtilities("https://drive.google.com/uc?export=download&id=1fOvBcZlk1dY-IIsRgkuOHiJAsyWdmiUp",
+                "bin\\TYPE_ADDED_UTILITY\\HeroEditor", "bin\\TYPE_ADDED_UTILITY\\HeroEditor\\HeroEditor.zip",
+                "bin\\TYPE_ADDED_UTILITY\\HeroEditor\\she.exe");
         }
 
         private void RunConvertColors_Click(object sender, RoutedEventArgs e)
