@@ -73,10 +73,6 @@ namespace SacredUtils
 
             Loaded += (sender, args) =>
             {
-                AppSummary.Sw.Stop(); // Make Yourself ^_^
-
-                Log.Info($"Loading SacredUtils application done ({AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
-
                 Task.Run(CheckAvailabilityAlphaUpdates.GetPerm);
 
                 Task.Run(GetNoInternetIconVisibility.Get);
@@ -86,6 +82,10 @@ namespace SacredUtils
                 if (!CheckAvailabilityInternetConnection.Connect()) { NoConnectImage.Visibility = Visibility.Visible; }
 
                 if (File.ReadAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\LicenseAgreement.su").Contains("true")) { GetChangeLogDialogVisibility.Get(); }
+
+                AppSummary.Sw.Stop(); // Make Yourself ^_^
+
+                Log.Info($"Loading SacredUtils application done ({AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
             };
         }
 
