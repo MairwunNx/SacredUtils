@@ -8,8 +8,6 @@ namespace SacredUtils.resources.bin
 {
     public static class GetApplicationLicenseState
     {
-        static readonly MainWindow MainWindow = (MainWindow)Application.Current.MainWindow;
-
         public static void GetLicenseState()
         {
             Directory.CreateDirectory($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils");
@@ -20,7 +18,7 @@ namespace SacredUtils.resources.bin
 
                 File.WriteAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\LicenseAgreement.su", "false");
 
-                MainWindow.UpdateLbl.IsEnabled = false; MainWindow.MinimizeBtn.IsEnabled = false;
+                MainWindow.MainWindowInstance.UpdateLbl.IsEnabled = false; MainWindow.MainWindowInstance.MinimizeBtn.IsEnabled = false;
 
                 OpenLicenseDialog();
             }
@@ -28,7 +26,7 @@ namespace SacredUtils.resources.bin
             {
                 File.WriteAllBytes("License.txt", Properties.Resources.AppLicense);
 
-                MainWindow.UpdateLbl.IsEnabled = false; MainWindow.MinimizeBtn.IsEnabled = false;
+                MainWindow.MainWindowInstance.UpdateLbl.IsEnabled = false; MainWindow.MainWindowInstance.MinimizeBtn.IsEnabled = false;
 
                 OpenLicenseDialog();
             }
@@ -38,8 +36,8 @@ namespace SacredUtils.resources.bin
         {
             ApplicationLicenseDialog applicationLicenseDialog = new ApplicationLicenseDialog();
 
-            MainWindow.DialogFrame.Visibility = Visibility.Visible;
-            MainWindow.DialogFrame.Content = applicationLicenseDialog;
+            MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
+            MainWindow.MainWindowInstance.DialogFrame.Content = applicationLicenseDialog;
 
             if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {

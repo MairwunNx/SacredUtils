@@ -10,8 +10,6 @@ namespace SacredUtils.resources.bin
 {
     public static class GetSacredUtilsProjectBirthday
     {
-        static readonly MainWindow MainWindow = (MainWindow)Application.Current.MainWindow;
-
         public static void Call()
         {
             Set("ProjectBirthDay"); Set("NewYear");
@@ -31,7 +29,7 @@ namespace SacredUtils.resources.bin
                 {
                     Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
                     {
-                        if (MainWindow.NoConnectImage.Visibility != 0) { MainWindow.MyBirthdayImage.Visibility = 0; }
+                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0) { MainWindow.MainWindowInstance.MyBirthdayImage.Visibility = 0; }
                     }));
                 }
             }
@@ -45,7 +43,7 @@ namespace SacredUtils.resources.bin
                 {
                     Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
                     {
-                        if (MainWindow.NoConnectImage.Visibility != 0) { MainWindow.BirthdayImage.Visibility = 0; }
+                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0) { MainWindow.MainWindowInstance.BirthdayImage.Visibility = 0; }
                     }));
                 }
             }
@@ -59,12 +57,12 @@ namespace SacredUtils.resources.bin
                 {
                     Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
                     {
-                        if (MainWindow.NoConnectImage.Visibility != 0)
+                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0)
                         {
-                            MainWindow.NewYearImage.Visibility = 0; 
-                            MainWindow.NewYear2Image.Visibility = 0; 
-                            MainWindow.NewYear3Image.Visibility = 0; 
-                            MainWindow.NewYear4Image.Visibility = 0; 
+                            MainWindow.MainWindowInstance.NewYearImage.Visibility = 0;
+                            MainWindow.MainWindowInstance.NewYear2Image.Visibility = 0;
+                            MainWindow.MainWindowInstance.NewYear3Image.Visibility = 0;
+                            MainWindow.MainWindowInstance.NewYear4Image.Visibility = 0; 
                         }
                     }));
                 }
@@ -79,7 +77,7 @@ namespace SacredUtils.resources.bin
                 {
                     Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
                     {
-                        if (MainWindow.NoConnectImage.Visibility != 0) { MainWindow.BarImage.Visibility = 0; }
+                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0) { MainWindow.MainWindowInstance.BarImage.Visibility = 0; }
                     }));
                 }
             }
@@ -93,7 +91,7 @@ namespace SacredUtils.resources.bin
                 {
                     Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
                     {
-                        if (MainWindow.NoConnectImage.Visibility != 0) { MainWindow.IrelandImage.Visibility = 0; }
+                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0) { MainWindow.MainWindowInstance.IrelandImage.Visibility = 0; }
                     }));
                 }
             }
@@ -107,7 +105,7 @@ namespace SacredUtils.resources.bin
                 {
                     Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
                     {
-                        if (MainWindow.NoConnectImage.Visibility != 0) { MainWindow.EarthImage.Visibility = 0; }
+                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0) { MainWindow.MainWindowInstance.EarthImage.Visibility = 0; }
                     }));
                 }
             }
@@ -121,7 +119,7 @@ namespace SacredUtils.resources.bin
                 {
                     Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
                     {
-                        if (MainWindow.NoConnectImage.Visibility != 0) { MainWindow.WindDayImage.Visibility = 0; }
+                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0) { MainWindow.MainWindowInstance.WindDayImage.Visibility = 0; }
                     }));
                 }
             }
@@ -135,10 +133,10 @@ namespace SacredUtils.resources.bin
                 {
                     Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
                     {
-                        if (MainWindow.NoConnectImage.Visibility != 0)
+                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0)
                         {
-                            MainWindow.JeckLampImage.Visibility = 0; 
-                            MainWindow.GhostImage.Visibility = 0;
+                            MainWindow.MainWindowInstance.JeckLampImage.Visibility = 0;
+                            MainWindow.MainWindowInstance.GhostImage.Visibility = 0;
                         }
                     }));
                 }
@@ -166,8 +164,8 @@ namespace SacredUtils.resources.bin
                                 TransformGroup myTransformGroup = new TransformGroup();
                                 myTransformGroup.Children.Add(myRotateTransform);
 
-                                MainWindow.BaseGrid.RenderTransformOrigin = new Point(0.5, 0.5);
-                                MainWindow.BaseGrid.RenderTransform = myTransformGroup;
+                                MainWindow.MainWindowInstance.BaseGrid.RenderTransformOrigin = new Point(0.5, 0.5);
+                                MainWindow.MainWindowInstance.BaseGrid.RenderTransform = myTransformGroup;
                             }));
                         }
                     }
@@ -187,11 +185,11 @@ namespace SacredUtils.resources.bin
 
                     Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
                     {
-                        if (MainWindow.NoConnectImage.Visibility != 0)
+                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0)
                         {
-                            MainWindow.SimpleLabel.FontSize = fontSize;
-                            MainWindow.SimpleLabel.Content = labelContent;
-                            MainWindow.SimpleLabel.Visibility = 0;
+                            MainWindow.MainWindowInstance.SimpleLabel.FontSize = fontSize;
+                            MainWindow.MainWindowInstance.SimpleLabel.Content = labelContent;
+                            MainWindow.MainWindowInstance.SimpleLabel.Visibility = 0;
                         }
                     }));
                 }

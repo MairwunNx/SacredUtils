@@ -29,7 +29,7 @@ namespace SacredUtils
 
                 GetRequiredApplicationFiles.Get();
 
-                Task.Run(() => { GetApplicationDownloadStatistic.Get(); });
+                Task.Run(GetApplicationDownloadStatistic.Get);
             }
             else
             {
@@ -70,7 +70,7 @@ namespace SacredUtils
 
                 base.OnStartup(e);
 
-                Task.Run(() => { GetApplicationDownloadStatistic.Get(); });
+                Task.Run(GetApplicationDownloadStatistic.Get);
             }
         }
     }

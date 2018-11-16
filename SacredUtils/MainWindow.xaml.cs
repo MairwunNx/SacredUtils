@@ -13,6 +13,8 @@ namespace SacredUtils
 {
     public partial class MainWindow
     {
+        public static MainWindow MainWindowInstance;
+
         public static readonly ApplicationSettingsOne AppStgOne = new ApplicationSettingsOne();
         public static readonly ApplicationSettingsTwo AppStgTwo = new ApplicationSettingsTwo();
         public static readonly GameChatSettingsOne ChatStgOne = new GameChatSettingsOne();
@@ -32,6 +34,8 @@ namespace SacredUtils
         public MainWindow()
         {
             InitializeComponent(); EventSubscribe();
+
+            MainWindowInstance = (MainWindow)Application.Current.MainWindow;
 
             ChangeApplicationSelectionSettings.UnSelectSettings(UnselectedStg);
 
@@ -73,11 +77,11 @@ namespace SacredUtils
 
                 Log.Info($"Loading SacredUtils application done ({AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
 
-                Task.Run(() =>
-                {
-                    try { CheckAvailabilityAlphaUpdates.GetPerm(); GetNoInternetIconVisibility.Get(); GetSacredUtilsProjectBirthday.Call(); }
-                    catch (Exception e) { Log.Error(e); }
-                });
+                Task.Run(CheckAvailabilityAlphaUpdates.GetPerm);
+
+                Task.Run(GetNoInternetIconVisibility.Get);
+
+                Task.Run(GetSacredUtilsProjectBirthday.Call);
 
                 if (!CheckAvailabilityInternetConnection.Connect()) { NoConnectImage.Visibility = Visibility.Visible; }
 

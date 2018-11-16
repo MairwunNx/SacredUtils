@@ -214,7 +214,7 @@
     <Compile Include="resources\bin\GetApplicationGlobalizerLibrary.cs" />
     <Compile Include="resources\bin\GetApplicationLanguageValue.cs" />
     <Compile Include="AppLogger.cs" />
-    <Compile Include="resources\bin\GetApplicationSettingsValue.cs" />
+    <Compile Include="resources\bin\GetApplicationSettingsAvailability.cs" />
     <Compile Include="resources\bin\GetApplicationDownloadStatistic.cs" />
     <Compile Include="resources\bin\GetApplicationThemeValue.cs" />
     <Compile Include="resources\bin\GetSacredGameComponentFiles.cs" />

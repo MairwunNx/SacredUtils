@@ -4,14 +4,11 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using static SacredUtils.AppLogger;
-using Application = System.Windows.Application;
 
 namespace SacredUtils.resources.dlg
 {
     public partial class ApplicationRunSacredDialog
     {
-        static readonly MainWindow MainWindow = (MainWindow)Application.Current.MainWindow;
-
         public ApplicationRunSacredDialog() => InitializeComponent();
 
         private void LaunchSacredBtn_Click(object sender, RoutedEventArgs e)
@@ -75,7 +72,7 @@ namespace SacredUtils.resources.dlg
 
                         Log.Info("Param selected: Minimizing SacredUtils application ...");
 
-                        MainWindow.WindowState = WindowState.Minimized;
+                        MainWindow.MainWindowInstance.WindowState = WindowState.Minimized;
 
                         Log.Info($"Starting {AppSettings.ApplicationSettings.SacredExecutableFileName} game file with arg CHEATS=1 ...");
 
@@ -102,7 +99,7 @@ namespace SacredUtils.resources.dlg
 
                         Log.Info("Param selected: Minimizing SacredUtils application ...");
 
-                        MainWindow.WindowState = WindowState.Minimized;
+                        MainWindow.MainWindowInstance.WindowState = WindowState.Minimized;
 
                         Log.Info($"Starting {AppSettings.ApplicationSettings.SacredExecutableFileName} game file ...");
 

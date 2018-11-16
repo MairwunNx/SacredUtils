@@ -7,8 +7,6 @@ namespace SacredUtils.resources.bin
 {
     public static class GetChangeLogDialogVisibility
     {
-        static readonly MainWindow MainWindow = (MainWindow)Application.Current.MainWindow;
-
         public static void Get()
         {
             if (File.Exists("$SacredUtils\\temp\\updated.su"))
@@ -17,8 +15,8 @@ namespace SacredUtils.resources.bin
                 {
                     ApplicationChangeLogDialog applicationChangeLogDialog = new ApplicationChangeLogDialog();
 
-                    MainWindow.DialogFrame.Visibility = Visibility.Visible;
-                    MainWindow.DialogFrame.Content = applicationChangeLogDialog;
+                    MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
+                    MainWindow.MainWindowInstance.DialogFrame.Content = applicationChangeLogDialog;
 
                     if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
                     {

@@ -6,8 +6,6 @@ namespace SacredUtils.resources.bin
 {
     public static class GetNoInternetIconVisibility
     {
-        static readonly MainWindow MainWindow = (MainWindow)Application.Current.MainWindow;
-
         public static void Get()
         {
             if (AppSettings.ApplicationSettings.VisibleNoConnectionImage)
@@ -16,7 +14,7 @@ namespace SacredUtils.resources.bin
                 {
                     Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
                     {
-                        MainWindow.NoConnectImage.Visibility = Visibility.Visible;
+                        MainWindow.MainWindowInstance.NoConnectImage.Visibility = Visibility.Visible;
                     }));
                 }
             }

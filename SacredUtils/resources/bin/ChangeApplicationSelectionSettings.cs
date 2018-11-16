@@ -8,17 +8,15 @@ namespace SacredUtils.resources.bin
 {
     public static class ChangeApplicationSelectionSettings
     {
-        static readonly MainWindow MainWindow = (MainWindow)Application.Current.MainWindow;
-
         public static void SelectSettings(UIElement element, object sender)
         {
-            MainWindow.SettingsFrame.Content = element;
+            MainWindow.MainWindowInstance.SettingsFrame.Content = element;
 
             if (sender.Equals(sender as StackPanel) && sender is StackPanel panel)
             {
                 Log.Info($"Selected SacredUtils settings category {panel.Name} by user");
 
-                foreach (StackPanel sp in MainWindow.SettingsGrid.Children.OfType<StackPanel>())
+                foreach (StackPanel sp in MainWindow.MainWindowInstance.SettingsGrid.Children.OfType<StackPanel>())
                 {
                     sp.SetResourceReference(Control.BackgroundProperty, "CategoryNotActiveColorBrush");
 
@@ -54,9 +52,9 @@ namespace SacredUtils.resources.bin
 
         public static void UnSelectSettings(UIElement element)
         {
-            MainWindow.SettingsFrame.Content = element;
+            MainWindow.MainWindowInstance.SettingsFrame.Content = element;
 
-            foreach (StackPanel sp in MainWindow.SettingsGrid.Children.OfType<StackPanel>())
+            foreach (StackPanel sp in MainWindow.MainWindowInstance.SettingsGrid.Children.OfType<StackPanel>())
             {
                 sp.SetResourceReference(Control.BackgroundProperty, "CategoryNotActiveColorBrush");
 
