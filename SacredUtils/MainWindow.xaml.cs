@@ -75,7 +75,8 @@ namespace SacredUtils
 
                 Task.Run(() =>
                 {
-                    CheckAvailabilityAlphaUpdates.GetPerm(); GetNoInternetIconVisibility.Get(); GetSacredUtilsProjectBirthday.Call();
+                    try { CheckAvailabilityAlphaUpdates.GetPerm(); GetNoInternetIconVisibility.Get(); GetSacredUtilsProjectBirthday.Call(); }
+                    catch (Exception e) { Log.Error(e); }
                 });
 
                 if (!CheckAvailabilityInternetConnection.Connect()) { NoConnectImage.Visibility = Visibility.Visible; }
