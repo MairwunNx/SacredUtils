@@ -2,7 +2,7 @@
 
 namespace SacredUtils.resources.bin
 {
-    public static class GetApplicationSettingsValue
+    public static class GetApplicationSettingsAvailability
     {
         public static void Get()
         {

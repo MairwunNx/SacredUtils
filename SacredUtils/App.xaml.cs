@@ -25,7 +25,7 @@ namespace SacredUtils
 
                 CreateApplicationNeededFolders.Create();
 
-                GetApplicationSettingsValue.Get();
+                GetApplicationSettingsAvailability.Get();
 
                 GetRequiredApplicationFiles.Get();
 
@@ -41,7 +41,7 @@ namespace SacredUtils
                 {
                     CreateApplicationNeededFolders.Create();
 
-                    GetApplicationSettingsValue.Get();
+                    GetApplicationSettingsAvailability.Get();
 
                     AppLogger.Init(false);
 
