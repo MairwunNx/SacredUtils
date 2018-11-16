@@ -42,10 +42,7 @@ namespace SacredUtils.resources.bin
 
                     GameGettingComponentsDialog.BaseDialog.IsOpen = true;
 
-                    Task.Run(() =>
-                    {
-                        UnpackDownloadedFile(downloadPath, downloadFileName, extractFolder, DefaultLabelText, oldFileName, newFileName, componentName);
-                    });
+                    Task.Run(() => UnpackDownloadedFile(downloadPath, downloadFileName, extractFolder, DefaultLabelText, oldFileName, newFileName, componentName));
                 }
                 else
                 {
