@@ -8,6 +8,7 @@ using System.Net;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
+using SacredUtils.resources.bin;
 using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.prp
@@ -56,11 +57,14 @@ namespace SacredUtils.resources.prp
 
                 if (value)
                 {
-                    WebClient wc = new WebClient();
+                    if (CheckAvailabilityInternetConnection.Connect())
+                    {
+                        WebClient wc = new WebClient();
 
-                    wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1gDTxsT9TXJgSlRi7R6NUfI9A6VARIvS1", "STATIC BOG.zip").Wait();
+                        wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1gDTxsT9TXJgSlRi7R6NUfI9A6VARIvS1", "STATIC BOG.zip").Wait();
 
-                    UnpackResource("STATIC BOG.zip", "BOG");
+                        UnpackResource("STATIC BOG.zip", "BOG");
+                    }
                 }
                 else
                 {
@@ -93,11 +97,14 @@ namespace SacredUtils.resources.prp
 
                 if (value)
                 {
-                    WebClient wc = new WebClient();
+                    if (CheckAvailabilityInternetConnection.Connect())
+                    {
+                        WebClient wc = new WebClient();
 
-                    wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1iE6EC_bVfNc2H1cuc0r1Ssl-_K_WeYbu", "STATIC WATER.zip").Wait();
+                        wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1iE6EC_bVfNc2H1cuc0r1Ssl-_K_WeYbu", "STATIC WATER.zip").Wait();
 
-                    UnpackResource("STATIC WATER.zip", "WATER");
+                        UnpackResource("STATIC WATER.zip", "WATER");
+                    }
                 }
                 else
                 {
@@ -140,11 +147,14 @@ namespace SacredUtils.resources.prp
 
                 if (value)
                 {
-                    WebClient wc = new WebClient();
+                    if (CheckAvailabilityInternetConnection.Connect())
+                    {
+                        WebClient wc = new WebClient();
 
-                    wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1QgmDk8H4U0bsEGdB2MOFmtqLk3cnn2ya", "STATIC LAVA.zip").Wait();
+                        wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1QgmDk8H4U0bsEGdB2MOFmtqLk3cnn2ya", "STATIC LAVA.zip").Wait();
 
-                    UnpackResource("STATIC LAVA.zip", "LAVA");
+                        UnpackResource("STATIC LAVA.zip", "LAVA");
+                    }
                 }
                 else
                 {
@@ -192,11 +202,14 @@ namespace SacredUtils.resources.prp
 
                 if (value)
                 {
-                    WebClient wc = new WebClient();
+                    if (CheckAvailabilityInternetConnection.Connect())
+                    {
+                        WebClient wc = new WebClient();
 
-                    wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1Y9RvEF_rmkvfVAP7S5prBl2NTuULc4uJ", "OLD SACRED.zip").Wait();
+                        wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1Y9RvEF_rmkvfVAP7S5prBl2NTuULc4uJ", "OLD SACRED.zip").Wait();
 
-                    UnpackResource("OLD SACRED.zip", "OLD_SACRED");
+                        UnpackResource("OLD SACRED.zip", "OLD_SACRED");
+                    }
                 }
                 else
                 {
@@ -224,11 +237,14 @@ namespace SacredUtils.resources.prp
 
                 if (value)
                 {
-                    WebClient wc = new WebClient();
+                    if (CheckAvailabilityInternetConnection.Connect())
+                    {
+                        WebClient wc = new WebClient();
 
-                    wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1o-8qWgzsSq5xcfDGpPrOlLSWyrzxOOiP", "FOOTSTEPS.zip").Wait();
+                        wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1o-8qWgzsSq5xcfDGpPrOlLSWyrzxOOiP", "FOOTSTEPS.zip").Wait();
 
-                    UnpackResource("FOOTSTEPS.zip", "FOOTSTEPS");
+                        UnpackResource("FOOTSTEPS.zip", "FOOTSTEPS");
+                    }
                 }
                 else
                 {
@@ -265,11 +281,14 @@ namespace SacredUtils.resources.prp
                 }
                 else
                 {
-                    WebClient wc = new WebClient();
+                    if (CheckAvailabilityInternetConnection.Connect())
+                    {
+                        WebClient wc = new WebClient();
 
-                    wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1FeTBk3uuTMBt8bxvzDRA3n8Rczsh5fyJ", "HEALTH.zip").Wait();
+                        wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1FeTBk3uuTMBt8bxvzDRA3n8Rczsh5fyJ", "HEALTH.zip").Wait();
 
-                    UnpackResource("HEALTH.zip", "HEALTH");
+                        UnpackResource("HEALTH.zip", "HEALTH");
+                    }
                 }
 
                 Thread.Sleep(1000);
