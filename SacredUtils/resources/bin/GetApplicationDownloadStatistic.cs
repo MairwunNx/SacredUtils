@@ -10,49 +10,47 @@ namespace SacredUtils.resources.bin
     {
         public static void Get()
         {
-            if (!AppSettings.ApplicationSettings.DisableApplicationTelemetry)
+            if (AppSettings.ApplicationSettings.DisableApplicationTelemetry) { return; }
+
+            if (!CheckAvailabilityInternetConnection.Connect()) { return; }
+
+            try
             {
-                if (CheckAvailabilityInternetConnection.Connect())
+                Directory.CreateDirectory($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils");
+
+                if (File.Exists($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\WhatIsThisDoingHere.su"))
                 {
-                    try
+                    if (File.ReadAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\WhatIsThisDoingHere.su").Contains("true"))
                     {
-                        Directory.CreateDirectory($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils");
-
-                        if (File.Exists($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\WhatIsThisDoingHere.su"))
+                        using (WebClient wc = new WebClient())
                         {
-                            if (File.ReadAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\WhatIsThisDoingHere.su").Contains("true"))
-                            {
-                                using (WebClient wc = new WebClient())
-                                {
-                                    wc.DownloadFileTaskAsync(
-                                        "https://drive.google.com/uc?export=download&id=1zgsMglsGJNptUdLCyfZ_znAygF0waT4b",
-                                        $"{Environment.ExpandEnvironmentVariables("%tmp%")}\\sustat.exe").Wait();
-                                }
-
-                                Process.Start($"{Environment.ExpandEnvironmentVariables("%tmp%")}\\sustat.exe", $"{AppSummary.Version} {AppSummary.AVersion} {AppSummary.Type} {AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00}");
-
-                                File.WriteAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\WhatIsThisDoingHere.su", "false");
-                            }
+                            wc.DownloadFileTaskAsync(
+                                "https://drive.google.com/uc?export=download&id=1zgsMglsGJNptUdLCyfZ_znAygF0waT4b",
+                                $"{Environment.ExpandEnvironmentVariables("%tmp%")}\\sustat.exe").Wait();
                         }
-                        else
-                        {
-                            using (WebClient wc = new WebClient())
-                            {
-                                wc.DownloadFileTaskAsync(
-                                    "https://drive.google.com/uc?export=download&id=1zgsMglsGJNptUdLCyfZ_znAygF0waT4b",
-                                    $"{Environment.ExpandEnvironmentVariables("%tmp%")}\\sustat.exe").Wait();
-                            }
 
-                            Process.Start($"{Environment.ExpandEnvironmentVariables("%tmp%")}\\sustat.exe", $"{AppSummary.Version} {AppSummary.AVersion} {AppSummary.Type} {AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00}");
+                        Process.Start($"{Environment.ExpandEnvironmentVariables("%tmp%")}\\sustat.exe", $"{AppSummary.Version} {AppSummary.AVersion} {AppSummary.Type} {AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00}");
 
-                            File.WriteAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\WhatIsThisDoingHere.su", "false");
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Log.Error(ex.ToString);
+                        File.WriteAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\WhatIsThisDoingHere.su", "false");
                     }
                 }
+                else
+                {
+                    using (WebClient wc = new WebClient())
+                    {
+                        wc.DownloadFileTaskAsync(
+                            "https://drive.google.com/uc?export=download&id=1zgsMglsGJNptUdLCyfZ_znAygF0waT4b",
+                            $"{Environment.ExpandEnvironmentVariables("%tmp%")}\\sustat.exe").Wait();
+                    }
+
+                    Process.Start($"{Environment.ExpandEnvironmentVariables("%tmp%")}\\sustat.exe", $"{AppSummary.Version} {AppSummary.AVersion} {AppSummary.Type} {AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00}");
+
+                    File.WriteAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\WhatIsThisDoingHere.su", "false");
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.ToString);
             }
         }
     }

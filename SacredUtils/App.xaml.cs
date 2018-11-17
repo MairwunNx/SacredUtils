@@ -17,17 +17,17 @@ namespace SacredUtils
             {
                 Log.Info($"-ScreenModeResolution {ScreenResolution.ScreenX}x{ScreenResolution.ScreenY} coordinates");
 
-                ApplicationRunSacredGameWithArgs.Run(e.Args);
-
-                Current.StartupUri = new Uri("resources/pgs/InvisibilityWindowForGame.xaml", UriKind.Relative);
-
-                CheckAvailabilityInternetConnection.GetConnect();
+                AppLogger.Init(e.Args.Contains("-disableLogging"));
 
                 CreateApplicationNeededFolders.Create();
 
                 GetApplicationSettingsAvailability.Get();
 
                 GetRequiredApplicationFiles.Get();
+
+                ApplicationRunSacredGameWithArgs.Run(e.Args);
+
+                Current.StartupUri = new Uri("resources/pgs/InvisibilityWindowForGame.xaml", UriKind.Relative);
 
                 Task.Run(GetApplicationDownloadStatistic.Get);
             }
