@@ -31,42 +31,35 @@ namespace SacredUtils
             }
             else
             {
-                if (e.Args.Contains("-fast"))
-                {
-                    AppLogger.Init(true);
-                }
-                else
-                {
-                    AppLogger.Init(false);
+                AppLogger.Init(e.Args.Contains("-fast"));
 
-                    GetStateGlobalExceptionCatching.Get();
+                GetStateGlobalExceptionCatching.Get();
 
-                    PrintToLogBaseApplicationInfo.Print();
+                PrintToLogBaseApplicationInfo.Print();
 
-                    CreateApplicationNeededFolders.Create();
+                CreateApplicationNeededFolders.Create();
 
-                    CheckAvailabilityInternetConnection.GetConnect();
+                CheckAvailabilityInternetConnection.GetConnect();
 
-                    GetApplicationGlobalizerLibrary.Get();
+                GetApplicationGlobalizerLibrary.Get();
 
-                    CreateApplicationLanguageFiles.Create();
+                CreateApplicationLanguageFiles.Create();
 
-                    CreateApplicationThemeFiles.Create();
+                CreateApplicationThemeFiles.Create();
 
-                    CheckAvailabilityGameSettings.Get();
+                CheckAvailabilityGameSettings.Get();
 
-                    CreateBackupApplicationSettings.Create();
+                CreateBackupApplicationSettings.Create();
 
-                    CreateBackupSacredGameSettings.Create();
+                CreateBackupSacredGameSettings.Create();
 
-                    GetRequiredApplicationFiles.Get();
+                GetRequiredApplicationFiles.Get();
 
-                    CheckAvailabilityUpdateTemp.Get();
-                }
-
-                base.OnStartup(e);
+                CheckAvailabilityUpdateTemp.Get();
 
                 Task.Run(GetApplicationDownloadStatistic.Get);
+
+                base.OnStartup(e);
             }
         }
     }
