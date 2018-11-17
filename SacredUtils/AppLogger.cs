@@ -12,7 +12,7 @@ namespace SacredUtils
         
         public static void Init(bool fast)
         {
-            if (fast) { return; }
+            if (fast) { GetApplicationSettingsAvailability.Get(); return; }
 
             GetApplicationSettingsAvailability.Get();
 

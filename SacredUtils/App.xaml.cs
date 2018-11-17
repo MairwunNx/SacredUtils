@@ -17,11 +17,9 @@ namespace SacredUtils
             {
                 Log.Info($"-ScreenModeResolution {ScreenResolution.ScreenX}x{ScreenResolution.ScreenY} coordinates");
 
-                AppLogger.Init(e.Args.Contains("-disableLogging"));
-
                 CreateApplicationNeededFolders.Create();
 
-                GetApplicationSettingsAvailability.Get();
+                AppLogger.Init(e.Args.Contains("-disableLogging"));
 
                 GetRequiredApplicationFiles.Get();
 
