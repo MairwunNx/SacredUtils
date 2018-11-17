@@ -10,14 +10,19 @@ namespace SacredUtils.resources.bin
 
             try
             {
-                WebClient wc = new WebClient();
+                if (CheckAvailabilityInternetConnection.Connect())
+                {
+                    WebClient wc = new WebClient();
 
-                return wc.DownloadString(
-                    "https://mairwunnxstatistic.000webhostapp.com/downloads-launches-stat.json");
+                    return wc.DownloadString(
+                        "https://mairwunnxstatistic.000webhostapp.com/downloads-launches-stat.json");
+                }
+
+                return "Internet connection not found! Download data N/A!";
             }
             catch
             {
-                downloads = "Server error! Download data N/A!";
+                downloads = "Server critical error! Download data N/A!";
             }
 
             return downloads;
