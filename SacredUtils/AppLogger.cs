@@ -12,48 +12,47 @@ namespace SacredUtils
         
         public static void Init(bool fast)
         {
-            if (!fast)
+            if (fast) { return; }
+
+            GetApplicationSettingsAvailability.Get();
+
+            if (!AppSettings.ApplicationSettings.DisableApplicationLogging && AppSettings.ApplicationSettings.ApplicationLoggingMethodName)
             {
-                GetApplicationSettingsAvailability.Get();
+                LoggingConfiguration config = new LoggingConfiguration();
 
-                if (!AppSettings.ApplicationSettings.DisableApplicationLogging && AppSettings.ApplicationSettings.ApplicationLoggingMethodName)
+                FileTarget logfile = new FileTarget("logfile")
                 {
-                    LoggingConfiguration config = new LoggingConfiguration();
+                    FileName = "${basedir}/$SacredUtils/logs/latest.log",
+                    ArchiveFileName = "${basedir}/$SacredUtils/logs/${shortdate}.log.gz",
+                    Layout = "[${longdate}] [${callsite}] [${threadid}/${uppercase:${level}}]: ${message}",
+                    ArchiveOldFileOnStartup = AppSettings.ApplicationSettings.ArchiveOldFileOnStartup,
+                    EnableArchiveFileCompression = AppSettings.ApplicationSettings.EnableArchiveFileCompression,
+                    Encoding = Encoding.UTF8,
+                    MaxArchiveFiles = AppSettings.ApplicationSettings.MaxApplicationArchiveFiles
+                };
 
-                    FileTarget logfile = new FileTarget("logfile")
-                    {
-                        FileName = "${basedir}/$SacredUtils/logs/latest.log",
-                        ArchiveFileName = "${basedir}/$SacredUtils/logs/${shortdate}.log.gz",
-                        Layout = "[${longdate}] [${callsite}] [${threadid}/${uppercase:${level}}]: ${message}",
-                        ArchiveOldFileOnStartup = AppSettings.ApplicationSettings.ArchiveOldFileOnStartup,
-                        EnableArchiveFileCompression = AppSettings.ApplicationSettings.EnableArchiveFileCompression,
-                        Encoding = Encoding.UTF8,
-                        MaxArchiveFiles = AppSettings.ApplicationSettings.MaxApplicationArchiveFiles
-                    };
+                config.AddRule(LogLevel.Info, LogLevel.Fatal, logfile);
 
-                    config.AddRule(LogLevel.Info, LogLevel.Fatal, logfile);
+                LogManager.Configuration = config;
+            }
+            else if (!AppSettings.ApplicationSettings.DisableApplicationLogging)
+            {
+                LoggingConfiguration config = new LoggingConfiguration();
 
-                    LogManager.Configuration = config;
-                }
-                else if (!AppSettings.ApplicationSettings.DisableApplicationLogging)
+                FileTarget logfile = new FileTarget("logfile")
                 {
-                    LoggingConfiguration config = new LoggingConfiguration();
+                    FileName = "${basedir}/$SacredUtils/logs/latest.log",
+                    ArchiveFileName = "${basedir}/$SacredUtils/logs/${shortdate}.log.gz",
+                    Layout = "[${longdate}] [${threadid}/${uppercase:${level}}]: ${message}",
+                    ArchiveOldFileOnStartup = AppSettings.ApplicationSettings.ArchiveOldFileOnStartup,
+                    EnableArchiveFileCompression = AppSettings.ApplicationSettings.EnableArchiveFileCompression,
+                    Encoding = Encoding.UTF8,
+                    MaxArchiveFiles = AppSettings.ApplicationSettings.MaxApplicationArchiveFiles
+                };
 
-                    FileTarget logfile = new FileTarget("logfile")
-                    {
-                        FileName = "${basedir}/$SacredUtils/logs/latest.log",
-                        ArchiveFileName = "${basedir}/$SacredUtils/logs/${shortdate}.log.gz",
-                        Layout = "[${longdate}] [${threadid}/${uppercase:${level}}]: ${message}",
-                        ArchiveOldFileOnStartup = AppSettings.ApplicationSettings.ArchiveOldFileOnStartup,
-                        EnableArchiveFileCompression = AppSettings.ApplicationSettings.EnableArchiveFileCompression,
-                        Encoding = Encoding.UTF8,
-                        MaxArchiveFiles = AppSettings.ApplicationSettings.MaxApplicationArchiveFiles
-                    };
+                config.AddRule(LogLevel.Info, LogLevel.Fatal, logfile);
 
-                    config.AddRule(LogLevel.Info, LogLevel.Fatal, logfile);
-
-                    LogManager.Configuration = config;
-                }
+                LogManager.Configuration = config;
             }
         }
     }
