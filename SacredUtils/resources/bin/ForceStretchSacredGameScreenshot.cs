@@ -86,39 +86,11 @@ namespace SacredUtils.resources.bin
             }
         }
 
-        private static void CreateScreenShotAsync()
-        {
-            Task.Run(() =>
-            {
-                double screenLeft = SystemParameters.VirtualScreenLeft;
-                double screenTop = SystemParameters.VirtualScreenTop;
-                double screenWidth = SystemParameters.VirtualScreenWidth;
-                double screenHeight = SystemParameters.VirtualScreenHeight;
+        private static void CreateScreenShotAsync() => Task.Run(CaptureScreen);
 
-                using (Bitmap bmp = new Bitmap((int)screenWidth, (int)screenHeight))
-                {
-                    using (Graphics g = Graphics.FromImage(bmp))
-                    {
-                        string filename = AppSettings.ApplicationSettings.ScreenShotSaveFilePrefix + DateTime.Now.ToString(AppSettings.ApplicationSettings.ScreenShotSaveFilePattern) + ".png";
+        private static void CreateScreenShot() => CaptureScreen();
 
-                        g.CopyFromScreen((int)screenLeft, (int)screenTop, 0, 0, bmp.Size);
-
-                        Directory.CreateDirectory(AppSettings.ApplicationSettings.ScreenShotSaveDirectory);
-
-                        if (AppSettings.ApplicationSettings.AllowCustomScreenShotResolution)
-                        {
-                            Stretch(bmp, AppSettings.ApplicationSettings.CustomScreenShotResolutionWidth, AppSettings.ApplicationSettings.CustomScreenShotResolutionHeight, filename);
-                        }
-                        else
-                        {
-                            Stretch(bmp, ScreenResolution.ScreenX, ScreenResolution.ScreenY, filename);
-                        }
-                    }
-                }
-            });
-        }
-
-        private static void CreateScreenShot()
+        private static void CaptureScreen()
         {
             double screenLeft = SystemParameters.VirtualScreenLeft;
             double screenTop = SystemParameters.VirtualScreenTop;
