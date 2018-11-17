@@ -7,13 +7,12 @@ namespace SacredUtils.resources.bin
     {
         public static void Get()
         {
-            if (!File.Exists("$SacredUtils\\conf\\settings.json"))
-            {
-                File.WriteAllBytes("$SacredUtils\\conf\\settings.json", Properties.Resources.settings);
+            if (File.Exists("$SacredUtils\\conf\\settings.json")) { return; }
 
-                AppSettings.ApplicationSettings = new ConfigurationBuilder<IAppSettings>()
-                    .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
-            }
+            File.WriteAllBytes("$SacredUtils\\conf\\settings.json", Properties.Resources.settings);
+
+            AppSettings.ApplicationSettings = new ConfigurationBuilder<IAppSettings>()
+                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
         }
     }
 }
