@@ -10,46 +10,45 @@ namespace SacredUtils.resources.bin
     {
         public static void Get()
         {
-            if (!AppSettings.ApplicationSettings.DisableCheckingGlobLibrary)
+            if (AppSettings.ApplicationSettings.DisableCheckingGlobLibrary) { return; }
+
+            if (!File.Exists("WPFSharp.Globalizer.dll"))
             {
-                if (!File.Exists("WPFSharp.Globalizer.dll"))
+                if (File.Exists("update.cmd")) { File.Delete("update.cmd"); }
+
+                Log.Warn("WPFSharp.Globalizer.dll library file not found!");
+
+                Create();
+            }
+            else
+            {
+                Log.Info("WPFSharp.Globalizer.dll library file was found!");
+
+                string md5FinallyHash;
+
+                using (MD5 md5 = MD5.Create())
                 {
-                    if (File.Exists("update.cmd")) { File.Delete("update.cmd"); }
+                    using (FileStream stream = File.OpenRead("WPFSharp.Globalizer.dll"))
+                    {
+                        byte[] hash = md5.ComputeHash(stream);
 
-                    Log.Warn("WPFSharp.Globalizer.dll library file not found!");
-
-                    Create();
+                        md5FinallyHash = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                    }
                 }
-                else
+
+                if (md5FinallyHash != "d0bb73987001ea1207393f8e1061630f")
                 {
-                    Log.Info("WPFSharp.Globalizer.dll library file was found!");
+                    File.WriteAllBytes("update.cmd", Properties.Resources.update);
 
-                    string md5FinallyHash;
-
-                    using (MD5 md5 = MD5.Create())
+                    ProcessStartInfo info = new ProcessStartInfo
                     {
-                        using (FileStream stream = File.OpenRead("WPFSharp.Globalizer.dll"))
-                        {
-                            byte[] hash = md5.ComputeHash(stream);
+                        Arguments = $"/C {AppSummary.CurrentPath}\\update.cmd",
+                        WindowStyle = ProcessWindowStyle.Hidden,
+                        CreateNoWindow = false,
+                        FileName = "update.cmd"
+                    };
 
-                            md5FinallyHash = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
-                        }
-                    }
-
-                    if (md5FinallyHash != "d0bb73987001ea1207393f8e1061630f")
-                    {
-                        File.WriteAllBytes("update.cmd", Properties.Resources.update);
-
-                        ProcessStartInfo info = new ProcessStartInfo
-                        {
-                            Arguments = $"/C {AppSummary.CurrentPath}\\update.cmd",
-                            WindowStyle = ProcessWindowStyle.Hidden,
-                            CreateNoWindow = false,
-                            FileName = "update.cmd"
-                        };
-
-                        Process.Start(info); Environment.Exit(0);
-                    }
+                    Process.Start(info); Environment.Exit(0);
                 }
             }
         }
