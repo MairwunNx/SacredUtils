@@ -211,7 +211,5 @@ namespace SacredUtils.resources.dlg
 
             Log.Info("Sacred starting canceled by user");
         }
-
-        // ApplicationStartEmulateHotkeys.RegisterMainHotkeys();
     }
 }
