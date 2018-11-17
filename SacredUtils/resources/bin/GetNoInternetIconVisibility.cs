@@ -8,16 +8,12 @@ namespace SacredUtils.resources.bin
     {
         public static void Get()
         {
-            if (AppSettings.ApplicationSettings.VisibleNoConnectionImage)
-            {
-                if (!CheckAvailabilityInternetConnection.Connect())
-                {
-                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
-                    {
-                        MainWindow.MainWindowInstance.NoConnectImage.Visibility = Visibility.Visible;
-                    }));
-                }
-            }
+            if (!AppSettings.ApplicationSettings.VisibleNoConnectionImage) { return; }
+
+            if (CheckAvailabilityInternetConnection.Connect()) { return; }
+
+            Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(() =>
+                MainWindow.MainWindowInstance.NoConnectImage.Visibility = Visibility.Visible));
         }
     }
 }
