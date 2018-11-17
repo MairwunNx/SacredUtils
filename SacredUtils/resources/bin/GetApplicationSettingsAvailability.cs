@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using Config.Net;
+using System.IO;
 
 namespace SacredUtils.resources.bin
 {
@@ -9,6 +10,9 @@ namespace SacredUtils.resources.bin
             if (!File.Exists("$SacredUtils\\conf\\settings.json"))
             {
                 File.WriteAllBytes("$SacredUtils\\conf\\settings.json", Properties.Resources.settings);
+
+                AppSettings.ApplicationSettings = new ConfigurationBuilder<IAppSettings>()
+                    .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
             }
         }
     }

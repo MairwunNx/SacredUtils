@@ -1,6 +1,7 @@
 ﻿using NLog;
 using NLog.Config;
 using NLog.Targets;
+using SacredUtils.resources.bin;
 using System.Text;
 
 namespace SacredUtils
@@ -13,6 +14,8 @@ namespace SacredUtils
         {
             if (!fast)
             {
+                GetApplicationSettingsAvailability.Get();
+
                 if (!AppSettings.ApplicationSettings.DisableApplicationLogging && AppSettings.ApplicationSettings.ApplicationLoggingMethodName)
                 {
                     LoggingConfiguration config = new LoggingConfiguration();

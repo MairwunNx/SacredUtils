@@ -13,6 +13,8 @@ namespace SacredUtils.resources.bin
             Directory.CreateDirectory("$SacredUtils\\lang\\en-US");
             Directory.CreateDirectory("$SacredUtils\\back\\cfg-game");
             Directory.CreateDirectory("$SacredUtils\\back\\cfg-app");
+
+            AppLogger.Log.Info("SacredUtils application needed directories was created!");
         }
     }
 }

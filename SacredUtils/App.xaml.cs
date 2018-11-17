@@ -39,15 +39,13 @@ namespace SacredUtils
                 }
                 else
                 {
-                    CreateApplicationNeededFolders.Create();
-
-                    GetApplicationSettingsAvailability.Get();
-
                     AppLogger.Init(false);
 
                     GetStateGlobalExceptionCatching.Get();
 
                     PrintToLogBaseApplicationInfo.Print();
+
+                    CreateApplicationNeededFolders.Create();
 
                     CheckAvailabilityInternetConnection.GetConnect();
 

@@ -214,7 +214,7 @@ namespace SacredUtils
 
     public static class AppSettings
     {
-        public static readonly IAppSettings ApplicationSettings =
+        public static IAppSettings ApplicationSettings =
             new ConfigurationBuilder<IAppSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
     }
