@@ -22,8 +22,6 @@ namespace SacredUtils
             {
                 Log.Info($"-ScreenModeResolution {ScreenResolution.ScreenX}x{ScreenResolution.ScreenY} coordinates");
 
-                CreateApplicationNeededFolders.Create();
-
                 AppLogger.Init(e.Args.Contains("-disableLogging"));
 
                 GetRequiredApplicationFiles.Get();
@@ -36,7 +34,7 @@ namespace SacredUtils
             }
             else
             {
-                AppLogger.Init(e.Args.Contains("-fast"));
+                AppLogger.Init(e.Args.Contains("-disableLogging"));
 
                 GetStateGlobalExceptionCatching.Get();
 
