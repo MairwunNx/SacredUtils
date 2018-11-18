@@ -13,6 +13,11 @@ namespace SacredUtils
         {
             AppSummary.Sw.Start();
 
+            if (e.Args.Contains("-fullReset"))
+            {
+                ApplicationBaseMakeFullReset.Reset(e.Args.Contains("-fullResetPConf"));
+            }
+
             if (e.Args.Contains("-runGame"))
             {
                 Log.Info($"-ScreenModeResolution {ScreenResolution.ScreenX}x{ScreenResolution.ScreenY} coordinates");
@@ -36,8 +41,6 @@ namespace SacredUtils
                 GetStateGlobalExceptionCatching.Get();
 
                 PrintToLogBaseApplicationInfo.Print();
-
-                CreateApplicationNeededFolders.Create();
 
                 CheckAvailabilityInternetConnection.GetConnect();
 

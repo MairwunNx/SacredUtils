@@ -7,6 +7,8 @@ namespace SacredUtils.resources.bin
     {
         public static void Get()
         {
+            CreateApplicationNeededFolders.Create();
+
             if (File.Exists("$SacredUtils\\conf\\settings.json")) { return; }
 
             File.WriteAllBytes("$SacredUtils\\conf\\settings.json", Properties.Resources.settings);

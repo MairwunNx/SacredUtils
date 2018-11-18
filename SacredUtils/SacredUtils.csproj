@@ -178,6 +178,7 @@
     <Compile Include="resources\arr\ArraySacredGameWaterFilesF.cs" />
     <Compile Include="resources\arr\ArraySacredGameWaterFilesG.cs" />
     <Compile Include="resources\arr\ArraySacredUtilsCacheFiles.cs" />
+    <Compile Include="resources\bin\ApplicationBaseMakeFullReset.cs" />
     <Compile Include="resources\bin\ApplicationBaseWindowHotkeys.cs" />
     <Compile Include="resources\bin\ApplicationBaseWindowShutdown.cs" />
     <Compile Include="resources\bin\ApplicationClearComponentCache.cs" />
