@@ -1,4 +1,5 @@
-﻿using MaterialDesignThemes.Wpf;
+﻿using System;
+using MaterialDesignThemes.Wpf;
 using SacredUtils.resources.arr;
 using SacredUtils.resources.dlg;
 using System.IO;
@@ -31,7 +32,17 @@ namespace SacredUtils.resources.bin
             {
                 foreach (string s in ArraySacredUtilsCacheFiles.Files)
                 {
-                    if (File.Exists(s)) { File.Delete(s); }
+                    if (File.Exists(s))
+                    {
+                        try
+                        {
+                            File.Delete(s);
+                        }
+                        catch (Exception e)
+                        {
+                            AppLogger.Log.Error(e.ToString);
+                        }
+                    }
                 }
             }).Wait();
 
