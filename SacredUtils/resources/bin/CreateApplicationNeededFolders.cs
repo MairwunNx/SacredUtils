@@ -9,6 +9,7 @@ namespace SacredUtils.resources.bin
             Directory.CreateDirectory("$SacredUtils\\conf");
             Directory.CreateDirectory("$SacredUtils\\logs");
             Directory.CreateDirectory("$SacredUtils\\thms");
+            Directory.CreateDirectory("$SacredUtils\\temp");
             Directory.CreateDirectory("$SacredUtils\\lang\\ru-RU");
             Directory.CreateDirectory("$SacredUtils\\lang\\en-US");
             Directory.CreateDirectory("$SacredUtils\\back\\cfg-game");
