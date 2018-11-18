@@ -22,11 +22,8 @@ namespace SacredUtils.resources.bin
         {
             if (CheckAvailabilityInternetConnection.Connect())
             {
-                foreach (Window window in Application.Current.Windows)
-                {
-                    ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
-                    ((MainWindow)window).DialogFrame.Content = GameGettingComponentsDialog;
-                }
+                MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
+                MainWindow.MainWindowInstance.DialogFrame.Content = GameGettingComponentsDialog;
 
                 if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
                 {

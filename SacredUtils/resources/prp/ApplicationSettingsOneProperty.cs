@@ -94,12 +94,9 @@ namespace SacredUtils.resources.prp
 
         private static void ChangeScale(double scale)
         {
-            foreach (Window window in Application.Current.Windows)
-            {
-                ((MainWindow)window).Height = 720 * scale;
-                ((MainWindow)window).Width = 1086 * scale;
-                ((MainWindow)window).BaseCard.LayoutTransform = new ScaleTransform(scale, scale);
-            }
+            MainWindow.MainWindowInstance.Height = 720 * scale;
+            MainWindow.MainWindowInstance.Width = 1086 * scale;
+            MainWindow.MainWindowInstance.BaseCard.LayoutTransform = new ScaleTransform(scale, scale);
 
             AppSettings.ApplicationSettings.SacredUtilsGuiScale = scale;
         }
