@@ -21,14 +21,8 @@ namespace SacredUtils.resources.prp
         {
             Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
             {
-                foreach (Window window in Application.Current.Windows)
-                {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
-                        ((MainWindow)window).DialogFrame.Content = ApplicationUnpackModifyDialog;
-                    }
-                }
+                MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
+                MainWindow.MainWindowInstance.DialogFrame.Content = ApplicationUnpackModifyDialog;
 
                 if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
                 {
