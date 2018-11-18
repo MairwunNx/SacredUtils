@@ -48,7 +48,7 @@ namespace SacredUtils.resources.bin
             {
                 string[] sizes = AppSettings.ApplicationSettings.SacredFontSizeArray.Split('|');
 
-                for (var i = 0; i < 8; i++)
+                for (var i = 0; i < 7; i++)
                 {
                     int fontSettings = i + 1;
 
