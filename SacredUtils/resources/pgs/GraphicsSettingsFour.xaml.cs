@@ -13,14 +13,6 @@ namespace SacredUtils.resources.pgs
             Log.Info("Initialization components for graphics settings four done!");
         }
 
-        private void ToThreePageBtn_Click(object sender, RoutedEventArgs e)
-        {
-            foreach (Window window in Application.Current.Windows)
-            {
-                ((MainWindow)window).SettingsFrame.Content = MainWindow.GraphicsStgThree;
-
-                Log.Info("Game graphics settings three page was opened by user");
-            }
-        }
+        private void ToThreePageBtn_Click(object sender, RoutedEventArgs e) => MainWindow.MainWindowInstance.SettingsFrame.Content = MainWindow.GraphicsStgThree;
     }
 }

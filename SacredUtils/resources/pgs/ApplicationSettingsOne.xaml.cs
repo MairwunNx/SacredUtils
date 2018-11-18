@@ -27,23 +27,14 @@ namespace SacredUtils.resources.pgs
             ToTwoPageBtn.Click += (s, e) => OpenTwoPage();
         }
 
-        private static void OpenLink(string link)
-        {
-            Process.Start(link); Log.Info($"{link} link was opened by user");
-        }
+        private static void OpenLink(string link) => Process.Start(link);
 
         private static void OpenPageSelectDialog()
         {
             ApplicationPageSelectDialog applicationPageSelectDialog = new ApplicationPageSelectDialog();
 
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window.GetType() == typeof(MainWindow))
-                {
-                    ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
-                    ((MainWindow)window).DialogFrame.Content = applicationPageSelectDialog;
-                }
-            }
+            MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
+            MainWindow.MainWindowInstance.DialogFrame.Content = applicationPageSelectDialog;
 
             if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {
@@ -57,14 +48,8 @@ namespace SacredUtils.resources.pgs
         {
             ApplicationDonateSelectDialog applicationDonateSelectDialog = new ApplicationDonateSelectDialog();
 
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window.GetType() == typeof(MainWindow))
-                {
-                    ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
-                    ((MainWindow)window).DialogFrame.Content = applicationDonateSelectDialog;
-                }
-            }
+            MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
+            MainWindow.MainWindowInstance.DialogFrame.Content = applicationDonateSelectDialog;
 
             if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {
@@ -78,14 +63,8 @@ namespace SacredUtils.resources.pgs
         {
             ApplicationAboutDialog applicationAboutDialog = new ApplicationAboutDialog();
 
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window.GetType() == typeof(MainWindow))
-                {
-                    ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
-                    ((MainWindow)window).DialogFrame.Content = applicationAboutDialog;
-                }
-            }
+            MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
+            MainWindow.MainWindowInstance.DialogFrame.Content = applicationAboutDialog;
 
             if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {
@@ -95,14 +74,6 @@ namespace SacredUtils.resources.pgs
             applicationAboutDialog.BaseDialog.IsOpen = true;
         }
 
-        private static void OpenTwoPage()
-        {
-            foreach (Window window in Application.Current.Windows)
-            {
-                ((MainWindow)window).SettingsFrame.Content = MainWindow.AppStgTwo;
-
-                Log.Info("Application settings two page was opened by user");
-            }
-        }
+        private static void OpenTwoPage() => MainWindow.MainWindowInstance.SettingsFrame.Content = MainWindow.AppStgTwo;
     }
 }

@@ -228,14 +228,8 @@ namespace SacredUtils.resources.pgs
         {
             ApplicationHotkeyChangeDialog applicationHotkey = new ApplicationHotkeyChangeDialog();
 
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window.GetType() == typeof(MainWindow))
-                {
-                    ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
-                    ((MainWindow)window).DialogFrame.Content = applicationHotkey;
-                }
-            }
+            MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
+            MainWindow.MainWindowInstance.DialogFrame.Content = applicationHotkey;
 
             if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {
@@ -275,14 +269,8 @@ namespace SacredUtils.resources.pgs
 
         private void RunConvertColors_Click(object sender, RoutedEventArgs e)
         {
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window.GetType() == typeof(MainWindow))
-                {
-                    ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
-                    ((MainWindow)window).DialogFrame.Content = applicationConvertHtmlToSacred;
-                }
-            }
+            MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
+            MainWindow.MainWindowInstance.DialogFrame.Content = applicationConvertHtmlToSacred;
 
             if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {
@@ -337,14 +325,8 @@ namespace SacredUtils.resources.pgs
             {
                 GameCheckingComponentsDialog gameCheckingComponentsDialog = new GameCheckingComponentsDialog();
 
-                foreach (Window window in Application.Current.Windows)
-                {
-                    if (window.GetType() == typeof(MainWindow))
-                    {
-                        ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
-                        ((MainWindow)window).DialogFrame.Content = gameCheckingComponentsDialog;
-                    }
-                }
+                MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
+                MainWindow.MainWindowInstance.DialogFrame.Content = gameCheckingComponentsDialog;
 
                 if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
                 {
