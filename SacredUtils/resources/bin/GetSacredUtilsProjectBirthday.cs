@@ -27,9 +27,12 @@ namespace SacredUtils.resources.bin
 
                 if (parameterDate == todaysDate)
                 {
-                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(() =>
                     {
-                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0) { MainWindow.MainWindowInstance.MyBirthdayImage.Visibility = 0; }
+                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0)
+                        {
+                            MainWindow.MainWindowInstance.MyBirthdayImage.Visibility = 0;
+                        }
                     }));
                 }
             }
@@ -41,9 +44,12 @@ namespace SacredUtils.resources.bin
 
                 if (parameterDate == todaysDate)
                 {
-                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(() =>
                     {
-                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0) { MainWindow.MainWindowInstance.BirthdayImage.Visibility = 0; }
+                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0)
+                        {
+                            MainWindow.MainWindowInstance.BirthdayImage.Visibility = 0;
+                        }
                     }));
                 }
             }
@@ -55,14 +61,14 @@ namespace SacredUtils.resources.bin
 
                 if (parameterDate == todaysDate)
                 {
-                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(() =>
                     {
                         if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0)
                         {
                             MainWindow.MainWindowInstance.NewYearImage.Visibility = 0;
                             MainWindow.MainWindowInstance.NewYear2Image.Visibility = 0;
                             MainWindow.MainWindowInstance.NewYear3Image.Visibility = 0;
-                            MainWindow.MainWindowInstance.NewYear4Image.Visibility = 0; 
+                            MainWindow.MainWindowInstance.NewYear4Image.Visibility = 0;
                         }
                     }));
                 }
@@ -75,9 +81,12 @@ namespace SacredUtils.resources.bin
 
                 if (parameterDate == todaysDate)
                 {
-                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(() =>
                     {
-                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0) { MainWindow.MainWindowInstance.BarImage.Visibility = 0; }
+                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0)
+                        {
+                            MainWindow.MainWindowInstance.BarImage.Visibility = 0;
+                        }
                     }));
                 }
             }
@@ -89,9 +98,12 @@ namespace SacredUtils.resources.bin
 
                 if (parameterDate == todaysDate)
                 {
-                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(() =>
                     {
-                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0) { MainWindow.MainWindowInstance.IrelandImage.Visibility = 0; }
+                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0)
+                        {
+                            MainWindow.MainWindowInstance.IrelandImage.Visibility = 0;
+                        }
                     }));
                 }
             }
@@ -103,9 +115,12 @@ namespace SacredUtils.resources.bin
 
                 if (parameterDate == todaysDate)
                 {
-                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(() =>
                     {
-                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0) { MainWindow.MainWindowInstance.EarthImage.Visibility = 0; }
+                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0)
+                        {
+                            MainWindow.MainWindowInstance.EarthImage.Visibility = 0;
+                        }
                     }));
                 }
             }
@@ -117,9 +132,12 @@ namespace SacredUtils.resources.bin
 
                 if (parameterDate == todaysDate)
                 {
-                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(() =>
                     {
-                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0) { MainWindow.MainWindowInstance.WindDayImage.Visibility = 0; }
+                        if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0)
+                        {
+                            MainWindow.MainWindowInstance.WindDayImage.Visibility = 0;
+                        }
                     }));
                 }
             }
@@ -131,7 +149,7 @@ namespace SacredUtils.resources.bin
 
                 if (parameterDate == todaysDate)
                 {
-                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(() =>
                     {
                         if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0)
                         {
@@ -157,9 +175,9 @@ namespace SacredUtils.resources.bin
 
                         if (randomInt == 2)
                         {
-                            Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                            Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(() =>
                             {
-                                RotateTransform myRotateTransform = new RotateTransform { Angle = 180 };
+                                RotateTransform myRotateTransform = new RotateTransform {Angle = 180};
 
                                 TransformGroup myTransformGroup = new TransformGroup();
                                 myTransformGroup.Children.Add(myRotateTransform);
@@ -183,7 +201,7 @@ namespace SacredUtils.resources.bin
                     int fontSize = Convert.ToInt32(GetDataFromGoogleDisk("https://drive.google.com/uc?export=download&id=1DzUjXAXsdXb--aAS-gmyCYQUrzEN3Dzx"));
                     string labelContent = GetDataFromGoogleDisk("https://drive.google.com/uc?export=download&id=1T9VJX7Bu8Bo6JVs_GdHWV6gP8NDnYykX");
 
-                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(() =>
                     {
                         if (MainWindow.MainWindowInstance.NoConnectImage.Visibility != 0)
                         {

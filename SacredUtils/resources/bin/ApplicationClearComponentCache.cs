@@ -13,14 +13,8 @@ namespace SacredUtils.resources.bin
 
         public static void SearchCacheFiles()
         {
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window.GetType() == typeof(MainWindow))
-                {
-                    ((MainWindow)window).DialogFrame.Visibility = Visibility.Visible;
-                    ((MainWindow)window).DialogFrame.Content = ApplicationClearCacheDialog;
-                }
-            }
+            MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
+            MainWindow.MainWindowInstance.DialogFrame.Content = ApplicationClearCacheDialog;
 
             ApplicationClearCacheDialog.BaseLoadGrid.Visibility = Visibility.Visible;
             ApplicationClearCacheDialog.BaseSuccGrid.Visibility = Visibility.Hidden;

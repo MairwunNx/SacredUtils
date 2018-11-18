@@ -61,13 +61,8 @@ namespace SacredUtils.resources.bin
         {
             Wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1Q2syd-44j_VAWDPHnoujdkNl6vRnNADw", "mnxupdater.exe").Wait();
 
-            Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(delegate
-            {
-                foreach (Window window in Application.Current.Windows)
-                {
-                    ((MainWindow)window).UpdateLbl.Visibility = Visibility.Visible;
-                }
-            }));
+            Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(() =>
+                MainWindow.MainWindowInstance.UpdateLbl.Visibility = Visibility.Visible));
 
             Wc.Dispose();
         }

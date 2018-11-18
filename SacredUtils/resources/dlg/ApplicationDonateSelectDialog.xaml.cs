@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.dlg
 {
@@ -18,7 +17,7 @@ namespace SacredUtils.resources.dlg
 
         private void OpenLink(string link)
         {
-            Process.Start(link); Log.Info($"{link} link was opened by user");
+            Process.Start(link);
 
             if (AppSettings.ApplicationSettings.CloseDonateDialogAfterSelect)
             {

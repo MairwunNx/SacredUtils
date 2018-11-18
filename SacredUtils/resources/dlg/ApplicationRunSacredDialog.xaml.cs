@@ -160,56 +160,47 @@ namespace SacredUtils.resources.dlg
 
         private void EnableSwitchingLanguage()
         {
-            if (RunWithEngLangCmbBox.IsChecked == true)
-            {
-                Log.Info("Sacred starting with enabled force switching language ...");
+            if (RunWithEngLangCmbBox.IsChecked != true) { return;}
 
-                ForceSwitchKeyboardLanguageInGame.RegisterApplication();
-            }
+            Log.Info("Sacred starting with enabled force switching language ...");
+
+            ForceSwitchKeyboardLanguageInGame.RegisterApplication();
         }
 
         private void EnableStretchingScreenshot()
         { 
-            if (RunWithScreenCmbBox.IsChecked == true)
+            if (RunWithScreenCmbBox.IsChecked != true) { return; }
+
+            if (AppSettings.ApplicationSettings.ForceEnableFullScreenMode)
             {
-                if (AppSettings.ApplicationSettings.ForceEnableFullScreenMode)
-                {
-                    MainWindow.GraphicsStgTwo.FullScreenMode.IsChecked = true;
-                }
-
-                Log.Info($"Sacred Screenshots starting with {ScreenResolution.ScreenX}x{ScreenResolution.ScreenY} resolution ...");
-
-                ForceStretchSacredGameScreenshot.RegisterKey(false);
+                MainWindow.GraphicsStgTwo.FullScreenMode.IsChecked = true;
             }
+
+            Log.Info($"Sacred Screenshots starting with {ScreenResolution.ScreenX}x{ScreenResolution.ScreenY} resolution ...");
+
+            ForceStretchSacredGameScreenshot.RegisterKey(false);
         }
         
         private void EnableEmulateHotkeys()
         {
-            if (RunWithHotkeysCmbBox.IsChecked == true)
-            {
-                Log.Info("Sacred starting with enabled hotkeys emulation ...");
+            if (RunWithHotkeysCmbBox.IsChecked != true) { return; }
 
-                ApplicationStartEmulateHotkeys.RegisterMainHotkeys();
-            }
+            Log.Info("Sacred starting with enabled hotkeys emulation ...");
+
+            ApplicationStartEmulateHotkeys.RegisterMainHotkeys();
         }
 
         private void EnableDisablingWinKey()
         {
-            if (RunWithDisabledWinKeyCmbBox.IsChecked == true)
-            {
-                Log.Info("Sacred starting with disabled win key ...");
+            if (RunWithDisabledWinKeyCmbBox.IsChecked != true) { return; }
 
-                ForceSacredGameDisableWinKey.RegisterKeys();
+            Log.Info("Sacred starting with disabled win key ...");
 
-                ForceSacredGameDisableWinKey.Disable();
-            }
+            ForceSacredGameDisableWinKey.RegisterKeys();
+
+            ForceSacredGameDisableWinKey.Disable();
         }
 
-        private void CancelLaunchBtn_Click(object sender, RoutedEventArgs e)
-        {
-            BaseDialog.IsOpen = false;
-
-            Log.Info("Sacred starting canceled by user");
-        }
+        private void CancelLaunchBtn_Click(object sender, RoutedEventArgs e) => BaseDialog.IsOpen = false;
     }
 }

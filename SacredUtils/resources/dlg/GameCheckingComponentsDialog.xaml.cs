@@ -124,7 +124,7 @@ namespace SacredUtils.resources.dlg
 
                 if (BreakedFilesList.Count == 0)
                 {
-                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Send, new ThreadStart(delegate
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Send, new ThreadStart(() =>
                     {
                         CheckingComponents.Visibility = Visibility.Hidden;
                         NotFoundErrors.Visibility = Visibility.Visible;
@@ -134,7 +134,7 @@ namespace SacredUtils.resources.dlg
                 }
                 else
                 {
-                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Send, new ThreadStart(delegate
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Send, new ThreadStart(() =>
                     {
                         CheckingComponents.Visibility = Visibility.Hidden;
                         RestoringComponents.Visibility = Visibility.Visible;
@@ -155,7 +155,7 @@ namespace SacredUtils.resources.dlg
                         num++;
                     }
 
-                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Send, new ThreadStart(delegate
+                    Application.Current.Dispatcher.Invoke(DispatcherPriority.Send, new ThreadStart(() =>
                     {
                         RestoringComponents.Visibility = Visibility.Hidden;
                         RepairSuccess.Visibility = Visibility.Visible;

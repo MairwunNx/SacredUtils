@@ -137,14 +137,10 @@ namespace SacredUtils.resources.bin
 
                     if (AppSettings.ApplicationSettings.ApplicationShowChangeLog)
                     {
-                        MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
                         ApplicationChangeLogDialog applicationChangeLogDialog = new ApplicationChangeLogDialog();
 
-                        if (mainWindow != null)
-                        {
-                            mainWindow.DialogFrame.Visibility = Visibility.Visible;
-                            mainWindow.DialogFrame.Content = applicationChangeLogDialog;
-                        }
+                        MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
+                        MainWindow.MainWindowInstance.DialogFrame.Content = applicationChangeLogDialog;
 
                         if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
                         {
@@ -162,10 +158,9 @@ namespace SacredUtils.resources.bin
 
             if (e.Key == Key.Tab)
             {
-                if (AppSettings.ApplicationSettings.DisableApplicationTabKeyButton)
-                {
-                    e.Handled = true;
-                }
+                if (!AppSettings.ApplicationSettings.DisableApplicationTabKeyButton) { return; }
+
+                e.Handled = true;
             }
         }
     }

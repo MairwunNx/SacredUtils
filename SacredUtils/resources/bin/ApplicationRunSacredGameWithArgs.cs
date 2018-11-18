@@ -32,36 +32,31 @@ namespace SacredUtils.resources.bin
 
         private static void EnableSwitchingLanguage(string[] args)
         {
-            if (args.Contains("-forceSwitchLanguage"))
-            {
-                ForceSwitchKeyboardLanguageInGame.RegisterApplication();
-            }
+            if (!args.Contains("-forceSwitchLanguage")) { return; }
+
+            ForceSwitchKeyboardLanguageInGame.RegisterApplication();
         }
 
         private static void EnableStretchingScreenshot(string[] args)
         {
-            if (args.Contains("-fullScreenShot"))
-            {
-                ForceStretchSacredGameScreenshot.RegisterKey(true);
-            }
+            if (!args.Contains("-fullScreenShot")) { return; }
+
+            ForceStretchSacredGameScreenshot.RegisterKey(true);
         }
 
         private static void EnableEmulateHotKeys(string[] args)
         { 
-            if (args.Contains("-emulateHotKeys"))
-            {
-                ApplicationStartEmulateHotkeys.RegisterMainHotkeys();
-            }
+            if (!args.Contains("-emulateHotKeys")) { return; }
+
+            ApplicationStartEmulateHotkeys.RegisterMainHotkeys();
         }
 
         private static void EnableDisableWinKey(string[] args)
         {
-            if (args.Contains("-disableWinKey"))
-            {
-                ForceSacredGameDisableWinKey.RegisterKeys();
+            if (!args.Contains("-disableWinKey")) { return; }
 
-                ForceSacredGameDisableWinKey.Disable();
-            }
+            ForceSacredGameDisableWinKey.RegisterKeys();
+            ForceSacredGameDisableWinKey.Disable();
         }
     }
 }

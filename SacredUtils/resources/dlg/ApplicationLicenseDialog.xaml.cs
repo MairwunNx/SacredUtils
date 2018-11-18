@@ -19,15 +19,9 @@ namespace SacredUtils.resources.dlg
             BaseDialog.IsOpen = false;
 
             File.WriteAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\LicenseAgreement.su", "true");
-
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window.GetType() == typeof(MainWindow))
-                {
-                    ((MainWindow)window).UpdateLbl.IsEnabled = true;
-                    ((MainWindow)window).MinimizeBtn.IsEnabled = true;
-                }
-            }
+            
+            MainWindow.MainWindowInstance.UpdateLbl.IsEnabled = true;
+            MainWindow.MainWindowInstance.MinimizeBtn.IsEnabled = true;
 
             GetChangeLogDialogVisibility.Get();
         }
