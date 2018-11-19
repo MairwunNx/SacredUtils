@@ -33,7 +33,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameSoundSettingsOneProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=Sound}" />
+                    IsChecked="{Binding Path=Sound, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -62,7 +62,7 @@
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
-                    SelectedIndex="{Binding Path=SoundQuality}">
+                    SelectedIndex="{Binding Path=SoundQuality, Mode=TwoWay}">
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0099}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0100}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0101}" />
@@ -95,7 +95,7 @@
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
-                    SelectedIndex="{Binding Path=GameVoiceover}">
+                    SelectedIndex="{Binding Path=GameVoiceover, Mode=TwoWay}">
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0103}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0104}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0105}" />
@@ -132,7 +132,7 @@
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Maximum="128"
                     Style="{StaticResource MaterialDesignDiscreteSlider}"
-                    Value="{Binding Path=MusicVolume}">
+                    Value="{Binding Path=MusicVolume, Mode=TwoWay}">
                     <Slider.Resources>
                         <!--  ReSharper disable once Xaml.RedundantResource  -->
                         <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="{DynamicResource ResourceKey=SliderLineColorBrush}" />
@@ -169,7 +169,7 @@
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Maximum="128"
                     Style="{StaticResource MaterialDesignDiscreteSlider}"
-                    Value="{Binding Path=SfxVolume}">
+                    Value="{Binding Path=SfxVolume, Mode=TwoWay}">
                     <Slider.Resources>
                         <!--  ReSharper disable once Xaml.RedundantResource  -->
                         <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="{DynamicResource ResourceKey=SliderLineColorBrush}" />
@@ -206,7 +206,7 @@
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Maximum="128"
                     Style="{StaticResource MaterialDesignDiscreteSlider}"
-                    Value="{Binding Path=VoiceVolume}">
+                    Value="{Binding Path=VoiceVolume, Mode=TwoWay}">
                     <Slider.Resources>
                         <!--  ReSharper disable once Xaml.RedundantResource  -->
                         <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="{DynamicResource ResourceKey=SliderLineColorBrush}" />

@@ -33,7 +33,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=TrackEnemy}" />
+                    IsChecked="{Binding Path=TrackEnemy, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -59,7 +59,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=AutoSave}" />
+                    IsChecked="{Binding Path=AutoSave, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -85,7 +85,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=DefaultSkills}" />
+                    IsChecked="{Binding Path=DefaultSkills, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -111,7 +111,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=DebugLog}" />
+                    IsChecked="{Binding Path=DebugLog, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -137,7 +137,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=DamageIcons}" />
+                    IsChecked="{Binding Path=DamageIcons, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -163,7 +163,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=PotionBar}" />
+                    IsChecked="{Binding Path=PotionBar, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -189,7 +189,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=PlayerInfo}" />
+                    IsChecked="{Binding Path=PlayerInfo, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -215,7 +215,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=EnemyInfo}" />
+                    IsChecked="{Binding Path=EnemyInfo, Mode=TwoWay}" />
             </Grid>
         </Border>
 

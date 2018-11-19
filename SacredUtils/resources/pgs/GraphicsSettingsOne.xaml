@@ -36,7 +36,7 @@
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
-                    SelectedIndex="{Binding Path=GraphicsQuality}">
+                    SelectedIndex="{Binding Path=GraphicsQuality, Mode=TwoWay}">
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0057}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0058}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0059}" />
@@ -71,7 +71,7 @@
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Maximum="8"
                     Style="{StaticResource MaterialDesignDiscreteSlider}"
-                    Value="{Binding Path=WaitRetrace}">
+                    Value="{Binding Path=WaitRetrace, Mode=TwoWay}">
                     <Slider.Resources>
                         <!--  ReSharper disable once Xaml.RedundantResource  -->
                         <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="{DynamicResource ResourceKey=SliderLineColorBrush}" />
@@ -108,7 +108,7 @@
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Maximum="255"
                     Style="{StaticResource MaterialDesignDiscreteSlider}"
-                    Value="{Binding Path=MapTransparent}">
+                    Value="{Binding Path=MapTransparent, Mode=TwoWay}">
                     <Slider.Resources>
                         <!--  ReSharper disable once Xaml.RedundantResource  -->
                         <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="{DynamicResource ResourceKey=SliderLineColorBrush}" />
@@ -145,7 +145,7 @@
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Maximum="100"
                     Style="{StaticResource MaterialDesignDiscreteSlider}"
-                    Value="{Binding Path=NightDarkness}">
+                    Value="{Binding Path=NightDarkness, Mode=TwoWay}">
                     <Slider.Resources>
                         <!--  ReSharper disable once Xaml.RedundantResource  -->
                         <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="{DynamicResource ResourceKey=SliderLineColorBrush}" />

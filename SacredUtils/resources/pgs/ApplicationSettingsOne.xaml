@@ -36,7 +36,7 @@
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
-                    SelectedIndex="{Binding Path=Language}"
+                    SelectedIndex="{Binding Path=Language, Mode=TwoWay}"
                     UseLayoutRounding="False">
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0002}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0003}" />
@@ -69,7 +69,7 @@
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
-                    SelectedIndex="{Binding Path=Theme}">
+                    SelectedIndex="{Binding Path=Theme, Mode=TwoWay}">
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0005}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0006}" />
                 </ComboBox>
@@ -102,7 +102,7 @@
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
-                    SelectedIndex="{Binding Path=StartParams}">
+                    SelectedIndex="{Binding Path=StartParams, Mode=TwoWay}">
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0008}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0009}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0010}" />
@@ -135,7 +135,7 @@
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
-                    Text="{Binding Path=UiScale}">
+                    Text="{Binding Path=UiScale, Mode=TwoWay}">
                     <ComboBoxItem Content="100%" />
                     <ComboBoxItem Content="105%" />
                     <ComboBoxItem Content="110%" />

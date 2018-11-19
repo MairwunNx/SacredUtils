@@ -51,6 +51,7 @@
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0030}" />
 
+                <!--  ReSharper disable once XamlBindingWithoutMode  -->
                 <ComboBox
                     x:Name="FontNameCmbBox"
                     Height="27"
@@ -62,7 +63,7 @@
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
                     ItemsSource="{Binding Path=FontCollection}"
-                    SelectedValue="{Binding Path=SelectedFont}" />
+                    SelectedValue="{Binding Path=SelectedFont, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -139,7 +140,7 @@
             <TextBlock
                 x:Name="ExampleTextBlock"
                 VerticalAlignment="Center"
-                FontFamily="{Binding Text, ElementName=FontNameCmbBox}"
+                FontFamily="{Binding Text, ElementName=FontNameCmbBox, Mode=TwoWay}"
                 FontSize="14"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Text="{Binding Text, ElementName=FontExampleTxBox, Mode=TwoWay}"

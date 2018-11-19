@@ -33,7 +33,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsThreeProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=CombineSlots}" />
+                    IsChecked="{Binding Path=CombineSlots, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -59,7 +59,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsThreeProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=AcceptLicense}" />
+                    IsChecked="{Binding Path=AcceptLicense, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -85,7 +85,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsThreeProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=FirstEnter}" />
+                    IsChecked="{Binding Path=FirstEnter, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -111,7 +111,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsThreeProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=Earthquake}" />
+                    IsChecked="{Binding Path=Earthquake, Mode=TwoWay}" />
             </Grid>
         </Border>
 

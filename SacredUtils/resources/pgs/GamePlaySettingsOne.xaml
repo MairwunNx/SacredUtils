@@ -36,7 +36,7 @@
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
-                    SelectedIndex="{Binding Path=PickupMode}">
+                    SelectedIndex="{Binding Path=PickupMode, Mode=TwoWay}">
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0036}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0035}" />
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0034}" />
@@ -70,7 +70,7 @@
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
-                    SelectedIndex="{Binding Path=ConnectionType}">
+                    SelectedIndex="{Binding Path=ConnectionType, Mode=TwoWay}">
                     <ComboBoxItem Content="DSL \ Cable \ LAN" />
                     <ComboBoxItem Content="Modem \ ISDN" />
                 </ComboBox>
@@ -103,7 +103,7 @@
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
                     MaxLength="32"
-                    Text="{Binding Path=PictureOnStartup}" />
+                    Text="{Binding Path=PictureOnStartup, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -133,7 +133,7 @@
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
                     MaxLength="32"
-                    Text="{Binding Path=PictureOnLoad}" />
+                    Text="{Binding Path=PictureOnLoad, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -166,7 +166,7 @@
                     Maximum="80"
                     Minimum="10"
                     Style="{StaticResource MaterialDesignDiscreteSlider}"
-                    Value="{Binding Path=WarningLevel}">
+                    Value="{Binding Path=WarningLevel, Mode=TwoWay}">
                     <Slider.Resources>
                         <!--  ReSharper disable once Xaml.RedundantResource  -->
                         <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="{DynamicResource ResourceKey=SliderLineColorBrush}" />

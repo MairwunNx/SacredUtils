@@ -32,7 +32,7 @@
                     Width="50"
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsTwoProperty}"
-                    IsChecked="{Binding Path=RestrictionMemory}" />
+                    IsChecked="{Binding Path=RestrictionMemory, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -58,7 +58,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsTwoProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=ColorDepth}" />
+                    IsChecked="{Binding Path=ColorDepth, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -84,7 +84,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsTwoProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=PickupAnim}" />
+                    IsChecked="{Binding Path=PickupAnim, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -110,7 +110,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsTwoProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=Violence}" />
+                    IsChecked="{Binding Path=Violence, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -137,7 +137,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsTwoProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=FullScreen}" />
+                    IsChecked="{Binding Path=FullScreen, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -163,7 +163,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsTwoProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=FullScreenAa}" />
+                    IsChecked="{Binding Path=FullScreenAa, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -189,7 +189,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsTwoProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=ShowMovie}" />
+                    IsChecked="{Binding Path=ShowMovie, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -215,7 +215,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsTwoProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=ShowFinalMovie}" />
+                    IsChecked="{Binding Path=ShowFinalMovie, Mode=TwoWay}" />
             </Grid>
         </Border>
 

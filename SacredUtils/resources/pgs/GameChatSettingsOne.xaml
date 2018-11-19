@@ -33,7 +33,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameChatSettingsOneProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=UniqueColor}"
+                    IsChecked="{Binding Path=UniqueColor, Mode=TwoWay}"
                     SnapsToDevicePixels="True"
                     UseLayoutRounding="True" />
             </Grid>
@@ -65,7 +65,7 @@
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
-                    SelectedIndex="{Binding Path=Language}"
+                    SelectedIndex="{Binding Path=Language, Mode=TwoWay}"
                     SnapsToDevicePixels="True"
                     UseLayoutRounding="True">
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0020}" />
@@ -107,7 +107,7 @@
                     SnapsToDevicePixels="True"
                     Style="{StaticResource MaterialDesignDiscreteSlider}"
                     UseLayoutRounding="True"
-                    Value="{Binding Path=ChatLines}">
+                    Value="{Binding Path=ChatLines, Mode=TwoWay}">
                     <Slider.Resources>
                         <!--  ReSharper disable once Xaml.RedundantResource  -->
                         <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="{DynamicResource ResourceKey=SliderLineColorBrush}" />
@@ -146,7 +146,7 @@
                     SnapsToDevicePixels="True"
                     Style="{StaticResource MaterialDesignDiscreteSlider}"
                     UseLayoutRounding="True"
-                    Value="{Binding Path=ChatDelay}">
+                    Value="{Binding Path=ChatDelay, Mode=TwoWay}">
                     <Slider.Resources>
                         <!--  ReSharper disable once Xaml.RedundantResource  -->
                         <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="{DynamicResource ResourceKey=SliderLineColorBrush}" />
@@ -185,7 +185,7 @@
                     SnapsToDevicePixels="True"
                     Style="{StaticResource MaterialDesignDiscreteSlider}"
                     UseLayoutRounding="True"
-                    Value="{Binding Path=ChatAlpha}">
+                    Value="{Binding Path=ChatAlpha, Mode=TwoWay}">
                     <Slider.Resources>
                         <!--  ReSharper disable once Xaml.RedundantResource  -->
                         <SolidColorBrush x:Key="MaterialDesignCheckBoxOff" Color="{DynamicResource ResourceKey=SliderLineColorBrush}" />

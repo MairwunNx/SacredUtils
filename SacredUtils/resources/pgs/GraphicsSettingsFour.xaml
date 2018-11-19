@@ -33,7 +33,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsFourProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=StaticBog, IsAsync=True}" />
+                    IsChecked="{Binding Path=StaticBog, IsAsync=True, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -59,7 +59,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsFourProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=StaticWater, IsAsync=True}" />
+                    IsChecked="{Binding Path=StaticWater, IsAsync=True, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -85,7 +85,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsFourProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=StaticLava, IsAsync=True}" />
+                    IsChecked="{Binding Path=StaticLava, IsAsync=True, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -111,7 +111,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsFourProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=OldSacred, IsAsync=True}" />
+                    IsChecked="{Binding Path=OldSacred, IsAsync=True, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -137,7 +137,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsFourProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=FootSteps, IsAsync=True}" />
+                    IsChecked="{Binding Path=FootSteps, IsAsync=True, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -163,7 +163,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsFourProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=HealthCircles, IsAsync=True}" />
+                    IsChecked="{Binding Path=HealthCircles, IsAsync=True, Mode=TwoWay}" />
             </Grid>
         </Border>
 

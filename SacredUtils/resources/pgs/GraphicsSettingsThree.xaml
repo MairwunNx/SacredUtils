@@ -33,7 +33,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsThreeProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=ForceBlackShadow}" />
+                    IsChecked="{Binding Path=ForceBlackShadow, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -59,7 +59,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsThreeProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=CompatVideo}" />
+                    IsChecked="{Binding Path=CompatVideo, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -85,7 +85,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsThreeProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=FontAa}" />
+                    IsChecked="{Binding Path=FontAa, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -111,7 +111,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsThreeProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=FullScreenAa}" />
+                    IsChecked="{Binding Path=FullScreenAa, Mode=TwoWay}" />
             </Grid>
         </Border>
 
@@ -137,7 +137,7 @@
                     Margin="748,0,10,0"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsThreeProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                    IsChecked="{Binding Path=FontFilter}" />
+                    IsChecked="{Binding Path=FontFilter, Mode=TwoWay}" />
             </Grid>
         </Border>
 
