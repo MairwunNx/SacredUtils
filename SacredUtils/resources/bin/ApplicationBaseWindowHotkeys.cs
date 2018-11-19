@@ -9,6 +9,7 @@ using System.Windows.Input;
 using static SacredUtils.AppLogger;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 
+// ReSharper disable LocalSuppression
 namespace SacredUtils.resources.bin
 {
     public static class ApplicationBaseWindowHotkeys
