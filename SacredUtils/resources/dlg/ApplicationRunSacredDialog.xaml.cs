@@ -160,7 +160,7 @@ namespace SacredUtils.resources.dlg
 
         private void EnableSwitchingLanguage()
         {
-            if (RunWithEngLangCmbBox.IsChecked != true) { return;}
+            if (RunWithEngLangCmbBox.IsChecked != true) { return; }
 
             Log.Info("Sacred starting with enabled force switching language ...");
 
