@@ -327,16 +327,6 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        public static byte[] UpdateLibrary {
-            get {
-                object obj = ResourceManager.GetObject("UpdateLibrary", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
         public static byte[] WPFSharp_Globalizer {
             get {
                 object obj = ResourceManager.GetObject("WPFSharp_Globalizer", resourceCulture);
