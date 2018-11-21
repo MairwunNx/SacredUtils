@@ -230,6 +230,7 @@
     <Compile Include="resources\bin\InstallDefaultSacredGameFonts.cs" />
     <Compile Include="resources\bin\PrintToLogBaseApplicationInfo.cs" />
     <Compile Include="resources\bin\RefreshApplicationSettings.cs" />
+    <Compile Include="resources\bin\RemoveSacredGameConfigFonts.cs" />
     <Compile Include="resources\dlg\ApplicationClearCacheDialog.xaml.cs">
       <DependentUpon>ApplicationClearCacheDialog.xaml</DependentUpon>
     </Compile>

@@ -14,7 +14,7 @@ namespace SacredUtils.resources.bin
                 int[] sizes = { 13, 12, 16, 25, 16, 18, 8 };
                 string[] fonts = { "CyrillicChancellor", "AntiquaSSK", "CyrillicChancellor", "AntiquaSSK", "AntiquaSSK", "AntiquaSSK", "CyrillicChancellor" };
 
-                for (var i = 0; i < 7; i++)
+                for (int i = 0; i < 7; i++)
                 {
                     int fontSettings = i + 1;
 

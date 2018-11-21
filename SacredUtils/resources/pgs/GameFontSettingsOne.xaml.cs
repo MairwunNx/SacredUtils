@@ -38,17 +38,13 @@ namespace SacredUtils.resources.pgs
         {
             AppSettings.ApplicationSettings.SacredFontSizeArray = FontSizesTxBox.Text;
 
-            if (FontNameCmbBox.Text != "")
-            {
-                ChangeSacredGameSettingsValue.ChangeSettingFontValue(FontNameCmbBox.Text);
-            }
+            if (FontNameCmbBox.Text == "") { return; }
+
+            ChangeSacredGameSettingsValue.ChangeSettingFontValue(FontNameCmbBox.Text);
         }
 
         private void InstallDefaultFontsButton_Click(object sender, RoutedEventArgs e) => InstallDefaultSacredGameFonts.Install();
 
-        private void RemoveConfigurableFontsButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        private void RemoveConfigurableFontsButton_Click(object sender, RoutedEventArgs e) => RemoveSacredGameConfigFonts.Remove();
     }
 }
