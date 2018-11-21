@@ -14,11 +14,13 @@ namespace SacredUtils.resources.pgs
 
             if (!AppSettings.ApplicationSettings.UseCustomFontSizeValue)
             {
-                Border1.Margin = new Thickness(0, 195, 0, 0);
-                Border2.Margin = new Thickness(0, 246, 0, 0);
-                Border3.Margin = new Thickness(0, 297, 0, 0);
+                Border1.Margin = new Thickness(0, 169, 0, 0);
+                Border2.Margin = new Thickness(0, 220, 0, 0);
+                Border3.Margin = new Thickness(0, 271, 0, 0);
                 Border4.Visibility = Visibility.Collapsed;
-                Border5.Margin = new Thickness(0, 348, 0, 0);
+                Border5.Margin = new Thickness(0, 373, 0, 0);
+                Border6.Margin = new Thickness(38, 322, 447, 0);
+                Border7.Margin = new Thickness(446, 322, 38, 0);
             }
             else
             {
@@ -40,6 +42,13 @@ namespace SacredUtils.resources.pgs
             {
                 ChangeSacredGameSettingsValue.ChangeSettingFontValue(FontNameCmbBox.Text);
             }
+        }
+
+        private void InstallDefaultFontsButton_Click(object sender, RoutedEventArgs e) => InstallDefaultSacredGameFonts.Install();
+
+        private void RemoveConfigurableFontsButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

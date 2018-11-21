@@ -227,6 +227,7 @@
     <Compile Include="resources\bin\GetSacredUtilsProjectBirthday.cs" />
     <Compile Include="resources\bin\GetStateGlobalExceptionCatching.cs" />
     <Compile Include="resources\bin\ApplicationHotKeyGetSystemKeyValue.cs" />
+    <Compile Include="resources\bin\InstallDefaultSacredGameFonts.cs" />
     <Compile Include="resources\bin\PrintToLogBaseApplicationInfo.cs" />
     <Compile Include="resources\bin\RefreshApplicationSettings.cs" />
     <Compile Include="resources\dlg\ApplicationClearCacheDialog.xaml.cs">

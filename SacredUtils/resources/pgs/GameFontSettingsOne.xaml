@@ -15,7 +15,7 @@
             x:Name="Border1"
             Width="810"
             Height="41"
-            Margin="0,169,0,0"
+            Margin="38,145,38,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
@@ -37,7 +37,7 @@
             x:Name="Border2"
             Width="810"
             Height="41"
-            Margin="0,220,0,0"
+            Margin="38,196,38,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
@@ -71,7 +71,7 @@
             x:Name="Border3"
             Width="810"
             Height="41"
-            Margin="0,271,0,0"
+            Margin="38,247,38,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
@@ -101,7 +101,7 @@
             x:Name="Border4"
             Width="810"
             Height="41"
-            Margin="0,322,0,0"
+            Margin="38,298,38,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
@@ -128,10 +128,53 @@
         </Border>
 
         <Border
+            x:Name="Border6"
+            Width="401"
+            Height="41"
+            Margin="38,349,447,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3">
+            <Button
+                Height="Auto"
+                ClipToBounds="True"
+                Content="{globalizer:GlobalizedResource String0175}"
+                Cursor="Hand"
+                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontSize="12"
+                Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                IsEnabled="True"
+                Style="{StaticResource MaterialDesignToolForegroundButton}" Click="InstallDefaultFontsButton_Click" />
+        </Border>
+
+        <Border
+            x:Name="Border7"
+            Width="402"
+            Height="41"
+            Margin="446,349,38,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3">
+            <Button
+                Height="Auto"
+                ClipToBounds="True"
+                Content="{globalizer:GlobalizedResource String0176}"
+                Cursor="Hand"
+                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontSize="12"
+                Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                Style="{StaticResource MaterialDesignToolForegroundButton}" Click="RemoveConfigurableFontsButton_Click" />
+        </Border>
+
+        <Border
             x:Name="Border5"
             Width="810"
             Height="92"
-            Margin="0,373,0,0"
+            Margin="38,400,38,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
