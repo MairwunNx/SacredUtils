@@ -10,6 +10,12 @@
     d:DesignHeight="685"
     d:DesignWidth="886"
     mc:Ignorable="d">
+    <Page.Resources>
+        <Style BasedOn="{StaticResource {x:Type MenuItem}}" TargetType="{x:Type MenuItem}">
+            <Setter Property="OverridesDefaultStyle" Value="true" />
+            <Setter Property="FontFamily" Value="/SacredUtils;component/resources/fnt/#Google Sans" />
+        </Style>
+    </Page.Resources>
     <Grid>
         <Border
             Width="810"

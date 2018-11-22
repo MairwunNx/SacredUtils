@@ -10,6 +10,12 @@
     d:DesignHeight="685"
     d:DesignWidth="886"
     mc:Ignorable="d">
+    <Page.Resources>
+        <Style BasedOn="{StaticResource {x:Type MenuItem}}" TargetType="{x:Type MenuItem}">
+            <Setter Property="OverridesDefaultStyle" Value="true" />
+            <Setter Property="FontFamily" Value="/SacredUtils;component/resources/fnt/#Google Sans" />
+        </Style>
+    </Page.Resources>
     <Grid>
         <Border
             x:Name="Border1"
@@ -123,7 +129,13 @@
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
-                    MaxLength="20" />
+                    MaxLength="20">
+                    <TextBox.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="Настроить размеры" />
+                        </ContextMenu>
+                    </TextBox.ContextMenu>
+                </TextBox>
             </Grid>
         </Border>
 
@@ -139,6 +151,7 @@
             CornerRadius="3">
             <Button
                 Height="Auto"
+                Click="InstallDefaultFontsButton_Click"
                 ClipToBounds="True"
                 Content="{globalizer:GlobalizedResource String0175}"
                 Cursor="Hand"
@@ -146,7 +159,7 @@
                 FontSize="12"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 IsEnabled="True"
-                Style="{StaticResource MaterialDesignToolForegroundButton}" Click="InstallDefaultFontsButton_Click" />
+                Style="{StaticResource MaterialDesignToolForegroundButton}" />
         </Border>
 
         <Border
@@ -161,13 +174,14 @@
             CornerRadius="3">
             <Button
                 Height="Auto"
+                Click="RemoveConfigurableFontsButton_Click"
                 ClipToBounds="True"
                 Content="{globalizer:GlobalizedResource String0176}"
                 Cursor="Hand"
                 FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
                 FontSize="12"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
-                Style="{StaticResource MaterialDesignToolForegroundButton}" Click="RemoveConfigurableFontsButton_Click" />
+                Style="{StaticResource MaterialDesignToolForegroundButton}" />
         </Border>
 
         <Border
