@@ -37,7 +37,7 @@ namespace SacredUtils.resources.pgs
             Log.Info("Initialization components for game font settings one done!");
         }
 
-        private void ValidateValue(object sender, TextCompositionEventArgs e) => e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+        private void ValidateValue(object sender, TextCompositionEventArgs e) => e.Handled = new Regex("[^0-9|]+").IsMatch(e.Text);
 
         private void FontNameCmbBox_DropDownClosed(object sender, EventArgs e) => GC.Collect();
         
