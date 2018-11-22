@@ -240,6 +240,9 @@
     <Compile Include="resources\dlg\ApplicationDonateSelectDialog.xaml.cs">
       <DependentUpon>ApplicationDonateSelectDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="resources\dlg\ApplicationFontSizesDialog.xaml.cs">
+      <DependentUpon>ApplicationFontSizesDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="resources\dlg\ApplicationPageSelectDialog.xaml.cs">
       <DependentUpon>ApplicationPageSelectDialog.xaml</DependentUpon>
     </Compile>
@@ -369,6 +372,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="resources\dlg\ApplicationDonateSelectDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="resources\dlg\ApplicationFontSizesDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

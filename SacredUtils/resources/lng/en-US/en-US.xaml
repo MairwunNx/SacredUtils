@@ -248,4 +248,14 @@
     <sys:String x:Key="String0176">Fully remove configurable fonts</sys:String>
     <sys:String x:Key="String0177">Configure font sizes</sys:String>
 
+    <!--  Application font sizes dialog  -->
+    <sys:String x:Key="String0178">Configuring sizes</sys:String>
+    <sys:String x:Key="String0179">1: Descriptions, base info</sys:String>
+    <sys:String x:Key="String0180">2: Map information</sys:String>
+    <sys:String x:Key="String0181">3: Captions and titles</sys:String>
+    <sys:String x:Key="String0182">4: Game main menu</sys:String>
+    <sys:String x:Key="String0183">5: Quests and tasks</sys:String>
+    <sys:String x:Key="String0184">6: Heads of journal</sys:String>
+    <sys:String x:Key="String0185">7: Settings</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>

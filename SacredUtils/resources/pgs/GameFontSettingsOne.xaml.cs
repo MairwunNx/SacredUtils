@@ -1,4 +1,6 @@
-﻿using SacredUtils.resources.bin;
+﻿using MaterialDesignThemes.Wpf;
+using SacredUtils.resources.bin;
+using SacredUtils.resources.dlg;
 using SacredUtils.resources.prp;
 using System;
 using System.Windows;
@@ -46,5 +48,20 @@ namespace SacredUtils.resources.pgs
         private void InstallDefaultFontsButton_Click(object sender, RoutedEventArgs e) => InstallDefaultSacredGameFonts.Install();
 
         private void RemoveConfigurableFontsButton_Click(object sender, RoutedEventArgs e) => RemoveSacredGameConfigFonts.Remove();
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            ApplicationFontSizesDialog applicationFontSizesDialog = new ApplicationFontSizesDialog();
+
+            MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
+            MainWindow.MainWindowInstance.DialogFrame.Content = applicationFontSizesDialog;
+
+            if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
+            {
+                applicationFontSizesDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
+            }
+            
+            applicationFontSizesDialog.BaseDialog.IsOpen = true;
+        }
     }
 }

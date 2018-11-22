@@ -139,7 +139,7 @@
                     MaxLength="20">
                     <TextBox.ContextMenu>
                         <ContextMenu>
-                            <MenuItem Header="{globalizer:GlobalizedResource String0177}" />
+                            <MenuItem Click="MenuItem_Click" Header="{globalizer:GlobalizedResource String0177}" />
                         </ContextMenu>
                     </TextBox.ContextMenu>
                 </TextBox>

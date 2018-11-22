@@ -248,4 +248,14 @@
     <sys:String x:Key="String0176">Удалить настраиваемые шрифты</sys:String>
     <sys:String x:Key="String0177">Настроить размеры шрифтов</sys:String>
 
+    <!--  Application font sizes dialog  -->
+    <sys:String x:Key="String0178">Настройка размеров</sys:String>
+    <sys:String x:Key="String0179">1: Описания, информация</sys:String>
+    <sys:String x:Key="String0180">2: Карта</sys:String>
+    <sys:String x:Key="String0181">3: Титры и заголовки</sys:String>
+    <sys:String x:Key="String0182">4: Главное меню</sys:String>
+    <sys:String x:Key="String0183">5: Квесты и задания</sys:String>
+    <sys:String x:Key="String0184">6: Главы журнала</sys:String>
+    <sys:String x:Key="String0185">7: Настройки</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>
