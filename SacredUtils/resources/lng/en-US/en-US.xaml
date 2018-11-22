@@ -243,8 +243,9 @@
     <sys:String x:Key="String0173">Cleaning utility components cache ...</sys:String>
     <sys:String x:Key="String0174">Component cache clearing completed!</sys:String>
 
-    <!--  Application font addon buttons  -->
+    <!--  Application font addon functional  -->
     <sys:String x:Key="String0175">Apply and install default fonts</sys:String>
     <sys:String x:Key="String0176">Fully remove configurable fonts</sys:String>
+    <sys:String x:Key="String0177">Configure font sizes</sys:String>
 
 </Globalization:GlobalizationResourceDictionary>

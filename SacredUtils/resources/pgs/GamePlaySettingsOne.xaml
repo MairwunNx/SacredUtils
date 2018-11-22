@@ -14,6 +14,12 @@
         <Style BasedOn="{StaticResource {x:Type MenuItem}}" TargetType="{x:Type MenuItem}">
             <Setter Property="OverridesDefaultStyle" Value="true" />
             <Setter Property="FontFamily" Value="/SacredUtils;component/resources/fnt/#Google Sans" />
+            <Setter Property="Foreground" Value="{DynamicResource ResourceKey=ComboBoxForegroundBrush}" />
+        </Style>
+
+        <Style BasedOn="{StaticResource {x:Type ContextMenu}}" TargetType="{x:Type ContextMenu}">
+            <Setter Property="OverridesDefaultStyle" Value="true" />
+            <Setter Property="Background" Value="{DynamicResource ResourceKey=BackgroundColorBrush}" />
         </Style>
     </Page.Resources>
     <Grid>

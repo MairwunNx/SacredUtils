@@ -243,8 +243,9 @@
     <sys:String x:Key="String0173">Очистка кеша компонентов утилиты ...</sys:String>
     <sys:String x:Key="String0174">Очистка кеша компонентов завершена!</sys:String>
 
-    <!--  Application font addon buttons  -->
+    <!--  Application font addon functional  -->
     <sys:String x:Key="String0175">Установить шрифты по умолчанию</sys:String>
     <sys:String x:Key="String0176">Удалить настраиваемые шрифты</sys:String>
+    <sys:String x:Key="String0177">Настроить размеры шрифтов</sys:String>
 
 </Globalization:GlobalizationResourceDictionary>
