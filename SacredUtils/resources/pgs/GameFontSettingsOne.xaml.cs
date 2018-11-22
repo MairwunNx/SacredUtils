@@ -3,7 +3,9 @@ using SacredUtils.resources.bin;
 using SacredUtils.resources.dlg;
 using SacredUtils.resources.prp;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Input;
 using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.pgs
@@ -29,15 +31,20 @@ namespace SacredUtils.resources.pgs
                 FontSizesTxBox.Text = AppSettings.ApplicationSettings.SacredFontSizeArray;
 
                 FontSizesTxBox.TextChanged += (s, e) => ChangeSizeForFont();
+                FontSizesTxBox.PreviewTextInput += ValidateValue;
             }
 
             Log.Info("Initialization components for game font settings one done!");
         }
 
+        private void ValidateValue(object sender, TextCompositionEventArgs e) => e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+
         private void FontNameCmbBox_DropDownClosed(object sender, EventArgs e) => GC.Collect();
         
         private void ChangeSizeForFont()
         {
+            FontSizesTxBox.Text = FontSizesTxBox.Text.Replace(" ", "");
+
             AppSettings.ApplicationSettings.SacredFontSizeArray = FontSizesTxBox.Text;
 
             if (FontNameCmbBox.Text == "") { return; }
