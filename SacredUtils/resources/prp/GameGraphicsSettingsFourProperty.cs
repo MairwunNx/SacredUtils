@@ -152,29 +152,29 @@ namespace SacredUtils.resources.prp
                 }
                 else
                 {
-                    foreach (string file in ArraySacredGameLavaFilesA.Files)
+                    foreach (string file in ArraySacredGameLavaFiles.Files)
                     {
-                        if (File.Exists($"PAK\\{file}")) { File.Delete($"PAK\\{file}"); }
+                        if (File.Exists($"PAK\\A{file}")) { File.Delete($"PAK\\A{file}"); }
                     }
 
-                    foreach (string file in ArraySacredGameLavaFilesB.Files)
+                    foreach (string file in ArraySacredGameLavaFiles.Files)
                     {
-                        if (File.Exists($"PAK\\{file}")) { File.Delete($"PAK\\{file}"); }
+                        if (File.Exists($"PAK\\B{file}")) { File.Delete($"PAK\\B{file}"); }
                     }
 
-                    foreach (string file in ArraySacredGameLavaFilesC.Files)
+                    foreach (string file in ArraySacredGameLavaFiles.Files)
                     {
-                        if (File.Exists($"PAK\\{file}")) { File.Delete($"PAK\\{file}"); }
+                        if (File.Exists($"PAK\\C{file}")) { File.Delete($"PAK\\C{file}"); }
                     }
 
-                    foreach (string file in ArraySacredGameLavaFilesE.Files)
+                    foreach (string file in ArraySacredGameLavaFiles.Files)
                     {
-                        if (File.Exists($"PAK\\{file}")) { File.Delete($"PAK\\{file}"); }
+                        if (File.Exists($"PAK\\E{file}")) { File.Delete($"PAK\\E{file}"); }
                     }
 
-                    foreach (string file in ArraySacredGameLavaFilesD.Files)
+                    foreach (string file in ArraySacredGameLavaFiles.Files)
                     {
-                        if (File.Exists($"PAK\\{file}")) { File.Delete($"PAK\\{file}"); }
+                        if (File.Exists($"PAK\\D{file}")) { File.Delete($"PAK\\D{file}"); }
                     }
 
                     ModifySettings.ModificationSettings.UseSacredStaticLavaTexture = false;

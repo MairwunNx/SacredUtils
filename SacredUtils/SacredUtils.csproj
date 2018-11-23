@@ -165,11 +165,7 @@
     <Compile Include="resources\arr\ArraySacredGameComponentFiles.cs" />
     <Compile Include="resources\arr\ArraySacredGameFootStepsFiles.cs" />
     <Compile Include="resources\arr\ArraySacredGameHealthFiles.cs" />
-    <Compile Include="resources\arr\ArraySacredGameLavaFilesA.cs" />
-    <Compile Include="resources\arr\ArraySacredGameLavaFilesB.cs" />
-    <Compile Include="resources\arr\ArraySacredGameLavaFilesC.cs" />
-    <Compile Include="resources\arr\ArraySacredGameLavaFilesD.cs" />
-    <Compile Include="resources\arr\ArraySacredGameLavaFilesE.cs" />
+    <Compile Include="resources\arr\ArraySacredGameLavaFiles.cs" />
     <Compile Include="resources\arr\ArraySacredGameOldTextureFiles.cs" />
     <Compile Include="resources\arr\ArraySacredGameWaterFiles.cs" />
     <Compile Include="resources\arr\ArraySacredUtilsCacheFiles.cs" />
