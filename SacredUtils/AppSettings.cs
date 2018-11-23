@@ -81,9 +81,6 @@ namespace SacredUtils
 
         [Option(Alias = "DisableCheckInternetConnection", DefaultValue = "false")]
         bool DisableCheckInternetConnection { get; }
-        
-        [Option(Alias = "DisableCreatingRequiredFiles", DefaultValue = "false")]
-        bool DisableCreatingRequiredFiles { get; }
 
         [Option(Alias = "DisablePrintBaseInfoToLog", DefaultValue = "false")]
         bool DisablePrintBaseInfoToLog { get; }

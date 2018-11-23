@@ -71,6 +71,134 @@ namespace SacredUtils.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на _LAVA00.tga
+        ///_LAVA01.tga
+        ///_LAVA02.tga
+        ///_LAVA03.tga
+        ///_LAVA04.tga
+        ///_LAVA05.tga
+        ///_LAVA06.tga
+        ///_LAVA07.tga
+        ///_LAVA08.tga
+        ///_LAVA09.tga
+        ///_LAVA10.tga
+        ///_LAVA11.tga
+        ///_LAVA12.tga
+        ///_LAVA13.tga
+        ///_LAVA14.tga
+        ///_LAVA15.tga
+        ///_LAVA16.tga
+        ///_LAVA17.tga
+        ///_LAVA18.tga
+        ///_LAVA19.tga
+        ///_LAVA20.tga
+        ///_LAVA21.tga
+        ///_LAVA22.tga
+        ///_LAVA23.tga
+        ///_LAVA24.tga
+        ///_LAVA25.tga
+        ///_LAVA26.tga
+        ///_LAVA27.tga
+        ///_LAVA28.tga
+        ///_LAVA29.tga
+        ///_LAVA30.tga
+        ///_LAVA31.tga
+        ///_LAVA32.tga
+        ///_LAVA33.tga
+        ///_LAVA34.tga
+        ///_LAVA35.tga
+        ///_LAVA36.tga
+        ///_LAVA37.tga
+        ///_LAVA38.tga
+        ///_LAVA [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string ar_lava {
+            get {
+                return ResourceManager.GetString("ar_lava", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на GUI_MAIN_01.TGA
+        ///GUI_MAIN_02.TGA
+        ///GUI_MAIN_03.TGA
+        ///GUI_MAIN_12.TGA
+        ///GUI_MAIN_13.TGA
+        ///GUI_MAIN_05.TGA
+        ///GUI_DAYNIGHTALPHA.TGA
+        ///GUI_OPTION_BACKGROUND00.TGA
+        ///UW_OPTION_1_01.TGA
+        ///UW_OPTION_1_02.TGA
+        ///UW_OPTION_1_03.TGA
+        ///UW_OPTION_1_04.TGA
+        ///UW_OPTION_1_05.TGA
+        ///UW_OPTION_1_06.TGA
+        ///UW_OPTION_1_07.TGA
+        ///UW_OPTION_1_08.TGA
+        ///UW_OPTION_1_09.TGA
+        ///UW_OPTION_1_10.TGA
+        ///UW_OPTION_1_11.TGA
+        ///UW_OPTION_1_12.TGA
+        ///GUI_MAIN_10.TGA
+        ///GUI_UW_OPTION1.TGA
+        ///GUI_UW_OPTION2.TGA
+        ///GUI_UW_OPTION3.TGA
+        ///GUI_UW_OPTION4.TGA
+        ///GUI_UW_OPTION5.TGA
+        ///G [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string ar_odtx {
+            get {
+                return ResourceManager.GetString("ar_odtx", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на _WATER00.tga
+        ///_WATER01.tga
+        ///_WATER02.tga
+        ///_WATER03.tga
+        ///_WATER04.tga
+        ///_WATER05.tga
+        ///_WATER06.tga
+        ///_WATER07.tga
+        ///_WATER08.tga
+        ///_WATER09.tga
+        ///_WATER10.tga
+        ///_WATER11.tga
+        ///_WATER12.tga
+        ///_WATER13.tga
+        ///_WATER14.tga
+        ///_WATER15.tga
+        ///_WATER16.tga
+        ///_WATER17.tga
+        ///_WATER18.tga
+        ///_WATER19.tga
+        ///_WATER20.tga
+        ///_WATER21.tga
+        ///_WATER22.tga
+        ///_WATER23.tga
+        ///_WATER24.tga
+        ///_WATER25.tga
+        ///_WATER26.tga
+        ///_WATER27.tga
+        ///_WATER28.tga
+        ///_WATER29.tga
+        ///_WATER30.tga
+        ///_WATER31.tga
+        ///_WATER32.tga
+        ///_WATER33.tga
+        ///_WATER34.tga
+        ///_WATER35.tga
+        ///_WATER36 [остаток строки не уместился]&quot;;.
+        /// </summary>
+        public static string ar_watr {
+            get {
+                return ResourceManager.GetString("ar_watr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
         public static byte[] ch_files {

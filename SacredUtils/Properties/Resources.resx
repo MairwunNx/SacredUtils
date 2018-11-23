@@ -196,4 +196,13 @@
   <data name="mk_setg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\cfg\mk.setg.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="ar_lava" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cfg\ar.lava.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="ar_odtx" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cfg\ar.odtx.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="ar_watr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\cfg\ar.watr.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
 </root>

@@ -25,7 +25,6 @@
   "DisableCheckingGlobLibrary": "false",
   "DisableCheckingSacredVersion": "false",
   "DisableCheckInternetConnection": "false",
-  "DisableCreatingRequiredFiles": "false",
   "DisablePrintBaseInfoToLog": "false",
   "DisableReCreatingLangFiles": "false",
   "DisableReCreatingThemeFiles": "false",

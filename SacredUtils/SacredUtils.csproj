@@ -331,6 +331,9 @@
     <None Include="resources\cfg\hk.kesf.txt" />
     <Resource Include="resources\cfg\hk.setg.txt" />
     <Resource Include="resources\cfg\hk.regr.txt" />
+    <Resource Include="resources\cfg\ar.lava.txt" />
+    <Resource Include="resources\cfg\ar.odtx.txt" />
+    <Resource Include="resources\cfg\ar.watr.txt" />
     <Content Include="resources\lib\WPFSharp.Globalizer.dll" />
     <Content Include="resources\lng\en-US\en-US.xaml">
       <SubType>Designer</SubType>
