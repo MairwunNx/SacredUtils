@@ -171,12 +171,7 @@
     <Compile Include="resources\arr\ArraySacredGameLavaFilesD.cs" />
     <Compile Include="resources\arr\ArraySacredGameLavaFilesE.cs" />
     <Compile Include="resources\arr\ArraySacredGameOldTextureFiles.cs" />
-    <Compile Include="resources\arr\ArraySacredGameWaterFilesB.cs" />
-    <Compile Include="resources\arr\ArraySacredGameWaterFilesC.cs" />
-    <Compile Include="resources\arr\ArraySacredGameWaterFilesD.cs" />
-    <Compile Include="resources\arr\ArraySacredGameWaterFilesE.cs" />
-    <Compile Include="resources\arr\ArraySacredGameWaterFilesF.cs" />
-    <Compile Include="resources\arr\ArraySacredGameWaterFilesG.cs" />
+    <Compile Include="resources\arr\ArraySacredGameWaterFiles.cs" />
     <Compile Include="resources\arr\ArraySacredUtilsCacheFiles.cs" />
     <Compile Include="resources\bin\ApplicationBaseMakeFullReset.cs" />
     <Compile Include="resources\bin\ApplicationBaseWindowHotkeys.cs" />

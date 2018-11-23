@@ -62,14 +62,14 @@ namespace SacredUtils.resources.prp
                 }
                 else
                 {
-                    foreach (string file in ArraySacredGameWaterFilesD.Files)
+                    foreach (string file in ArraySacredGameWaterFiles.Files)
                     {
-                        if (File.Exists($"PAK\\{file}")) { File.Delete($"PAK\\{file}"); }
+                        if (File.Exists($"PAK\\D{file}")) { File.Delete($"PAK\\D{file}"); }
                     }
 
-                    foreach (string file in ArraySacredGameWaterFilesE.Files)
+                    foreach (string file in ArraySacredGameWaterFiles.Files)
                     {
-                        if (File.Exists($"PAK\\{file}")) { File.Delete($"PAK\\{file}"); }
+                        if (File.Exists($"PAK\\E{file}")) { File.Delete($"PAK\\E{file}"); }
                     }
 
                     ModifySettings.ModificationSettings.UseSacredStaticBogTexture = false;
@@ -102,24 +102,24 @@ namespace SacredUtils.resources.prp
                 }
                 else
                 {
-                    foreach (string file in ArraySacredGameWaterFilesB.Files)
+                    foreach (string file in ArraySacredGameWaterFiles.Files)
                     {
-                        if (File.Exists($"PAK\\{file}")) { File.Delete($"PAK\\{file}"); }
+                        if (File.Exists($"PAK\\B{file}")) { File.Delete($"PAK\\B{file}"); }
                     }
 
-                    foreach (string file in ArraySacredGameWaterFilesC.Files)
+                    foreach (string file in ArraySacredGameWaterFiles.Files)
                     {
-                        if (File.Exists($"PAK\\{file}")) { File.Delete($"PAK\\{file}"); }
+                        if (File.Exists($"PAK\\C{file}")) { File.Delete($"PAK\\C{file}"); }
                     }
 
-                    foreach (string file in ArraySacredGameWaterFilesF.Files)
+                    foreach (string file in ArraySacredGameWaterFiles.Files)
                     {
-                        if (File.Exists($"PAK\\{file}")) { File.Delete($"PAK\\{file}"); }
+                        if (File.Exists($"PAK\\F{file}")) { File.Delete($"PAK\\F{file}"); }
                     }
 
-                    foreach (string file in ArraySacredGameWaterFilesG.Files)
+                    foreach (string file in ArraySacredGameWaterFiles.Files)
                     {
-                        if (File.Exists($"PAK\\{file}")) { File.Delete($"PAK\\{file}"); }
+                        if (File.Exists($"PAK\\G{file}")) { File.Delete($"PAK\\G{file}"); }
                     }
 
                     ModifySettings.ModificationSettings.UseSacredStaticWaterTexture = false;
