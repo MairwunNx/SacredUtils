@@ -63,6 +63,16 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        public static byte[] antqs__ {
+            get {
+                object obj = ResourceManager.GetObject("antqs__", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         public static byte[] AppLicense {
             get {
                 object obj = ResourceManager.GetObject("AppLicense", resourceCulture);
@@ -201,9 +211,29 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        public static byte[] carolingia {
+            get {
+                object obj = ResourceManager.GetObject("carolingia", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         public static byte[] ch_files {
             get {
                 object obj = ResourceManager.GetObject("ch_files", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        public static byte[] cyrillicchancellor {
+            get {
+                object obj = ResourceManager.GetObject("cyrillicchancellor", resourceCulture);
                 return ((byte[])(obj));
             }
         }

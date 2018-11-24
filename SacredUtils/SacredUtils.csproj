@@ -517,6 +517,9 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="resources\fnt\antqs__.ttf" />
+    <Resource Include="resources\fnt\carolingia.ttf" />
+    <Resource Include="resources\fnt\cyrillicchancellor.ttf" />
     <Resource Include="resources\fnt\GoogleSans-Bold.ttf" />
     <Resource Include="resources\fnt\GoogleSans-BoldItalic.ttf" />
     <Resource Include="resources\fnt\GoogleSans-Italic.ttf" />
