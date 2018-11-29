@@ -1,5 +1,5 @@
  # Changes for SacredUtils Rv5
-  ###### Changes included in SacredUtils-1.2.4.1-291118-release-2-official (1.2.4.1.291118.R2)
+  ###### Changes included in SacredUtils-1.2.4.1-291118-release-1-official (1.2.4.1.291118.R1)
 
 > - Fixed some-not-working hotkeys emulation
 > - Added configuration slider line color in settings
