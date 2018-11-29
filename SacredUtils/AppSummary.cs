@@ -7,7 +7,7 @@ namespace SacredUtils
     public static class AppSummary
     {
         public static string Name        = "SacredUtils";
-        public static string Version     = "1.2.4.1.261118.R1";
+        public static string Version     = "1.2.4.1.291118.R1";
         public static string AVersion    = "1.2.4.1.261018.A2";
         public static string Type        = "Release";
         public static string Build       = "3B";
