@@ -1,4 +1,66 @@
  # Changes for SacredUtils Rv5
+  ###### Changes included in SacredUtils-1.2.4.1-291118-release-2-official (1.2.4.1.291118.R2)
+
+> - Fixed some-not-working hotkeys emulation
+> - Added configuration slider line color in settings
+> - Improved colors for light and dark themes
+> - Fixed refreshing application settings to null
+> - Added settings for customize run Sacred file
+> - Added settings for customize sacred configuration
+> - Added SacredUtils unhandled exception crash-reporting
+> - AcceptLicense SacredUtils setting moved to AppData settings
+> - Added anonymos sending SacredUtils crash-reports
+> - Fixed no clickable settings caused by images
+> - Added change color active category for packicon
+> - Improved ApplicationBaseWindowHotkey code
+> - Updated libraries and project package dependencies
+> - Added ability changing open logs and settings program
+> - Added ability change register hotkeys delay setting
+> - Added ability change font sizes in auto size
+> - Added ability disable \ enable showing no connection icon
+> - Added pseudo fix screenshot+ in not fullscreen mode
+> - Added fix so big using memory in fonts combobox
+> - Added ability enable \ disable async loading font collection
+> - Improved random spashes loading and added more splashes!
+> - Renamed patch to themes from themes to thms
+> - Added settings on refreshing settings on window focus
+> - Added Key for open game settings (Default F3)
+> - Small improve code for ApplicationStartEmulateHotkeys
+> - Big refactoring and code optimization for project
+> - Improved code for creating theme and language files
+> - Added setting CreateScreenshotAsync and improved code for it
+> - Improved code. Simplified scale code. Improved backup files
+> - Improved code for Graphics settings 4. Added applying dialog
+> - Improved and fixed shutdown and startup logger messages
+> - Fixed small setting NETWORK_SPEEDSETTINGS bug
+> - Removed redundant Sacred game configuration options
+> - Improved code compilation and added setting for hotkeys
+> - Added tooltips for close and minimize buttons
+> - Added \ done simplified hotkey ui and settings
+> - Added SetForegroundWindow sacred for simplified hotkeys
+> - Added ability to change font sizes, added setting for change it
+> - Added Heal Companion and Open Combo Menu hotkeys
+> - Fixed critical bug caused by not configured hotkey
+> - Fixed bug with nullable language, if language not set in settings
+> - Added SacredUtils application performance settings
+> - Added setting for configure ScreenShot create key
+> - Added clear application components cache dialog
+> - Updated design and improved change log dialog
+> - Added ability show application changelog dialog
+> - Added clear application components cache dialog
+> - Changed default font for tooltip to GoogleSans Medium
+> - Added ability for disabling win button in game
+> - Added ability to load sacred with argument -disableWinKey
+> - Added checking on availability "Capture" directory
+> - Added settings for changing custom screenshot resolution
+> - Optimized code for Starting game with arguments
+> - Fixed startup crash if directories not exists
+> - Fixed System.InvalidCastException for pages navigation
+> - Added ability to restoring default sacred game fonts
+> - Added ability to remove configurable sacred game fonts
+> - Added restoring default fonts for en and ru localizations
+> - Added checking on old version settings.json file
+
  ###### Changes included in SacredUtils-1.2.4.1-261018-alpha-2-official (1.2.4.1.261018.A2)
 
 > - Added ability changing and adding game HotKeys
@@ -7,7 +69,7 @@
 > - Removed application settings for creating pdb file
 > - Updated Costura.Fody and Fody and MDIX packages
 > - Added and Enabled dpiAware function (for dpi scaling)
-> - Removed Sacred Hotkey Tweaker from resources. My hotkeys better.
+> - Removed Sacred Hotkey Tweaker from resources. My hotkeys better
 
  ###### Changes included in SacredUtils-1.2.4.1-211018-alpha-1-official (1.2.4.1.211018.A1)
 
