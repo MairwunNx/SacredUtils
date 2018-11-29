@@ -9,7 +9,7 @@ namespace SacredUtils.resources.bin
         {
             CreateApplicationNeededFolders.Create();
 
-            if (File.Exists("$SacredUtils\\conf\\settings.json")) { return; }
+            if (File.Exists("$SacredUtils\\conf\\settings.json") && !File.ReadAllText("$SacredUtils\\conf\\settings.json").Contains("AcceptLicense")) { return; }
 
             File.WriteAllBytes("$SacredUtils\\conf\\settings.json", Properties.Resources.settings);
 
