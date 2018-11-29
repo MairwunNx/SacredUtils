@@ -14,25 +14,25 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                List<string> fontss = new List<string>();
+                List<string> fonts = new List<string>();
 
                 if (AppSettings.ApplicationSettings.UseAsyncLoadFontCollection)
                 {
                     Task.Run(() =>
                     {
-                        List<string> fonts = new InstalledFontCollection().Families.Select(font => font.Name).ToList();
+                        fonts = new InstalledFontCollection().Families.Select(font => font.Name).ToList();
 
-                        fonts.Remove(""); return fonts;
+                        fonts.Remove(""); 
                     }).Wait();
+
+                    return fonts;
                 }
                 else
                 {
-                    List<string> fonts = new InstalledFontCollection().Families.Select(font => font.Name).ToList();
+                    fonts = new InstalledFontCollection().Families.Select(font => font.Name).ToList();
 
                     fonts.Remove(""); return fonts;
                 }
-
-                return fontss;
             }
         }
 
