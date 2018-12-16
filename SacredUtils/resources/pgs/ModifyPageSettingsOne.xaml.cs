@@ -190,9 +190,9 @@ namespace SacredUtils.resources.pgs
 
         private void EditBalanceBtn_Click(object sender, RoutedEventArgs e)
         {
-            GetExternalUtilities("https://drive.google.com/uc?export=download&id=1IJ_UJwL6V6oB-KCrXIGj_59lLZGhiZcJ",
-                "bin\\TYPE_ADDED_UTILITY\\Balance", "bin\\TYPE_ADDED_UTILITY\\Balance\\BalanceEditor.zip",
-                "bin\\TYPE_ADDED_UTILITY\\Balance\\BalanceEditor.exe");
+            GetExternalUtilities("https://drive.google.com/uc?export=download&id=1xYcTK87-UXh48ZJDAIPZjgNk9zvylzpg",
+                "bin\\TYPE_ADDED_UTILITY\\Balance", "bin\\TYPE_ADDED_UTILITY\\Balance\\SacredMagician.zip",
+                "bin\\TYPE_ADDED_UTILITY\\Balance\\SacredMagician.jar");
         }
 
         private void GetExternalUtilities(string link, string directory, string fileName, string startFile)
