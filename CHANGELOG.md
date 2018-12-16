@@ -1,5 +1,11 @@
  # Changes for SacredUtils Rv5
-  ###### Changes included in SacredUtils-1.2.4.1-291118-release-1-official (1.2.4.1.291118.R1)
+ ###### Changes included in SacredUtils-1.2.4.2-161218-release-1-official (1.2.4.2.161218.R1)
+
+> - Updated Fody and Costura.Fody and DotNetZip library
+> - Updated MaterialDesignInXaml library
+> - Now old BalanceBinEditor replaced on SacredMagician
+
+ ###### Changes included in SacredUtils-1.2.4.1-291118-release-1-official (1.2.4.1.291118.R1)
 
 > - Fixed some-not-working hotkeys emulation
 > - Added configuration slider line color in settings
