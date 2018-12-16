@@ -16,7 +16,7 @@ namespace SacredUtils.resources.pgs
 {
     public partial class ModifyPageSettingsOne
     {
-        ApplicationConvertHtmlToSacred applicationConvertHtmlToSacred = new ApplicationConvertHtmlToSacred();
+        private readonly ApplicationConvertHtmlToSacred _applicationConvertHtmlToSacred = new ApplicationConvertHtmlToSacred();
 
         public ModifyPageSettingsOne()
         {
@@ -270,14 +270,14 @@ namespace SacredUtils.resources.pgs
         private void RunConvertColors_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
-            MainWindow.MainWindowInstance.DialogFrame.Content = applicationConvertHtmlToSacred;
+            MainWindow.MainWindowInstance.DialogFrame.Content = _applicationConvertHtmlToSacred;
 
             if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
             {
-                applicationConvertHtmlToSacred.BaseDialog.DialogTheme = BaseTheme.Dark;
+                _applicationConvertHtmlToSacred.BaseDialog.DialogTheme = BaseTheme.Dark;
             }
 
-            applicationConvertHtmlToSacred.BaseDialog.IsOpen = true;
+            _applicationConvertHtmlToSacred.BaseDialog.IsOpen = true;
         }
 
         private void StartCheckingComponentsBtn_Click(object sender, RoutedEventArgs e)
