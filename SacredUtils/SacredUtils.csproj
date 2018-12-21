@@ -184,9 +184,12 @@
     <Compile Include="resources\bin\CreateApplicationNeededFolders.cs" />
     <Compile Include="resources\bin\CreateBackupApplicationSettings.cs" />
     <Compile Include="resources\bin\CreateBackupSacredGameSettings.cs" />
+    <Compile Include="resources\bin\DownloadApplicationNewUpdate.cs" />
+    <Compile Include="resources\bin\DownloadApplicationUpdateTool.cs" />
     <Compile Include="resources\bin\ForceSacredGameDisableWinKey.cs" />
     <Compile Include="resources\bin\ForceStretchSacredGameScreenshot.cs" />
     <Compile Include="resources\bin\ForceSwitchKeyboardLanguageInGame.cs" />
+    <Compile Include="resources\bin\GetActualApplicationVersion.cs" />
     <Compile Include="resources\bin\GetApplicationCurrentUsedMemory.cs" />
     <Compile Include="resources\bin\GetApplicationLicenseState.cs" />
     <Compile Include="resources\bin\GetApplicationRandomSplashes.cs" />

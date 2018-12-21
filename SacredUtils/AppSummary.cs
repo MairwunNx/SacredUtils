@@ -10,7 +10,7 @@ namespace SacredUtils
         public static string Version     = "1.2.4.2.161218.R1";
         public static string AVersion    = "1.2.4.1.261018.A2";
         public static string Type        = "Release";
-        public static string Build       = "19B";
+        public static string Build       = "24B";
         public static string AppPath     = Assembly.GetExecutingAssembly().Location;
         public static string CurrentPath = Environment.CurrentDirectory;
         public static string CurrentExe  = AppDomain.CurrentDomain.FriendlyName;
