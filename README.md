@@ -50,7 +50,7 @@ A powerful and beautiful configurator for Sacred and Sacred Underworld, with usi
 
  * Special thanks to Sha**no*us for testing for errors and bugs and design work test!
  * Special thanks to Keboo for beautiful Material Design library and for help with code!
- * Special thanks to Resharper for the free student license! Use this wonderful product!
+ * Special thanks to JetBrains for the free student license! Use this wonderful product!
 
 # In future
 
