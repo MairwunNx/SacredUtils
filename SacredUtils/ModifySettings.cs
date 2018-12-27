@@ -1,5 +1,6 @@
 ﻿using Config.Net;
 
+// ReSharper disable InconsistentNaming
 namespace SacredUtils
 {
     public interface IModifySettings
