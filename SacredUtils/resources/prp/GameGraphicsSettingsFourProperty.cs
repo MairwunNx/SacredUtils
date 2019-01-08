@@ -15,7 +15,7 @@ namespace SacredUtils.resources.prp
 {
     public class GameGraphicsSettingsFourProperty
     {
-        public static ApplicationUnpackModifyDialog ApplicationUnpackModifyDialog = new ApplicationUnpackModifyDialog();
+        private static readonly ApplicationUnpackModifyDialog ApplicationUnpackModifyDialog = new ApplicationUnpackModifyDialog();
 
         private static void OpenDialog()
         {
