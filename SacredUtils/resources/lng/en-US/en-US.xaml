@@ -166,7 +166,7 @@
 
     <!--  About SacredUtils dialog  -->
     <sys:String x:Key="String0128">About SacredUtils</sys:String>
-    <sys:String x:Key="String0129">Version 1.2.4.3.010218.R1 Final (Official build)</sys:String>
+    <sys:String x:Key="String0129">Version 1.2.4.3.010219.R1 Final (Official build)</sys:String>
 
     <!--  Checking \ repairing components dialog  -->
     <sys:String x:Key="String0130">Component Recovery</sys:String>
