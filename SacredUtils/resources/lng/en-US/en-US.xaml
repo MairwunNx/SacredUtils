@@ -258,4 +258,7 @@
     <sys:String x:Key="String0184">6: Heads of journal</sys:String>
     <sys:String x:Key="String0185">7: Settings</sys:String>
 
+    <!--  Modify settings one (3)  -->
+    <sys:String x:Key="String0186">Edit heroes start positions (SacredLumina)</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>

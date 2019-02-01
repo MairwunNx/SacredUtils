@@ -315,6 +315,11 @@ namespace SacredUtils.resources.pgs
             }
         }
 
+        private void EditHeroPositions_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://github.com/MairwunNx/SacredLumina");
+        }
+
         private void StartCheckingComponents(FrameworkElement element)
         {
             File.WriteAllBytes("$SacredUtils\\conf\\ch.files.txt", Properties.Resources.ch_files);

@@ -258,4 +258,7 @@
     <sys:String x:Key="String0184">6: Главы журнала</sys:String>
     <sys:String x:Key="String0185">7: Настройки</sys:String>
 
+    <!--  Modify settings one (3)  -->
+    <sys:String x:Key="String0186">Редактировать стартовые позиции персонажей (SacredLumina)</sys:String>
+
 </Globalization:GlobalizationResourceDictionary>

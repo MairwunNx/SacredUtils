@@ -65,7 +65,7 @@
         <Border
             Width="264"
             Height="41"
-            Margin="38,207,584,0"
+            Margin="38,183,584,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
@@ -86,7 +86,7 @@
         <Border
             Width="269"
             Height="41"
-            Margin="307,207,310,0"
+            Margin="307,183,310,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
@@ -107,7 +107,7 @@
         <Border
             Width="267"
             Height="41"
-            Margin="581,207,38,0"
+            Margin="581,183,38,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
@@ -128,7 +128,7 @@
         <Border
             Width="401"
             Height="41"
-            Margin="38,258,447,0"
+            Margin="38,234,447,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
@@ -150,7 +150,7 @@
         <Border
             Width="402"
             Height="41"
-            Margin="446,258,38,0"
+            Margin="446,234,38,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
@@ -170,7 +170,7 @@
         <Border
             Width="264"
             Height="41"
-            Margin="38,309,584,0"
+            Margin="38,285,584,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
@@ -190,7 +190,7 @@
         <Border
             Width="269"
             Height="41"
-            Margin="307,309,310,0"
+            Margin="307,285,310,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
@@ -210,7 +210,7 @@
         <Border
             Width="267"
             Height="41"
-            Margin="581,309,38,0"
+            Margin="581,285,38,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
@@ -230,7 +230,7 @@
         <Border
             Width="264"
             Height="41"
-            Margin="38,360,584,0"
+            Margin="38,336,584,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
@@ -250,7 +250,7 @@
         <Border
             Width="269"
             Height="41"
-            Margin="307,360,310,0"
+            Margin="307,336,310,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
@@ -270,7 +270,7 @@
         <Border
             Width="267"
             Height="41"
-            Margin="581,360,38,0"
+            Margin="581,336,38,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
@@ -287,10 +287,11 @@
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
         </Border>
+
         <Border
-            Width="401"
+            Width="402"
             Height="41"
-            Margin="37,411,448,0"
+            Margin="37,387,447,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
@@ -308,10 +309,33 @@
                 IsEnabled="True"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
         </Border>
+
+        <Border
+            Width="809"
+            Height="41"
+            Margin="37,438,40,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3">
+            <Button
+                Height="Auto"
+                Click="EditHeroPositions_Click"
+                ClipToBounds="True"
+                Content="{globalizer:GlobalizedResource String0186}"
+                Cursor="Hand"
+                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontSize="12"
+                Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                IsEnabled="True"
+                Style="{StaticResource MaterialDesignToolForegroundButton}" />
+        </Border>
+
         <Border
             Width="402"
             Height="41"
-            Margin="444,411,40,0"
+            Margin="444,387,40,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
