@@ -17,7 +17,7 @@
             Visibility="Visible">
             <materialDesign:DialogHost.DialogContent>
                 <Grid
-                    Width="450"
+                    Width="485"
                     Height="115"
                     Background="{DynamicResource ResourceKey=BackgroundColorBrush}">
                     <Label

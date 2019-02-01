@@ -166,7 +166,7 @@
 
     <!--  About SacredUtils dialog  -->
     <sys:String x:Key="String0128">О SacredUtils</sys:String>
-    <sys:String x:Key="String0129">Версия 1.2.4.2.161218.R1 (Официальная сборка)</sys:String>
+    <sys:String x:Key="String0129">Версия 1.2.4.3.010218.R1 Final (Официальная сборка)</sys:String>
 
     <!--  Checking \ repairing components dialog  -->
     <sys:String x:Key="String0130">Восстановление компонентов</sys:String>
