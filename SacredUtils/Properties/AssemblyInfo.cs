@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SacredUtils")]
-[assembly: AssemblyCopyright("Copyright (c) MairwunNx 2018")]
+[assembly: AssemblyCopyright("Copyright (c) MairwunNx 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
