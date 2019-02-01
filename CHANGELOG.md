@@ -1,4 +1,15 @@
  # Changes for SacredUtils Rv5
+ ###### Changes included in SacredUtils-1.2.4.3-010219-release-1-official (1.2.4.3.010219.R1)
+
+> - Final release, added "Final" to version as suffix
+> - Added Edit Hero Positions button in Modify tab
+> - Fixed not correct background for color convert dialog
+> - Updated Config.Net and Config.Net.Json package
+> - Updated Fody and Costura.Fody Package
+> - Updated DotNetZip package
+> - Updated MaterialDesignInXaml
+> - Updated assembly info year copyright
+
  ###### Changes included in SacredUtils-1.2.4.2-161218-release-1-official (1.2.4.2.161218.R1)
 
 > - Updated Fody and Costura.Fody and DotNetZip library
