@@ -13,18 +13,14 @@ namespace SacredUtils.resources.bin
                 try
                 {
                     Log.Warn($"Sacred game configuration file ({AppSettings.ApplicationSettings.SacredConfigurationFile}) not found!");
-
                     File.WriteAllBytes(AppSettings.ApplicationSettings.SacredConfigurationFile, Properties.Resources.gamesettings);
-
                     Log.Info($"Creating sacred game configuration file ({AppSettings.ApplicationSettings.SacredConfigurationFile}) done!");
                 }
                 catch (Exception e)
                 {
                     Log.Fatal("A critical error has occurred while creating game configuration file!");
                     Log.Fatal(e.ToString);
-
                     Log.Info("Shutting down SacredUtils configurator ...");
-
                     Environment.Exit(0); // Please, return to me, Isabella, please ...
                 }
             }

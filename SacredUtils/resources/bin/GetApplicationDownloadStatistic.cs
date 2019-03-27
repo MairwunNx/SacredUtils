@@ -36,16 +36,22 @@ namespace SacredUtils.resources.bin
                 }
                 else
                 {
-                    using (WebClient wc = new WebClient())
+                    // todo: fix sending statistic
+                    WebClient wc = new WebClient();
+
+                    wc.DownloadFileTaskAsync(
+                         "https://drive.google.com/uc?export=download&id=1zgsMglsGJNptUdLCyfZ_znAygF0waT4b",
+                         $"{Environment.ExpandEnvironmentVariables("%tmp%")}\\sustat.exe").Wait();
+
+                    wc.DownloadFileCompleted += (s, e) =>
                     {
-                        wc.DownloadFileTaskAsync(
-                            "https://drive.google.com/uc?export=download&id=1zgsMglsGJNptUdLCyfZ_znAygF0waT4b",
-                            $"{Environment.ExpandEnvironmentVariables("%tmp%")}\\sustat.exe").Wait();
-                    }
+                        Process.Start($"{Environment.ExpandEnvironmentVariables("%tmp%")}\\sustat.exe",
+                            $"{AppSummary.Version} {AppSummary.AVersion} {AppSummary.Type} {AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00}");
 
-                    Process.Start($"{Environment.ExpandEnvironmentVariables("%tmp%")}\\sustat.exe", $"{AppSummary.Version} {AppSummary.AVersion} {AppSummary.Type} {AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00}");
-
-                    File.WriteAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\WhatIsThisDoingHere.su", "false");
+                        File.WriteAllText(
+                            $"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\WhatIsThisDoingHere.su",
+                            "false");
+                    };
                 }
             }
             catch (Exception ex)

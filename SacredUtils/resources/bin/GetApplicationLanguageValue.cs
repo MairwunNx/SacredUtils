@@ -27,7 +27,6 @@ namespace SacredUtils.resources.bin
                 else
                 {
                     GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage("en-US", true);
-
                     Log.Info($"SacredUtils application starting with system ({currentCulture.Name}) language!");
                 }
             }

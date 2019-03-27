@@ -11,7 +11,6 @@ namespace SacredUtils.resources.bin
 
             File.WriteAllBytes("$SacredUtils\\lang\\ru-RU\\ru-RU.xaml", Properties.Resources.ru_RU);
             File.WriteAllBytes("$SacredUtils\\lang\\en-US\\en-US.xaml", Properties.Resources.en_US);
-
             Log.Info("SacredUtils language files was successfully re-created!");
         }
     }

@@ -1,7 +1,7 @@
-﻿using System;
-using MaterialDesignThemes.Wpf;
+﻿using MaterialDesignThemes.Wpf;
 using SacredUtils.resources.arr;
 using SacredUtils.resources.dlg;
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
@@ -34,14 +34,8 @@ namespace SacredUtils.resources.bin
                 {
                     if (File.Exists(s))
                     {
-                        try
-                        {
-                            File.Delete(s);
-                        }
-                        catch (Exception e)
-                        {
-                            AppLogger.Log.Error(e.ToString);
-                        }
+                        try { File.Delete(s); }
+                        catch (Exception e) { AppLogger.Log.Error(e.ToString); }
                     }
                 }
             }).Wait();

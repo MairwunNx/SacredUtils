@@ -61,7 +61,6 @@ namespace SacredUtils.resources.bin
                             if (text1[j].Contains($"FONT : {fontSettings}, \""))
                             {
                                 text1[j] = $"FONT : {fontSettings}, \"{font}\", {sizes[i]}";
-
                                 File.WriteAllLines(SacredConfigFile, text1);
                             }
                         }

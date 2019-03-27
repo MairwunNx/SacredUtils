@@ -8,11 +8,12 @@ namespace SacredUtils.resources.bin
         {
             if (AppSettings.ApplicationSettings.RemoveApplicationTempContent) { return; }
 
-            if (File.Exists("mnxupdater.exe")) { File.Delete("mnxupdater.exe"); }
+            string[] files = { "mnxupdater.exe", "_newVersionSacredUtilsTemp.exe", "updater-crash-report.log" };
 
-            if (File.Exists("_newVersionSacredUtilsTemp.exe")) { File.Delete("_newVersionSacredUtilsTemp.exe"); }
-
-            if (File.Exists("updater-crash-report.log")) { File.Delete("updater-crash-report.log"); }
+            foreach (string file in files)
+            {
+                if (File.Exists(file)) File.Delete(file);
+            }
         }
     }
 }

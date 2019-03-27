@@ -16,9 +16,7 @@ namespace SacredUtils.resources.bin
                 if (text[i].Contains(value))
                 {
                     string key = Reverse(text[i]);
-
                     string valueKey = Reverse(key.Replace(" = ", "=").Substring(key.IndexOf('=')));
-
                     keyValue = ApplicationHotKeyConvertKeyValue.Convert(valueKey);
                 }
             }
@@ -29,9 +27,7 @@ namespace SacredUtils.resources.bin
         private static string Reverse(string s)
         {
             char[] charArray = s.ToCharArray();
-
             Array.Reverse(charArray);
-
             return new string(charArray);
         }
     }

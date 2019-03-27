@@ -14,9 +14,7 @@ namespace SacredUtils.resources.bin
             if (File.Exists("_newVersionSacredUtilsTemp.exe")) { File.Delete("_newVersionSacredUtilsTemp.exe"); }
 
             Wc.DownloadFileTaskAsync(new Uri(update), "_newVersionSacredUtilsTemp.exe").Wait();
-
             Log.Info($"Downloading new SacredUtils {type} update successfully done!");
-
             DownloadApplicationUpdateTool.Download();
         }
     }

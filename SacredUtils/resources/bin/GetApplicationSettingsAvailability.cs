@@ -12,7 +12,6 @@ namespace SacredUtils.resources.bin
             if (File.Exists("$SacredUtils\\conf\\settings.json") && !File.ReadAllText("$SacredUtils\\conf\\settings.json").Contains("AcceptLicense")) { return; }
 
             File.WriteAllBytes("$SacredUtils\\conf\\settings.json", Properties.Resources.settings);
-
             AppSettings.ApplicationSettings = new ConfigurationBuilder<IAppSettings>()
                 .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
         }

@@ -12,22 +12,15 @@ namespace SacredUtils.resources.bin
         public static void RegisterApplication()
         {
             Directory.CreateDirectory("$SacredUtils\\temp");
-
             Log.Info("Creating temp folder for keyla switching language done!");
-
             File.WriteAllBytes("$SacredUtils\\temp\\hotkeyreg.reg", Properties.Resources.HotKeyReg);
-
             Log.Info("Creating keyla switching language data application done!");
 
             Process regeditProcess = Process.Start("regedit.exe", "/s $SacredUtils\\temp\\hotkeyreg.reg");
             regeditProcess?.WaitForExit();
-
             Log.Info("Register application in regedit for switching lang done!");
-
             File.Delete("$SacredUtils\\temp\\hotkeyreg.reg");
-
             Log.Info("Delete keyla switching language data application done!");
-
             CreateApplication();
         }
 
@@ -51,11 +44,8 @@ namespace SacredUtils.resources.bin
         private static void CreateApplication()
         {
             File.WriteAllBytes("$SacredUtils\\temp\\keyla.zip", Properties.Resources.keyla);
-
             Log.Info("Creating keyla switching language application archive done!");
-
             Directory.CreateDirectory("$SacredUtils\\temp\\keyla\\data");
-
             Log.Info("Creating keyla switching language application data folder done!");
 
             using (ZipFile zip = ZipFile.Read("$SacredUtils\\temp\\keyla.zip"))
@@ -74,15 +64,10 @@ namespace SacredUtils.resources.bin
             }
 
             Log.Info("Creating keyla switching language application done!");
-
             File.Delete("$SacredUtils\\temp\\keyla.zip");
-
             Log.Info("Remove keyla switching language application archive done!");
-
             Log.Info("Runing keyla switching language application ...");
-
             Process.Start("$SacredUtils\\temp\\keyla\\data\\keyla.exe");
-
             CheckAvailabilityProcess();
         }
 

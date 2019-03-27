@@ -26,17 +26,13 @@ namespace SacredUtils.resources.bin
             try
             {
                 Enums.TryParse(AppSettings.ApplicationSettings.ScreenShotCreateKey, out Key screenKey);
-
                 HotkeyManager.Current.AddOrReplace("PrintScreen", screenKey, ModifierKeys.None, Get);
-
                 CheckAvailabilityProcess();
-
                 Log.Info("Register global PrintScreen hotkey successfully done!");
             }
             catch (Exception e)
             {
                 Log.Error("Register global PrintScreen hotkey not ability (Close app used PrintScreen button)!");
-
                 Log.Error(e.ToString);
             }
         }
@@ -104,7 +100,6 @@ namespace SacredUtils.resources.bin
                     string filename = AppSettings.ApplicationSettings.ScreenShotSaveFilePrefix + DateTime.Now.ToString(AppSettings.ApplicationSettings.ScreenShotSaveFilePattern) + ".png";
 
                     g.CopyFromScreen((int)screenLeft, (int)screenTop, 0, 0, bmp.Size);
-
                     Directory.CreateDirectory(AppSettings.ApplicationSettings.ScreenShotSaveDirectory);
 
                     if (AppSettings.ApplicationSettings.AllowCustomScreenShotResolution)
@@ -147,11 +142,8 @@ namespace SacredUtils.resources.bin
         private static void Save(Bitmap capture, string fileName)
         {
             Directory.CreateDirectory(AppSettings.ApplicationSettings.ScreenShotSaveDirectory);
-
             capture.Save($"{AppSettings.ApplicationSettings.ScreenShotSaveDirectory}\\{fileName}"); 
-
             Log.Info($"Screenshot saved {fileName} to Capture folder.");
-
             RemoveTgaScreenshots(); 
         }
 

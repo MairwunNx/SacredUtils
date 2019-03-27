@@ -17,7 +17,7 @@ namespace SacredUtils.resources.bin
         private static int _keyPresses;
         private static int _keyPressesStat;
         private static int _keyPressesChangeLog;
-        
+
         public static void KeyDown(object sender, KeyEventArgs e)
         {
             Enums.TryParse(AppSettings.ApplicationSettings.KeyApplicationGotoMainMenu, out Key toMain);
@@ -34,28 +34,25 @@ namespace SacredUtils.resources.bin
                 ChangeApplicationSelectionSettings.UnSelectSettings(MainWindow.UnselectedStg);
             }
 
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == openLogs)
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control &&
+                e.Key == openLogs &&
+                File.Exists("$SacredUtils\\logs\\latest.log"))
             {
-                if (File.Exists("$SacredUtils\\logs\\latest.log"))
-                {
-                    Process.Start(AppSettings.ApplicationSettings.DefaultOpenLogFileProgram, "$SacredUtils\\logs\\latest.log");
-                }
+                Process.Start(AppSettings.ApplicationSettings.DefaultOpenLogFileProgram, "$SacredUtils\\logs\\latest.log");
             }
 
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == openSettings)
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control &&
+                e.Key == openSettings &&
+                File.Exists("$SacredUtils\\conf\\settings.json"))
             {
-                if (File.Exists("$SacredUtils\\conf\\settings.json"))
-                {
-                    Process.Start(AppSettings.ApplicationSettings.DefaultOpenLogFileProgram, "$SacredUtils\\conf\\settings.json");
-                }
+                Process.Start(AppSettings.ApplicationSettings.DefaultOpenLogFileProgram, "$SacredUtils\\conf\\settings.json");
             }
 
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == openGameSettings)
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control &&
+                e.Key == openGameSettings &&
+                File.Exists(AppSettings.ApplicationSettings.SacredConfigurationFile))
             {
-                if (File.Exists(AppSettings.ApplicationSettings.SacredConfigurationFile))
-                {
-                    Process.Start(AppSettings.ApplicationSettings.DefaultOpenLogFileProgram, AppSettings.ApplicationSettings.SacredConfigurationFile);
-                }
+                Process.Start(AppSettings.ApplicationSettings.DefaultOpenLogFileProgram, AppSettings.ApplicationSettings.SacredConfigurationFile);
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == openDirectory)
@@ -99,11 +96,8 @@ namespace SacredUtils.resources.bin
                 if (_keyPressesStat == 1)
                 {
                     _keyPressesStat = 0;
-
                     string downloadCount = ApplicationGetDownloadStatistics.Get();
-
                     string[] count = downloadCount.Split('{', '}');
-
                     MessageBox.Show(count[1].Replace("\"", "").Replace("SacredUtilsDownloads", "SacredUtils Downloads Count"));
                 }
                 else
@@ -119,7 +113,6 @@ namespace SacredUtils.resources.bin
                 if (_keyPressesStat == 1)
                 {
                     _keyPressesStat = 0;
-
                     ApplicationClearComponentCache.SearchCacheFiles();
                 }
                 else
@@ -130,8 +123,6 @@ namespace SacredUtils.resources.bin
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.G)
             {
-                // it code open SacredUtils project changelog. 
-
                 if (_keyPressesChangeLog == 1)
                 {
                     _keyPressesChangeLog = 0;
@@ -159,9 +150,7 @@ namespace SacredUtils.resources.bin
 
             if (e.Key == Key.Tab)
             {
-                if (!AppSettings.ApplicationSettings.DisableApplicationTabKeyButton) { return; }
-
-                e.Handled = true;
+                e.Handled = AppSettings.ApplicationSettings.DisableApplicationTabKeyButton;
             }
         }
     }

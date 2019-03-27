@@ -25,9 +25,7 @@ namespace SacredUtils.resources.bin
             HotkeyManager.Current.AddOrReplace("DisableHandling", Key.D, ModifierKeys.Shift | ModifierKeys.Control, DisableHotkeys);
 
             Log.Info("Register global application MainHotkey successfully done!");
-
             Thread.Sleep(AppSettings.ApplicationSettings.HotKeyRegisterGameDelay);
-
             RegisterHotkeys();
         }
 
@@ -44,7 +42,6 @@ namespace SacredUtils.resources.bin
                 }
 
                 Log.Info("Register all global game hotkeys successfully done!");
-
                 CheckAvailabilityProcess();
             }
             catch (Exception e)

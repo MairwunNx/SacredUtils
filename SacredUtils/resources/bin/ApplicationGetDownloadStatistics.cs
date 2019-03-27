@@ -10,16 +10,13 @@ namespace SacredUtils.resources.bin
 
             try
             {
-                if (CheckAvailabilityInternetConnection.Connect())
-                {
-                    using (WebClient wc = new WebClient())
-                    {
-                        return wc.DownloadString(
-                            "https://mairwunnxstatistic.000webhostapp.com/downloads-launches-stat.json");
-                    }
-                }
+                if (!CheckAvailabilityInternetConnection.Connect()) { return "Internet connection not found! Download data N/A!"; }
 
-                return "Internet connection not found! Download data N/A!";
+                using (WebClient wc = new WebClient())
+                {
+                    return wc.DownloadString(
+                        "https://mairwunnxstatistic.000webhostapp.com/downloads-launches-stat.json");
+                }
             }
             catch
             {

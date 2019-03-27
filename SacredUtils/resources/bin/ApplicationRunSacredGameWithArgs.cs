@@ -7,7 +7,7 @@ namespace SacredUtils.resources.bin
     {
         private static readonly string SacredFileName = AppSettings.ApplicationSettings.SacredExecutableFileName;
         private static readonly string SacredCheatArg = AppSettings.ApplicationSettings.SacredCheatsEnableArgument;
-        
+
         public static void Run(string[] args)
         {
             if (args.Contains("-cheatsEnable"))
@@ -45,7 +45,7 @@ namespace SacredUtils.resources.bin
         }
 
         private static void EnableEmulateHotKeys(string[] args)
-        { 
+        {
             if (!args.Contains("-emulateHotKeys")) { return; }
 
             ApplicationStartEmulateHotkeys.RegisterMainHotkeys();

@@ -217,7 +217,6 @@ namespace SacredUtils.resources.bin
         private static string GetDataFromGoogleDisk(string uri)
         {
             string data = new WebClient().DownloadStringTaskAsync(new Uri(uri)).Result;
-
             return data;
         }
     }

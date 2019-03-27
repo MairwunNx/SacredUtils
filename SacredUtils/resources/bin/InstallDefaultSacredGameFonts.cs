@@ -13,18 +13,14 @@ namespace SacredUtils.resources.bin
             try
             {
                 int[] sizes;
-                string[] fonts;
-
                 int[] sizesRu = { 13, 12, 16, 25, 16, 18, 8 };
                 int[] sizesEn = { 13, 12, 16, 20, 16, 18, 8 };
 
+                string[] fonts;
                 string[] fontsRu = { "CyrillicChancellor", "AntiquaSSK", "CyrillicChancellor", "AntiquaSSK", "AntiquaSSK", "AntiquaSSK", "CyrillicChancellor" };
                 string[] fontsEn = { "AntiquaSSK", "Carolingia", "AntiquaSSK", "Carolingia", "Carolingia", "Carolingia", "AntiquaSSK" };
-
                 string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
-
                 string prefix = "LANGUAGE : ";
-
                 string line = text.FirstOrDefault(x => x.StartsWith(prefix));
 
                 if (line == null)

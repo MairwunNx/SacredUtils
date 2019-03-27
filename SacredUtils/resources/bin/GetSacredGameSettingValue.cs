@@ -10,7 +10,6 @@ namespace SacredUtils.resources.bin
         public static object Get(string prefix, bool isBool, bool isLanguage)
         {
             string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
-            
             string line = text.FirstOrDefault(x => x.StartsWith(prefix));
 
             if (AppSettings.ApplicationSettings.EnableLoggingLoadedSettings)

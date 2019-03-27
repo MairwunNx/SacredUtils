@@ -17,7 +17,6 @@ namespace SacredUtils.resources.bin
     {
         private static DispatcherTimer _timer = new DispatcherTimer();
         private static KeyboardHookListener m_KeyboardHookManager;
-
         private static bool m_leftwin;
         private static bool m_rightwin;
 
@@ -37,7 +36,6 @@ namespace SacredUtils.resources.bin
         {
             if (e.KeyCode == Keys.LWin) e.Handled = true;
             if (e.KeyCode == Keys.RWin) e.Handled = true;
-
             if (e.KeyCode == Keys.LWin) m_leftwin = true;
             if (e.KeyCode == Keys.RWin) m_rightwin = true;
         }
