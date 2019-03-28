@@ -88,7 +88,7 @@ namespace SacredUtils
 
         [Option(Alias = "DisableReCreatingLangFiles", DefaultValue = "false")]
         bool DisableReCreatingLangFiles { get; }
-        
+
         [Option(Alias = "DisableReCreatingThemeFiles", DefaultValue = "false")]
         bool DisableReCreatingThemeFiles { get; }
 
@@ -163,7 +163,7 @@ namespace SacredUtils
 
         [Option(Alias = "SacredConfigurationFile", DefaultValue = "Settings.cfg")]
         string SacredConfigurationFile { get; }
-        
+
         [Option(Alias = "SacredExecutableFileName", DefaultValue = "Sacred.exe")]
         string SacredExecutableFileName { get; }
 
@@ -187,7 +187,7 @@ namespace SacredUtils
 
         [Option(Alias = "ScreenShotSaveFilePattern", DefaultValue = "ddMMyyyy-hh-mm-ss-fff")]
         string ScreenShotSaveFilePattern { get; }
-        
+
         [Option(Alias = "ScreenShotSaveFilePrefix", DefaultValue = "screen-")]
         string ScreenShotSaveFilePrefix { get; }
 
