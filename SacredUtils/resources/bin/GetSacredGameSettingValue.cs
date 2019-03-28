@@ -20,10 +20,8 @@ namespace SacredUtils.resources.bin
             if (isBool) { return line?.Substring(prefix.Length) == "1"; }
 
             if (isLanguage)
-            { 
-                if (line != null) { return line.Substring(prefix.Length); }
-
-                return "NULL";
+            {
+                return line != null ? line.Substring(prefix.Length) : "NULL";
             }
 
             return line?.Substring(prefix.Length);

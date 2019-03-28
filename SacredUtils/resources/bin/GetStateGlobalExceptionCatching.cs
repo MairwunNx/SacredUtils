@@ -45,6 +45,7 @@ namespace SacredUtils.resources.bin
                         mail.Subject = "SacredUtils Crash-Report";
                         mail.Body = $"SacredUtils Crash-Report from user {Environment.UserName}.";
 
+                        // todo: replace with crash file date file pattern.
                         Attachment attachment = new Attachment($"$SacredUtils\\crash-reports\\crash-{now.ToString(AppSettings.ApplicationSettings.ScreenShotSaveFilePattern)}-su.txt");
                         mail.Attachments.Add(attachment);
 
@@ -56,11 +57,12 @@ namespace SacredUtils.resources.bin
                     }
                 }
             }
-            catch (Exception exc)
+            catch (Exception exception)
             {
-                Log.Error(exc.ToString);
+                Log.Fatal("// I bet MairwunNx wouldn't have this problem.");
+                Log.Fatal(exception.ToString);
             }
-            
+
             Environment.Exit(0);
         }
     }

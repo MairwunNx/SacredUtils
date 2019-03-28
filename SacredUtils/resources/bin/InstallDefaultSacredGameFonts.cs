@@ -35,9 +35,7 @@ namespace SacredUtils.resources.bin
                     }
 
                     string[] text2 = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
-
                     string prefix2 = "LANGUAGE : ";
-
                     string line2 = text2.FirstOrDefault(x => x.StartsWith(prefix2));
 
                     sizes = line2?.Substring(prefix2.Length) == "RU" ? sizesRu : sizesEn;

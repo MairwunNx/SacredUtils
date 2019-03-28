@@ -16,15 +16,7 @@ namespace SacredUtils.resources.bin
                 List<string> settings = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile,
                     Encoding.ASCII).ToList();
                 
-                List<string> finallySettings = new List<string>();
-
-                for (int i = 0; i < settings.Count; i++)
-                {
-                    if (!settings[i].StartsWith("FONT : "))
-                    {
-                        finallySettings.Add(settings[i]);
-                    }
-                }
+                List<string> finallySettings = settings.Where(t => !t.StartsWith("FONT : ")).ToList();
 
                 File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, finallySettings);
 
