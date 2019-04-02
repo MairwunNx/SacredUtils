@@ -74,10 +74,8 @@ namespace SacredUtils
             Loaded += (sender, args) =>
             {
                 Task.Run(CheckAvailabilityAlphaUpdates.GetPerm);
-
                 Task.Run(GetNoInternetIconVisibility.Get);
-
-                Task.Run(GetSacredUtilsCelebrationDates.Call);
+                Task.Run(GetSacredUtilsCelebrationDates.CheckDates);
 
                 if (File.ReadAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\LicenseAgreement.su").Contains("true")) { GetChangeLogDialogVisibility.Get(); }
 
