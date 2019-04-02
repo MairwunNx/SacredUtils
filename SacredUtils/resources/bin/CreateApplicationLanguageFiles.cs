@@ -7,7 +7,7 @@ namespace SacredUtils.resources.bin
     {
         public static void Create()
         {
-            if (AppSettings.ApplicationSettings.DisableReCreatingLangFiles) { return; }
+            if (AppSettings.ApplicationSettings.DisableReCreatingLangFiles) return;
 
             File.WriteAllBytes("$SacredUtils\\lang\\ru-RU\\ru-RU.xaml", Properties.Resources.ru_RU);
             File.WriteAllBytes("$SacredUtils\\lang\\en-US\\en-US.xaml", Properties.Resources.en_US);

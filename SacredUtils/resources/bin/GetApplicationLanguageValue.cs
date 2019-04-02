@@ -21,7 +21,6 @@ namespace SacredUtils.resources.bin
                     currentCulture.TwoLetterISOLanguageName == "bg")
                 {
                     GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage("ru-RU", true);
-
                     Log.Info($"SacredUtils application starting with system ({currentCulture.Name}) language!");
                 }
                 else

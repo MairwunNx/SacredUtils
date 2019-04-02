@@ -17,7 +17,7 @@ namespace SacredUtils.resources.bin
                 Log.Info($"Loading \\ Applying Sacred game setting value for {prefix.Split(':')[0].Replace(" ", "")} ...");
             }
 
-            if (isBool) { return line?.Substring(prefix.Length) == "1"; }
+            if (isBool) return line?.Substring(prefix.Length) == "1";
 
             if (isLanguage)
             {

@@ -9,14 +9,13 @@ namespace SacredUtils.resources.bin
     {
         public static void Download()
         {
-            WebClient wc = new WebClient();
+            using (WebClient wc = new WebClient())
+            {
+                wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1Q2syd-44j_VAWDPHnoujdkNl6vRnNADw", "mnxupdater.exe").Wait();
 
-            wc.DownloadFileTaskAsync("https://drive.google.com/uc?export=download&id=1Q2syd-44j_VAWDPHnoujdkNl6vRnNADw", "mnxupdater.exe").Wait();
-
-            Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(() =>
-                MainWindow.MainWindowInstance.UpdateLbl.Visibility = Visibility.Visible));
-
-            wc.Dispose();
+                Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new ThreadStart(() =>
+                    MainWindow.MainWindowInstance.UpdateLbl.Visibility = Visibility.Visible));
+            }
         }
     }
 }

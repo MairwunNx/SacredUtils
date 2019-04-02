@@ -13,7 +13,7 @@ namespace SacredUtils.resources.bin
     {
         public static void Get()
         {
-            if (AppSettings.ApplicationSettings.EnableGlobalExceptionCatching) { Subscribe(); }
+            if (AppSettings.ApplicationSettings.EnableGlobalExceptionCatching) Subscribe();
         }
 
         private static void Subscribe() => AppDomain.CurrentDomain.UnhandledException += Catch;

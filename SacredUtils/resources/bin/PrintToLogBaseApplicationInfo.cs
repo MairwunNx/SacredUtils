@@ -8,7 +8,7 @@ namespace SacredUtils.resources.bin
     {
         public static void Print()
         {
-            if (AppSettings.ApplicationSettings.DisablePrintBaseInfoToLog) { return; }
+            if (AppSettings.ApplicationSettings.DisablePrintBaseInfoToLog) return;
 
             Log.Info("============================================================");
 

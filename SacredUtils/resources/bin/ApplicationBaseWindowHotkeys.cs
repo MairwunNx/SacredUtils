@@ -85,8 +85,8 @@ namespace SacredUtils.resources.bin
                 // force crash for testing crash-report code.
                 // ReSharper disable once ReturnValueOfPureMethodIsNotUsed
 
-                if (_keyPresses == 1) { _keyPresses = 0; Convert.ToBoolean("1"); }
-                else { _keyPresses = 1; }
+                if (_keyPresses == 1) Convert.ToBoolean("1");
+                else _keyPresses = 1;
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.L)

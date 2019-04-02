@@ -33,16 +33,14 @@ namespace SacredUtils
 
         public MainWindow()
         {
-            InitializeComponent(); EventSubscribe();
-
+            InitializeComponent();
+            EventSubscribe();
             MainWindowInstance = (MainWindow)Application.Current.MainWindow;
-
             ChangeApplicationSelectionSettings.UnSelectSettings(UnselectedStg);
-
-            GetApplicationLanguageValue.Get(); GetApplicationThemeValue.Get();
-
-            GetApplicationScaleValue.Get(); GetPermissionsOnGettingMemory.Get();
-
+            GetApplicationLanguageValue.Get();
+            GetApplicationThemeValue.Get();
+            GetApplicationScaleValue.Get();
+            GetPermissionsOnGettingMemory.Get();
             GetApplicationLicenseState.GetLicenseState();
         }
 
@@ -87,7 +85,7 @@ namespace SacredUtils
 
         private void DragWindow(object sender, MouseButtonEventArgs e)
         {
-            if (e.ChangedButton == 0) { DragMove(); }
+            if (e.ChangedButton == 0) DragMove();
         }
     }
 }

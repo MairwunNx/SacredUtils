@@ -47,8 +47,10 @@ namespace SacredUtils.resources.bin
             timer.Tick += (s, e) =>
             {
                 Process[] pname = Process.GetProcessesByName("Sacred");
+                if (pname.Length != 0) return;
 
-                if (pname.Length == 0) { DisableScreenShotStretching(); timer.Stop(); }
+                DisableScreenShotStretching();
+                timer.Stop();
             };
 
             timer.Start();

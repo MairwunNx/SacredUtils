@@ -11,7 +11,7 @@ namespace SacredUtils.resources.bin
                 Directory.Delete("$SacredUtils\\conf", true); return;
             }
 
-            if (Directory.Exists("$SacredUtils")) { Directory.Delete("$SacredUtils", true); }
+            if (Directory.Exists("$SacredUtils")) Directory.Delete("$SacredUtils", true);
         }
     }
 }

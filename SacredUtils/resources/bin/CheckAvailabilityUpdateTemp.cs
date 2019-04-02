@@ -6,7 +6,7 @@ namespace SacredUtils.resources.bin
     {
         public static void Get()
         {
-            if (AppSettings.ApplicationSettings.RemoveApplicationTempContent) { return; }
+            if (AppSettings.ApplicationSettings.RemoveApplicationTempContent) return;
 
             string[] files = { "mnxupdater.exe", "_newVersionSacredUtilsTemp.exe", "updater-crash-report.log" };
 

@@ -21,7 +21,7 @@ namespace SacredUtils.resources.bin
                     Log.Fatal("A critical error has occurred while creating game configuration file!");
                     Log.Fatal(e.ToString);
                     Log.Info("Shutting down SacredUtils configurator ...");
-                    Environment.Exit(0); // Please, return to me, Isabella, please ...
+                    Environment.Exit(0);
                 }
             }
             else

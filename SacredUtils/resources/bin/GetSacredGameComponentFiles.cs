@@ -97,7 +97,7 @@ namespace SacredUtils.resources.bin
                         {
                             Application.Current.Dispatcher.Invoke(DispatcherPriority.Send, new ThreadStart(() =>
                                 GameGettingComponentsDialog.UnpackingComponentLabel.Content =
-                                    $"{DefaultLabelExtractText} {componentName} ({(int) ((e.BytesTransferred * 100) / e.TotalBytesToTransfer)}%) ..."));
+                                    $"{DefaultLabelExtractText} {componentName} ({(int)((e.BytesTransferred * 100) / e.TotalBytesToTransfer)}%) ..."));
                         }
                     };
 

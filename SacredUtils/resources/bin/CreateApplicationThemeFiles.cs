@@ -7,7 +7,7 @@ namespace SacredUtils.resources.bin
     {
         public static void Create()
         {
-            if (AppSettings.ApplicationSettings.DisableReCreatingThemeFiles) { return; }
+            if (AppSettings.ApplicationSettings.DisableReCreatingThemeFiles) return;
 
             File.WriteAllBytes("$SacredUtils\\thms\\light.xaml", Properties.Resources.Light);
             File.WriteAllBytes("$SacredUtils\\thms\\dark.xaml", Properties.Resources.Dark);

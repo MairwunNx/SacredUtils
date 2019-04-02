@@ -10,7 +10,7 @@ namespace SacredUtils.resources.bin
     {
         public static void Get()
         {
-            if (AppSettings.ApplicationSettings.DisableCheckingGlobLibrary) { return; }
+            if (AppSettings.ApplicationSettings.DisableCheckingGlobLibrary) return;
 
             if (!File.Exists("WPFSharp.Globalizer.dll"))
             {
@@ -34,20 +34,19 @@ namespace SacredUtils.resources.bin
                     }
                 }
 
-                if (md5FinallyHash != "d0bb73987001ea1207393f8e1061630f")
+                if (md5FinallyHash == "d0bb73987001ea1207393f8e1061630f") return;
+
+                File.WriteAllBytes("update.cmd", Properties.Resources.update);
+
+                ProcessStartInfo info = new ProcessStartInfo
                 {
-                    File.WriteAllBytes("update.cmd", Properties.Resources.update);
+                    Arguments = $"/C {AppSummary.CurrentPath}\\update.cmd",
+                    WindowStyle = ProcessWindowStyle.Hidden,
+                    CreateNoWindow = false,
+                    FileName = "update.cmd"
+                };
 
-                    ProcessStartInfo info = new ProcessStartInfo
-                    {
-                        Arguments = $"/C {AppSummary.CurrentPath}\\update.cmd",
-                        WindowStyle = ProcessWindowStyle.Hidden,
-                        CreateNoWindow = false,
-                        FileName = "update.cmd"
-                    };
-
-                    Process.Start(info); Environment.Exit(0);
-                }
+                Process.Start(info); Environment.Exit(0);
             }
         }
 

@@ -15,7 +15,7 @@ namespace SacredUtils.resources.bin
 {
     public static class ForceSacredGameDisableWinKey
     {
-        private static DispatcherTimer _timer = new DispatcherTimer();
+        private static readonly DispatcherTimer _timer = new DispatcherTimer();
         private static KeyboardHookListener m_KeyboardHookManager;
         private static bool m_leftwin;
         private static bool m_rightwin;
@@ -66,8 +66,10 @@ namespace SacredUtils.resources.bin
             _timer.Tick += (s, e) =>
             {
                 Process[] pname = Process.GetProcessesByName("Sacred");
+                if (pname.Length != 0) return;
 
-                if (pname.Length == 0) { Enable(false); _timer.Stop(); }
+                Enable(false);
+                _timer.Stop();
             };
 
             _timer.Start();

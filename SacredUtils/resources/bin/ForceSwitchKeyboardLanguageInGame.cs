@@ -34,8 +34,10 @@ namespace SacredUtils.resources.bin
             timer.Tick += (s, e) =>
             {
                 Process[] pname = Process.GetProcessesByName("Sacred");
+                if (pname.Length != 0) return;
 
-                if (pname.Length == 0) { RemoveApplication(); timer.Stop(); }
+                RemoveApplication();
+                timer.Stop();
             };
 
             timer.Start();
