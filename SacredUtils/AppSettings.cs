@@ -71,6 +71,9 @@ namespace SacredUtils
         [Option(Alias = "DisableCachingGameComponents", DefaultValue = "false")]
         bool DisableCachingGameComponents { get; }
 
+        [Option(Alias = "DisableCelebrationChecking", DefaultValue = "false")]
+        bool DisableCelebrationChecking { get; }
+
         [Option(Alias = "DisableCelebrationFunnyDay", DefaultValue = "false")]
         bool DisableCelebrationFunnyDay { get; }
 

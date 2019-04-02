@@ -24,7 +24,7 @@ namespace SacredUtils.resources.bin
 
         public static void CheckDates()
         {
-            // if (AppSettings.DisableCelebrationChecking) return;
+            if (AppSettings.ApplicationSettings.DisableCelebrationChecking) return;
 
             if (FounderBirthDayDate == TodayDate)
             {

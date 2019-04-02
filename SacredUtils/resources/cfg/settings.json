@@ -21,6 +21,7 @@
   "DisableApplicationTabKeyButton": "true",
   "DisableApplicationTelemetry": "false",
   "DisableCachingGameComponents": "false",
+  "DisableCelebrationChecking": "false",
   "DisableCelebrationFunnyDay": "false",
   "DisableCheckingGlobLibrary": "false",
   "DisableCheckingSacredVersion": "false",
