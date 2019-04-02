@@ -171,7 +171,7 @@ namespace SacredUtils.resources.bin
                     {
                         Random rnd = new Random();
 
-                        int randomInt = rnd.Next(0, 2);
+                        int randomInt = rnd.Next(0, 3);
 
                         if (randomInt == 2)
                         {
