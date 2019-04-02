@@ -77,7 +77,7 @@ namespace SacredUtils
 
                 Task.Run(GetNoInternetIconVisibility.Get);
 
-                Task.Run(GetSacredUtilsProjectBirthday.Call);
+                Task.Run(GetSacredUtilsCelebrationDates.Call);
 
                 if (File.ReadAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\LicenseAgreement.su").Contains("true")) { GetChangeLogDialogVisibility.Get(); }
 

@@ -8,7 +8,7 @@ using System.Windows.Threading;
 
 namespace SacredUtils.resources.bin
 {
-    public static class GetSacredUtilsProjectBirthday
+    public static class GetSacredUtilsCelebrationDates
     {
         public static void Call()
         {
