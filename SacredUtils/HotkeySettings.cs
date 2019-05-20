@@ -90,6 +90,7 @@ namespace SacredUtils
     {
         public static readonly IHotkeySettings GameHotkeySettings =
             new ConfigurationBuilder<IHotkeySettings>()
-                .UseJsonFile("$SacredUtils\\conf\\hotkeys.json").Build();
+                .UseJsonFile("$SacredUtils\\conf\\hotkeys.json")
+                .Build();
     }
 }

@@ -40,6 +40,7 @@ namespace SacredUtils
     {
         public static readonly IModifySettings ModificationSettings =
             new ConfigurationBuilder<IModifySettings>()
-                .UseJsonFile("$SacredUtils\\conf\\mk.setg.json").Build();
+                .UseJsonFile("$SacredUtils\\conf\\mk.setg.json")
+                .Build();
     }
 }

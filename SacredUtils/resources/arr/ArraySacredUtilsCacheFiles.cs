@@ -4,7 +4,7 @@ namespace SacredUtils.resources.arr
 {
     public static class ArraySacredUtilsCacheFiles
     {
-        public static string[] Files =
+        public static readonly string[] Files =
         {
             $"{Environment.ExpandEnvironmentVariables("%tmp%")}\\GameLangRu.zip",
             $"{Environment.ExpandEnvironmentVariables("%tmp%")}\\GameLangUs.zip",

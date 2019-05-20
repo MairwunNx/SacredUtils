@@ -8,10 +8,14 @@ namespace SacredUtils.resources.bin
         {
             if (onlySettings && Directory.Exists("$SacredUtils\\conf"))
             {
-                Directory.Delete("$SacredUtils\\conf", true); return;
+                Directory.Delete("$SacredUtils\\conf", true);
+                return;
             }
 
-            if (Directory.Exists("$SacredUtils")) Directory.Delete("$SacredUtils", true);
+            if (Directory.Exists("$SacredUtils"))
+            {
+                Directory.Delete("$SacredUtils", true);
+            }
         }
     }
 }

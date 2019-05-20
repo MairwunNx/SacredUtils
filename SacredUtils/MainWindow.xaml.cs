@@ -1,12 +1,12 @@
-﻿using SacredUtils.resources.bin;
-using SacredUtils.resources.pgs;
-using System;
+﻿using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
 using System.Windows.Threading;
+using SacredUtils.resources.bin;
+using SacredUtils.resources.pgs;
 using static SacredUtils.AppLogger;
 
 namespace SacredUtils
@@ -35,7 +35,7 @@ namespace SacredUtils
         {
             InitializeComponent();
             EventSubscribe();
-            MainWindowInstance = (MainWindow)Application.Current.MainWindow;
+            MainWindowInstance = (MainWindow) Application.Current.MainWindow;
             ChangeApplicationSelectionSettings.UnSelectSettings(UnselectedStg);
             GetApplicationLanguageValue.Get();
             GetApplicationThemeValue.Get();
@@ -46,18 +46,30 @@ namespace SacredUtils
 
         private void EventSubscribe()
         {
-            MenuGrLabel.Click += (s, e) => ChangeApplicationSelectionSettings.SelectSettings(GraphicsStgOne, GraphicsPanel);
-            MenuSnLabel.Click += (s, e) => ChangeApplicationSelectionSettings.SelectSettings(SoundStgOne, SoundPanel);
-            MenuGpLabel.Click += (s, e) => ChangeApplicationSelectionSettings.SelectSettings(GamePlayStgOne, GameplayPanel);
-            MenuCtLabel.Click += (s, e) => ChangeApplicationSelectionSettings.SelectSettings(ChatStgOne, ChatPanel);
-            MenuFtLabel.Click += (s, e) => ChangeApplicationSelectionSettings.SelectSettings(FontStgOne, FontsPanel);
-            MenuMdLabel.Click += (s, e) => ChangeApplicationSelectionSettings.SelectSettings(ModifyStgOne, ModifPanel);
-            MenuStLabel.Click += (s, e) => ChangeApplicationSelectionSettings.SelectSettings(AppStgOne, SettingsPanel);
+            MenuGrLabel.Click += (s, e) =>
+                ChangeApplicationSelectionSettings.SelectSettings(GraphicsStgOne, GraphicsPanel);
+            MenuSnLabel.Click += (s, e) =>
+                ChangeApplicationSelectionSettings.SelectSettings(SoundStgOne, SoundPanel);
+            MenuGpLabel.Click += (s, e) =>
+                ChangeApplicationSelectionSettings.SelectSettings(GamePlayStgOne, GameplayPanel);
+            MenuCtLabel.Click += (s, e) =>
+                ChangeApplicationSelectionSettings.SelectSettings(ChatStgOne, ChatPanel);
+            MenuFtLabel.Click += (s, e) =>
+                ChangeApplicationSelectionSettings.SelectSettings(FontStgOne, FontsPanel);
+            MenuMdLabel.Click += (s, e) =>
+                ChangeApplicationSelectionSettings.SelectSettings(ModifyStgOne, ModifPanel);
+            MenuStLabel.Click += (s, e) =>
+                ChangeApplicationSelectionSettings.SelectSettings(AppStgOne, SettingsPanel);
             MenuPlLabel.Click += (s, e) => ApplicationStartSacredGameFile.StartDialog();
 
-            if (AppSettings.ApplicationSettings.RefreshSettingsOnWindowFocus) { Activated += (s, e) => RefreshApplicationSettings.Refresh(); }
+            if (AppSettings.ApplicationSettings.RefreshSettingsOnWindowFocus)
+            {
+                Activated += (s, e) => RefreshApplicationSettings.Refresh();
+            }
 
-            Timeline.DesiredFrameRateProperty.OverrideMetadata(typeof(Timeline), new FrameworkPropertyMetadata { DefaultValue = AppSettings.ApplicationSettings.DesiredFrameRateProperty });
+            Timeline.DesiredFrameRateProperty.OverrideMetadata(typeof(Timeline),
+                new FrameworkPropertyMetadata
+                    {DefaultValue = AppSettings.ApplicationSettings.DesiredFrameRateProperty});
 
             CloseBtn.Click += (s, e) => ApplicationBaseWindowShutdown.Shutdown();
             UpdateLbl.MouseDown += (s, e) => ApplicationStartUtilityUpdate.Start();
@@ -66,7 +78,8 @@ namespace SacredUtils
             MemoryLbl.MouseDown += (s, e) => GC.Collect();
             HeaderPanel.MouseDown += DragWindow;
 
-            Timer.Interval = new TimeSpan(0, 0, AppSettings.ApplicationSettings.ShowUsedMemoryUpdateInterval);
+            Timer.Interval = new TimeSpan(0, 0,
+                AppSettings.ApplicationSettings.ShowUsedMemoryUpdateInterval);
             Timer.Tick += (s, e) => GetApplicationCurrentUsedMemory.Get();
 
             Loaded += (sender, args) =>
@@ -75,11 +88,17 @@ namespace SacredUtils
                 Task.Run(GetNoInternetIconVisibility.Get);
                 Task.Run(GetSacredUtilsCelebrationDates.CheckDates);
 
-                if (File.ReadAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\LicenseAgreement.su").Contains("true")) { GetChangeLogDialogVisibility.Get(); }
+                if (File.ReadAllText(
+                        $"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\LicenseAgreement.su")
+                    .Contains("true"))
+                {
+                    GetChangeLogDialogVisibility.Get();
+                }
 
                 AppSummary.Sw.Stop(); // Make Yourself ^_^
 
-                Log.Info($"Loading SacredUtils application done ({AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
+                Log.Info(
+                    $"Loading SacredUtils application done ({AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
             };
         }
 

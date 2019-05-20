@@ -1,13 +1,12 @@
-﻿using EnumsNET;
-using MaterialDesignThemes.Wpf;
-using SacredUtils.resources.dlg;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Input;
+using EnumsNET;
+using MaterialDesignThemes.Wpf;
+using SacredUtils.resources.dlg;
 using static SacredUtils.AppLogger;
-using KeyEventArgs = System.Windows.Input.KeyEventArgs;
 
 // ReSharper disable LocalSuppression
 namespace SacredUtils.resources.bin
@@ -20,39 +19,52 @@ namespace SacredUtils.resources.bin
 
         public static void KeyDown(object sender, KeyEventArgs e)
         {
-            Enums.TryParse(AppSettings.ApplicationSettings.KeyApplicationGotoMainMenu, out Key toMain);
-            Enums.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredUtilsLogFile, out Key openLogs);
-            Enums.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredUtilsSettingFile, out Key openSettings);
-            Enums.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredGameSettingsFile, out Key openGameSettings);
-            Enums.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredUtilsDirectory, out Key openDirectory);
-            Enums.TryParse(AppSettings.ApplicationSettings.KeyDefaultReloadSacredUtils, out Key reloadSacredUtils);
-            Enums.TryParse(AppSettings.ApplicationSettings.KeyDefaultShutdownSacredUtils, out Key shutdownSacredUtils);
-            Enums.TryParse(AppSettings.ApplicationSettings.KeyReloadFastModeSacredUtils, out Key fastReloadSacredUtils);
+            Enums.TryParse(AppSettings.ApplicationSettings.KeyApplicationGotoMainMenu,
+                out Key toMain);
+            Enums.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredUtilsLogFile,
+                out Key openLogs);
+            Enums.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredUtilsSettingFile,
+                out Key openSettings);
+            Enums.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredGameSettingsFile,
+                out Key openGameSettings);
+            Enums.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredUtilsDirectory,
+                out Key openDirectory);
+            Enums.TryParse(AppSettings.ApplicationSettings.KeyDefaultReloadSacredUtils,
+                out Key reloadSacredUtils);
+            Enums.TryParse(AppSettings.ApplicationSettings.KeyDefaultShutdownSacredUtils,
+                out Key shutdownSacredUtils);
+            Enums.TryParse(AppSettings.ApplicationSettings.KeyReloadFastModeSacredUtils,
+                out Key fastReloadSacredUtils);
 
             if (e.Key == toMain)
             {
-                ChangeApplicationSelectionSettings.UnSelectSettings(MainWindow.UnselectedStg);
+                ChangeApplicationSelectionSettings.UnSelectSettings(
+                    MainWindow.UnselectedStg
+                );
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control &&
                 e.Key == openLogs &&
                 File.Exists("$SacredUtils\\logs\\latest.log"))
             {
-                Process.Start(AppSettings.ApplicationSettings.DefaultOpenLogFileProgram, "$SacredUtils\\logs\\latest.log");
+                Process.Start(AppSettings.ApplicationSettings.DefaultOpenLogFileProgram,
+                    "$SacredUtils\\logs\\latest.log");
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control &&
                 e.Key == openSettings &&
                 File.Exists("$SacredUtils\\conf\\settings.json"))
             {
-                Process.Start(AppSettings.ApplicationSettings.DefaultOpenLogFileProgram, "$SacredUtils\\conf\\settings.json");
+                Process.Start(AppSettings.ApplicationSettings.DefaultOpenLogFileProgram,
+                    "$SacredUtils\\conf\\settings.json");
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control &&
                 e.Key == openGameSettings &&
                 File.Exists(AppSettings.ApplicationSettings.SacredConfigurationFile))
             {
-                Process.Start(AppSettings.ApplicationSettings.DefaultOpenLogFileProgram, AppSettings.ApplicationSettings.SacredConfigurationFile);
+                Process.Start(AppSettings.ApplicationSettings.DefaultOpenLogFileProgram,
+                    AppSettings.ApplicationSettings.SacredConfigurationFile);
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == openDirectory)
@@ -62,7 +74,8 @@ namespace SacredUtils.resources.bin
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == reloadSacredUtils)
             {
-                Process.Start(AppSummary.AppPath); Environment.Exit(0);
+                Process.Start(AppSummary.AppPath);
+                Environment.Exit(0);
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == shutdownSacredUtils)
@@ -70,14 +83,17 @@ namespace SacredUtils.resources.bin
                 ApplicationBaseWindowShutdown.Shutdown();
             }
 
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == fastReloadSacredUtils)
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control &&
+                e.Key == fastReloadSacredUtils)
             {
-                Process.Start(AppSummary.AppPath, " -fast"); Environment.Exit(0);
+                Process.Start(AppSummary.AppPath, " -fast");
+                Environment.Exit(0);
             }
 
             if (e.Key == Key.F5)
             {
-                RefreshApplicationSettings.Refresh(); Log.Info("Sacred game settings successfully reloaded!");
+                RefreshApplicationSettings.Refresh();
+                Log.Info("Sacred game settings successfully reloaded!");
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == Key.PageDown)
@@ -98,7 +114,8 @@ namespace SacredUtils.resources.bin
                     _keyPressesStat = 0;
                     string downloadCount = ApplicationGetDownloadStatistics.Get();
                     string[] count = downloadCount.Split('{', '}');
-                    MessageBox.Show(count[1].Replace("\"", "").Replace("SacredUtilsDownloads", "SacredUtils Downloads Count"));
+                    MessageBox.Show(count[1].Replace("\"", "").Replace("SacredUtilsDownloads",
+                        "SacredUtils Downloads Count"));
                 }
                 else
                 {
@@ -129,10 +146,12 @@ namespace SacredUtils.resources.bin
 
                     if (AppSettings.ApplicationSettings.ApplicationShowChangeLog)
                     {
-                        ApplicationChangeLogDialog applicationChangeLogDialog = new ApplicationChangeLogDialog();
+                        ApplicationChangeLogDialog applicationChangeLogDialog =
+                            new ApplicationChangeLogDialog();
 
                         MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
-                        MainWindow.MainWindowInstance.DialogFrame.Content = applicationChangeLogDialog;
+                        MainWindow.MainWindowInstance.DialogFrame.Content =
+                            applicationChangeLogDialog;
 
                         if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
                         {

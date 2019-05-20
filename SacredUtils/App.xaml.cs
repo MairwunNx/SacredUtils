@@ -1,8 +1,8 @@
-using SacredUtils.resources.bin;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using SacredUtils.resources.bin;
 using static SacredUtils.AppLogger;
 
 namespace SacredUtils
@@ -20,7 +20,8 @@ namespace SacredUtils
 
             if (e.Args.Contains("-runGame"))
             {
-                Log.Info($"-ScreenModeResolution {ScreenResolution.ScreenX}x{ScreenResolution.ScreenY} coordinates");
+                Log.Info(
+                    $"-ScreenModeResolution {ScreenResolution.ScreenX}x{ScreenResolution.ScreenY} coordinates");
 
                 AppLogger.Init(e.Args.Contains("-disableLogging"));
 
@@ -28,7 +29,8 @@ namespace SacredUtils
 
                 ApplicationRunSacredGameWithArgs.Run(e.Args);
 
-                Current.StartupUri = new Uri("resources/pgs/InvisibilityWindowForGame.xaml", UriKind.Relative);
+                Current.StartupUri = new Uri("resources/pgs/InvisibilityWindowForGame.xaml",
+                    UriKind.Relative);
 
                 Task.Run(GetApplicationDownloadStatistic.Get);
             }

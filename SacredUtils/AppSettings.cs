@@ -217,6 +217,7 @@ namespace SacredUtils
     {
         public static IAppSettings ApplicationSettings =
             new ConfigurationBuilder<IAppSettings>()
-                .UseJsonFile("$SacredUtils\\conf\\settings.json").Build();
+                .UseJsonFile("$SacredUtils\\conf\\settings.json")
+                .Build();
     }
 }
