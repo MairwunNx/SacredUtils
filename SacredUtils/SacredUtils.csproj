@@ -330,12 +330,6 @@
     <Resource Include="resources\cfg\hk.keyb.txt" />
     <Resource Include="resources\cfg\hk.orig.txt" />
     <Resource Include="resources\cfg\hk.orsf.txt" />
-    <Content Include="NLog.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <None Include="NLog.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="resources\cfg\hk.kesf.txt" />
     <Resource Include="resources\cfg\hk.setg.txt" />
     <Resource Include="resources\cfg\hk.regr.txt" />
