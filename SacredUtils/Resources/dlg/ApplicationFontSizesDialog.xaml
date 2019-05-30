@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="SacredUtils.resources.dlg.ApplicationFontSizesDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:globalizer="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="685"
+    d:DesignWidth="1076"
+    mc:Ignorable="d">
+    <Grid>
+        <materialDesign:DialogHost
+            x:Name="BaseDialog"
+            CloseOnClickAway="True"
+            IsOpen="False"
+            Visibility="Visible">
+            <materialDesign:DialogHost.DialogContent>
+                <Grid>
+                    <Grid
+                        Width="450"
+                        Height="111"
+                        Background="{DynamicResource ResourceKey=BackgroundColorBrush}">
+                        <Label
+                            Height="30"
+                            Margin="15,11,114,0"
+                            VerticalAlignment="Top"
+                            Content="{globalizer:GlobalizedResource String0178}"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontSize="16"
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
+
+                        <ComboBox
+                            x:Name="BaseSizeCategoryComboBox"
+                            Width="187"
+                            Height="26"
+                            Margin="20,63,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                            Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}">
+                            <ComboBoxItem Content="{globalizer:GlobalizedResource String0179}" />
+                            <ComboBoxItem Content="{globalizer:GlobalizedResource String0180}" />
+                            <ComboBoxItem Content="{globalizer:GlobalizedResource String0181}" />
+                            <ComboBoxItem Content="{globalizer:GlobalizedResource String0182}" />
+                            <ComboBoxItem Content="{globalizer:GlobalizedResource String0183}" />
+                            <ComboBoxItem Content="{globalizer:GlobalizedResource String0184}" />
+                            <ComboBoxItem Content="{globalizer:GlobalizedResource String0185}" />
+                        </ComboBox>
+
+                        <Label
+                            Width="18"
+                            Height="28"
+                            Margin="212,63,214,0"
+                            VerticalAlignment="Top"
+                            Content="="
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontSize="14"
+                            Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
+
+                        <TextBox
+                            x:Name="BaseSizeValueTextBox"
+                            Width="187"
+                            Height="26"
+                            Margin="241,63,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
+                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                            Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}" />
+                    </Grid>
+                </Grid>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+    </Grid>
+</Page>

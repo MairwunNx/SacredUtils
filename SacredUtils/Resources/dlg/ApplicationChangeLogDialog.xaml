@@ -1,0 +1,70 @@
+﻿<Page
+    x:Class="SacredUtils.resources.dlg.ApplicationChangeLogDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:globalizer="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="685"
+    d:DesignWidth="1076"
+    mc:Ignorable="d">
+    <Grid>
+        <materialDesign:DialogHost
+            x:Name="BaseDialog"
+            CloseOnClickAway="True"
+            IsOpen="False"
+            Visibility="Visible">
+            <materialDesign:DialogHost.DialogContent>
+                <Grid Background="{DynamicResource ResourceKey=BackgroundColorBrush}">
+                    <Label
+                        Margin="68,66,68,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Content="{globalizer:GlobalizedResource String0139}"
+                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                        FontSize="35"
+                        FontWeight="DemiBold"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
+
+                    <Label
+                        Margin="137,110,137,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Content="{globalizer:GlobalizedResource String01391}"
+                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                        FontSize="25"
+                        FontWeight="DemiBold"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
+
+                    <Button
+                        Width="150"
+                        Margin="80,182,252,32"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                        Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                        Click="BaseButtonYes_Click"
+                        Content="{globalizer:GlobalizedResource String0140}"
+                        FocusVisualStyle="{x:Null}"
+                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                        Foreground="{DynamicResource ResourceKey=BackgroundColorBrush}"
+                        IsDefault="True" />
+
+                    <Button
+                        Width="150"
+                        Margin="264,182,68,32"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                        Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                        Click="BaseButtonNo_Click"
+                        Content="{globalizer:GlobalizedResource String0141}"
+                        FocusVisualStyle="{x:Null}"
+                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                        Foreground="{DynamicResource ResourceKey=BackgroundColorBrush}" />
+                </Grid>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+    </Grid>
+</Page>

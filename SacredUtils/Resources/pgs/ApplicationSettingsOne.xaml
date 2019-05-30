@@ -1,0 +1,314 @@
+﻿<Page
+    x:Class="SacredUtils.resources.pgs.ApplicationSettingsOne"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:globalizer="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prp="clr-namespace:SacredUtils.resources.prp"
+    d:DesignHeight="685"
+    d:DesignWidth="886"
+    mc:Ignorable="d">
+    <Grid>
+        <Border
+            Width="810"
+            Height="41"
+            Margin="0,220,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3">
+            <Grid>
+                <TextBlock
+                    Margin="15,12,188,12"
+                    VerticalAlignment="Center"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0001}" />
+
+                <ComboBox
+                    Height="27"
+                    Margin="625,0,15,0"
+                    VerticalAlignment="Center"
+                    d:DataContext="{d:DesignInstance prp:ApplicationSettingsOneProperty}"
+                    BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
+                    SelectedIndex="{Binding Path=Language, Mode=TwoWay}"
+                    UseLayoutRounding="False">
+                    <ComboBoxItem Content="{globalizer:GlobalizedResource String0002}" />
+                    <ComboBoxItem Content="{globalizer:GlobalizedResource String0003}" />
+                </ComboBox>
+            </Grid>
+        </Border>
+
+        <Border
+            Width="810"
+            Height="41"
+            Margin="0,271,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3">
+            <Grid>
+                <TextBlock
+                    Margin="15,12,188,12"
+                    VerticalAlignment="Center"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0004}" />
+
+                <ComboBox
+                    Height="27"
+                    Margin="625,0,15,0"
+                    VerticalAlignment="Center"
+                    d:DataContext="{d:DesignInstance prp:ApplicationSettingsOneProperty}"
+                    BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
+                    SelectedIndex="{Binding Path=Theme, Mode=TwoWay}">
+                    <ComboBoxItem Content="{globalizer:GlobalizedResource String0005}" />
+                    <ComboBoxItem Content="{globalizer:GlobalizedResource String0006}" />
+                </ComboBox>
+            </Grid>
+        </Border>
+
+        <Border
+            Width="810"
+            Height="41"
+            Margin="0,322,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3">
+            <Grid>
+                <TextBlock
+                    Margin="15,12,188,12"
+                    VerticalAlignment="Center"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0007}" />
+
+                <ComboBox
+                    x:Name="StartParamsGameCmbBox"
+                    Height="27"
+                    Margin="625,0,15,0"
+                    VerticalAlignment="Center"
+                    d:DataContext="{d:DesignInstance prp:ApplicationSettingsOneProperty}"
+                    BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
+                    SelectedIndex="{Binding Path=StartParams, Mode=TwoWay}">
+                    <ComboBoxItem Content="{globalizer:GlobalizedResource String0008}" />
+                    <ComboBoxItem Content="{globalizer:GlobalizedResource String0009}" />
+                    <ComboBoxItem Content="{globalizer:GlobalizedResource String0010}" />
+                </ComboBox>
+            </Grid>
+        </Border>
+
+        <Border
+            Width="810"
+            Height="41"
+            Margin="0,373,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3">
+            <Grid>
+                <TextBlock
+                    Margin="15,12,188,12"
+                    VerticalAlignment="Center"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0011}" />
+
+                <ComboBox
+                    Height="27"
+                    Margin="625,0,15,0"
+                    VerticalAlignment="Center"
+                    d:DataContext="{d:DesignInstance prp:ApplicationSettingsOneProperty}"
+                    BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
+                    Text="{Binding Path=UiScale, Mode=TwoWay}">
+                    <ComboBoxItem Content="100%" />
+                    <ComboBoxItem Content="105%" />
+                    <ComboBoxItem Content="110%" />
+                    <ComboBoxItem Content="115%" />
+                    <ComboBoxItem Content="125%" />
+                    <ComboBoxItem Content="150%" />
+                    <ComboBoxItem Content="175%" />
+                    <ComboBoxItem Content="200%" />
+                </ComboBox>
+            </Grid>
+        </Border>
+
+        <Border
+            Width="810"
+            Height="42"
+            Margin="0,603,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3">
+            <Grid>
+                <TextBlock
+                    Margin="0,12,0,12"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0012}" />
+
+                <Button
+                    x:Name="ToTwoPageBtn"
+                    Width="38"
+                    Margin="765,4,5,4"
+                    materialDesign:RippleAssist.IsCentered="True"
+                    materialDesign:RippleAssist.RippleSizeMultiplier="0.5"
+                    Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Style="{StaticResource MaterialDesignToolForegroundButton}">
+
+                    <materialDesign:PackIcon
+                        Width="28"
+                        Height="28"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                        Kind="ChevronRight" />
+                </Button>
+
+                <Button
+                    Width="38"
+                    Margin="5,4,765,4"
+                    materialDesign:RippleAssist.IsCentered="True"
+                    materialDesign:RippleAssist.RippleSizeMultiplier="0.5"
+                    Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    IsEnabled="False"
+                    Style="{StaticResource MaterialDesignToolForegroundButton}">
+
+                    <materialDesign:PackIcon
+                        Width="28"
+                        Height="28"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                        Kind="ChevronLeft" />
+                </Button>
+            </Grid>
+        </Border>
+
+        <Border
+            Width="135"
+            Height="42"
+            Margin="0,540,38,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3">
+            <Button
+                x:Name="GitHubBtn"
+                Height="Auto"
+                ClipToBounds="True"
+                Content="SOURCES"
+                Cursor="Hand"
+                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontSize="16"
+                Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                Style="{StaticResource MaterialDesignToolForegroundButton}" />
+        </Border>
+
+        <Border
+            Height="42"
+            Margin="38,540,712,0"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3"
+            Cursor="Hand">
+            <Button
+                x:Name="AboutBtn"
+                Height="Auto"
+                ClipToBounds="True"
+                Content="ABOUT"
+                Cursor="Hand"
+                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontSize="16"
+                Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                Style="{StaticResource MaterialDesignToolForegroundButton}" />
+        </Border>
+
+        <Border
+            Width="136"
+            Height="42"
+            Margin="0,540,560,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3"
+            Cursor="Hand">
+            <Button
+                x:Name="FeedbackBtn"
+                Height="Auto"
+                ClipToBounds="True"
+                Content="FEEDBACK"
+                Cursor="Hand"
+                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontSize="16"
+                Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                Style="{StaticResource MaterialDesignToolForegroundButton}" />
+        </Border>
+
+        <Border
+            Width="135"
+            Height="42"
+            Margin="0,540,187,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3"
+            Cursor="Hand">
+            <Button
+                x:Name="CreatorBtn"
+                Height="Auto"
+                ClipToBounds="True"
+                Content="CREATOR"
+                Cursor="Hand"
+                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontSize="16"
+                Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                Style="{StaticResource MaterialDesignToolForegroundButton}" />
+        </Border>
+
+        <Border
+            Width="208"
+            Height="42"
+            Margin="0,540,337,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3"
+            Cursor="Hand">
+            <Button
+                x:Name="DonateBtn"
+                Height="Auto"
+                ClipToBounds="True"
+                Content="LET'S DONATE"
+                Cursor="Hand"
+                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontSize="16"
+                Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                Style="{StaticResource MaterialDesignToolForegroundButton}" />
+        </Border>
+    </Grid>
+</Page>

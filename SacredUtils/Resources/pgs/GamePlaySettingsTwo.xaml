@@ -1,0 +1,273 @@
+﻿<Page
+    x:Class="SacredUtils.resources.pgs.GamePlaySettingsTwo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:globalizer="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prp="clr-namespace:SacredUtils.resources.prp"
+    d:DesignHeight="685"
+    d:DesignWidth="886"
+    mc:Ignorable="d">
+    <Grid>
+        <Border
+            Width="810"
+            Height="41"
+            Margin="0,118,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3">
+            <Grid>
+                <TextBlock
+                    Margin="15,12,65,12"
+                    VerticalAlignment="Center"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0042}" />
+
+                <ToggleButton
+                    Width="50"
+                    Margin="748,0,10,0"
+                    d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
+                    Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    IsChecked="{Binding Path=TrackEnemy, Mode=TwoWay}" />
+            </Grid>
+        </Border>
+
+        <Border
+            Width="810"
+            Height="41"
+            Margin="0,169,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3">
+            <Grid>
+                <TextBlock
+                    Margin="15,12,65,12"
+                    VerticalAlignment="Center"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0043}" />
+
+                <ToggleButton
+                    Width="50"
+                    Margin="748,0,10,0"
+                    d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
+                    Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    IsChecked="{Binding Path=AutoSave, Mode=TwoWay}" />
+            </Grid>
+        </Border>
+
+        <Border
+            Width="810"
+            Height="41"
+            Margin="0,220,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3">
+            <Grid>
+                <TextBlock
+                    Margin="15,12,65,12"
+                    VerticalAlignment="Center"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0044}" />
+
+                <ToggleButton
+                    Width="50"
+                    Margin="748,0,10,0"
+                    d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
+                    Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    IsChecked="{Binding Path=DefaultSkills, Mode=TwoWay}" />
+            </Grid>
+        </Border>
+
+        <Border
+            Width="810"
+            Height="41"
+            Margin="0,271,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3">
+            <Grid>
+                <TextBlock
+                    Margin="15,12,65,12"
+                    VerticalAlignment="Center"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0045}" />
+
+                <ToggleButton
+                    Width="50"
+                    Margin="748,0,10,0"
+                    d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
+                    Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    IsChecked="{Binding Path=DebugLog, Mode=TwoWay}" />
+            </Grid>
+        </Border>
+
+        <Border
+            Width="810"
+            Height="41"
+            Margin="0,322,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3">
+            <Grid>
+                <TextBlock
+                    Margin="15,12,65,12"
+                    VerticalAlignment="Center"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0046}" />
+
+                <ToggleButton
+                    Width="50"
+                    Margin="748,0,10,0"
+                    d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
+                    Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    IsChecked="{Binding Path=DamageIcons, Mode=TwoWay}" />
+            </Grid>
+        </Border>
+
+        <Border
+            Width="810"
+            Height="41"
+            Margin="0,373,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3">
+            <Grid>
+                <TextBlock
+                    Margin="15,12,65,12"
+                    VerticalAlignment="Center"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0047}" />
+
+                <ToggleButton
+                    Width="50"
+                    Margin="748,0,10,0"
+                    d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
+                    Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    IsChecked="{Binding Path=PotionBar, Mode=TwoWay}" />
+            </Grid>
+        </Border>
+
+        <Border
+            Width="810"
+            Height="41"
+            Margin="0,424,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3">
+            <Grid>
+                <TextBlock
+                    Margin="15,12,65,12"
+                    VerticalAlignment="Center"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0048}" />
+
+                <ToggleButton
+                    Width="50"
+                    Margin="748,0,10,0"
+                    d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
+                    Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    IsChecked="{Binding Path=PlayerInfo, Mode=TwoWay}" />
+            </Grid>
+        </Border>
+
+        <Border
+            Width="810"
+            Height="41"
+            Margin="0,475,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3">
+            <Grid>
+                <TextBlock
+                    Margin="15,12,65,12"
+                    VerticalAlignment="Center"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0049}" />
+
+                <ToggleButton
+                    Width="50"
+                    Margin="748,0,10,0"
+                    d:DataContext="{d:DesignInstance prp:GamePlaySettingsTwoProperty}"
+                    Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    IsChecked="{Binding Path=EnemyInfo, Mode=TwoWay}" />
+            </Grid>
+        </Border>
+
+        <Border
+            Width="810"
+            Height="42"
+            Margin="0,603,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderBrush="{DynamicResource ResourceKey=BorderBorderBrush}"
+            BorderThickness="1,1,1,1"
+            CornerRadius="3">
+            <Grid>
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                    Text="{globalizer:GlobalizedResource String0050}" />
+
+                <Button
+                    Width="38"
+                    Margin="765,4,5,4"
+                    materialDesign:RippleAssist.IsCentered="True"
+                    materialDesign:RippleAssist.RippleSizeMultiplier="0.5"
+                    Click="ToThreePageBtn_Click"
+                    Style="{StaticResource MaterialDesignToolForegroundButton}">
+                    <materialDesign:PackIcon
+                        Width="28"
+                        Height="28"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                        Kind="ChevronRight" />
+                </Button>
+
+                <Button
+                    Width="38"
+                    Margin="5,4,765,4"
+                    materialDesign:RippleAssist.IsCentered="True"
+                    materialDesign:RippleAssist.RippleSizeMultiplier="0.5"
+                    Click="ToOnePageBtn_Click"
+                    Style="{StaticResource MaterialDesignToolForegroundButton}">
+                    <materialDesign:PackIcon
+                        Width="28"
+                        Height="28"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
+                        Kind="ChevronLeft" />
+                </Button>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

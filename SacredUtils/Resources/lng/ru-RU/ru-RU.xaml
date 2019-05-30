@@ -1,0 +1,264 @@
+﻿<Globalization:GlobalizationResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Globalization="clr-namespace:WPFSharp.Globalizer;assembly=WPFSharp.Globalizer"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    Name="ru-RU">
+
+    <!--  Application settings one  -->
+    <sys:String x:Key="String0001">Язык интерфейса</sys:String>
+    <sys:String x:Key="String0002">Русский</sys:String>
+    <sys:String x:Key="String0003">Английский</sys:String>
+    <sys:String x:Key="String0004">Тема приложения</sys:String>
+    <sys:String x:Key="String0005">Светлая</sys:String>
+    <sys:String x:Key="String0006">Темная</sys:String>
+    <sys:String x:Key="String0007">Параметры запуска игры</sys:String>
+    <sys:String x:Key="String0008">Закрыть SU до игры</sys:String>
+    <sys:String x:Key="String0009">Свернуть SU до игры</sys:String>
+    <sys:String x:Key="String0010">Ничего не делать</sys:String>
+    <sys:String x:Key="String0011">Масштаб интерфейса</sys:String>
+    <sys:String x:Key="String0012">Страница 1 / 2</sys:String>
+
+    <!--  Application settings two  -->
+    <sys:String x:Key="String0013">Автоматически проверять наличие обновлений</sys:String>
+    <sys:String x:Key="String0014">Автоматически проверять наличие alpha обновлений</sys:String>
+    <sys:String x:Key="String0015">Создавать резервные копии конфигураций</sys:String>
+    <sys:String x:Key="String0016">Я принял условия использования SacredUtils</sys:String>
+    <sys:String x:Key="String0017">Страница 2 / 2</sys:String>
+
+    <!--  Chat settings one  -->
+    <sys:String x:Key="String0018">Разноцветный чат</sys:String>
+    <sys:String x:Key="String0019">Язык интерфейса игры</sys:String>
+    <sys:String x:Key="String0020">Русский</sys:String>
+    <sys:String x:Key="String0021">Английский</sys:String>
+    <sys:String x:Key="String0022">Немецкий</sys:String>
+    <sys:String x:Key="String0023">Испанский</sys:String>
+    <sys:String x:Key="String0024">Французский</sys:String>
+    <sys:String x:Key="String0025">Количество строк в чате</sys:String>
+    <sys:String x:Key="String0026">Задержка текста в чате</sys:String>
+    <sys:String x:Key="String0027">Прозрачность чата</sys:String>
+    <sys:String x:Key="String0028">Страница 1 / 1</sys:String>
+
+    <!--  Font settings one  -->
+    <sys:String x:Key="String0029">Используется автоподбор шрифта, с нестандартными шрифтами возможно будут проблемы!</sys:String>
+    <sys:String x:Key="String0030">Название шрифта</sys:String>
+    <sys:String x:Key="String0031">Текст примера</sys:String>
+    <sys:String x:Key="String0032">Страница 1 / 1</sys:String>
+
+    <!--  GamePlay settings one  -->
+    <sys:String x:Key="String0033">Режим автоподбора</sys:String>
+    <sys:String x:Key="String0034">Только золото</sys:String>
+    <sys:String x:Key="String0035">Золото и вещи</sys:String>
+    <sys:String x:Key="String0036">Абсолютно все</sys:String>
+    <sys:String x:Key="String0037">Тип интернет соединения</sys:String>
+    <sys:String x:Key="String0038">Картинка при запуске игры</sys:String>
+    <sys:String x:Key="String0039">Картинка при save \ load игры</sys:String>
+    <sys:String x:Key="String0040">Уровень красной вспышки</sys:String>
+    <sys:String x:Key="String0041">Страница 1 / 3</sys:String>
+
+    <!--  GamePlay settings two  -->
+    <sys:String x:Key="String0042">Автонаводка на противника</sys:String>
+    <sys:String x:Key="String0043">Автосохранение на этапах</sys:String>
+    <sys:String x:Key="String0044">Выбор умений по умолчанию</sys:String>
+    <sys:String x:Key="String0045">Включить ведение debug-лога</sys:String>
+    <sys:String x:Key="String0046">Значки типа повреждения</sys:String>
+    <sys:String x:Key="String0047">Игровой допинг бар</sys:String>
+    <sys:String x:Key="String0048">Информация о игроке</sys:String>
+    <sys:String x:Key="String0049">Информация о противнике</sys:String>
+    <sys:String x:Key="String0050">Страница 2 / 3</sys:String>
+
+    <!--  GamePlay settings three  -->
+    <sys:String x:Key="String0051">Комбинировать слоты</sys:String>
+    <sys:String x:Key="String0052">Принять лицензию</sys:String>
+    <sys:String x:Key="String0053">Первый вход в игру</sys:String>
+    <sys:String x:Key="String0054">Эффект землетрясения</sys:String>
+    <sys:String x:Key="String0055">Страница 3 / 3</sys:String>
+
+    <!--  Graphics settings one  -->
+    <sys:String x:Key="String0056">Качество графики</sys:String>
+    <sys:String x:Key="String0057">Низкое</sys:String>
+    <sys:String x:Key="String0058">Среднее</sys:String>
+    <sys:String x:Key="String0059">Высокое</sys:String>
+    <sys:String x:Key="String0060">Кол-во ожиданий обратного хода луча монитора</sys:String>
+    <sys:String x:Key="String0061">Прозрачность карты</sys:String>
+    <sys:String x:Key="String0062">Темнота ночи</sys:String>
+    <sys:String x:Key="String0063">Страница 1 / 4</sys:String>
+
+    <!--  Graphics settings two  -->
+    <sys:String x:Key="String0064">128mbit видеопамяти</sys:String>
+    <sys:String x:Key="String0065">32bit глубина цвета</sys:String>
+    <sys:String x:Key="String0066">Анимация подбора</sys:String>
+    <sys:String x:Key="String0067">Лужицы крови после убийства</sys:String>
+    <sys:String x:Key="String0068">Полноэкранный режим</sys:String>
+    <sys:String x:Key="String0069">Полноэкранное сглаживание</sys:String>
+    <sys:String x:Key="String0070">Показывать игровые ролики</sys:String>
+    <sys:String x:Key="String0071">Показывать финальный ролик</sys:String>
+    <sys:String x:Key="String0072">Страница 2 / 4</sys:String>
+
+    <!--  Graphics settings three  -->
+    <sys:String x:Key="String0073">Принудительно черные тени</sys:String>
+    <sys:String x:Key="String0074">Режим видеосовместимости</sys:String>
+    <sys:String x:Key="String0075">Сглаживание шрифтов</sys:String>
+    <sys:String x:Key="String0076">Сглаживание изображения</sys:String>
+    <sys:String x:Key="String0077">Фильтрация шрифтов</sys:String>
+    <sys:String x:Key="String0078">Страница 3 / 4</sys:String>
+
+    <!--  Graphics settings four  -->
+    <sys:String x:Key="String0079">Использовать статичное болото</sys:String>
+    <sys:String x:Key="String0080">Использовать статичную воду</sys:String>
+    <sys:String x:Key="String0081">Использовать статичную лаву</sys:String>
+    <sys:String x:Key="String0082">Использовать старый интерфейс Sacred</sys:String>
+    <sys:String x:Key="String0083">++ UNUSED ++</sys:String>
+    <sys:String x:Key="String0084">++ UNUSED ++</sys:String>
+    <sys:String x:Key="String0085">Отключить следы игрока</sys:String>
+    <sys:String x:Key="String0086">Отображать круги здоровья</sys:String>
+    <sys:String x:Key="String0087">Страница 4 / 4</sys:String>
+
+    <!--  Modify settings one  -->
+    <sys:String x:Key="String0088">Установить VeteranMod by Ufo</sys:String>
+    <sys:String x:Key="String0089">Удалить VeteranMod by Ufo</sys:String>
+    <sys:String x:Key="String0090">Установить 2.29.14 Sacred патч</sys:String>
+    <sys:String x:Key="String0091">Удалить 2.29.14 Sacred патч</sys:String>
+    <sys:String x:Key="String0092">Установить Server MultiCore Fix</sys:String>
+    <sys:String x:Key="String0093">Удалить Server MultiCore Fix</sys:String>
+    <sys:String x:Key="String0094">Распаковать global.res файл</sys:String>
+    <sys:String x:Key="String0095">Распаковать текстуры игры</sys:String>
+    <sys:String x:Key="String0096">Страница 1 / 1</sys:String>
+
+    <!--  Sound settings one  -->
+    <sys:String x:Key="String0097">Включить звук в игре</sys:String>
+    <sys:String x:Key="String0098">Качество звука</sys:String>
+    <sys:String x:Key="String0099">Низкое</sys:String>
+    <sys:String x:Key="String0100">Среднее</sys:String>
+    <sys:String x:Key="String0101">Высокое</sys:String>
+    <sys:String x:Key="String0102">Язык озвучки</sys:String>
+    <sys:String x:Key="String0103">Русский</sys:String>
+    <sys:String x:Key="String0104">Английский</sys:String>
+    <sys:String x:Key="String0105">Немецкий</sys:String>
+    <sys:String x:Key="String0106">Испанский</sys:String>
+    <sys:String x:Key="String0107">Громкость музыки</sys:String>
+    <sys:String x:Key="String0108">Громкость эффектов</sys:String>
+    <sys:String x:Key="String0109">Громкость голоса</sys:String>
+    <sys:String x:Key="String0110">Страница 1 / 1</sys:String>
+
+    <!--  Unselected settings one  -->
+    <sys:String x:Key="String0111">Выберите: что бы вы хотели настроить.</sys:String>
+
+    <!--  MainWindow settings one  -->
+    <sys:String x:Key="String0112">ОБНОВИТЬ УТИЛИТУ</sys:String>
+    <sys:String x:Key="String0113">⠀⠀ГРАФИКА</sys:String>
+    <sys:String x:Key="String0114">⠀⠀ЗВУК И ОЗВУЧКА</sys:String>
+    <sys:String x:Key="String0115">⠀⠀ГЕЙМПЛЕЙ</sys:String>
+    <sys:String x:Key="String0116">⠀⠀ЧАТ И ЯЗЫК</sys:String>
+    <sys:String x:Key="String0117">⠀⠀ШРИФТЫ</sys:String>
+    <sys:String x:Key="String0118">⠀⠀МОДИФИКАЦИИ</sys:String>
+    <sys:String x:Key="String0119">⠀⠀ЗАПУСТИТЬ ИГРУ</sys:String>
+    <sys:String x:Key="String0120">⠀⠀НАСТРОЙКИ SU</sys:String>
+
+    <!--  License dialog  -->
+    <sys:String x:Key="String0121">Прочитать лиц. соглашение</sys:String>
+    <sys:String x:Key="String0122">Лицензионное соглашение</sys:String>
+    <sys:String x:Key="String0123">Пожалуйста, рассмотрите лицензионное соглашение и условия использования SacredUtils, до соглашения!</sys:String>
+    <sys:String x:Key="String0124">++ UNUSED ++</sys:String>
+    <sys:String x:Key="String0125">++ UNUSED ++</sys:String>
+    <sys:String x:Key="String0126">Принял условия</sys:String>
+    <sys:String x:Key="String0127">Закрыть SacredUtils</sys:String>
+
+    <!--  About SacredUtils dialog  -->
+    <sys:String x:Key="String0128">О SacredUtils</sys:String>
+    <sys:String x:Key="String0129">Версия 1.2.4.3.010219.R1 Final (Официальная сборка)</sys:String>
+
+    <!--  Checking \ repairing components dialog  -->
+    <sys:String x:Key="String0130">Восстановление компонентов</sys:String>
+    <sys:String x:Key="String0131">Проверка компонентов на целостность ...</sys:String>
+    <sys:String x:Key="String0132">Восстановление компонентов игры ...</sys:String>
+    <sys:String x:Key="String0133">Восстановление компонентов завершено!</sys:String>
+    <sys:String x:Key="String0134">Поврежденных компонентов не обнаружено!</sys:String>
+
+    <!--  Hotkey change dialog  -->
+    <sys:String x:Key="String0135">Смена клавиш игры</sys:String>
+
+    <!--  Get components dialog  -->
+    <sys:String x:Key="String0136">Установка компонентов</sys:String>
+    <sys:String x:Key="String0137">Загрузка компонента</sys:String>
+    <sys:String x:Key="String0138">Распаковка компонента</sys:String>
+
+    <!--  Change log dialog  -->
+    <sys:String x:Key="String0139">Хотите посмотреть</sys:String>
+    <sys:String x:Key="String01391">лог изменений?</sys:String>
+    <sys:String x:Key="String0140">Да, конечно!</sys:String>
+    <sys:String x:Key="String0141">Нет</sys:String>
+
+    <!--  Select page dialog  -->
+    <sys:String x:Key="String0142">Выбор страницы</sys:String>
+
+    <!--  Select donate dialog  -->
+    <sys:String x:Key="String0143">Выбор кошелька</sys:String>
+
+    <!--  Modify settings one (2)  -->
+    <sys:String x:Key="String0144">Упаковать global.res файл</sys:String>
+    <sys:String x:Key="String0145">Редактировать balance.bin (External)</sys:String>
+    <sys:String x:Key="String0146">Редактировать creature.pak (External)</sys:String>
+    <sys:String x:Key="String0147">Редактировать weapon.pak (External)</sys:String>
+    <sys:String x:Key="String0148">Запустить SacredHeroResetter</sys:String>
+    <sys:String x:Key="String0149">Изменить горячие клавиши игры</sys:String>
+    <sys:String x:Key="String0150">Запустить SacredHeroEditor</sys:String>
+    <sys:String x:Key="String0151">Запустить проверку целостности компонентов игры</sys:String>
+    <sys:String x:Key="String0152">Запустить генератор цветных ников</sys:String>
+
+    <!--  Convert colors dialog  -->
+    <sys:String x:Key="String0153">Создание цветного ника</sys:String>
+    <sys:String x:Key="String0154">Выбрать цвет</sys:String>
+    <sys:String x:Key="String0155">Скопировать ник</sys:String>
+
+    <!--  Version error dialog  -->
+    <sys:String x:Key="String0156">Невозможно выполнить проверку компонентов игры! Версия игры должна быть как минимум 2.0.2.8 или 2.29.13.0! Если я ошибся, или не включил какую-то версию, напишите мне на почту.</sys:String>
+    <sys:String x:Key="String0157">Невозможно получить данные о версии игры! Скорее всего в папке нет файла Sacred.exe.</sys:String>
+    <sys:String x:Key="String0158">После нажатия на ок, будет выполнятся проверка компонентов, она может занять значительное время, если будут найдены поврежденные компоненты. Целостность вычисляется по md5 хеш-сумме.</sys:String>
+
+    <!--  Sacred start params dialog  -->
+    <sys:String x:Key="String0159">Параметры запуска Sacred</sys:String>
+    <sys:String x:Key="String0160">Выберите нужные параметры и запустите игру</sys:String>
+    <sys:String x:Key="String0161">Запустить Sacred с аргументом CHEATS=1</sys:String>
+    <sys:String x:Key="String0162">Принудительно разрешить смену раскладки в игре</sys:String>
+    <sys:String x:Key="String0163">Запустить игру</sys:String>
+    <sys:String x:Key="String0164">Отменить запуск</sys:String>
+    <sys:String x:Key="String0165">Растягивать скриншот до разрешения экрана</sys:String>
+    <sys:String x:Key="String0166">Включить режим хоткеев (эмуляция)</sys:String>
+    <sys:String x:Key="String01661">Принудительно отключить кнопку Windows (Пуск)</sys:String>
+
+    <!--  Get graphics page 4 content dialog  -->
+    <sys:String x:Key="String0167">Настройки графики</sys:String>
+    <sys:String x:Key="String0168">Применение настроек графики (NaN%) ...</sys:String>
+
+    <!--  Tool tips  -->
+    <sys:String x:Key="String0169">Закрыть</sys:String>
+    <sys:String x:Key="String0170">Свернуть</sys:String>
+
+    <!--  Font sizes menu  -->
+    <sys:String x:Key="String0171">Размеры шрифтов</sys:String>
+
+    <!--  Application clear cache dialog  -->
+    <sys:String x:Key="String0172">Очистка кеша</sys:String>
+    <sys:String x:Key="String0173">Очистка кеша компонентов утилиты ...</sys:String>
+    <sys:String x:Key="String0174">Очистка кеша компонентов завершена!</sys:String>
+
+    <!--  Application font addon functional  -->
+    <sys:String x:Key="String0175">Установить шрифты по умолчанию</sys:String>
+    <sys:String x:Key="String0176">Удалить настраиваемые шрифты</sys:String>
+    <sys:String x:Key="String0177">Настроить размеры шрифтов</sys:String>
+
+    <!--  Application font sizes dialog  -->
+    <sys:String x:Key="String0178">Настройка размеров</sys:String>
+    <sys:String x:Key="String0179">1: Описания, информация</sys:String>
+    <sys:String x:Key="String0180">2: Карта</sys:String>
+    <sys:String x:Key="String0181">3: Титры и заголовки</sys:String>
+    <sys:String x:Key="String0182">4: Главное меню</sys:String>
+    <sys:String x:Key="String0183">5: Квесты и задания</sys:String>
+    <sys:String x:Key="String0184">6: Главы журнала</sys:String>
+    <sys:String x:Key="String0185">7: Настройки</sys:String>
+
+    <!--  Modify settings one (3)  -->
+    <sys:String x:Key="String0186">Редактировать стартовые позиции персонажей (SacredLumina)</sys:String>
+
+</Globalization:GlobalizationResourceDictionary>
