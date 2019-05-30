@@ -166,181 +166,181 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="resources\arr\ArraySacredGameComponentFiles.cs" />
-    <Compile Include="resources\arr\ArraySacredGameFootStepsFiles.cs" />
-    <Compile Include="resources\arr\ArraySacredGameHealthFiles.cs" />
-    <Compile Include="resources\arr\ArraySacredGameLavaFiles.cs" />
-    <Compile Include="resources\arr\ArraySacredGameOldTextureFiles.cs" />
-    <Compile Include="resources\arr\ArraySacredGameWaterFiles.cs" />
-    <Compile Include="resources\arr\ArraySacredUtilsCacheFiles.cs" />
-    <Compile Include="resources\bin\CauseApplicationReset.cs" />
-    <Compile Include="resources\bin\ApplicationBaseWindowHotkeys.cs" />
-    <Compile Include="resources\bin\ApplicationBaseWindowShutdown.cs" />
-    <Compile Include="resources\bin\ApplicationClearComponentCache.cs" />
-    <Compile Include="resources\bin\ApplicationGetDownloadStatistics.cs" />
-    <Compile Include="resources\bin\ApplicationRunSacredGameWithArgs.cs" />
-    <Compile Include="resources\bin\ApplicationStartEmulateHotkeys.cs" />
-    <Compile Include="resources\bin\ApplicationStartSacredGameFile.cs" />
-    <Compile Include="resources\bin\ApplicationStartUtilityUpdate.cs" />
-    <Compile Include="resources\bin\ChangeApplicationSelectionSettings.cs" />
-    <Compile Include="resources\bin\ChangeSacredGameSettingsValue.cs" />
-    <Compile Include="resources\bin\ApplicationHotKeyConvertKeyValue.cs" />
-    <Compile Include="resources\bin\CreateApplicationNeededFolders.cs" />
-    <Compile Include="resources\bin\CreateBackupApplicationSettings.cs" />
-    <Compile Include="resources\bin\CreateBackupSacredGameSettings.cs" />
-    <Compile Include="resources\bin\DownloadApplicationNewUpdate.cs" />
-    <Compile Include="resources\bin\DownloadApplicationUpdateTool.cs" />
-    <Compile Include="resources\bin\ForceSacredGameDisableWinKey.cs" />
-    <Compile Include="resources\bin\ForceStretchSacredGameScreenshot.cs" />
-    <Compile Include="resources\bin\ForceSwitchKeyboardLanguageInGame.cs" />
-    <Compile Include="resources\bin\GetActualApplicationVersion.cs" />
-    <Compile Include="resources\bin\GetApplicationCurrentUsedMemory.cs" />
-    <Compile Include="resources\bin\GetApplicationLicenseState.cs" />
-    <Compile Include="resources\bin\GetApplicationRandomSplashes.cs" />
-    <Compile Include="resources\bin\GetApplicationScaleValue.cs" />
-    <Compile Include="resources\bin\CheckAvailabilityAlphaUpdates.cs" />
-    <Compile Include="resources\bin\CheckAvailabilityGameSettings.cs" />
-    <Compile Include="resources\bin\CheckAvailabilityInternetConnection.cs" />
-    <Compile Include="resources\bin\CheckAvailabilityReleaseUpdates.cs" />
-    <Compile Include="resources\bin\CheckAvailabilityUpdateTemp.cs" />
+    <Compile Include="SourceFiles\arr\ArraySacredGameComponentFiles.cs" />
+    <Compile Include="SourceFiles\arr\ArraySacredGameFootStepsFiles.cs" />
+    <Compile Include="SourceFiles\arr\ArraySacredGameHealthFiles.cs" />
+    <Compile Include="SourceFiles\arr\ArraySacredGameLavaFiles.cs" />
+    <Compile Include="SourceFiles\arr\ArraySacredGameOldTextureFiles.cs" />
+    <Compile Include="SourceFiles\arr\ArraySacredGameWaterFiles.cs" />
+    <Compile Include="SourceFiles\arr\ArraySacredUtilsCacheFiles.cs" />
+    <Compile Include="SourceFiles\bin\CauseApplicationReset.cs" />
+    <Compile Include="SourceFiles\bin\ApplicationBaseWindowHotkeys.cs" />
+    <Compile Include="SourceFiles\bin\ApplicationBaseWindowShutdown.cs" />
+    <Compile Include="SourceFiles\bin\ApplicationClearComponentCache.cs" />
+    <Compile Include="SourceFiles\bin\ApplicationGetDownloadStatistics.cs" />
+    <Compile Include="SourceFiles\bin\ApplicationRunSacredGameWithArgs.cs" />
+    <Compile Include="SourceFiles\bin\ApplicationStartEmulateHotkeys.cs" />
+    <Compile Include="SourceFiles\bin\ApplicationStartSacredGameFile.cs" />
+    <Compile Include="SourceFiles\bin\ApplicationStartUtilityUpdate.cs" />
+    <Compile Include="SourceFiles\bin\ChangeApplicationSelectionSettings.cs" />
+    <Compile Include="SourceFiles\bin\ChangeSacredGameSettingsValue.cs" />
+    <Compile Include="SourceFiles\bin\ApplicationHotKeyConvertKeyValue.cs" />
+    <Compile Include="SourceFiles\bin\CreateApplicationNeededFolders.cs" />
+    <Compile Include="SourceFiles\bin\CreateBackupApplicationSettings.cs" />
+    <Compile Include="SourceFiles\bin\CreateBackupSacredGameSettings.cs" />
+    <Compile Include="SourceFiles\bin\DownloadApplicationNewUpdate.cs" />
+    <Compile Include="SourceFiles\bin\DownloadApplicationUpdateTool.cs" />
+    <Compile Include="SourceFiles\bin\ForceSacredGameDisableWinKey.cs" />
+    <Compile Include="SourceFiles\bin\ForceStretchSacredGameScreenshot.cs" />
+    <Compile Include="SourceFiles\bin\ForceSwitchKeyboardLanguageInGame.cs" />
+    <Compile Include="SourceFiles\bin\GetActualApplicationVersion.cs" />
+    <Compile Include="SourceFiles\bin\GetApplicationCurrentUsedMemory.cs" />
+    <Compile Include="SourceFiles\bin\GetApplicationLicenseState.cs" />
+    <Compile Include="SourceFiles\bin\GetApplicationRandomSplashes.cs" />
+    <Compile Include="SourceFiles\bin\GetApplicationScaleValue.cs" />
+    <Compile Include="SourceFiles\bin\CheckAvailabilityAlphaUpdates.cs" />
+    <Compile Include="SourceFiles\bin\CheckAvailabilityGameSettings.cs" />
+    <Compile Include="SourceFiles\bin\CheckAvailabilityInternetConnection.cs" />
+    <Compile Include="SourceFiles\bin\CheckAvailabilityReleaseUpdates.cs" />
+    <Compile Include="SourceFiles\bin\CheckAvailabilityUpdateTemp.cs" />
     <Compile Include="AppInfo.cs" />
-    <Compile Include="resources\bin\CreateApplicationLanguageFiles.cs" />
-    <Compile Include="resources\bin\CreateApplicationThemeFiles.cs" />
-    <Compile Include="resources\bin\GetChangeLogDialogVisibility.cs" />
-    <Compile Include="resources\bin\GetNoInternetIconVisibility.cs" />
-    <Compile Include="resources\bin\GetPermissionsOnGettingMemory.cs" />
-    <Compile Include="resources\bin\GetRequiredApplicationFiles.cs" />
-    <Compile Include="resources\bin\GetApplicationGlobalizerLibrary.cs" />
-    <Compile Include="resources\bin\GetApplicationLanguageValue.cs" />
+    <Compile Include="SourceFiles\bin\CreateApplicationLanguageFiles.cs" />
+    <Compile Include="SourceFiles\bin\CreateApplicationThemeFiles.cs" />
+    <Compile Include="SourceFiles\bin\GetChangeLogDialogVisibility.cs" />
+    <Compile Include="SourceFiles\bin\GetNoInternetIconVisibility.cs" />
+    <Compile Include="SourceFiles\bin\GetPermissionsOnGettingMemory.cs" />
+    <Compile Include="SourceFiles\bin\GetRequiredApplicationFiles.cs" />
+    <Compile Include="SourceFiles\bin\GetApplicationGlobalizerLibrary.cs" />
+    <Compile Include="SourceFiles\bin\GetApplicationLanguageValue.cs" />
     <Compile Include="AppLogger.cs" />
-    <Compile Include="resources\bin\GetApplicationSettingsAvailability.cs" />
-    <Compile Include="resources\bin\GetApplicationDownloadStatistic.cs" />
-    <Compile Include="resources\bin\GetApplicationThemeValue.cs" />
-    <Compile Include="resources\bin\GetSacredGameComponentFiles.cs" />
-    <Compile Include="resources\bin\GetSacredGameInstalledLang.cs" />
-    <Compile Include="resources\bin\GetSacredGameInstalledVoiceover.cs" />
-    <Compile Include="resources\bin\GetSacredGameLanguageUi.cs" />
-    <Compile Include="resources\bin\GetSacredGameSettingValue.cs" />
-    <Compile Include="resources\bin\GetSacredGameVoiceoverLanguage.cs" />
-    <Compile Include="resources\bin\GetSacredUtilsCelebrationDates.cs" />
-    <Compile Include="resources\bin\GetStateGlobalExceptionCatching.cs" />
-    <Compile Include="resources\bin\ApplicationHotKeyGetSystemKeyValue.cs" />
-    <Compile Include="resources\bin\InstallDefaultSacredGameFonts.cs" />
-    <Compile Include="resources\bin\PrintToLogBaseApplicationInfo.cs" />
-    <Compile Include="resources\bin\RefreshApplicationSettings.cs" />
-    <Compile Include="resources\bin\RemoveSacredGameConfigFonts.cs" />
-    <Compile Include="resources\dlg\ApplicationClearCacheDialog.xaml.cs">
+    <Compile Include="SourceFiles\bin\GetApplicationSettingsAvailability.cs" />
+    <Compile Include="SourceFiles\bin\GetApplicationDownloadStatistic.cs" />
+    <Compile Include="SourceFiles\bin\GetApplicationThemeValue.cs" />
+    <Compile Include="SourceFiles\bin\GetSacredGameComponentFiles.cs" />
+    <Compile Include="SourceFiles\bin\GetSacredGameInstalledLang.cs" />
+    <Compile Include="SourceFiles\bin\GetSacredGameInstalledVoiceover.cs" />
+    <Compile Include="SourceFiles\bin\GetSacredGameLanguageUi.cs" />
+    <Compile Include="SourceFiles\bin\GetSacredGameSettingValue.cs" />
+    <Compile Include="SourceFiles\bin\GetSacredGameVoiceoverLanguage.cs" />
+    <Compile Include="SourceFiles\bin\GetSacredUtilsCelebrationDates.cs" />
+    <Compile Include="SourceFiles\bin\GetStateGlobalExceptionCatching.cs" />
+    <Compile Include="SourceFiles\bin\ApplicationHotKeyGetSystemKeyValue.cs" />
+    <Compile Include="SourceFiles\bin\InstallDefaultSacredGameFonts.cs" />
+    <Compile Include="SourceFiles\bin\PrintToLogBaseApplicationInfo.cs" />
+    <Compile Include="SourceFiles\bin\RefreshApplicationSettings.cs" />
+    <Compile Include="SourceFiles\bin\RemoveSacredGameConfigFonts.cs" />
+    <Compile Include="SourceFiles\dlg\ApplicationClearCacheDialog.xaml.cs">
       <DependentUpon>ApplicationClearCacheDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\dlg\ApplicationConvertHtmlToSacred.xaml.cs">
+    <Compile Include="SourceFiles\dlg\ApplicationConvertHtmlToSacred.xaml.cs">
       <DependentUpon>ApplicationConvertHtmlToSacred.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\dlg\ApplicationDonateSelectDialog.xaml.cs">
+    <Compile Include="SourceFiles\dlg\ApplicationDonateSelectDialog.xaml.cs">
       <DependentUpon>ApplicationDonateSelectDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\dlg\ApplicationFontSizesDialog.xaml.cs">
+    <Compile Include="SourceFiles\dlg\ApplicationFontSizesDialog.xaml.cs">
       <DependentUpon>ApplicationFontSizesDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\dlg\ApplicationPageSelectDialog.xaml.cs">
+    <Compile Include="SourceFiles\dlg\ApplicationPageSelectDialog.xaml.cs">
       <DependentUpon>ApplicationPageSelectDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\dlg\ApplicationChangeLogDialog.xaml.cs">
+    <Compile Include="SourceFiles\dlg\ApplicationChangeLogDialog.xaml.cs">
       <DependentUpon>ApplicationChangeLogDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\dlg\ApplicationAboutDialog.xaml.cs">
+    <Compile Include="SourceFiles\dlg\ApplicationAboutDialog.xaml.cs">
       <DependentUpon>ApplicationAboutDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\dlg\ApplicationRunSacredDialog.xaml.cs">
+    <Compile Include="SourceFiles\dlg\ApplicationRunSacredDialog.xaml.cs">
       <DependentUpon>ApplicationRunSacredDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\dlg\ApplicationUnpackModifyDialog.xaml.cs">
+    <Compile Include="SourceFiles\dlg\ApplicationUnpackModifyDialog.xaml.cs">
       <DependentUpon>ApplicationUnpackModifyDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\dlg\GameCheckingComponentsDialog.xaml.cs">
+    <Compile Include="SourceFiles\dlg\GameCheckingComponentsDialog.xaml.cs">
       <DependentUpon>GameCheckingComponentsDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\dlg\GameGettingComponentsDialog.xaml.cs">
+    <Compile Include="SourceFiles\dlg\GameGettingComponentsDialog.xaml.cs">
       <DependentUpon>GameGettingComponentsDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\dlg\ApplicationHotkeyChangeDialog.xaml.cs">
+    <Compile Include="SourceFiles\dlg\ApplicationHotkeyChangeDialog.xaml.cs">
       <DependentUpon>ApplicationHotkeyChangeDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\dlg\ApplicationLicenseDialog.xaml.cs">
+    <Compile Include="SourceFiles\dlg\ApplicationLicenseDialog.xaml.cs">
       <DependentUpon>ApplicationLicenseDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\ApplicationSettingsOne.xaml.cs">
+    <Compile Include="SourceFiles\pgs\ApplicationSettingsOne.xaml.cs">
       <DependentUpon>ApplicationSettingsOne.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\ApplicationSettingsTwo.xaml.cs">
+    <Compile Include="SourceFiles\pgs\ApplicationSettingsTwo.xaml.cs">
       <DependentUpon>ApplicationSettingsTwo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\GameChatSettingsOne.xaml.cs">
+    <Compile Include="SourceFiles\pgs\GameChatSettingsOne.xaml.cs">
       <DependentUpon>GameChatSettingsOne.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\GameFontSettingsOne.xaml.cs">
+    <Compile Include="SourceFiles\pgs\GameFontSettingsOne.xaml.cs">
       <DependentUpon>GameFontSettingsOne.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\GamePlaySettingsOne.xaml.cs">
+    <Compile Include="SourceFiles\pgs\GamePlaySettingsOne.xaml.cs">
       <DependentUpon>GamePlaySettingsOne.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\GamePlaySettingsThree.xaml.cs">
+    <Compile Include="SourceFiles\pgs\GamePlaySettingsThree.xaml.cs">
       <DependentUpon>GamePlaySettingsThree.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\GamePlaySettingsTwo.xaml.cs">
+    <Compile Include="SourceFiles\pgs\GamePlaySettingsTwo.xaml.cs">
       <DependentUpon>GamePlaySettingsTwo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\GraphicsSettingsFour.xaml.cs">
+    <Compile Include="SourceFiles\pgs\GraphicsSettingsFour.xaml.cs">
       <DependentUpon>GraphicsSettingsFour.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\GraphicsSettingsOne.xaml.cs">
+    <Compile Include="SourceFiles\pgs\GraphicsSettingsOne.xaml.cs">
       <DependentUpon>GraphicsSettingsOne.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\GraphicsSettingsThree.xaml.cs">
+    <Compile Include="SourceFiles\pgs\GraphicsSettingsThree.xaml.cs">
       <DependentUpon>GraphicsSettingsThree.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\GraphicsSettingsTwo.xaml.cs">
+    <Compile Include="SourceFiles\pgs\GraphicsSettingsTwo.xaml.cs">
       <DependentUpon>GraphicsSettingsTwo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\InvisibilityWindowForGame.xaml.cs">
+    <Compile Include="SourceFiles\pgs\InvisibilityWindowForGame.xaml.cs">
       <DependentUpon>InvisibilityWindowForGame.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\ModifyPageSettingsOne.xaml.cs">
+    <Compile Include="SourceFiles\pgs\ModifyPageSettingsOne.xaml.cs">
       <DependentUpon>ModifyPageSettingsOne.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\SoundSettingsOne.xaml.cs">
+    <Compile Include="SourceFiles\pgs\SoundSettingsOne.xaml.cs">
       <DependentUpon>SoundSettingsOne.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\pgs\UnselectedSettingsPage.xaml.cs">
+    <Compile Include="SourceFiles\pgs\UnselectedSettingsPage.xaml.cs">
       <DependentUpon>UnselectedSettingsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="resources\prp\ApplicationSettingsOneProperty.cs" />
-    <Compile Include="resources\prp\ApplicationSettingsTwoProperty.cs" />
-    <Compile Include="resources\prp\GameChatSettingsOneProperty.cs" />
-    <Compile Include="resources\prp\GameFontSettingsOneProperty.cs" />
-    <Compile Include="resources\prp\GameGraphicsSettingsFourProperty.cs" />
-    <Compile Include="resources\prp\GameGraphicsSettingsOneProperty.cs" />
-    <Compile Include="resources\prp\GameGraphicsSettingsThreeProperty.cs" />
-    <Compile Include="resources\prp\GameGraphicsSettingsTwoProperty.cs" />
-    <Compile Include="resources\prp\GamePlaySettingsOneProperty.cs" />
-    <Compile Include="resources\prp\GamePlaySettingsThreeProperty.cs" />
-    <Compile Include="resources\prp\GamePlaySettingsTwoProperty.cs" />
-    <Compile Include="resources\prp\GameSoundSettingsOneProperty.cs" />
-    <Resource Include="resources\cfg\splashes.txt" />
-    <Resource Include="resources\cfg\ch.files.txt" />
-    <Resource Include="resources\cfg\hk.keyb.txt" />
-    <Resource Include="resources\cfg\hk.orig.txt" />
-    <Resource Include="resources\cfg\hk.orsf.txt" />
-    <None Include="resources\cfg\hk.kesf.txt" />
-    <Resource Include="resources\cfg\hk.setg.txt" />
-    <Resource Include="resources\cfg\hk.regr.txt" />
-    <Resource Include="resources\cfg\ar.lava.txt" />
-    <Resource Include="resources\cfg\ar.odtx.txt" />
-    <Resource Include="resources\cfg\ar.watr.txt" />
-    <Content Include="resources\lib\WPFSharp.Globalizer.dll" />
-    <Content Include="resources\lng\en-US\en-US.xaml">
+    <Compile Include="SourceFiles\prp\ApplicationSettingsOneProperty.cs" />
+    <Compile Include="SourceFiles\prp\ApplicationSettingsTwoProperty.cs" />
+    <Compile Include="SourceFiles\prp\GameChatSettingsOneProperty.cs" />
+    <Compile Include="SourceFiles\prp\GameFontSettingsOneProperty.cs" />
+    <Compile Include="SourceFiles\prp\GameGraphicsSettingsFourProperty.cs" />
+    <Compile Include="SourceFiles\prp\GameGraphicsSettingsOneProperty.cs" />
+    <Compile Include="SourceFiles\prp\GameGraphicsSettingsThreeProperty.cs" />
+    <Compile Include="SourceFiles\prp\GameGraphicsSettingsTwoProperty.cs" />
+    <Compile Include="SourceFiles\prp\GamePlaySettingsOneProperty.cs" />
+    <Compile Include="SourceFiles\prp\GamePlaySettingsThreeProperty.cs" />
+    <Compile Include="SourceFiles\prp\GamePlaySettingsTwoProperty.cs" />
+    <Compile Include="SourceFiles\prp\GameSoundSettingsOneProperty.cs" />
+    <Resource Include="SourceFiles\cfg\splashes.txt" />
+    <Resource Include="SourceFiles\cfg\ch.files.txt" />
+    <Resource Include="SourceFiles\cfg\hk.keyb.txt" />
+    <Resource Include="SourceFiles\cfg\hk.orig.txt" />
+    <Resource Include="SourceFiles\cfg\hk.orsf.txt" />
+    <None Include="SourceFiles\cfg\hk.kesf.txt" />
+    <Resource Include="SourceFiles\cfg\hk.setg.txt" />
+    <Resource Include="SourceFiles\cfg\hk.regr.txt" />
+    <Resource Include="SourceFiles\cfg\ar.lava.txt" />
+    <Resource Include="SourceFiles\cfg\ar.odtx.txt" />
+    <Resource Include="SourceFiles\cfg\ar.watr.txt" />
+    <Content Include="SourceFiles\lib\WPFSharp.Globalizer.dll" />
+    <Content Include="SourceFiles\lng\en-US\en-US.xaml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="resources\lng\ru-RU\ru-RU.xaml">
+    <Content Include="SourceFiles\lng\ru-RU\ru-RU.xaml">
       <SubType>Designer</SubType>
     </Content>
     <Page Include="MainWindow.xaml">
@@ -359,122 +359,122 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="resources\dlg\ApplicationClearCacheDialog.xaml">
+    <Page Include="SourceFiles\dlg\ApplicationClearCacheDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\dlg\ApplicationConvertHtmlToSacred.xaml">
+    <Page Include="SourceFiles\dlg\ApplicationConvertHtmlToSacred.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\dlg\ApplicationDonateSelectDialog.xaml">
+    <Page Include="SourceFiles\dlg\ApplicationDonateSelectDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\dlg\ApplicationFontSizesDialog.xaml">
+    <Page Include="SourceFiles\dlg\ApplicationFontSizesDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\dlg\ApplicationPageSelectDialog.xaml">
+    <Page Include="SourceFiles\dlg\ApplicationPageSelectDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\dlg\ApplicationChangeLogDialog.xaml">
+    <Page Include="SourceFiles\dlg\ApplicationChangeLogDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="resources\dlg\ApplicationAboutDialog.xaml">
+    <Page Include="SourceFiles\dlg\ApplicationAboutDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\dlg\ApplicationRunSacredDialog.xaml">
+    <Page Include="SourceFiles\dlg\ApplicationRunSacredDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\dlg\ApplicationUnpackModifyDialog.xaml">
+    <Page Include="SourceFiles\dlg\ApplicationUnpackModifyDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\dlg\GameCheckingComponentsDialog.xaml">
+    <Page Include="SourceFiles\dlg\GameCheckingComponentsDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\dlg\GameGettingComponentsDialog.xaml">
+    <Page Include="SourceFiles\dlg\GameGettingComponentsDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\dlg\ApplicationHotkeyChangeDialog.xaml">
+    <Page Include="SourceFiles\dlg\ApplicationHotkeyChangeDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\dlg\ApplicationLicenseDialog.xaml">
+    <Page Include="SourceFiles\dlg\ApplicationLicenseDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\ApplicationSettingsOne.xaml">
+    <Page Include="SourceFiles\pgs\ApplicationSettingsOne.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\ApplicationSettingsTwo.xaml">
+    <Page Include="SourceFiles\pgs\ApplicationSettingsTwo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\GameChatSettingsOne.xaml">
+    <Page Include="SourceFiles\pgs\GameChatSettingsOne.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\GameFontSettingsOne.xaml">
+    <Page Include="SourceFiles\pgs\GameFontSettingsOne.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\GamePlaySettingsOne.xaml">
+    <Page Include="SourceFiles\pgs\GamePlaySettingsOne.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\GamePlaySettingsThree.xaml">
+    <Page Include="SourceFiles\pgs\GamePlaySettingsThree.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\GamePlaySettingsTwo.xaml">
+    <Page Include="SourceFiles\pgs\GamePlaySettingsTwo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\GraphicsSettingsFour.xaml">
+    <Page Include="SourceFiles\pgs\GraphicsSettingsFour.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\GraphicsSettingsOne.xaml">
+    <Page Include="SourceFiles\pgs\GraphicsSettingsOne.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\GraphicsSettingsThree.xaml">
+    <Page Include="SourceFiles\pgs\GraphicsSettingsThree.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\GraphicsSettingsTwo.xaml">
+    <Page Include="SourceFiles\pgs\GraphicsSettingsTwo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\InvisibilityWindowForGame.xaml">
+    <Page Include="SourceFiles\pgs\InvisibilityWindowForGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\ModifyPageSettingsOne.xaml">
+    <Page Include="SourceFiles\pgs\ModifyPageSettingsOne.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\SoundSettingsOne.xaml">
+    <Page Include="SourceFiles\pgs\SoundSettingsOne.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="resources\pgs\UnselectedSettingsPage.xaml">
+    <Page Include="SourceFiles\pgs\UnselectedSettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Content Include="resources\thm\Light.xaml">
+    <Content Include="SourceFiles\thm\Light.xaml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="resources\thm\Dark.xaml">
+    <Content Include="SourceFiles\thm\Dark.xaml">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
@@ -487,27 +487,27 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Content Include="resources\opt\SacredRes2Csv.exe" />
-    <None Include="resources\cfg\hotkeys.json" />
-    <None Include="resources\cfg\mk.setg.json" />
-    <None Include="resources\etc\update.cmd" />
-    <None Include="resources\opt\HotKeyReg.reg" />
-    <None Include="resources\opt\keyla.zip" />
-    <None Include="resources\opt\SacredBalanceVanilla.bin" />
-    <None Include="resources\opt\SacredBalanceVeteran.bin" />
-    <None Include="resources\opt\SacredCreatureVanilla.pak" />
-    <None Include="resources\opt\SacredCreatureVeteran.pak" />
+    <Content Include="SourceFiles\opt\SacredRes2Csv.exe" />
+    <None Include="SourceFiles\cfg\hotkeys.json" />
+    <None Include="SourceFiles\cfg\mk.setg.json" />
+    <None Include="SourceFiles\etc\update.cmd" />
+    <None Include="SourceFiles\opt\HotKeyReg.reg" />
+    <None Include="SourceFiles\opt\keyla.zip" />
+    <None Include="SourceFiles\opt\SacredBalanceVanilla.bin" />
+    <None Include="SourceFiles\opt\SacredBalanceVeteran.bin" />
+    <None Include="SourceFiles\opt\SacredCreatureVanilla.pak" />
+    <None Include="SourceFiles\opt\SacredCreatureVeteran.pak" />
     <Resource Include="AppLicense.txt" />
-    <None Include="resources\etc\gamesettings.cfg" />
-    <None Include="resources\cfg\settings.json" />
-    <Resource Include="resources\ico\icons8_Gas.ico" />
-    <Resource Include="resources\ico\icons8_Gas_128.png" />
-    <Resource Include="resources\ico\icons8_Gas_16.png" />
-    <Resource Include="resources\ico\icons8_Gas_256.png" />
-    <Resource Include="resources\ico\icons8_Gas_32.png" />
-    <Resource Include="resources\ico\icons8_Gas_48.png" />
-    <Resource Include="resources\ico\icons8_Gas_528.png" />
-    <Resource Include="resources\ico\icons8_Gas_64.png" />
+    <None Include="SourceFiles\etc\gamesettings.cfg" />
+    <None Include="SourceFiles\cfg\settings.json" />
+    <Resource Include="SourceFiles\ico\icons8_Gas.ico" />
+    <Resource Include="SourceFiles\ico\icons8_Gas_128.png" />
+    <Resource Include="SourceFiles\ico\icons8_Gas_16.png" />
+    <Resource Include="SourceFiles\ico\icons8_Gas_256.png" />
+    <Resource Include="SourceFiles\ico\icons8_Gas_32.png" />
+    <Resource Include="SourceFiles\ico\icons8_Gas_48.png" />
+    <Resource Include="SourceFiles\ico\icons8_Gas_528.png" />
+    <Resource Include="SourceFiles\ico\icons8_Gas_64.png" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -519,15 +519,15 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Resource Include="resources\fnt\antqs__.ttf" />
-    <Resource Include="resources\fnt\carolingia.ttf" />
-    <Resource Include="resources\fnt\cyrillicchancellor.ttf" />
-    <Resource Include="resources\fnt\GoogleSans-Bold.ttf" />
-    <Resource Include="resources\fnt\GoogleSans-BoldItalic.ttf" />
-    <Resource Include="resources\fnt\GoogleSans-Italic.ttf" />
-    <Resource Include="resources\fnt\GoogleSans-Medium.ttf" />
-    <Resource Include="resources\fnt\GoogleSans-MediumItalic.ttf" />
-    <Resource Include="resources\fnt\GoogleSans-Regular.ttf" />
+    <Resource Include="SourceFiles\fnt\antqs__.ttf" />
+    <Resource Include="SourceFiles\fnt\carolingia.ttf" />
+    <Resource Include="SourceFiles\fnt\cyrillicchancellor.ttf" />
+    <Resource Include="SourceFiles\fnt\GoogleSans-Bold.ttf" />
+    <Resource Include="SourceFiles\fnt\GoogleSans-BoldItalic.ttf" />
+    <Resource Include="SourceFiles\fnt\GoogleSans-Italic.ttf" />
+    <Resource Include="SourceFiles\fnt\GoogleSans-Medium.ttf" />
+    <Resource Include="SourceFiles\fnt\GoogleSans-MediumItalic.ttf" />
+    <Resource Include="SourceFiles\fnt\GoogleSans-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.config" />
