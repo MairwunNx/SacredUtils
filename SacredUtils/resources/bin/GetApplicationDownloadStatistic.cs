@@ -29,7 +29,7 @@ namespace SacredUtils.resources.bin
                                 $"{Environment.ExpandEnvironmentVariables("%tmp%")}\\sustat.exe").Wait();
                         }
 
-                        Process.Start($"{Environment.ExpandEnvironmentVariables("%tmp%")}\\sustat.exe", $"{AppSummary.Version} {AppSummary.AVersion} {AppSummary.Type} {AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00}");
+                        Process.Start($"{Environment.ExpandEnvironmentVariables("%tmp%")}\\sustat.exe", $"{AppInfo.Version} {AppInfo.AVersion} {AppInfo.Type} {AppInfo.StartupStopwatch.Elapsed.TotalMilliseconds / 1000.00}");
 
                         File.WriteAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\WhatIsThisDoingHere.su", "false");
                     }
@@ -46,7 +46,7 @@ namespace SacredUtils.resources.bin
                     wc.DownloadFileCompleted += (s, e) =>
                     {
                         Process.Start($"{Environment.ExpandEnvironmentVariables("%tmp%")}\\sustat.exe",
-                            $"{AppSummary.Version} {AppSummary.AVersion} {AppSummary.Type} {AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00}");
+                            $"{AppInfo.Version} {AppInfo.AVersion} {AppInfo.Type} {AppInfo.StartupStopwatch.Elapsed.TotalMilliseconds / 1000.00}");
 
                         File.WriteAllText(
                             $"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\WhatIsThisDoingHere.su",

@@ -40,7 +40,7 @@ namespace SacredUtils.resources.bin
 
                 ProcessStartInfo info = new ProcessStartInfo
                 {
-                    Arguments = $"/C {AppSummary.CurrentPath}\\update.cmd",
+                    Arguments = $"/C {AppInfo.CurrentPath}\\update.cmd",
                     WindowStyle = ProcessWindowStyle.Hidden,
                     CreateNoWindow = false,
                     FileName = "update.cmd"
@@ -58,7 +58,7 @@ namespace SacredUtils.resources.bin
                 File.WriteAllBytes("WPFSharp.Globalizer.dll", Properties.Resources.WPFSharp_Globalizer);
                 Log.Info("Creating WPFSharp.Globalizer.dll library file done!");
                 Log.Info("Reloading SacredUtils configurator ...");
-                Process.Start(AppSummary.AppPath); Environment.Exit(0);
+                Process.Start(AppInfo.AppPath); Environment.Exit(0);
             }
             catch (Exception exception)
             {

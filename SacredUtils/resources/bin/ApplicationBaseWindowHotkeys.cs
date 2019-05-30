@@ -69,12 +69,12 @@ namespace SacredUtils.resources.bin
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == openDirectory)
             {
-                Process.Start(AppSummary.CurrentPath);
+                Process.Start(AppInfo.CurrentPath);
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == reloadSacredUtils)
             {
-                Process.Start(AppSummary.AppPath);
+                Process.Start(AppInfo.AppPath);
                 Environment.Exit(0);
             }
 
@@ -86,7 +86,7 @@ namespace SacredUtils.resources.bin
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control &&
                 e.Key == fastReloadSacredUtils)
             {
-                Process.Start(AppSummary.AppPath, " -fast");
+                Process.Start(AppInfo.AppPath, " -fast");
                 Environment.Exit(0);
             }
 

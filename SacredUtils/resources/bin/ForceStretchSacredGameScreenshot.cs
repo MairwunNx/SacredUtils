@@ -1,7 +1,4 @@
-﻿using EnumsNET;
-using NHotkey;
-using NHotkey.Wpf;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -11,6 +8,9 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
+using EnumsNET;
+using NHotkey;
+using NHotkey.Wpf;
 using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
@@ -25,14 +25,17 @@ namespace SacredUtils.resources.bin
 
             try
             {
-                Enums.TryParse(AppSettings.ApplicationSettings.ScreenShotCreateKey, out Key screenKey);
-                HotkeyManager.Current.AddOrReplace("PrintScreen", screenKey, ModifierKeys.None, Get);
+                Enums.TryParse(AppSettings.ApplicationSettings.ScreenShotCreateKey,
+                    out Key screenKey);
+                HotkeyManager.Current.AddOrReplace("PrintScreen", screenKey, ModifierKeys.None,
+                    Get);
                 CheckAvailabilityProcess();
                 Log.Info("Register global PrintScreen hotkey successfully done!");
             }
             catch (Exception e)
             {
-                Log.Error("Register global PrintScreen hotkey not ability (Close app used PrintScreen button)!");
+                Log.Error(
+                    "Register global PrintScreen hotkey not ability (Close app used PrintScreen button)!");
                 Log.Error(e.ToString);
             }
         }
@@ -41,7 +44,8 @@ namespace SacredUtils.resources.bin
         {
             DispatcherTimer timer = new DispatcherTimer
             {
-                Interval = new TimeSpan(0, 0, AppSettings.ApplicationSettings.DelayCheckingSacredProcess)
+                Interval = new TimeSpan(0, 0,
+                    AppSettings.ApplicationSettings.DelayCheckingSacredProcess)
             };
 
             timer.Tick += (s, e) =>
@@ -74,13 +78,25 @@ namespace SacredUtils.resources.bin
         {
             if (_argRun)
             {
-                if (AppSettings.ApplicationSettings.UseAsyncCreatingScreenshots) { CreateScreenShotAsync(); }
-                else { CreateScreenShot(); }
+                if (AppSettings.ApplicationSettings.UseAsyncCreatingScreenshots)
+                {
+                    CreateScreenShotAsync();
+                }
+                else
+                {
+                    CreateScreenShot();
+                }
             }
             else
             {
-                if (AppSettings.ApplicationSettings.UseAsyncCreatingScreenshots) { CreateScreenShotAsync(); }
-                else { CreateScreenShot(); }
+                if (AppSettings.ApplicationSettings.UseAsyncCreatingScreenshots)
+                {
+                    CreateScreenShotAsync();
+                }
+                else
+                {
+                    CreateScreenShot();
+                }
             }
         }
 
@@ -95,22 +111,33 @@ namespace SacredUtils.resources.bin
             double screenWidth = SystemParameters.VirtualScreenWidth;
             double screenHeight = SystemParameters.VirtualScreenHeight;
 
-            using (Bitmap bmp = new Bitmap((int)screenWidth, (int)screenHeight))
+            using (Bitmap bmp = new Bitmap((int) screenWidth, (int) screenHeight))
             {
                 using (Graphics g = Graphics.FromImage(bmp))
                 {
-                    string filename = AppSettings.ApplicationSettings.ScreenShotSaveFilePrefix + DateTime.Now.ToString(AppSettings.ApplicationSettings.ScreenShotSaveFilePattern) + ".png";
+                    string filename = AppSettings.ApplicationSettings.ScreenShotSaveFilePrefix +
+                                      DateTime.Now.ToString(AppSettings.ApplicationSettings
+                                          .ScreenShotSaveFilePattern) + ".png";
 
-                    g.CopyFromScreen((int)screenLeft, (int)screenTop, 0, 0, bmp.Size);
-                    Directory.CreateDirectory(AppSettings.ApplicationSettings.ScreenShotSaveDirectory);
+                    g.CopyFromScreen((int) screenLeft, (int) screenTop, 0, 0, bmp.Size);
+                    Directory.CreateDirectory(AppSettings.ApplicationSettings
+                        .ScreenShotSaveDirectory);
 
                     if (AppSettings.ApplicationSettings.AllowCustomScreenShotResolution)
                     {
-                        Stretch(bmp, AppSettings.ApplicationSettings.CustomScreenShotResolutionWidth, AppSettings.ApplicationSettings.CustomScreenShotResolutionHeight, filename);
+                        Stretch(bmp,
+                            AppSettings.ApplicationSettings.CustomScreenShotResolutionWidth,
+                            AppSettings.ApplicationSettings.CustomScreenShotResolutionHeight,
+                            filename);
                     }
                     else
                     {
-                        Stretch(bmp, ScreenResolution.ScreenX, ScreenResolution.ScreenY, filename);
+                        Stretch(
+                            bmp,
+                            SystemInfo.WidthResolution,
+                            SystemInfo.HeightResolution,
+                            filename
+                        );
                     }
                 }
             }
@@ -134,7 +161,8 @@ namespace SacredUtils.resources.bin
                 using (ImageAttributes wrapMode = new ImageAttributes())
                 {
                     wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height,
+                        GraphicsUnit.Pixel, wrapMode);
                 }
             }
 
@@ -144,9 +172,9 @@ namespace SacredUtils.resources.bin
         private static void Save(Bitmap capture, string fileName)
         {
             Directory.CreateDirectory(AppSettings.ApplicationSettings.ScreenShotSaveDirectory);
-            capture.Save($"{AppSettings.ApplicationSettings.ScreenShotSaveDirectory}\\{fileName}"); 
+            capture.Save($"{AppSettings.ApplicationSettings.ScreenShotSaveDirectory}\\{fileName}");
             Log.Info($"Screenshot saved {fileName} to Capture folder.");
-            RemoveTgaScreenshots(); 
+            RemoveTgaScreenshots();
         }
 
         private static void RemoveTgaScreenshots()
@@ -160,9 +188,15 @@ namespace SacredUtils.resources.bin
 
                     try
                     {
-                        foreach (string file in jpgScreen) { File.Delete(file); }
+                        foreach (string file in jpgScreen)
+                        {
+                            File.Delete(file);
+                        }
 
-                        foreach (string file in tgaScreen) { File.Delete(file); }
+                        foreach (string file in tgaScreen)
+                        {
+                            File.Delete(file);
+                        }
                     }
                     catch (Exception e)
                     {

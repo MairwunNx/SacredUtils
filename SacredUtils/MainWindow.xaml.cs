@@ -95,10 +95,10 @@ namespace SacredUtils
                     GetChangeLogDialogVisibility.Get();
                 }
 
-                AppSummary.Sw.Stop(); // Make Yourself ^_^
+                AppInfo.StartupStopwatch.Stop(); // Make Yourself ^_^
 
                 Log.Info(
-                    $"Loading SacredUtils application done ({AppSummary.Sw.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
+                    $"Loading SacredUtils application done ({AppInfo.StartupStopwatch.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
             };
         }
 

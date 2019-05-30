@@ -19,7 +19,7 @@ namespace SacredUtils.resources.bin
 
             if (AppSettings.ApplicationSettings.MakeAutoBackupAppGameConfigs)
             {
-                File.Copy(AppSettings.ApplicationSettings.SacredConfigurationFile, $"$SacredUtils\\back\\cfg-game\\config_game_id_{AppSummary.RandomSession}.cfg", true);
+                File.Copy(AppSettings.ApplicationSettings.SacredConfigurationFile, $"$SacredUtils\\back\\cfg-game\\config_game_id_{AppInfo.RandomSession}.cfg", true);
             }
             else
             {

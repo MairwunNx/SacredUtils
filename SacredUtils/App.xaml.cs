@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using SacredUtils.resources.bin;
-using static SacredUtils.AppLogger;
+using static SacredUtils.AppInfo;
 
 namespace SacredUtils
 {
@@ -11,18 +11,13 @@ namespace SacredUtils
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            AppSummary.Sw.Start();
-
-            if (e.Args.Contains("-fullReset"))
-            {
-                ApplicationBaseMakeFullReset.Reset(e.Args.Contains("-fullResetPConf"));
-            }
+            StartupStopwatch.Start();
+            AppArguments = e.Args;
+            SystemInfo.Init();
+            CauseApplicationReset.Reset();
 
             if (e.Args.Contains("-runGame"))
             {
-                Log.Info(
-                    $"-ScreenModeResolution {ScreenResolution.ScreenX}x{ScreenResolution.ScreenY} coordinates");
-
                 AppLogger.Init(e.Args.Contains("-disableLogging"));
 
                 GetRequiredApplicationFiles.Get();
