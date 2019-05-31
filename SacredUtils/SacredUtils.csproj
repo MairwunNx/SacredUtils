@@ -346,6 +346,7 @@
     <Resource Include="SourceFiles\cfg\hk.keyb.txt" />
     <Resource Include="SourceFiles\cfg\hk.orig.txt" />
     <Resource Include="SourceFiles\cfg\hk.orsf.txt" />
+    <None Include="Resources\game\configuration\default.cfg" />
     <None Include="Resources\updater\update.cmd" />
     <None Include="SourceFiles\cfg\hk.kesf.txt" />
     <Resource Include="SourceFiles\cfg\hk.setg.txt" />
@@ -511,7 +512,6 @@
     <None Include="SourceFiles\opt\SacredCreatureVanilla.pak" />
     <None Include="SourceFiles\opt\SacredCreatureVeteran.pak" />
     <Resource Include="AppLicense.txt" />
-    <None Include="SourceFiles\etc\gamesettings.cfg" />
     <None Include="SourceFiles\cfg\settings.json" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
