@@ -1,4 +1,10 @@
-echo off
+@rem ##########################################################################
+@rem
+@rem  SacredUtils updater script for Windows
+@rem
+@rem ##########################################################################
+
+@if %DEBUG% == "" @echo off
 cd "%~dp0"
 
 echo Starting updating SacredUtils ...
@@ -44,8 +50,7 @@ if hash EQU %updateHashString% call :Update
 if hash NEQ %updateHashString% call :FailUpdate
 
 :FailUpdate
-echo Update file have different md5 hash! Update file damaged!
-echo Wrong md5 hash is: %hash%
+echo ERROR: Update file have different md5 hash (%hash%)! Update file damaged!
 pause
 exit
 
