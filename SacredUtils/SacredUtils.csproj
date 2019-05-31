@@ -337,13 +337,15 @@
     <Resource Include="SourceFiles\cfg\ar.lava.txt" />
     <Resource Include="SourceFiles\cfg\ar.odtx.txt" />
     <Resource Include="SourceFiles\cfg\ar.watr.txt" />
+    <Content Include="Resources\i18n\en-US\en-US.xaml" />
+    <Content Include="Resources\i18n\ru-RU\ru-RU.xaml" />
+    <Content Include="Resources\themes\Dark.xaml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\themes\Light.xaml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="SourceFiles\lib\WPFSharp.Globalizer.dll" />
-    <Content Include="SourceFiles\lng\en-US\en-US.xaml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="SourceFiles\lng\ru-RU\ru-RU.xaml">
-      <SubType>Designer</SubType>
-    </Content>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -472,12 +474,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Content Include="SourceFiles\thm\Light.xaml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="SourceFiles\thm\Dark.xaml">
-      <SubType>Designer</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -543,6 +539,10 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\i18n" />
+    <Folder Include="SourceFiles\lng" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions />
