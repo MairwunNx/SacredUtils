@@ -330,6 +330,7 @@
     <Resource Include="SourceFiles\cfg\hk.keyb.txt" />
     <Resource Include="SourceFiles\cfg\hk.orig.txt" />
     <Resource Include="SourceFiles\cfg\hk.orsf.txt" />
+    <None Include="Resources\updater\update.cmd" />
     <None Include="SourceFiles\cfg\hk.kesf.txt" />
     <Resource Include="SourceFiles\cfg\hk.setg.txt" />
     <Resource Include="SourceFiles\cfg\hk.regr.txt" />
@@ -490,7 +491,6 @@
     <Content Include="SourceFiles\opt\SacredRes2Csv.exe" />
     <None Include="SourceFiles\cfg\hotkeys.json" />
     <None Include="SourceFiles\cfg\mk.setg.json" />
-    <None Include="SourceFiles\etc\update.cmd" />
     <None Include="SourceFiles\opt\HotKeyReg.reg" />
     <None Include="SourceFiles\opt\keyla.zip" />
     <None Include="SourceFiles\opt\SacredBalanceVanilla.bin" />
@@ -543,9 +543,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions />
