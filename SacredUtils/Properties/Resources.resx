@@ -129,62 +129,65 @@
     <assembly alias="System.Windows.Forms"
               name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
     <data name="gamesettings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\etc\gamesettings.cfg;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\etc\gamesettings.cfg;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="SacredBalanceVanilla" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\opt\SacredBalanceVanilla.bin;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\opt\SacredBalanceVanilla.bin;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="SacredBalanceVeteran" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\opt\SacredBalanceVeteran.bin;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\opt\SacredBalanceVeteran.bin;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="SacredCreatureVanilla" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\opt\SacredCreatureVanilla.pak;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\opt\SacredCreatureVanilla.pak;System.Byte[], mscorlib,
+            Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="SacredCreatureVeteran" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\opt\SacredCreatureVeteran.pak;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\opt\SacredCreatureVeteran.pak;System.Byte[], mscorlib,
+            Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="SacredRes2Csv" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\opt\SacredRes2Csv.exe;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\opt\SacredRes2Csv.exe;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="WPFSharp_Globalizer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\lib\WPFSharp.Globalizer.dll;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\lib\WPFSharp.Globalizer.dll;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="en_US" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\lng\en-US\en-US.xaml;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\Resources\i18n\en-US\en-US.xaml;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="ru_RU" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\lng\ru-RU\ru-RU.xaml;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\Resources\i18n\ru-RU\ru-RU.xaml;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\cfg\settings.json;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\cfg\settings.json;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="Dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\thm\Dark.xaml;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral,
+        <value>..\Resources\themes\Dark.xaml;System.Byte[], mscorlib, Version=4.0.0.0,
+            Culture=neutral,
             PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="Light" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\thm\Light.xaml;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\Resources\themes\Light.xaml;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
@@ -194,97 +197,98 @@
         </value>
     </data>
     <data name="splashes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\cfg\splashes.txt;System.String, mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\cfg\splashes.txt;System.String, mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8
         </value>
     </data>
     <data name="ch_files" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\cfg\ch.files.txt;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\cfg\ch.files.txt;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="HotKeyReg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\opt\HotKeyReg.reg;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\opt\HotKeyReg.reg;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="keyla" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\opt\keyla.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral,
+        <value>..\SourceFiles\opt\keyla.zip;System.Byte[], mscorlib, Version=4.0.0.0,
+            Culture=neutral,
             PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="hotkeys" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\cfg\hotkeys.json;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\cfg\hotkeys.json;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="hk_keyb" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\cfg\hk.keyb.txt;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\cfg\hk.keyb.txt;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="hk_orig" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\cfg\hk.orig.txt;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\cfg\hk.orig.txt;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="update" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\etc\update.cmd;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\Resources\updater\update.cmd;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="hk_orsf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\cfg\hk.orsf.txt;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\cfg\hk.orsf.txt;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="hk_kesf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\cfg\hk.kesf.txt;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\cfg\hk.kesf.txt;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="hk_setg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\cfg\hk.setg.txt;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\cfg\hk.setg.txt;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="hk_regr" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\cfg\hk.regr.txt;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\cfg\hk.regr.txt;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="mk_setg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\cfg\mk.setg.json;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\cfg\mk.setg.json;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="ar_lava" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\cfg\ar.lava.txt;System.String, mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\cfg\ar.lava.txt;System.String, mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251
         </value>
     </data>
     <data name="ar_odtx" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\cfg\ar.odtx.txt;System.String, mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\cfg\ar.odtx.txt;System.String, mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251
         </value>
     </data>
     <data name="ar_watr" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\cfg\ar.watr.txt;System.String, mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\cfg\ar.watr.txt;System.String, mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251
         </value>
     </data>
     <data name="antqs__" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\fnt\antqs__.ttf;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\fnt\antqs__.ttf;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="carolingia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\fnt\carolingia.ttf;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\fnt\carolingia.ttf;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="cyrillicchancellor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\resources\fnt\cyrillicchancellor.ttf;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\SourceFiles\fnt\cyrillicchancellor.ttf;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
