@@ -24,7 +24,7 @@
                     Margin="15,11,80,0"
                     VerticalAlignment="Top"
                     Content="{globalizer:GlobalizedResource String0143}"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     FontSize="16"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
@@ -36,7 +36,7 @@
                         x:Name="QiwiButton"
                         Height="Auto"
                         ClipToBounds="True"
-                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                        FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                         FontSize="14"
                         Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                         Style="{StaticResource MaterialDesignToolForegroundButton}">
@@ -58,7 +58,7 @@
                                 Margin="82,8,10,9"
                                 VerticalAlignment="Center"
                                 Content="Qiwi (@MairwunNx)"
-                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
                         </Grid>
@@ -73,7 +73,7 @@
                         x:Name="YandexButton"
                         Height="Auto"
                         ClipToBounds="True"
-                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                        FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                         FontSize="14"
                         Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                         Style="{StaticResource MaterialDesignToolForegroundButton}">
@@ -95,7 +95,7 @@
                                 Margin="82,8,10,9"
                                 VerticalAlignment="Center"
                                 Content="Yandex (410015993365458)"
-                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
                         </Grid>

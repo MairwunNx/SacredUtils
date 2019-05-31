@@ -33,7 +33,7 @@
                             Click="ReadLicenseBtn_Click"
                             ClipToBounds="True"
                             Content="{globalizer:GlobalizedResource String0121}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                             FontSize="14"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                             Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -44,7 +44,7 @@
                         Margin="15,11,10,0"
                         VerticalAlignment="Top"
                         Content="{globalizer:GlobalizedResource String0122}"
-                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                        FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                         FontSize="16"
                         Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
@@ -52,7 +52,7 @@
                         Height="37"
                         Margin="18,57,34,0"
                         VerticalAlignment="Top"
-                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                        FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                         FontSize="12"
                         Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                         Text="{globalizer:GlobalizedResource String0123}"
@@ -72,7 +72,7 @@
                             ClipToBounds="True"
                             Content="{globalizer:GlobalizedResource String0126}"
                             Cursor="Hand"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                             FontSize="14"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                             Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -91,7 +91,7 @@
                             Click="CloseSacredUtilsBtn_Click"
                             ClipToBounds="True"
                             Content="{globalizer:GlobalizedResource String0127}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                             FontSize="14"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                             Style="{StaticResource MaterialDesignToolForegroundButton}" />

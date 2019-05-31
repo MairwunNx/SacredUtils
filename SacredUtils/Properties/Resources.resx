@@ -278,17 +278,17 @@
         </value>
     </data>
     <data name="antqs__" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\SourceFiles\fnt\antqs__.ttf;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\Resources\game\fonts\antqs__.ttf;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="carolingia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\SourceFiles\fnt\carolingia.ttf;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\Resources\game\fonts\carolingia.ttf;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="cyrillicchancellor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\SourceFiles\fnt\cyrillicchancellor.ttf;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\Resources\game\fonts\cyrillicchancellor.ttf;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>

@@ -24,7 +24,7 @@
                 <TextBlock
                     Margin="15,12,65,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0018}" />
 
@@ -52,7 +52,7 @@
                 <TextBlock
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0019}" />
 
@@ -63,7 +63,7 @@
                     VerticalAlignment="Top"
                     d:DataContext="{d:DesignInstance prp:GameChatSettingsOneProperty}"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
                     SelectedIndex="{Binding Path=Language, Mode=TwoWay}"
                     SnapsToDevicePixels="True"
@@ -90,7 +90,7 @@
                 <TextBlock
                     Margin="15,12,195,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0025}" />
 
@@ -100,7 +100,7 @@
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     d:DataContext="{d:DesignInstance prp:GameChatSettingsOneProperty}"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Maximum="25"
                     Minimum="1"
@@ -129,7 +129,7 @@
                 <TextBlock
                     Margin="15,12,195,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0026}" />
 
@@ -139,7 +139,7 @@
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     d:DataContext="{d:DesignInstance prp:GameChatSettingsOneProperty}"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Maximum="32"
                     Minimum="1"
@@ -168,7 +168,7 @@
                 <TextBlock
                     Margin="15,12,195,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0027}" />
 
@@ -178,7 +178,7 @@
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     d:DataContext="{d:DesignInstance prp:GameChatSettingsOneProperty}"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Maximum="255"
                     Minimum="0"
@@ -207,7 +207,7 @@
                 <TextBlock
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0028}" />
 

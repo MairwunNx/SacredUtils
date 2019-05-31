@@ -24,7 +24,7 @@
                 <TextBlock
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0096}" />
 
@@ -78,7 +78,7 @@
                 ClipToBounds="True"
                 Content="Установить VeteranMod by Ufo"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="12"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -99,7 +99,7 @@
                 ClipToBounds="True"
                 Content="Установить 2.29.14 Sacred патч"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="12"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -120,7 +120,7 @@
                 ClipToBounds="True"
                 Content="Установить Server MultiCore Fix"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="12"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -141,7 +141,7 @@
                 ClipToBounds="True"
                 Content="{globalizer:GlobalizedResource String0094}"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="12"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -162,7 +162,7 @@
                 ClipToBounds="True"
                 Content="{globalizer:GlobalizedResource String0144}"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="12"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -182,7 +182,7 @@
                 ClipToBounds="True"
                 Content="{globalizer:GlobalizedResource String0145}"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="12"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -202,7 +202,7 @@
                 ClipToBounds="True"
                 Content="{globalizer:GlobalizedResource String0146}"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="12"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -222,7 +222,7 @@
                 ClipToBounds="True"
                 Content="{globalizer:GlobalizedResource String0147}"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="12"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -242,7 +242,7 @@
                 ClipToBounds="True"
                 Content="{globalizer:GlobalizedResource String0148}"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="12"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -262,7 +262,7 @@
                 ClipToBounds="True"
                 Content="{globalizer:GlobalizedResource String0149}"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="12"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -282,7 +282,7 @@
                 ClipToBounds="True"
                 Content="{globalizer:GlobalizedResource String0150}"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="12"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -303,7 +303,7 @@
                 ClipToBounds="True"
                 Content="{globalizer:GlobalizedResource String0151}"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="12"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 IsEnabled="True"
@@ -325,7 +325,7 @@
                 ClipToBounds="True"
                 Content="{globalizer:GlobalizedResource String0186}"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="12"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 IsEnabled="True"
@@ -347,7 +347,7 @@
                 ClipToBounds="True"
                 Content="{globalizer:GlobalizedResource String0152}"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="12"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />

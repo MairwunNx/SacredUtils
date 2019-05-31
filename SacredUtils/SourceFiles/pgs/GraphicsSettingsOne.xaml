@@ -24,7 +24,7 @@
                 <TextBlock
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0056}" />
 
@@ -34,7 +34,7 @@
                     VerticalAlignment="Top"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsOneProperty}"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
                     SelectedIndex="{Binding Path=GraphicsQuality, Mode=TwoWay}">
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0057}" />
@@ -57,7 +57,7 @@
                 <TextBlock
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0060}" />
 
@@ -67,7 +67,7 @@
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsOneProperty}"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Maximum="8"
                     Style="{StaticResource MaterialDesignDiscreteSlider}"
@@ -93,7 +93,7 @@
                 <TextBlock
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0061}" />
 
@@ -104,7 +104,7 @@
                     VerticalAlignment="Top"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsOneProperty}"
                     BorderBrush="#00FF0000"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Maximum="255"
                     Style="{StaticResource MaterialDesignDiscreteSlider}"
@@ -130,7 +130,7 @@
                 <TextBlock
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0062}" />
 
@@ -141,7 +141,7 @@
                     VerticalAlignment="Top"
                     d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsOneProperty}"
                     BorderBrush="#00FF0000"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Maximum="100"
                     Style="{StaticResource MaterialDesignDiscreteSlider}"
@@ -167,7 +167,7 @@
                 <TextBlock
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0063}" />
 

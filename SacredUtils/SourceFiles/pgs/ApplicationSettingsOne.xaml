@@ -24,7 +24,7 @@
                 <TextBlock
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0001}" />
 
@@ -34,7 +34,7 @@
                     VerticalAlignment="Center"
                     d:DataContext="{d:DesignInstance prp:ApplicationSettingsOneProperty}"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
                     SelectedIndex="{Binding Path=Language, Mode=TwoWay}"
                     UseLayoutRounding="False">
@@ -57,7 +57,7 @@
                 <TextBlock
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0004}" />
 
@@ -67,7 +67,7 @@
                     VerticalAlignment="Center"
                     d:DataContext="{d:DesignInstance prp:ApplicationSettingsOneProperty}"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
                     SelectedIndex="{Binding Path=Theme, Mode=TwoWay}">
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0005}" />
@@ -89,7 +89,7 @@
                 <TextBlock
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0007}" />
 
@@ -100,7 +100,7 @@
                     VerticalAlignment="Center"
                     d:DataContext="{d:DesignInstance prp:ApplicationSettingsOneProperty}"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
                     SelectedIndex="{Binding Path=StartParams, Mode=TwoWay}">
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0008}" />
@@ -123,7 +123,7 @@
                 <TextBlock
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0011}" />
 
@@ -133,7 +133,7 @@
                     VerticalAlignment="Center"
                     d:DataContext="{d:DesignInstance prp:ApplicationSettingsOneProperty}"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
                     Text="{Binding Path=UiScale, Mode=TwoWay}">
                     <ComboBoxItem Content="100%" />
@@ -162,7 +162,7 @@
                     Margin="0,12,0,12"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0012}" />
 
@@ -219,7 +219,7 @@
                 ClipToBounds="True"
                 Content="SOURCES"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="16"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -239,7 +239,7 @@
                 ClipToBounds="True"
                 Content="ABOUT"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="16"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -261,7 +261,7 @@
                 ClipToBounds="True"
                 Content="FEEDBACK"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="16"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -283,7 +283,7 @@
                 ClipToBounds="True"
                 Content="CREATOR"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="16"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -305,7 +305,7 @@
                 ClipToBounds="True"
                 Content="LET'S DONATE"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="16"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />

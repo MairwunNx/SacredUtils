@@ -22,7 +22,7 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Top"
                         Content="{globalizer:GlobalizedResource String0139}"
-                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                        FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                         FontSize="35"
                         FontWeight="DemiBold"
                         Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -32,7 +32,7 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Top"
                         Content="{globalizer:GlobalizedResource String01391}"
-                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                        FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                         FontSize="25"
                         FontWeight="DemiBold"
                         Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
@@ -47,7 +47,7 @@
                         Click="BaseButtonYes_Click"
                         Content="{globalizer:GlobalizedResource String0140}"
                         FocusVisualStyle="{x:Null}"
-                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                        FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                         Foreground="{DynamicResource ResourceKey=BackgroundColorBrush}"
                         IsDefault="True" />
 
@@ -61,7 +61,7 @@
                         Click="BaseButtonNo_Click"
                         Content="{globalizer:GlobalizedResource String0141}"
                         FocusVisualStyle="{x:Null}"
-                        FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                        FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                         Foreground="{DynamicResource ResourceKey=BackgroundColorBrush}" />
                 </Grid>
             </materialDesign:DialogHost.DialogContent>

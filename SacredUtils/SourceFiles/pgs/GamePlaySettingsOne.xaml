@@ -36,7 +36,7 @@
                 <TextBlock
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0033}" />
 
@@ -46,7 +46,7 @@
                     VerticalAlignment="Top"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsOneProperty}"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
                     SelectedIndex="{Binding Path=PickupMode, Mode=TwoWay}">
                     <ComboBoxItem Content="{globalizer:GlobalizedResource String0036}" />
@@ -70,7 +70,7 @@
                 <TextBlock
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0037}" />
 
@@ -80,7 +80,7 @@
                     VerticalAlignment="Top"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsOneProperty}"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
                     SelectedIndex="{Binding Path=ConnectionType, Mode=TwoWay}">
                     <ComboBoxItem Content="DSL \ Cable \ LAN" />
@@ -102,7 +102,7 @@
                 <TextBlock
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0038}" />
 
@@ -112,7 +112,7 @@
                     VerticalAlignment="Top"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsOneProperty}"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
                     MaxLength="32"
                     Text="{Binding Path=PictureOnStartup, Mode=TwoWay}" />
@@ -132,7 +132,7 @@
                 <TextBlock
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0039}" />
 
@@ -142,7 +142,7 @@
                     VerticalAlignment="Top"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsOneProperty}"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}"
                     MaxLength="32"
                     Text="{Binding Path=PictureOnLoad, Mode=TwoWay}" />
@@ -162,7 +162,7 @@
                 <TextBlock
                     Margin="15,12,195,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0040}" />
 
@@ -173,7 +173,7 @@
                     VerticalAlignment="Top"
                     d:DataContext="{d:DesignInstance prp:GamePlaySettingsOneProperty}"
                     BorderBrush="#00FF0000"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Maximum="80"
                     Minimum="10"
@@ -200,7 +200,7 @@
                 <TextBlock
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0041}" />
 

@@ -24,7 +24,7 @@
                 <TextBlock
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0013}" />
 
@@ -50,7 +50,7 @@
                 <TextBlock
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0014}" />
 
@@ -76,7 +76,7 @@
                 <TextBlock
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0015}" />
 
@@ -102,7 +102,7 @@
                 <TextBlock
                     Margin="15,12,188,12"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0016}" />
 
@@ -128,7 +128,7 @@
                 <TextBlock
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     Text="{globalizer:GlobalizedResource String0017}" />
 
@@ -183,7 +183,7 @@
                 ClipToBounds="True"
                 Content="SOURCES"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="16"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -203,7 +203,7 @@
                 ClipToBounds="True"
                 Content="ABOUT"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="16"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -225,7 +225,7 @@
                 ClipToBounds="True"
                 Content="FEEDBACK"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="16"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -247,7 +247,7 @@
                 ClipToBounds="True"
                 Content="CREATOR"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="16"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -269,7 +269,7 @@
                 ClipToBounds="True"
                 Content="LET'S DONATE"
                 Cursor="Hand"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="16"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 Style="{StaticResource MaterialDesignToolForegroundButton}" />

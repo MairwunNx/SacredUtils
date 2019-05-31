@@ -28,7 +28,7 @@
                             Margin="15,11,190,0"
                             VerticalAlignment="Top"
                             Content="{globalizer:GlobalizedResource String0172}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                             FontSize="16"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
@@ -45,7 +45,7 @@
                             Margin="70,59,10,0"
                             VerticalAlignment="Top"
                             Content="{globalizer:GlobalizedResource String0173}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                             FontSize="14"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
                     </Grid>
@@ -61,7 +61,7 @@
                             Margin="15,11,190,0"
                             VerticalAlignment="Top"
                             Content="{globalizer:GlobalizedResource String0172}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                             FontSize="16"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
@@ -78,7 +78,7 @@
                             Margin="70,59,10,0"
                             VerticalAlignment="Top"
                             Content="{globalizer:GlobalizedResource String0174}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                             FontSize="14"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
                     </Grid>

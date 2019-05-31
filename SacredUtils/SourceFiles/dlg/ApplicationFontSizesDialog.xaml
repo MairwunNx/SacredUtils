@@ -26,7 +26,7 @@
                             Margin="15,11,114,0"
                             VerticalAlignment="Top"
                             Content="{globalizer:GlobalizedResource String0178}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                             FontSize="16"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
@@ -38,7 +38,7 @@
                             HorizontalAlignment="Left"
                             VerticalAlignment="Top"
                             BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                            FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                             Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}">
                             <ComboBoxItem Content="{globalizer:GlobalizedResource String0179}" />
                             <ComboBoxItem Content="{globalizer:GlobalizedResource String0180}" />
@@ -55,7 +55,7 @@
                             Margin="212,63,214,0"
                             VerticalAlignment="Top"
                             Content="="
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                            FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                             FontSize="14"
                             Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}" />
 
@@ -67,7 +67,7 @@
                             HorizontalAlignment="Left"
                             VerticalAlignment="Top"
                             BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
-                            FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                            FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                             Foreground="{DynamicResource ResourceKey=ComboBoxForegroundBrush}" />
                     </Grid>
                 </Grid>
