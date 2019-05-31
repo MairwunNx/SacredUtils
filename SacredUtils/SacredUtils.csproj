@@ -54,7 +54,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>true</UseVSHostingProcess>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>8.0</LangVersion>
     <DebugSymbols>true</DebugSymbols>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
@@ -65,7 +65,7 @@
     <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>resources\ico\icons8_Gas.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\icon\icons8_Gas.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
@@ -93,7 +93,7 @@
       <HintPath>..\packages\Enums.NET.2.3.2\lib\net45\Enums.NET.dll</HintPath>
     </Reference>
     <Reference Include="Hotkeys">
-      <HintPath>resources\lib\Hotkeys.dll</HintPath>
+      <HintPath>SourceFiles\lib\Hotkeys.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignColors, Version=1.2.0.1418, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\packages\MaterialDesignColors.1.2.0-ci1418\lib\net45\MaterialDesignColors.dll</HintPath>
@@ -149,7 +149,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="WPFSharp.Globalizer, Version=1.0.6.0, Culture=neutral, PublicKeyToken=8de4abfa85fe6c31, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>resources\lib\WPFSharp.Globalizer.dll</HintPath>
+      <HintPath>SourceFiles\lib\WPFSharp.Globalizer.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -325,6 +325,23 @@
     <Compile Include="SourceFiles\prp\GamePlaySettingsThreeProperty.cs" />
     <Compile Include="SourceFiles\prp\GamePlaySettingsTwoProperty.cs" />
     <Compile Include="SourceFiles\prp\GameSoundSettingsOneProperty.cs" />
+    <Resource Include="Resources\fonts\GoogleSans-Bold.ttf" />
+    <Resource Include="Resources\fonts\GoogleSans-BoldItalic.ttf" />
+    <Resource Include="Resources\fonts\GoogleSans-Italic.ttf" />
+    <Resource Include="Resources\fonts\GoogleSans-Medium.ttf" />
+    <Resource Include="Resources\fonts\GoogleSans-MediumItalic.ttf" />
+    <Resource Include="Resources\fonts\GoogleSans-Regular.ttf" />
+    <Resource Include="Resources\game\fonts\antqs__.ttf" />
+    <Resource Include="Resources\game\fonts\carolingia.ttf" />
+    <Resource Include="Resources\game\fonts\cyrillicchancellor.ttf" />
+    <Resource Include="Resources\icon\icons8_Gas.ico" />
+    <Resource Include="Resources\icon\icons8_Gas_128.png" />
+    <Resource Include="Resources\icon\icons8_Gas_16.png" />
+    <Resource Include="Resources\icon\icons8_Gas_256.png" />
+    <Resource Include="Resources\icon\icons8_Gas_32.png" />
+    <Resource Include="Resources\icon\icons8_Gas_48.png" />
+    <Resource Include="Resources\icon\icons8_Gas_528.png" />
+    <Resource Include="Resources\icon\icons8_Gas_64.png" />
     <Resource Include="SourceFiles\cfg\splashes.txt" />
     <Resource Include="SourceFiles\cfg\ch.files.txt" />
     <Resource Include="SourceFiles\cfg\hk.keyb.txt" />
@@ -345,6 +362,7 @@
     <Content Include="Resources\themes\Light.xaml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="SourceFiles\lib\Hotkeys.dll" />
     <Content Include="SourceFiles\lib\WPFSharp.Globalizer.dll" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -496,14 +514,6 @@
     <Resource Include="AppLicense.txt" />
     <None Include="SourceFiles\etc\gamesettings.cfg" />
     <None Include="SourceFiles\cfg\settings.json" />
-    <Resource Include="SourceFiles\ico\icons8_Gas.ico" />
-    <Resource Include="SourceFiles\ico\icons8_Gas_128.png" />
-    <Resource Include="SourceFiles\ico\icons8_Gas_16.png" />
-    <Resource Include="SourceFiles\ico\icons8_Gas_256.png" />
-    <Resource Include="SourceFiles\ico\icons8_Gas_32.png" />
-    <Resource Include="SourceFiles\ico\icons8_Gas_48.png" />
-    <Resource Include="SourceFiles\ico\icons8_Gas_528.png" />
-    <Resource Include="SourceFiles\ico\icons8_Gas_64.png" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -515,15 +525,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Resource Include="SourceFiles\fnt\antqs__.ttf" />
-    <Resource Include="SourceFiles\fnt\carolingia.ttf" />
-    <Resource Include="SourceFiles\fnt\cyrillicchancellor.ttf" />
-    <Resource Include="SourceFiles\fnt\GoogleSans-Bold.ttf" />
-    <Resource Include="SourceFiles\fnt\GoogleSans-BoldItalic.ttf" />
-    <Resource Include="SourceFiles\fnt\GoogleSans-Italic.ttf" />
-    <Resource Include="SourceFiles\fnt\GoogleSans-Medium.ttf" />
-    <Resource Include="SourceFiles\fnt\GoogleSans-MediumItalic.ttf" />
-    <Resource Include="SourceFiles\fnt\GoogleSans-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.config" />
