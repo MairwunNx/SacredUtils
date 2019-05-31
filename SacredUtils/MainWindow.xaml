@@ -22,7 +22,7 @@
     <Window.Resources>
         <Style BasedOn="{StaticResource {x:Type ToolTip}}" TargetType="{x:Type ToolTip}">
             <Setter Property="OverridesDefaultStyle" Value="true" />
-            <Setter Property="FontFamily" Value="/SacredUtils;component/resources/fnt/#Google Sans" />
+            <Setter Property="FontFamily" Value="/SacredUtils;component/Resources/fonts/#Google Sans" />
             <Setter Property="FontSize" Value="13" />
         </Style>
     </Window.Resources>
@@ -88,7 +88,7 @@
                     VerticalContentAlignment="Center"
                     Content="{globalizer:GlobalizedResource String0112}"
                     Cursor="Hand"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                     FontSize="11"
                     FontWeight="Bold"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
@@ -100,7 +100,7 @@
                     HorizontalAlignment="Center"
                     VerticalContentAlignment="Center"
                     Cursor="Hand"
-                    FontFamily="/SacredUtils;component/resources/fnt/#Google Sans"
+                    FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"
                     FontSize="11"
                     FontWeight="Bold"
                     Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
@@ -130,7 +130,7 @@
                                 HorizontalContentAlignment="Left"
                                 ClipToBounds="True"
                                 Content="{globalizer:GlobalizedResource String0113}"
-                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}"
                                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -147,7 +147,7 @@
                                 HorizontalContentAlignment="Left"
                                 ClipToBounds="True"
                                 Content="{globalizer:GlobalizedResource String0114}"
-                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}"
                                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -164,7 +164,7 @@
                                 HorizontalContentAlignment="Left"
                                 ClipToBounds="True"
                                 Content="{globalizer:GlobalizedResource String0115}"
-                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}"
                                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -181,7 +181,7 @@
                                 HorizontalContentAlignment="Left"
                                 ClipToBounds="True"
                                 Content="{globalizer:GlobalizedResource String0116}"
-                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}"
                                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -198,7 +198,7 @@
                                 HorizontalContentAlignment="Left"
                                 ClipToBounds="True"
                                 Content="{globalizer:GlobalizedResource String0117}"
-                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}"
                                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -215,7 +215,7 @@
                                 HorizontalContentAlignment="Left"
                                 ClipToBounds="True"
                                 Content="{globalizer:GlobalizedResource String0118}"
-                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}"
                                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -231,7 +231,7 @@
                                 HorizontalContentAlignment="Left"
                                 ClipToBounds="True"
                                 Content="{globalizer:GlobalizedResource String0119}"
-                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}"
                                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -248,7 +248,7 @@
                                 HorizontalContentAlignment="Left"
                                 ClipToBounds="True"
                                 Content="{globalizer:GlobalizedResource String0120}"
-                                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                                 FontSize="14"
                                 Foreground="{DynamicResource ResourceKey=CategoryForegroundColorBrush}"
                                 Style="{StaticResource MaterialDesignToolForegroundButton}" />
@@ -465,7 +465,7 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 Content="Inadequate"
-                FontFamily="/SacredUtils;component/resources/fnt/#Google Sans Medium"
+                FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans Medium"
                 FontSize="160"
                 Foreground="{DynamicResource ResourceKey=LabelForegroundBrush}"
                 IsHitTestVisible="False"

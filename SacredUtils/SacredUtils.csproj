@@ -543,7 +543,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\i18n" />
-    <Folder Include="SourceFiles\lng" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions />

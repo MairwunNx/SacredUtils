@@ -13,7 +13,7 @@
     <Page.Resources>
         <Style BasedOn="{StaticResource {x:Type MenuItem}}" TargetType="{x:Type MenuItem}">
             <Setter Property="OverridesDefaultStyle" Value="true" />
-            <Setter Property="FontFamily" Value="/SacredUtils;component/resources/fnt/#Google Sans" />
+            <Setter Property="FontFamily" Value="/SacredUtils;component/Resources/fonts/#Google Sans" />
             <Setter Property="Foreground" Value="{DynamicResource ResourceKey=ComboBoxForegroundBrush}" />
         </Style>
 
