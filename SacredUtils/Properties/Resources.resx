@@ -161,7 +161,7 @@
         </value>
     </data>
     <data name="WPFSharp_Globalizer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\SourceFiles\lib\WPFSharp.Globalizer.dll;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\Resources\libraries\WPFSharp.Globalizer.dll;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
