@@ -211,6 +211,26 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] BalanceVanilla {
+            get {
+                object obj = ResourceManager.GetObject("BalanceVanilla", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] BalanceVeteran {
+            get {
+                object obj = ResourceManager.GetObject("BalanceVeteran", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] carolingia {
             get {
                 object obj = ResourceManager.GetObject("carolingia", resourceCulture);
@@ -224,6 +244,26 @@ namespace SacredUtils.Properties {
         public static byte[] ch_files {
             get {
                 object obj = ResourceManager.GetObject("ch_files", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] CreatureVanilla {
+            get {
+                object obj = ResourceManager.GetObject("CreatureVanilla", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] CreatureVeteran {
+            get {
+                object obj = ResourceManager.GetObject("CreatureVeteran", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -384,46 +424,6 @@ namespace SacredUtils.Properties {
         public static byte[] ru_RU {
             get {
                 object obj = ResourceManager.GetObject("ru_RU", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] SacredBalanceVanilla {
-            get {
-                object obj = ResourceManager.GetObject("SacredBalanceVanilla", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] SacredBalanceVeteran {
-            get {
-                object obj = ResourceManager.GetObject("SacredBalanceVeteran", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] SacredCreatureVanilla {
-            get {
-                object obj = ResourceManager.GetObject("SacredCreatureVanilla", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] SacredCreatureVeteran {
-            get {
-                object obj = ResourceManager.GetObject("SacredCreatureVeteran", resourceCulture);
                 return ((byte[])(obj));
             }
         }

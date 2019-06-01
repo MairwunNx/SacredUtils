@@ -133,30 +133,30 @@
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
-    <data name="SacredBalanceVanilla" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\SourceFiles\opt\SacredBalanceVanilla.bin;System.Byte[], mscorlib, Version=4.0.0.0,
+    <data name="BalanceVanilla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+        <value>..\Resources\game\balance\BalanceVanilla.bin;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
-    <data name="SacredBalanceVeteran" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\SourceFiles\opt\SacredBalanceVeteran.bin;System.Byte[], mscorlib, Version=4.0.0.0,
+    <data name="BalanceVeteran" type="System.Resources.ResXFileRef, System.Windows.Forms">
+        <value>..\Resources\game\balance\BalanceVeteran.bin;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
-    <data name="SacredCreatureVanilla" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\SourceFiles\opt\SacredCreatureVanilla.pak;System.Byte[], mscorlib,
+    <data name="CreatureVanilla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+        <value>..\Resources\game\creature\CreatureVanilla.pak;System.Byte[], mscorlib,
             Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
-    <data name="SacredCreatureVeteran" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\SourceFiles\opt\SacredCreatureVeteran.pak;System.Byte[], mscorlib,
+    <data name="CreatureVeteran" type="System.Resources.ResXFileRef, System.Windows.Forms">
+        <value>..\Resources\game\creature\CreatureVeteran.pak;System.Byte[], mscorlib,
             Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
     <data name="SacredRes2Csv" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\SourceFiles\opt\SacredRes2Csv.exe;System.Byte[], mscorlib, Version=4.0.0.0,
+        <value>..\Resources\game\i18n\tools\SacredRes2Csv.exe;System.Byte[], mscorlib, Version=4.0.0.0,
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>

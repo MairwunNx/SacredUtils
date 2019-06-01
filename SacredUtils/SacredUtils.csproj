@@ -346,7 +346,11 @@
     <Resource Include="SourceFiles\cfg\hk.keyb.txt" />
     <Resource Include="SourceFiles\cfg\hk.orig.txt" />
     <Resource Include="SourceFiles\cfg\hk.orsf.txt" />
+    <None Include="Resources\game\balance\BalanceVanilla.bin" />
+    <None Include="Resources\game\balance\BalanceVeteran.bin" />
     <None Include="Resources\game\configuration\default.cfg" />
+    <None Include="Resources\game\creature\CreatureVanilla.pak" />
+    <None Include="Resources\game\creature\CreatureVeteran.pak" />
     <None Include="Resources\keyla\keyla-register.reg" />
     <None Include="Resources\keyla\keyla.zip" />
     <None Include="Resources\updater\update.cmd" />
@@ -356,6 +360,7 @@
     <Resource Include="SourceFiles\cfg\ar.lava.txt" />
     <Resource Include="SourceFiles\cfg\ar.odtx.txt" />
     <Resource Include="SourceFiles\cfg\ar.watr.txt" />
+    <Content Include="Resources\game\i18n\tools\SacredRes2Csv.exe" />
     <Content Include="Resources\i18n\en-US\en-US.xaml" />
     <Content Include="Resources\i18n\ru-RU\ru-RU.xaml" />
     <Content Include="Resources\libraries\Hotkeys.dll" />
@@ -504,13 +509,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Content Include="SourceFiles\opt\SacredRes2Csv.exe" />
     <None Include="SourceFiles\cfg\hotkeys.json" />
     <None Include="SourceFiles\cfg\mk.setg.json" />
-    <None Include="SourceFiles\opt\SacredBalanceVanilla.bin" />
-    <None Include="SourceFiles\opt\SacredBalanceVeteran.bin" />
-    <None Include="SourceFiles\opt\SacredCreatureVanilla.pak" />
-    <None Include="SourceFiles\opt\SacredCreatureVeteran.pak" />
     <Resource Include="AppLicense.txt" />
     <None Include="SourceFiles\cfg\settings.json" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -40,8 +40,8 @@ namespace SacredUtils.resources.pgs
             {
                 Directory.CreateDirectory("bin"); Directory.CreateDirectory("pak");
 
-                File.WriteAllBytes("bin\\balance.bin", Properties.Resources.SacredBalanceVanilla);
-                File.WriteAllBytes("pak\\creature.pak", Properties.Resources.SacredCreatureVanilla);
+                File.WriteAllBytes("bin\\balance.bin", Properties.Resources.BalanceVanilla);
+                File.WriteAllBytes("pak\\creature.pak", Properties.Resources.CreatureVanilla);
 
                 VeteranModBtn.SetResourceReference(ContentProperty, "String0088");
 
@@ -51,8 +51,8 @@ namespace SacredUtils.resources.pgs
             {
                 Directory.CreateDirectory("bin"); Directory.CreateDirectory("pak");
 
-                File.WriteAllBytes("bin\\balance.bin", Properties.Resources.SacredBalanceVeteran);
-                File.WriteAllBytes("pak\\creature.pak", Properties.Resources.SacredCreatureVeteran);
+                File.WriteAllBytes("bin\\balance.bin", Properties.Resources.BalanceVeteran);
+                File.WriteAllBytes("pak\\creature.pak", Properties.Resources.CreatureVeteran);
 
                 VeteranModBtn.SetResourceReference(ContentProperty, "String0089");
 
