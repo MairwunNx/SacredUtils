@@ -331,16 +331,6 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static byte[] HotKeyReg {
-            get {
-                object obj = ResourceManager.GetObject("HotKeyReg", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         public static byte[] hotkeys {
             get {
                 object obj = ResourceManager.GetObject("hotkeys", resourceCulture);
@@ -351,9 +341,19 @@ namespace SacredUtils.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static byte[] keyla {
+        public static byte[] Keyla {
             get {
-                object obj = ResourceManager.GetObject("keyla", resourceCulture);
+                object obj = ResourceManager.GetObject("Keyla", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] KeylaRegister {
+            get {
+                object obj = ResourceManager.GetObject("KeylaRegister", resourceCulture);
                 return ((byte[])(obj));
             }
         }

@@ -347,6 +347,8 @@
     <Resource Include="SourceFiles\cfg\hk.orig.txt" />
     <Resource Include="SourceFiles\cfg\hk.orsf.txt" />
     <None Include="Resources\game\configuration\default.cfg" />
+    <None Include="Resources\keyla\keyla-register.reg" />
+    <None Include="Resources\keyla\keyla.zip" />
     <None Include="Resources\updater\update.cmd" />
     <None Include="SourceFiles\cfg\hk.kesf.txt" />
     <Resource Include="SourceFiles\cfg\hk.setg.txt" />
@@ -505,8 +507,6 @@
     <Content Include="SourceFiles\opt\SacredRes2Csv.exe" />
     <None Include="SourceFiles\cfg\hotkeys.json" />
     <None Include="SourceFiles\cfg\mk.setg.json" />
-    <None Include="SourceFiles\opt\HotKeyReg.reg" />
-    <None Include="SourceFiles\opt\keyla.zip" />
     <None Include="SourceFiles\opt\SacredBalanceVanilla.bin" />
     <None Include="SourceFiles\opt\SacredBalanceVeteran.bin" />
     <None Include="SourceFiles\opt\SacredCreatureVanilla.pak" />

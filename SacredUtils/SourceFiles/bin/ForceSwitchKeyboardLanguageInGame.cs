@@ -13,7 +13,7 @@ namespace SacredUtils.resources.bin
         {
             Directory.CreateDirectory("$SacredUtils\\temp");
             Log.Info("Creating temp folder for keyla switching language done!");
-            File.WriteAllBytes("$SacredUtils\\temp\\hotkeyreg.reg", Properties.Resources.HotKeyReg);
+            File.WriteAllBytes("$SacredUtils\\temp\\hotkeyreg.reg", Properties.Resources.KeylaRegister);
             Log.Info("Creating keyla switching language data application done!");
 
             Process regeditProcess = Process.Start("regedit.exe", "/s $SacredUtils\\temp\\hotkeyreg.reg");
@@ -45,7 +45,7 @@ namespace SacredUtils.resources.bin
 
         private static void CreateApplication()
         {
-            File.WriteAllBytes("$SacredUtils\\temp\\keyla.zip", Properties.Resources.keyla);
+            File.WriteAllBytes("$SacredUtils\\temp\\keyla.zip", Properties.Resources.Keyla);
             Log.Info("Creating keyla switching language application archive done!");
             Directory.CreateDirectory("$SacredUtils\\temp\\keyla\\data");
             Log.Info("Creating keyla switching language application data folder done!");
