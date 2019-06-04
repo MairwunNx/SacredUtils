@@ -19,7 +19,7 @@ namespace SacredUtils
 
             if (e.Args.Contains("-runGame"))
             {
-                AppLogger.Init(e.Args.Contains("-disableLogging"));
+                Logger.Init(e.Args.Contains("-disableLogging"));
 
                 GetRequiredApplicationFiles.Get();
 
@@ -32,7 +32,7 @@ namespace SacredUtils
             }
             else
             {
-                AppLogger.Init(e.Args.Contains("-disableLogging"));
+                Logger.Init(e.Args.Contains("-disableLogging"));
 
                 GetStateGlobalExceptionCatching.Get();
 

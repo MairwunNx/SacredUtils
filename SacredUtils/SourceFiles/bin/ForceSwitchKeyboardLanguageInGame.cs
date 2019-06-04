@@ -3,7 +3,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Threading;
-using static SacredUtils.AppLogger;
+using static SacredUtils.Logger;
 
 namespace SacredUtils.resources.bin
 {

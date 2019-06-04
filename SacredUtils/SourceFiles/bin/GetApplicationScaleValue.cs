@@ -1,5 +1,5 @@
 ﻿using System.Windows.Media;
-using static SacredUtils.AppLogger;
+using static SacredUtils.Logger;
 
 namespace SacredUtils.resources.bin
 {

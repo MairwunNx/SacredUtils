@@ -5,7 +5,7 @@ using System.Net.Mail;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using SacredUtils.SourceFiles.bin;
-using static SacredUtils.AppLogger;
+using static SacredUtils.Logger;
 
 namespace SacredUtils.resources.bin
 {

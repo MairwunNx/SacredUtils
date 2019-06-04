@@ -6,9 +6,9 @@ using SacredUtils.resources.bin;
 
 namespace SacredUtils
 {
-    public static class AppLogger
+    public static class Logger
     {
-        public static readonly Logger Log = LogManager.GetCurrentClassLogger();
+        public static readonly NLog.Logger Log = LogManager.GetCurrentClassLogger();
 
         public static void Init(bool fast)
         {

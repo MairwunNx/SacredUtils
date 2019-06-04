@@ -11,7 +11,7 @@ using System.Windows.Threading;
 using EnumsNET;
 using NHotkey;
 using NHotkey.Wpf;
-using static SacredUtils.AppLogger;
+using static SacredUtils.Logger;
 
 namespace SacredUtils.resources.bin
 {

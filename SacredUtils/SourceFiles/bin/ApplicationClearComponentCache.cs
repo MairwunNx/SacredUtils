@@ -35,7 +35,7 @@ namespace SacredUtils.resources.bin
                     if (File.Exists(s))
                     {
                         try { File.Delete(s); }
-                        catch (Exception e) { AppLogger.Log.Error(e.ToString); }
+                        catch (Exception e) { Logger.Log.Error(e.ToString); }
                     }
                 }
             }).Wait();

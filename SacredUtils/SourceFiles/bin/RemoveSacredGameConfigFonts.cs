@@ -25,7 +25,7 @@ namespace SacredUtils.resources.bin
             }
             catch (Exception exception)
             {
-                AppLogger.Log.Error(exception.ToString);
+                Logger.Log.Error(exception.ToString);
             }
         }
     }

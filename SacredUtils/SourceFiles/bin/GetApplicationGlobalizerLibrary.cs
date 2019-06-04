@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Security.Cryptography;
-using static SacredUtils.AppLogger;
+using static SacredUtils.Logger;
 
 namespace SacredUtils.resources.bin
 {

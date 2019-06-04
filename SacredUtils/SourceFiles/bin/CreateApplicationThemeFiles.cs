@@ -1,5 +1,5 @@
 ﻿using System.IO;
-using static SacredUtils.AppLogger;
+using static SacredUtils.Logger;
 
 namespace SacredUtils.resources.bin
 {

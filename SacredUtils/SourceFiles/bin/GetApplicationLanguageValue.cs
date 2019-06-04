@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 using WPFSharp.Globalizer;
-using static SacredUtils.AppLogger;
+using static SacredUtils.Logger;
 
 namespace SacredUtils.resources.bin
 {

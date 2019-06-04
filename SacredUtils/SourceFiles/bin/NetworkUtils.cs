@@ -1,4 +1,6 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
+using static SacredUtils.Logger;
 
 namespace SacredUtils.SourceFiles.bin
 {
@@ -17,7 +19,7 @@ namespace SacredUtils.SourceFiles.bin
                     return true;
                 }
             }
-            catch
+            catch (Exception)
             {
                 return false;
             }
@@ -25,10 +27,19 @@ namespace SacredUtils.SourceFiles.bin
 
         public static void LogStatus()
         {
-            if (AppSettings.ApplicationSettings.DisableCheckInternetConnection) return;
+            if (AppSettings.ApplicationSettings.DisableCheckInternetConnection)
+            {
+                Log.Warn("Checking for internet connection was skipped!");
+            }
 
-            if (!Connect()) AppLogger.Log.Warn("SacredUtils application running in offline mode!");
-            else AppLogger.Log.Info("SacredUtils application running in online mode!");
+            if (Connect())
+            {
+                Log.Info("SacredUtils application running in online mode!");
+            }
+            else
+            {
+                Log.Warn("SacredUtils application running in offline mode!");
+            }
         }
     }
 }

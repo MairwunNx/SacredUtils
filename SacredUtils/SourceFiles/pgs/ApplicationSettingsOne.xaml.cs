@@ -3,7 +3,7 @@ using SacredUtils.resources.dlg;
 using SacredUtils.resources.prp;
 using System.Diagnostics;
 using System.Windows;
-using static SacredUtils.AppLogger;
+using static SacredUtils.Logger;
 
 namespace SacredUtils.resources.pgs
 {

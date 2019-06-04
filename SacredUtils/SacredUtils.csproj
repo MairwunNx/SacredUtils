@@ -211,7 +211,7 @@
     <Compile Include="SourceFiles\bin\GetRequiredApplicationFiles.cs" />
     <Compile Include="SourceFiles\bin\GetApplicationGlobalizerLibrary.cs" />
     <Compile Include="SourceFiles\bin\GetApplicationLanguageValue.cs" />
-    <Compile Include="AppLogger.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="SourceFiles\bin\GetApplicationSettingsAvailability.cs" />
     <Compile Include="SourceFiles\bin\GetApplicationDownloadStatistic.cs" />
     <Compile Include="SourceFiles\bin\GetApplicationThemeValue.cs" />

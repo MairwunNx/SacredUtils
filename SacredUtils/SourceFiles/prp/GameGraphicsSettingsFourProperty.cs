@@ -10,7 +10,7 @@ using System.Windows;
 using System.Windows.Threading;
 using SacredUtils.resources.bin;
 using SacredUtils.SourceFiles.bin;
-using static SacredUtils.AppLogger;
+using static SacredUtils.Logger;
 
 namespace SacredUtils.resources.prp
 {
