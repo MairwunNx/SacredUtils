@@ -1,4 +1,5 @@
-﻿using SacredUtils.SourceFiles.bin;
+﻿using SacredUtils.SourceFiles;
+using SacredUtils.SourceFiles.bin;
 using static SacredUtils.SourceFiles.Logger;
 
 namespace SacredUtils.resources.bin

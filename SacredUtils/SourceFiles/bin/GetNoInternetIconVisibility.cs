@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
+using SacredUtils.SourceFiles;
 using SacredUtils.SourceFiles.bin;
 
 namespace SacredUtils.resources.bin

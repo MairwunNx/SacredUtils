@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
+using SacredUtils.SourceFiles;
 using SacredUtils.SourceFiles.bin;
 using static SacredUtils.SourceFiles.Logger;
 

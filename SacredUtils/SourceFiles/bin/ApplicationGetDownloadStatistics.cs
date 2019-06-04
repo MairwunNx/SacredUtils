@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using SacredUtils.SourceFiles;
 using SacredUtils.SourceFiles.bin;
 
 namespace SacredUtils.resources.bin

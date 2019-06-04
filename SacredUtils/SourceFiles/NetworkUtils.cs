@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Net;
-using static SacredUtils.SourceFiles.Logger;
 
-namespace SacredUtils.SourceFiles.bin
+namespace SacredUtils.SourceFiles
 {
     public static class NetworkUtils
     {
@@ -29,16 +28,16 @@ namespace SacredUtils.SourceFiles.bin
         {
             if (AppSettings.ApplicationSettings.DisableCheckInternetConnection)
             {
-                Log.Warn("Checking for internet connection was skipped!");
+                Logger.Log.Warn("Checking for internet connection was skipped!");
             }
 
             if (Connect())
             {
-                Log.Info("SacredUtils application running in online mode!");
+                Logger.Log.Info("SacredUtils application running in online mode!");
             }
             else
             {
-                Log.Warn("SacredUtils application running in offline mode!");
+                Logger.Log.Warn("SacredUtils application running in offline mode!");
             }
         }
     }

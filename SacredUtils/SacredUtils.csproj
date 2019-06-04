@@ -199,7 +199,6 @@
     <Compile Include="SourceFiles\bin\GetApplicationScaleValue.cs" />
     <Compile Include="SourceFiles\bin\CheckAvailabilityAlphaUpdates.cs" />
     <Compile Include="SourceFiles\bin\CheckAvailabilityGameSettings.cs" />
-    <Compile Include="SourceFiles\bin\NetworkUtils.cs" />
     <Compile Include="SourceFiles\bin\CheckAvailabilityReleaseUpdates.cs" />
     <Compile Include="SourceFiles\bin\CheckAvailabilityUpdateTemp.cs" />
     <Compile Include="AppInfo.cs" />
@@ -267,6 +266,7 @@
       <DependentUpon>ApplicationLicenseDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="SourceFiles\Logger.cs" />
+    <Compile Include="SourceFiles\NetworkUtils.cs" />
     <Compile Include="SourceFiles\pgs\ApplicationSettingsOne.xaml.cs">
       <DependentUpon>ApplicationSettingsOne.xaml</DependentUpon>
     </Compile>
