@@ -191,8 +191,8 @@
             Culture=neutral, PublicKeyToken=b77a5c561934e089
         </value>
     </data>
-    <data name="AppLicense" type="System.Resources.ResXFileRef, System.Windows.Forms">
-        <value>..\AppLicense.txt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral,
+    <data name="License" type="System.Resources.ResXFileRef, System.Windows.Forms">
+        <value>..\License.txt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral,
             PublicKeyToken=b77a5c561934e089
         </value>
     </data>

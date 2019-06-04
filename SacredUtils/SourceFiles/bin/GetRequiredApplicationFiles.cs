@@ -10,7 +10,7 @@ namespace SacredUtils.resources.bin
         {
             if (AppSettings.ApplicationSettings.ApplicationLicenseFileCreate)
             {
-                File.WriteAllBytes("License.txt", Properties.Resources.AppLicense);
+                File.WriteAllBytes("License.txt", Properties.Resources.License);
 
                 Log.Info("SacredUtils License file was successfully re-created!");
             }

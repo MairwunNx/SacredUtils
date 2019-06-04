@@ -511,7 +511,7 @@
     </Compile>
     <None Include="SourceFiles\cfg\hotkeys.json" />
     <None Include="SourceFiles\cfg\mk.setg.json" />
-    <Resource Include="AppLicense.txt" />
+    <Resource Include="License.txt" />
     <None Include="SourceFiles\cfg\settings.json" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

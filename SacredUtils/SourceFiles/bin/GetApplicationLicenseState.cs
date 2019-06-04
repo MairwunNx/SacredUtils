@@ -14,14 +14,14 @@ namespace SacredUtils.resources.bin
 
             if (!File.Exists($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\LicenseAgreement.su") || !File.Exists("License.txt"))
             {
-                File.WriteAllBytes("License.txt", Properties.Resources.AppLicense);
+                File.WriteAllBytes("License.txt", Properties.Resources.License);
                 File.WriteAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\LicenseAgreement.su", "false");
                 MainWindow.MainWindowInstance.UpdateLbl.IsEnabled = false; MainWindow.MainWindowInstance.MinimizeBtn.IsEnabled = false;
                 OpenLicenseDialog();
             }
             else if (File.ReadAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\LicenseAgreement.su").Contains("false"))
             {
-                File.WriteAllBytes("License.txt", Properties.Resources.AppLicense);
+                File.WriteAllBytes("License.txt", Properties.Resources.License);
                 MainWindow.MainWindowInstance.UpdateLbl.IsEnabled = false; MainWindow.MainWindowInstance.MinimizeBtn.IsEnabled = false;
                 OpenLicenseDialog();
             }

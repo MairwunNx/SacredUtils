@@ -71,16 +71,6 @@ namespace SacredUtils.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] AppLicense {
-            get {
-                object obj = ResourceManager.GetObject("AppLicense", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to _LAVA00.tga
         ///_LAVA01.tga
         ///_LAVA02.tga
@@ -394,6 +384,16 @@ namespace SacredUtils.Properties {
         public static byte[] KeylaRegister {
             get {
                 object obj = ResourceManager.GetObject("KeylaRegister", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] License {
+            get {
+                object obj = ResourceManager.GetObject("License", resourceCulture);
                 return ((byte[])(obj));
             }
         }
