@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net;
-using static SacredUtils.Logger;
+using static SacredUtils.SourceFiles.Logger;
 
 namespace SacredUtils.resources.bin
 {

@@ -8,7 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
-using static SacredUtils.Logger;
+using static SacredUtils.SourceFiles.Logger;
 
 namespace SacredUtils.resources.dlg
 {

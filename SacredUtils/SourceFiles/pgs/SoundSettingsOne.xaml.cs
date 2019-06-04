@@ -1,5 +1,5 @@
 ﻿using SacredUtils.resources.prp;
-using static SacredUtils.Logger;
+using static SacredUtils.SourceFiles.Logger;
 
 namespace SacredUtils.resources.pgs
 {

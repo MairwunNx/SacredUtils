@@ -5,6 +5,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
+using SacredUtils.SourceFiles;
 
 namespace SacredUtils.resources.bin
 {

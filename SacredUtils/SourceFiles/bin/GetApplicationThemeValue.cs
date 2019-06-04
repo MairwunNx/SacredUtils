@@ -1,5 +1,5 @@
 ﻿using WPFSharp.Globalizer;
-using static SacredUtils.Logger;
+using static SacredUtils.SourceFiles.Logger;
 
 namespace SacredUtils.resources.bin
 {

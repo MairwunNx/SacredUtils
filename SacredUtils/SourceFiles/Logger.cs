@@ -4,7 +4,7 @@ using NLog.Config;
 using NLog.Targets;
 using SacredUtils.resources.bin;
 
-namespace SacredUtils
+namespace SacredUtils.SourceFiles
 {
     public static class Logger
     {

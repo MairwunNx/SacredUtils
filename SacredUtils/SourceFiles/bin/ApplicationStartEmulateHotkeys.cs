@@ -9,7 +9,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Threading;
-using static SacredUtils.Logger;
+using static SacredUtils.SourceFiles.Logger;
 
 // ReSharper disable InconsistentNaming
 namespace SacredUtils.resources.bin

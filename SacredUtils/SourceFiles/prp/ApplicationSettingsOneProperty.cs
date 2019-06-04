@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Media;
 using WPFSharp.Globalizer;
-using static SacredUtils.Logger;
+using static SacredUtils.SourceFiles.Logger;
 
 namespace SacredUtils.resources.prp
 {

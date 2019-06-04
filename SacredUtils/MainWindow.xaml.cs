@@ -7,7 +7,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Threading;
 using SacredUtils.resources.bin;
 using SacredUtils.resources.pgs;
-using static SacredUtils.Logger;
+using static SacredUtils.SourceFiles.Logger;
 
 namespace SacredUtils
 {

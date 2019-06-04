@@ -211,7 +211,6 @@
     <Compile Include="SourceFiles\bin\GetRequiredApplicationFiles.cs" />
     <Compile Include="SourceFiles\bin\GetApplicationGlobalizerLibrary.cs" />
     <Compile Include="SourceFiles\bin\GetApplicationLanguageValue.cs" />
-    <Compile Include="Logger.cs" />
     <Compile Include="SourceFiles\bin\GetApplicationSettingsAvailability.cs" />
     <Compile Include="SourceFiles\bin\GetApplicationDownloadStatistic.cs" />
     <Compile Include="SourceFiles\bin\GetApplicationThemeValue.cs" />
@@ -267,6 +266,7 @@
     <Compile Include="SourceFiles\dlg\ApplicationLicenseDialog.xaml.cs">
       <DependentUpon>ApplicationLicenseDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SourceFiles\Logger.cs" />
     <Compile Include="SourceFiles\pgs\ApplicationSettingsOne.xaml.cs">
       <DependentUpon>ApplicationSettingsOne.xaml</DependentUpon>
     </Compile>
