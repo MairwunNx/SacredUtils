@@ -165,6 +165,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SourceFiles\ApplicationInfo.cs" />
     <Compile Include="SourceFiles\arr\ArraySacredGameComponentFiles.cs" />
     <Compile Include="SourceFiles\arr\ArraySacredGameFootStepsFiles.cs" />
     <Compile Include="SourceFiles\arr\ArraySacredGameHealthFiles.cs" />
@@ -201,7 +202,6 @@
     <Compile Include="SourceFiles\bin\CheckAvailabilityGameSettings.cs" />
     <Compile Include="SourceFiles\bin\CheckAvailabilityReleaseUpdates.cs" />
     <Compile Include="SourceFiles\bin\CheckAvailabilityUpdateTemp.cs" />
-    <Compile Include="AppInfo.cs" />
     <Compile Include="SourceFiles\bin\CreateApplicationLanguageFiles.cs" />
     <Compile Include="SourceFiles\bin\CreateApplicationThemeFiles.cs" />
     <Compile Include="SourceFiles\bin\GetChangeLogDialogVisibility.cs" />

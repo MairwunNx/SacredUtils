@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using static SacredUtils.AppInfo;
+using static SacredUtils.SourceFiles.ApplicationInfo;
 
 namespace SacredUtils.resources.bin
 {

@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.IO;
+using SacredUtils.SourceFiles;
 
 namespace SacredUtils.resources.bin
 {
@@ -9,7 +10,7 @@ namespace SacredUtils.resources.bin
         {
             Directory.CreateDirectory("$SacredUtils\\temp");
             File.Create("$SacredUtils\\temp\\updated.su");
-            Process.Start("mnxupdater.exe", AppInfo.CurrentExe + " _newVersionSacredUtilsTemp.exe");
+            Process.Start("mnxupdater.exe", ApplicationInfo.CurrentExe + " _newVersionSacredUtilsTemp.exe");
             ApplicationBaseWindowShutdown.Shutdown();
         }
     }

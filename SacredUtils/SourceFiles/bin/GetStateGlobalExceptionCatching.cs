@@ -32,7 +32,7 @@ namespace SacredUtils.resources.bin
 
             File.WriteAllText(
                 $"$SacredUtils\\crash-reports\\crash-{now.ToString(AppSettings.ApplicationSettings.ScreenShotSaveFilePattern)}-su.txt",
-                $"---- SacredUtils Crash Report Details ----\n\n    There was a critical error of the program, sorry please, if the program could not start \n    Please contact MairwunNx, MairwunNx@gmail.com. May be it our problem. Sorry. );\n\n    In extreme cases, write in the VK (rus) or telegram (eng) (telegram \\ vk (@MairwunNx))\n\nCrash Created Time: {now}\nDescription: There was a severe problem during SacredUtils loading that has caused the SacredUtils to fail\n\nSacredUtils Version: {AppInfo.Version} \\ {AppInfo.AVersion} {AppInfo.Type} \\ {AppInfo.Build}\n\nOperating System: {Environment.OSVersion.VersionString} {RuntimeInformation.OSArchitecture}\n\n{e}");
+                $"---- SacredUtils Crash Report Details ----\n\n    There was a critical error of the program, sorry please, if the program could not start \n    Please contact MairwunNx, MairwunNx@gmail.com. May be it our problem. Sorry. );\n\n    In extreme cases, write in the VK (rus) or telegram (eng) (telegram \\ vk (@MairwunNx))\n\nCrash Created Time: {now}\nDescription: There was a severe problem during SacredUtils loading that has caused the SacredUtils to fail\n\nSacredUtils Version: {ApplicationInfo.Version} \\ {ApplicationInfo.AlphaVersion} {ApplicationInfo.Type} \\ {ApplicationInfo.Build}\n\nOperating System: {Environment.OSVersion.VersionString} {RuntimeInformation.OSArchitecture}\n\n{e}");
 
             try
             {

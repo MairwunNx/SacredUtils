@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Runtime.InteropServices;
+using SacredUtils.SourceFiles;
 using static SacredUtils.SourceFiles.Logger;
 
 namespace SacredUtils.resources.bin
@@ -10,16 +11,16 @@ namespace SacredUtils.resources.bin
         public static void Print()
         {
             if (AppSettings.ApplicationSettings.DisablePrintBaseInfoToLog ||
-                AppInfo.AppArguments.Contains("-disablePrintBaseInfoToLog")) return;
+                ApplicationInfo.AppArguments.Contains("-disablePrintBaseInfoToLog")) return;
 
             Log.Info("============================================================");
 
-            Log.Info(AppInfo.Type == "Alpha"
-                ? $"Starting {AppInfo.Name} configurator version {AppInfo.AVersion}"
-                : $"Starting {AppInfo.Name} configurator version {AppInfo.Version}");
+            Log.Info(ApplicationInfo.Type == "Alpha"
+                ? $"Starting {ApplicationInfo.Name} configurator version {ApplicationInfo.AlphaVersion}"
+                : $"Starting {ApplicationInfo.Name} configurator version {ApplicationInfo.Version}");
 
-            Log.Info($"You have launched an official {AppInfo.Type} build");
-            Log.Info($"Current launched SacredUtils app name {AppInfo.CurrentExe}");
+            Log.Info($"You have launched an official {ApplicationInfo.Type} build");
+            Log.Info($"Current launched SacredUtils app name {ApplicationInfo.CurrentExe}");
 
             Log.Info(AppDomain.CurrentDomain.IsFullyTrusted
                 ? "Current launched SacredUtils application is fully trusted"

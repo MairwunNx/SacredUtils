@@ -6,6 +6,7 @@ using System.Windows.Input;
 using EnumsNET;
 using MaterialDesignThemes.Wpf;
 using SacredUtils.resources.dlg;
+using SacredUtils.SourceFiles;
 using static SacredUtils.SourceFiles.Logger;
 
 // ReSharper disable LocalSuppression
@@ -69,12 +70,12 @@ namespace SacredUtils.resources.bin
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == openDirectory)
             {
-                Process.Start(AppInfo.CurrentPath);
+                Process.Start(ApplicationInfo.CurrentPath);
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == reloadSacredUtils)
             {
-                Process.Start(AppInfo.AppPath);
+                Process.Start(ApplicationInfo.AppPath);
                 Environment.Exit(0);
             }
 
@@ -86,7 +87,7 @@ namespace SacredUtils.resources.bin
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control &&
                 e.Key == fastReloadSacredUtils)
             {
-                Process.Start(AppInfo.AppPath, " -fast");
+                Process.Start(ApplicationInfo.AppPath, " -fast");
                 Environment.Exit(0);
             }
 

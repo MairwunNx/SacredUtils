@@ -5,7 +5,7 @@ using System.Windows;
 using SacredUtils.resources.bin;
 using SacredUtils.SourceFiles;
 using SacredUtils.SourceFiles.bin;
-using static SacredUtils.AppInfo;
+using static SacredUtils.SourceFiles.ApplicationInfo;
 
 namespace SacredUtils
 {

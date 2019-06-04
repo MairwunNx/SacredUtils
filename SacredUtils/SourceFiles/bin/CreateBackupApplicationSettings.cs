@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using SacredUtils.SourceFiles;
 
 namespace SacredUtils.resources.bin
 {
@@ -19,7 +20,7 @@ namespace SacredUtils.resources.bin
 
             if (AppSettings.ApplicationSettings.MakeAutoBackupAppGameConfigs)
             {
-                File.Copy("$SacredUtils\\conf\\settings.json", $"$SacredUtils\\back\\cfg-app\\config_app_id_{AppInfo.RandomSession}.cfg", true);
+                File.Copy("$SacredUtils\\conf\\settings.json", $"$SacredUtils\\back\\cfg-app\\config_app_id_{ApplicationInfo.RandomSession}.cfg", true);
             }
             else
             {

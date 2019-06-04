@@ -14,7 +14,7 @@ namespace SacredUtils.resources.bin
 
             if (AppSettings.ApplicationSettings.CheckAutoAlphaUpdate)
             {
-                if (GetActualApplicationVersion.Get("alpha", AppInfo.AVersion,
+                if (GetActualApplicationVersion.Get("alpha", ApplicationInfo.AlphaVersion,
                     "https://drive.google.com/uc?export=download&id=1Fc0QIxzUn7-ellW5e4_W1Wv05-V1hsJ8"))
                 {
                     DownloadApplicationNewUpdate.Download(

@@ -7,6 +7,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Threading;
 using SacredUtils.resources.bin;
 using SacredUtils.resources.pgs;
+using SacredUtils.SourceFiles;
 using static SacredUtils.SourceFiles.Logger;
 
 namespace SacredUtils
@@ -95,10 +96,10 @@ namespace SacredUtils
                     GetChangeLogDialogVisibility.Get();
                 }
 
-                AppInfo.StartupStopwatch.Stop(); // Make Yourself ^_^
+                ApplicationInfo.StartupStopwatch.Stop(); // Make Yourself ^_^
 
                 Log.Info(
-                    $"Loading SacredUtils application done ({AppInfo.StartupStopwatch.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
+                    $"Loading SacredUtils application done ({ApplicationInfo.StartupStopwatch.Elapsed.TotalMilliseconds / 1000.00} seconds)!");
             };
         }
 
