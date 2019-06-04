@@ -53,7 +53,7 @@ namespace SacredUtils.resources.prp
 
                 if (value)
                 {
-                    if (NetworkUtils.Connect())
+                    if (NetworkUtils.IsConnected.Value)
                     {
                         WebClient wc = new WebClient();
 
@@ -93,7 +93,7 @@ namespace SacredUtils.resources.prp
 
                 if (value)
                 {
-                    if (NetworkUtils.Connect())
+                    if (NetworkUtils.IsConnected.Value)
                     {
                         WebClient wc = new WebClient();
 
@@ -143,7 +143,7 @@ namespace SacredUtils.resources.prp
 
                 if (value)
                 {
-                    if (NetworkUtils.Connect())
+                    if (NetworkUtils.IsConnected.Value)
                     {
                         WebClient wc = new WebClient();
 
@@ -198,7 +198,7 @@ namespace SacredUtils.resources.prp
 
                 if (value)
                 {
-                    if (NetworkUtils.Connect())
+                    if (NetworkUtils.IsConnected.Value)
                     {
                         WebClient wc = new WebClient();
 
@@ -233,7 +233,7 @@ namespace SacredUtils.resources.prp
 
                 if (value)
                 {
-                    if (NetworkUtils.Connect())
+                    if (NetworkUtils.IsConnected.Value)
                     {
                         WebClient wc = new WebClient();
 
@@ -277,7 +277,7 @@ namespace SacredUtils.resources.prp
                 }
                 else
                 {
-                    if (NetworkUtils.Connect())
+                    if (NetworkUtils.IsConnected.Value)
                     {
                         WebClient wc = new WebClient();
 

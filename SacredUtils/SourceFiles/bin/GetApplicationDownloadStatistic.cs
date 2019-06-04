@@ -14,7 +14,7 @@ namespace SacredUtils.resources.bin
         {
             if (AppSettings.ApplicationSettings.DisableApplicationTelemetry) { return; }
 
-            if (!NetworkUtils.Connect()) { return; }
+            if (!NetworkUtils.IsConnected.Value) { return; }
 
             try
             {

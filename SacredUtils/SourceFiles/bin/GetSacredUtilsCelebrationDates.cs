@@ -134,7 +134,7 @@ namespace SacredUtils.resources.bin
                 }
             } 
 
-            if (!NetworkUtils.Connect()) return;
+            if (!NetworkUtils.IsConnected.Value) return;
             
             Random random = new Random();
             int randomNumber = random.Next(0, 400);

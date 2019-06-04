@@ -8,7 +8,7 @@ namespace SacredUtils.resources.bin
     {
         public static void GetPerm()
         {
-            if (!NetworkUtils.Connect()) return;
+            if (!NetworkUtils.IsConnected.Value) return;
 
             Log.Info("Checking permission for checking alpha SacredUtils updates ...");
 

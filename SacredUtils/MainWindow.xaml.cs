@@ -86,7 +86,7 @@ namespace SacredUtils
             Loaded += (sender, args) =>
             {
                 Task.Run(CheckAvailabilityAlphaUpdates.GetPerm);
-                Task.Run(GetNoInternetIconVisibility.Get);
+                Task.Run(NetworkUtils.ShowNoConnection);
                 Task.Run(GetSacredUtilsCelebrationDates.CheckDates);
 
                 if (File.ReadAllText(

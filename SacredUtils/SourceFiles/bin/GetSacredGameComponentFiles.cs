@@ -22,7 +22,7 @@ namespace SacredUtils.resources.bin
 
         public static void GetComponent(Uri address, string downloadPath, string downloadFileName, string extractFolder, string componentName, string oldFileName, string newFileName)
         {
-            if (NetworkUtils.Connect())
+            if (NetworkUtils.IsConnected.Value)
             {
                 MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
                 MainWindow.MainWindowInstance.DialogFrame.Content = GameGettingComponentsDialog;

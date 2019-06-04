@@ -203,7 +203,6 @@
     <Compile Include="SourceFiles\bin\CreateApplicationLanguageFiles.cs" />
     <Compile Include="SourceFiles\bin\CreateApplicationThemeFiles.cs" />
     <Compile Include="SourceFiles\bin\GetChangeLogDialogVisibility.cs" />
-    <Compile Include="SourceFiles\bin\GetNoInternetIconVisibility.cs" />
     <Compile Include="SourceFiles\bin\GetPermissionsOnGettingMemory.cs" />
     <Compile Include="SourceFiles\bin\GetRequiredApplicationFiles.cs" />
     <Compile Include="SourceFiles\bin\GetApplicationGlobalizerLibrary.cs" />

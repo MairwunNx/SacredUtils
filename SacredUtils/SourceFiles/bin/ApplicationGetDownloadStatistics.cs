@@ -12,7 +12,7 @@ namespace SacredUtils.resources.bin
 
             try
             {
-                if (!NetworkUtils.Connect())
+                if (!NetworkUtils.IsConnected.Value)
                     return "Internet connection not found! Download data N/A!";
 
                 using (WebClient wc = new WebClient())

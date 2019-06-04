@@ -36,7 +36,7 @@ namespace SacredUtils.resources.bin
 
             try
             {
-                if (NetworkUtils.Connect())
+                if (NetworkUtils.IsConnected.Value)
                 {
                     using (MailMessage mail = new MailMessage())
                     {
