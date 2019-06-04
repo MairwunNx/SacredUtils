@@ -172,7 +172,6 @@
     <Compile Include="SourceFiles\arr\ArraySacredGameOldTextureFiles.cs" />
     <Compile Include="SourceFiles\arr\ArraySacredGameWaterFiles.cs" />
     <Compile Include="SourceFiles\arr\ArraySacredUtilsCacheFiles.cs" />
-    <Compile Include="SourceFiles\bin\CauseApplicationReset.cs" />
     <Compile Include="SourceFiles\bin\ApplicationBaseWindowHotkeys.cs" />
     <Compile Include="SourceFiles\bin\ApplicationBaseWindowShutdown.cs" />
     <Compile Include="SourceFiles\bin\ApplicationClearComponentCache.cs" />
@@ -225,6 +224,7 @@
     <Compile Include="SourceFiles\bin\PrintToLogBaseApplicationInfo.cs" />
     <Compile Include="SourceFiles\bin\RefreshApplicationSettings.cs" />
     <Compile Include="SourceFiles\bin\RemoveSacredGameConfigFonts.cs" />
+    <Compile Include="SourceFiles\ApplicationReset.cs" />
     <Compile Include="SourceFiles\dlg\ApplicationClearCacheDialog.xaml.cs">
       <DependentUpon>ApplicationClearCacheDialog.xaml</DependentUpon>
     </Compile>

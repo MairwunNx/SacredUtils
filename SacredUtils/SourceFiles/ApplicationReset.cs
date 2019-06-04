@@ -1,19 +1,18 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using static SacredUtils.SourceFiles.ApplicationInfo;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles
 {
-    public static class CauseApplicationReset
+    public static class ApplicationReset
     {
         public static void Reset()
         {
             try
             {
-                if (!AppArguments.Contains("-fullReset")) return;
+                if (!ApplicationInfo.AppArguments.Contains("-fullReset")) return;
 
-                if (AppArguments.Contains("-fullResetPConf") &&
+                if (ApplicationInfo.AppArguments.Contains("-fullResetPConf") &&
                     Directory.Exists("$SacredUtils\\conf"))
                 {
                     Directory.Delete("$SacredUtils\\conf", true);

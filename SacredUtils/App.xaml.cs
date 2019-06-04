@@ -16,7 +16,7 @@ namespace SacredUtils
             StartupStopwatch.Start();
             AppArguments = e.Args;
             SystemInfo.Init();
-            CauseApplicationReset.Reset();
+            ApplicationReset.Reset();
             GetApplicationSettingsAvailability.Get();
 
             if (e.Args.Contains("-runGame"))
