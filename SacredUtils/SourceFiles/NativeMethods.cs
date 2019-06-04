@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Runtime.InteropServices;
-using SacredUtils.SourceFiles;
 
-namespace SacredUtils
+namespace SacredUtils.SourceFiles
 {
     public static class NativeMethods
     {

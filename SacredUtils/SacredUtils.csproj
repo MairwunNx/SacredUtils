@@ -159,7 +159,6 @@
     <Compile Include="AppSettings.cs" />
     <Compile Include="HotkeySettings.cs" />
     <Compile Include="ModifySettings.cs" />
-    <Compile Include="NativeMethods.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -266,6 +265,7 @@
       <DependentUpon>ApplicationLicenseDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="SourceFiles\Logger.cs" />
+    <Compile Include="SourceFiles\NativeMethods.cs" />
     <Compile Include="SourceFiles\NetworkUtils.cs" />
     <Compile Include="SourceFiles\pgs\ApplicationSettingsOne.xaml.cs">
       <DependentUpon>ApplicationSettingsOne.xaml</DependentUpon>

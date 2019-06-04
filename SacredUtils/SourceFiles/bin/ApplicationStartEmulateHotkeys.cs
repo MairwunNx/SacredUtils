@@ -9,6 +9,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Threading;
+using SacredUtils.SourceFiles;
 using static SacredUtils.SourceFiles.Logger;
 
 // ReSharper disable InconsistentNaming
