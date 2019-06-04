@@ -36,6 +36,7 @@
   "HotKeyEventArgsGameHandled": "true",
   "HotKeyRegisterGameDelay": "1000",
   "HWndSacredWindowClassId": "Sacred",
+  "InternetConnectionPingProvider": "http://clients3.google.com/generate_204",
   "KeyApplicationGotoMainMenu": "Escape",
   "KeyDefaultReloadSacredUtils": "F5",
   "KeyDefaultShutdownSacredUtils": "F6",

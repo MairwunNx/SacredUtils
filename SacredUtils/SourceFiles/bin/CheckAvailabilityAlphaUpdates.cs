@@ -1,4 +1,5 @@
-﻿using static SacredUtils.AppLogger;
+﻿using SacredUtils.SourceFiles.bin;
+using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
 {
@@ -6,7 +7,7 @@ namespace SacredUtils.resources.bin
     {
         public static void GetPerm()
         {
-            if (!CheckAvailabilityInternetConnection.Connect()) return;
+            if (!NetworkUtils.Connect()) return;
 
             Log.Info("Checking permission for checking alpha SacredUtils updates ...");
 

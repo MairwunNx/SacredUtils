@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
+using SacredUtils.SourceFiles.bin;
 using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
@@ -20,7 +21,7 @@ namespace SacredUtils.resources.bin
 
         public static void GetComponent(Uri address, string downloadPath, string downloadFileName, string extractFolder, string componentName, string oldFileName, string newFileName)
         {
-            if (CheckAvailabilityInternetConnection.Connect())
+            if (NetworkUtils.Connect())
             {
                 MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
                 MainWindow.MainWindowInstance.DialogFrame.Content = GameGettingComponentsDialog;

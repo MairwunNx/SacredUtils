@@ -116,6 +116,12 @@ namespace SacredUtils
         [Option(Alias = "HWndSacredWindowClassId", DefaultValue = "Sacred")]
         string HWndSacredWindowClassId { get; }
 
+        [Option(
+            Alias = "InternetConnectionPingProvider",
+            DefaultValue = "http://clients3.google.com/generate_204"
+        )]
+        string InternetConnectionPingProvider { get; }
+
         [Option(Alias = "KeyApplicationGotoMainMenu", DefaultValue = "Escape")]
         string KeyApplicationGotoMainMenu { get; }
 

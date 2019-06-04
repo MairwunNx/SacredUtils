@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
+using SacredUtils.SourceFiles.bin;
 using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
@@ -34,7 +35,7 @@ namespace SacredUtils.resources.bin
 
             try
             {
-                if (CheckAvailabilityInternetConnection.Connect())
+                if (NetworkUtils.Connect())
                 {
                     using (MailMessage mail = new MailMessage())
                     {

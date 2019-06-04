@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using SacredUtils.SourceFiles.bin;
 
 namespace SacredUtils.resources.bin
 {
@@ -10,7 +11,7 @@ namespace SacredUtils.resources.bin
 
             try
             {
-                if (!CheckAvailabilityInternetConnection.Connect())
+                if (!NetworkUtils.Connect())
                     return "Internet connection not found! Download data N/A!";
 
                 using (WebClient wc = new WebClient())

@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using SacredUtils.SourceFiles.bin;
 using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.bin
@@ -12,7 +13,7 @@ namespace SacredUtils.resources.bin
         {
             if (AppSettings.ApplicationSettings.DisableApplicationTelemetry) { return; }
 
-            if (!CheckAvailabilityInternetConnection.Connect()) { return; }
+            if (!NetworkUtils.Connect()) { return; }
 
             try
             {

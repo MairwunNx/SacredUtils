@@ -199,7 +199,7 @@
     <Compile Include="SourceFiles\bin\GetApplicationScaleValue.cs" />
     <Compile Include="SourceFiles\bin\CheckAvailabilityAlphaUpdates.cs" />
     <Compile Include="SourceFiles\bin\CheckAvailabilityGameSettings.cs" />
-    <Compile Include="SourceFiles\bin\CheckAvailabilityInternetConnection.cs" />
+    <Compile Include="SourceFiles\bin\NetworkUtils.cs" />
     <Compile Include="SourceFiles\bin\CheckAvailabilityReleaseUpdates.cs" />
     <Compile Include="SourceFiles\bin\CheckAvailabilityUpdateTemp.cs" />
     <Compile Include="AppInfo.cs" />

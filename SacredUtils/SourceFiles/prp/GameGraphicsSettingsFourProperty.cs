@@ -9,6 +9,7 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
 using SacredUtils.resources.bin;
+using SacredUtils.SourceFiles.bin;
 using static SacredUtils.AppLogger;
 
 namespace SacredUtils.resources.prp
@@ -51,7 +52,7 @@ namespace SacredUtils.resources.prp
 
                 if (value)
                 {
-                    if (CheckAvailabilityInternetConnection.Connect())
+                    if (NetworkUtils.Connect())
                     {
                         WebClient wc = new WebClient();
 
@@ -91,7 +92,7 @@ namespace SacredUtils.resources.prp
 
                 if (value)
                 {
-                    if (CheckAvailabilityInternetConnection.Connect())
+                    if (NetworkUtils.Connect())
                     {
                         WebClient wc = new WebClient();
 
@@ -141,7 +142,7 @@ namespace SacredUtils.resources.prp
 
                 if (value)
                 {
-                    if (CheckAvailabilityInternetConnection.Connect())
+                    if (NetworkUtils.Connect())
                     {
                         WebClient wc = new WebClient();
 
@@ -196,7 +197,7 @@ namespace SacredUtils.resources.prp
 
                 if (value)
                 {
-                    if (CheckAvailabilityInternetConnection.Connect())
+                    if (NetworkUtils.Connect())
                     {
                         WebClient wc = new WebClient();
 
@@ -231,7 +232,7 @@ namespace SacredUtils.resources.prp
 
                 if (value)
                 {
-                    if (CheckAvailabilityInternetConnection.Connect())
+                    if (NetworkUtils.Connect())
                     {
                         WebClient wc = new WebClient();
 
@@ -275,7 +276,7 @@ namespace SacredUtils.resources.prp
                 }
                 else
                 {
-                    if (CheckAvailabilityInternetConnection.Connect())
+                    if (NetworkUtils.Connect())
                     {
                         WebClient wc = new WebClient();
 

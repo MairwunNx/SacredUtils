@@ -5,6 +5,7 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
+using SacredUtils.SourceFiles.bin;
 
 namespace SacredUtils.resources.bin
 {
@@ -132,7 +133,7 @@ namespace SacredUtils.resources.bin
                 }
             } 
 
-            if (!CheckAvailabilityInternetConnection.Connect()) return;
+            if (!NetworkUtils.Connect()) return;
             
             Random random = new Random();
             int randomNumber = random.Next(0, 400);
