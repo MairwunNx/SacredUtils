@@ -1,7 +1,8 @@
-﻿using Config.Net;
-using System.IO;
+﻿using System.IO;
+using Config.Net;
+using SacredUtils.resources.bin;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class GetApplicationSettingsAvailability
     {

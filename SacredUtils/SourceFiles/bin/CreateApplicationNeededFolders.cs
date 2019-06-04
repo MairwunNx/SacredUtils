@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class CreateApplicationNeededFolders
     {
