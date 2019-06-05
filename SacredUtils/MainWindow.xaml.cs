@@ -8,6 +8,7 @@ using System.Windows.Threading;
 using SacredUtils.resources.bin;
 using SacredUtils.resources.pgs;
 using SacredUtils.SourceFiles;
+using SacredUtils.SourceFiles.theme;
 using SacredUtils.SourceFiles.utils;
 using static SacredUtils.SourceFiles.Logger;
 
@@ -40,7 +41,7 @@ namespace SacredUtils
             MainWindowInstance = (MainWindow) Application.Current.MainWindow;
             ChangeApplicationSelectionSettings.UnSelectSettings(UnselectedStg);
             GetApplicationLanguageValue.Get();
-            GetApplicationThemeValue.Get();
+            ThemeValueProvider.AssignThemeValue();
             GetApplicationScaleValue.Get();
             GetPermissionsOnGettingMemory.Get();
             GetApplicationLicenseState.GetLicenseState();

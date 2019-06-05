@@ -199,7 +199,6 @@
     <Compile Include="SourceFiles\bin\CheckAvailabilityReleaseUpdates.cs" />
     <Compile Include="SourceFiles\bin\CheckAvailabilityUpdateTemp.cs" />
     <Compile Include="SourceFiles\bin\CreateApplicationLanguageFiles.cs" />
-    <Compile Include="SourceFiles\bin\CreateApplicationThemeFiles.cs" />
     <Compile Include="SourceFiles\bin\GetChangeLogDialogVisibility.cs" />
     <Compile Include="SourceFiles\bin\GetPermissionsOnGettingMemory.cs" />
     <Compile Include="SourceFiles\bin\GetRequiredApplicationFiles.cs" />
@@ -207,7 +206,6 @@
     <Compile Include="SourceFiles\bin\GetApplicationLanguageValue.cs" />
     <Compile Include="SourceFiles\bin\GetApplicationSettingsAvailability.cs" />
     <Compile Include="SourceFiles\bin\GetApplicationDownloadStatistic.cs" />
-    <Compile Include="SourceFiles\bin\GetApplicationThemeValue.cs" />
     <Compile Include="SourceFiles\bin\GetSacredGameComponentFiles.cs" />
     <Compile Include="SourceFiles\bin\GetSacredGameInstalledLang.cs" />
     <Compile Include="SourceFiles\bin\GetSacredGameInstalledVoiceover.cs" />
@@ -321,6 +319,8 @@
     <Compile Include="SourceFiles\prp\GamePlaySettingsThreeProperty.cs" />
     <Compile Include="SourceFiles\prp\GamePlaySettingsTwoProperty.cs" />
     <Compile Include="SourceFiles\prp\GameSoundSettingsOneProperty.cs" />
+    <Compile Include="SourceFiles\theme\ThemeFileManager.cs" />
+    <Compile Include="SourceFiles\theme\ThemeValueProvider.cs" />
     <Compile Include="SourceFiles\utils\ApplicationUtils.cs" />
     <Compile Include="SourceFiles\utils\NetworkUtils.cs" />
     <Resource Include="Resources\fonts\GoogleSans-Bold.ttf" />
