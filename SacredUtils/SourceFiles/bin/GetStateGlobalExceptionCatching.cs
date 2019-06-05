@@ -5,7 +5,6 @@ using System.Net.Mail;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using SacredUtils.SourceFiles;
-using SacredUtils.SourceFiles.bin;
 using static SacredUtils.SourceFiles.Logger;
 
 namespace SacredUtils.resources.bin
@@ -22,9 +21,10 @@ namespace SacredUtils.resources.bin
 
         private static void Catch(object sender, UnhandledExceptionEventArgs args)
         {
-            Exception e = (Exception)args.ExceptionObject;
+            Exception e = (Exception) args.ExceptionObject;
 
-            Log.Fatal("\n\n    There was a critical error that provoked the forced termination of the program.\n    Crash-report-log was created in $SacredUtils\\crash-reports, send it crash-report-log to MairwunNx\n");
+            Log.Fatal(
+                "\n\n    There was a critical error that provoked the forced termination of the program.\n    Crash-report-log was created in $SacredUtils\\crash-reports, send it crash-report-log to MairwunNx\n");
 
             DateTime now = DateTime.Now;
 
@@ -48,11 +48,13 @@ namespace SacredUtils.resources.bin
                         mail.Body = $"SacredUtils Crash-Report from user {Environment.UserName}.";
 
                         // todo: replace with crash file date file pattern.
-                        Attachment attachment = new Attachment($"$SacredUtils\\crash-reports\\crash-{now.ToString(AppSettings.ApplicationSettings.ScreenShotSaveFilePattern)}-su.txt");
+                        Attachment attachment = new Attachment(
+                            $"$SacredUtils\\crash-reports\\crash-{now.ToString(AppSettings.ApplicationSettings.ScreenShotSaveFilePattern)}-su.txt");
                         mail.Attachments.Add(attachment);
 
                         smtpServer.Port = 587;
-                        smtpServer.Credentials = new NetworkCredential("crashviolator@mail.ru", "trAVypLMf2DkCv2");
+                        smtpServer.Credentials =
+                            new NetworkCredential("crashviolator@mail.ru", "trAVypLMf2DkCv2");
                         smtpServer.EnableSsl = true;
 
                         smtpServer.Send(mail);

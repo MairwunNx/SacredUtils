@@ -8,8 +8,6 @@ namespace SacredUtils.SourceFiles.bin
     {
         public static void Get()
         {
-            CreateApplicationNeededFolders.Create();
-
             if (File.Exists("$SacredUtils\\conf\\settings.json") &&
                 !File.ReadAllText("$SacredUtils\\conf\\settings.json")
                     .Contains("AcceptLicense"))

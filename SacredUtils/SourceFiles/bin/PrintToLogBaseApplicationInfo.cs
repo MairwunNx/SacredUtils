@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Runtime.InteropServices;
 using SacredUtils.SourceFiles;
+using SacredUtils.SourceFiles.extensions;
 using static SacredUtils.SourceFiles.Logger;
 
 namespace SacredUtils.resources.bin
@@ -44,7 +45,8 @@ namespace SacredUtils.resources.bin
             Log.Info(
                 $"SacredUtils current domain assemblies count {AppDomain.CurrentDomain.GetAssemblies().Length}");
 
-            Log.Info("Involved dirs (6) : conf, logs, back, thms, lang");
+            Log.Info(
+                $"Involved dirs ({ApplicationInfo.InvolvedDirs.Length}) : {ApplicationInfo.InvolvedDirs.ToNormalString()}");
 
             Log.Info("============================================================");
         }

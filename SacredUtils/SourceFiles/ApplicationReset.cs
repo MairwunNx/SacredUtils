@@ -13,14 +13,14 @@ namespace SacredUtils.SourceFiles
                 if (!ApplicationInfo.AppArguments.Contains("-fullReset")) return;
 
                 if (ApplicationInfo.AppArguments.Contains("-fullResetPConf") &&
-                    Directory.Exists("$SacredUtils\\conf"))
+                    Directory.Exists(Path.Combine(ApplicationInfo.Root, "conf")))
                 {
-                    Directory.Delete("$SacredUtils\\conf", true);
+                    Directory.Delete(Path.Combine(ApplicationInfo.Root, "conf"), true);
                     return;
                 }
 
-                if (!Directory.Exists("$SacredUtils")) return;
-                Directory.Delete("$SacredUtils", true);
+                if (!Directory.Exists(ApplicationInfo.Root)) return;
+                Directory.Delete(ApplicationInfo.Root, true);
             }
             catch (Exception ex)
             {

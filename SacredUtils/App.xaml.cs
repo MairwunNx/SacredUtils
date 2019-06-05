@@ -5,6 +5,7 @@ using System.Windows;
 using SacredUtils.resources.bin;
 using SacredUtils.SourceFiles;
 using SacredUtils.SourceFiles.bin;
+using static System.IO.Directory;
 using static SacredUtils.SourceFiles.ApplicationInfo;
 
 namespace SacredUtils
@@ -17,6 +18,7 @@ namespace SacredUtils
             AppArguments = e.Args;
             SystemInfo.Init();
             ApplicationReset.Reset();
+            CreateDirectories();
             GetApplicationSettingsAvailability.Get();
 
             if (e.Args.Contains("-runGame"))
@@ -61,6 +63,14 @@ namespace SacredUtils
                 Task.Run(GetApplicationDownloadStatistic.Get);
 
                 base.OnStartup(e);
+            }
+        }
+
+        private static void CreateDirectories()
+        {
+            foreach (var directoryPath in InvolvedDirs)
+            {
+                CreateDirectory(directoryPath);
             }
         }
     }

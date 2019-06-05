@@ -183,7 +183,6 @@
     <Compile Include="SourceFiles\bin\ChangeApplicationSelectionSettings.cs" />
     <Compile Include="SourceFiles\bin\ChangeSacredGameSettingsValue.cs" />
     <Compile Include="SourceFiles\bin\ApplicationHotKeyConvertKeyValue.cs" />
-    <Compile Include="SourceFiles\bin\CreateApplicationNeededFolders.cs" />
     <Compile Include="SourceFiles\bin\CreateBackupApplicationSettings.cs" />
     <Compile Include="SourceFiles\bin\CreateBackupSacredGameSettings.cs" />
     <Compile Include="SourceFiles\bin\DownloadApplicationNewUpdate.cs" />
@@ -263,6 +262,7 @@
     <Compile Include="SourceFiles\dlg\ApplicationLicenseDialog.xaml.cs">
       <DependentUpon>ApplicationLicenseDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SourceFiles\extensions\ArrayExtension.cs" />
     <Compile Include="SourceFiles\Logger.cs" />
     <Compile Include="SourceFiles\NativeMethods.cs" />
     <Compile Include="SourceFiles\NetworkUtils.cs" />
