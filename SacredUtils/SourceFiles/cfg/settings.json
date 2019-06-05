@@ -44,7 +44,6 @@
   "KeyOpenSacredUtilsDirectory": "F4",
   "KeyOpenSacredUtilsLogFile": "F1",
   "KeyOpenSacredUtilsSettingFile": "F2",
-  "KeyReloadFastModeSacredUtils": "F7",
   "MakeAutoBackupAppGameConfigs": "true",
   "MaxApplicationArchiveFiles": "10",
   "MaxApplicationBackupFiles": "10",

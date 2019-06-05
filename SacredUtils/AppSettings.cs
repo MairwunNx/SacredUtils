@@ -143,9 +143,6 @@ namespace SacredUtils
         [Option(Alias = "KeyOpenSacredUtilsSettingFile", DefaultValue = "F2")]
         string KeyOpenSacredUtilsSettingFile { get; }
 
-        [Option(Alias = "KeyReloadFastModeSacredUtils", DefaultValue = "F7")]
-        string KeyReloadFastModeSacredUtils { get; }
-
         [Option(Alias = "MakeAutoBackupAppGameConfigs", DefaultValue = "true")]
         bool MakeAutoBackupAppGameConfigs { get; set; }
 

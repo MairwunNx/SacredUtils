@@ -35,8 +35,6 @@ namespace SacredUtils.resources.bin
                 out Key reloadSacredUtils);
             Enums.TryParse(AppSettings.ApplicationSettings.KeyDefaultShutdownSacredUtils,
                 out Key shutdownSacredUtils);
-            Enums.TryParse(AppSettings.ApplicationSettings.KeyReloadFastModeSacredUtils,
-                out Key fastReloadSacredUtils);
 
             if (e.Key == toMain)
             {
