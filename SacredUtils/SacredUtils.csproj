@@ -164,6 +164,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SourceFiles\ApplicationUtils.cs" />
     <Compile Include="SourceFiles\ApplicationInfo.cs" />
     <Compile Include="SourceFiles\arr\ArraySacredGameComponentFiles.cs" />
     <Compile Include="SourceFiles\arr\ArraySacredGameFootStepsFiles.cs" />
@@ -173,7 +174,6 @@
     <Compile Include="SourceFiles\arr\ArraySacredGameWaterFiles.cs" />
     <Compile Include="SourceFiles\arr\ArraySacredUtilsCacheFiles.cs" />
     <Compile Include="SourceFiles\bin\ApplicationBaseWindowHotkeys.cs" />
-    <Compile Include="SourceFiles\bin\ApplicationBaseWindowShutdown.cs" />
     <Compile Include="SourceFiles\bin\ApplicationClearComponentCache.cs" />
     <Compile Include="SourceFiles\bin\ApplicationGetDownloadStatistics.cs" />
     <Compile Include="SourceFiles\bin\ApplicationRunSacredGameWithArgs.cs" />

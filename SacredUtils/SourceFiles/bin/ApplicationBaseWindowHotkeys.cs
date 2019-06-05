@@ -75,20 +75,12 @@ namespace SacredUtils.resources.bin
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == reloadSacredUtils)
             {
-                Process.Start(ApplicationInfo.AppPath);
-                Environment.Exit(0);
+                ApplicationUtils.Reload();
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == shutdownSacredUtils)
             {
-                ApplicationBaseWindowShutdown.Shutdown();
-            }
-
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control &&
-                e.Key == fastReloadSacredUtils)
-            {
-                Process.Start(ApplicationInfo.AppPath, " -fast");
-                Environment.Exit(0);
+                ApplicationUtils.Shutdown();
             }
 
             if (e.Key == Key.F5)

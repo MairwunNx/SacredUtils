@@ -72,7 +72,7 @@ namespace SacredUtils
                 new FrameworkPropertyMetadata
                     {DefaultValue = AppSettings.ApplicationSettings.DesiredFrameRateProperty});
 
-            CloseBtn.Click += (s, e) => ApplicationBaseWindowShutdown.Shutdown();
+            CloseBtn.Click += (s, e) => ApplicationUtils.Shutdown();
             UpdateLbl.MouseDown += (s, e) => ApplicationStartUtilityUpdate.Start();
             BaseWindow.PreviewKeyDown += ApplicationBaseWindowHotkeys.KeyDown;
             MinimizeBtn.Click += (s, e) => WindowState = WindowState.Minimized;

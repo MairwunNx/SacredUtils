@@ -11,7 +11,7 @@ namespace SacredUtils.resources.bin
             Directory.CreateDirectory("$SacredUtils\\temp");
             File.Create("$SacredUtils\\temp\\updated.su");
             Process.Start("mnxupdater.exe", ApplicationInfo.CurrentExe + " _newVersionSacredUtilsTemp.exe");
-            ApplicationBaseWindowShutdown.Shutdown();
+            ApplicationUtils.Shutdown();
         }
     }
 }
