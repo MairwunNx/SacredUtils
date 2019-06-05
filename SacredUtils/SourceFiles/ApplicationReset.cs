@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using static SacredUtils.SourceFiles.ApplicationInfo;
 
 namespace SacredUtils.SourceFiles
 {
@@ -10,17 +11,17 @@ namespace SacredUtils.SourceFiles
         {
             try
             {
-                if (!ApplicationInfo.AppArguments.Contains("-fullReset")) return;
+                if (!AppArguments.Contains("-fullReset")) return;
 
-                if (ApplicationInfo.AppArguments.Contains("-fullResetPConf") &&
-                    Directory.Exists(Path.Combine(ApplicationInfo.Root, "conf")))
+                if (AppArguments.Contains("-fullResetPConf") &&
+                    Directory.Exists(Path.Combine(Root, "conf")))
                 {
-                    Directory.Delete(Path.Combine(ApplicationInfo.Root, "conf"), true);
+                    Directory.Delete(Path.Combine(Root, "conf"), true);
                     return;
                 }
 
-                if (!Directory.Exists(ApplicationInfo.Root)) return;
-                Directory.Delete(ApplicationInfo.Root, true);
+                if (!Directory.Exists(Root)) return;
+                Directory.Delete(Root, true);
             }
             catch (Exception ex)
             {

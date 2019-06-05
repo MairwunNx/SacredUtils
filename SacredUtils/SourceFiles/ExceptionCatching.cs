@@ -5,6 +5,8 @@ using System.Net.Mail;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using SacredUtils.SourceFiles.extensions;
+using static SacredUtils.AppSettings;
+using static SacredUtils.SourceFiles.Logger;
 
 namespace SacredUtils.SourceFiles
 {
@@ -19,7 +21,7 @@ namespace SacredUtils.SourceFiles
 
         public static void Init()
         {
-            if (AppSettings.ApplicationSettings.EnableGlobalExceptionCatching)
+            if (ApplicationSettings.EnableGlobalExceptionCatching)
             {
                 Subscribe();
             }
@@ -32,11 +34,11 @@ namespace SacredUtils.SourceFiles
             Exception e = (Exception) args.ExceptionObject;
             DateTime now = DateTime.Now;
             string crashFilePath =
-                $"{Path.Combine(ApplicationInfo.CrashFolder, $"crash-{now.ToString(AppSettings.ApplicationSettings.ScreenShotSaveFilePattern)}-su.txt")}";
+                $"{Path.Combine(ApplicationInfo.CrashFolder, $"crash-{now.ToString(ApplicationSettings.ScreenShotSaveFilePattern)}-su.txt")}";
             string latestLogFile = Path.Combine(ApplicationInfo.Root, "logs", "latest.log");
             Directory.CreateDirectory(ApplicationInfo.CrashFolder);
 
-            Logger.Log.Fatal(
+            Log.Fatal(
                 $"\n\n    There was a critical error that provoked the forced termination of the program.\n    Crash-report-log was created in {crashFilePath}, send it crash-report-log to MairwunNx\n"
             );
 
@@ -75,8 +77,8 @@ namespace SacredUtils.SourceFiles
             }
             catch (Exception exception)
             {
-                Logger.Log.Fatal("// I bet MairwunNx wouldn't have this problem.");
-                Logger.Log.Fatal(exception.ToString);
+                Log.Fatal("// I bet MairwunNx wouldn't have this problem.");
+                Log.Fatal(exception.ToString);
             }
 
             Environment.Exit(0);

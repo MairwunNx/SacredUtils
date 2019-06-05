@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Runtime.InteropServices;
+using static SacredUtils.SourceFiles.ApplicationInfo;
 
 namespace SacredUtils.SourceFiles
 {
@@ -23,7 +24,7 @@ namespace SacredUtils.SourceFiles
 
         public static void Init()
         {
-            if (ApplicationInfo.AppArguments.Contains("-stayOnDefaultResolution")) return;
+            if (AppArguments.Contains("-stayOnDefaultResolution")) return;
             WidthResolution = NativeMethods.GetSystemMetrics(78);
             HeightResolution = NativeMethods.GetSystemMetrics(79);
         }

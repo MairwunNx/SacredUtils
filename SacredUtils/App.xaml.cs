@@ -24,6 +24,8 @@ namespace SacredUtils
             if (e.Args.Contains("-runGame"))
             {
                 Logger.Init(e.Args.Contains("-disableLogging"));
+                
+                ExceptionCatching.Init();
 
                 GetRequiredApplicationFiles.Get();
 
@@ -37,10 +39,10 @@ namespace SacredUtils
             else
             {
                 Logger.Init(e.Args.Contains("-disableLogging"));
-
+                
                 ExceptionCatching.Init();
 
-                PrintToLogBaseApplicationInfo.Print();
+                PrintBaseInfo.Print();
 
                 NetworkUtils.LogStatus();
 

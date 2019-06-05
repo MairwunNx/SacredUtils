@@ -218,7 +218,6 @@
     <Compile Include="SourceFiles\bin\GetSacredUtilsCelebrationDates.cs" />
     <Compile Include="SourceFiles\bin\ApplicationHotKeyGetSystemKeyValue.cs" />
     <Compile Include="SourceFiles\bin\InstallDefaultSacredGameFonts.cs" />
-    <Compile Include="SourceFiles\bin\PrintToLogBaseApplicationInfo.cs" />
     <Compile Include="SourceFiles\bin\RefreshApplicationSettings.cs" />
     <Compile Include="SourceFiles\bin\RemoveSacredGameConfigFonts.cs" />
     <Compile Include="SourceFiles\ApplicationReset.cs" />
@@ -311,6 +310,7 @@
     <Compile Include="SourceFiles\pgs\UnselectedSettingsPage.xaml.cs">
       <DependentUpon>UnselectedSettingsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SourceFiles\PrintBaseInfo.cs" />
     <Compile Include="SourceFiles\prp\ApplicationSettingsOneProperty.cs" />
     <Compile Include="SourceFiles\prp\ApplicationSettingsTwoProperty.cs" />
     <Compile Include="SourceFiles\prp\GameChatSettingsOneProperty.cs" />
