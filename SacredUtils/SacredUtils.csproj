@@ -198,12 +198,10 @@
     <Compile Include="SourceFiles\bin\CheckAvailabilityGameSettings.cs" />
     <Compile Include="SourceFiles\bin\CheckAvailabilityReleaseUpdates.cs" />
     <Compile Include="SourceFiles\bin\CheckAvailabilityUpdateTemp.cs" />
-    <Compile Include="SourceFiles\bin\CreateApplicationLanguageFiles.cs" />
     <Compile Include="SourceFiles\bin\GetChangeLogDialogVisibility.cs" />
     <Compile Include="SourceFiles\bin\GetPermissionsOnGettingMemory.cs" />
     <Compile Include="SourceFiles\bin\GetRequiredApplicationFiles.cs" />
     <Compile Include="SourceFiles\bin\GetApplicationGlobalizerLibrary.cs" />
-    <Compile Include="SourceFiles\bin\GetApplicationLanguageValue.cs" />
     <Compile Include="SourceFiles\bin\GetApplicationSettingsAvailability.cs" />
     <Compile Include="SourceFiles\bin\GetApplicationDownloadStatistic.cs" />
     <Compile Include="SourceFiles\bin\GetSacredGameComponentFiles.cs" />
@@ -259,6 +257,8 @@
     </Compile>
     <Compile Include="SourceFiles\extensions\ArrayExtension.cs" />
     <Compile Include="SourceFiles\ExceptionCatching.cs" />
+    <Compile Include="SourceFiles\language\LanguageFileManager.cs" />
+    <Compile Include="SourceFiles\language\LanguageValueProvider.cs" />
     <Compile Include="SourceFiles\Logger.cs" />
     <Compile Include="SourceFiles\pgs\ApplicationSettingsOne.xaml.cs">
       <DependentUpon>ApplicationSettingsOne.xaml</DependentUpon>

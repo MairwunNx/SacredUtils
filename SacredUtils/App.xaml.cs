@@ -5,6 +5,7 @@ using System.Windows;
 using SacredUtils.resources.bin;
 using SacredUtils.SourceFiles;
 using SacredUtils.SourceFiles.bin;
+using SacredUtils.SourceFiles.language;
 using SacredUtils.SourceFiles.theme;
 using SacredUtils.SourceFiles.utils;
 using static System.IO.Directory;
@@ -50,7 +51,7 @@ namespace SacredUtils
 
                 GetApplicationGlobalizerLibrary.Get();
 
-                CreateApplicationLanguageFiles.Create();
+                LanguageFileManager.CreateLanguageFiles();
 
                 ThemeFileManager.CreateThemeFiles();
 
