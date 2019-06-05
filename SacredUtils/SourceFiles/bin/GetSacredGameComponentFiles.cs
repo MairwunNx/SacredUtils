@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Threading;
 using SacredUtils.SourceFiles;
 using SacredUtils.SourceFiles.bin;
+using SacredUtils.SourceFiles.utils;
 using static SacredUtils.SourceFiles.Logger;
 
 namespace SacredUtils.resources.bin

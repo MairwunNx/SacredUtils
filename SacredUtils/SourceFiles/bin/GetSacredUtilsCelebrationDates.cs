@@ -7,6 +7,7 @@ using System.Windows.Media;
 using System.Windows.Threading;
 using SacredUtils.SourceFiles;
 using SacredUtils.SourceFiles.bin;
+using SacredUtils.SourceFiles.utils;
 
 namespace SacredUtils.resources.bin
 {

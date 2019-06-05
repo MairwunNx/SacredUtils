@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Windows;
 
-namespace SacredUtils.SourceFiles
+namespace SacredUtils.SourceFiles.utils
 {
     public static class ApplicationUtils
     {

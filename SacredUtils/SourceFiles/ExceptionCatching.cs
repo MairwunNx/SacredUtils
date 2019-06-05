@@ -5,6 +5,7 @@ using System.Net.Mail;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using SacredUtils.SourceFiles.extensions;
+using SacredUtils.SourceFiles.utils;
 using static SacredUtils.AppSettings;
 using static SacredUtils.SourceFiles.Logger;
 

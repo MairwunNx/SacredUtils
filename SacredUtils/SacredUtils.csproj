@@ -164,7 +164,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SourceFiles\ApplicationUtils.cs" />
     <Compile Include="SourceFiles\ApplicationInfo.cs" />
     <Compile Include="SourceFiles\arr\ArraySacredGameComponentFiles.cs" />
     <Compile Include="SourceFiles\arr\ArraySacredGameFootStepsFiles.cs" />
@@ -264,7 +263,6 @@
     <Compile Include="SourceFiles\ExceptionCatching.cs" />
     <Compile Include="SourceFiles\Logger.cs" />
     <Compile Include="SourceFiles\NativeMethods.cs" />
-    <Compile Include="SourceFiles\NetworkUtils.cs" />
     <Compile Include="SourceFiles\pgs\ApplicationSettingsOne.xaml.cs">
       <DependentUpon>ApplicationSettingsOne.xaml</DependentUpon>
     </Compile>
@@ -323,6 +321,8 @@
     <Compile Include="SourceFiles\prp\GamePlaySettingsThreeProperty.cs" />
     <Compile Include="SourceFiles\prp\GamePlaySettingsTwoProperty.cs" />
     <Compile Include="SourceFiles\prp\GameSoundSettingsOneProperty.cs" />
+    <Compile Include="SourceFiles\utils\ApplicationUtils.cs" />
+    <Compile Include="SourceFiles\utils\NetworkUtils.cs" />
     <Resource Include="Resources\fonts\GoogleSans-Bold.ttf" />
     <Resource Include="Resources\fonts\GoogleSans-BoldItalic.ttf" />
     <Resource Include="Resources\fonts\GoogleSans-Italic.ttf" />

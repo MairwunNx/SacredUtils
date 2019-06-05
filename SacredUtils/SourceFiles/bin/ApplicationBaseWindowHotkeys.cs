@@ -7,6 +7,7 @@ using EnumsNET;
 using MaterialDesignThemes.Wpf;
 using SacredUtils.resources.dlg;
 using SacredUtils.SourceFiles;
+using SacredUtils.SourceFiles.utils;
 using static SacredUtils.SourceFiles.Logger;
 
 // ReSharper disable LocalSuppression

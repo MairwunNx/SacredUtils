@@ -3,23 +3,19 @@ using System.Net;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
-using static System.Windows.Application;
-using static SacredUtils.AppSettings;
-using static SacredUtils.MainWindow;
-using static SacredUtils.SourceFiles.Logger;
 
-namespace SacredUtils.SourceFiles
+namespace SacredUtils.SourceFiles.utils
 {
     public static class NetworkUtils
     {
         public static readonly Lazy<bool> IsConnected = new Lazy<bool>(() =>
         {
-            if (ApplicationSettings.DisableCheckInternetConnection) return true;
+            if (AppSettings.ApplicationSettings.DisableCheckInternetConnection) return true;
             try
             {
                 using WebClient webClient = new WebClient();
                 using (webClient.OpenRead(
-                    ApplicationSettings.InternetConnectionPingProvider
+                    AppSettings.ApplicationSettings.InternetConnectionPingProvider
                 ))
                 {
                     return true;
@@ -33,33 +29,33 @@ namespace SacredUtils.SourceFiles
 
         public static void LogStatus()
         {
-            if (ApplicationSettings.DisableCheckInternetConnection)
+            if (AppSettings.ApplicationSettings.DisableCheckInternetConnection)
             {
-                Log.Warn("Checking for internet connection was skipped!");
+                Logger.Log.Warn("Checking for internet connection was skipped!");
             }
 
             if (IsConnected.Value)
             {
-                Log.Info("SacredUtils application running in online mode!");
+                Logger.Log.Info("SacredUtils application running in online mode!");
             }
             else
             {
-                Log.Warn("SacredUtils application running in offline mode!");
+                Logger.Log.Warn("SacredUtils application running in offline mode!");
             }
         }
 
         public static void ShowNoConnection()
         {
-            if (!ApplicationSettings.VisibleNoConnectionImage ||
+            if (!AppSettings.ApplicationSettings.VisibleNoConnectionImage ||
                 IsConnected.Value)
             {
                 return;
             }
 
-            Current.Dispatcher.Invoke(
+            Application.Current.Dispatcher.Invoke(
                 DispatcherPriority.Background,
                 new ThreadStart(() =>
-                    MainWindowInstance.NoConnectImage.Visibility = Visibility.Visible
+                    MainWindow.MainWindowInstance.NoConnectImage.Visibility = Visibility.Visible
                 )
             );
         }

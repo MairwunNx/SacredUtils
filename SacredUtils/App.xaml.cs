@@ -5,6 +5,7 @@ using System.Windows;
 using SacredUtils.resources.bin;
 using SacredUtils.SourceFiles;
 using SacredUtils.SourceFiles.bin;
+using SacredUtils.SourceFiles.utils;
 using static System.IO.Directory;
 using static SacredUtils.SourceFiles.ApplicationInfo;
 

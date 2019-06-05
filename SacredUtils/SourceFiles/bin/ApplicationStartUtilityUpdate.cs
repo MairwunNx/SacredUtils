@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.IO;
 using SacredUtils.SourceFiles;
+using SacredUtils.SourceFiles.utils;
 
 namespace SacredUtils.resources.bin
 {

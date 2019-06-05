@@ -4,6 +4,7 @@ using System.IO;
 using System.Net;
 using SacredUtils.SourceFiles;
 using SacredUtils.SourceFiles.bin;
+using SacredUtils.SourceFiles.utils;
 using static SacredUtils.SourceFiles.Logger;
 
 namespace SacredUtils.resources.bin
