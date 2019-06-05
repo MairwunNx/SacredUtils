@@ -1,7 +1,4 @@
-﻿using EnumsNET;
-using NHotkey;
-using NHotkey.Wpf;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -9,7 +6,10 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Threading;
-using SacredUtils.SourceFiles;
+using EnumsNET;
+using NHotkey;
+using NHotkey.Wpf;
+using SacredUtils.SourceFiles.utils;
 using static SacredUtils.SourceFiles.Logger;
 
 // ReSharper disable InconsistentNaming

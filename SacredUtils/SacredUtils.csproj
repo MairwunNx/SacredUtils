@@ -260,7 +260,6 @@
     <Compile Include="SourceFiles\extensions\ArrayExtension.cs" />
     <Compile Include="SourceFiles\ExceptionCatching.cs" />
     <Compile Include="SourceFiles\Logger.cs" />
-    <Compile Include="SourceFiles\NativeMethods.cs" />
     <Compile Include="SourceFiles\pgs\ApplicationSettingsOne.xaml.cs">
       <DependentUpon>ApplicationSettingsOne.xaml</DependentUpon>
     </Compile>
@@ -322,6 +321,7 @@
     <Compile Include="SourceFiles\theme\ThemeFileManager.cs" />
     <Compile Include="SourceFiles\theme\ThemeValueProvider.cs" />
     <Compile Include="SourceFiles\utils\ApplicationUtils.cs" />
+    <Compile Include="SourceFiles\utils\NativeUtils.cs" />
     <Compile Include="SourceFiles\utils\NetworkUtils.cs" />
     <Resource Include="Resources\fonts\GoogleSans-Bold.ttf" />
     <Resource Include="Resources\fonts\GoogleSans-BoldItalic.ttf" />
