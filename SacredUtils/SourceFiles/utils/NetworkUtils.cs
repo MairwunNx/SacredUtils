@@ -3,6 +3,8 @@ using System.Net;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
+using static SacredUtils.AppSettings;
+using static SacredUtils.SourceFiles.Logger;
 
 namespace SacredUtils.SourceFiles.utils
 {
@@ -10,12 +12,12 @@ namespace SacredUtils.SourceFiles.utils
     {
         public static readonly Lazy<bool> IsConnected = new Lazy<bool>(() =>
         {
-            if (AppSettings.ApplicationSettings.DisableCheckInternetConnection) return true;
+            if (ApplicationSettings.DisableCheckInternetConnection) return true;
             try
             {
                 using WebClient webClient = new WebClient();
                 using (webClient.OpenRead(
-                    AppSettings.ApplicationSettings.InternetConnectionPingProvider
+                    ApplicationSettings.InternetConnectionPingProvider
                 ))
                 {
                     return true;
@@ -29,24 +31,24 @@ namespace SacredUtils.SourceFiles.utils
 
         public static void LogStatus()
         {
-            if (AppSettings.ApplicationSettings.DisableCheckInternetConnection)
+            if (ApplicationSettings.DisableCheckInternetConnection)
             {
-                Logger.Log.Warn("Checking for internet connection was skipped!");
+                Log.Warn("Checking for internet connection was skipped!");
             }
 
             if (IsConnected.Value)
             {
-                Logger.Log.Info("SacredUtils application running in online mode!");
+                Log.Info("SacredUtils application running in online mode!");
             }
             else
             {
-                Logger.Log.Warn("SacredUtils application running in offline mode!");
+                Log.Warn("SacredUtils application running in offline mode!");
             }
         }
 
         public static void ShowNoConnection()
         {
-            if (!AppSettings.ApplicationSettings.VisibleNoConnectionImage ||
+            if (!ApplicationSettings.VisibleNoConnectionImage ||
                 IsConnected.Value)
             {
                 return;
