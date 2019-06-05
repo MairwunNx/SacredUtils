@@ -38,7 +38,7 @@ namespace SacredUtils
             {
                 Logger.Init(e.Args.Contains("-disableLogging"));
 
-                GetStateGlobalExceptionCatching.Get();
+                ExceptionCatching.Init();
 
                 PrintToLogBaseApplicationInfo.Print();
 

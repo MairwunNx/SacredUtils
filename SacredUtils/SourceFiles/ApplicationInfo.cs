@@ -13,6 +13,7 @@ namespace SacredUtils.SourceFiles
         public const string Type = "Release";
         public const string Build = "XXB";
         public const string Root = "$SacredUtils";
+        public static readonly string CrashFolder = Path.Combine(Root, "crash-reports");
 
         public static readonly string[] InvolvedDirs =
         {
