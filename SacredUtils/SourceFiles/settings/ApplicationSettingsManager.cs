@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.IO;
 using Newtonsoft.Json;
+using static SacredUtils.SourceFiles.Logger;
 
 namespace SacredUtils.SourceFiles.settings
 {
@@ -13,6 +14,9 @@ namespace SacredUtils.SourceFiles.settings
             if (!File.Exists(ApplicationInfo.ConfigFolder)) return;
             string json = File.ReadAllText(ApplicationInfo.ConfigFolder);
             Settings = JsonConvert.DeserializeObject<ApplicationSettings>(json);
+            Log.Info(
+                $"Loading application settings from {ApplicationInfo.ConfigFolder} done"
+            );
         }
 
         public static void SaveSettings()
@@ -29,7 +33,9 @@ namespace SacredUtils.SourceFiles.settings
                 serializer.Serialize(writer, Settings);
             }
 
-            Logger.Log.Info($"Saving application settings to {ApplicationInfo.ConfigFolder} done");
+            Log.Info(
+                $"Saving application settings to {ApplicationInfo.ConfigFolder} done"
+            );
         }
     }
 }
