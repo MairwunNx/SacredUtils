@@ -257,6 +257,7 @@
     </Compile>
     <Compile Include="SourceFiles\extensions\ArrayExtension.cs" />
     <Compile Include="SourceFiles\ExceptionCatching.cs" />
+    <Compile Include="SourceFiles\language\Language.cs" />
     <Compile Include="SourceFiles\language\LanguageFileManager.cs" />
     <Compile Include="SourceFiles\language\LanguageValueProvider.cs" />
     <Compile Include="SourceFiles\Logger.cs" />
@@ -318,6 +319,8 @@
     <Compile Include="SourceFiles\prp\GamePlaySettingsThreeProperty.cs" />
     <Compile Include="SourceFiles\prp\GamePlaySettingsTwoProperty.cs" />
     <Compile Include="SourceFiles\prp\GameSoundSettingsOneProperty.cs" />
+    <Compile Include="SourceFiles\settings\ApplicationSettings.cs" />
+    <Compile Include="SourceFiles\theme\Theme.cs" />
     <Compile Include="SourceFiles\theme\ThemeFileManager.cs" />
     <Compile Include="SourceFiles\theme\ThemeValueProvider.cs" />
     <Compile Include="SourceFiles\utils\ApplicationUtils.cs" />
