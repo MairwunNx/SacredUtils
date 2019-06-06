@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.IO;
 using Newtonsoft.Json;
 
@@ -16,8 +17,19 @@ namespace SacredUtils.SourceFiles.settings
 
         public static void SaveSettings()
         {
-            string output = JsonConvert.SerializeObject(Settings, Formatting.Indented);
-            File.WriteAllText("here.txt", output);
+            JsonSerializer serializer = new JsonSerializer
+            {
+                Formatting = Formatting.Indented,
+                Culture = CultureInfo.InvariantCulture
+            };
+
+            using (StreamWriter sw = new StreamWriter(ApplicationInfo.ConfigFolder))
+            using (JsonWriter writer = new JsonTextWriter(sw))
+            {
+                serializer.Serialize(writer, Settings);
+            }
+
+            Logger.Log.Info($"Saving application settings to {ApplicationInfo.ConfigFolder} done");
         }
     }
 }
