@@ -6,7 +6,6 @@ using SacredUtils.SourceFiles.theme;
 
 namespace SacredUtils.SourceFiles.settings
 {
-    [JsonObject(MemberSerialization.Fields)]
     public class ApplicationSettings
     {
         public bool AllowCustomScreenShotResolution { get; set; }

@@ -17,14 +17,6 @@ namespace SacredUtils.SourceFiles.settings
         public static void SaveSettings()
         {
             string output = JsonConvert.SerializeObject(Settings, Formatting.Indented);
-            JsonSerializer serializer = new JsonSerializer();
-            
-            using (StreamWriter sw = new StreamWriter("lol.json"))
-            using (JsonWriter writer = new JsonTextWriter(sw))
-            {
-                serializer.Serialize(writer, Settings);
-            }
-            
             File.WriteAllText("here.txt", output);
         }
     }
