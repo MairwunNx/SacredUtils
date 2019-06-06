@@ -15,6 +15,12 @@ namespace SacredUtils.SourceFiles
         public const string Root = "$SacredUtils";
         public static readonly string CrashFolder = Path.Combine(Root, "crash-reports");
 
+        public static readonly string ConfigFolder = Path.Combine(
+            Root,
+            "conf",
+            "settings.json"
+        );
+
         public static readonly string[] InvolvedDirs =
         {
             Root,

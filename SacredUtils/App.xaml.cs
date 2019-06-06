@@ -6,6 +6,7 @@ using SacredUtils.resources.bin;
 using SacredUtils.SourceFiles;
 using SacredUtils.SourceFiles.bin;
 using SacredUtils.SourceFiles.language;
+using SacredUtils.SourceFiles.settings;
 using SacredUtils.SourceFiles.theme;
 using SacredUtils.SourceFiles.utils;
 using static System.IO.Directory;
@@ -23,6 +24,7 @@ namespace SacredUtils
             ApplicationReset.Reset();
             CreateDirectories();
             GetApplicationSettingsAvailability.Get();
+            ApplicationSettingsManager.SaveSettings();
 
             if (e.Args.Contains("-runGame"))
             {

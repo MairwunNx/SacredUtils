@@ -320,6 +320,7 @@
     <Compile Include="SourceFiles\prp\GamePlaySettingsTwoProperty.cs" />
     <Compile Include="SourceFiles\prp\GameSoundSettingsOneProperty.cs" />
     <Compile Include="SourceFiles\settings\ApplicationSettings.cs" />
+    <Compile Include="SourceFiles\settings\ApplicationSettingsManager.cs" />
     <Compile Include="SourceFiles\theme\Theme.cs" />
     <Compile Include="SourceFiles\theme\ThemeFileManager.cs" />
     <Compile Include="SourceFiles\theme\ThemeValueProvider.cs" />
