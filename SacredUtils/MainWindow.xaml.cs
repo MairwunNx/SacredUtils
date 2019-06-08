@@ -9,6 +9,7 @@ using SacredUtils.resources.bin;
 using SacredUtils.resources.pgs;
 using SacredUtils.SourceFiles;
 using SacredUtils.SourceFiles.language;
+using SacredUtils.SourceFiles.settings;
 using SacredUtils.SourceFiles.theme;
 using SacredUtils.SourceFiles.utils;
 using static SacredUtils.SourceFiles.Logger;
@@ -39,7 +40,7 @@ namespace SacredUtils
         {
             InitializeComponent();
             EventSubscribe();
-            MainWindowInstance = (MainWindow) Application.Current.MainWindow;
+            MainWindowInstance = this;
             ChangeApplicationSelectionSettings.UnSelectSettings(UnselectedStg);
             LanguageValueProvider.AssignLanguageValue();
             ThemeValueProvider.AssignThemeValue();
@@ -50,6 +51,8 @@ namespace SacredUtils
 
         private void EventSubscribe()
         {
+            Closing += (s, e) => ApplicationSettingsManager.SaveSettings();
+            
             MenuGrLabel.Click += (s, e) =>
                 ChangeApplicationSelectionSettings.SelectSettings(GraphicsStgOne, GraphicsPanel);
             MenuSnLabel.Click += (s, e) =>

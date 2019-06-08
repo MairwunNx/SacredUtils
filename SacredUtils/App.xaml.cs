@@ -24,12 +24,11 @@ namespace SacredUtils
             ApplicationReset.Reset();
             CreateDirectories();
             GetApplicationSettingsAvailability.Get();
-            ApplicationSettingsManager.SaveSettings();
 
             if (e.Args.Contains("-runGame"))
             {
                 Logger.Init(e.Args.Contains("-disableLogging"));
-                
+
                 ExceptionCatching.Init();
 
                 GetRequiredApplicationFiles.Get();
@@ -44,12 +43,14 @@ namespace SacredUtils
             else
             {
                 Logger.Init(e.Args.Contains("-disableLogging"));
-                
+
                 ExceptionCatching.Init();
 
                 PrintBaseInfo.Print();
 
                 NetworkUtils.LogStatus();
+
+                ApplicationSettingsManager.LoadSettings();
 
                 GetApplicationGlobalizerLibrary.Get();
 
