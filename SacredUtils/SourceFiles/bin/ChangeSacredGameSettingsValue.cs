@@ -1,13 +1,13 @@
 ﻿using System;
 using System.IO;
 using System.Text;
-using static SacredUtils.SourceFiles.Logger;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class ChangeSacredGameSettingsValue
     {
-        private static readonly string SacredConfigFile = AppSettings.ApplicationSettings.SacredConfigurationFile;
+        private static readonly string SacredConfigFile = Settings.SacredConfigurationFile;
 
         public static void ChangeSettingValue(string func, object value)
         {
@@ -37,8 +37,8 @@ namespace SacredUtils.resources.bin
             }
             catch (Exception e)
             {
-                Log.Error("Unable to apply the setting due to an unknown error.");
-                Log.Error(e.ToString);
+                Logger.Log.Error("Unable to apply the setting due to an unknown error.");
+                Logger.Log.Error(e.ToString);
             }
         }
 
@@ -46,7 +46,7 @@ namespace SacredUtils.resources.bin
         {
             try
             {
-                string[] sizes = AppSettings.ApplicationSettings.SacredFontSizeArray.Split('|');
+                string[] sizes = Settings.SacredFontSizeArray.Split('|');
 
                 for (int i = 0; i < 7; i++)
                 {
@@ -76,8 +76,8 @@ namespace SacredUtils.resources.bin
             }
             catch (Exception e)
             {
-                Log.Error("Unable to apply the setting due to an unknown error.");
-                Log.Error(e.ToString);
+                Logger.Log.Error("Unable to apply the setting due to an unknown error.");
+                Logger.Log.Error(e.ToString);
             }
         }
     }

@@ -1,9 +1,8 @@
-﻿using SacredUtils.SourceFiles;
-using SacredUtils.SourceFiles.bin;
+﻿using SacredUtils.resources.bin;
+using SacredUtils.SourceFiles.settings;
 using SacredUtils.SourceFiles.utils;
-using static SacredUtils.SourceFiles.Logger;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class CheckAvailabilityAlphaUpdates
     {
@@ -11,9 +10,9 @@ namespace SacredUtils.resources.bin
         {
             if (!NetworkUtils.IsConnected.Value) return;
 
-            Log.Info("Checking permission for checking alpha SacredUtils updates ...");
+            Logger.Log.Info("Checking permission for checking alpha SacredUtils updates ...");
 
-            if (AppSettings.ApplicationSettings.CheckAutoAlphaUpdate)
+            if (ApplicationSettingsManager.Settings.EnableCheckAlphaUpdates)
             {
                 if (GetActualApplicationVersion.Get("alpha", ApplicationInfo.AlphaVersion,
                     "https://drive.google.com/uc?export=download&id=1Fc0QIxzUn7-ellW5e4_W1Wv05-V1hsJ8"))

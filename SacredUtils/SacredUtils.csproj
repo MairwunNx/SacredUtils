@@ -156,7 +156,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AppSettings.cs" />
     <Compile Include="HotkeySettings.cs" />
     <Compile Include="ModifySettings.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

@@ -1,11 +1,13 @@
-﻿using MaterialDesignThemes.Wpf;
-using SacredUtils.resources.dlg;
-using SacredUtils.resources.prp;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Windows;
-using static SacredUtils.SourceFiles.Logger;
+using MaterialDesignThemes.Wpf;
+using SacredUtils.resources.dlg;
+using SacredUtils.SourceFiles.dlg;
+using SacredUtils.SourceFiles.prp;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
+using Theme = SacredUtils.SourceFiles.theme.Theme;
 
-namespace SacredUtils.resources.pgs
+namespace SacredUtils.SourceFiles.pgs
 {
     public partial class ApplicationSettingsTwo
     {
@@ -13,7 +15,7 @@ namespace SacredUtils.resources.pgs
         {
             InitializeComponent(); EventSubscribe(); DataContext = new ApplicationSettingsTwoProperty();
 
-            Log.Info("Initialization components for application settings two done!");
+            Logger.Log.Info("Initialization components for application settings two done!");
         }
 
         private void EventSubscribe()
@@ -36,7 +38,7 @@ namespace SacredUtils.resources.pgs
             MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
             MainWindow.MainWindowInstance.DialogFrame.Content = applicationDonateSelectDialog;
 
-            if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
+            if (Settings.ApplicationUiTheme == Theme.Dark)
             {
                 applicationDonateSelectDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
             }
@@ -51,7 +53,7 @@ namespace SacredUtils.resources.pgs
             MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
             MainWindow.MainWindowInstance.DialogFrame.Content = applicationPageSelectDialog;
 
-            if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
+            if (Settings.ApplicationUiTheme == Theme.Dark)
             {
                 applicationPageSelectDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
             }
@@ -66,7 +68,7 @@ namespace SacredUtils.resources.pgs
             MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
             MainWindow.MainWindowInstance.DialogFrame.Content = applicationAboutDialog;
 
-            if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
+            if (Settings.ApplicationUiTheme == Theme.Dark)
             {
                 applicationAboutDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
             }

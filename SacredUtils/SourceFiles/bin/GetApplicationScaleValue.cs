@@ -1,18 +1,20 @@
 ﻿using System.Windows.Media;
-using static SacredUtils.SourceFiles.Logger;
+using SacredUtils.SourceFiles.settings;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class GetApplicationScaleValue
     {
         public static void Get()
         {
             // MairwunNx.ScaleLoveToIsabel = infinity * infinity;
-            MainWindow.MainWindowInstance.Height = 720 * AppSettings.ApplicationSettings.SacredUtilsGuiScale;
-            MainWindow.MainWindowInstance.Width = 1086 * AppSettings.ApplicationSettings.SacredUtilsGuiScale;
-            MainWindow.MainWindowInstance.BaseCard.LayoutTransform = new ScaleTransform(AppSettings.ApplicationSettings.SacredUtilsGuiScale, AppSettings.ApplicationSettings.SacredUtilsGuiScale);
-            
-            Log.Info($"SacredUtils application starting with ({AppSettings.ApplicationSettings.SacredUtilsGuiScale}) gui scale!");
+            MainWindow.MainWindowInstance.Height = 720 * ApplicationSettingsManager.Settings.ApplicationGuiScale;
+            MainWindow.MainWindowInstance.Width = 1086 * ApplicationSettingsManager.Settings.ApplicationGuiScale;
+            MainWindow.MainWindowInstance.BaseCard.LayoutTransform =
+                new ScaleTransform(ApplicationSettingsManager.Settings.ApplicationGuiScale, ApplicationSettingsManager.Settings.ApplicationGuiScale);
+
+            Logger.Log.Info(
+                $"SacredUtils application starting with ({ApplicationSettingsManager.Settings.ApplicationGuiScale}) gui scale!");
         }
     }
 }

@@ -1,19 +1,18 @@
-﻿using Ionic.Zip;
-using MaterialDesignThemes.Wpf;
-using SacredUtils.resources.dlg;
-using System;
+﻿using System;
 using System.IO;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
-using SacredUtils.SourceFiles;
-using SacredUtils.SourceFiles.bin;
+using Ionic.Zip;
+using MaterialDesignThemes.Wpf;
+using SacredUtils.resources.dlg;
 using SacredUtils.SourceFiles.utils;
-using static SacredUtils.SourceFiles.Logger;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
+using Theme = SacredUtils.SourceFiles.theme.Theme;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class GetSacredGameComponentFiles
     {
@@ -28,7 +27,7 @@ namespace SacredUtils.resources.bin
                 MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
                 MainWindow.MainWindowInstance.DialogFrame.Content = GameGettingComponentsDialog;
 
-                if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
+                if (Settings.ApplicationUiTheme == Theme.Dark)
                 {
                     GameGettingComponentsDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
                 }
@@ -65,7 +64,7 @@ namespace SacredUtils.resources.bin
 
                         Task.Run(() => UnpackDownloadedFile(downloadPath, downloadFileName, extractFolder, DefaultLabelText, oldFileName, newFileName, componentName));
 
-                        Log.Info($"Loading sacred game component {componentName} successfully done!");
+                        Logger.Log.Info($"Loading sacred game component {componentName} successfully done!");
 
                         wc.Dispose();
                     };
@@ -112,12 +111,12 @@ namespace SacredUtils.resources.bin
 
                 File.Delete(newFileName); File.Move(oldFileName, newFileName); Thread.Sleep(1000);
 
-                if (AppSettings.ApplicationSettings.DisableCachingGameComponents)
+                if (!Settings.EnableCachingGameComponents)
                 {
                     File.Delete($"{downloadPath}\\{downloadFileName}");
                 }
 
-                Log.Info($"Extracting sacred game component {componentName} successfully done!");
+                Logger.Log.Info($"Extracting sacred game component {componentName} successfully done!");
 
                 Application.Current.Dispatcher.Invoke(DispatcherPriority.Send, new ThreadStart(() =>
                 {
@@ -128,7 +127,7 @@ namespace SacredUtils.resources.bin
             }
             catch (Exception exception)
             {
-                Log.Error(exception.ToString());
+                Logger.Log.Error(exception.ToString());
             }
         }
     }

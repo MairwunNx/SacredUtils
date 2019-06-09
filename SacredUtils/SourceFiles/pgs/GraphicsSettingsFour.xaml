@@ -7,6 +7,7 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prp="clr-namespace:SacredUtils.resources.prp"
+    xmlns:prp1="clr-namespace:SacredUtils.SourceFiles.prp"
     d:DesignHeight="685"
     d:DesignWidth="886"
     mc:Ignorable="d">
@@ -31,7 +32,7 @@
                 <ToggleButton
                     Width="50"
                     Margin="748,0,10,0"
-                    d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsFourProperty}"
+                    d:DataContext="{d:DesignInstance prp1:GameGraphicsSettingsFourProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     IsChecked="{Binding Path=StaticBog, IsAsync=True, Mode=TwoWay}" />
             </Grid>
@@ -57,7 +58,7 @@
                 <ToggleButton
                     Width="50"
                     Margin="748,0,10,0"
-                    d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsFourProperty}"
+                    d:DataContext="{d:DesignInstance prp1:GameGraphicsSettingsFourProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     IsChecked="{Binding Path=StaticWater, IsAsync=True, Mode=TwoWay}" />
             </Grid>
@@ -83,7 +84,7 @@
                 <ToggleButton
                     Width="50"
                     Margin="748,0,10,0"
-                    d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsFourProperty}"
+                    d:DataContext="{d:DesignInstance prp1:GameGraphicsSettingsFourProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     IsChecked="{Binding Path=StaticLava, IsAsync=True, Mode=TwoWay}" />
             </Grid>
@@ -109,7 +110,7 @@
                 <ToggleButton
                     Width="50"
                     Margin="748,0,10,0"
-                    d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsFourProperty}"
+                    d:DataContext="{d:DesignInstance prp1:GameGraphicsSettingsFourProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     IsChecked="{Binding Path=OldSacred, IsAsync=True, Mode=TwoWay}" />
             </Grid>
@@ -135,7 +136,7 @@
                 <ToggleButton
                     Width="50"
                     Margin="748,0,10,0"
-                    d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsFourProperty}"
+                    d:DataContext="{d:DesignInstance prp1:GameGraphicsSettingsFourProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     IsChecked="{Binding Path=FootSteps, IsAsync=True, Mode=TwoWay}" />
             </Grid>
@@ -161,7 +162,7 @@
                 <ToggleButton
                     Width="50"
                     Margin="748,0,10,0"
-                    d:DataContext="{d:DesignInstance prp:GameGraphicsSettingsFourProperty}"
+                    d:DataContext="{d:DesignInstance prp1:GameGraphicsSettingsFourProperty}"
                     Background="{DynamicResource ResourceKey=LabelForegroundBrush}"
                     IsChecked="{Binding Path=HealthCircles, IsAsync=True, Mode=TwoWay}" />
             </Grid>

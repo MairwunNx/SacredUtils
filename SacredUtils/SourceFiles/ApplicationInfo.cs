@@ -14,6 +14,13 @@ namespace SacredUtils.SourceFiles
         public const string Build = "XXB";
         public const string Root = "$SacredUtils";
         public static readonly string CrashFolder = Path.Combine(Root, "crash-reports");
+        public static readonly string AppData = Environment.ExpandEnvironmentVariables("%appdata%");
+
+        public static readonly string AppDataSacredUtils =
+            Path.Combine(AppData, Name);
+
+        public static readonly string LicenseAgreementFile =
+            Path.Combine(AppDataSacredUtils, "LicenseAgreement.su");
 
         public static readonly string ConfigFolder = Path.Combine(
             Root,

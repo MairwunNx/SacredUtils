@@ -1,4 +1,5 @@
 ﻿using System;
+using SacredUtils.SourceFiles.bin;
 
 namespace SacredUtils.resources.bin
 {

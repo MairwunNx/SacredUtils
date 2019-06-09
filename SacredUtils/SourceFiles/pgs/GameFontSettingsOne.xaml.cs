@@ -1,14 +1,15 @@
-﻿using MaterialDesignThemes.Wpf;
-using SacredUtils.resources.bin;
-using SacredUtils.resources.dlg;
-using SacredUtils.resources.prp;
-using System;
+﻿using System;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
-using static SacredUtils.SourceFiles.Logger;
+using MaterialDesignThemes.Wpf;
+using SacredUtils.SourceFiles.bin;
+using SacredUtils.SourceFiles.dlg;
+using SacredUtils.SourceFiles.prp;
+using SacredUtils.SourceFiles.settings;
+using Theme = SacredUtils.SourceFiles.theme.Theme;
 
-namespace SacredUtils.resources.pgs
+namespace SacredUtils.SourceFiles.pgs
 {
     public partial class GameFontSettingsOne
     {
@@ -16,7 +17,7 @@ namespace SacredUtils.resources.pgs
         {
             InitializeComponent(); DataContext = new GameFontSettingsOneProperty();
 
-            if (!AppSettings.ApplicationSettings.UseCustomFontSizeValue)
+            if (!ApplicationSettingsManager.Settings.UseCustomFontSizeValue)
             {
                 Border1.Margin = new Thickness(0, 169, 0, 0);
                 Border2.Margin = new Thickness(0, 220, 0, 0);
@@ -28,13 +29,13 @@ namespace SacredUtils.resources.pgs
             }
             else
             {
-                FontSizesTxBox.Text = AppSettings.ApplicationSettings.SacredFontSizeArray;
+                FontSizesTxBox.Text = ApplicationSettingsManager.Settings.SacredFontSizeArray;
 
                 FontSizesTxBox.TextChanged += (s, e) => ChangeSizeForFont();
                 FontSizesTxBox.PreviewTextInput += ValidateValue;
             }
 
-            Log.Info("Initialization components for game font settings one done!");
+            Logger.Log.Info("Initialization components for game font settings one done!");
         }
 
         private void ValidateValue(object sender, TextCompositionEventArgs e) => e.Handled = new Regex("[^0-9|]+").IsMatch(e.Text);
@@ -45,7 +46,7 @@ namespace SacredUtils.resources.pgs
         {
             FontSizesTxBox.Text = FontSizesTxBox.Text.Replace(" ", "");
 
-            AppSettings.ApplicationSettings.SacredFontSizeArray = FontSizesTxBox.Text;
+            ApplicationSettingsManager.Settings.SacredFontSizeArray = FontSizesTxBox.Text;
 
             if (FontNameCmbBox.Text == "") { return; }
 
@@ -63,7 +64,7 @@ namespace SacredUtils.resources.pgs
             MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
             MainWindow.MainWindowInstance.DialogFrame.Content = applicationFontSizesDialog;
 
-            if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
+            if (ApplicationSettingsManager.Settings.ApplicationUiTheme == Theme.Dark)
             {
                 applicationFontSizesDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
             }

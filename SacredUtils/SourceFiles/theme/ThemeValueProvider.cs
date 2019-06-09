@@ -1,5 +1,5 @@
-﻿using static SacredUtils.AppSettings;
-using static SacredUtils.SourceFiles.Logger;
+﻿using static SacredUtils.SourceFiles.Logger;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 using static WPFSharp.Globalizer.GlobalizedApplication;
 
 namespace SacredUtils.SourceFiles.theme
@@ -9,13 +9,13 @@ namespace SacredUtils.SourceFiles.theme
         public static void AssignThemeValue()
         {
             Instance.StyleManager.SwitchStyle(
-                ApplicationSettings.ApplicationUiColorTheme == "dark"
+                Settings.ApplicationUiTheme == Theme.Dark
                     ? "dark.xaml"
                     : "light.xaml"
             );
 
             Log.Info(
-                $"SacredUtils application starting with {ApplicationSettings.ApplicationUiColorTheme} theme"
+                $"SacredUtils application starting with {Settings.ApplicationUiTheme} theme"
             );
         }
     }

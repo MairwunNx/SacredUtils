@@ -1,23 +1,25 @@
-﻿using MaterialDesignThemes.Wpf;
-using SacredUtils.resources.dlg;
-using System.IO;
+﻿using System.IO;
 using System.Windows;
+using MaterialDesignThemes.Wpf;
+using SacredUtils.resources.dlg;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
+using Theme = SacredUtils.SourceFiles.theme.Theme;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class GetChangeLogDialogVisibility
     {
         public static void Get()
         {
             if (!File.Exists("$SacredUtils\\temp\\updated.su") ||
-                !AppSettings.ApplicationSettings.ApplicationShowChangeLog) return;
+                !Settings.EnableShowChangeLogAfterUpdate) return;
 
             ApplicationChangeLogDialog applicationChangeLogDialog = new ApplicationChangeLogDialog();
 
             MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
             MainWindow.MainWindowInstance.DialogFrame.Content = applicationChangeLogDialog;
 
-            if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
+            if (Settings.ApplicationUiTheme == Theme.Dark)
             {
                 applicationChangeLogDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
             }

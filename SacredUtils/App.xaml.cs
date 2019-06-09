@@ -23,6 +23,7 @@ namespace SacredUtils
             SystemInfo.Init();
             ApplicationReset.Reset();
             CreateDirectories();
+            ApplicationSettingsManager.LoadSettings();
             GetApplicationSettingsAvailability.Get();
 
             if (e.Args.Contains("-runGame"))
@@ -49,8 +50,6 @@ namespace SacredUtils
                 PrintBaseInfo.Print();
 
                 NetworkUtils.LogStatus();
-
-                ApplicationSettingsManager.LoadSettings();
 
                 GetApplicationGlobalizerLibrary.Get();
 

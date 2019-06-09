@@ -3,9 +3,10 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 
 // ReSharper disable PrivateFieldCanBeConvertedToLocalVariable
-namespace SacredUtils.resources.dlg
+namespace SacredUtils.SourceFiles.dlg
 {
     public partial class ApplicationHotkeyChangeDialog
     {
@@ -18,7 +19,7 @@ namespace SacredUtils.resources.dlg
         {
             InitializeComponent();
 
-            if (AppSettings.ApplicationSettings.UseSimplifiedHotKeySettings)
+            if (Settings.UseSimplifiedHotKeySettings)
             {
                 NewHotkeyCmbBox.IsEnabled = false;
 

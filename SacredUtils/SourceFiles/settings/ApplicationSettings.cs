@@ -9,6 +9,7 @@ namespace SacredUtils.SourceFiles.settings
     public class ApplicationSettings
     {
         public bool AllowCustomScreenShotResolution { get; set; }
+        public bool AutomaticallySendCrashReports { get; set; }
         public int CustomScreenShotResolutionHeight { get; set; } = 1080;
         public int CustomScreenShotResolutionWidth { get; set; } = 1920;
         public bool AllowLicenseFileReCreate { get; set; } = true;
@@ -20,7 +21,7 @@ namespace SacredUtils.SourceFiles.settings
         public Theme ApplicationUiTheme { get; set; } = Theme.Light;
 
         [JsonConverter(typeof(StringEnumConverter))]
-        public Language ApplicationUiLanguage { get; set; } = Language.EnUs;
+        public Language ApplicationUiLanguage { get; set; } = Language.BasedOnSystem;
 
         public bool EnableArchiveOldFileOnStartup { get; set; } = true;
         public bool EnableAutoRegisterHotKeyForWinKey { get; set; } = true;
@@ -93,7 +94,6 @@ namespace SacredUtils.SourceFiles.settings
         public string ScreenShotSaveFilePrefix { get; set; } = "screen-";
         public int ShowUsedMemoryUpdateInterval { get; set; } = 2;
         public bool UseAsyncCreatingScreenshots { get; set; }
-        public bool UseAsyncLoadFontCollection { get; set; }
         public bool UseCustomFontSizeValue { get; set; }
         public bool UseSimplifiedHotKeySettings { get; set; } = true;
         public bool VisibleNoConnectionImage { get; set; } = true;

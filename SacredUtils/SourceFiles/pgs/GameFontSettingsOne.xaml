@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="SacredUtils.resources.pgs.GameFontSettingsOne"
+    x:Class="SacredUtils.SourceFiles.pgs.GameFontSettingsOne"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,6 +7,7 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prp="clr-namespace:SacredUtils.resources.prp"
+    xmlns:prp1="clr-namespace:SacredUtils.SourceFiles.prp"
     d:DesignHeight="685"
     d:DesignWidth="886"
     mc:Ignorable="d">
@@ -70,7 +71,7 @@
                     Height="27"
                     Margin="625,5,15,0"
                     VerticalAlignment="Top"
-                    d:DataContext="{d:DesignInstance prp:GameFontSettingsOneProperty}"
+                    d:DataContext="{d:DesignInstance prp1:GameFontSettingsOneProperty}"
                     BorderBrush="{DynamicResource ResourceKey=ComboBoxBorderBrush}"
                     DropDownClosed="FontNameCmbBox_DropDownClosed"
                     FontFamily="/SacredUtils;component/Resources/fonts/#Google Sans"

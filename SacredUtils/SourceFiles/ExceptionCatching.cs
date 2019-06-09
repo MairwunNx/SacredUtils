@@ -6,8 +6,8 @@ using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using SacredUtils.SourceFiles.extensions;
 using SacredUtils.SourceFiles.utils;
-using static SacredUtils.AppSettings;
 using static SacredUtils.SourceFiles.Logger;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 
 namespace SacredUtils.SourceFiles
 {
@@ -22,7 +22,7 @@ namespace SacredUtils.SourceFiles
 
         public static void Init()
         {
-            if (ApplicationSettings.EnableGlobalExceptionCatching)
+            if (Settings.EnableGlobalExceptionCatching)
             {
                 Subscribe();
             }
@@ -35,7 +35,7 @@ namespace SacredUtils.SourceFiles
             Exception e = (Exception) args.ExceptionObject;
             DateTime now = DateTime.Now;
             string crashFilePath =
-                $"{Path.Combine(ApplicationInfo.CrashFolder, $"crash-{now.ToString(ApplicationSettings.ScreenShotSaveFilePattern)}-su.txt")}";
+                $"{Path.Combine(ApplicationInfo.CrashFolder, $"crash-{now.ToString(Settings.ScreenShotSaveFilePattern)}-su.txt")}";
             string latestLogFile = Path.Combine(ApplicationInfo.Root, "logs", "latest.log");
             Directory.CreateDirectory(ApplicationInfo.CrashFolder);
 
@@ -50,7 +50,7 @@ namespace SacredUtils.SourceFiles
 
             try
             {
-                if (NetworkUtils.IsConnected.Value)
+                if (NetworkUtils.IsConnected.Value && Settings.AutomaticallySendCrashReports)
                 {
                     using (MailMessage mail = new MailMessage())
                     {
@@ -82,6 +82,7 @@ namespace SacredUtils.SourceFiles
                 Log.Fatal(exception.ToString);
             }
 
+            SaveSettings();
             Environment.Exit(0);
         }
     }

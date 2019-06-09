@@ -1,17 +1,18 @@
-﻿using MouseKeyboardActivityMonitor;
-using MouseKeyboardActivityMonitor.WinApi;
-using NHotkey;
-using NHotkey.Wpf;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Threading;
+using MouseKeyboardActivityMonitor;
+using MouseKeyboardActivityMonitor.WinApi;
+using NHotkey;
+using NHotkey.Wpf;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 using KeyEventArgs = System.Windows.Forms.KeyEventArgs;
 
 // ReSharper disable InconsistentNaming
 #pragma warning disable 414
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class ForceSacredGameDisableWinKey
     {
@@ -22,7 +23,7 @@ namespace SacredUtils.resources.bin
 
         public static void RegisterKeys()
         {
-            if (AppSettings.ApplicationSettings.AutoRegisterHotKeyForWinKey)
+            if (Settings.EnableAutoRegisterHotKeyForWinKey)
             {
                 HotkeyManager.Current.AddOrReplace("DisableWinKey", Key.U, ModifierKeys.Control, Disable);
                 HotkeyManager.Current.AddOrReplace("EnableWinKey", Key.I, ModifierKeys.Control, Enable);
@@ -61,7 +62,7 @@ namespace SacredUtils.resources.bin
 
         private static void CheckAvailabilityProcess()
         {
-            _timer.Interval = new TimeSpan(0, 0, AppSettings.ApplicationSettings.DelayCheckingSacredProcess);
+            _timer.Interval = new TimeSpan(0, 0, Settings.DelayCheckingSacredProcess);
 
             _timer.Tick += (s, e) =>
             {

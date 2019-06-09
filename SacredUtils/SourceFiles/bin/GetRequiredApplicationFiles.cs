@@ -1,18 +1,18 @@
 ﻿using System.IO;
 using System.Text;
-using static SacredUtils.SourceFiles.Logger;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class GetRequiredApplicationFiles
     {
         public static void Get()
         {
-            if (AppSettings.ApplicationSettings.ApplicationLicenseFileCreate)
+            if (Settings.AllowLicenseFileReCreate)
             {
                 File.WriteAllBytes("License.txt", Properties.Resources.License);
 
-                Log.Info("SacredUtils License file was successfully re-created!");
+                Logger.Log.Info("SacredUtils License file was successfully re-created!");
             }
 
             if (!File.Exists("$SacredUtils\\conf\\mk.setg.json"))

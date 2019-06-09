@@ -1,9 +1,11 @@
-﻿using MaterialDesignThemes.Wpf;
-using SacredUtils.resources.dlg;
-using System.IO;
+﻿using System.IO;
 using System.Windows;
+using MaterialDesignThemes.Wpf;
+using SacredUtils.SourceFiles.dlg;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
+using Theme = SacredUtils.SourceFiles.theme.Theme;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class ApplicationStartSacredGameFile
     {
@@ -11,7 +13,7 @@ namespace SacredUtils.resources.bin
         {
             ApplicationRunSacredDialog applicationRunSacredDialog = new ApplicationRunSacredDialog();
 
-            if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
+            if (File.Exists(Settings.SacredExecutableFileName))
             {
                 if (MainWindow.AppStgOne.StartParamsGameCmbBox.SelectedIndex == 0)
                 {
@@ -34,7 +36,7 @@ namespace SacredUtils.resources.bin
             MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
             MainWindow.MainWindowInstance.DialogFrame.Content = applicationRunSacredDialog;
 
-            if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
+            if (Settings.ApplicationUiTheme == Theme.Dark)
             {
                 applicationRunSacredDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
             }

@@ -1,12 +1,12 @@
-﻿using SacredUtils.resources.prp;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using SacredUtils.SourceFiles;
+using SacredUtils.SourceFiles.prp;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class RemoveSacredGameConfigFonts
     {
@@ -14,12 +14,12 @@ namespace SacredUtils.resources.bin
         {
             try
             {
-                List<string> settings = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile,
+                List<string> settings = File.ReadAllLines(Settings.SacredConfigurationFile,
                     Encoding.ASCII).ToList();
                 
                 List<string> finallySettings = settings.Where(t => !t.StartsWith("FONT : ")).ToList();
 
-                File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, finallySettings);
+                File.WriteAllLines(Settings.SacredConfigurationFile, finallySettings);
 
                 MainWindow.FontStgOne.DataContext = null;
                 MainWindow.FontStgOne.DataContext = new GameFontSettingsOneProperty();

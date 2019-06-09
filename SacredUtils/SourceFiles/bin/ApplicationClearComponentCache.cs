@@ -1,13 +1,14 @@
-﻿using MaterialDesignThemes.Wpf;
-using SacredUtils.resources.arr;
-using SacredUtils.resources.dlg;
-using System;
+﻿using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
-using SacredUtils.SourceFiles;
+using MaterialDesignThemes.Wpf;
+using SacredUtils.resources.arr;
+using SacredUtils.resources.dlg;
+using SacredUtils.SourceFiles.settings;
+using Theme = SacredUtils.SourceFiles.theme.Theme;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class ApplicationClearComponentCache
     {
@@ -22,7 +23,7 @@ namespace SacredUtils.resources.bin
             ApplicationClearCacheDialog.BaseSuccGrid.Visibility = Visibility.Hidden;
             ApplicationClearCacheDialog.BaseDialog.CloseOnClickAway = false;
 
-            if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
+            if (ApplicationSettingsManager.Settings.ApplicationUiTheme == Theme.Dark)
             {
                 ApplicationClearCacheDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
             }

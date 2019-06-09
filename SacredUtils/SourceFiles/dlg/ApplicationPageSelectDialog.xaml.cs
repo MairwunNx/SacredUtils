@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
+using SacredUtils.SourceFiles.settings;
 
-namespace SacredUtils.resources.dlg
+namespace SacredUtils.SourceFiles.dlg
 {
     public partial class ApplicationPageSelectDialog
     {
@@ -20,7 +21,7 @@ namespace SacredUtils.resources.dlg
         {
             Process.Start(link);
 
-            if (AppSettings.ApplicationSettings.ClosePageDialogAfterSelect)
+            if (ApplicationSettingsManager.Settings.ClosePageDialogAfterSelect)
             {
                 BaseDialog.IsOpen = false;
             }

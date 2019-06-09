@@ -1,8 +1,9 @@
 ﻿using System.IO;
 using System.Linq;
 using System.Text;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class GetSacredGameInstalledVoiceover
     {
@@ -12,7 +13,7 @@ namespace SacredUtils.resources.bin
 
             if (ModifySettings.ModificationSettings.SacredVoiceoverLanguage == "based on language")
             {
-                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
+                string[] text = File.ReadAllLines(Settings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "LANGUAGE : ";
 

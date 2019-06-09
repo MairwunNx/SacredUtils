@@ -1,5 +1,5 @@
-﻿using SacredUtils.resources.prp;
-using System.Windows;
+﻿using System.Windows;
+using SacredUtils.SourceFiles.prp;
 using static SacredUtils.SourceFiles.Logger;
 
 namespace SacredUtils.resources.pgs

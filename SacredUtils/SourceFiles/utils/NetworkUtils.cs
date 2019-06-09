@@ -3,8 +3,8 @@ using System.Net;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
-using static SacredUtils.AppSettings;
 using static SacredUtils.SourceFiles.Logger;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 
 namespace SacredUtils.SourceFiles.utils
 {
@@ -12,13 +12,11 @@ namespace SacredUtils.SourceFiles.utils
     {
         public static readonly Lazy<bool> IsConnected = new Lazy<bool>(() =>
         {
-            if (ApplicationSettings.DisableCheckInternetConnection) return true;
+            if (!Settings.EnableCheckInternetConnection) return true;
             try
             {
                 using WebClient webClient = new WebClient();
-                using (webClient.OpenRead(
-                    ApplicationSettings.InternetConnectionPingProvider
-                ))
+                using (webClient.OpenRead(Settings.InternetConnectionPingProvider))
                 {
                     return true;
                 }
@@ -31,7 +29,7 @@ namespace SacredUtils.SourceFiles.utils
 
         public static void LogStatus()
         {
-            if (ApplicationSettings.DisableCheckInternetConnection)
+            if (!Settings.EnableCheckInternetConnection)
             {
                 Log.Warn("Checking for internet connection was skipped!");
             }
@@ -48,7 +46,7 @@ namespace SacredUtils.SourceFiles.utils
 
         public static void ShowNoConnection()
         {
-            if (!ApplicationSettings.VisibleNoConnectionImage ||
+            if (!Settings.VisibleNoConnectionImage ||
                 IsConnected.Value)
             {
                 return;

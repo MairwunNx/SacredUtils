@@ -2,18 +2,16 @@
 using System.Diagnostics;
 using System.IO;
 using System.Net;
-using SacredUtils.SourceFiles;
-using SacredUtils.SourceFiles.bin;
+using SacredUtils.SourceFiles.settings;
 using SacredUtils.SourceFiles.utils;
-using static SacredUtils.SourceFiles.Logger;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class GetApplicationDownloadStatistic
     {
         public static void Get()
         {
-            if (AppSettings.ApplicationSettings.DisableApplicationTelemetry) { return; }
+            if (!ApplicationSettingsManager.Settings.EnableApplicationTelemetry) { return; }
 
             if (!NetworkUtils.IsConnected.Value) { return; }
 
@@ -59,7 +57,7 @@ namespace SacredUtils.resources.bin
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString);
+                Logger.Log.Error(ex.ToString);
             }
         }
     }

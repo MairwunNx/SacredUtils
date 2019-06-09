@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 
-namespace SacredUtils.resources.dlg
+namespace SacredUtils.SourceFiles.dlg
 {
     public partial class ApplicationDonateSelectDialog
     {
@@ -19,7 +20,7 @@ namespace SacredUtils.resources.dlg
         {
             Process.Start(link);
 
-            if (AppSettings.ApplicationSettings.CloseDonateDialogAfterSelect)
+            if (Settings.CloseDonateDialogAfterSelect)
             {
                 BaseDialog.IsOpen = false;
             }

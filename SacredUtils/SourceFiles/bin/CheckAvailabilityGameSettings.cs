@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using static SacredUtils.SourceFiles.Logger;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 
 namespace SacredUtils.resources.bin
 {
@@ -8,13 +9,13 @@ namespace SacredUtils.resources.bin
     {
         public static void Get()
         {
-            if (!File.Exists(AppSettings.ApplicationSettings.SacredConfigurationFile))
+            if (!File.Exists(Settings.SacredConfigurationFile))
             {
                 try
                 {
-                    Log.Warn($"Sacred game configuration file ({AppSettings.ApplicationSettings.SacredConfigurationFile}) not found!");
-                    File.WriteAllBytes(AppSettings.ApplicationSettings.SacredConfigurationFile, Properties.Resources.gamesettings);
-                    Log.Info($"Creating sacred game configuration file ({AppSettings.ApplicationSettings.SacredConfigurationFile}) done!");
+                    Log.Warn($"Sacred game configuration file ({Settings.SacredConfigurationFile}) not found!");
+                    File.WriteAllBytes(Settings.SacredConfigurationFile, Properties.Resources.gamesettings);
+                    Log.Info($"Creating sacred game configuration file ({Settings.SacredConfigurationFile}) done!");
                 }
                 catch (Exception e)
                 {
@@ -26,7 +27,7 @@ namespace SacredUtils.resources.bin
             }
             else
             {
-                Log.Info($"Sacred game configuration file ({AppSettings.ApplicationSettings.SacredConfigurationFile}) was found!");
+                Log.Info($"Sacred game configuration file ({Settings.SacredConfigurationFile}) was found!");
             }
         }
     }

@@ -1,11 +1,11 @@
-﻿using SacredUtils.resources.prp;
-using System;
+﻿using System;
 using System.IO;
 using System.Linq;
 using System.Text;
-using SacredUtils.SourceFiles;
+using SacredUtils.SourceFiles.prp;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class InstallDefaultSacredGameFonts
     {
@@ -20,7 +20,7 @@ namespace SacredUtils.resources.bin
                 string[] fonts;
                 string[] fontsRu = { "CyrillicChancellor", "AntiquaSSK", "CyrillicChancellor", "AntiquaSSK", "AntiquaSSK", "AntiquaSSK", "CyrillicChancellor" };
                 string[] fontsEn = { "AntiquaSSK", "Carolingia", "AntiquaSSK", "Carolingia", "Carolingia", "Carolingia", "AntiquaSSK" };
-                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
+                string[] text = File.ReadAllLines(Settings.SacredConfigurationFile, Encoding.ASCII);
                 string prefix = "LANGUAGE : ";
                 string line = text.FirstOrDefault(x => x.StartsWith(prefix));
 
@@ -35,7 +35,7 @@ namespace SacredUtils.resources.bin
                         case 4: ChangeSacredGameSettingsValue.ChangeSettingValue("LANGUAGE", "FR"); break;
                     }
 
-                    string[] text2 = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
+                    string[] text2 = File.ReadAllLines(Settings.SacredConfigurationFile, Encoding.ASCII);
                     string prefix2 = "LANGUAGE : ";
                     string line2 = text2.FirstOrDefault(x => x.StartsWith(prefix2));
 
@@ -52,9 +52,9 @@ namespace SacredUtils.resources.bin
                 {
                     int fontSettings = i + 1;
 
-                    if (File.ReadAllText(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII).Contains($"FONT : {fontSettings}, \""))
+                    if (File.ReadAllText(Settings.SacredConfigurationFile, Encoding.ASCII).Contains($"FONT : {fontSettings}, \""))
                     {
-                        string[] text1 = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
+                        string[] text1 = File.ReadAllLines(Settings.SacredConfigurationFile, Encoding.ASCII);
 
                         for (int j = 0; j < text1.Length; j++)
                         {
@@ -62,13 +62,13 @@ namespace SacredUtils.resources.bin
                             {
                                 text1[j] = $"FONT : {fontSettings}, \"{fonts[i]}\", {sizes[i]}";
 
-                                File.WriteAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, text1);
+                                File.WriteAllLines(Settings.SacredConfigurationFile, text1);
                             }
                         }
                     }
                     else
                     {
-                        using (StreamWriter file = new StreamWriter(AppSettings.ApplicationSettings.SacredConfigurationFile, true, Encoding.ASCII))
+                        using (StreamWriter file = new StreamWriter(Settings.SacredConfigurationFile, true, Encoding.ASCII))
                         {
                             file.WriteLine($"FONT : {fontSettings}, \"{fonts[i]}\", {sizes[i]}");
                         }

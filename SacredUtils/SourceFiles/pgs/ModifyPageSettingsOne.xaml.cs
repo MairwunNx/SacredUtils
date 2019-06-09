@@ -1,8 +1,4 @@
-﻿using Ionic.Zip;
-using MaterialDesignThemes.Wpf;
-using SacredUtils.resources.bin;
-using SacredUtils.resources.dlg;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -10,7 +6,14 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Ionic.Zip;
+using MaterialDesignThemes.Wpf;
+using SacredUtils.resources.dlg;
+using SacredUtils.SourceFiles.bin;
+using SacredUtils.SourceFiles.dlg;
 using static SacredUtils.SourceFiles.Logger;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
+using Theme = SacredUtils.SourceFiles.theme.Theme;
 
 namespace SacredUtils.resources.pgs
 {
@@ -68,9 +71,9 @@ namespace SacredUtils.resources.pgs
                     new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/QRe3uOT73XgkeR"),
                     Environment.ExpandEnvironmentVariables("%tmp%"),
                     "SacredPatched228.zip", Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName),
-                    "2.28.01 Patch", "SacredPatched228.exe", AppSettings.ApplicationSettings.SacredExecutableFileName);
+                    "2.28.01 Patch", "SacredPatched228.exe", Settings.SacredExecutableFileName);
 
-                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
+                string[] text = File.ReadAllLines(Settings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "LANGUAGE : ";
 
@@ -98,9 +101,9 @@ namespace SacredUtils.resources.pgs
                     new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/P-gzohuQ3XgkfQ"),
                     Environment.ExpandEnvironmentVariables("%tmp%"),
                     "SacredPatched22914.zip", Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName),
-                    "2.29.14 Patch", "SacredPatched22914.exe", AppSettings.ApplicationSettings.SacredExecutableFileName);
+                    "2.29.14 Patch", "SacredPatched22914.exe", Settings.SacredExecutableFileName);
 
-                string[] text = File.ReadAllLines(AppSettings.ApplicationSettings.SacredConfigurationFile, Encoding.ASCII);
+                string[] text = File.ReadAllLines(Settings.SacredConfigurationFile, Encoding.ASCII);
 
                 string prefix = "LANGUAGE : ";
 
@@ -231,7 +234,7 @@ namespace SacredUtils.resources.pgs
             MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
             MainWindow.MainWindowInstance.DialogFrame.Content = applicationHotkey;
 
-            if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
+            if (Settings.ApplicationUiTheme == Theme.Dark)
             {
                 applicationHotkey.BaseDialog.DialogTheme = BaseTheme.Dark;
             }
@@ -272,7 +275,7 @@ namespace SacredUtils.resources.pgs
             MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
             MainWindow.MainWindowInstance.DialogFrame.Content = _applicationConvertHtmlToSacred;
 
-            if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
+            if (Settings.ApplicationUiTheme == Theme.Dark)
             {
                 _applicationConvertHtmlToSacred.BaseDialog.DialogTheme = BaseTheme.Dark;
             }
@@ -282,13 +285,13 @@ namespace SacredUtils.resources.pgs
 
         private void StartCheckingComponentsBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
+            if (File.Exists(Settings.SacredExecutableFileName))
             {
                 FrameworkElement element = new FrameworkElement();
 
-                if (!AppSettings.ApplicationSettings.DisableCheckingSacredVersion)
+                if (Settings.EnableCheckSacredVersion)
                 {
-                    FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(AppSettings.ApplicationSettings.SacredExecutableFileName);
+                    FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(Settings.SacredExecutableFileName);
 
                     string fileVersion =
                         $"{versionInfo.FileMajorPart}.{versionInfo.FileMinorPart}.{versionInfo.FileBuildPart}.{versionInfo.FilePrivatePart}";
@@ -333,7 +336,7 @@ namespace SacredUtils.resources.pgs
                 MainWindow.MainWindowInstance.DialogFrame.Visibility = Visibility.Visible;
                 MainWindow.MainWindowInstance.DialogFrame.Content = gameCheckingComponentsDialog;
 
-                if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
+                if (Settings.ApplicationUiTheme == Theme.Dark)
                 {
                     gameCheckingComponentsDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
                 }

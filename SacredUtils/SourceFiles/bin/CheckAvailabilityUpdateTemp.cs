@@ -1,14 +1,20 @@
 ﻿using System.IO;
+using SacredUtils.SourceFiles.settings;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class CheckAvailabilityUpdateTemp
     {
         public static void Get()
         {
-            if (AppSettings.ApplicationSettings.RemoveApplicationTempContent) return;
+            if (!ApplicationSettingsManager.Settings.EnableRemoveApplicationTempContent) return;
 
-            string[] files = { "mnxupdater.exe", "_newVersionSacredUtilsTemp.exe", "updater-crash-report.log" };
+            string[] files =
+            {
+                "mnxupdater.exe",
+                "_newVersionSacredUtilsTemp.exe",
+                "updater-crash-report.log"
+            };
 
             foreach (string file in files)
             {

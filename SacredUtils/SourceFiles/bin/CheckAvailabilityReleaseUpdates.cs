@@ -1,9 +1,8 @@
-﻿using SacredUtils.SourceFiles;
-using SacredUtils.SourceFiles.bin;
+﻿using SacredUtils.resources.bin;
 using SacredUtils.SourceFiles.utils;
-using static SacredUtils.SourceFiles.Logger;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class CheckAvailabilityReleaseUpdates
     {
@@ -11,9 +10,9 @@ namespace SacredUtils.resources.bin
         {
             if (!NetworkUtils.IsConnected.Value) return;
 
-            Log.Info("Checking premission for checking release SacredUtils updates ...");
+            Logger.Log.Info("Checking premission for checking release SacredUtils updates ...");
 
-            if (AppSettings.ApplicationSettings.CheckApplicationUpdates)
+            if (Settings.EnableCheckReleaseUpdates)
             {
                 if (GetActualApplicationVersion.Get("release", ApplicationInfo.Version,
                     "https://drive.google.com/uc?export=download&id=13N9ZfalxDfTAIdYxFuGBr8QPMW9OODc_"))
@@ -25,7 +24,7 @@ namespace SacredUtils.resources.bin
             }
             else
             {
-                Log.Warn("SacredUtils is running with disabled checking updates!");
+                Logger.Log.Warn("SacredUtils is running with disabled checking updates!");
             }
         }
     }

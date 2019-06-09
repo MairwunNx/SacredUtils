@@ -1,6 +1,6 @@
 ﻿using System.IO;
 using SacredUtils.Properties;
-using static SacredUtils.AppSettings;
+using SacredUtils.SourceFiles.settings;
 using static SacredUtils.SourceFiles.Logger;
 
 namespace SacredUtils.SourceFiles.theme
@@ -9,7 +9,7 @@ namespace SacredUtils.SourceFiles.theme
     {
         public static void CreateThemeFiles()
         {
-            if (ApplicationSettings.DisableReCreatingThemeFiles) return;
+            if (!ApplicationSettingsManager.Settings.EnableReCreatingThemeFiles) return;
             string thmsPath = Path.Combine(ApplicationInfo.Root, "thms");
             Log.Info($"Theme file manager path provided: {thmsPath}");
             File.WriteAllBytes(Path.Combine(thmsPath, "light.xaml"), Resources.Light);

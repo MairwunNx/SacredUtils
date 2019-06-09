@@ -1,12 +1,13 @@
 ﻿using System.Windows;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class GetPermissionsOnGettingMemory
     {
         public static void Get()
         {
-            if (AppSettings.ApplicationSettings.ApplicationShowUsedMemory)
+            if (Settings.EnableShowDebugInfo)
             {
                 MainWindow.MainWindowInstance.MemoryLbl.Visibility = Visibility.Visible; MainWindow.Timer.Start();
             }

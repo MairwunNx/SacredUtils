@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Media;
-using WPFSharp.Globalizer;
-using static SacredUtils.SourceFiles.Logger;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
+using static WPFSharp.Globalizer.GlobalizedApplication;
 
-namespace SacredUtils.resources.prp
+namespace SacredUtils.SourceFiles.prp
 {
     public class ApplicationSettingsOneProperty
     {
@@ -12,82 +12,90 @@ namespace SacredUtils.resources.prp
         {
             get
             {
-                if (AppSettings.ApplicationSettings.ApplicationUiLanguage == "based on system")
+                if (Settings.ApplicationUiLanguage == language.Language.BasedOnSystem)
                 {
                     return CultureInfo.InstalledUICulture.TwoLetterISOLanguageName == "ru" ? 0 : 1;
                 }
 
-                return AppSettings.ApplicationSettings.ApplicationUiLanguage == "ru" ? 0 : 1;
+                return Settings.ApplicationUiLanguage == language.Language.RuRu ? 0 : 1;
             }
 
             set
             {
-                if (value == 0)
+                switch (value)
                 {
-                    AppSettings.ApplicationSettings.ApplicationUiLanguage = "ru";
+                    case 0:
+                        Settings.ApplicationUiLanguage = language.Language.RuRu;
 
-                    GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage("ru-RU", true);
+                        Instance.GlobalizationManager.SwitchLanguage(
+                            "ru-RU",
+                            true
+                        );
+                        break;
+                    case 1:
+                        Settings.ApplicationUiLanguage = language.Language.EnUs;
 
-                    Log.Info("SacredUtils application language changed state to ru by user");
+                        Instance.GlobalizationManager.SwitchLanguage(
+                            "en-US",
+                            true
+                        );
+                        break;
                 }
 
-                if (value == 1)
-                {
-                    AppSettings.ApplicationSettings.ApplicationUiLanguage = "en";
-
-                    GlobalizedApplication.Instance.GlobalizationManager.SwitchLanguage("en-US", true);
-
-                    Log.Info("SacredUtils application language changed state to en by user");
-                }
+                Logger.Log.Info(
+                    $"SacredUtils application language changed state to {Settings.ApplicationUiLanguage} by user"
+                );
             }
         }
-        
+
         public int Theme
         {
-            get => AppSettings.ApplicationSettings.ApplicationUiColorTheme == "light" ? 0 : 1;
+            get => Settings.ApplicationUiTheme == theme.Theme.Light ? 0 : 1;
 
             set
             {
-                if (value == 0)
+                switch (value)
                 {
-                    AppSettings.ApplicationSettings.ApplicationUiColorTheme = "light";
+                    case 0:
+                        Settings.ApplicationUiTheme = theme.Theme.Light;
 
-                    GlobalizedApplication.Instance.StyleManager.SwitchStyle("light.xaml");
+                        Instance.StyleManager.SwitchStyle("light.xaml");
 
-                    Log.Info("SacredUtils application theme changed state to light by user");
+                        Logger.Log.Info(
+                            "SacredUtils application theme changed state to light by user");
+                        break;
+                    case 1:
+                        Settings.ApplicationUiTheme = theme.Theme.Dark;
+
+                        Instance.StyleManager.SwitchStyle("dark.xaml");
+                        break;
                 }
 
-                if (value == 1)
-                {
-                    AppSettings.ApplicationSettings.ApplicationUiColorTheme = "dark";
-
-                    GlobalizedApplication.Instance.StyleManager.SwitchStyle("dark.xaml");
-
-                    Log.Info("SacredUtils application theme changed state to dark by user");
-                }
+                Logger.Log.Info(
+                    $"SacredUtils application theme changed state to {Settings.ApplicationUiTheme} by user"
+                );
             }
         }
 
         public int StartParams
         {
-            get => AppSettings.ApplicationSettings.SacredStartArgs;
+            get => Settings.SacredStartArgs;
 
             set
             {
-                AppSettings.ApplicationSettings.SacredStartArgs = value;
-
-                Log.Info($"Sacred game startup params changed to {value} by user");
+                Settings.SacredStartArgs = value;
+                Logger.Log.Info($"Sacred game startup params changed to {value} by user");
             }
         }
 
         public string UiScale
         {
-            get => $"{Convert.ToInt32(AppSettings.ApplicationSettings.SacredUtilsGuiScale * 100)}%";
+            get => $"{Convert.ToInt32(Settings.ApplicationGuiScale * 100)}%";
 
             set
             {
                 ChangeScale(Convert.ToDouble(value.Replace("%", "")) / 100D);
-                Log.Info($"SacredUtils Ui scale changed state to {value} by user");
+                Logger.Log.Info($"SacredUtils Ui scale changed state to {value} by user");
             }
         }
 
@@ -95,9 +103,10 @@ namespace SacredUtils.resources.prp
         {
             MainWindow.MainWindowInstance.Height = 720 * scale;
             MainWindow.MainWindowInstance.Width = 1086 * scale;
-            MainWindow.MainWindowInstance.BaseCard.LayoutTransform = new ScaleTransform(scale, scale);
+            MainWindow.MainWindowInstance.BaseCard.LayoutTransform =
+                new ScaleTransform(scale, scale);
 
-            AppSettings.ApplicationSettings.SacredUtilsGuiScale = scale;
+            Settings.ApplicationGuiScale = scale;
         }
     }
 }

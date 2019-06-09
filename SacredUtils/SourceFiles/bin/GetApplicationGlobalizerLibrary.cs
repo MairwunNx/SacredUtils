@@ -2,26 +2,25 @@
 using System.Diagnostics;
 using System.IO;
 using System.Security.Cryptography;
-using SacredUtils.SourceFiles;
-using static SacredUtils.SourceFiles.Logger;
+using SacredUtils.SourceFiles.settings;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class GetApplicationGlobalizerLibrary
     {
         public static void Get()
         {
-            if (AppSettings.ApplicationSettings.DisableCheckingGlobLibrary) return;
+            if (!ApplicationSettingsManager.Settings.EnableCheckGlobLibrary) return;
 
             if (!File.Exists("WPFSharp.Globalizer.dll"))
             {
                 if (File.Exists("update.cmd")) { File.Delete("update.cmd"); }
-                Log.Warn("WPFSharp.Globalizer.dll library file not found!");
+                Logger.Log.Warn("WPFSharp.Globalizer.dll library file not found!");
                 Create();
             }
             else
             {
-                Log.Info("WPFSharp.Globalizer.dll library file was found!");
+                Logger.Log.Info("WPFSharp.Globalizer.dll library file was found!");
 
                 string md5FinallyHash;
 
@@ -55,17 +54,17 @@ namespace SacredUtils.resources.bin
         {
             try
             {
-                Log.Info("Creating WPFSharp.Globalizer.dll lirary file ...");
+                Logger.Log.Info("Creating WPFSharp.Globalizer.dll lirary file ...");
                 File.WriteAllBytes("WPFSharp.Globalizer.dll", Properties.Resources.WPFSharp_Globalizer);
-                Log.Info("Creating WPFSharp.Globalizer.dll library file done!");
-                Log.Info("Reloading SacredUtils configurator ...");
+                Logger.Log.Info("Creating WPFSharp.Globalizer.dll library file done!");
+                Logger.Log.Info("Reloading SacredUtils configurator ...");
                 Process.Start(ApplicationInfo.AppPath); Environment.Exit(0);
             }
             catch (Exception exception)
             {
-                Log.Fatal("Creating WPFSharp.Globalizer.dll library done with fatal level error!");
-                Log.Fatal(exception.ToString);
-                Log.Info("Shutting down SacredUtils configurator ...");
+                Logger.Log.Fatal("Creating WPFSharp.Globalizer.dll library done with fatal level error!");
+                Logger.Log.Fatal(exception.ToString);
+                Logger.Log.Info("Shutting down SacredUtils configurator ...");
                 Environment.Exit(0);
             }
         }

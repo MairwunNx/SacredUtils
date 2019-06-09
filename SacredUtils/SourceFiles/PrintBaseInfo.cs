@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Runtime.InteropServices;
 using SacredUtils.SourceFiles.extensions;
-using static SacredUtils.AppSettings;
 using static SacredUtils.SourceFiles.ApplicationInfo;
 using static SacredUtils.SourceFiles.Logger;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 
 #pragma warning disable 162
 // ReSharper disable UnreachableCode
@@ -15,7 +15,7 @@ namespace SacredUtils.SourceFiles
     {
         public static void Print()
         {
-            if (ApplicationSettings.DisablePrintBaseInfoToLog ||
+            if (!Settings.EnablePrintBaseInfoToLog ||
                 AppArguments.Contains("-disablePrintBaseInfoToLog"))
             {
                 return;

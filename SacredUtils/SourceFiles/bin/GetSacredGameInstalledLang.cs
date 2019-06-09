@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.IO;
+using SacredUtils.SourceFiles.bin;
 
 namespace SacredUtils.resources.bin
 {

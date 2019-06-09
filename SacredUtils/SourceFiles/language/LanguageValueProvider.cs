@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
-using static SacredUtils.AppSettings;
 using static SacredUtils.SourceFiles.Logger;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 using static WPFSharp.Globalizer.GlobalizedApplication;
 
 namespace SacredUtils.SourceFiles.language
@@ -11,7 +11,7 @@ namespace SacredUtils.SourceFiles.language
 
         public static void AssignLanguageValue()
         {
-            if (ApplicationSettings.ApplicationUiLanguage == "based on system")
+            if (Settings.ApplicationUiLanguage == Language.BasedOnSystem)
             {
                 Log.Info("Getting default system language settings for SacredUtils ...");
 
@@ -35,13 +35,14 @@ namespace SacredUtils.SourceFiles.language
             else
             {
                 Instance.GlobalizationManager.SwitchLanguage(
-                    ApplicationSettings.ApplicationUiLanguage == "ru"
+                    Settings.ApplicationUiLanguage == Language.RuRu
                         ? "ru-RU"
                         : "en-US",
                     true
                 );
                 Log.Info(
-                    $"{BaseLogMessage} ({ApplicationSettings.ApplicationUiLanguage}) language!");
+                    $"{BaseLogMessage} ({Settings.ApplicationUiLanguage}) language!"
+                );
             }
         }
     }

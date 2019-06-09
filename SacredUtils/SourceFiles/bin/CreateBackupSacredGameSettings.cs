@@ -1,15 +1,15 @@
 ﻿using System.IO;
-using SacredUtils.SourceFiles;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class CreateBackupSacredGameSettings
     {
         public static void Create()
         {
-            if (AppSettings.ApplicationSettings.RemoveBackupFilesOnOverflow)
+            if (Settings.EnableRemoveBackupFilesOnOverflow)
             {
-                if (Directory.GetFiles("$SacredUtils\\back\\cfg-game\\").Length >= AppSettings.ApplicationSettings.MaxSacredGameBackupFiles)
+                if (Directory.GetFiles("$SacredUtils\\back\\cfg-game\\").Length >= Settings.MaxSacredGameBackupFiles)
                 {
                     foreach (FileInfo dir in new DirectoryInfo("$SacredUtils\\back\\cfg-game\\").EnumerateFiles())
                     {
@@ -18,9 +18,9 @@ namespace SacredUtils.resources.bin
                 }
             }
 
-            if (AppSettings.ApplicationSettings.MakeAutoBackupAppGameConfigs)
+            if (Settings.EnableAutoBackupAppAndGameConfigs)
             {
-                File.Copy(AppSettings.ApplicationSettings.SacredConfigurationFile, $"$SacredUtils\\back\\cfg-game\\config_game_id_{ApplicationInfo.RandomSession}.cfg", true);
+                File.Copy(Settings.SacredConfigurationFile, $"$SacredUtils\\back\\cfg-game\\config_game_id_{ApplicationInfo.RandomSession}.cfg", true);
             }
             else
             {

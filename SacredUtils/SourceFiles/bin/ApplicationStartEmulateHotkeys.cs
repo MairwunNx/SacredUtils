@@ -9,15 +9,16 @@ using System.Windows.Threading;
 using EnumsNET;
 using NHotkey;
 using NHotkey.Wpf;
+using SacredUtils.resources.bin;
 using SacredUtils.SourceFiles.utils;
-using static SacredUtils.SourceFiles.Logger;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 
 // ReSharper disable InconsistentNaming
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class ApplicationStartEmulateHotkeys
     {
-        private static readonly IntPtr hWndSacred = NativeMethods.FindWindow(AppSettings.ApplicationSettings.HWndSacredWindowClassId, null);
+        private static readonly IntPtr hWndSacred = NativeMethods.FindWindow(Settings.HWndSacredWindowClassId, null);
         private static readonly string[] registerHotKeyList = File.ReadAllLines("$SacredUtils\\conf\\hk.regr.txt");
 
         public static void RegisterMainHotkeys()
@@ -25,8 +26,8 @@ namespace SacredUtils.resources.bin
             HotkeyManager.Current.AddOrReplace("EnableHandling", Key.E, ModifierKeys.Shift | ModifierKeys.Control, EnableHotkeys);
             HotkeyManager.Current.AddOrReplace("DisableHandling", Key.D, ModifierKeys.Shift | ModifierKeys.Control, DisableHotkeys);
 
-            Log.Info("Register global application MainHotkey successfully done!");
-            Thread.Sleep(AppSettings.ApplicationSettings.HotKeyRegisterGameDelay);
+            Logger.Log.Info("Register global application MainHotkey successfully done!");
+            Thread.Sleep(Settings.HotKeyRegisterGameDelay);
             RegisterHotkeys();
         }
 
@@ -39,15 +40,15 @@ namespace SacredUtils.resources.bin
                     Enums.TryParse(keyName, out Key registerKey);
 
                     HotkeyManager.Current.AddOrReplace(keyName, registerKey, ModifierKeys.None, HandleHotKeys);
-                    Log.Info($"Register global game {keyName} hotkey successfully done!");
+                    Logger.Log.Info($"Register global game {keyName} hotkey successfully done!");
                 }
 
-                Log.Info("Register all global game hotkeys successfully done!");
+                Logger.Log.Info("Register all global game hotkeys successfully done!");
                 CheckAvailabilityProcess();
             }
             catch (Exception e)
             {
-                Log.Error(e.ToString);
+                Logger.Log.Error(e.ToString);
             }
         }
 
@@ -55,11 +56,11 @@ namespace SacredUtils.resources.bin
         {
             NativeMethods.SetForegroundWindow(hWndSacred);
 
-            if (AppSettings.ApplicationSettings.UseSimplifiedHotKeySettings)
+            if (Settings.UseSimplifiedHotKeySettings)
             {
                 SendKeys.SendWait(ApplicationHotKeyGetSystemKeyValue.Get($" = {e.Name}"));
 
-                e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsGameHandled;
+                e.Handled = Settings.HotKeyEventArgsGameHandled;
             }
             else
             {
@@ -74,7 +75,7 @@ namespace SacredUtils.resources.bin
                     SendKeys.SendWait((string)propertyInfo?.GetValue(HotkeySettings.GameHotkeySettings)); 
                 }
 
-                e.Handled = AppSettings.ApplicationSettings.HotKeyEventArgsGameHandled;
+                e.Handled = Settings.HotKeyEventArgsGameHandled;
             }
         }
 
@@ -82,7 +83,7 @@ namespace SacredUtils.resources.bin
         {
             DispatcherTimer timer = new DispatcherTimer
             {
-                Interval = new TimeSpan(0, 0, AppSettings.ApplicationSettings.DelayCheckingSacredProcess)
+                Interval = new TimeSpan(0, 0, Settings.DelayCheckingSacredProcess)
             };
 
             timer.Tick += (s, e) =>
@@ -102,14 +103,14 @@ namespace SacredUtils.resources.bin
                 foreach (string keyName in registerHotKeyList)
                 {
                     HotkeyManager.Current.Remove(keyName);
-                    Log.Info($"Unregister global game {keyName} hotkey successfully done!");
+                    Logger.Log.Info($"Unregister global game {keyName} hotkey successfully done!");
                 }
 
-                Log.Info("Shutting down all global game hotkeys done!");
+                Logger.Log.Info("Shutting down all global game hotkeys done!");
             }
             catch (Exception e)
             {
-                Log.Error(e.ToString);
+                Logger.Log.Error(e.ToString);
             }
         }
 

@@ -1,19 +1,18 @@
 ﻿using System.Diagnostics;
 using System.Linq;
-using System.Windows.Forms;
+using SacredUtils.SourceFiles.settings;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class ApplicationRunSacredGameWithArgs
     {
-        private static readonly string SacredFileName = AppSettings.ApplicationSettings.SacredExecutableFileName;
-        private static readonly string SacredCheatArg = AppSettings.ApplicationSettings.SacredCheatsEnableArgument;
-
         public static void Run(string[] args)
         {
             if (args.Contains("-cheatsEnable"))
             {
-                Process.Start(SacredFileName, SacredCheatArg);
+                Process.Start(ApplicationSettingsManager.Settings.SacredExecutableFileName,
+                    ApplicationSettingsManager.Settings.SacredCheatsEnableArgument
+                );
 
                 EnableSwitchingLanguage(args);
                 EnableStretchingScreenshot(args);
@@ -22,7 +21,7 @@ namespace SacredUtils.resources.bin
             }
             else
             {
-                Process.Start(SacredFileName);
+                Process.Start(ApplicationSettingsManager.Settings.SacredExecutableFileName);
 
                 EnableSwitchingLanguage(args);
                 EnableStretchingScreenshot(args);

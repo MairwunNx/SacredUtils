@@ -1,8 +1,8 @@
-﻿using SacredUtils.resources.bin;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
+using SacredUtils.SourceFiles.bin;
 
 namespace SacredUtils.resources.dlg
 {

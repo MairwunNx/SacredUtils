@@ -3,12 +3,14 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Input;
-using EnumsNET;
 using MaterialDesignThemes.Wpf;
 using SacredUtils.resources.dlg;
 using SacredUtils.SourceFiles;
+using SacredUtils.SourceFiles.bin;
 using SacredUtils.SourceFiles.utils;
 using static SacredUtils.SourceFiles.Logger;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
+using Theme = SacredUtils.SourceFiles.theme.Theme;
 
 // ReSharper disable LocalSuppression
 namespace SacredUtils.resources.bin
@@ -21,22 +23,7 @@ namespace SacredUtils.resources.bin
 
         public static void KeyDown(object sender, KeyEventArgs e)
         {
-            Enums.TryParse(AppSettings.ApplicationSettings.KeyApplicationGotoMainMenu,
-                out Key toMain);
-            Enums.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredUtilsLogFile,
-                out Key openLogs);
-            Enums.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredUtilsSettingFile,
-                out Key openSettings);
-            Enums.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredGameSettingsFile,
-                out Key openGameSettings);
-            Enums.TryParse(AppSettings.ApplicationSettings.KeyOpenSacredUtilsDirectory,
-                out Key openDirectory);
-            Enums.TryParse(AppSettings.ApplicationSettings.KeyDefaultReloadSacredUtils,
-                out Key reloadSacredUtils);
-            Enums.TryParse(AppSettings.ApplicationSettings.KeyDefaultShutdownSacredUtils,
-                out Key shutdownSacredUtils);
-
-            if (e.Key == toMain)
+            if (e.Key == Settings.KeyPushUserToMainMenu)
             {
                 ChangeApplicationSelectionSettings.UnSelectSettings(
                     MainWindow.UnselectedStg
@@ -44,40 +31,43 @@ namespace SacredUtils.resources.bin
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control &&
-                e.Key == openLogs &&
+                e.Key == Settings.KeyOpenProgramLatestLogFile &&
                 File.Exists("$SacredUtils\\logs\\latest.log"))
             {
-                Process.Start(AppSettings.ApplicationSettings.DefaultOpenLogFileProgram,
+                Process.Start(Settings.DefaultOpenLogFileProgram,
                     "$SacredUtils\\logs\\latest.log");
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control &&
-                e.Key == openSettings &&
+                e.Key == Settings.KeyOpenProgramSettingFile &&
                 File.Exists("$SacredUtils\\conf\\settings.json"))
             {
-                Process.Start(AppSettings.ApplicationSettings.DefaultOpenLogFileProgram,
+                Process.Start(Settings.DefaultOpenLogFileProgram,
                     "$SacredUtils\\conf\\settings.json");
             }
 
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control &&
-                e.Key == openGameSettings &&
-                File.Exists(AppSettings.ApplicationSettings.SacredConfigurationFile))
+                e.Key == Settings.KeyOpenGameSettingsFile &&
+                File.Exists(Settings.SacredConfigurationFile))
             {
-                Process.Start(AppSettings.ApplicationSettings.DefaultOpenLogFileProgram,
-                    AppSettings.ApplicationSettings.SacredConfigurationFile);
+                Process.Start(Settings.DefaultOpenLogFileProgram,
+                    Settings.SacredConfigurationFile);
             }
 
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == openDirectory)
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control &&
+                e.Key == Settings.KeyOpenProgramDirectory)
             {
                 Process.Start(ApplicationInfo.CurrentPath);
             }
 
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == reloadSacredUtils)
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control &&
+                e.Key == Settings.KeyReloadProgram)
             {
                 ApplicationUtils.Reload();
             }
 
-            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control && e.Key == shutdownSacredUtils)
+            if (e.KeyboardDevice.Modifiers == ModifierKeys.Control &&
+                e.Key == Settings.KeyShutdownProgram)
             {
                 ApplicationUtils.Shutdown();
             }
@@ -136,7 +126,7 @@ namespace SacredUtils.resources.bin
                 {
                     _keyPressesChangeLog = 0;
 
-                    if (AppSettings.ApplicationSettings.ApplicationShowChangeLog)
+                    if (Settings.EnableShowChangeLogAfterUpdate)
                     {
                         ApplicationChangeLogDialog applicationChangeLogDialog =
                             new ApplicationChangeLogDialog();
@@ -145,7 +135,7 @@ namespace SacredUtils.resources.bin
                         MainWindow.MainWindowInstance.DialogFrame.Content =
                             applicationChangeLogDialog;
 
-                        if (AppSettings.ApplicationSettings.ApplicationUiColorTheme == "dark")
+                        if (Settings.ApplicationUiTheme == Theme.Dark)
                         {
                             applicationChangeLogDialog.BaseDialog.DialogTheme = BaseTheme.Dark;
                         }
@@ -161,7 +151,7 @@ namespace SacredUtils.resources.bin
 
             if (e.Key == Key.Tab)
             {
-                e.Handled = AppSettings.ApplicationSettings.DisableApplicationTabKeyButton;
+                e.Handled = !Settings.EnableApplicationTabKeyButton;
             }
         }
     }

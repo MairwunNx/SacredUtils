@@ -2,7 +2,7 @@
 using NLog;
 using NLog.Config;
 using NLog.Targets;
-using static SacredUtils.AppSettings;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 
 namespace SacredUtils.SourceFiles
 {
@@ -16,7 +16,7 @@ namespace SacredUtils.SourceFiles
         public static void Init(bool disableLogging)
         {
             if (disableLogging ||
-                ApplicationSettings.DisableApplicationLogging)
+                !Settings.EnableApplicationLogging)
             {
                 return;
             }
@@ -26,13 +26,13 @@ namespace SacredUtils.SourceFiles
             {
                 FileName = "${basedir}/$SacredUtils/logs/latest.log",
                 ArchiveFileName = "${basedir}/$SacredUtils/logs/${shortdate}.log.gz",
-                Layout = ResolveLayout(ApplicationSettings.ApplicationLoggingMethodName),
-                ArchiveOldFileOnStartup = ApplicationSettings.ArchiveOldFileOnStartup,
-                EnableArchiveFileCompression = ApplicationSettings.EnableArchiveFileCompression,
+                Layout = ResolveLayout(Settings.AllowLoggingMethodNames),
+                ArchiveOldFileOnStartup = Settings.EnableArchiveOldFileOnStartup,
+                EnableArchiveFileCompression = Settings.EnableArchiveFileCompression,
                 Encoding = Encoding.UTF8,
-                MaxArchiveFiles = ApplicationSettings.MaxApplicationArchiveFiles
+                MaxArchiveFiles = Settings.MaxLoggerArchiveLogFiles
             };
-            
+
             config.AddRule(LogLevel.Info, LogLevel.Fatal, logfile);
             LogManager.Configuration = config;
         }

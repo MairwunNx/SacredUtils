@@ -1,11 +1,11 @@
-﻿using SacredUtils.resources.bin;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
-using static SacredUtils.SourceFiles.Logger;
+using SacredUtils.SourceFiles.bin;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 
-namespace SacredUtils.resources.dlg
+namespace SacredUtils.SourceFiles.dlg
 {
     public partial class ApplicationRunSacredDialog
     {
@@ -13,17 +13,17 @@ namespace SacredUtils.resources.dlg
 
         private void LaunchSacredBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (AppSettings.ApplicationSettings.SacredStartArgs == 2)
+            if (Settings.SacredStartArgs == 2)
             {
                 if (RunWithCheatsCmbBox.IsChecked == true)
                 {
-                    if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
+                    if (File.Exists(Settings.SacredExecutableFileName))
                     {
                         BaseDialog.IsOpen = false;
 
-                        Log.Info($"Starting {AppSettings.ApplicationSettings.SacredExecutableFileName} game file with arg CHEATS=1 ...");
+                        Logger.Log.Info($"Starting {Settings.SacredExecutableFileName} game file with arg CHEATS=1 ...");
                         
-                        Process.Start(AppSettings.ApplicationSettings.SacredExecutableFileName, "CHEATS=1");
+                        Process.Start(Settings.SacredExecutableFileName, "CHEATS=1");
 
                         EnableSwitchingLanguage();
 
@@ -35,18 +35,18 @@ namespace SacredUtils.resources.dlg
                     }
                     else
                     {
-                        Log.Error($"{AppSettings.ApplicationSettings.SacredExecutableFileName} file not found! Move application to game directory!");
+                        Logger.Log.Error($"{Settings.SacredExecutableFileName} file not found! Move application to game directory!");
                     }
                 }
                 else
                 {
-                    if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
+                    if (File.Exists(Settings.SacredExecutableFileName))
                     {
                         BaseDialog.IsOpen = false;
 
-                        Log.Info($"Starting {AppSettings.ApplicationSettings.SacredExecutableFileName} game file ...");
+                        Logger.Log.Info($"Starting {Settings.SacredExecutableFileName} game file ...");
 
-                        Process.Start(AppSettings.ApplicationSettings.SacredExecutableFileName);
+                        Process.Start(Settings.SacredExecutableFileName);
 
                         EnableSwitchingLanguage();
 
@@ -58,25 +58,25 @@ namespace SacredUtils.resources.dlg
                     }
                     else
                     {
-                        Log.Error($"{AppSettings.ApplicationSettings.SacredExecutableFileName} file not found! Move application to game directory!");
+                        Logger.Log.Error($"{Settings.SacredExecutableFileName} file not found! Move application to game directory!");
                     }
                 }
             }
-            else if (AppSettings.ApplicationSettings.SacredStartArgs == 1)
+            else if (Settings.SacredStartArgs == 1)
             {
                 if (RunWithCheatsCmbBox.IsChecked == true)
                 {
-                    if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
+                    if (File.Exists(Settings.SacredExecutableFileName))
                     {
                         BaseDialog.IsOpen = false;
 
-                        Log.Info("Param selected: Minimizing SacredUtils application ...");
+                        Logger.Log.Info("Param selected: Minimizing SacredUtils application ...");
 
                         MainWindow.MainWindowInstance.WindowState = WindowState.Minimized;
 
-                        Log.Info($"Starting {AppSettings.ApplicationSettings.SacredExecutableFileName} game file with arg CHEATS=1 ...");
+                        Logger.Log.Info($"Starting {Settings.SacredExecutableFileName} game file with arg CHEATS=1 ...");
 
-                        Process.Start(AppSettings.ApplicationSettings.SacredExecutableFileName, "CHEATS=1");
+                        Process.Start(Settings.SacredExecutableFileName, "CHEATS=1");
 
                         EnableSwitchingLanguage();
 
@@ -88,22 +88,22 @@ namespace SacredUtils.resources.dlg
                     }
                     else
                     {
-                        Log.Error($"{AppSettings.ApplicationSettings.SacredExecutableFileName} file not found! Move application to game directory!");
+                        Logger.Log.Error($"{Settings.SacredExecutableFileName} file not found! Move application to game directory!");
                     }
                 }
                 else
                 {
-                    if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
+                    if (File.Exists(Settings.SacredExecutableFileName))
                     {
                         BaseDialog.IsOpen = false;
 
-                        Log.Info("Param selected: Minimizing SacredUtils application ...");
+                        Logger.Log.Info("Param selected: Minimizing SacredUtils application ...");
 
                         MainWindow.MainWindowInstance.WindowState = WindowState.Minimized;
 
-                        Log.Info($"Starting {AppSettings.ApplicationSettings.SacredExecutableFileName} game file ...");
+                        Logger.Log.Info($"Starting {Settings.SacredExecutableFileName} game file ...");
 
-                        Process.Start(AppSettings.ApplicationSettings.SacredExecutableFileName);
+                        Process.Start(Settings.SacredExecutableFileName);
 
                         EnableSwitchingLanguage();
 
@@ -115,44 +115,44 @@ namespace SacredUtils.resources.dlg
                     }
                     else
                     {
-                        Log.Error($"{AppSettings.ApplicationSettings.SacredExecutableFileName} file not found! Move application to game directory!");
+                        Logger.Log.Error($"{Settings.SacredExecutableFileName} file not found! Move application to game directory!");
                     }
                 }
             }
-            else if (AppSettings.ApplicationSettings.SacredStartArgs == 0)
+            else if (Settings.SacredStartArgs == 0)
             {
                 if (RunWithCheatsCmbBox.IsChecked == true)
                 {
-                    if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
+                    if (File.Exists(Settings.SacredExecutableFileName))
                     {
-                        Log.Info($"Starting {AppSettings.ApplicationSettings.SacredExecutableFileName} game file with arg CHEATS=1 ...");
+                        Logger.Log.Info($"Starting {Settings.SacredExecutableFileName} game file with arg CHEATS=1 ...");
 
-                        Process.Start(AppSettings.ApplicationSettings.SacredExecutableFileName, "CHEATS=1");
+                        Process.Start(Settings.SacredExecutableFileName, "CHEATS=1");
 
-                        Log.Info("Param selected: Force shutting down SacredUtils ...");
+                        Logger.Log.Info("Param selected: Force shutting down SacredUtils ...");
 
                         Environment.Exit(0);
                     }
                     else
                     {
-                        Log.Error($"{AppSettings.ApplicationSettings.SacredExecutableFileName} file not found! Move application to game directory!");
+                        Logger.Log.Error($"{Settings.SacredExecutableFileName} file not found! Move application to game directory!");
                     }
                 }
                 else
                 {
-                    if (File.Exists(AppSettings.ApplicationSettings.SacredExecutableFileName))
+                    if (File.Exists(Settings.SacredExecutableFileName))
                     {
-                        Log.Info($"Starting {AppSettings.ApplicationSettings.SacredExecutableFileName} game file ...");
+                        Logger.Log.Info($"Starting {Settings.SacredExecutableFileName} game file ...");
 
-                        Process.Start(AppSettings.ApplicationSettings.SacredExecutableFileName);
+                        Process.Start(Settings.SacredExecutableFileName);
 
-                        Log.Info("Param selected: Force shutting down SacredUtils ...");
+                        Logger.Log.Info("Param selected: Force shutting down SacredUtils ...");
 
                         Environment.Exit(0);
                     }
                     else
                     {
-                        Log.Error($"{AppSettings.ApplicationSettings.SacredExecutableFileName} file not found! Move application to game directory!");
+                        Logger.Log.Error($"{Settings.SacredExecutableFileName} file not found! Move application to game directory!");
                     }
                 }
             }
@@ -162,7 +162,7 @@ namespace SacredUtils.resources.dlg
         {
             if (RunWithEngLangCmbBox.IsChecked != true) { return; }
 
-            Log.Info("Sacred starting with enabled force switching language ...");
+            Logger.Log.Info("Sacred starting with enabled force switching language ...");
 
             ForceSwitchKeyboardLanguageInGame.RegisterApplication();
         }
@@ -171,7 +171,7 @@ namespace SacredUtils.resources.dlg
         { 
             if (RunWithScreenCmbBox.IsChecked != true) { return; }
 
-            if (AppSettings.ApplicationSettings.ForceEnableFullScreenMode)
+            if (Settings.ForceEnableFullScreenMode)
             {
                 MainWindow.GraphicsStgTwo.FullScreenMode.IsChecked = true;
             }
@@ -183,7 +183,7 @@ namespace SacredUtils.resources.dlg
         {
             if (RunWithHotkeysCmbBox.IsChecked != true) { return; }
 
-            Log.Info("Sacred starting with enabled hotkeys emulation ...");
+            Logger.Log.Info("Sacred starting with enabled hotkeys emulation ...");
 
             ApplicationStartEmulateHotkeys.RegisterMainHotkeys();
         }
@@ -192,7 +192,7 @@ namespace SacredUtils.resources.dlg
         {
             if (RunWithDisabledWinKeyCmbBox.IsChecked != true) { return; }
 
-            Log.Info("Sacred starting with disabled win key ...");
+            Logger.Log.Info("Sacred starting with disabled win key ...");
 
             ForceSacredGameDisableWinKey.RegisterKeys();
 

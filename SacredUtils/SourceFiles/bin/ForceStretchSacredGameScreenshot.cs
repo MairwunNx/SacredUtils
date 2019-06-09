@@ -8,13 +8,12 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
-using EnumsNET;
 using NHotkey;
 using NHotkey.Wpf;
+using SacredUtils.SourceFiles.settings;
 using SacredUtils.SourceFiles.utils;
-using static SacredUtils.SourceFiles.Logger;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class ForceStretchSacredGameScreenshot
     {
@@ -26,18 +25,17 @@ namespace SacredUtils.resources.bin
 
             try
             {
-                Enums.TryParse(AppSettings.ApplicationSettings.ScreenShotCreateKey,
-                    out Key screenKey);
-                HotkeyManager.Current.AddOrReplace("PrintScreen", screenKey, ModifierKeys.None,
+                HotkeyManager.Current.AddOrReplace("PrintScreen", ApplicationSettingsManager.Settings.KeyCreateGameScreenShot,
+                    ModifierKeys.None,
                     Get);
                 CheckAvailabilityProcess();
-                Log.Info("Register global PrintScreen hotkey successfully done!");
+                Logger.Log.Info("Register global PrintScreen hotkey successfully done!");
             }
             catch (Exception e)
             {
-                Log.Error(
+                Logger.Log.Error(
                     "Register global PrintScreen hotkey not ability (Close app used PrintScreen button)!");
-                Log.Error(e.ToString);
+                Logger.Log.Error(e.ToString);
             }
         }
 
@@ -46,7 +44,7 @@ namespace SacredUtils.resources.bin
             DispatcherTimer timer = new DispatcherTimer
             {
                 Interval = new TimeSpan(0, 0,
-                    AppSettings.ApplicationSettings.DelayCheckingSacredProcess)
+                    ApplicationSettingsManager.Settings.DelayCheckingSacredProcess)
             };
 
             timer.Tick += (s, e) =>
@@ -67,11 +65,11 @@ namespace SacredUtils.resources.bin
             {
                 HotkeyManager.Current.Remove("PrintScreen");
 
-                Log.Info("Caused by close Sacred: Shutting down global PrintScreen hotkey done!");
+                Logger.Log.Info("Caused by close Sacred: Shutting down global PrintScreen hotkey done!");
             }
             catch (Exception e)
             {
-                Log.Error(e.ToString);
+                Logger.Log.Error(e.ToString);
             }
         }
 
@@ -79,7 +77,7 @@ namespace SacredUtils.resources.bin
         {
             if (_argRun)
             {
-                if (AppSettings.ApplicationSettings.UseAsyncCreatingScreenshots)
+                if (ApplicationSettingsManager.Settings.UseAsyncCreatingScreenshots)
                 {
                     CreateScreenShotAsync();
                 }
@@ -90,7 +88,7 @@ namespace SacredUtils.resources.bin
             }
             else
             {
-                if (AppSettings.ApplicationSettings.UseAsyncCreatingScreenshots)
+                if (ApplicationSettingsManager.Settings.UseAsyncCreatingScreenshots)
                 {
                     CreateScreenShotAsync();
                 }
@@ -116,19 +114,19 @@ namespace SacredUtils.resources.bin
             {
                 using (Graphics g = Graphics.FromImage(bmp))
                 {
-                    string filename = AppSettings.ApplicationSettings.ScreenShotSaveFilePrefix +
-                                      DateTime.Now.ToString(AppSettings.ApplicationSettings
+                    string filename = ApplicationSettingsManager.Settings.ScreenShotSaveFilePrefix +
+                                      DateTime.Now.ToString(ApplicationSettingsManager.Settings
                                           .ScreenShotSaveFilePattern) + ".png";
 
                     g.CopyFromScreen((int) screenLeft, (int) screenTop, 0, 0, bmp.Size);
-                    Directory.CreateDirectory(AppSettings.ApplicationSettings
+                    Directory.CreateDirectory(ApplicationSettingsManager.Settings
                         .ScreenShotSaveDirectory);
 
-                    if (AppSettings.ApplicationSettings.AllowCustomScreenShotResolution)
+                    if (ApplicationSettingsManager.Settings.AllowCustomScreenShotResolution)
                     {
                         Stretch(bmp,
-                            AppSettings.ApplicationSettings.CustomScreenShotResolutionWidth,
-                            AppSettings.ApplicationSettings.CustomScreenShotResolutionHeight,
+                            ApplicationSettingsManager.Settings.CustomScreenShotResolutionWidth,
+                            ApplicationSettingsManager.Settings.CustomScreenShotResolutionHeight,
                             filename);
                     }
                     else
@@ -172,15 +170,15 @@ namespace SacredUtils.resources.bin
 
         private static void Save(Bitmap capture, string fileName)
         {
-            Directory.CreateDirectory(AppSettings.ApplicationSettings.ScreenShotSaveDirectory);
-            capture.Save($"{AppSettings.ApplicationSettings.ScreenShotSaveDirectory}\\{fileName}");
-            Log.Info($"Screenshot saved {fileName} to Capture folder.");
+            Directory.CreateDirectory(ApplicationSettingsManager.Settings.ScreenShotSaveDirectory);
+            capture.Save($"{ApplicationSettingsManager.Settings.ScreenShotSaveDirectory}\\{fileName}");
+            Logger.Log.Info($"Screenshot saved {fileName} to Capture folder.");
             RemoveTgaScreenshots();
         }
 
         private static void RemoveTgaScreenshots()
         {
-            if (AppSettings.ApplicationSettings.ScreenShotRemoveTgaAndJpgFiles)
+            if (ApplicationSettingsManager.Settings.ScreenShotRemoveTgaAndJpgFiles)
             {
                 if (Directory.Exists("Capture"))
                 {
@@ -201,7 +199,7 @@ namespace SacredUtils.resources.bin
                     }
                     catch (Exception e)
                     {
-                        Log.Error(e.ToString);
+                        Logger.Log.Error(e.ToString);
                     }
                 }
             }

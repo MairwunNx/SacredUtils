@@ -8,11 +8,13 @@ using System.Windows.Threading;
 using SacredUtils.resources.bin;
 using SacredUtils.resources.pgs;
 using SacredUtils.SourceFiles;
+using SacredUtils.SourceFiles.bin;
 using SacredUtils.SourceFiles.language;
-using SacredUtils.SourceFiles.settings;
+using SacredUtils.SourceFiles.pgs;
 using SacredUtils.SourceFiles.theme;
 using SacredUtils.SourceFiles.utils;
 using static SacredUtils.SourceFiles.Logger;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 
 namespace SacredUtils
 {
@@ -51,8 +53,8 @@ namespace SacredUtils
 
         private void EventSubscribe()
         {
-            Closing += (s, e) => ApplicationSettingsManager.SaveSettings();
-            
+            Closing += (s, e) => SaveSettings();
+
             MenuGrLabel.Click += (s, e) =>
                 ChangeApplicationSelectionSettings.SelectSettings(GraphicsStgOne, GraphicsPanel);
             MenuSnLabel.Click += (s, e) =>
@@ -69,14 +71,18 @@ namespace SacredUtils
                 ChangeApplicationSelectionSettings.SelectSettings(AppStgOne, SettingsPanel);
             MenuPlLabel.Click += (s, e) => ApplicationStartSacredGameFile.StartDialog();
 
-            if (AppSettings.ApplicationSettings.RefreshSettingsOnWindowFocus)
+            if (Settings.EnableRefreshSettingsOnWindowFocus)
             {
                 Activated += (s, e) => RefreshApplicationSettings.Refresh();
             }
 
-            Timeline.DesiredFrameRateProperty.OverrideMetadata(typeof(Timeline),
+            Timeline.DesiredFrameRateProperty.OverrideMetadata(
+                typeof(Timeline),
                 new FrameworkPropertyMetadata
-                    {DefaultValue = AppSettings.ApplicationSettings.DesiredFrameRateProperty});
+                {
+                    DefaultValue = Settings.DesiredFrameRateProperty
+                }
+            );
 
             CloseBtn.Click += (s, e) => ApplicationUtils.Shutdown();
             UpdateLbl.MouseDown += (s, e) => ApplicationStartUtilityUpdate.Start();
@@ -84,9 +90,12 @@ namespace SacredUtils
             MinimizeBtn.Click += (s, e) => WindowState = WindowState.Minimized;
             MemoryLbl.MouseDown += (s, e) => GC.Collect();
             HeaderPanel.MouseDown += DragWindow;
-
-            Timer.Interval = new TimeSpan(0, 0,
-                AppSettings.ApplicationSettings.ShowUsedMemoryUpdateInterval);
+            
+            Timer.Interval = new TimeSpan(
+                0,
+                0,
+                Settings.ShowUsedMemoryUpdateInterval
+            );
             Timer.Tick += (s, e) => GetApplicationCurrentUsedMemory.Get();
 
             Loaded += (sender, args) =>

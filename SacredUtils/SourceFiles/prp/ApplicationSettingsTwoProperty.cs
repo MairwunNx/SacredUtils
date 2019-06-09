@@ -1,56 +1,55 @@
-﻿using System;
-using System.IO;
-using static SacredUtils.SourceFiles.Logger;
+﻿using System.IO;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 
-namespace SacredUtils.resources.prp
+namespace SacredUtils.SourceFiles.prp
 {
     public class ApplicationSettingsTwoProperty
     {
         public bool UpdateCheck
         {
-            get => AppSettings.ApplicationSettings.CheckApplicationUpdates;
-
+            get => Settings.EnableCheckReleaseUpdates;
             set
             {
-                AppSettings.ApplicationSettings.CheckApplicationUpdates = value;
-
-                Log.Info($"Checking for updates changed state to {value} by user");
+                Settings.EnableCheckReleaseUpdates = value;
+                Logger.Log.Info($"Checking for updates changed state to {value} by user");
             }
         }
 
         public bool UpdateAlphaCheck
         {
-            get => AppSettings.ApplicationSettings.CheckAutoAlphaUpdate;
-
+            get => Settings.EnableCheckAlphaUpdates;
             set
             {
-                AppSettings.ApplicationSettings.CheckAutoAlphaUpdate = value;
-
-                Log.Info($"Checking for alpha updates changed state to {value} by user");
+                Settings.EnableCheckAlphaUpdates = value;
+                Logger.Log.Info($"Checking for alpha updates changed state to {value} by user");
             }
         }
 
         public bool MakeBackup
         {
-            get => AppSettings.ApplicationSettings.MakeAutoBackupAppGameConfigs;
-
+            get => Settings.EnableAutoBackupAppAndGameConfigs;
             set
             {
-                AppSettings.ApplicationSettings.MakeAutoBackupAppGameConfigs = value;
-
-                Log.Info($"Backup making settings changed state to {value} by user");
+                Settings.EnableAutoBackupAppAndGameConfigs = value;
+                Logger.Log.Info($"Backup making settings changed state to {value} by user");
             }
         }
 
         public bool License
         {
-            get => File.Exists($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\LicenseAgreement.su") && File.Exists("License.txt") && File.ReadAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\LicenseAgreement.su").Contains("true");
-
+            get
+            {
+                if (!File.Exists(ApplicationInfo.LicenseAgreementFile)) return false;
+                if (!File.Exists("License.txt")) return false;
+                return File.ReadAllText(ApplicationInfo.LicenseAgreementFile).ToLower() == "true";
+            }
             set
             {
-                File.WriteAllText($"{Environment.ExpandEnvironmentVariables("%appdata%")}\\SacredUtils\\LicenseAgreement.su", value.ToString().ToLower());
-
-                Log.Info($"Accept license changed state to {value} by user");
+                File.WriteAllText(
+                    ApplicationInfo.LicenseAgreementFile,
+                    value.ToString().ToLower()
+                );
+                Logger.Log.Info($"Accept license changed state to {value} by user");
             }
         }
     }

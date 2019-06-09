@@ -5,11 +5,10 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
-using SacredUtils.SourceFiles;
-using SacredUtils.SourceFiles.bin;
 using SacredUtils.SourceFiles.utils;
+using static SacredUtils.SourceFiles.settings.ApplicationSettingsManager;
 
-namespace SacredUtils.resources.bin
+namespace SacredUtils.SourceFiles.bin
 {
     public static class GetSacredUtilsCelebrationDates
     {
@@ -27,7 +26,7 @@ namespace SacredUtils.resources.bin
 
         public static void CheckDates()
         {
-            if (AppSettings.ApplicationSettings.DisableCelebrationChecking) return;
+            if (!Settings.EnableCelebrationChecking) return;
 
             if (FounderBirthDayDate == TodayDate)
             {
@@ -114,7 +113,7 @@ namespace SacredUtils.resources.bin
 
             if (JustFunDayDate == TodayDate)
             {
-                if (!AppSettings.ApplicationSettings.DisableCelebrationFunnyDay)
+                if (Settings.EnableCelebrationFunnyDay)
                 {
                     Random rnd = new Random();
                     int randomInt = rnd.Next(0, 4);
