@@ -13,7 +13,7 @@ namespace SacredUtils.SourceFiles.language
             string langPath = Path.Combine(ApplicationInfo.Root, "lang");
             Log.Info($"Language file manager path provided: {langPath}");
             File.WriteAllBytes(Path.Combine(langPath, "ru-RU", "ru-RU.xaml"), Resources.ru_RU);
-            File.WriteAllBytes(Path.Combine(langPath, "en-US", "en-US.xaml"), Resources.ru_RU);
+            File.WriteAllBytes(Path.Combine(langPath, "en-US", "en-US.xaml"), Resources.en_US);
             Log.Info("SacredUtils language files was successfully re-created!");
         }
     }
