@@ -63,6 +63,7 @@ namespace SacredUtils.resources.bin
             if (e.KeyboardDevice.Modifiers == ModifierKeys.Control &&
                 e.Key == Settings.KeyReloadProgram)
             {
+                SaveSettings();
                 ApplicationUtils.Reload();
             }
 
