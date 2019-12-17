@@ -11,6 +11,7 @@ namespace SacredUtils.SourceFiles.bin
     {
         public static void Get()
         {
+            /*
             if (!ApplicationSettingsManager.Settings.EnableApplicationTelemetry) { return; }
 
             if (!NetworkUtils.IsConnected.Value) { return; }
@@ -59,6 +60,7 @@ namespace SacredUtils.SourceFiles.bin
             {
                 Logger.Log.Error(ex.ToString);
             }
+        */
         }
     }
 }

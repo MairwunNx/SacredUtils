@@ -8,8 +8,8 @@ namespace SacredUtils.SourceFiles
     public static class ApplicationInfo
     {
         public const string Name = "SacredUtils";
-        public const string Version = "1.2.4.4.XXXX19.R1";
-        public const string AlphaVersion = "1.2.4.1.261018.A2";
+        public const string Version = "1.2.4.3.010219.R1";
+        public const string AlphaVersion = "1.2.5.0.171219.A1";
         public const string Type = "Release";
         public const string Build = "XXB";
         public const string Root = "$SacredUtils";

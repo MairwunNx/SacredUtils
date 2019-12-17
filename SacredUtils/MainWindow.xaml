@@ -22,8 +22,7 @@
     <Window.Resources>
         <Style BasedOn="{StaticResource {x:Type ToolTip}}" TargetType="{x:Type ToolTip}">
             <Setter Property="OverridesDefaultStyle" Value="true" />
-            <Setter Property="FontFamily"
-                    Value="/SacredUtils;component/Resources/fonts/#Google Sans" />
+            <Setter Property="FontFamily" Value="/SacredUtils;component/Resources/fonts/#Google Sans" />
             <Setter Property="FontSize" Value="13" />
         </Style>
     </Window.Resources>

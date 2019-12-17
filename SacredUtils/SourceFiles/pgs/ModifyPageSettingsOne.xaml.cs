@@ -68,7 +68,7 @@ namespace SacredUtils.resources.pgs
             if (ModifySettings.ModificationSettings.SacredUnofficialPatchInstalled)
             {
                 GetSacredGameComponentFiles.GetComponent(
-                    new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/QRe3uOT73XgkeR"),
+                    new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/WbF1fYcOViNghQ"),
                     Environment.ExpandEnvironmentVariables("%tmp%"),
                     "SacredPatched228.zip", Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName),
                     "2.28.01 Patch", "SacredPatched228.exe", Settings.SacredExecutableFileName);
@@ -144,7 +144,7 @@ namespace SacredUtils.resources.pgs
             else
             {
                 GetSacredGameComponentFiles.GetComponent(
-                    new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/VH3BGz3D3XgkeM"),
+                    new Uri("https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/_GHKuy8FdgLaAA"),
                     Environment.ExpandEnvironmentVariables("%tmp%"),
                     "ServerPatched229.zip", Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName),
                     "GameServer Fix", "ServerPatched229.exe", "gameserver.exe");
