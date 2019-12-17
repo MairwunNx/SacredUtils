@@ -1,4 +1,9 @@
  # Changes for SacredUtils Rv5
+
+ ###### Changes included in SacredUtils-1.2.5.0-171219-alpha-1-official (1.2.5.0.171219.A1)
+
+> - Pending more details about fixed changes ...
+
  ###### Changes included in SacredUtils-1.2.4.3-010219-release-1-official (1.2.4.3.010219.R1)
 
 > - Final release, added "Final" to version as suffix
